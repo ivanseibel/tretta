@@ -1,0 +1,51 @@
+
+ RUN  v4.1.11 /Users/ivanseibel/dev/personal/tretta/apps/web
+
+stdout | test/orchestrator-effects-audio.test.tsx > ocultar a provocação ativa corta os nós dela antes de ativar o efeito automático seguinte
+{"scenario":"cancelamento com sons reais e WebAudio controlado","oldCuts":[false,false],"newCuts":[false],"presented":["fx_next"]}
+
+ ❯ test/orchestrator-effects-audio.test.tsx (1 test | 1 failed) 29ms
+   × ocultar a provocação ativa corta os nós dela antes de ativar o efeito automático seguinte 28ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  19:36:21
+   Duration  516ms (transform 67ms, setup 0ms, import 153ms, tests 29ms, environment 262ms)
+
+undefined
+/Users/ivanseibel/dev/personal/tretta/apps/web:
+[ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL] Command failed with exit code 1: vitest run test/orchestrator-effects-audio.test.tsx
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/orchestrator-effects-audio.test.tsx > ocultar a provocação ativa corta os nós dela antes de ativar o efeito automático seguinte
+AssertionError: expected { oldCuts: [ false, false ], …(2) } to deeply equal { oldCuts: [ true, true ], …(2) }
+
+- Expected
++ Received
+
+  {
+    "newCuts": [
+      false,
+    ],
+    "oldCuts": [
+-     true,
+-     true,
++     false,
++     false,
+    ],
+    "presented": [
+      "fx_next",
+    ],
+  }
+
+ ❯ test/orchestrator-effects-audio.test.tsx:364:20
+    362|   console.log(JSON.stringify({scenario:'cancelamento com sons reais e …
+    363|   expect(newNodes.length).toBeGreaterThan(0);
+    364|   expect(observed).toEqual({oldCuts:oldNodes.map(()=>true),newCuts:new…
+       |                    ^
+    365| });
+    366|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

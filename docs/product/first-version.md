@@ -18,6 +18,7 @@ Escopo aprovado pelo usuário em 14 de outubro de 2026, após entrevista de defi
 - Entrada com apelido e avatar, sem cadastro.
 - O anfitrião inicia com 2–8 jogadores quando todos os participantes da próxima rodada estiverem prontos.
 - Quem entrar durante uma rodada aguarda no lobby e participa da seguinte.
+- Decisão adicional aprovada em 15 de outubro de 2026: quem aguarda a próxima rodada pode acompanhar a mesa pública e enviar provocações, mantendo as mãos adversárias privadas. Acompanhar a mesa não concede controle de uma mão na rodada atual; o chat continua disponível para toda a sala.
 
 ## Desconexão e saída
 
@@ -26,10 +27,12 @@ Escopo aprovado pelo usuário em 14 de outubro de 2026, após entrevista de defi
 - O substituto automático faz jogadas válidas simples até o jogador retornar.
 - Quem sair voluntariamente durante uma rodada é substituído automaticamente, mantendo sua vaga disponível para retornar. O substituto sai ao terminar a rodada; novas pessoas participam da rodada seguinte.
 - Quando o anfitrião sair ou desconectar, seu papel passa ao participante conectado há mais tempo.
+- O retorno do anfitrião anterior não reverte a transferência: o anfitrião atual mantém o papel.
 - Quando todos saírem, a sala permanece disponível por 15 minutos para retorno e depois expira.
 - Os 90 segundos liberam a opção de substituição. Sem decisão do anfitrião, a rodada continua pausada e o jogador pode retornar com sua mão; a vaga permanece recuperável até o fim da rodada.
 - Sem pessoas conectadas, a partida fica congelada e os substitutos não jogam. Quem retornar durante os 15 minutos de retenção assume como anfitrião e encontra a partida pausada; pode aguardar os demais, continuar com substitutos ou encerrar sem vencedor.
 - O substituto usa apenas sua própria mão e informações públicas. Joga a primeira carta válida, preferindo coloridas a coringas; escolhe a cor mais presente na mão e avisa “Última carta” automaticamente. Ao comprar, joga a carta comprada quando possível. Dificuldade competitiva fica para depois.
+- O substituto automático não faz denúncias de última carta; as pessoas podem denunciar.
 
 ## Regras do Clássico
 
@@ -42,9 +45,10 @@ Escopo aprovado pelo usuário em 14 de outubro de 2026, após entrevista de defi
 - Compra 4 pode ser usada independentemente da mão. Ambos os coringas permitem escolher a cor.
 - Bloqueio pula o próximo jogador. Inversão muda o sentido; com duas pessoas, funciona como Bloqueio.
 - O aviso “Última carta!” pode ser ativado antes de confirmar o descarte que deixa uma carta na mão. Após esse descarte, o jogador ainda pode avisar enquanto ninguém o denunciar.
-- A janela de denúncia termina quando o próximo jogador comprar ou descartar; selecionar cartas ou abrir menus mantém a janela aberta. O servidor decide pela ordem de recebimento dos eventos.
+- A janela de denúncia termina na primeira compra voluntária ou descarte aceito seguinte, de quem efetivamente joga, inclusive quando a vez volta à mesma pessoa após um Bloqueio. Compras obrigatórias de Compra 2 ou Compra 4 não fecham essa janela. Selecionar cartas ou abrir menus mantém a janela aberta. O servidor decide pela ordem de recebimento dos eventos.
 - Denúncia válida recebida antes do aviso acrescenta duas cartas à mão do denunciado. Denúncias inválidas não têm penalidade e recebem uma explicação.
 - Qualquer carta pode ser a última. Seus efeitos obrigatórios, incluindo escolha de cor e compras, são resolvidos antes do resultado.
+- Ao encerrar a rodada, qualquer janela de denúncia ainda aberta é encerrada. Denúncias posteriores são recusadas, sem alterar o resultado; comandos recebidos antes continuam sendo resolvidos na ordem de recebimento.
 - Ao esgotar a pilha de compra, reembaralha-se o descarte preservando o topo. Se ainda faltarem cartas, entregam-se as disponíveis e o efeito é concluído.
 
 ## Humor e preferências
@@ -84,6 +88,12 @@ Escopo aprovado pelo usuário em 14 de outubro de 2026, após entrevista de defi
 - Retorno após desconexão, chat e provocações funcionando.
 - Cartas privadas dos adversários protegidas e preferências de animação respeitadas.
 - Antes de contratar hospedagem, apresentar a opção e o custo ao usuário para aprovação.
+
+## Hospedagem nesta fase
+
+Decisão do usuário em 15 de outubro de 2026: o Tretta será usado como hobby para brincar com a família. **A hospedagem inteira deve ter custo zero nesta fase.** Uma eventual transformação em produto e adoção de serviços pagos serão decisões futuras.
+
+Preparar planos gratuitos, sem contratação paga, upgrade automático ou cobrança de excedentes. Cotas, suspensão por inatividade e tempo de despertar devem ser explicados na proposta e conferidos na implantação. O requisito não muda as regras de jogo nem autoriza commits, envio a serviços externos ou acesso a contas por si só. As provas locais já aceitas permanecem válidas; a publicação pública ainda precisa ser concluída.
 
 ## Base técnica e sequência
 

@@ -1,0 +1,20 @@
+
+Running 1 test using 1 worker
+
+{"scenario":"segunda apresentação consecutiva","sameNode":false,"sameAnimation":false,"opacity":"0.087903","playState":"running","currentTime":33.410999990152405}
+  ✓  1 e2e/orchestrator-consecutive-effects.spec.ts:5:1 › efeitos consecutivos com a mesma variação continuam visíveis (4.8s)
+
+  1 passed (6.5s)
+[WebServer] (node:68516) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] $ next dev
+[WebServer] (node:68538) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:68556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:68563) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:68589) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:68602) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)

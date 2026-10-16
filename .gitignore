@@ -1,5 +1,6 @@
 node_modules/
 .next/
+out/
 dist/
 coverage/
 .env
@@ -7,3 +8,11 @@ coverage/
 !.env.example
 *.log
 .DS_Store
+test-results/
+playwright-report/
+playwright/.cache/
+.vercel/
+# Rastros brutos podem conter credenciais de sessão; manter somente como evidência local.
+docs/work/reports/assets/**/*.zip
+*.tsbuildinfo
+next-env.d.ts

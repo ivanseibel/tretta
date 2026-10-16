@@ -1,0 +1,5 @@
+[
+  {"scenario":"placar histórico público após vitória e saída","humanWinsBefore":1,"publicWinsAfter":1,"historicalWinner":true,"winnerOccupiesSeat":false},
+  {"scenario":"controle: bot sem nova entrada","newcomerInRound":null,"scheduleVersionBeforeJoin":6,"roomVersionBeforeDelay":6,"versionAfterDelay":7,"handBefore":7,"handAfterDelay":6,"handAfterAdditional7s":6,"timersPendingAfterDelay":0,"roomPlaying":true,"currentSeatStillBot":false,"staleTimerReferenceRemains":false},
+  {"scenario":"bot após nova entrada para aguardar","newcomerInRound":false,"scheduleVersionBeforeJoin":6,"roomVersionBeforeDelay":7,"versionAfterDelay":8,"handBefore":7,"handAfterDelay":6,"handAfterAdditional7s":6,"timersPendingAfterDelay":0,"roomPlaying":true,"currentSeatStillBot":false,"staleTimerReferenceRemains":false}
+]

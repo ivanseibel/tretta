@@ -1,0 +1,81 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.11 [39m[90m/Users/ivanseibel/dev/personal/tretta/apps/web[39m
+
+ [31m❯[39m test/chat-sync.test.tsx [2m([22m[2m11 tests[22m[2m | [22m[31m3 failed[39m[2m)[22m[32m 206[2mms[22m[39m
+     [32m✓[39m recupera a lacuna entre o cache antigo e a página recente (cenário 1 + 60)[32m 68[2mms[22m[39m
+     [32m✓[39m recupera várias páginas perdidas com cliques sucessivos em anteriores[32m 86[2mms[22m[39m
+     [32m✓[39m mensagem ao vivo durante a consulta e respostas anteriores em ordem invertida não criam buraco nem duplicata[32m 14[2mms[22m[39m
+     [32m✓[39m resposta antiga de histórico não contamina outra sala nem mexe no carregamento dela[32m 5[2mms[22m[39m
+     [32m✓[39m ack atrasado de envio não ocupa seq da sala nova nem limpa o rascunho[32m 10[2mms[22m[39m
+     [32m✓[39m reentrada no mesmo código como nova identidade e remoção invalidam o trabalho antigo[32m 4[2mms[22m[39m
+[31m     [31m×[31m reconexão com join pendente preserva o rascunho, bloqueia o botão e impede sendChat de emitir[39m[32m 5[2mms[22m[39m
+     [32m✓[39m reentrada confirmada habilita envio com exatamente um envio e merge idempotente de ack/broadcast[32m 5[2mms[22m[39m
+[31m     [31m×[31m reentrada recusada não habilita chat; o vínculo válido posterior habilita só o seu contexto[39m[32m 2[2mms[22m[39m
+[31m     [31m×[31m remoção com reentrada pendente mantém o bloqueio e invalida o envio[39m[32m 2[2mms[22m[39m
+     [32m✓[39m reconexão sincroniza o histórico após a reentrada autorizada, sem consulta prematura[32m 4[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 3 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m test/chat-sync.test.tsx[2m > [22mautorização do vínculo para envio do chat[2m > [22mreconexão com join pendente preserva o rascunho, bloqueia o botão e impede sendChat de emitir
+[31m[1mAssertionError[22m: expected 'Escreva uma mensagem' to contain 'Recuperando'[39m
+
+Expected: [32m"Recuperando"[39m
+Received: [31m"Escreva uma mensagem"[39m
+
+[36m [2m❯[22m test/chat-sync.test.tsx:[2m473:31[22m[39m
+    [90m471|[39m     [35mconst[39m input [33m=[39m screen[33m.[39m[34mgetByTestId[39m([32m'chat-input'[39m) [35mas[39m [33mHTMLInputElement[39m[33m;[39m
+    [90m472|[39m     [34mexpect[39m(input[33m.[39mvalue)[33m.[39m[34mtoBe[39m([32m'durante a reentrada'[39m)[33m;[39m
+    [90m473|[39m     [34mexpect[39m(input[33m.[39mplaceholder)[33m.[39m[34mtoContain[39m([32m'Recuperando'[39m)[33m;[39m
+    [90m   |[39m                               [31m^[39m
+    [90m474|[39m     expect((screen.getByTestId('chat-send') as HTMLButtonElement).disa…
+    [90m475|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m test/chat-sync.test.tsx[2m > [22mautorização do vínculo para envio do chat[2m > [22mreentrada recusada não habilita chat; o vínculo válido posterior habilita só o seu contexto
+[31m[1mAssertionError[22m: expected undefined to be false // Object.is equality[39m
+
+[32m- Expected:[39m
+false
+
+[31m+ Received:[39m
+undefined
+
+[36m [2m❯[22m test/chat-sync.test.tsx:[2m552:33[22m[39m
+    [90m550|[39m     })[33m;[39m
+    [90m551|[39m     [34mexpect[39m([34mapi[39m()[33m.[39mroomGone)[33m.[39m[34mtoBe[39m([35mtrue[39m)[33m;[39m
+    [90m552|[39m     [34mexpect[39m([34mapi[39m()[33m.[39mchatLinkReady)[33m.[39m[34mtoBe[39m([35mfalse[39m)[33m;[39m
+    [90m   |[39m                                 [31m^[39m
+    [90m553|[39m
+    [90m554|[39m     [35mlet[39m refusal[33m:[39m { ok[33m:[39m boolean } [33m|[39m undefined[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m test/chat-sync.test.tsx[2m > [22mautorização do vínculo para envio do chat[2m > [22mremoção com reentrada pendente mantém o bloqueio e invalida o envio
+[31m[1mAssertionError[22m: expected undefined to be false // Object.is equality[39m
+
+[32m- Expected:[39m
+false
+
+[31m+ Received:[39m
+undefined
+
+[36m [2m❯[22m test/chat-sync.test.tsx:[2m587:33[22m[39m
+    [90m585|[39m
+    [90m586|[39m     deliver('server:removed', { reason: 'removed', roomCode: 'ROOMG5' …
+    [90m587|[39m     [34mexpect[39m([34mapi[39m()[33m.[39mchatLinkReady)[33m.[39m[34mtoBe[39m([35mfalse[39m)[33m;[39m
+    [90m   |[39m                                 [31m^[39m
+    [90m588|[39m
+    [90m589|[39m     [35mlet[39m refusal[33m:[39m { ok[33m:[39m boolean } [33m|[39m undefined[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m3 failed[39m[22m[2m | [22m[1m[32m8 passed[39m[22m[90m (11)[39m
+[2m   Start at [22m 13:58:12
+[2m   Duration [22m 697ms[2m (transform 58ms, setup 0ms, import 161ms, tests 206ms, environment 261ms)[22m
+
+undefined
+/Users/ivanseibel/dev/personal/tretta/apps/web:
+[ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL] Command failed with exit code 1: vitest run test/chat-sync.test.tsx

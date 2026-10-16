@@ -1,0 +1,6 @@
+{
+  "currentFrontier": {"serverMessages":61,"receivedAfterLoadOlder":61,"missing":[],"beforeSentByOlderButton":12,"canLoadOlderAfterwards":false},
+  "oldHistoryAck": {"messages":["mensagem da sala B"]},
+  "oldSendAck": {"messages":["mensagem da sala B"]},
+  "pendingAuthorization": {"transportLive":true,"buttonEnabledBeforeJoinAck":true,"chatSendEmittedBeforeJoinAck":true}
+}

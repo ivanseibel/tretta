@@ -1,6 +1,6 @@
 # Preparar outro computador
 
-Clone o Tretta, abra sua pasta no agente e leia `AGENTS.md`. Por enquanto, há somente documentação; os requisitos de Node e pnpm serão definidos em T001.
+Clone o Tretta, abra sua pasta no agente e leia `AGENTS.md`. Para desenvolver, instale Node.js 22.12 ou superior (referência em `.nvmrc`) e use o pnpm 11.14.0 fixado em `package.json`; com Corepack ativo, ele é selecionado automaticamente. Instruções de instalação, testes e tipos estão no [README](../../README.md).
 
 ## Skills globais
 

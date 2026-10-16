@@ -1,0 +1,7 @@
+[
+  {"scenario":"placar após vitória humana e saída","winsBefore":1,"winsAfter":0,"roomStillExists":true,"winnerStillListed":false},
+  {"scenario":"replay de criação e de saída após outra sala","leaveFirstOK":true,"leaveReplayOK":false,"leaveReplayError":"NOT_IN_ROOM","originalCreationAck":true,"boundToNewRoom":true,"subscribedToOldRoom":true},
+  {"scenario":"replay de entrada após remoção","subscribedImmediatelyAfterRemoval":false,"originalJoinAck":true,"authorizedOnlyInNewRoom":true,"subscribedToRevokedRoom":true,"eventsReceivedFromRevokedRoom":1},
+  {"scenario":"expiração com socket vivo","roomExpired":true,"socketAlive":true,"cachedIntents":2,"cachedRoomReferences":1,"timersRemaining":0,"subscribedToExpiredCodeAfterReplay":true},
+  {"scenario":"callback de bot cancelado após retorno e nova saída","canceledHandleDifferentFromCurrent":true,"versionBefore":8,"versionAfter":9,"handBefore":7,"handAfter":6,"validCurrentTimerStillScheduled":true,"otherHumanStillConnected":true,"staleCallbackRanBeforeDelay":true}
+]

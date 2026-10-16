@@ -1,0 +1,7 @@
+[
+  {"scenario":"controle: acks na mesma sala e broadcast duplicado","messages":["primeira","segunda"],"duplicates":0},
+  {"scenario":"histórico atrasado após trocar de sala","activeRoom":"B","messages":["histórico da sala A","mensagem da sala B"],"staleHasMoreApplied":true},
+  {"scenario":"ack de envio atrasado após trocar de sala","activeRoom":"B","messages":["envio da sala A","mensagem da sala B"]},
+  {"scenario":"recuperação com mais de uma página perdida","serverMessages":61,"receivedAfterRefresh":51,"receivedAfterLoadOlder":51,"missing":[2,3,4,5,6,7,8,9,10,11],"beforeSentByOlderButton":1,"canLoadOlderAfterwards":false},
+  {"scenario":"controle: chat e consulta imediatamente após compra","phase":"after-draw","engineUnchanged":true,"roomVersionUnchanged":true,"timerUnchanged":true}
+]

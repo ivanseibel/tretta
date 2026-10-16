@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: tretta-server
+    runtime: node
+    plan: free
+    buildCommand: corepack enable && node --version && pnpm --version && pnpm install --frozen-lockfile && pnpm --filter @tretta/server... build
+    startCommand: pnpm --filter @tretta/server start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: "22.23.1"
+      - key: TRE_TTA_TEST_HOOKS
+        value: "0"
+      - key: TRE_TTA_WEB_ORIGIN
+        sync: false

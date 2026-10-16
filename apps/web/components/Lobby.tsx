@@ -1,0 +1,132 @@
+'use client';
+
+import { useEffect, useState, type ReactNode } from 'react';
+import type { StateMessage } from '@tretta/protocol';
+import { useRoom } from '@/app/providers';
+import { AvatarBadge, LeaveButton } from '@/components/ui';
+
+export function Lobby({ state }: { state: StateMessage }): ReactNode {
+  const room = useRoom();
+  const [inviteUrl, setInviteUrl] = useState('');
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    setInviteUrl(`${window.location.origin}/sala/${state.room.roomCode}`);
+  }, [state.room.roomCode]);
+
+  const me = state.self;
+  const connected = state.room.participants.filter((participant) => participant.connected);
+  const everyoneReady = connected.length >= 2 && connected.every((participant) => participant.ready);
+  const isHost = state.room.hostId === me.playerId;
+  const canStart = isHost && everyoneReady && connected.length <= 8;
+  // Vitórias de quem já deixou a vaga continuam no placar da sala.
+  const historical = state.room.scoreboard.filter((entry) => !entry.current);
+
+  async function copyInvite(): Promise<void> {
+    try {
+      await navigator.clipboard.writeText(inviteUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
+  }
+
+  return (
+    <div className="screen lobby">
+      <header className="screen-header">
+        <h1 data-focus-target tabIndex={-1}>Sala {state.room.roomCode}</h1>
+        <p className="muted">Compartilhe o link para convidar. O anfitrião inicia quando todos estiverem prontos.</p>
+        <LeaveButton />
+      </header>
+
+      <section className="invite" aria-label="Convite">
+        <a href={inviteUrl} data-testid="invite-link">
+          {inviteUrl}
+        </a>
+        <button type="button" onClick={() => void copyInvite()} data-testid="copy-invite">
+          {copied ? 'Copiado!' : 'Copiar link'}
+        </button>
+      </section>
+
+      <section aria-label="Participantes">
+        <h2>Participantes</h2>
+        <ul className="participant-list" data-testid="lobby-participants">
+          {state.room.participants.map((participant) => (
+            <li key={participant.id} data-testid="lobby-participant" className="participant-row">
+              <AvatarBadge avatar={participant.avatar} />
+              <span className="participant-name">{participant.nickname}</span>
+              {participant.isHost ? <span className="tag">anfitrião</span> : null}
+              {participant.id === me.playerId ? <span className="tag tag-me">você</span> : null}
+              <span className={participant.connected ? 'status connected' : 'status disconnected'}>
+                {participant.connected ? (participant.ready ? 'pronto' : 'aguardando') : 'desconectado'}
+              </span>
+              <span className="score" title="Rodadas vencidas">
+                {participant.score} v.
+              </span>
+              {isHost && participant.id !== me.playerId ? (
+                <button
+                  type="button"
+                  className="danger small"
+                  data-testid={`remove-${participant.nickname}`}
+                  disabled={room.connection !== 'live'}
+                  onClick={() => void room.removeParticipant(participant.id)}
+                >
+                  Remover
+                </button>
+              ) : null}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {historical.length > 0 ? (
+        <section aria-label="Placar da sala">
+          <h2>Placar da sala</h2>
+          <ul className="participant-list" data-testid="scoreboard-history">
+            {historical.map((entry) => (
+              <li key={entry.playerId} className="participant-row" data-testid={`history-${entry.nickname}`}>
+                <AvatarBadge avatar={entry.avatar} />
+                <span className="participant-name">{entry.nickname}</span>
+                <span className="tag">saiu da sala</span>
+                <span className="score">{entry.wins} v.</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      <section className="lobby-actions" aria-label="Preparação">
+        <button
+          type="button"
+          className={me.ready ? 'secondary' : 'primary'}
+          disabled={room.connection !== 'live'}
+          onClick={() => void room.setReady(!me.ready)}
+          data-testid="ready-toggle"
+        >
+          {me.ready ? 'Cancelar prontidão' : 'Estou pronto'}
+        </button>
+        {isHost ? (
+          <button
+            type="button"
+            className="primary"
+            disabled={!canStart || room.connection !== 'live'}
+            onClick={() => void room.startRound()}
+            data-testid="start-round-button"
+          >
+            Iniciar rodada
+          </button>
+        ) : (
+          <p className="muted">Aguardando o anfitrião iniciar.</p>
+        )}
+      </section>
+      {isHost && !canStart ? (
+        <p className="muted" data-testid="start-hint">
+          {connected.length < 2
+            ? 'São necessários pelo menos 2 participantes conectados.'
+            : 'Todos precisam estar prontos.'}
+        </p>
+      ) : null}
+    </div>
+  );
+}

@@ -1,0 +1,32 @@
+
+ RUN  v4.1.11 /Users/ivanseibel/dev/personal/tretta/apps/web
+
+stdout | test/orchestrator-effects-audio.test.tsx > ocultar a provocação ativa corta os nós dela antes de ativar o efeito automático seguinte
+{"scenario":"cancelamento com sons reais e WebAudio controlado","oldCuts":[true,true],"newCuts":[],"presented":[]}
+
+ ❯ test/orchestrator-effects-audio.test.tsx (1 test | 1 failed) 24ms
+   × ocultar a provocação ativa corta os nós dela antes de ativar o efeito automático seguinte 24ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  19:52:20
+   Duration  452ms (transform 58ms, setup 0ms, import 135ms, tests 24ms, environment 227ms)
+
+undefined
+/Users/ivanseibel/dev/personal/tretta/apps/web:
+[ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL] Command failed with exit code 1: vitest run test/orchestrator-effects-audio.test.tsx
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/orchestrator-effects-audio.test.tsx > ocultar a provocação ativa corta os nós dela antes de ativar o efeito automático seguinte
+AssertionError: expected 0 to be greater than 0
+ ❯ test/orchestrator-effects-audio.test.tsx:363:27
+    361|   const observed={oldCuts:oldNodes.map(n=>n.cut),newCuts:newNodes.map(…
+    362|   console.log(JSON.stringify({scenario:'cancelamento com sons reais e …
+    363|   expect(newNodes.length).toBeGreaterThan(0);
+       |                           ^
+    364|   expect(observed).toEqual({oldCuts:oldNodes.map(()=>true),newCuts:new…
+    365| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

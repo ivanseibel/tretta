@@ -1,0 +1,5 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "cd ../.. && pnpm --version && pnpm install --frozen-lockfile",
+  "buildCommand": "cd ../.. && node -e 'let u;try{u=new URL(process.env.NEXT_PUBLIC_SERVER_URL)}catch{};process.exit(!u||u.protocol!==\"https:\"||/^(localhost|127\\.|\\[::1\\])/i.test(u.hostname)?1:0)' && NEXT_PUBLIC_TEST_HOOKS=0 pnpm --filter @tretta/web... build"
+}

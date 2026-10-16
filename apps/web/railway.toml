@@ -1,0 +1,10 @@
+[build]
+builder = "RAILPACK"
+buildCommand = "pnpm install --frozen-lockfile && pnpm build"
+
+[deploy]
+startCommand = "pnpm --filter @tretta/web start"
+healthcheckPath = "/"
+restartPolicyType = "ON_FAILURE"
+numReplicas = 1
+sleepApplication = false

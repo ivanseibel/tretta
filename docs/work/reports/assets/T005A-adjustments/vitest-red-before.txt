@@ -1,0 +1,29 @@
+Saída capturada durante a execução, antes da correção (código de providers.tsx/
+ChatPanel.tsx anterior aos ajustes), com as regressões de
+apps/web/test/chat-sync.test.tsx:
+
+Failed Tests 7
+
+FAIL recuperação de intervalos do histórico > recupera a lacuna entre o cache antigo e a página recente (cenário 1 + 60)
+AssertionError: expected 1 to be 12  (cursor do botão era o menor seq global)
+
+FAIL recuperação de intervalos do histórico > recupera várias páginas perdidas com cliques sucessivos em anteriores
+AssertionError: expected 1 to be 81
+
+FAIL recuperação de intervalos do histórico > mensagem ao vivo durante a consulta e respostas anteriores em ordem invertida não criam buraco nem duplicata
+AssertionError: expected 1 to be 12
+
+FAIL invalidação de respostas por contexto > resposta antiga de histórico não contamina outra sala nem mexe no carregamento dela
+AssertionError: expected [ 'histórico da sala A', …(1) ] to deeply equal [ 'mensagem da sala B' ]
+
+FAIL invalidação de respostas por contexto > ack atrasado de envio não ocupa seq da sala nova nem limpa o rascunho
+AssertionError: expected [ 'envio da sala A' ] to deeply equal [ 'mensagem da sala B' ]
+
+FAIL invalidação de respostas por contexto > reentrada no mesmo código como nova identidade e remoção invalidam o trabalho antigo
+AssertionError: expected [ 1 ] to deeply equal []
+
+FAIL invalidação de respostas por contexto > reconexão sincroniza o histórico após a reentrada autorizada, sem consulta prematura
+AssertionError: expected [ 'client:joinRoom', …(1) ] to deeply equal [ 'client:joinRoom' ]
+  (recebido: client:joinRoom + client:chatHistory prematura)
+
+Tests  7 failed (7)

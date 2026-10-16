@@ -1,0 +1,1993 @@
+:root {
+  --bg: #0d211a;
+  --bg-soft: #143026;
+  --panel: #1b3c2f;
+  --text: #f2f7f4;
+  --muted: #9fbcae;
+  --accent: #ffd166;
+  --primary: #2f9e63;
+  --danger: #d9534f;
+  --red: #d64541;
+  --yellow: #e9b32a;
+  --green: #2f9e63;
+  --blue: #2f6fb3;
+  --wild: #5b4b8a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 0%, #17402f, var(--bg) 70%);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2 {
+  margin: 0 0 0.5rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.screen {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.screen-header h1 {
+  font-size: 1.6rem;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+}
+
+input[type='text'],
+input:not([type]) {
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #2c5544;
+  background: #0f2a20;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+button {
+  font-size: 1rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: #06231a;
+  background: #d7e7df;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button.primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+button.secondary {
+  background: #2c5544;
+  color: var(--text);
+}
+
+button.danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.error-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  background: #4a1d1c;
+  border: 1px solid var(--danger);
+  padding: 0.6rem 0.75rem;
+  border-radius: 10px;
+}
+
+.waiting-banner {
+  background: #453512;
+  border: 1px solid var(--accent);
+  padding: 0.6rem 0.75rem;
+  border-radius: 10px;
+}
+
+.avatar-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.avatar-option {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #0f2a20;
+  color: var(--text);
+  border: 2px solid transparent;
+}
+
+.avatar-option-selected {
+  border-color: var(--accent);
+}
+
+.avatar-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.avatar-badge.avatar-small {
+  width: 1.6rem;
+  height: 1.6rem;
+  font-size: 0.65rem;
+}
+
+.invite {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.invite a {
+  color: var(--accent);
+  word-break: break-all;
+}
+
+.participant-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.participant-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--panel);
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+}
+
+.participant-name {
+  font-weight: 600;
+}
+
+.tag {
+  font-size: 0.75rem;
+  background: #2c5544;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+}
+
+.tag-me {
+  background: var(--accent);
+  color: #3a2c00;
+}
+
+.tag-turn {
+  background: var(--primary);
+  color: #fff;
+}
+
+.status.connected {
+  color: #8fd6ae;
+}
+
+.status.disconnected {
+  color: #f1a5a3;
+}
+
+.score {
+  margin-left: auto;
+  color: var(--muted);
+}
+
+.lobby-actions,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.table-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.turn-indicator {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.direction {
+  color: var(--muted);
+}
+
+.opponents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.opponent {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg-soft);
+  border-radius: 10px;
+  padding: 0.4rem 0.6rem;
+}
+
+.opponent-current {
+  outline: 2px solid var(--accent);
+}
+
+.hand-count {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.waiting-participant-label {
+  color: #53645a;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.table-center {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: flex-end;
+}
+
+.pile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.pile-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.playing-card {
+  width: 74px;
+  height: 104px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  padding: 0.2rem;
+  font-family: inherit;
+}
+
+.playing-card:disabled,
+.playing-card[aria-disabled='true'] {
+  opacity: 1;
+  cursor: default;
+}
+
+.playing-card .card-value {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.playing-card .card-name {
+  font-size: 0.6rem;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.card-red {
+  background: var(--red);
+}
+
+.card-yellow {
+  background: var(--yellow);
+  color: #3a2c00;
+}
+
+.card-green {
+  background: var(--green);
+}
+
+.card-blue {
+  background: var(--blue);
+}
+
+.card-wild {
+  background: linear-gradient(135deg, var(--red) 0 25%, var(--yellow) 25% 50%, var(--green) 50% 75%, var(--blue) 75% 100%);
+}
+
+.card-back {
+  background: repeating-linear-gradient(45deg, #24405c 0 8px, #1a2f45 8px 16px);
+}
+
+button.playing-card {
+  color: inherit;
+}
+
+.hand {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.card-playable {
+  border-color: var(--accent);
+  cursor: pointer;
+}
+
+.card-selected {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  border-color: #fff;
+}
+
+.play-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  background: var(--panel);
+  padding: 0.6rem 0.75rem;
+  border-radius: 10px;
+  position: sticky;
+  bottom: 0.5rem;
+}
+
+.announce-label {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.color-options {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.color-button {
+  color: #fff;
+}
+
+.chip-red {
+  background: var(--red);
+  color: #fff;
+}
+
+.chip-yellow {
+  background: var(--yellow);
+  color: #3a2c00;
+}
+
+.chip-green {
+  background: var(--green);
+  color: #fff;
+}
+
+.chip-blue {
+  background: var(--blue);
+  color: #fff;
+}
+
+.color-chip {
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.event-feed ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.winner-banner {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .screen {
+    padding: 0.75rem 0.6rem 4.5rem;
+  }
+
+  .playing-card {
+    width: 58px;
+    height: 84px;
+  }
+
+  .playing-card .card-value {
+    font-size: 1.05rem;
+  }
+
+  .playing-card .card-name {
+    font-size: 0.52rem;
+  }
+
+  .table-center {
+    gap: 0.75rem;
+  }
+
+  button {
+    min-height: 44px;
+  }
+}
+
+.connection-banner {
+  background: #ffe9c7;
+  border: 1px solid #e0a34e;
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  font-weight: 600;
+}
+
+.connection-banner.recovered {
+  background: #d9f2e3;
+  border-color: var(--primary);
+}
+
+.pause-panel {
+  background: #fff4d6;
+  border: 2px solid #e0a34e;
+  border-radius: 12px;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pause-panel h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.pause-actions,
+.host-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-substitute {
+  background: #8a6d3b;
+  color: #fff;
+}
+
+button.small {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+}
+
+.leave-button {
+  margin-left: auto;
+}
+
+/* Chat da sala */
+.chat-panel {
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.chat-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.chat-messages {
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-height: 6rem;
+  max-height: 40vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.chat-message {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg-soft);
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.95rem;
+}
+
+.chat-message-muted {
+  opacity: 0.9;
+}
+
+.chat-author {
+  font-weight: 700;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.chat-time {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.chat-text {
+  flex: 1 1 12rem;
+  min-width: 0;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.chat-empty {
+  background: transparent;
+}
+
+.chat-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.chat-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.chat-input-row input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.chat-counter {
+  color: var(--muted);
+  font-size: 0.8rem;
+  min-width: 4.5rem;
+  text-align: right;
+}
+
+.chat-counter-over {
+  color: #f1a5a3;
+  font-weight: 700;
+}
+
+.chat-error {
+  margin: 0;
+  color: #f1a5a3;
+  font-size: 0.9rem;
+}
+
+/* Mesa pública para quem aguarda */
+.public-table {
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.public-table h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.public-table .muted {
+  margin: 0;
+}
+
+.public-table-status {
+  margin: 0;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Provocações da sala */
+.taunt-panel {
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.taunt-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.taunt-hint {
+  margin: 0.15rem 0 0;
+  font-size: 0.85rem;
+}
+
+.taunt-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.taunt-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  flex: 1 1 9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.taunt-form select {
+  flex: 1 1 9rem;
+}
+
+.taunt-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  padding-top: 12vh;
+  overflow: hidden;
+}
+
+.taunt-effect {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(13, 33, 26, 0.92);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  animation-duration: 3.2s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+.taunt-emoji {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.taunt-caption {
+  font-size: 0.95rem;
+}
+
+/* Tomate voador: cruza a tela e espirra */
+.taunt-tomate {
+  border: 2px solid var(--red);
+  animation-name: taunt-tomate;
+}
+
+@keyframes taunt-tomate {
+  0% {
+    opacity: 0;
+    transform: translateX(-60vw) rotate(-20deg);
+  }
+  15% {
+    opacity: 1;
+  }
+  40% {
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(2rem) scale(0.9);
+  }
+}
+
+/* Torta na cara: cai do topo e esmaga */
+.taunt-torta {
+  border: 2px solid var(--accent);
+  animation-name: taunt-torta;
+}
+
+@keyframes taunt-torta {
+  0% {
+    opacity: 0;
+    transform: translateY(-30vh) scale(1.3);
+  }
+  20% {
+    opacity: 1;
+  }
+  45% {
+    transform: translateY(0) scale(0.92);
+  }
+  55% {
+    transform: translateY(0) scale(1.08);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* Chuva de risadas: gotas de haha descendo */
+.taunt-risadas {
+  border: 2px solid var(--primary);
+  animation-name: taunt-risadas;
+}
+
+@keyframes taunt-risadas {
+  0% {
+    opacity: 0;
+    transform: translateY(-1.5rem);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(0.4rem);
+  }
+  45% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(0.35rem);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+
+/* Choro dramático: balança e desmaia */
+.taunt-choro {
+  border: 2px solid var(--blue);
+  animation-name: taunt-choro;
+}
+
+@keyframes taunt-choro {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  30% {
+    transform: rotate(-3deg) scale(1);
+  }
+  45% {
+    transform: rotate(3deg) scale(1);
+  }
+  60% {
+    transform: rotate(-2deg) scale(0.98);
+  }
+  75% {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(1.2rem) scale(0.9);
+  }
+}
+
+/* Efeitos automáticos: quatro categorias, duas variações visualmente
+   distintas cada. Duração espelha PRESENTATION_DURATIONS.effect (2.6s). */
+.fx-effect {
+  border: 2px solid var(--accent);
+  animation-duration: 2.6s;
+}
+
+/* Compra por penalidade — chuva de cartas */
+.fx-cards-rain {
+  border-color: var(--red);
+  animation-name: fx-cards-rain;
+}
+
+@keyframes fx-cards-rain {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem) rotate(-8deg);
+  }
+  18% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+  32% {
+    transform: translateY(0.5rem) rotate(3deg);
+  }
+  46% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  74% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+}
+
+/* Compra por penalidade — avalanche pela lateral */
+.fx-cards-avalanche {
+  border-color: var(--red);
+  animation-name: fx-cards-avalanche;
+}
+
+@keyframes fx-cards-avalanche {
+  0% {
+    opacity: 0;
+    transform: translateX(-30vw) scale(1.3);
+  }
+  22% {
+    opacity: 1;
+    transform: translateX(0) scale(1.08);
+  }
+  40% {
+    transform: translateX(1.5rem) scale(1);
+  }
+  55% {
+    transform: translateX(0) scale(1.05);
+  }
+  76% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(4rem) scale(0.96);
+  }
+}
+
+/* Bloqueio — muro caindo no lugar */
+.fx-brick-wall {
+  border-color: var(--blue);
+  animation-name: fx-brick-wall;
+}
+
+@keyframes fx-brick-wall {
+  0% {
+    opacity: 0;
+    transform: translateY(-3rem) scale(1.35);
+  }
+  24% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  34% {
+    transform: scale(1.06);
+  }
+  48% {
+    transform: scale(1);
+  }
+  76% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0.5rem) scale(0.97);
+  }
+}
+
+/* Bloqueio — tropeço cambaleando */
+.fx-stumble {
+  border-color: var(--blue);
+  animation-name: fx-stumble;
+}
+
+@keyframes fx-stumble {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  16% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  30% {
+    transform: rotate(-6deg) scale(1);
+  }
+  44% {
+    transform: rotate(6deg);
+  }
+  58% {
+    transform: rotate(-4deg);
+  }
+  70% {
+    transform: rotate(2deg) scale(1);
+  }
+  78% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(0) translateY(0.8rem) scale(0.95);
+  }
+}
+
+/* Inversão — bumerangue voando de volta */
+.fx-boomerang {
+  border-color: var(--green);
+  animation-name: fx-boomerang;
+}
+
+@keyframes fx-boomerang {
+  0% {
+    opacity: 0;
+    transform: translateX(-6rem) rotate(-20deg);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+  45% {
+    transform: translateX(2.5rem) rotate(200deg);
+  }
+  70% {
+    transform: translateX(-1rem) rotate(360deg);
+  }
+  78% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(6rem) rotate(520deg);
+  }
+}
+
+/* Inversão — moinho girando até o novo sentido */
+.fx-windmill {
+  border-color: var(--green);
+  animation-name: fx-windmill;
+}
+
+@keyframes fx-windmill {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) rotate(0deg);
+  }
+  18% {
+    opacity: 1;
+    transform: scale(1.1) rotate(120deg);
+  }
+  45% {
+    transform: scale(1) rotate(360deg);
+  }
+  74% {
+    opacity: 1;
+    transform: rotate(600deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9) rotate(720deg);
+  }
+}
+
+/* Vitória — estouro de confete */
+.fx-confetti {
+  border-color: var(--accent);
+  animation-name: fx-confetti;
+}
+
+@keyframes fx-confetti {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  22% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  38% {
+    transform: scale(1) rotate(-3deg);
+  }
+  55% {
+    transform: scale(1.05) rotate(3deg);
+  }
+  76% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.1) translateY(-1rem);
+  }
+}
+
+/* Vitória — troféu subindo e brilhando */
+.fx-trophy {
+  border-color: var(--accent);
+  animation-name: fx-trophy;
+}
+
+@keyframes fx-trophy {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem) scale(0.8);
+  }
+  26% {
+    opacity: 1;
+    transform: translateY(0) scale(1.1);
+  }
+  44% {
+    transform: translateY(-0.4rem) scale(1);
+  }
+  62% {
+    transform: translateY(0) scale(1.04);
+  }
+  78% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-1.2rem) scale(1);
+  }
+}
+
+/* Preferências locais aplicadas ao overlay (data-anim): reduzida troca tudo
+   por um fade sem deslocamento/rotação/escala; desligada mantém o aviso
+   estático visível e o timer da fila encerra o item. */
+[data-anim='reduced'] .taunt-effect {
+  animation: mood-fade 2.4s ease both;
+}
+
+[data-anim='reduced'] .fx-effect {
+  animation: mood-fade 2s ease both;
+}
+
+[data-anim='off'] .taunt-effect,
+[data-anim='off'] .fx-effect {
+  animation: none;
+  opacity: 1;
+}
+
+@keyframes mood-fade {
+  0% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Painel de preferências de apresentação */
+.mood-settings {
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mood-settings h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.mood-fieldset {
+  border: 1px solid var(--bg-soft);
+  border-radius: 8px;
+  margin: 0;
+  padding: 0.5rem 0.6rem 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.mood-fieldset legend {
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 0 0.3rem;
+}
+
+.mood-option {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  display: flex;
+  cursor: pointer;
+}
+
+.mood-option input {
+  margin: 0;
+}
+
+.mood-note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Sem movimento: o mesmo aviso, estático, ainda anuncia quem provocou quem. */
+@media (prefers-reduced-motion: reduce) {
+  .taunt-effect {
+    animation: taunt-fade 3.2s ease both;
+  }
+
+  @keyframes taunt-fade {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .chat-input-row {
+    flex-wrap: wrap;
+  }
+
+  .chat-counter {
+    text-align: left;
+  }
+
+  .chat-messages {
+    max-height: 34vh;
+  }
+}
+
+/* Identidade Tretta: papel quente ao redor da sala e feltro verde no jogo. */
+:root {
+  --bg: #f4efe3;
+  --bg-soft: #e8e0ce;
+  --panel: #fffaf0;
+  --text: #203a2f;
+  --muted: #53645a;
+  --accent: #b84331;
+  --primary: #285d44;
+  --danger: #a6332d;
+  --red: #b83c2b;
+  --yellow: #e8b941;
+  --green: #2e6542;
+  --blue: #236394;
+  --wild: #574276;
+}
+
+html {
+  background: var(--bg);
+  color-scheme: light;
+}
+
+body {
+  background:
+    radial-gradient(circle at 1rem 1rem, rgba(68, 95, 68, 0.07) 1px, transparent 1.5px) 0 0 / 24px 24px,
+    linear-gradient(155deg, #f8f3e8, var(--bg) 62%, #e9e2d2);
+  color: var(--text);
+}
+
+h1,
+h2 {
+  color: var(--text);
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: clamp(1.55rem, 4vw, 2.1rem);
+}
+
+.screen {
+  width: min(100%, 62rem);
+}
+
+.screen-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.85rem;
+}
+
+.screen-header h1 {
+  margin-bottom: 0;
+}
+
+.screen-header > p {
+  flex: 1 1 100%;
+  margin: 0;
+}
+
+.screen-header .leave-button {
+  margin-left: auto;
+}
+
+.panel,
+.chat-panel,
+.taunt-panel,
+.mood-settings,
+.public-table {
+  background: var(--panel);
+  border: 1px solid #d9cfbb;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(48, 57, 39, 0.08);
+}
+
+.panel > h2 {
+  margin: 0;
+}
+
+.panel label,
+.chat-label,
+.taunt-label {
+  color: var(--text);
+}
+
+input[type='text'],
+input:not([type]),
+.taunt-form select {
+  min-height: 44px;
+  border: 1px solid #8a9a84;
+  border-radius: 11px;
+  background: #fffdf7;
+  color: #203a2f;
+}
+
+button,
+.button-link {
+  min-height: 44px;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: box-shadow 120ms ease, background-color 120ms ease, transform 120ms ease;
+}
+
+button {
+  background: #e4dece;
+  color: #203a2f;
+}
+
+button.primary,
+.button-link {
+  background: var(--primary);
+  color: #fff;
+}
+
+button.secondary {
+  background: #e3dfd2;
+  color: #203a2f;
+  border: 1px solid #b8b19f;
+}
+
+button.danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex='-1']:focus-visible {
+  outline: 3px solid #19372a;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px #fffaf0;
+}
+
+button:disabled {
+  opacity: 0.62;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.avatar-option {
+  background: #f8f2e5;
+  color: var(--text);
+  border: 2px solid #d9cfbb;
+  border-radius: 14px;
+}
+
+.avatar-option-selected {
+  background: #e6efe4;
+  border-color: #285d44;
+  box-shadow: 0 0 0 2px rgba(40, 93, 68, 0.18);
+}
+
+.avatar-badge {
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0.1rem;
+  background: #fffaf0;
+  border: 2px solid rgba(32, 58, 47, 0.2);
+  box-shadow: 0 2px 4px rgba(32, 58, 47, 0.16);
+}
+
+.avatar-badge svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-badge.avatar-small {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.05rem;
+}
+
+.participant-row,
+.opponent {
+  min-width: 0;
+  flex-wrap: wrap;
+  background: #fffaf0;
+  border: 1px solid #dbd2c0;
+  border-radius: 14px;
+  padding: 0.55rem 0.7rem;
+}
+
+.participant-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--text);
+}
+
+.tag {
+  background: #e5dfd0;
+  color: #34473b;
+}
+
+.tag-me {
+  background: #f4d575;
+  color: #382d0a;
+}
+
+.tag-turn {
+  background: #285d44;
+  color: #fff;
+}
+
+.status.connected {
+  color: #285d44;
+}
+
+.status.disconnected {
+  color: #a6332d;
+  font-weight: 700;
+}
+
+.score,
+.hand-count,
+.direction,
+.pile-label,
+.chat-time {
+  color: var(--muted);
+}
+
+.error-banner {
+  background: #fff0e9;
+  border-color: #a6332d;
+  color: #59251f;
+}
+
+.error-banner button {
+  flex: 0 0 auto;
+}
+
+.waiting-banner {
+  background: #fff2c9;
+  border-color: #79500c;
+  color: #49340d;
+  border-radius: 12px;
+}
+
+.connection-banner,
+.connection-banner.recovered {
+  color: #203a2f;
+  background: #f4e5bd;
+  border-color: #765318;
+}
+
+.connection-banner.recovered {
+  background: #e3efdf;
+  border-color: #285d44;
+}
+
+.pause-panel {
+  color: #49340d;
+  background: #fff1c6;
+  border: 2px solid #79500c;
+  border-radius: 16px;
+}
+
+.pause-panel h2,
+.pause-panel .muted {
+  color: #49340d;
+}
+
+.public-table {
+  color: var(--text);
+}
+
+.public-table-status {
+  color: #285d44;
+}
+
+.chat-panel,
+.taunt-panel,
+.mood-settings {
+  color: var(--text);
+}
+
+.chat-messages,
+.chat-message {
+  color: var(--text);
+}
+
+.chat-message {
+  background: #f1ecdf;
+}
+
+.chat-counter-over,
+.chat-error {
+  color: #a6332d;
+}
+
+.chat-input-row {
+  min-width: 0;
+}
+
+.mood-fieldset {
+  border-color: #9ca895;
+}
+
+.mood-fieldset legend,
+.mood-note,
+.mood-option {
+  color: var(--muted);
+}
+
+.taunt-hint,
+.taunt-label {
+  color: var(--muted);
+}
+
+.taunt-form select {
+  min-width: 0;
+}
+
+.taunt-effect {
+  background: rgba(29, 56, 42, 0.96);
+  color: #fffaf0;
+  max-width: calc(100vw - 2rem);
+}
+
+.taunt-caption {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.table .status.disconnected {
+  color: #ffd2bf;
+  background: #672b24;
+  border-radius: 999px;
+  padding: 0.12rem 0.42rem;
+}
+
+.screen.home {
+  gap: 1.15rem;
+}
+
+.home > .screen-header h1 {
+  color: #285d44;
+  font-size: clamp(2.2rem, 8vw, 3.5rem);
+}
+
+.home > .screen-header p {
+  max-width: 42rem;
+  line-height: 1.55;
+}
+
+.home > .panel {
+  border-top: 4px solid #d66a43;
+}
+
+.home > .panel + .panel {
+  border-top-color: #e3b542;
+}
+
+/* O feltro cria uma zona de jogo distinta, enquanto controles mantêm alto contraste. */
+.screen.table {
+  --text: #fff8e7;
+  --muted: #d0dfcf;
+  --panel: #194832;
+  --bg-soft: #23583e;
+  --accent: #ffd36c;
+  --primary: #327c52;
+  --danger: #a6332d;
+  max-width: none;
+  padding: clamp(0.85rem, 2.5vw, 1.5rem);
+  border: 4px solid #d6bd78;
+  border-radius: 26px;
+  background:
+    radial-gradient(ellipse at 48% 43%, rgba(100, 152, 94, 0.24), transparent 62%),
+    repeating-linear-gradient(7deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 13px),
+    #194832;
+  box-shadow: 0 12px 28px rgba(37, 48, 37, 0.2), inset 0 0 0 2px rgba(255, 248, 231, 0.11);
+}
+
+.table h1,
+.table h2 {
+  color: var(--text);
+}
+
+.table-header {
+  gap: 0.65rem 1rem;
+}
+
+.room-tag {
+  margin: 0;
+}
+
+.turn-indicator {
+  display: inline-flex;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 2.4rem;
+  align-items: center;
+  padding: 0.3rem 0.8rem;
+  overflow-wrap: anywhere;
+  border: 1px solid rgba(255, 211, 108, 0.72);
+  border-radius: 999px;
+  background: rgba(16, 56, 37, 0.72);
+  color: #ffe197;
+}
+
+.table .direction,
+.table .pile-label,
+.table .muted,
+.table .hand-help,
+.table .hand-count {
+  color: var(--muted);
+}
+
+.table .opponent {
+  color: #fff8e7;
+  background: rgba(13, 58, 37, 0.74);
+  border-color: rgba(230, 237, 210, 0.24);
+}
+
+.table .participant-name {
+  color: #fff8e7;
+}
+
+.table .waiting-participant-label {
+  color: var(--muted);
+}
+
+.table .opponent-current {
+  outline: 3px solid #ffd36c;
+  outline-offset: 1px;
+}
+
+.table .table-center {
+  gap: clamp(0.7rem, 3vw, 1.5rem);
+  padding: clamp(0.75rem, 2.5vw, 1.25rem);
+  border: 1px solid rgba(230, 237, 210, 0.2);
+  border-radius: 20px;
+  background: rgba(11, 52, 34, 0.35);
+}
+
+:is(.table, .public-table) .playing-card {
+  position: relative;
+  width: 76px;
+  height: 108px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 3px solid #fff8e7;
+  border-radius: 13px;
+  box-shadow: 0 5px 9px rgba(8, 33, 23, 0.25);
+}
+
+:is(.table, .public-table) .playing-card::after {
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 8px;
+  content: '';
+  pointer-events: none;
+}
+
+:is(.table, .public-table) .playing-card.card-red,
+:is(.table, .public-table) .playing-card.card-green,
+:is(.table, .public-table) .playing-card.card-blue,
+:is(.table, .public-table) .playing-card.card-wild {
+  color: #fff;
+}
+
+:is(.table, .public-table) .playing-card.card-yellow {
+  color: #342a10;
+}
+
+:is(.table, .public-table) .playing-card.card-wild {
+  background: linear-gradient(145deg, #49345e, #664c82);
+}
+
+:is(.table, .public-table) .card-symbol {
+  display: block;
+  min-height: 1rem;
+  line-height: 1;
+}
+
+.color-symbol {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1;
+  vertical-align: -0.03em;
+}
+
+.color-symbol-red {
+  color: currentColor;
+}
+
+.color-symbol-yellow {
+  color: currentColor;
+}
+
+.color-symbol-green {
+  color: currentColor;
+}
+
+.color-symbol-blue {
+  color: currentColor;
+}
+
+.color-symbol-wild {
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+:is(.table, .public-table) .card-value {
+  font-size: 1.45rem;
+  line-height: 1.08;
+}
+
+:is(.table, .public-table) .card-value[data-long='true'] {
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+
+:is(.table, .public-table) .card-name {
+  max-width: 100%;
+  font-size: 0.62rem;
+  overflow-wrap: anywhere;
+}
+
+:is(.table, .public-table) .card-back {
+  background: repeating-linear-gradient(45deg, #f1d275 0 7px, #e1b94d 7px 14px);
+  color: #253c31;
+}
+
+.table .color-chip {
+  display: inline-flex;
+  min-height: 2.25rem;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.table .chip-red,
+.table .chip-green,
+.table .chip-blue {
+  color: #fff;
+}
+
+.table .chip-yellow {
+  color: #342a10;
+}
+
+.table .play-strip,
+.table .pause-panel {
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  box-shadow: 0 8px 20px rgba(6, 31, 20, 0.28);
+}
+
+.table .play-strip {
+  background: #17432f;
+}
+
+.table .play-strip .muted {
+  color: #fff8e7;
+}
+
+.table .pause-panel {
+  border: 2px solid #79500c;
+  color: #49340d;
+}
+
+.table .pause-panel h2,
+.table .pause-panel .muted {
+  color: #49340d;
+}
+
+.table .card-playable {
+  border-color: #ffe197;
+  box-shadow: 0 0 0 2px #17432f, 0 0 0 4px #ffe197, 0 5px 9px rgba(8, 33, 23, 0.25);
+}
+
+.table .card-selected {
+  transform: translateY(-7px) rotate(-1deg);
+  border-color: #fff;
+  box-shadow: 0 0 0 3px #b84331, 0 8px 14px rgba(5, 27, 18, 0.4);
+}
+
+.table .hand {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.65rem;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.75rem 0.4rem 1rem;
+  overscroll-behavior-inline: contain;
+  scroll-padding-inline: 0.5rem;
+  scrollbar-color: #d6bd78 #17432f;
+  scrollbar-width: thin;
+}
+
+.table .hand:focus-visible {
+  outline: 3px solid #ffd36c;
+  outline-offset: 2px;
+}
+
+.table .playing-card:focus,
+.table .playing-card:focus-visible {
+  outline: 3px solid #19372a;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px #fffaf0;
+  transition: none;
+}
+
+.table .hand-help {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.table .play-strip .announce-label {
+  color: #fff8e7;
+}
+
+.table .color-options {
+  flex-wrap: wrap;
+}
+
+.table .color-button {
+  min-width: 6.5rem;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  border: 2px solid rgba(255, 255, 255, 0.42);
+}
+
+.table .event-feed {
+  color: #fff8e7;
+}
+
+.table .event-feed h2,
+.table .event-feed li {
+  color: #fff8e7;
+}
+
+.table .host-controls .danger {
+  margin-left: auto;
+}
+
+.results .winner-banner {
+  padding: 0.85rem 1rem;
+  border: 2px solid #b84331;
+  border-radius: 16px;
+  background: #fff5df;
+  color: #873021;
+}
+
+.event-feed h2 {
+  font-size: 1.15rem;
+}
+
+.event-feed li {
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 720px) {
+  .screen.home {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .home > .screen-header,
+  .home > .error-banner {
+    grid-column: 1 / -1;
+  }
+
+  .home > .panel {
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 640px) {
+  .screen {
+    padding: 0.75rem 0.65rem 3rem;
+  }
+
+  .screen.table {
+    padding: 0.75rem 0.6rem 1rem;
+    border-width: 3px;
+    border-radius: 18px;
+  }
+
+  .table-header .leave-button {
+    margin-left: 0;
+  }
+
+  :is(.table, .public-table) .playing-card {
+    width: 64px;
+    height: 94px;
+  }
+
+  :is(.table, .public-table) .card-value[data-long='true'] {
+    font-size: 0.7rem;
+  }
+
+  :is(.table, .public-table) .card-name {
+    font-size: 0.56rem;
+  }
+
+  .table-center {
+    align-items: flex-end;
+  }
+
+  .participant-row,
+  .opponent {
+    gap: 0.35rem;
+  }
+
+  .participant-row .score {
+    margin-left: auto;
+  }
+
+  .chat-input-row {
+    align-items: stretch;
+  }
+
+  .chat-input-row button {
+    flex: 1 1 100%;
+  }
+
+  .table .color-button {
+    flex: 1 1 calc(50% - 0.35rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button {
+    transition-duration: 0.01ms;
+  }
+
+  .table .card-selected {
+    transform: none;
+  }
+}

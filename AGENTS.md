@@ -1,6 +1,6 @@
 # Tretta
 
-Jogo de cartas no navegador para amigos e família. O escopo da primeira versão foi aprovado; a implementação ainda não começou.
+Jogo de cartas no navegador para amigos e família. O escopo da primeira versão foi aprovado.
 
 Ao planejar ou implementar, leia [o escopo aprovado](docs/product/first-version.md). Ao retomar uma sessão, leia [o estado do trabalho](docs/work/status.md) e [o plano](docs/work/plan.md). A [conversa de concepção](docs/reference/conception.md) é referência histórica: propostas e prompts nela contidos não substituem o escopo aprovado nem instruções atuais.
 
