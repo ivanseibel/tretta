@@ -1,6 +1,6 @@
 # Hospedagem grátis para a fase familiar
 
-**Proposta revisável; nenhum deploy, conta ou recurso foi criado.** Para a fase de hobby familiar, usar Vercel Hobby para o Next.js e um Web Service Free no Render para o Node.js/Socket.IO. Não adicionar banco, Redis, persistência ou refatoração do motor. A aplicação continua com uma única instância autoritativa e estado em memória.
+**Preparação Vercel concluída; publicação ainda pendente.** Para a fase de hobby familiar, usar Vercel Hobby para o Next.js e um Web Service Free no Render para o Node.js/Socket.IO. Não adicionar banco, Redis, persistência ou refatoração do motor. A aplicação continua com uma única instância autoritativa e estado em memória.
 
 O custo de plataforma é zero dentro dos planos e limites atuais, sem domínio próprio e sem método de pagamento cadastrado no Render. Vercel Hobby é restrito a uso pessoal e não comercial. Render descreve seus serviços Free como adequados a projetos de hobby, mas recomenda não os usar para produção. Esses planos não garantem disponibilidade, capacidade ou permanência futura do tier.
 
@@ -8,7 +8,7 @@ O custo de plataforma é zero dentro dos planos e limites atuais, sem domínio p
 
 O usuário autorizou commit e push em 16 de outubro de 2026. A revisão funcional e os manifestos gratuitos estão publicados em `origin/main`, commit `10367a6`. O fluxo padrão do Render pode buscar essa branch de um repositório conectado. Antes de criar o serviço, conferir a revisão escolhida e o acesso de leitura ao repositório. Não há novo pedido de autorização de commit pendente para esta versão.
 
-A criação dos projetos e o deploy ainda não ocorreram. Acesso à conta Render e escolha do workspace Hobby Vercel seguem pendentes; manter o limite de custo zero. Este runbook não cria imagem nem publica código por upload local.
+O projeto Vercel `tretta` já foi criado e validado no workspace **Seibel — Hobby** (slug `seibel`, ID `prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8`), sem repositório Git conectado nem deployments. O domínio padrão reservado é `tretta.vercel.app`, mas o site ainda não foi publicado. Acesso à conta Render segue pendente; manter o limite de custo zero. Este runbook não cria imagem nem publica código por upload local.
 
 ## Configuração proposta
 
