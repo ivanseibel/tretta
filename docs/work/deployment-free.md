@@ -6,7 +6,9 @@ O custo de plataforma é zero dentro dos planos e limites atuais, sem domínio p
 
 ## Pré-requisito para publicar
 
-O fluxo padrão do Render cria o serviço a partir de um repositório Git conectado e de uma branch com commits; a alternativa documentada é uma imagem de contêiner publicada. O usuário autorizou expressamente commit e push em 16 de outubro de 2026. O orquestrador publicará a revisão validada e conferirá que o SHA esperado está no remoto antes de conectar o serviço. Não é necessário pedir nova autorização para essa publicação. Este runbook não usa upload local nem cria imagem de contêiner.
+O usuário autorizou commit e push em 16 de outubro de 2026. A revisão funcional e os manifestos gratuitos estão publicados em `origin/main`, commit `10367a6`. O fluxo padrão do Render pode buscar essa branch de um repositório conectado. Antes de criar o serviço, conferir a revisão escolhida e o acesso de leitura ao repositório. Não há novo pedido de autorização de commit pendente para esta versão.
+
+A criação dos projetos e o deploy ainda não ocorreram. Acesso à conta Render e escolha do workspace Hobby Vercel seguem pendentes; manter o limite de custo zero. Este runbook não cria imagem nem publica código por upload local.
 
 ## Configuração proposta
 
