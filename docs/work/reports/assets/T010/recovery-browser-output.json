@@ -1,0 +1,135 @@
+{
+  "node": "v22.23.1",
+  "roomCodeMasked": "AY…",
+  "results": {
+    "mode": "producao",
+    "heartbeat": "padrao (sem TRE_TTA_* de ping)",
+    "bia": {
+      "handCountBefore": 7,
+      "handDigestBefore": "cdd5296f5eec7faa509a649656df6e9eb3531d7293a30cf293587d76f3f24578",
+      "recoveringVisibleMsAfterReload": 32,
+      "recoveringStillAtPlus1s": true,
+      "recoveringStillAtPlus13s": true,
+      "joinFormDuringWait": false,
+      "errorDuringWait": null,
+      "connectingDuringWait": false,
+      "recoveredHandVisible": true,
+      "msToRecoveryAfterReload": 46612,
+      "msToRecoveryAfterCut": 46612,
+      "joinFormEverSeen": false,
+      "errorEverSeen": null,
+      "handCountAfter": 7,
+      "sameHandDigest": true,
+      "final": {
+        "hand": true,
+        "joinForm": false,
+        "error": null,
+        "recovering": false
+      }
+    },
+    "host": {
+      "pausePanelAppeared": true,
+      "msToPauseAfterCut": 44590,
+      "pauseClearedAfterRecovery": true,
+      "msToPauseClearedAfterCut": 46612,
+      "handVisibleAtEnd": true
+    },
+    "proxy": {
+      "connectionsBeforeCut": [
+        1,
+        2
+      ]
+    },
+    "storage": {
+      "before": {
+        "present": true,
+        "length": 43,
+        "checksum": 1833109166
+      },
+      "after": {
+        "present": true,
+        "length": 43,
+        "checksum": 1833109166
+      },
+      "credentialUnchanged": true
+    },
+    "acceptance": {
+      "automatic": true,
+      "noJoinForm": true,
+      "noError": true,
+      "recoveringShownWhileWaiting": true,
+      "sameHand": true,
+      "credentialPreserved": true
+    },
+    "pageErrors": []
+  },
+  "timeline": [
+    {
+      "ms": 5359,
+      "kind": "web.build"
+    },
+    {
+      "ms": 5637,
+      "kind": "server.ready"
+    },
+    {
+      "ms": 5917,
+      "kind": "web.ready"
+    },
+    {
+      "ms": 6330,
+      "kind": "proxy.connection",
+      "id": 1
+    },
+    {
+      "ms": 6912,
+      "kind": "proxy.connection",
+      "id": 2
+    },
+    {
+      "ms": 7450,
+      "kind": "round.started"
+    },
+    {
+      "ms": 7465,
+      "kind": "proxy.blackhole",
+      "id": 2
+    },
+    {
+      "ms": 7465,
+      "kind": "cut",
+      "connection": 2
+    },
+    {
+      "ms": 7490,
+      "kind": "proxy.connection",
+      "id": 3
+    },
+    {
+      "ms": 32,
+      "kind": "bia.recovering-visible"
+    },
+    {
+      "ms": 20676,
+      "kind": "bia.wait-sampled",
+      "recoveringStayed": true,
+      "joinForm": false
+    },
+    {
+      "ms": 52055,
+      "kind": "ana.pause-visible",
+      "msAfterCut": 44590
+    },
+    {
+      "ms": 54077,
+      "kind": "bia.recovered",
+      "msAfterReload": 46612,
+      "msAfterCut": 46612
+    },
+    {
+      "ms": 54077,
+      "kind": "ana.pause-cleared",
+      "msAfterCut": 46612
+    }
+  ]
+}

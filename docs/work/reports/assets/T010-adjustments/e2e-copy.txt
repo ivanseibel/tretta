@@ -1,0 +1,45 @@
+Scope: all 5 workspace projects
+✓ Lockfile passes supply-chain policies (verified 1d ago)
+Lockfile is up to date, resolution step is skipped
+Already up to date
+
+Done in 408ms using pnpm v11.14.0
+$ playwright test
+[WebServer] $ next dev
+
+Running 32 tests using 1 worker
+
+  ✓   1 e2e/chat.spec.ts:27:1 › chat na preparação, mesa e resultado com desktop e celular, reload recupera histórico (3.8s)
+  ✓   2 e2e/chat.spec.ts:93:1 › quem aguarda vê a mesa pública, participa do chat e o silêncio local vale por identidade (2.5s)
+  ✓   3 e2e/chat.spec.ts:161:1 › limite de envio, contador Unicode e recusa explicada preservam o texto (11.5s)
+  ✓   4 e2e/effects.spec.ts:152:1 › fila serial de efeitos com provocação, jogada durante apresentação e expectador (10.4s)
+  ✓   5 e2e/effects.spec.ts:222:1 › as duas variações de Bloqueio e a compra por denúncia com variação fixada (4.5s)
+  ✓   6 e2e/effects.spec.ts:255:1 › itens consecutivos reiniciam a apresentação completa e o modo reduzido (12.0s)
+  ✓   7 e2e/effects.spec.ts:348:1 › denúncia por penalidade com a variação de avalanche em desktop e celular (3.5s)
+  ✓   8 e2e/effects.spec.ts:391:1 › Inversão com três pessoas: boomerangue e moinho em sequência (4.9s)
+  ✓   9 e2e/effects.spec.ts:436:1 › vitória com confete e troféu preservando a sequência final (7.6s)
+  ✓  10 e2e/effects.spec.ts:488:1 › preferências individuais: animação, som, ocultação, sistema e reload (17.8s)
+  ✓  11 e2e/effects.spec.ts:610:1 › entrada de quem aguarda durante a vez do substituto com apresentação diferente (7.1s)
+  ✓  12 e2e/interface-keyboard.spec.ts:41:1 › criação, sala e rodada completa operáveis por teclado com foco e coringa (2.2s)
+  ✓  13 e2e/interface-keyboard.spec.ts:134:1 › denúncia de última carta aceita por teclado com retorno de foco (2.0s)
+  ✓  14 e2e/interface-keyboard.spec.ts:162:1 › chat, provocações e preferências funcionam sem mouse (986ms)
+  ✓  15 e2e/interface-visual.spec.ts:48:1 › capturas e largura estreita em cada estado de sala real (4.2s)
+  ✓  16 e2e/interface-visual.spec.ts:188:1 › oito participantes com apelidos de 24 caracteres cabem em 320 px (5.0s)
+  ✓  17 e2e/leave-host.spec.ts:11:1 › saída voluntária ativa o substituto e a saída do anfitrião transfere o papel (1.6s)
+  ✓  18 e2e/leave-host.spec.ts:50:1 › anfitrião remove participante no lobby e o removido vê o aviso e pode voltar como nova pessoa (1.1s)
+  ✓  19 e2e/pause.spec.ts:12:1 › pausa por queda, substituição após o prazo e retorno pela mesma vaga (4.8s)
+  ✓  20 e2e/pause.spec.ts:55:1 › anfitrião encerra a rodada sem vencedor e reabre a preparação (1.2s)
+  ✓  21 e2e/recovery-wait.spec.ts:10:1 › nova aba com a mesma identidade espera a retomada sem formulário e sem derrubar a aba original (2.5s)
+  ✓  22 e2e/recovery.spec.ts:12:1 › atualizar a página recupera identidade, mão e fase após compra; a conexão some e volta (1.7s)
+  ✓  23 e2e/refinements.spec.ts:12:1 › mesa e pares de provocação cabem de celular a desktop (1.2s)
+  ✓  24 e2e/refinements.spec.ts:62:1 › chat recente no topo preserva leitura e volta ao topo ao enviar (1.3s)
+  ✓  25 e2e/refinements.spec.ts:101:1 › aviso de vez nasce ligado, não repete durante a vez e respeita preferências (1.7s)
+  ✓  26 e2e/scoreboard.spec.ts:24:1 › vitórias humanas permanecem no placar depois da saída e a vaga liberada aceita pessoa nova (2.8s)
+  ✓  27 e2e/server-restart.spec.ts:11:1 › reiniciar o processo real do servidor faz a interface informar que a sala deixou de existir (2.5s)
+  ✓  28 e2e/t007-eight-seat.spec.ts:32:1 › T007: oito clientes entram por convite, jogam e concluem uma rodada (12.9s)
+  ✓  29 e2e/taunt.spec.ts:56:1 › quatro provocações com emissores distintos, recusa de cooldown e jogada com efeito (28.9s)
+  ✓  30 e2e/two-players.spec.ts:60:1 › rodada completa com desktop e celular (2.8s)
+  ✓  31 e2e/two-players.spec.ts:132:1 › denúncia pela interface e entrada durante a rodada (2.6s)
+  ✓  32 e2e/two-players.spec.ts:176:1 › convite inválido mostra mensagem compreensível (296ms)
+
+  32 passed (2.9m)

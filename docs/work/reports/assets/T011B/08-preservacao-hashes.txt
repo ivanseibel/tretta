@@ -1,0 +1,44 @@
+T011B — preservação dos históricos e escopo das mudanças (árvore primária)
+
+Comparação por hash SHA-256 da árvore primária contra o baseline capturado antes das edições
+(/private/tmp/tretta-t011b-baseline/: source-before.sha256 com 610 arquivos, reports-assets.sha256):
+
+1) Fontes (258 arquivos de código/contrato/configuração do baseline) — 8 com conteúdo alterado,
+   todos em apps/web; nenhum outro arquivo de fonte mudou:
+
+< ./apps/web/app/globals.css  b05b2b484d86298523b39bbabec7acd7f210000204e04d01225408035e10e684
+> ./apps/web/app/globals.css  d4cd00ceb554084193c6635a208105218fa6472c8bdc922e94a9ec8a24da838d
+< ./apps/web/app/page.tsx  08b1e622109671a3102c4f1a0aae3e5f54ec8aa8c31292a9a69db4a92920e8cf
+> ./apps/web/app/page.tsx  94bd66d64e1f23902d1344fa647c3b03422de00ff5ee7b6495dca976c7945fce
+< ./apps/web/app/providers.tsx  cd614b7b89e356e95e9ac81e692ed3872b58c4d96c883798e347458412502aee
+> ./apps/web/app/providers.tsx  c6bb85546a900c5ae6217c7533ea9fe6fc0393e8f2c20048b6277bd064dd6d87
+< ./apps/web/app/sala/[code]/page.tsx  a66fb5b67d4cb9114b57de7564f57188ccd14b6ab4f46505b9b3ed7802fd2691
+> ./apps/web/app/sala/[code]/page.tsx  a2d4760941644358e38700197574ec03416b95321c5e3ab7869a841a1ce93699
+< ./apps/web/components/GameTable.tsx  ad1b4cd8ef2d0c4fafe77fcf29cc34bf436da3cc07487abd3367376b5f48ac9e
+> ./apps/web/components/GameTable.tsx  6c7ebcda8c0bf871b785b0c089b9cb4b8076b5a427326a70bcf6fa4127a0df8f
+< ./apps/web/components/Lobby.tsx  b5e0772a175385502240dc30a5352679a0ee08bf071be02face1bb668894d509
+> ./apps/web/components/Lobby.tsx  1b6da6e929ec2261c4e6f77e0ad313fadbcd0ebe2029c58f783dae5d6d091860
+< ./apps/web/components/PausePanel.tsx  a99fc9e3c947691940e14b7587926bb79b666826d24e9120aaa755cc66d46612
+> ./apps/web/components/PausePanel.tsx  e5922b5b1d52ef18873c04ad4220306d8e4bf490e253cc5b4863891be68fbc99
+< ./apps/web/components/Results.tsx  14f22ff42dde7f69c0b8df3551b5b460b80316bcae8ccb87c486651097320faa
+> ./apps/web/components/Results.tsx  b57f91f38f18aedd8a1a6dcb9204ac31d8677e064d245070b76b888980f0d7fe
+
+2) Assets aceitos: 352 arquivos em docs/work/reports/assets/** antes e depois; diff de conteúdo = 0
+   (nenhum histórico aceito alterado na árvore primária).
+
+3) git status — novas entradas além do baseline (90 linhas; total agora 99):
+ M apps/web/app/page.tsx
+ ?? apps/web/e2e/training.spec.ts
+ ?? apps/web/e2e/training.ts
+ ?? apps/web/test/training-entry.test.tsx
+ ?? apps/web/test/training-home.test.tsx
+ ?? apps/web/test/training-lobby.test.tsx
+ ?? apps/web/test/training-results.test.tsx
+ ?? apps/web/test/training-table.test.tsx
+ ?? docs/work/reports/assets/T011B/
+   (os demais arquivos editados já apareciam como modificados no baseline T008–T011A e não mudaram de estado)
+
+4) Suítes executadas somente na cópia /private/tmp/tretta-t011b-verify-01/tree. Dentro dela, specs
+   existentes reescreveram seus próprios artefatos (assets T004/T006/T007/T008 e o JSON do teste de
+   carga dez-salas) — comportamento conhecido do harness, confinado à cópia. A árvore primária não
+   executou suítes; recebeu fisicamente apenas assets/T011B e os logs de evidência.

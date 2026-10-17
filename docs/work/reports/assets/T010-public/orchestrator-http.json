@@ -1,0 +1,13 @@
+{
+  "homeStatus": 200,
+  "roomShellStatus": 200,
+  "renderHealthStatus": 200,
+  "renderHealthBody": "{\"ok\":true}",
+  "scriptCount": 10,
+  "bundleMarkers": {
+    "recovery-exhausted": true,
+    "retry-recovery-button": true,
+    "Recuperando o vínculo com a sala": true,
+    "https://tretta-server.onrender.com": true
+  }
+}

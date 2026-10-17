@@ -20,7 +20,7 @@ import type {
   TauntSendAck,
   TauntType,
 } from '@tretta/protocol';
-import { CHAT_HISTORY_PAGE_SIZE, type Avatar } from '@tretta/protocol/shared';
+import { CHAT_HISTORY_PAGE_SIZE, type Avatar, type RoomMode } from '@tretta/protocol/shared';
 import {
   clearIdentity,
   createSocket,
@@ -45,8 +45,28 @@ import {
   type Presentation,
 } from '@/lib/presentationQueue';
 import { playEffectSound, playTauntSound, setSoundMuted, stopAllSounds } from '@/lib/sounds';
+import { TurnNotifier } from '@/components/TurnNotifier';
 
-export type RejoinResult = 'ok' | 'not-found' | 'invalid' | 'already' | 'none' | 'error' | 'offline';
+export type RejoinResult =
+  | 'ok'
+  | 'not-found'
+  | 'invalid'
+  | 'none'
+  | 'deadline'
+  | 'cancelled'
+  // Mesa de treino individual: recusa definitiva daquela tentativa; nenhum
+  // ciclo automático volta a tentar e a identidade guardada fica isolada.
+  | 'refused'
+  // Estados históricos mantidos para consumidores antigos; o ciclo atual não os produz.
+  | 'already'
+  | 'error'
+  | 'offline';
+
+/**
+ * Fase da retomada do contexto corrente. `exhausted` é terminal para o ciclo:
+ * só a retomada explícita (`retryRecovery`) inicia outro.
+ */
+export type RecoveryPhase = 'idle' | 'recovering' | 'exhausted';
 export type ConnectionState = 'live' | 'lost';
 
 export interface RoomContextValue {
@@ -58,9 +78,27 @@ export interface RoomContextValue {
   reconnectedAt: number | null;
   removedMessage: string | null;
   roomGone: boolean;
-  createRoom: (nickname: string, avatar: Avatar) => Promise<string | null>;
+  /**
+   * Mesa de treino recusou a entrada deste contexto: recusa definitiva
+   * daquela tentativa. Nada é apagado nem substituído e nenhum ciclo
+   * automático volta a tentar; a página mostra a explicação própria.
+   */
+  trainingRefused: boolean;
+  createRoom: (nickname: string, avatar: Avatar, mode?: RoomMode) => Promise<string | null>;
   joinRoom: (code: string, nickname: string, avatar: Avatar) => Promise<boolean>;
+  /**
+   * Retomada da identidade existente: inicia (ou coalesce no) ciclo corrente,
+   * que repete com backoff até 60 s por tentativa de contexto. Devolve o
+   * desfecho: `ok`, `not-found`, `invalid`, `none`, `deadline`, `refused`
+   * ou `cancelled`.
+   */
   rejoin: (code: string) => Promise<RejoinResult>;
+  /** Retomada explícita após o prazo: inicia um novo ciclo do zero. */
+  retryRecovery: (code: string) => Promise<RejoinResult>;
+  /** Cancela o ciclo corrente (navegação, saída, mudança de contexto). */
+  cancelRecovery: () => void;
+  /** Fase da retomada do contexto corrente. */
+  recoveryPhase: RecoveryPhase;
   setReady: (ready: boolean) => Promise<void>;
   startRound: () => Promise<void>;
   returnToLobby: () => Promise<void>;
@@ -91,6 +129,8 @@ export interface RoomContextValue {
   activePresentation: Presentation | null;
   /** Preferências de apresentação deste navegador; individuais, sem conta. */
   preferences: MoodPreferences;
+  /** Preferências locais carregadas antes de permitir efeitos sonoros. */
+  preferencesReady: boolean;
   /** Modo efetivo: `prefers-reduced-motion` limita "completa" a "reduced". */
   activeAnimations: AnimationPreference;
   /** Atualiza preferências parcialmente e persiste no storage local. */
@@ -112,6 +152,12 @@ export interface RoomContextValue {
    * o vínculo ou a sala; transporte reconectado não restaura sozinho.
    */
   chatLinkReady: boolean;
+  /**
+   * Vínculo utilizável no contexto atual: transporte vivo **e** ack
+   * autorizado (criação, entrada ou retomada confirmada). Controles mutáveis
+   * e comandos usam este gate — transporte reconectado não basta.
+   */
+  interactive: boolean;
   mutedPlayerIds: readonly string[];
   muteAuthor: (playerId: string) => void;
   unmuteAuthor: (playerId: string) => void;
@@ -122,6 +168,20 @@ export interface RoomContextValue {
 interface AckEnvelope {
   ok: boolean;
   error?: { code: string; message: string };
+}
+
+/**
+ * Intenção de reentrada de um ciclo de retomada: o payload exato enviado ao
+ * servidor. Preservada entre ciclos quando o resultado fica incerto (o reenvio
+ * recebe a resposta memorizada do dedupe do servidor) e descartada em qualquer
+ * troca de contexto/sala/identidade.
+ */
+interface RejoinIntent {
+  intentId: string;
+  roomCode: string;
+  nickname: string;
+  avatar: Avatar;
+  credential: string;
 }
 
 const RoomContext = createContext<RoomContextValue | null>(null);
@@ -137,6 +197,17 @@ const LINK_PENDING_ERROR = {
   code: 'LINK_PENDING',
   message: 'Recuperando o vínculo com a sala. Aguarde a confirmação para enviar.',
 };
+
+/**
+ * Espera máxima de um ciclo de retomada. Quando o servidor ainda considera a
+ * identidade conectada (transporte antigo não reconhecido), o reconhecimento
+ * pode levar dezenas de segundos — o ciclo cobre essa janela e para no prazo.
+ */
+const RECOVERY_DEADLINE_MS = 60_000;
+/** Cadência moderada: recuo exponencial limitado, cancelável a cada passo. */
+const RECOVERY_BACKOFF_START_MS = 500;
+const RECOVERY_BACKOFF_FACTOR = 1.5;
+const RECOVERY_BACKOFF_MAX_MS = 4_000;
 
 function emitWithAck<T>(socket: RoomSocket, event: string, payload: unknown): Promise<T> {
   return new Promise((resolve) => {
@@ -203,12 +274,15 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
   const [reconnectedAt, setReconnectedAt] = useState<number | null>(null);
   const [removedMessage, setRemovedMessage] = useState<string | null>(null);
   const [roomGone, setRoomGone] = useState(false);
+  const [trainingRefused, setTrainingRefused] = useState(false);
+  const [recoveryPhase, setRecoveryPhaseState] = useState<RecoveryPhase>('idle');
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [chatHistoryLoading, setChatHistoryLoading] = useState(false);
   const [chatLinkEpoch, setChatLinkEpoch] = useState(0);
   const [chatLinkReady, setChatLinkReadyState] = useState(false);
   const [activePresentation, setActivePresentation] = useState<Presentation | null>(null);
   const [preferences, setPreferencesState] = useState<MoodPreferences>(DEFAULT_PREFERENCES);
+  const [preferencesReady, setPreferencesReady] = useState(false);
   const [systemReduced, setSystemReduced] = useState(false);
   const [mutedPlayerIds, setMutedPlayerIds] = useState<readonly string[]>([]);
   const socketRef = useRef<RoomSocket | null>(null);
@@ -218,6 +292,36 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
   const lastVersionRef = useRef(-1);
   const hadDisconnectRef = useRef(false);
   const recoveredTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Ciclo de retomada corrente (um por sala): coalesce gatilhos concorrentes
+  // da página, do `connect` do socket e da retomada manual.
+  const recoveryRef = useRef<{ code: string; token: number; promise: Promise<RejoinResult> } | null>(null);
+  // Geração do ciclo: cancelamento/mudança de contexto avança o contador e
+  // respostas antigas (ack, timer, sleep) deixam de ter efeito.
+  const recoveryTokenRef = useRef(0);
+  // Sala cujo ciclo terminou no prazo: novos ciclos só por retomada explícita.
+  const exhaustedCodeRef = useRef<string | null>(null);
+  // Sala de treino cuja entrada foi recusada: recusa definitiva daquele
+  // contexto — nenhum gatilho automático volta a tentar enquanto ele viver.
+  const refusedCodeRef = useRef<string | null>(null);
+  // Ação de criação em voo: clique repetido não emite outra criação.
+  const busyRef = useRef(false);
+  // Geração da entrada manual (formulário/código): cada tentativa nova e cada
+  // invalidação de contexto (navegação/limpeza da página, saída, vínculo novo)
+  // avança o contador; respostas de tentativas antigas deixam de ter efeito.
+  const joinAttemptRef = useRef(0);
+  // Intenção cujo resultado ficou incerto no vencimento: guardada para o próximo
+  // ciclo explícito confirmá-la com o reenvio exato do payload (replay do dedupe
+  // do servidor) antes de tentar ids novos. Nunca cruza contexto: a adoção
+  // exige sala e identidade iguais e qualquer limpeza descarta o registro.
+  const uncertainIntentRef = useRef<{ roomCode: string; attempt: RejoinIntent } | null>(null);
+  // Espelho da fase para callbacks de socket decidirem sem estado capturado.
+  const recoveryPhaseRef = useRef<RecoveryPhase>('idle');
+  // Geração do transporte: cada queda avança o contador e respostas presas ao
+  // transporte caído deixam de valer para o vínculo no transporte vigente.
+  const transportEpochRef = useRef(0);
+  // Esperas do ciclo de retomada (ack e cadência) acordadas por eventos de
+  // transporte: a queda invalida a tentativa em voo; a reconexão retoma logo.
+  const transportWaitersRef = useRef(new Set<() => void>());
   // Geração do vínculo sala/identidade: cada limpeza ou novo vínculo autorizado
   // avança o contador e respostas assíncronas antigas deixam de ter efeito.
   const chatLinkRef = useRef(0);
@@ -320,7 +424,55 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
     setChatLinkReadyState(ready);
   }, []);
 
+  const applyRecoveryPhase = useCallback((phase: RecoveryPhase) => {
+    recoveryPhaseRef.current = phase;
+    setRecoveryPhaseState(phase);
+  }, []);
+
+  /** Acorda as esperas do ciclo de retomada (queda, reconexão, cancelamento). */
+  const wakeTransport = useCallback(() => {
+    const waiters = transportWaitersRef.current;
+    transportWaitersRef.current = new Set();
+    for (const resolve of waiters) resolve();
+  }, []);
+
+  /**
+   * Espera cancelável por um evento de transporte. `dispose` remove o
+   * resolvedor para nenhuma promessa de retomada sobreviver à tentativa/ciclo.
+   */
+  const waitTransport = useCallback((): { promise: Promise<'transport'>; dispose: () => void } => {
+    let resolve!: () => void;
+    const promise = new Promise<'transport'>((settle) => {
+      resolve = () => settle('transport');
+    });
+    transportWaitersRef.current.add(resolve);
+    return {
+      promise,
+      dispose: () => {
+        transportWaitersRef.current.delete(resolve);
+      },
+    };
+  }, []);
+
+  /** Encerra o ciclo corrente sem aplicar nenhuma resposta pendente. */
+  const cancelRecovery = useCallback(() => {
+    recoveryTokenRef.current += 1;
+    // Contexto invalidado: entradas manuais pendentes perdem validade e o
+    // `busy` do formulário que as originou não pode ficar preso sem dono.
+    joinAttemptRef.current += 1;
+    setBusy(false);
+    recoveryRef.current = null;
+    exhaustedCodeRef.current = null;
+    refusedCodeRef.current = null;
+    setTrainingRefused(false);
+    // Limpeza de contexto/identidade: nenhuma intenção incerta sobrevive.
+    uncertainIntentRef.current = null;
+    wakeTransport();
+    applyRecoveryPhase('idle');
+  }, [applyRecoveryPhase, wakeTransport]);
+
   const clearRoomState = useCallback(() => {
+    cancelRecovery();
     activeRoomRef.current = null;
     lastRoomRef.current = null;
     lastVersionRef.current = -1;
@@ -336,7 +488,7 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
     setChatMessages([]);
     setChatHistoryLoading(false);
     setMutedPlayerIds([]);
-  }, [bumpChatLink, setChatLinkReady]);
+  }, [bumpChatLink, cancelRecovery, setChatLinkReady]);
 
   const ensureSocket = useCallback((): RoomSocket => {
     if (socketRef.current !== null) return socketRef.current;
@@ -384,12 +536,18 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
     });
     socket.on('disconnect', () => {
       hadDisconnectRef.current = true;
+      // Queda de transporte: respostas em voo deixam de valer para o vínculo
+      // (o ack preso a este transporte não confirma o próximo) e as esperas do
+      // ciclo são acordadas para reter/reavaliar a tentativa.
+      transportEpochRef.current += 1;
+      wakeTransport();
       setConnection('lost');
       // Conexão caiu: o vínculo autorizado deixa de valer até nova confirmação.
       setChatLinkReady(false);
     });
     socket.on('connect', () => {
       setConnection('live');
+      wakeTransport();
       if (!hadDisconnectRef.current) return;
       hadDisconnectRef.current = false;
       const code = activeRoomRef.current;
@@ -403,13 +561,20 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
     });
     socketRef.current = socket;
     return socket;
-  }, [cancelPresentations, clearRoomState, presentEffect, presentTaunt, setChatLinkReady]);
+  }, [cancelPresentations, clearRoomState, presentEffect, presentTaunt, setChatLinkReady, wakeTransport]);
 
   const resetRoomState = useCallback((code: string) => {
     const previousRoom = lastRoomRef.current;
+    // Vínculo novo confirmado substitui o contexto: entradas manuais antigas
+    // não podem mais aplicar efeitos sobre ele.
+    joinAttemptRef.current += 1;
+    setBusy(false);
     activeRoomRef.current = code;
     lastRoomRef.current = code;
     lastVersionRef.current = -1;
+    // Vínculo autorizado confirmado: não há mais recusa pendente deste contexto.
+    refusedCodeRef.current = null;
+    setTrainingRefused(false);
     // Reentrada na mesma sala preserva os ids apresentados (replay não
     // reapresenta); troca de sala descarta a proteção da sala anterior.
     if (previousRoom !== code) {
@@ -434,89 +599,216 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
     setRoomGone(false);
   }, [bumpChatLink, setChatLinkReady]);
 
-  const waitForConnection = useCallback(
-    (timeoutMs = 8000): Promise<boolean> => {
-      const socket = ensureSocket();
-      if (socket.connected) return Promise.resolve(true);
-      // Numa carga de página o socket ainda está conectando: espera em vez de falhar.
-      return new Promise((resolve) => {
-        const onConnect = (): void => {
-          clearTimeout(timer);
-          resolve(true);
-        };
-        const timer = setTimeout(() => {
-          socket.off('connect', onConnect);
-          resolve(false);
-        }, timeoutMs);
-        socket.once('connect', onConnect);
-      });
-    },
-    [ensureSocket],
-  );
-
-  const rejoinInternal = useCallback(
-    async (code: string): Promise<RejoinResult> => {
+  /**
+   * Ciclo de retomada da identidade existente. Um por sala: disparos
+   * concorrentes (efeito da página, `connect` do socket, retomada manual)
+   * coalescem nesta promessa. O ciclo tem prazo efetivo de 60 s (vencimento
+   * próprio, mesmo com ack ou cadência em voo) e cada tentativa fica presa ao
+   * transporte que a enviou: resposta de um transporte caído não habilita o
+   * vínculo nem sobrescreve contexto/identidade. Recusa conhecida (resposta do
+   * servidor no transporte vigente) consome a intenção e a próxima usa um
+   * `intentId` novo; resultado incerto (timeout local, offline, transporte
+   * caído) preserva o payload exato — o reenvio da mesma intenção recebe a
+   * resposta memorizada do dedupe do servidor. Só a falta de identidade, a
+   * credencial inválida e a sala inexistente são definitivas. O sucesso passa
+   * pelo `resetRoomState`, que confirma o vínculo e preserva a
+   * credencial/identidade. Entre ciclos, o vencimento com resultado incerto
+   * preserva a intenção exata: a próxima retomada explícita a confirma com o
+   * reenvio do mesmo payload (replay do dedupe) antes de tentar ids novos;
+   * troca de sala/identidade ou limpeza de contexto descarta o registro.
+   */
+  const startRecovery = useCallback(
+    (code: string, explicit = false): Promise<RejoinResult> => {
+      const active = recoveryRef.current;
+      if (active !== null && active.code === code) return active.promise;
       const leaving = leavingRef.current;
-      if (leaving !== null && leaving.code === code && Date.now() < leaving.until) return 'none';
+      if (leaving !== null && leaving.code === code && Date.now() < leaving.until) {
+        return Promise.resolve('none');
+      }
+      // Vínculo autorizado e vivo: nada a retomar (corrida comum logo após o ack).
+      if (chatLinkReadyRef.current && activeRoomRef.current === code) return Promise.resolve('ok');
+      // Depois do prazo, nenhum gatilho automático reinicia: só retomada explícita.
+      if (!explicit && exhaustedCodeRef.current === code) return Promise.resolve('deadline');
+      // Treino recusado é definitivo: nenhum gatilho automático reabre a tentativa.
+      if (!explicit && refusedCodeRef.current === code) return Promise.resolve('refused');
       const identity = loadIdentity(code);
       if (identity === null) {
         clearRoomState();
-        return 'none';
+        return Promise.resolve('none');
       }
-      if (!(await waitForConnection())) return 'offline';
-      const socket = ensureSocket();
-      for (let attempt = 0; attempt < 4; attempt++) {
-        const response = await emitWithAck<Ack<JoinRoomAck>>(socket, 'client:joinRoom', {
-          intentId: newIntentId(),
-          roomCode: code,
-          nickname: identity.nickname,
-          avatar: identity.avatar,
-          credential: identity.credential,
+      const token = ++recoveryTokenRef.current;
+      exhaustedCodeRef.current = null;
+      applyRecoveryPhase('recovering');
+      const promise = (async (): Promise<RejoinResult> => {
+        const deadlineAt = Date.now() + RECOVERY_DEADLINE_MS;
+        // Vencimento do ciclo: resolve no prazo mesmo com ack/cadência em voo.
+        let deadlineTimer: ReturnType<typeof setTimeout> | null = null;
+        const deadlinePromise = new Promise<'deadline'>((resolve) => {
+          deadlineTimer = setTimeout(resolve, RECOVERY_DEADLINE_MS, 'deadline');
         });
-        if (response.ok) {
-          resetRoomState(code);
-          saveIdentity(code, { ...identity, playerId: response.playerId, credential: response.credential });
-          return 'ok';
+        try {
+          let waitMs = RECOVERY_BACKOFF_START_MS;
+          // Intenção corrente: recusas conhecidas a consomem; resultados
+          // incertos preservam o payload para o replay do dedupe do servidor.
+          let attempt: RejoinIntent | null = null;
+          // Vencimento do ciclo: preserva a intenção sem desfecho para a
+          // retomada explícita seguinte; tentativa consumida não guarda nada.
+          const finishDeadline = (): 'deadline' => {
+            if (attempt !== null) uncertainIntentRef.current = { roomCode: code, attempt };
+            return 'deadline';
+          };
+          for (;;) {
+            if (recoveryTokenRef.current !== token) return 'cancelled';
+            if (chatLinkReadyRef.current && activeRoomRef.current === code) return 'ok';
+            if (Date.now() >= deadlineAt) return finishDeadline();
+            const current = loadIdentity(code);
+            if (current === null) {
+              clearRoomState();
+              return 'none';
+            }
+            if (attempt === null) {
+              const stored = uncertainIntentRef.current;
+              if (
+                stored !== null &&
+                stored.roomCode === code &&
+                stored.attempt.credential === current.credential &&
+                stored.attempt.nickname === current.nickname &&
+                stored.attempt.avatar === current.avatar
+              ) {
+                // Confirmação segura entre ciclos: reenvia a MESMA intenção
+                // (o dedupe devolve a resposta memorizada) e o registro passa
+                // a pertencer a este ciclo.
+                attempt = stored.attempt;
+                uncertainIntentRef.current = null;
+              } else {
+                if (stored !== null && stored.roomCode === code) {
+                  // Mesma sala com identidade diferente: contexto trocado.
+                  uncertainIntentRef.current = null;
+                }
+                attempt = {
+                  intentId: newIntentId(),
+                  roomCode: code,
+                  nickname: current.nickname,
+                  avatar: current.avatar,
+                  credential: current.credential,
+                };
+              }
+            }
+            const generation = transportEpochRef.current;
+            const wake = waitTransport();
+            const outcome = await Promise.race([
+              emitWithAck<Ack<JoinRoomAck>>(ensureSocket(), 'client:joinRoom', attempt),
+              wake.promise,
+              deadlinePromise,
+            ]);
+            wake.dispose();
+            if (recoveryTokenRef.current !== token) return 'cancelled';
+            if (outcome === 'deadline' || Date.now() >= deadlineAt) return finishDeadline();
+            if (outcome !== 'transport') {
+              const response = outcome;
+              const staleTransport = generation !== transportEpochRef.current;
+              // Códigos locais (TIMEOUT/OFFLINE) não estão na união do protocolo.
+              const errorCode: string | null = response.ok ? null : String(response.error.code);
+              // Decisão definitiva do servidor sobre identidade/sala vale mesmo
+              // quando a resposta chega de um transporte que caiu em seguida.
+              if (errorCode === 'CREDENTIAL_INVALID') {
+                clearIdentity(code);
+                clearRoomState();
+                return 'invalid';
+              }
+              if (errorCode === 'ROOM_NOT_FOUND') {
+                clearRoomState();
+                setRoomGone(true);
+                return 'not-found';
+              }
+              if (errorCode === 'TRAINING_ROOM_ENTRY_REFUSED') {
+                // Mesa de treino individual: recusa definitiva daquela
+                // tentativa. A identidade guardada permanece isolada — nada é
+                // apagado nem substituído — e nenhum ciclo automático volta a
+                // tentar enquanto o contexto viver.
+                refusedCodeRef.current = code;
+                setTrainingRefused(true);
+                uncertainIntentRef.current = null;
+                return 'refused';
+              }
+              if (response.ok && !staleTransport) {
+                // Vínculo confirmado: nenhum resultado incerto segue pendente.
+                uncertainIntentRef.current = null;
+                resetRoomState(code);
+                saveIdentity(code, { ...current, playerId: response.playerId, credential: response.credential });
+                return 'ok';
+              }
+              if (!response.ok && !staleTransport && errorCode !== 'TIMEOUT' && errorCode !== 'OFFLINE') {
+                // Recusa conhecida no transporte vigente: id novo na próxima.
+                attempt = null;
+              }
+              // Sucesso de transporte caído, timeout local e offline são
+              // incertos: nada é aplicado e a intenção é preservada.
+            }
+            const now = Date.now();
+            if (now >= deadlineAt) return finishDeadline();
+            const wait = waitTransport();
+            let resolveStep!: (value: 'step') => void;
+            const step = new Promise<'step'>((resolve) => {
+              resolveStep = resolve;
+            });
+            const stepTimer = setTimeout(() => resolveStep('step'), Math.min(waitMs, deadlineAt - now));
+            const waited = await Promise.race([step, wait.promise, deadlinePromise]);
+            wait.dispose();
+            clearTimeout(stepTimer);
+            if (waited === 'deadline') return finishDeadline();
+            waitMs = Math.min(Math.round(waitMs * RECOVERY_BACKOFF_FACTOR), RECOVERY_BACKOFF_MAX_MS);
+          }
+        } finally {
+          // Vencimento/cancelamento não deixam timer de prazo pendurado.
+          if (deadlineTimer !== null) clearTimeout(deadlineTimer);
         }
-        if (response.error.code === 'ALREADY_CONNECTED' && attempt < 3) {
-          await new Promise((resolve) => setTimeout(resolve, 400));
-          continue;
+      })().then((result) => {
+        if (recoveryTokenRef.current !== token) return result;
+        recoveryRef.current = null;
+        if (result === 'deadline') {
+          exhaustedCodeRef.current = code;
+          applyRecoveryPhase('exhausted');
+        } else {
+          applyRecoveryPhase('idle');
         }
-        if (response.error.code === 'CREDENTIAL_INVALID') {
-          clearIdentity(code);
-          clearRoomState();
-          return 'invalid';
-        }
-        if (response.error.code === 'ROOM_NOT_FOUND') {
-          clearRoomState();
-          setRoomGone(true);
-          return 'not-found';
-        }
-        if (response.error.code === 'ALREADY_CONNECTED') {
-          setError('Esta identidade já está conectada em outra aba ou dispositivo.');
-          return 'already';
-        }
-        setError(response.error.message);
-        return 'error';
-      }
-      return 'error';
+        return result;
+      });
+      recoveryRef.current = { code, token, promise };
+      return promise;
     },
-    [clearRoomState, ensureSocket, resetRoomState, waitForConnection],
+    [applyRecoveryPhase, clearRoomState, ensureSocket, resetRoomState, waitTransport],
   );
-  const rejoinRef = useRef(rejoinInternal);
-  rejoinRef.current = rejoinInternal;
+
+  const retryRecovery = useCallback(
+    (code: string): Promise<RejoinResult> => {
+      exhaustedCodeRef.current = null;
+      refusedCodeRef.current = null;
+      setTrainingRefused(false);
+      return startRecovery(code, true);
+    },
+    [startRecovery],
+  );
+
+  const rejoinRef = useRef(startRecovery);
+  rejoinRef.current = startRecovery;
 
   useEffect(() => {
     ensureSocket();
     return () => {
       socketRef.current?.disconnect();
       socketRef.current = null;
+      // Desmontagem: nenhum ciclo nem timer de retomada sobrevive ao provedor.
+      recoveryTokenRef.current += 1;
+      recoveryRef.current = null;
+      uncertainIntentRef.current = null;
+      wakeTransport();
       if (recoveredTimerRef.current !== null) clearTimeout(recoveredTimerRef.current);
       // Desmontagem: fila, timers e áudio da sala não sobrevivem.
       getQueue().cancelAll();
       stopAllSounds();
     };
-  }, [ensureSocket, getQueue]);
+  }, [ensureSocket, getQueue, wakeTransport]);
 
   // Preferências persistidas + mídia do sistema (mudanças ao vivo são
   // consideradas; "completa" é limitada a "reduced" enquanto a mídia valer).
@@ -524,6 +816,7 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
     const stored = loadPreferences();
     preferencesRef.current = stored;
     setPreferencesState(stored);
+    setPreferencesReady(true);
     return watchSystemReducedMotion((reduced) => {
       systemReducedRef.current = reduced;
       setSystemReduced(reduced);
@@ -583,14 +876,25 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
   }, [ensureSocket]);
 
   const createRoom = useCallback(
-    async (nickname: string, avatar: Avatar): Promise<string | null> => {
+    async (nickname: string, avatar: Avatar, mode?: RoomMode): Promise<string | null> => {
+      // Ação pendente não emite outra criação: clique repetido no formulário
+      // não cria salas duplicadas nem navega antes da confirmação.
+      if (busyRef.current) return null;
+      busyRef.current = true;
       setBusy(true);
-      const response = await emitWithAck<Ack<CreateRoomAck>>(ensureSocket(), 'client:createRoom', {
-        intentId: newIntentId(),
-        nickname,
-        avatar,
-      });
-      setBusy(false);
+      let response: Ack<CreateRoomAck>;
+      try {
+        response = await emitWithAck<Ack<CreateRoomAck>>(ensureSocket(), 'client:createRoom', {
+          intentId: newIntentId(),
+          nickname,
+          avatar,
+          // `classic` é o default do protocolo e continua implícito; o treino é explícito.
+          ...(mode === undefined ? {} : { mode }),
+        });
+      } finally {
+        busyRef.current = false;
+        setBusy(false);
+      }
       if (!response.ok) {
         setError(response.error.message);
         return null;
@@ -609,18 +913,50 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
 
   const joinRoom = useCallback(
     async (code: string, nickname: string, avatar: Avatar): Promise<boolean> => {
+      // Recusa definitiva do treino já conhecida neste contexto: nada a emitir.
+      if (refusedCodeRef.current === code) return false;
+      // Retomada pendente ou esgotada da mesma sala: entrar de novo criaria
+      // outro participante e sobrescreveria a credencial da sessão existente.
+      // A invalidação definitiva (credencial revogada) limpa a identidade e
+      // libera o formulário de novo.
+      const recoveryPending = recoveryRef.current?.code === code || exhaustedCodeRef.current === code;
+      if (recoveryPending) {
+        setError('Esta sala já tem uma sessão em retomada neste navegador. Aguarde a retomada ou use "Tentar novamente".');
+        return false;
+      }
       setBusy(true);
+      // Tentativa manual presa ao contexto que a originou: navegação/limpeza,
+      // saída, vínculo novo ou outra entrada mais recente avançam a geração e
+      // esta resposta deixa de ter efeito — recusa, busy/erro, vínculo ou
+      // identidade — mesmo ao sair e voltar ao MESMO código com tentativa nova.
+      const attempt = ++joinAttemptRef.current;
+      const transport = transportEpochRef.current;
       const response = await emitWithAck<Ack<JoinRoomAck>>(ensureSocket(), 'client:joinRoom', {
         intentId: newIntentId(),
         roomCode: code,
         nickname,
         avatar,
       });
+      if (attempt !== joinAttemptRef.current) return false;
       setBusy(false);
+      // Resposta de um transporte que caiu não confirma vínculo novo; a
+      // decisão definitiva do servidor (recusa do treino) vale mesmo assim.
+      const staleTransport = transport !== transportEpochRef.current;
       if (!response.ok) {
-        setError(response.error.message);
+        if (String(response.error.code) === 'TRAINING_ROOM_ENTRY_REFUSED') {
+          // Recusa definitiva do treino: nenhuma identidade nova é criada,
+          // nenhuma credencial é trocada e nenhum retry automático reinicia;
+          // a página mostra a explicação própria.
+          refusedCodeRef.current = code;
+          setTrainingRefused(true);
+          return false;
+        }
+        if (!staleTransport) {
+          setError(response.error.message);
+        }
         return false;
       }
+      if (staleTransport) return false;
       resetRoomState(code);
       saveIdentity(code, {
         playerId: response.playerId,
@@ -635,6 +971,9 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
 
   const runSimple = useCallback(
     async (event: string, payload: Record<string, unknown>): Promise<AckEnvelope> => {
+      // Controles mutáveis da sala só valem com o vínculo autorizado no
+      // contexto atual; transporte reconectado não basta.
+      if (!chatLinkReadyRef.current) return { ok: false, error: LINK_PENDING_ERROR };
       const response = await emitWithAck<AckEnvelope>(ensureSocket(), event, payload);
       if (!response.ok && response.error !== undefined) setError(response.error.message);
       return response;
@@ -659,6 +998,8 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
 
   const leaveRoom = useCallback(async (): Promise<boolean> => {
     const code = activeRoomRef.current;
+    // Sair exige vínculo confirmado; sem ele o servidor nem sabe desta conexão.
+    if (!chatLinkReadyRef.current) return false;
     const response = await emitWithAck<AckEnvelope>(ensureSocket(), 'client:leaveRoom', { intentId: newIntentId() });
     if (!response.ok) {
       if (response.error !== undefined) setError(response.error.message);
@@ -691,6 +1032,10 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
 
   const sendCommand = useCallback(
     async (command: ClientCommand): Promise<CommandAck> => {
+      // Sem vínculo autorizado confirmado o comando não é emitido: um estado
+      // antigo retido na tela não autoriza envio. `LINK_PENDING` é um código
+      // local do cliente (não existe no protocolo do servidor).
+      if (!chatLinkReadyRef.current) return { ok: false, error: LINK_PENDING_ERROR } as CommandAck;
       const roundId = state?.room.roundId ?? null;
       if (roundId === null) {
         return { ok: false, error: { code: 'STALE_ROUND', message: 'Nenhuma rodada em andamento.' } };
@@ -830,6 +1175,8 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
 
   const activeAnimations = effectiveAnimations(preferences.animations, systemReduced);
 
+  const interactive = connection === 'live' && chatLinkReady;
+
   const value = useMemo<RoomContextValue>(
     () => ({
       state,
@@ -840,9 +1187,13 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
       reconnectedAt,
       removedMessage,
       roomGone,
+      trainingRefused,
       createRoom,
       joinRoom,
-      rejoin: rejoinInternal,
+      rejoin: startRecovery,
+      retryRecovery,
+      cancelRecovery,
+      recoveryPhase,
       setReady,
       startRound,
       returnToLobby,
@@ -857,6 +1208,7 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
       sendTaunt,
       activePresentation,
       preferences,
+      preferencesReady,
       activeAnimations,
       setPreferences,
       chatMessages,
@@ -865,6 +1217,7 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
       chatHistoryLoading,
       chatLinkEpoch,
       chatLinkReady,
+      interactive,
       mutedPlayerIds,
       muteAuthor,
       unmuteAuthor,
@@ -880,9 +1233,13 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
       reconnectedAt,
       removedMessage,
       roomGone,
+      trainingRefused,
       createRoom,
       joinRoom,
-      rejoinInternal,
+      startRecovery,
+      retryRecovery,
+      cancelRecovery,
+      recoveryPhase,
       setReady,
       startRound,
       returnToLobby,
@@ -897,6 +1254,7 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
       sendTaunt,
       activePresentation,
       preferences,
+      preferencesReady,
       activeAnimations,
       setPreferences,
       chatMessages,
@@ -904,13 +1262,26 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
       chatHistoryLoading,
       chatLinkEpoch,
       chatLinkReady,
+      interactive,
       mutedPlayerIds,
       muteAuthor,
       unmuteAuthor,
     ],
   );
 
-  return <RoomContext.Provider value={value}>{children}</RoomContext.Provider>;
+  return (
+    <RoomContext.Provider value={value}>
+      <TurnNotifier
+        state={state}
+        events={events}
+        connection={connection}
+        chatLinkReady={chatLinkReady}
+        preferencesReady={preferencesReady}
+        preferences={preferences}
+      />
+      {children}
+    </RoomContext.Provider>
+  );
 }
 
 declare global {

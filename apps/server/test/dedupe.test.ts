@@ -238,7 +238,13 @@ describe('deduplicação, ordem e placar', () => {
     const finished = latestState(hostRec);
     expect(finished.room.status).toBe('finished');
     expect(finished.self.view?.winnerId).toBe(hostId);
-    expect(finished.room.lastRound).toEqual({ roundNumber: 1, winnerId: hostId, winnerNickname: 'Ana', substitute: false });
+    expect(finished.room.lastRound).toEqual({
+      roundNumber: 1,
+      winnerId: hostId,
+      winnerNickname: 'Ana',
+      substitute: false,
+      winnerKind: 'human',
+    });
     expect(scoreOf(finished, hostId)).toBe(1);
     expect(scoreOf(finished, guestId)).toBe(0);
     await waitFor(() => latestState(guestRec).self.view?.winnerId === hostId, 'resultado para Bia');

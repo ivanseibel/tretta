@@ -25,9 +25,11 @@ import type {
   EventsMessage,
   EffectVariant,
   LastRoundSummary,
+  ParticipantKind,
   PauseInfo,
   PublicParticipant,
   RemovedMessage,
+  RoomMode,
   RoomSnapshot,
   RoomStatus,
   ScoreboardEntry,
@@ -38,6 +40,7 @@ import type {
   TauntType,
 } from '@tretta/protocol';
 import {
+  AVATARS,
   chatCodePointLength,
   CHAT_HISTORY_PAGE_SIZE,
   CHAT_MESSAGE_MAX_LENGTH,
@@ -52,11 +55,25 @@ import {
 import { decideBotCommand } from './bot.js';
 import { systemClock, type RoomClock, type TimerHandle } from './clock.js';
 import { deriveAutomaticEffects } from './effects.js';
-import { createCredential, createEffectId, createPlayerId, createRoomCode, createRoundId, createTauntId } from './ids.js';
+import {
+  createBotId,
+  createCredential,
+  createEffectId,
+  createPlayerId,
+  createRoomCode,
+  createRoundId,
+  createTauntId,
+} from './ids.js';
 
 export const DEFAULT_PAUSE_GRACE_MS = 90_000;
 export const DEFAULT_RETENTION_MS = 15 * 60_000;
 export const DEFAULT_BOT_DELAY_MS = 700;
+
+/**
+ * Bots fixos da mesa de treino: três identidades distinguíveis, sempre prontas,
+ * que jogam sozinhas com a política existente do substituto automático.
+ */
+const TRAINING_BOT_NICKNAMES = ['Tico', 'Lila', 'Nino'] as const;
 
 export interface ServerErrorBody {
   readonly code: ErrorCode;
@@ -85,6 +102,8 @@ export interface RoomTransport {
 
 export interface Participant {
   readonly id: string;
+  /** Pessoa real ou bot fixo da mesa de treino. */
+  readonly kind: ParticipantKind;
   readonly nickname: string;
   readonly avatar: Avatar;
   readonly credential: string;
@@ -112,6 +131,7 @@ export interface Participant {
  * são descartadas quando a sala expira ou o servidor reinicia.
  */
 export interface ScoreEntry {
+  kind: ParticipantKind;
   nickname: string;
   avatar: Avatar;
   wins: number;
@@ -133,6 +153,8 @@ export interface RoundInfo {
 
 export interface Room {
   readonly code: string;
+  /** `classic` (padrão) ou `training`; decide bots fixos e recusa de entradas. */
+  readonly mode: RoomMode;
   hostId: string;
   readonly order: string[];
   readonly participants: Map<string, Participant>;
@@ -189,6 +211,8 @@ export interface CreateRoomParams {
   readonly socketId: string;
   readonly nickname: string;
   readonly avatar: Avatar;
+  /** Ausente equivale a `classic`; `training` cria a mesa com três bots fixos. */
+  readonly mode?: RoomMode | undefined;
 }
 
 export interface JoinRoomParams {
@@ -203,6 +227,7 @@ export interface WinnerInfo {
   readonly playerId: string;
   readonly nickname: string;
   readonly substitute: boolean;
+  readonly kind: ParticipantKind;
 }
 
 export interface RoomStoreOptions {
@@ -253,6 +278,7 @@ export class RoomStore {
     const now = this.clock.now();
     const participant: Participant = {
       id: createPlayerId(),
+      kind: 'human',
       nickname: params.nickname,
       avatar: params.avatar,
       credential: createCredential(),
@@ -270,6 +296,7 @@ export class RoomStore {
     };
     const room: Room = {
       code,
+      mode: params.mode ?? 'classic',
       hostId: participant.id,
       order: [participant.id],
       participants: new Map([[participant.id, participant]]),
@@ -284,7 +311,9 @@ export class RoomStore {
       retainedUntil: null,
       retentionToken: 0,
       retentionTimer: null,
-      history: new Map([[participant.id, { nickname: participant.nickname, avatar: participant.avatar, wins: 0 }]]),
+      history: new Map([
+        [participant.id, { kind: 'human', nickname: participant.nickname, avatar: participant.avatar, wins: 0 }],
+      ]),
       chatMessages: [],
       chatNextSeq: 1,
       tauntTargetAts: new Map(),
@@ -299,11 +328,49 @@ export class RoomStore {
     this.rooms.set(code, room);
     this.participantsById.set(participant.id, participant);
     this.participantsBySocket.set(params.socketId, participant.id);
+    if (room.mode === 'training') this.addTrainingBots(room, participant.avatar, now);
     // Associação de transporte é efeito da execução autorizada; replays não a repetem.
     this.transport.attach(params.socketId, room.code);
     this.bump(room);
     this.broadcastState(room);
     return { ok: true, room, participant };
+  }
+
+  /**
+   * Cria os três bots fixos do treino: ids estáveis derivados do código da sala,
+   * prontos desde a preparação, sem socket. Avatares são os primeiros da lista
+   * que não colidem com o da pessoa; apelidos fixos e distinguíveis.
+   */
+  private addTrainingBots(room: Room, humanAvatar: Avatar, now: number): void {
+    const avatars = AVATARS.filter((avatar) => avatar !== humanAvatar).slice(0, TRAINING_BOT_NICKNAMES.length);
+    TRAINING_BOT_NICKNAMES.forEach((nickname, index) => {
+      const avatar = avatars[index];
+      // Impossível na prática: a lista de avatares tem 8 e o treino usa 3.
+      if (avatar === undefined) return;
+      const bot: Participant = {
+        id: createBotId(room.code, index + 1),
+        kind: 'bot',
+        nickname,
+        avatar,
+        // Nunca exposta: identificação por credencial de bot é recusada na entrada.
+        credential: createCredential(),
+        joinedAt: now,
+        roomCode: room.code,
+        ready: true,
+        connected: false,
+        socketId: null,
+        connectedSince: null,
+        autoControlled: false,
+        absentSince: null,
+        chatSentAts: [],
+        tauntLastSentAt: null,
+        intents: new Map(),
+      };
+      room.participants.set(bot.id, bot);
+      room.order.push(bot.id);
+      room.history.set(bot.id, { kind: 'bot', nickname: bot.nickname, avatar: bot.avatar, wins: 0 });
+      this.participantsById.set(bot.id, bot);
+    });
   }
 
   joinRoom(params: JoinRoomParams): RoomResult<{ room: Room; participant: Participant; rejoined: boolean }> {
@@ -318,7 +385,16 @@ export class RoomStore {
     if (params.credential !== undefined) {
       const existing = this.findByCredential(room, params.credential);
       if (existing === undefined) {
+        if (room.mode === 'training') {
+          return reject(
+            'TRAINING_ROOM_ENTRY_REFUSED',
+            'Esta mesa de treino é individual: retorne com a credencial original da pessoa dona.',
+          );
+        }
         return reject('CREDENTIAL_INVALID', 'Credencial inválida para esta sala. Entre como novo participante.');
+      }
+      if (existing.kind === 'bot') {
+        return reject('TRAINING_ROOM_ENTRY_REFUSED', 'Os bots da mesa de treino não são identidades recuperáveis.');
       }
       if (existing.connected) {
         return reject('ALREADY_CONNECTED', 'Esta identidade já está conectada em outro dispositivo.');
@@ -345,6 +421,10 @@ export class RoomStore {
       return { ok: true, room, participant: existing, rejoined: true };
     }
 
+    if (room.mode === 'training') {
+      return reject('TRAINING_ROOM_ENTRY_REFUSED', 'Esta mesa de treino é individual; outras pessoas não entram.');
+    }
+
     if (room.participants.size >= ROOM_CAPACITY) {
       return reject('ROOM_FULL', `Sala cheia: o limite é de ${ROOM_CAPACITY} participantes.`);
     }
@@ -352,6 +432,7 @@ export class RoomStore {
     const now = this.clock.now();
     const participant: Participant = {
       id: createPlayerId(),
+      kind: 'human',
       nickname: params.nickname,
       avatar: params.avatar,
       credential: createCredential(),
@@ -369,7 +450,7 @@ export class RoomStore {
     };
     room.participants.set(participant.id, participant);
     room.order.push(participant.id);
-    room.history.set(participant.id, { nickname: participant.nickname, avatar: participant.avatar, wins: 0 });
+    room.history.set(participant.id, { kind: 'human', nickname: participant.nickname, avatar: participant.avatar, wins: 0 });
     this.participantsById.set(participant.id, participant);
     this.participantsBySocket.set(params.socketId, participant.id);
     this.cancelRetention(room);
@@ -464,6 +545,9 @@ export class RoomStore {
     if (target === undefined || room.round === null || !room.round.seatIds.includes(target.id)) {
       return reject('UNKNOWN_PARTICIPANT', 'Participante não encontrado nesta rodada.');
     }
+    if (target.kind === 'bot') {
+      return reject('SUBSTITUTE_NOT_ELIGIBLE', 'Os bots da mesa de treino jogam sozinhos: não há substituição a autorizar.');
+    }
     if (target.connected || target.autoControlled || target.absentSince === null) {
       return reject('SUBSTITUTE_NOT_ELIGIBLE', 'Esta pessoa não está ausente sem substituto.');
     }
@@ -535,6 +619,9 @@ export class RoomStore {
 
     const target = room.participants.get(targetId);
     if (target === undefined) return reject('UNKNOWN_PARTICIPANT', 'Participante não encontrado nesta sala.');
+    if (target.kind === 'bot') {
+      return reject('CANNOT_REMOVE_BOT', 'Os três bots do treino fazem parte da mesa e não podem ser removidos.');
+    }
 
     if (target.socketId !== null) {
       const socketId = target.socketId;
@@ -581,9 +668,13 @@ export class RoomStore {
     if (room.hostId !== participant.id) {
       return reject('NOT_HOST', 'Só o anfitrião inicia a rodada.');
     }
+    // Bots de treino entram por identidade, sem conexão; pessoas entram conectadas.
     const seated = room.order
       .map((id) => room.participants.get(id))
-      .filter((candidate): candidate is Participant => candidate !== undefined && candidate.connected);
+      .filter(
+        (candidate): candidate is Participant =>
+          candidate !== undefined && (candidate.connected || candidate.kind === 'bot'),
+      );
     if (seated.length < MIN_PLAYERS) {
       return reject('NOT_ENOUGH_PLAYERS', `São necessários pelo menos ${MIN_PLAYERS} participantes conectados.`);
     }
@@ -611,7 +702,8 @@ export class RoomStore {
     room.retentionHold = false;
     room.nextDeck = null;
     for (const candidate of room.participants.values()) {
-      candidate.ready = false;
+      // Bots do treino permanecem prontos; pessoas confirmam de novo a cada rodada.
+      candidate.ready = candidate.kind === 'bot';
       candidate.autoControlled = false;
       candidate.absentSince = null;
     }
@@ -634,7 +726,8 @@ export class RoomStore {
     room.round = null;
     room.retentionHold = false;
     for (const candidate of room.participants.values()) {
-      candidate.ready = false;
+      // Bots do treino voltam prontos para a próxima rodada; pessoas não.
+      candidate.ready = candidate.kind === 'bot';
       candidate.autoControlled = false;
       candidate.absentSince = null;
     }
@@ -880,6 +973,7 @@ export class RoomStore {
       winnerId: winner?.playerId ?? null,
       winnerNickname: winner?.nickname ?? null,
       substitute: winner?.substitute ?? false,
+      winnerKind: winner?.kind ?? null,
     };
     const removed: string[] = [];
     if (room.round !== null) {
@@ -907,11 +1001,11 @@ export class RoomStore {
     }
     const substitute = winner.autoControlled;
     if (!substitute) this.addWin(room, winner.id);
-    this.finishRound(room, { playerId: winner.id, nickname: winner.nickname, substitute });
+    this.finishRound(room, { playerId: winner.id, nickname: winner.nickname, substitute, kind: winner.kind });
     return true;
   }
 
-  /** Registra a vitória humana no histórico da sala, independente da vaga. */
+  /** Registra a vitória no histórico da sala, independente da vaga ocupada. */
   private addWin(room: Room, playerId: string): void {
     const entry = room.history.get(playerId);
     if (entry !== undefined) {
@@ -920,7 +1014,7 @@ export class RoomStore {
     }
     const winner = room.participants.get(playerId);
     if (winner !== undefined) {
-      room.history.set(playerId, { nickname: winner.nickname, avatar: winner.avatar, wins: 1 });
+      room.history.set(playerId, { kind: winner.kind, nickname: winner.nickname, avatar: winner.avatar, wins: 1 });
     }
   }
 
@@ -982,7 +1076,10 @@ export class RoomStore {
     const causes: Participant[] = [];
     for (const seatId of room.round.seatIds) {
       const seated = room.participants.get(seatId);
-      if (seated !== undefined && !seated.connected && !seated.autoControlled) causes.push(seated);
+      // Bots fixos do treino nunca são causa de ausência: não se conectam nem são substituídos.
+      if (seated !== undefined && seated.kind === 'human' && !seated.connected && !seated.autoControlled) {
+        causes.push(seated);
+      }
     }
     return causes;
   }
@@ -1031,16 +1128,17 @@ export class RoomStore {
     this.rooms.delete(code);
   }
 
-  /** Assento que um substituto automático deve comandar agora, se houver. */
+  /** Assento que um bot deve comandar agora: substituto humano ou bot fixo do treino. */
   private botTarget(room: Room): { roundId: string; seatId: string } | null {
     if (room.status !== 'playing' || room.round === null) return null;
+    // Sem pessoas conectadas o jogo congela, mesmo com bots fixos na mesa.
     if (room.retentionHold || this.connectedCount(room) === 0) return null;
     const round = room.round;
     if (round.state.status !== 'playing') return null;
     const seatId = round.seatIds[round.state.currentIndex];
     if (seatId === undefined) return null;
     const seated = room.participants.get(seatId);
-    if (seated === undefined || !seated.autoControlled) return null;
+    if (seated === undefined || (!seated.autoControlled && seated.kind !== 'bot')) return null;
     return { roundId: round.id, seatId };
   }
 
@@ -1178,6 +1276,7 @@ export function snapshotOf(room: Room, now: number, pauseGraceMs: number): RoomS
     .filter((candidate): candidate is Participant => candidate !== undefined)
     .map((candidate) => ({
       id: candidate.id,
+      kind: candidate.kind,
       nickname: candidate.nickname,
       avatar: candidate.avatar,
       ready: candidate.ready,
@@ -1193,10 +1292,11 @@ export function snapshotOf(room: Room, now: number, pauseGraceMs: number): RoomS
     const current = room.participants.has(playerId);
     // Histórico sem vitória não ocupa o placar depois que a pessoa deixa a sala.
     if (!current && entry.wins === 0) continue;
-    scoreboard.push({ playerId, nickname: entry.nickname, avatar: entry.avatar, wins: entry.wins, current });
+    scoreboard.push({ playerId, kind: entry.kind, nickname: entry.nickname, avatar: entry.avatar, wins: entry.wins, current });
   }
   return {
     roomCode: room.code,
+    mode: room.mode,
     hostId: room.hostId,
     status: room.status,
     roundNumber: room.roundNumber,

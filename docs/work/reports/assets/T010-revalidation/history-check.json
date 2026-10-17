@@ -1,0 +1,10 @@
+{
+  "baselineMatches": 87,
+  "regeneratedPreservedMatchingRecordedHashes": 87,
+  "remainingDivergences": [
+    {
+      "path": "docs/work/reports/assets/T007/ten-room-load.json",
+      "currentSha256": "2fd39f6e34ee03b6bf33c5ae302d9c382baa12f0da0a5a0a4f3c0f4ddf4fad9f"
+    }
+  ]
+}

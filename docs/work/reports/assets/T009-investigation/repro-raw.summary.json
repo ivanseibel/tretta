@@ -1,0 +1,293 @@
+{
+ "node": "v22.23.1",
+ "engineDefaults": {
+  "pingIntervalMs": 25000,
+  "pingTimeoutMs": 20000,
+  "engineIo": "documentado; janela de reconhecimento entre 20s e 45s após a última troca"
+ },
+ "scenarios": {
+  "A_fechamento_gracioso": {
+   "reconhecimento_da_desconexao_ms": 21,
+   "resultado_rejoin": "ok",
+   "tentativas": [
+    {
+     "attempt": 1,
+     "code": "OK",
+     "waitMs": 0
+    }
+   ],
+   "mesma_identidade": true
+  },
+  "B_queda_sem_fin": {
+   "recusa_burst": "already",
+   "recusas_no_burst": 4,
+   "duracao_burst_ms": 1210,
+   "tentativas_no_burst": [
+    [
+     1,
+     "ALREADY_CONNECTED",
+     0
+    ],
+    [
+     2,
+     "ALREADY_CONNECTED",
+     2
+    ],
+    [
+     3,
+     "ALREADY_CONNECTED",
+     1
+    ],
+    [
+     4,
+     "ALREADY_CONNECTED",
+     2
+    ]
+   ],
+   "tentativas_até_sucesso": 45,
+   "sucesso_em_ms": 45317,
+   "reconhecimento_servidor_ms": 45316,
+   "pausa_observada_pelo_outro_ms": 45000,
+   "retomada_ms": 45317,
+   "mesma_identidade": true,
+   "rejoined": true,
+   "cartas_na_mao_apos": 7,
+   "status_final": "playing"
+  },
+  "C_duas_abas_vivas": {
+   "attempts": [
+    "ALREADY_CONNECTED",
+    "ALREADY_CONNECTED",
+    "ALREADY_CONNECTED"
+   ],
+   "tab1_continua_recebendo_estado": true,
+   "dono_continua_sendo_tab1": true,
+   "apos_fechamento_gracioso": {
+    "ok": true,
+    "code": "OK",
+    "rejoined": true
+   }
+  },
+  "D_reentrada_concorrente": {
+   "resultados": [
+    "OK",
+    "ALREADY_CONNECTED"
+   ],
+   "participantes": 2,
+   "vendedor_e_dono": true
+  },
+  "E_falhas_definitivas": {
+   "invalidCredential": "CREDENTIAL_INVALID",
+   "missingRoom": "ROOM_NOT_FOUND"
+  },
+  "F_entrar_apos_recusa": {
+   "refusal": "already",
+   "joinWithoutCredentialAccepted": true,
+   "newPlayerDiffersFromOriginal": true,
+   "participants": 3
+  }
+ },
+ "timeline": [
+  {
+   "ms": 20,
+   "kind": "server.handleDisconnect",
+   "socket": "s1"
+  },
+  {
+   "ms": 42,
+   "kind": "A.done",
+   "recognized": true,
+   "recognizedMs": 21,
+   "rejoin": {
+    "result": "ok",
+    "tries": [
+     {
+      "attempt": 1,
+      "code": "OK",
+      "waitMs": 0
+     }
+    ],
+    "totalMs": 23
+   },
+   "samePlayer": true
+  },
+  {
+   "ms": 45,
+   "kind": "server.handleDisconnect",
+   "socket": "s3"
+  },
+  {
+   "ms": 45,
+   "kind": "server.handleDisconnect",
+   "socket": "s2"
+  },
+  {
+   "ms": 50,
+   "kind": "B.blackhole",
+   "connection": 1
+  },
+  {
+   "ms": 45049,
+   "kind": "server.handleDisconnect",
+   "socket": "s4"
+  },
+  {
+   "ms": 45368,
+   "kind": "B.done",
+   "burst": {
+    "result": "already",
+    "response": {
+     "ok": false,
+     "error": {
+      "code": "ALREADY_CONNECTED",
+      "message": "Esta identidade já está conectada em outro dispositivo."
+     }
+    },
+    "tries": [
+     {
+      "attempt": 1,
+      "code": "ALREADY_CONNECTED",
+      "waitMs": 0
+     },
+     {
+      "attempt": 2,
+      "code": "ALREADY_CONNECTED",
+      "waitMs": 2
+     },
+     {
+      "attempt": 3,
+      "code": "ALREADY_CONNECTED",
+      "waitMs": 1
+     },
+     {
+      "attempt": 4,
+      "code": "ALREADY_CONNECTED",
+      "waitMs": 2
+     }
+    ]
+   },
+   "burstMs": 1210,
+   "refusedAttemptsInBurst": 4,
+   "polledAttempts": 45,
+   "firstSuccessMs": 45317,
+   "serverRecognizedMs": 45316,
+   "roundPausedFirstObservedAtMs": 45000,
+   "roundPlayingAgainAtMs": 45317,
+   "samePlayer": true,
+   "rejoinedFlag": true,
+   "handAfter": 7,
+   "statusAfter": "playing"
+  },
+  {
+   "ms": 45370,
+   "kind": "server.handleDisconnect",
+   "socket": "s6"
+  },
+  {
+   "ms": 45371,
+   "kind": "server.handleDisconnect",
+   "socket": "s5"
+  },
+  {
+   "ms": 46612,
+   "kind": "server.handleDisconnect",
+   "socket": "s7"
+  },
+  {
+   "ms": 46634,
+   "kind": "C.done",
+   "attempts": [
+    "ALREADY_CONNECTED",
+    "ALREADY_CONNECTED",
+    "ALREADY_CONNECTED"
+   ],
+   "tab1StillReceivesState": true,
+   "ownerIsTab1": true,
+   "afterGracefulClose": {
+    "ok": true,
+    "code": "OK",
+    "rejoined": true
+   }
+  },
+  {
+   "ms": 46637,
+   "kind": "server.handleDisconnect",
+   "socket": "s9"
+  },
+  {
+   "ms": 46637,
+   "kind": "server.handleDisconnect",
+   "socket": "s8"
+  },
+  {
+   "ms": 46642,
+   "kind": "server.handleDisconnect",
+   "socket": "s10"
+  },
+  {
+   "ms": 46666,
+   "kind": "D.done",
+   "results": [
+    "OK",
+    "ALREADY_CONNECTED"
+   ],
+   "participants": 2,
+   "owner": "qEXouhOIz0EV8fTHAAAL",
+   "ownerIsWinner": true
+  },
+  {
+   "ms": 46666,
+   "kind": "server.handleDisconnect",
+   "socket": "s13"
+  },
+  {
+   "ms": 46667,
+   "kind": "server.handleDisconnect",
+   "socket": "s11"
+  },
+  {
+   "ms": 46667,
+   "kind": "server.handleDisconnect",
+   "socket": "s12"
+  },
+  {
+   "ms": 46670,
+   "kind": "E.done",
+   "invalidCredential": "CREDENTIAL_INVALID",
+   "missingRoom": "ROOM_NOT_FOUND"
+  },
+  {
+   "ms": 46673,
+   "kind": "server.handleDisconnect",
+   "socket": "s14"
+  },
+  {
+   "ms": 46673,
+   "kind": "server.handleDisconnect",
+   "socket": "s15"
+  },
+  {
+   "ms": 47883,
+   "kind": "F.done",
+   "refusal": "already",
+   "joinWithoutCredentialAccepted": true,
+   "newPlayerDiffersFromOriginal": true,
+   "participants": 3
+  },
+  {
+   "ms": 47883,
+   "kind": "server.handleDisconnect",
+   "socket": "s18"
+  },
+  {
+   "ms": 47883,
+   "kind": "server.handleDisconnect",
+   "socket": "s16"
+  },
+  {
+   "ms": 47884,
+   "kind": "server.handleDisconnect",
+   "socket": "s17"
+  }
+ ]
+}

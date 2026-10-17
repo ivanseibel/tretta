@@ -15,10 +15,14 @@ export function Lobby({ state }: { state: StateMessage }): ReactNode {
   }, [state.room.roomCode]);
 
   const me = state.self;
+  const training = state.room.mode === 'training';
+  // No treino os bots ocupam assento e contam para prontidão/limite, mesmo sem
+  // conexão própria; nas salas comuns só pessoas conectadas contam.
+  const seated = state.room.participants.filter((participant) => participant.connected || participant.kind === 'bot');
   const connected = state.room.participants.filter((participant) => participant.connected);
-  const everyoneReady = connected.length >= 2 && connected.every((participant) => participant.ready);
+  const everyoneReady = seated.length >= 2 && seated.every((participant) => participant.ready);
   const isHost = state.room.hostId === me.playerId;
-  const canStart = isHost && everyoneReady && connected.length <= 8;
+  const canStart = isHost && everyoneReady && seated.length <= 8;
   // Vitórias de quem já deixou a vaga continuam no placar da sala.
   const historical = state.room.scoreboard.filter((entry) => !entry.current);
 
@@ -36,40 +40,54 @@ export function Lobby({ state }: { state: StateMessage }): ReactNode {
     <div className="screen lobby">
       <header className="screen-header">
         <h1 data-focus-target tabIndex={-1}>Sala {state.room.roomCode}</h1>
-        <p className="muted">Compartilhe o link para convidar. O anfitrião inicia quando todos estiverem prontos.</p>
+        {training ? (
+          <p className="muted" data-testid="training-note">
+            Mesa de treino: você joga sozinho contra três bots simples, com as regras do Clássico. A partida roda no
+            servidor, como nas salas entre amigos.
+          </p>
+        ) : (
+          <p className="muted">Compartilhe o link para convidar. O anfitrião inicia quando todos estiverem prontos.</p>
+        )}
         <LeaveButton />
       </header>
 
-      <section className="invite" aria-label="Convite">
-        <a href={inviteUrl} data-testid="invite-link">
-          {inviteUrl}
-        </a>
-        <button type="button" onClick={() => void copyInvite()} data-testid="copy-invite">
-          {copied ? 'Copiado!' : 'Copiar link'}
-        </button>
-      </section>
+      {!training ? (
+        <section className="invite" aria-label="Convite">
+          <a href={inviteUrl} data-testid="invite-link">
+            {inviteUrl}
+          </a>
+          <button type="button" onClick={() => void copyInvite()} data-testid="copy-invite">
+            {copied ? 'Copiado!' : 'Copiar link'}
+          </button>
+        </section>
+      ) : null}
 
       <section aria-label="Participantes">
         <h2>Participantes</h2>
         <ul className="participant-list" data-testid="lobby-participants">
           {state.room.participants.map((participant) => (
-            <li key={participant.id} data-testid="lobby-participant" className="participant-row">
+            <li key={participant.id} data-testid="lobby-participant" data-player-id={participant.id} className="participant-row">
               <AvatarBadge avatar={participant.avatar} />
               <span className="participant-name">{participant.nickname}</span>
               {participant.isHost ? <span className="tag">anfitrião</span> : null}
+              {participant.kind === 'bot' ? <span className="tag tag-bot">bot</span> : null}
               {participant.id === me.playerId ? <span className="tag tag-me">você</span> : null}
-              <span className={participant.connected ? 'status connected' : 'status disconnected'}>
-                {participant.connected ? (participant.ready ? 'pronto' : 'aguardando') : 'desconectado'}
-              </span>
+              {participant.kind === 'bot' ? (
+                <span className="status connected">{participant.ready ? 'pronto' : 'aguardando'}</span>
+              ) : (
+                <span className={participant.connected ? 'status connected' : 'status disconnected'}>
+                  {participant.connected ? (participant.ready ? 'pronto' : 'aguardando') : 'desconectado'}
+                </span>
+              )}
               <span className="score" title="Rodadas vencidas">
                 {participant.score} v.
               </span>
-              {isHost && participant.id !== me.playerId ? (
+              {isHost && !training && participant.id !== me.playerId ? (
                 <button
                   type="button"
                   className="danger small"
                   data-testid={`remove-${participant.nickname}`}
-                  disabled={room.connection !== 'live'}
+                  disabled={!room.interactive}
                   onClick={() => void room.removeParticipant(participant.id)}
                 >
                   Remover
@@ -100,7 +118,7 @@ export function Lobby({ state }: { state: StateMessage }): ReactNode {
         <button
           type="button"
           className={me.ready ? 'secondary' : 'primary'}
-          disabled={room.connection !== 'live'}
+          disabled={!room.interactive}
           onClick={() => void room.setReady(!me.ready)}
           data-testid="ready-toggle"
         >
@@ -110,7 +128,7 @@ export function Lobby({ state }: { state: StateMessage }): ReactNode {
           <button
             type="button"
             className="primary"
-            disabled={!canStart || room.connection !== 'live'}
+            disabled={!canStart || !room.interactive}
             onClick={() => void room.startRound()}
             data-testid="start-round-button"
           >
@@ -122,9 +140,11 @@ export function Lobby({ state }: { state: StateMessage }): ReactNode {
       </section>
       {isHost && !canStart ? (
         <p className="muted" data-testid="start-hint">
-          {connected.length < 2
-            ? 'São necessários pelo menos 2 participantes conectados.'
-            : 'Todos precisam estar prontos.'}
+          {training
+            ? 'Confirme que você está pronto para iniciar.'
+            : connected.length < 2
+              ? 'São necessários pelo menos 2 participantes conectados.'
+              : 'Todos precisam estar prontos.'}
         </p>
       ) : null}
     </div>

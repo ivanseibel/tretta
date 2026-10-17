@@ -1,0 +1,249 @@
+
+ RUN  v4.1.11 /Users/ivanseibel/dev/personal/tretta/apps/web
+
+ ❯ test/recovery-page.test.tsx (4 tests | 4 failed) 42ms
+     × recarga com identidade mostra a retomada e nunca o formulário ou o erro antigo 15ms
+     × prazo esgotado mostra mensagem neutra e a retomada explícita converge sem recarregar 18ms
+     × sem identidade guardada a entrada normal pelo formulário continua 6ms
+     × desmontar cancela a retomada e resposta atrasada não sobrescreve a identidade 3ms
+ ❯ test/recovery-wait.test.tsx (9 tests | 9 failed) 5041ms
+     × recusa temporária espera com backoff, segue tentando e converge sem erro 14ms
+     × esgota o prazo de 60 s, para de tentar e a retomada explícita reinicia o ciclo 5ms
+     × transporte fora não é credencial inválida: a espera continua até o vínculo voltar 3ms
+     × disparos concorrentes (página, connect e chamada direta) não criam laços sobrepostos 1ms
+     × credencial inválida é definitiva: limpa a identidade e não tenta de novo 2ms
+     × joinRoom com identidade guardada não sobrescreve a credencial nem emite entrada nova 5006ms
+     × comandos mutáveis ficam bloqueados até o ack autorizado da retomada 5ms
+     × cancelamento descarta resposta atrasada e preserva a credencial 3ms
+     × saída voluntária da mesma janela não dispara retomada automática 2ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 13 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/recovery-page.test.tsx > página da sala durante a retomada > recarga com identidade mostra a retomada e nunca o formulário ou o erro antigo
+TestingLibraryElementError: Unable to find an element by: [data-testid="recovering"]
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main[39m
+      [33mclass[39m=[32m"screen"[39m
+    [36m>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"muted"[39m
+        [33mdata-testid[39m=[32m"connecting"[39m
+      [36m>[39m
+        [0mConectando…[0m
+      [36m</p>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ test/recovery-page.test.tsx:250:19
+    248|     await mountPage();
+    249|
+    250|     expect(screen.getByTestId('recovering')).toBeVisible();
+       |                   ^
+    251|     expect(screen.queryByTestId('join-name-input')).toBeNull();
+    252|     expect(screen.queryByTestId('join-room-button')).toBeNull();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/13]⎯
+
+ FAIL  test/recovery-page.test.tsx > página da sala durante a retomada > prazo esgotado mostra mensagem neutra e a retomada explícita converge sem recarregar
+AssertionError: expected null not to be null
+ ❯ driveToExhausted test/recovery-page.test.tsx:225:58
+    223|     await advance(5_000);
+    224|   }
+    225|   expect(screen.queryByTestId('recovery-exhausted')).not.toBeNull();
+       |                                                          ^
+    226| }
+    227|
+ ❯ test/recovery-page.test.tsx:269:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/13]⎯
+
+ FAIL  test/recovery-page.test.tsx > página da sala durante a retomada > sem identidade guardada a entrada normal pelo formulário continua
+Error: Invalid Chai property: toBeVisible
+ ❯ test/recovery-page.test.tsx:299:50
+    297|   it('sem identidade guardada a entrada normal pelo formulário continu…
+    298|     await mountPage();
+    299|     expect(screen.getByTestId('join-name-input')).toBeVisible();
+       |                                                  ^
+    300|     expect(screen.queryByTestId('recovering')).toBeNull();
+    301|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/13]⎯
+
+ FAIL  test/recovery-page.test.tsx > página da sala durante a retomada > desmontar cancela a retomada e resposta atrasada não sobrescreve a identidade
+AssertionError: expected 'cred_atrasada' to be 'cred_ROOMP1' // Object.is equality
+
+Expected: "cred_ROOMP1"
+Received: "cred_atrasada"
+
+ ❯ test/recovery-page.test.tsx:333:64
+    331|     });
+    332|     await respondJoin(okJoin('ROOMP1', 'cred_atrasada'));
+    333|     expect(harness.state.identities.get('ROOMP1')?.credential).toBe('c…
+       |                                                                ^
+    334|     await advance(10_000);
+    335|     expect(joinRequests()).toHaveLength(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/13]⎯
+
+ FAIL  test/recovery-wait.test.tsx > recuperação com espera limitada > recusa temporária espera com backoff, segue tentando e converge sem erro
+AssertionError: expected undefined to be 'recovering' // Object.is equality
+
+- Expected:
+"recovering"
+
++ Received:
+undefined
+
+ ❯ test/recovery-wait.test.tsx:205:33
+    203|     intents.add(String(joinRequests()[0]?.payload.intentId));
+    204|     await respondJoin(refusal());
+    205|     expect(api().recoveryPhase).toBe('recovering');
+       |                                 ^
+    206|     expect(api().error).toBeNull();
+    207|     expect(api().chatLinkReady).toBe(false);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/13]⎯
+
+ FAIL  test/recovery-wait.test.tsx > recuperação com espera limitada > esgota o prazo de 60 s, para de tentar e a retomada explícita reinicia o ciclo
+AssertionError: expected undefined to be 'exhausted' // Object.is equality
+
+- Expected:
+"exhausted"
+
++ Received:
+undefined
+
+ ❯ test/recovery-wait.test.tsx:264:33
+    262|       await advance(5_000);
+    263|     }
+    264|     expect(api().recoveryPhase).toBe('exhausted');
+       |                                 ^
+    265|     expect(api().error).toBeNull();
+    266|     expect(api().chatLinkReady).toBe(false);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/13]⎯
+
+ FAIL  test/recovery-wait.test.tsx > recuperação com espera limitada > transporte fora não é credencial inválida: a espera continua até o vínculo voltar
+AssertionError: expected undefined to be 'recovering' // Object.is equality
+
+- Expected:
+"recovering"
+
++ Received:
+undefined
+
+ ❯ test/recovery-wait.test.tsx:297:33
+    295|     const { promise, result } = await startRecovery('ROOMR3');
+    296|
+    297|     expect(api().recoveryPhase).toBe('recovering');
+       |                                 ^
+    298|     expect(joinRequests()).toHaveLength(0);
+    299|     await advance(1_000);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/13]⎯
+
+ FAIL  test/recovery-wait.test.tsx > recuperação com espera limitada > disparos concorrentes (página, connect e chamada direta) não criam laços sobrepostos
+Error: RoomProvider não montado.
+ ❯ api test/recovery-wait.test.tsx:95:30
+     93|
+     94| function api(): RoomContextValue {
+     95|   if (latest === null) throw new Error('RoomProvider não montado.');
+       |                              ^
+     96|   return latest;
+     97| }
+ ❯ test/recovery-wait.test.tsx:317:23
+ ❯ ../../node_modules/.pnpm/@testing-library+react@16.3.0_@testing-library+dom@10.4.0_@types+react-dom@19.3.0_@type_ffeb180876b59818c8227b020f2ea55c/node_modules/@testing-library/react/dist/act-compat.js:48:24
+ ❯ process.env.NODE_ENV.exports.act ../../node_modules/.pnpm/react@19.3.1/node_modules/react/cjs/react.development.js:890:22
+ ❯ Proxy.<anonymous> ../../node_modules/.pnpm/@testing-library+react@16.3.0_@testing-library+dom@10.4.0_@types+react-dom@19.3.0_@type_ffeb180876b59818c8227b020f2ea55c/node_modules/@testing-library/react/dist/act-compat.js:47:25
+ ❯ test/recovery-wait.test.tsx:316:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/13]⎯
+
+ FAIL  test/recovery-wait.test.tsx > recuperação com espera limitada > credencial inválida é definitiva: limpa a identidade e não tenta de novo
+AssertionError: expected undefined to be 'idle' // Object.is equality
+
+- Expected:
+"idle"
+
++ Received:
+undefined
+
+ ❯ test/recovery-wait.test.tsx:364:33
+    362|     expect(result.value).toBe('invalid');
+    363|     expect(harness.state.identities.has('ROOMR5')).toBe(false);
+    364|     expect(api().recoveryPhase).toBe('idle');
+       |                                 ^
+    365|     await advance(10_000);
+    366|     expect(joinRequests()).toHaveLength(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/13]⎯
+
+ FAIL  test/recovery-wait.test.tsx > recuperação com espera limitada > joinRoom com identidade guardada não sobrescreve a credencial nem emite entrada nova
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ test/recovery-wait.test.tsx:369:3
+    367|   });
+    368|
+    369|   it('joinRoom com identidade guardada não sobrescreve a credencial ne…
+       |   ^
+    370|     seedIdentity('ROOMR6', 'cred_guardada');
+    371|     await mount();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/13]⎯
+
+ FAIL  test/recovery-wait.test.tsx > recuperação com espera limitada > comandos mutáveis ficam bloqueados até o ack autorizado da retomada
+Error: RoomProvider não montado.
+ ❯ api test/recovery-wait.test.tsx:95:30
+     93|
+     94| function api(): RoomContextValue {
+     95|   if (latest === null) throw new Error('RoomProvider não montado.');
+       |                              ^
+     96|   return latest;
+     97| }
+ ❯ test/recovery-wait.test.tsx:387:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/13]⎯
+
+ FAIL  test/recovery-wait.test.tsx > recuperação com espera limitada > cancelamento descarta resposta atrasada e preserva a credencial
+Error: RoomProvider não montado.
+ ❯ api test/recovery-wait.test.tsx:95:30
+     93|
+     94| function api(): RoomContextValue {
+     95|   if (latest === null) throw new Error('RoomProvider não montado.');
+       |                              ^
+     96|   return latest;
+     97| }
+ ❯ test/recovery-wait.test.tsx:423:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/13]⎯
+
+ FAIL  test/recovery-wait.test.tsx > recuperação com espera limitada > saída voluntária da mesma janela não dispara retomada automática
+Error: RoomProvider não montado.
+ ❯ api test/recovery-wait.test.tsx:95:30
+     93|
+     94| function api(): RoomContextValue {
+     95|   if (latest === null) throw new Error('RoomProvider não montado.');
+       |                              ^
+     96|   return latest;
+     97| }
+ ❯ test/recovery-wait.test.tsx:442:23
+ ❯ ../../node_modules/.pnpm/@testing-library+react@16.3.0_@testing-library+dom@10.4.0_@types+react-dom@19.3.0_@type_ffeb180876b59818c8227b020f2ea55c/node_modules/@testing-library/react/dist/act-compat.js:48:24
+ ❯ process.env.NODE_ENV.exports.act ../../node_modules/.pnpm/react@19.3.1/node_modules/react/cjs/react.development.js:890:22
+ ❯ Proxy.<anonymous> ../../node_modules/.pnpm/@testing-library+react@16.3.0_@testing-library+dom@10.4.0_@types+react-dom@19.3.0_@type_ffeb180876b59818c8227b020f2ea55c/node_modules/@testing-library/react/dist/act-compat.js:47:25
+ ❯ test/recovery-wait.test.tsx:441:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/13]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  13 failed (13)
+   Start at  23:28:45
+   Duration  5.37s (transform 181ms, setup 0ms, import 308ms, tests 5.08s, environment 277ms)
+

@@ -50,13 +50,18 @@ export function registerRoomHandlers(
       if (!isAck(ack)) return;
       const parsed = createRoomPayloadSchema.safeParse(payload);
       if (!parsed.success) return ack(invalidPayload(parsed.error));
-      const { intentId, nickname, avatar } = parsed.data;
+      const { intentId, nickname, avatar, mode } = parsed.data;
       const response = store.dedupeSocket(
         socket.id,
         intentId,
         intentSignature(CLIENT_EVENTS.createRoom, parsed.data),
         (): RoomResult<CreateRoomAck> => {
-          const created = store.createRoom({ socketId: socket.id, nickname, avatar });
+          const created = store.createRoom({
+            socketId: socket.id,
+            nickname,
+            avatar,
+            ...(mode === undefined ? {} : { mode }),
+          });
           if (!created.ok) return created;
           // Campos imutáveis capturados na primeira execução: o replay devolve
           // exatamente este ack, sem ler referências mutáveis da sala.

@@ -1,0 +1,72 @@
+14,15c14,15
+< 8bba6443d40b358458af3826930e131d36e49138d871f1af15498e2186975556  ./apps/server/src/handlers.ts
+< d1edf35f72c8562f122bd82ccc26cd8500b3029ca831a7013250a1f350d3a1bc  ./apps/server/src/ids.ts
+---
+> b23c5282978122dbe68c237201f98d8720686580655ce8b9cbeb0452cccc9a1c  ./apps/server/src/handlers.ts
+> 16e7a2f368f2e85ff283f6a0140c86e20666720f9f5ce749ca55bdc302ce7f59  ./apps/server/src/ids.ts
+17c17
+< 38fa2b2a98088eb6c3ea02693d6f2a35502c5f013fe514be9fdba69e1fd38592  ./apps/server/src/rooms.ts
+---
+> d463acbea44c01d980f14f2b8d37c585e54fc44345c5ab0dd2c689e4ed4d662c  ./apps/server/src/rooms.ts
+21c21
+< 74d174202bcb9f4590765c3369fb050a302de4c4a337f5002e4ab7788b447e49  ./apps/server/test/bot-flow.test.ts
+---
+> ddd541bbd4e3985f759520966c67ea1ce84d613d6b562d8cdfccf3b153401f1b  ./apps/server/test/bot-flow.test.ts
+28c28
+< fd748185974ab4fb0c3b20bdb39983696752d0e061e9b1d40f2db5d628673a9e  ./apps/server/test/dedupe.test.ts
+---
+> 581b2856da861547abca50212bbbdd2e11e8e05972746dcb63176ccc296cacd2  ./apps/server/test/dedupe.test.ts
+34c34
+< cc788ec1e83d60af76adf0563cb8b92e372bab7aba1a6058999f0c0332b7d770  ./apps/server/test/leave.test.ts
+---
+> ed859a843b860bc54a4c2a3062cb319cbf198ba2d878a3545a4dac39a728e4cc  ./apps/server/test/leave.test.ts
+44c44
+< 48a0e364f09ab8216430d5d53578341ddb0ddbaaf60e6a751cedef786dc54ac9  ./apps/server/test/scoreboard.test.ts
+---
+> 5a6e40e9b5b959c862c353f1dc4f39cb40b5024d1a6b0d63a5d628fde9e212f9  ./apps/server/test/scoreboard.test.ts
+46a47,51
+> 7e9c70f5a3772fe6d6cfa447478f6cbe22589be83f7cca42778a6146c11d4e83  ./apps/server/test/training-game.test.ts
+> 3f0c6434e56d14bfb7e30cff41be785910ab2b98fdc522f0560cd6e1657cad8b  ./apps/server/test/training-privacy.test.ts
+> e8f0642eaad7d9551817f7f9c784d15b40fe476ba9e8f94712738082bbe4748a  ./apps/server/test/training-recovery.test.ts
+> 45e24ace09f004b553409cb57551fbb3ca279ba83fb5eb077846f54e44125198  ./apps/server/test/training-room.test.ts
+> 36a22d146fa9a6861e2bd27dfe6d7ece3b70016e075def8dfb36d9404dae2e59  ./apps/server/test/training.ts
+113c118
+< d1de1d7489a7558d977776b27024908eca6a4940efa9818f9ffa753a95defd45  ./apps/web/tsconfig.tsbuildinfo
+---
+> c517a87b8d620424c3561eb84bc40785dfd2ea5f3cbbc2dec547563c37270038  ./apps/web/tsconfig.tsbuildinfo
+149c154
+< 1f97abe3dc1caddc9c572d1f7786088422f0739aefc24e5ef51b833517ee9550  ./docs/work/plan.md
+---
+> a3007212f73fe437a372021609131873a6f17ebcd8a22c4659f6908d0854df1c  ./docs/work/plan.md
+212a218
+> c4eb409eabb5f5bf4775a0cef6f4efaddcb60c2c365c309a6230e10795ac5997  ./docs/work/reports/T011A.md
+534a541,557
+> 9ac8f327c9b7f8dc2a0ec74f6fb9157c53edf80b4c700a6826e50ec831d334fc  ./docs/work/reports/assets/T011A/00-diff-check.log
+> 08a59f6888fce5e41fc6f6318b200345fb5816a61b5abb0fe1195a7db4b81043  ./docs/work/reports/assets/T011A/01-build.log
+> 795d115c3fc290f9d53f5eedd8dcd7f4aae86d6177859e973339217006656db4  ./docs/work/reports/assets/T011A/02-typecheck-copia-1-falhou.log
+> 356a501814858272cd089bba93a0c5081ddf35645d3a14ceb2d06411fabd6a8c  ./docs/work/reports/assets/T011A/02-typecheck.log
+> 58da1a627dae08714c09d84b86c9d9d95bcbeba5c11e016882b5ea977dfc895a  ./docs/work/reports/assets/T011A/03-rules-test.log
+> ef20e5a22b8169fc2d7a8cb18c46504f054275ee5265a13a6a6c7534d4a122d4  ./docs/work/reports/assets/T011A/04-protocol-test.log
+> 69f6eb4cae087373bab1b71a3a27f0391d974c534555fa6fe834434f212be649  ./docs/work/reports/assets/T011A/05-server-test.log
+> 6d7f0e8e092da3acb96760a0d8b29f7917db021fd1b8f863c8a0d2cf9619eb48  ./docs/work/reports/assets/T011A/05b-training-suite.log
+> db25200948b287fd0bac7ed4e8c6666d8639e149df0cd6b1a501f2cdf308aa95  ./docs/work/reports/assets/T011A/06-web-test.log
+> 9bb355f96fb2d47d0d56701d9a3008ce089c9996887a10fb9f28bee53e45eb7d  ./docs/work/reports/assets/T011A/07-status-digest.sha256
+> 974d90ed025f51d68915d0d2c3ca9cb37982eb540d877442b6c2e143cf4eed23  ./docs/work/reports/assets/T011A/08-source-manifest-before.sha256
+> 8e54361bdf36ed2862daa3633bb79b5c5bbc16563e9ce48ba1d677b459c7f0ae  ./docs/work/reports/assets/T011A/09-source-manifest-after.sha256
+> a304b531e3ac2a10f56043aaee6f5752c9eec2b58709db144ca3fd9430d041f8  ./docs/work/reports/assets/T011A/10-source-preservation.log
+> 7d4e36218cd3567b5a01ca949a8f7cba020f4b249e9d41ad6c4e0aaf5102e2b9  ./docs/work/reports/assets/T011A/11-preservation-restore.log
+> 4c0c3b465daffed1a0117eedfb9946c06790920d41e5f67f59ccbe1461be2659  ./docs/work/reports/assets/T011A/head.txt
+> 20ec57ab9498b650f1a525822df938b07a311c58d2da4d7be704d48b8e466550  ./docs/work/reports/assets/T011A/origin.txt
+> da75cc78cbcc3f616f8ad47b091b06608874b0be0c7181933878e2d9ff07e1ba  ./docs/work/reports/assets/T011A/t007-ten-room-load.re-execucao-copia.json
+536c559
+< ffd503e299cc98920699c7835fa0eec7d89f81f473e88faac57049e9ab32b556  ./docs/work/status.md
+---
+> 1aa94a6f3f522b896a2a6b10fdb32a50adc851a65762128603569e927e4ed066  ./docs/work/status.md
+539,541c562,564
+< cb3a198b4678586289b0ef066488c82b47d2e7bcfd28f07f6fc8ffe1a202daef  ./packages/protocol/src/index.ts
+< 853039acb98cedff577361331e76ab4efb3097e59257013cdfbef2fa8e055d81  ./packages/protocol/src/shared.ts
+< 5e37891c78548889bf7418881bade6fd896d41105e039a419bd78defae0047fe  ./packages/protocol/test/schemas.test.ts
+---
+> 6d285744063eee88f23f1fd4ea9956c46ebc79832e9ca26061dc2e575f4c0376  ./packages/protocol/src/index.ts
+> 412a4b85525c828103aedbfb116dd1abe389a4775ed5c3aafad7b4c0f17dd7c3  ./packages/protocol/src/shared.ts
+> c74e1025fcfe02e7007b9d06fd9f92087e73ba9443f4242a7ccda0ccfe6771b1  ./packages/protocol/test/schemas.test.ts

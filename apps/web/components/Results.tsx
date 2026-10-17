@@ -18,7 +18,9 @@ export function Results({ state, events }: { state: StateMessage; events: Events
       ? 'Rodada encerrada sem vencedor.'
       : lastRound.substitute
         ? `Substituto de ${lastRound.winnerNickname ?? '—'} venceu a rodada!`
-        : `${lastRound.winnerNickname ?? '—'} venceu a rodada!`;
+        : lastRound.winnerKind === 'bot'
+          ? `${lastRound.winnerNickname ?? '—'} (bot) venceu a rodada!`
+          : `${lastRound.winnerNickname ?? '—'} venceu a rodada!`;
 
   return (
     <div className="screen results">
@@ -37,11 +39,12 @@ export function Results({ state, events }: { state: StateMessage; events: Events
           {sorted.map((entry) => {
             const participant = state.room.participants.find((candidate) => candidate.id === entry.playerId);
             return (
-              <li key={entry.playerId} className="participant-row" data-testid={`score-${entry.nickname}`}>
+              <li key={entry.playerId} className="participant-row" data-testid={`score-${entry.nickname}`} data-player-id={entry.playerId}>
                 <AvatarBadge avatar={entry.avatar} />
                 <span className="participant-name">{entry.nickname}</span>
+                {entry.kind === 'bot' ? <span className="tag tag-bot">bot</span> : null}
                 {entry.playerId === state.self.playerId ? <span className="tag tag-me">você</span> : null}
-                {participant?.autoControlled ? <span className="tag tag-substitute">substituto</span> : null}
+                {entry.kind === 'human' && participant?.autoControlled ? <span className="tag tag-substitute">substituto</span> : null}
                 {entry.current ? null : <span className="tag">saiu da sala</span>}
                 <span className="score">{entry.wins} rodada(s)</span>
               </li>
@@ -54,7 +57,7 @@ export function Results({ state, events }: { state: StateMessage; events: Events
         <button
           type="button"
           className="primary"
-          disabled={room.connection !== 'live'}
+          disabled={!room.interactive}
           onClick={() => void room.returnToLobby()}
           data-testid="return-to-lobby-button"
         >

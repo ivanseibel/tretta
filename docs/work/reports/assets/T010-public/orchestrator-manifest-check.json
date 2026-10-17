@@ -1,0 +1,24 @@
+{
+  "manifestDigestSha256": "e917313dd0d798352ed1bd7c3249c3bf6000b126acdac438b0e0b1d2ed7ef82d",
+  "uploadFiles": 150,
+  "validatedFiles": 144,
+  "validatedUploadMismatches": [],
+  "validatedWorkingTreeMismatches": [],
+  "extras": [
+    ".agents/skills/orchestrate-work/SKILL.md",
+    ".vercelignore",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "README.md",
+    "apps/web/next-env.d.ts"
+  ],
+  "blockedPaths": [],
+  "uploadListChecks": {
+    "reportedFileCount": 150,
+    "listedCount": 150,
+    "uniquePaths": 150,
+    "reportedTotalSize": 1182018,
+    "listedSizeSum": 1182018,
+    "manifestPathSetMatchesList": true
+  }
+}

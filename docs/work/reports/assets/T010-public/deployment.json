@@ -1,0 +1,26 @@
+{
+ "id": "dpl_J9jjh4nHDUfMZj9cZU2JN8hKS6Tj",
+ "name": "tretta",
+ "url": "https://tretta-26gh6ystv-seibel.vercel.app",
+ "target": "production",
+ "readyState": "READY",
+ "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+ "team": "seibel",
+ "teamId": "team_4mQparNtNCNqsb95uxf2FzoD",
+ "plan": "hobby",
+ "nodeVersion": "22.x",
+ "regions": [
+  "iad1"
+ ],
+ "createdAt": "2026-10-17T00:34:35.400Z",
+ "aliasAssigned": true,
+ "alias": [
+  "tretta-seibel.vercel.app"
+ ],
+ "meta": {
+  "trettaBaseCommit": "8967e94",
+  "trettaSourceManifest": "e917313dd0d798352ed1bd7c3249c3bf6000b126acdac438b0e0b1d2ed7ef82d",
+  "actor": "opencode",
+  "bundler": "turbopack"
+ }
+}

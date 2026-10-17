@@ -1,0 +1,116 @@
+{
+ "base": "https://tretta.vercel.app",
+ "startedAt": "2026-10-17T00:42:11.017Z",
+ "checks": {
+  "roomCreated": true,
+  "hostCreateAttempts": 2,
+  "guestJoinAttempts": 2,
+  "startEnabled": true,
+  "roundStarted": true,
+  "bothSidesMoved": true,
+  "chatBothSides": true,
+  "turnNotificationDefaultOn": true,
+  "turnNotificationStoredOff": true,
+  "hooksAbsentHost": true,
+  "reloadSawRecovering": true,
+  "reloadRecoveredToRoom": true,
+  "reloadExhaustedSeen": false,
+  "reloadSameIdentity": true,
+  "reloadSameHand": true,
+  "reloadNoDuplicate": true,
+  "turnNotificationPersistedOffAfterReload": true,
+  "secondTabShowsRecovering": true,
+  "secondTabNoJoinForm": true,
+  "secondTabNoErrorBanner": true,
+  "secondTabNoAlreadyConnected": true,
+  "secondTabStillRecoveringAfter8s": true,
+  "secondTabStillNoJoinForm": true,
+  "actionsBlockedWhileRecovering": true,
+  "firstTabStillOperable": true,
+  "secondTabRecoveredAfterFirstClosed": true,
+  "secondTabSameIdentity": true,
+  "secondTabSameHand": true,
+  "secondTabNoDuplicate": true,
+  "secondTabActionsAfterLink": true,
+  "secondTabHooksAbsent": true,
+  "secondTabChatAfterRecovery": true,
+  "leaveConfirmed": true,
+  "renderHealthz": 200,
+  "noConsoleErrors": true,
+  "noPageErrors": true
+ },
+ "timings": {
+  "reloadRecoveryMs": 10995,
+  "secondTabRecoveryAfterCloseMs": 6378
+ },
+ "snapshots": {
+  "roomCodeMasked": "XXXX",
+  "moves": [
+   {
+    "mover": "guest",
+    "released": true
+   },
+   {
+    "mover": "host",
+    "released": true
+   }
+  ],
+  "identityBeforeReload": {
+   "nickname": "Bia",
+   "avatar": "lobo",
+   "credentialLength": 43,
+   "credentialDigest": "f46817b49c101eeb533d6715c5849d3c59e1204dc71108871394aa5a94d36dfb",
+   "playerIdDigest": "1c5a728adbdd67f610ec31ecb8e2dfa4c6b09e68a8791bde3e559d5b51e38b93"
+  },
+  "handBeforeReload": {
+   "count": 8,
+   "digest": "d229056ef43418286cf6886e71f15e088ececd3f83244aea11d94ccfb0d88dc1"
+  },
+  "rosterBeforeReload": {
+   "opponents": 1,
+   "waiting": 0
+  },
+  "identityAfterReload": {
+   "nickname": "Bia",
+   "avatar": "lobo",
+   "credentialLength": 43,
+   "credentialDigest": "f46817b49c101eeb533d6715c5849d3c59e1204dc71108871394aa5a94d36dfb",
+   "playerIdDigest": "1c5a728adbdd67f610ec31ecb8e2dfa4c6b09e68a8791bde3e559d5b51e38b93"
+  },
+  "handAfterReload": {
+   "count": 8,
+   "digest": "d229056ef43418286cf6886e71f15e088ececd3f83244aea11d94ccfb0d88dc1"
+  },
+  "rosterAfterReload": {
+   "opponents": 1,
+   "waiting": 0
+  },
+  "identitySecondTab": {
+   "nickname": "Bia",
+   "avatar": "lobo",
+   "credentialLength": 43,
+   "credentialDigest": "f46817b49c101eeb533d6715c5849d3c59e1204dc71108871394aa5a94d36dfb",
+   "playerIdDigest": "1c5a728adbdd67f610ec31ecb8e2dfa4c6b09e68a8791bde3e559d5b51e38b93"
+  },
+  "handSecondTab": {
+   "count": 8,
+   "digest": "d229056ef43418286cf6886e71f15e088ececd3f83244aea11d94ccfb0d88dc1"
+  },
+  "rosterSecondTab": {
+   "opponents": 1,
+   "waiting": 0
+  }
+ },
+ "consoleErrors": {
+  "host": [],
+  "guest": [],
+  "secondTab": []
+ },
+ "pageErrors": {
+  "host": [],
+  "guest": [],
+  "secondTab": []
+ },
+ "observations": [],
+ "finishedAt": "2026-10-17T00:42:48.171Z"
+}

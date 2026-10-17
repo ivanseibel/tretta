@@ -1,0 +1,13 @@
+Scope: all 5 workspace projects
+✓ Lockfile passes supply-chain policies (verified 1d ago)
+
+Done in 495ms using pnpm v11.14.0
+[WebServer] $ next dev
+
+Running 3 tests using 1 worker
+
+  ✓  1 e2e/recovery-wait.spec.ts:10:1 › nova aba com a mesma identidade espera a retomada sem formulário e sem derrubar a aba original (3.0s)
+  ✓  2 e2e/recovery.spec.ts:12:1 › atualizar a página recupera identidade, mão e fase após compra; a conexão some e volta (1.8s)
+  ✓  3 e2e/server-restart.spec.ts:11:1 › reiniciar o processo real do servidor faz a interface informar que a sala deixou de existir (2.6s)
+
+  3 passed (10.8s)

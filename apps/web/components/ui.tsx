@@ -172,7 +172,7 @@ export function LeaveButton(): ReactNode {
       type="button"
       className="secondary leave-button"
       data-testid="leave-button"
-      disabled={room.connection !== 'live'}
+      disabled={!room.interactive}
       onClick={() => {
         void (async () => {
           const left = await room.leaveRoom();

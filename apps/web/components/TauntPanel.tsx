@@ -103,38 +103,38 @@ export function TauntPanel(): ReactNode {
         <p className="muted taunt-hint">Só de brincadeira: não muda as regras da rodada.</p>
       </header>
       <form className="taunt-form" onSubmit={(event) => void handleSend(event)}>
-        <label className="taunt-label" htmlFor="taunt-type">
-          Provocação
+        <label className="taunt-field" htmlFor="taunt-type">
+          <span className="taunt-label">Provocação</span>
+          <select
+            id="taunt-type"
+            value={type}
+            onChange={(event) => setType(event.target.value as TauntType)}
+            data-testid="taunt-type"
+            disabled={offline}
+          >
+            {TAUNT_TYPES.map((tauntType) => (
+              <option key={tauntType} value={tauntType}>
+                {TAUNT_LABELS[tauntType]}
+              </option>
+            ))}
+          </select>
         </label>
-        <select
-          id="taunt-type"
-          value={type}
-          onChange={(event) => setType(event.target.value as TauntType)}
-          data-testid="taunt-type"
-          disabled={offline}
-        >
-          {TAUNT_TYPES.map((tauntType) => (
-            <option key={tauntType} value={tauntType}>
-              {TAUNT_LABELS[tauntType]}
-            </option>
-          ))}
-        </select>
-        <label className="taunt-label" htmlFor="taunt-target">
-          Alvo
+        <label className="taunt-field" htmlFor="taunt-target">
+          <span className="taunt-label">Alvo</span>
+          <select
+            id="taunt-target"
+            value={targetId}
+            onChange={(event) => setTargetId(event.target.value)}
+            data-testid="taunt-target"
+            disabled={offline}
+          >
+            {options.map((option) => (
+              <option key={option.playerId} value={option.playerId}>
+                {option.label}
+              </option>
+            ))}
+          </select>
         </label>
-        <select
-          id="taunt-target"
-          value={targetId}
-          onChange={(event) => setTargetId(event.target.value)}
-          data-testid="taunt-target"
-          disabled={offline}
-        >
-          {options.map((option) => (
-            <option key={option.playerId} value={option.playerId}>
-              {option.label}
-            </option>
-          ))}
-        </select>
         <button type="submit" className="primary" disabled={!canSend} data-testid="taunt-send">
           Enviar provocação
         </button>

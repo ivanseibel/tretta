@@ -1,0 +1,10 @@
+# Origem da cópia verificada — T011A
+
+- Fonte: `/Users/ivanseibel/dev/personal/tretta` (working tree completo, incluindo arquivos não rastreados; a versão aceita não está só em HEAD)
+- HEAD no momento da cópia: ver `head.txt`
+- Destino: `/private/var/folders/r_/xrvhskhx45l6n66k99kzs61r0000gn/T/tretta-t011a-verify-KmriB5jF/tretta`
+- Comando: `rsync -a <fonte>/ <destino>/` (sem symlinks de report para a fonte; documentos copiados fisicamente)
+- Primeira cópia descartada antes dos testes: `pnpm typecheck` bruto encontrou 2 símbolos não usados nos testes novos (o filtro `rtk` da primeira execução não os mostrou). Corrigidos na fonte; a rodada final usa a cópia registrada aqui. Log da falha: `02-typecheck-copia-1-falhou.log`
+- Manifesto da fonte copiada, antes de qualquer teste: `08-source-manifest-before.sha256` (580 arquivos; exclui `node_modules`, `.git`, `dist`, `.next`, `coverage`, `.turbo`)
+- Manifesto da mesma árvore após build/tipos/testes: `09-source-manifest-after.sha256`
+- Verificações executadas apenas na cópia; nenhuma sala pública, Render ou Vercel foi tocada

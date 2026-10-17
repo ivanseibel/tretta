@@ -27,6 +27,8 @@ import { TauntOverlay } from '@/components/TauntOverlay';
 const soundSpy = vi.hoisted(() => ({
   playEffectSound: vi.fn(),
   playTauntSound: vi.fn(),
+  playTurnNotificationSound: vi.fn(),
+  prepareSoundPlayback: vi.fn(),
   setSoundMuted: vi.fn(),
   stopAllSounds: vi.fn(),
 }));
@@ -290,7 +292,14 @@ async function advance(ms: number): Promise<void> {
   });
 }
 
-async function setPreference(patch: Partial<{ animations: 'full' | 'reduced' | 'off'; soundMuted: boolean; hideTaunts: boolean }>): Promise<void> {
+async function setPreference(
+  patch: Partial<{
+    animations: 'full' | 'reduced' | 'off';
+    soundMuted: boolean;
+    turnNotificationEnabled: boolean;
+    hideTaunts: boolean;
+  }>,
+): Promise<void> {
   await act(async () => {
     api().setPreferences(patch);
   });
@@ -308,6 +317,8 @@ beforeEach(() => {
   window.localStorage.clear();
   soundSpy.playEffectSound.mockClear();
   soundSpy.playTauntSound.mockClear();
+  soundSpy.playTurnNotificationSound.mockClear();
+  soundSpy.prepareSoundPlayback.mockClear();
   soundSpy.setSoundMuted.mockClear();
   soundSpy.stopAllSounds.mockClear();
 });
@@ -463,10 +474,17 @@ describe('fila serial de apresentações', () => {
     expect(renderedEffectIds()).toEqual(['fx_seen_before_recovery']);
     expect(soundSpy.playEffectSound).toHaveBeenCalledTimes(1);
 
+    // Perda e retorno do transporte: a retomada emite a reentrada autorizada.
+    harness.state.connected = false;
     await act(async () => {
-      const recovery = api().rejoin('ROOMF6');
-      // rejoin awaits the connected socket before emitting its acknowledgement request.
+      harness.state.handlers.get('disconnect')?.(undefined);
+    });
+    harness.state.connected = true;
+    await act(async () => {
+      harness.state.handlers.get('connect')?.(undefined);
       await Promise.resolve();
+    });
+    await act(async () => {
       const requestIndex = harness.state.pending.findIndex((request) => request.event === 'client:joinRoom');
       const [request] = harness.state.pending.splice(requestIndex, 1);
       if (request === undefined) throw new Error('Requisição de reentrada ausente.');
@@ -478,7 +496,8 @@ describe('fila serial de apresentações', () => {
         rejoined: true,
         version: 2,
       });
-      await recovery;
+      await Promise.resolve();
+      await Promise.resolve();
     });
     pushState('ROOMF6', 'player_anA', { roundId: 'r1', version: 2 });
     expect(renderedEffectIds()).toEqual([]);
@@ -621,6 +640,21 @@ describe('preferências de apresentação', () => {
     expect(soundSpy.playEffectSound).toHaveBeenCalledTimes(1);
   });
 
+  it('desativar o aviso da vez mantém ativos os sons de efeitos e provocações', async () => {
+    vi.useFakeTimers();
+    await mountRoom();
+    await enterRoom('ROOMP6');
+    await setPreference({ turnNotificationEnabled: false });
+
+    deliverEffects('ROOMP6', [penaltyEffect('fx_independent')]);
+    broadcastTaunt('ROOMP6', taunt('taunt_independent'));
+    expect(soundSpy.playEffectSound).toHaveBeenCalledTimes(1);
+    expect(soundSpy.playTauntSound).not.toHaveBeenCalled();
+
+    await advance(2601);
+    expect(soundSpy.playTauntSound).toHaveBeenCalledTimes(1);
+  });
+
   it('controles são acessíveis e refletem o estado no DOM', async () => {
     await mountRoom();
     await enterRoom('ROOMP5');
@@ -629,9 +663,11 @@ describe('preferências de apresentação', () => {
     const reduced = screen.getByTestId('pref-animations-reduced');
     const off = screen.getByTestId('pref-animations-off');
     const mute = screen.getByTestId('pref-sound-mute');
+    const turnNotification = screen.getByTestId('pref-turn-notification');
     const hide = screen.getByTestId('pref-hide-taunts');
     expect(full.closest('fieldset')?.querySelector('legend')?.textContent).toBe('Animações');
     expect((full as HTMLInputElement).checked).toBe(true);
+    expect((turnNotification as HTMLInputElement).checked).toBe(true);
 
     await act(async () => {
       fireEvent.click(reduced);
@@ -643,12 +679,15 @@ describe('preferências de apresentação', () => {
     await act(async () => {
       fireEvent.click(off);
       fireEvent.click(mute);
+      fireEvent.click(turnNotification);
       fireEvent.click(hide);
     });
     expect((off as HTMLInputElement).checked).toBe(true);
     expect((mute as HTMLInputElement).checked).toBe(true);
+    expect((turnNotification as HTMLInputElement).checked).toBe(false);
     expect((hide as HTMLInputElement).checked).toBe(true);
     expect(window.localStorage.getItem('tretta.mood')).toContain('"soundMuted":true');
+    expect(window.localStorage.getItem('tretta.mood')).toContain('"turnNotificationEnabled":false');
     expect(window.localStorage.getItem('tretta.mood')).toContain('"hideTaunts":true');
   });
 });

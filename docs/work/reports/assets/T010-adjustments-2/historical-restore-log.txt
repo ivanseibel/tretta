@@ -1,0 +1,26 @@
+Restauracao autorizada do unico historico divergente
+Caminho: docs/work/reports/assets/T007/ten-room-load.json
+Data: 17/10/2026 (execucao T010-adjustments-2)
+Autorizacao: docs/work/T010-adjustments-2.md, secao "Unico artefato historico restante"
+
+Metodo: git cat-file blob HEAD:docs/work/reports/assets/T007/ten-room-load.json
+Sem git reset/clean/checkout/restore; somente este caminho foi escrito.
+
+Versao divergente preservada antes: preserved/ten-room-load-divergent-current.json
+  sha256 antes  = 2fd39f6e34ee03b6bf33c5ae302d9c382baa12f0da0a5a0a4f3c0f4ddf4fad9f
+  (confere com o hash da revalidacao; variancia so de metricas volateis do teste de carga)
+
+Blob do HEAD (registry docs/work/reports/assets/T010-validation/historical-artifacts.json:
+headSha256 == publishedSha256):
+  sha256 esperado = cacadfbb3bbd7624c21ccf244b48bd3e929ce660ef0aad8ef9c3a3e8c46299a9
+
+Depois da escrita:
+  sha256 depois  = cacadfbb3bbd7624c21ccf244b48bd3e929ce660ef0aad8ef9c3a3e8c46299a9  (confere)
+  bytes          = 4668 (igual a headBlobBytesVerificado do preservation-index)
+
+git status --porcelain:
+  caminho restaurado: 0 entradas (limpo)
+  total: 62 -> 61 entradas (a unica mudanca de status foi o proprio caminho restaurado)
+  demais 87 historicos: intocados (nenhum outro caminho historico aparece modificado)
+
+Registros: preserved/preservation-index.json, git-status-pre-restore.txt (62), git-status-post-restore.txt (61).

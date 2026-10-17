@@ -1,0 +1,279 @@
+{
+  "node": "v22.23.1",
+  "roomCodeMasked": "GZ…",
+  "results": {
+    "mode": "producao",
+    "heartbeat": "padrao (sem TRE_TTA_* de ping)",
+    "scenario": "all",
+    "setup": {
+      "connectionsBefore": [
+        1,
+        2
+      ],
+      "roomCodeMasked": "GZ…"
+    },
+    "scenarioA": {
+      "handCountBefore": 7,
+      "handDigestBefore": "c4761b34fcac3653192f52d8c60067acbbed88d0adb686a3032bf8f733d4c3e6",
+      "recoveringVisibleMsAfterReload": 28,
+      "recoveringStillAtPlus1s": true,
+      "recoveringStillAtPlus13s": true,
+      "joinFormDuringWait": false,
+      "errorDuringWait": null,
+      "connectingDuringWait": false,
+      "recoveredHandVisible": true,
+      "exhaustedPanelSeen": false,
+      "msToRecoveryAfterReload": 46074,
+      "msToRecoveryAfterCut": 46074,
+      "joinFormEverSeen": false,
+      "errorEverSeen": null,
+      "anaPausePanelAppeared": true,
+      "msToAnaPauseAfterCut": 44556,
+      "anaPauseClearedAfterRecovery": true,
+      "msToAnaPauseClearedAfterCut": 46074,
+      "anaHandVisibleAtEnd": true,
+      "handCountAfter": 7,
+      "sameHandDigest": true,
+      "credentialPreserved": true,
+      "final": {
+        "hand": true,
+        "joinForm": false,
+        "error": null,
+        "recovering": false,
+        "recoveringBanner": false,
+        "exhausted": false
+      },
+      "acceptance": {
+        "automatic": true,
+        "recoveryUnderDeadline": true,
+        "noJoinForm": true,
+        "noError": true,
+        "recoveringShownWhileWaiting": true,
+        "sameHand": true,
+        "credentialPreserved": true,
+        "noExhaustedPanel": true,
+        "lateRecognitionExercised": true,
+        "anaPauseResolved": true
+      }
+    },
+    "scenarioB": {
+      "anaHandCountBefore": 7,
+      "anaHandDigestBefore": "24ec264dca98ce9e650b0e00797ae9aacd1121182377a85bfb6e9ab4ee087a02",
+      "biaRosterBefore": {
+        "opponents": 1,
+        "waiting": 0
+      },
+      "anaRosterBefore": {
+        "opponents": 1,
+        "waiting": 0
+      },
+      "credentialBefore": {
+        "present": true,
+        "length": 43,
+        "checksum": 2704074783
+      },
+      "anaReloads": 1,
+      "recoveringEverSeen": false,
+      "connectionLostSeen": false,
+      "stateVisibleMsAfterReload": 155,
+      "bannerVisibleMsAfterReload": 155,
+      "windowProbe": {
+        "msAfterReload": 327,
+        "draftKept": true,
+        "sendDisabled": true
+      },
+      "exhaustedPanelSeen": false,
+      "msToRecoveryAfterReload": 6877,
+      "msToExhaustionAfterReload": null,
+      "joinFormEverSeen": false,
+      "errorEverSeen": null,
+      "final": {
+        "hand": true,
+        "joinForm": false,
+        "error": null,
+        "recovering": false,
+        "recoveringBanner": false,
+        "exhausted": false
+      },
+      "anaHandCountAfter": 7,
+      "anaHandDigestAfter": "24ec264dca98ce9e650b0e00797ae9aacd1121182377a85bfb6e9ab4ee087a02",
+      "sameHandDigest": true,
+      "chatSendEnabledAfterRecovery": true,
+      "biaRosterAfter": {
+        "opponents": 1,
+        "waiting": 0
+      },
+      "anaRosterAfter": {
+        "opponents": 1,
+        "waiting": 0
+      },
+      "biaHandDigestAfter": "c4761b34fcac3653192f52d8c60067acbbed88d0adb686a3032bf8f733d4c3e6",
+      "biaHandStable": true,
+      "credentialAfter": {
+        "present": true,
+        "length": 43,
+        "checksum": 2704074783
+      },
+      "credentialPreserved": true,
+      "noDuplicateParticipant": true,
+      "acceptance": {
+        "recoveredAutomatically": true,
+        "recoveryUnderDeadline": true,
+        "neverExhausted": true,
+        "noJoinForm": true,
+        "noError": true,
+        "actionsBlockedDuringWindow": true,
+        "actionsWorkAfterConfirmation": true,
+        "sameHand": true,
+        "credentialPreserved": true,
+        "noDuplicateParticipant": true,
+        "noExtraReload": true
+      }
+    },
+    "proxy": {},
+    "storage": {
+      "before": {
+        "present": true,
+        "length": 43,
+        "checksum": 2218599728
+      },
+      "after": {
+        "present": true,
+        "length": 43,
+        "checksum": 2218599728
+      }
+    },
+    "pageErrors": []
+  },
+  "timeline": [
+    {
+      "ms": 3684,
+      "kind": "web.build"
+    },
+    {
+      "ms": 3969,
+      "kind": "server.ready"
+    },
+    {
+      "ms": 4252,
+      "kind": "web.ready"
+    },
+    {
+      "ms": 4672,
+      "kind": "proxy.connection",
+      "id": 1
+    },
+    {
+      "ms": 5285,
+      "kind": "proxy.connection",
+      "id": 2
+    },
+    {
+      "ms": 5797,
+      "kind": "round.started"
+    },
+    {
+      "ms": 5812,
+      "kind": "proxy.blackhole",
+      "id": 2
+    },
+    {
+      "ms": 5812,
+      "kind": "scenarioA.cut",
+      "connection": 2
+    },
+    {
+      "ms": 5834,
+      "kind": "proxy.connection",
+      "id": 3
+    },
+    {
+      "ms": 28,
+      "kind": "scenarioA.recovering-visible"
+    },
+    {
+      "ms": 18998,
+      "kind": "scenarioA.wait-sampled",
+      "recoveringStayed": true
+    },
+    {
+      "ms": 50368,
+      "kind": "scenarioA.ana-pause-visible",
+      "msAfterCut": 44556
+    },
+    {
+      "ms": 51886,
+      "kind": "scenarioA.recovered",
+      "msAfterReload": 46074,
+      "msAfterCut": 46074
+    },
+    {
+      "ms": 51886,
+      "kind": "scenarioA.ana-pause-cleared",
+      "msAfterCut": 46074
+    },
+    {
+      "ms": 51916,
+      "kind": "proxy.arm-drop-next"
+    },
+    {
+      "ms": 51942,
+      "kind": "scenarioB.ana-reloaded"
+    },
+    {
+      "ms": 51946,
+      "kind": "proxy.drop-armed-connection",
+      "id": 4
+    },
+    {
+      "ms": 51946,
+      "kind": "proxy.connection",
+      "id": 4
+    },
+    {
+      "ms": 51948,
+      "kind": "proxy.ws-upgraded",
+      "id": 4
+    },
+    {
+      "ms": 51949,
+      "kind": "proxy.socketio-ack",
+      "id": 4,
+      "bytes": 175,
+      "rejoined": true
+    },
+    {
+      "ms": 51949,
+      "kind": "proxy.join-ack-dropped",
+      "id": 4,
+      "bytes": 175
+    },
+    {
+      "ms": 52071,
+      "kind": "scenarioB.state-arrived",
+      "msAfterReload": 155
+    },
+    {
+      "ms": 52071,
+      "kind": "scenarioB.recovering-banner",
+      "msAfterReload": 155
+    },
+    {
+      "ms": 52246,
+      "kind": "scenarioB.window-probe",
+      "msAfterReload": 327,
+      "draftKept": true,
+      "sendDisabled": true
+    },
+    {
+      "ms": 58793,
+      "kind": "scenarioB.recovered",
+      "msAfterReload": 6877
+    },
+    {
+      "ms": 59818,
+      "kind": "scenarioB.chat-after-recovery",
+      "enabled": true
+    }
+  ]
+}

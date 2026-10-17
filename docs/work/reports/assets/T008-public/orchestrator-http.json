@@ -1,0 +1,12 @@
+{
+  "homeStatus": 200,
+  "roomRouteStatus": 200,
+  "serverHealthStatus": 200,
+  "serverHealthBody": "{\"ok\":true}",
+  "scriptCount": 10,
+  "markers": {
+    "pref-turn-notification": true,
+    "Aviso sonoro da sua vez": true,
+    "https://tretta-server.onrender.com": true
+  }
+}

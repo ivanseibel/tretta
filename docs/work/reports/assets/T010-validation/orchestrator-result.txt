@@ -1,0 +1,78 @@
+
+ RUN  v4.1.11 /private/tmp/tretta-t010-review-_og8svsi/apps/web
+
+ ❯ test/orchestrator-recovery.test.tsx (12 tests | 3 failed) 49ms
+     × encerra o ciclo em 60 s mesmo com um ack em voo 22ms
+     × não autoriza ack de um transporte que desconectou antes da resposta 2ms
+     × não perde o sucesso do join quando o ack ultrapassa o timeout local 1ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 9 passed (12)
+   Start at  00:07:57
+   Duration  381ms (transform 58ms, setup 0ms, import 126ms, tests 49ms, environment 149ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/orchestrator-recovery.test.tsx > orquestrador: limites de recuperação > encerra o ciclo em 60 s mesmo com um ack em voo
+AssertionError: expected 'recovering' to be 'exhausted' // Object.is equality
+
+Expected: "exhausted"
+Received: "recovering"
+
+ ❯ test/orchestrator-recovery.test.tsx:509:33
+    507|     expect(lastSendAt - startedAt).toBeGreaterThanOrEqual(57000);
+    508|     await advance(60000 - (Date.now() - startedAt));
+    509|     expect(api().recoveryPhase).toBe('exhausted');
+       |                                 ^
+    510|     expect(result.value).toBe('deadline');
+    511|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  test/orchestrator-recovery.test.tsx > orquestrador: limites de recuperação > não autoriza ack de um transporte que desconectou antes da resposta
+AssertionError: expected { linkWhileOffline: true, …(3) } to deeply equal { linkWhileOffline: false, …(3) }
+
+- Expected
++ Received
+
+  {
+-   "interactiveAfterConnect": false,
+-   "linkAfterConnect": false,
+-   "linkWhileOffline": false,
+-   "newJoinAttempts": 1,
++   "interactiveAfterConnect": true,
++   "linkAfterConnect": true,
++   "linkWhileOffline": true,
++   "newJoinAttempts": 0,
+  }
+
+ ❯ test/orchestrator-recovery.test.tsx:530:8
+    528|     expect({ linkWhileOffline, linkAfterConnect: api().chatLinkReady,
+    529|       interactiveAfterConnect: api().interactive, newJoinAttempts: joi…
+    530|       .toEqual({ linkWhileOffline: false, linkAfterConnect: false,
+       |        ^
+    531|         interactiveAfterConnect: false, newJoinAttempts: 1 });
+    532|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  test/orchestrator-recovery.test.tsx > orquestrador: limites de recuperação > não perde o sucesso do join quando o ack ultrapassa o timeout local
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/orchestrator-recovery.test.tsx:551:33
+    549|       first.callback(okJoin('ROOMD3'));
+    550|     });
+    551|     expect(api().chatLinkReady).toBe(true);
+       |                                 ^
+    552|     expect(api().recoveryPhase).toBe('idle');
+    553|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+

@@ -1,0 +1,20 @@
+T011B — proveniência da fonte verificada (mesma máquina, 17/10/2026)
+
+Fonte (entrega): /Users/ivanseibel/dev/personal/tretta (working tree acumulado T008–T011B; HEAD sozinho não contém a versão aceita)
+  HEAD: 8967e94eae18a351c6c7b4c81a1f00ea5d6d1837
+  Node v22.23.1; pnpm 11.14.0 (versões fixadas do projeto)
+  git status: 97 entradas (90 pré-existentes T008–T011A + 1 modificação nova + 6 arquivos novos de T011B)
+
+Cópia isolada de verificação: /private/tmp/tretta-t011b-verify-01/tree
+  criada em 17/10/2026 03:44 com cp -Rc (clonefile APFS) do working tree completo, incluindo node_modules
+  build, tipos, unitários de todos os pacotes, E2E completo (2 execuções), E2E de treino, T007 isolado e
+  smoke de produção rodaram apenas na cópia; a árvore primária não executou nenhuma suíte
+  portas 3000/3100 verificadas livres antes de cada execução; os processos de cada suíte encerraram ao final
+  reports da cópia (docs/work/reports/assets) escritos pela cópia; apenas assets/T011B foi copiado de volta
+
+Cópia base pré-T011B (usada só para medir a intermitência do E2E T007):
+  original: /private/tmp/tretta-t011a-review-usByXi/tretta (cópia de revisão do T011A, criada 03:16, antes das edições de T011B)
+  clone: /private/tmp/tretta-t011b-flake-base-01/tree (cp -Rc), com pnpm build próprio antes das execuções
+
+Baseline de hashes desta execução: /private/tmp/tretta-t011b-baseline/ (source-before.sha256, reports-assets.sha256,
+source-files.txt, git-status-before.txt, head.txt), capturado antes de qualquer edição de T011B.

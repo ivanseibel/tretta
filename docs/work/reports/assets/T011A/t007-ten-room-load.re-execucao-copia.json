@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "scenario": {
+    "rooms": 10,
+    "clients": 80,
+    "concurrentRounds": 10
+  },
+  "barrier": {
+    "roomsActive": 10,
+    "clientsConnectedWithSevenCardHands": 80,
+    "gamesStartedBeforeAnyConcurrentPlay": true
+  },
+  "result": {
+    "roomsCompleted": 10,
+    "roundFinishedEventsPerClient": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "healthHttpStatus": 200,
+    "socketIoAckAfterLoad": true,
+    "ackErrors": 0
+  },
+  "timings": {
+    "elapsedMs": 1944,
+    "concurrentPlayDurationMs": 1739.28,
+    "measuredAcks": 1621,
+    "ackLatencyMs": {
+      "p50": 2.16,
+      "p95": 10.18,
+      "p99": 18.54,
+      "max": 19.57
+    }
+  },
+  "processResources": {
+    "measurementScope": "single Vitest Node process containing in-process HTTP/Socket.IO server, 80 socket.io-client sockets, and harness",
+    "cpuUserSeconds": 1.2,
+    "cpuSystemSeconds": 0.18,
+    "rssInitialBytes": 100024320,
+    "rssPeakSampledBytes": 219545600,
+    "rssFinalBytes": 220512256,
+    "samplingIntervalMs": 100,
+    "node": "v22.23.1",
+    "platform": "darwin 25.6.0 arm64",
+    "cpuCount": 10,
+    "hostMemoryBytes": 17179869184
+  },
+  "rooms": [
+    {
+      "roomIndex": 1,
+      "commands": 143,
+      "roundFinishedEventsPerClient": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "completed": true
+    },
+    {
+      "roomIndex": 2,
+      "commands": 143,
+      "roundFinishedEventsPerClient": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "completed": true
+    },
+    {
+      "roomIndex": 3,
+      "commands": 143,
+      "roundFinishedEventsPerClient": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "completed": true
+    },
+    {
+      "roomIndex": 4,
+      "commands": 143,
+      "roundFinishedEventsPerClient": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "completed": true
+    },
+    {
+      "roomIndex": 5,
+      "commands": 143,
+      "roundFinishedEventsPerClient": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "completed": true
+    },
+    {
+      "roomIndex": 6,
+      "commands": 143,
+      "roundFinishedEventsPerClient": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "completed": true
+    },
+    {
+      "roomIndex": 7,
+      "commands": 143,
+      "roundFinishedEventsPerClient": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "completed": true
+    },
+    {
+      "roomIndex": 8,
+      "commands": 143,
+      "roundFinishedEventsPerClient": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "completed": true
+    },
+    {
+      "roomIndex": 9,
+      "commands": 143,
+      "roundFinishedEventsPerClient": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "completed": true
+    },
+    {
+      "roomIndex": 10,
+      "commands": 143,
+      "roundFinishedEventsPerClient": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "completed": true
+    }
+  ],
+  "notes": [
+    "CPU/RSS include both the in-process server and client/harness work; this is not a server-only measurement.",
+    "The 100 ms RSS sample peak is a local peak, not an average monthly cloud memory estimate.",
+    "This local result does not predict cloud capacity or production network behavior."
+  ]
+}

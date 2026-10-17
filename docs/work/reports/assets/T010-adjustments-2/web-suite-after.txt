@@ -1,0 +1,9 @@
+
+ RUN  v4.1.11 /private/var/folders/r_/xrvhskhx45l6n66k99kzs61r0000gn/T/opencode/T010adj2/repo/apps/web
+
+
+ Test Files  13 passed (13)
+      Tests  137 passed (137)
+   Start at  01:03:07
+   Duration  1.39s (transform 1.19s, setup 0ms, import 2.97s, tests 2.09s, environment 4.82s)
+

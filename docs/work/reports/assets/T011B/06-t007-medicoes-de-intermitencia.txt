@@ -1,0 +1,31 @@
+T011B — medições da intermitência do E2E T007 (oito assentos), 17/10/2026, mesma máquina
+
+Assinatura única em TODAS as falhas observadas:
+  waitForTurnChange — "Timeout 15000ms exceeded while waiting on the predicate"
+  e2e/t007-eight-seat.spec.ts:104 (t007-eight-seat.spec.ts:29 no helper)
+
+Execuções isoladas do spec (npx pnpm exec playwright test e2e/t007-eight-seat.spec.ts):
+
+  a) Cópia base pré-T011B — /private/tmp/tretta-t011b-flake-base-01/tree
+     (clone cp -Rc de /private/tmp/tretta-t011a-review-usByXi/tretta, revisão T011A, anterior às edições de T011B)
+     run1 EXIT:1 (falha)  |  run2 EXIT:0  |  run3 EXIT:0  |  run4 EXIT:0  |  run5 EXIT:0
+     => 4 pass / 1 fail
+
+  b) Clone fresco da entrega — /private/tmp/tretta-t011b-fresh-01/tree
+     (cp -Rc da árvore primária completa + pnpm build EXIT:0 antes das execuções)
+     run1 EXIT:0  |  run2 EXIT:1 (falha)  |  run3 EXIT:0  |  run4 EXIT:0  |  run5 EXIT:0
+     => 4 pass / 1 fail (mesmo comportamento da base)
+
+  c) Cópia de verificação acumulada — /private/tmp/tretta-t011b-verify-01/tree
+     (já havia rodado suíte completa 2x e smoke de produção com NEXT_PUBLIC_TEST_HOOKS=0 no .next)
+     run1 EXIT:1  |  run2 EXIT:1  |  run3 EXIT:1  |  run4 EXIT:1  |  run5 EXIT:0
+     => 1 pass / 4 fail — atribuído ao estado acumulado do .next da cópia, não às fontes:
+        o clone fresco da MESMA fonte (item b) ficou 4/5, igual à base sem T011B (item a)
+
+Suíte E2E completa na cópia de verificação:
+  rodada 1: 36/37 — falha apenas no T007 (assinatura acima); log 03-e2e-completo-rodada1-intermitencia.log
+  rodada 2: 37/37 — incluindo o T007; log 04-e2e-completo-rodada2-verde.log
+
+Conclusão: intermitência pré-existente do spec pesado de 8 clientes neste ambiente, reproduzida sem e com T011B.
+O fluxo clássico não muda com T011B: todos os participantes são 'human'; rótulos/ids novas são avaliadas de forma
+idêntica à versão anterior (ver preservação em 08-preservacao-hashes.txt e os unitários de regressão da sala comum).

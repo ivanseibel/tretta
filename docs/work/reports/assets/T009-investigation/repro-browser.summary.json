@@ -1,0 +1,48 @@
+{
+ "node": "v22.23.1",
+ "scenario": "H — navegador real (Chromium) com contexto mobile (Pixel 7 emulado)",
+ "setup": {
+  "topologia": "web app (cópia isolada do working tree, next dev) -> socket.io -> proxy TCP 3160 (blackhole) -> servidor real (dist) 3150",
+  "corte": "blackhole em TODAS as conexões pré-existentes no momento do corte (as conexões novas, criadas pelo reload, atravessam)",
+  "observacao": "o next dev mantém conexões extras por aba (StrictMode); pausar todas as pré-corte garante que o socket ativo fique meio aberto no servidor"
+ },
+ "result": {
+  "symptom": {
+   "handCountBefore": 7,
+   "handDigestBefore": "20151a771c0f02319258196c716bde2397bec8adc90e9479783cd6101cb3e2b9",
+   "msToErrorAfterReload": 1602,
+   "errorText": "Esta identidade já está conectada em outra aba ou dispositivo.",
+   "joinFormVisible": true,
+   "stillStuckAfterRecognitionAtMs": 54205,
+   "stillStuckErrorPersists": true
+  },
+  "storage": {
+   "identityKeyPresent": true,
+   "credentialLengthBytes": 43,
+   "observacao": "credencial preservada durante a recusa; nada foi sobrescrito nem limpo"
+  },
+  "recovery": {
+   "reloadAfterRecognitionMs": 616,
+   "handVisible": true,
+   "handCountAfter": 7,
+   "sameHandDigest": true,
+   "errorVisible": false
+  },
+  "host": {
+   "pausePanelVisibleAtMs": 48008,
+   "pausePanelVisibleAnywhere": true,
+   "pauseClearedAfterRecovery": false,
+   "interpretacao": "o corte simultâneo das duas conexões colocou a sala inteira sem conexões; pela regra do servidor isso entra em retenção e a pausa exige retomada do anfitrião (texto do painel: 'Ninguém está conectado...'). Comportamento projetado; o E2E da correção deve cortar só a conexão do jogador alvo."
+  }
+ },
+ "timeline": [
+  { "ms": 0, "kind": "cut (blackhole de todas as conexões existentes)" },
+  { "ms": 354, "kind": "proxy.connection (novas conexões do reload da Bia)" },
+  { "ms": 1602, "kind": "bia.error-visible", "error": "ALREADY_CONNECTED -> formulário de entrada" },
+  { "ms": 45784, "kind": "reconexão do transporte da Ana (ping timeout do cliente)" },
+  { "ms": 48008, "kind": "pausa visível na página da Ana (janela de reconhecimento do servidor fechada ~45 s)" },
+  { "ms": 54205, "kind": "bia.still-stuck", "error": "banner ainda visível; sem retry automático" },
+  { "ms": 54839, "kind": "bia.recovered", "msToRetry": 616, "hand": true }
+ ],
+ "screenshot": "bia-error-after-reload.png (contexto mobile, banner de erro + formulário de entrada; sem mão/credencial)"
+}

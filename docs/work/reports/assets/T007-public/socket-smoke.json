@@ -1,0 +1,14 @@
+{
+  "server": "https://tretta-server.onrender.com",
+  "origin": "https://tretta.vercel.app",
+  "clients": 2,
+  "transport": "websocket/TLS",
+  "roundsFinished": 1,
+  "commands": 28,
+  "privacyChecks": 58,
+  "chatDeliveredToBoth": true,
+  "sameWinner": true,
+  "returnedToLobby": true,
+  "clientsLeft": true,
+  "testHooksUsed": false
+}

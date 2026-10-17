@@ -37,16 +37,31 @@ afterEach(() => {
 
 describe('storage das preferências', () => {
   it('roundtrip save/load preserva as escolhas', () => {
-    savePreferences({ animations: 'off', soundMuted: true, hideTaunts: true });
-    expect(loadPreferences()).toEqual({ animations: 'off', soundMuted: true, hideTaunts: true });
+    savePreferences({ animations: 'off', soundMuted: true, turnNotificationEnabled: false, hideTaunts: true });
+    expect(loadPreferences()).toEqual({
+      animations: 'off',
+      soundMuted: true,
+      turnNotificationEnabled: false,
+      hideTaunts: true,
+    });
 
-    savePreferences({ animations: 'reduced', soundMuted: false, hideTaunts: false });
-    expect(loadPreferences()).toEqual({ animations: 'reduced', soundMuted: false, hideTaunts: false });
+    savePreferences({ animations: 'reduced', soundMuted: false, turnNotificationEnabled: true, hideTaunts: false });
+    expect(loadPreferences()).toEqual({
+      animations: 'reduced',
+      soundMuted: false,
+      turnNotificationEnabled: true,
+      hideTaunts: false,
+    });
   });
 
   it('sem nada gravado usa os padrões', () => {
     expect(loadPreferences()).toEqual(DEFAULT_PREFERENCES);
-    expect(DEFAULT_PREFERENCES).toEqual({ animations: 'full', soundMuted: false, hideTaunts: false });
+    expect(DEFAULT_PREFERENCES).toEqual({
+      animations: 'full',
+      soundMuted: false,
+      turnNotificationEnabled: true,
+      hideTaunts: false,
+    });
   });
 
   it('entrada corrompida, parcial ou de tipos errados cai nos padrões', () => {
@@ -56,10 +71,18 @@ describe('storage das preferências', () => {
     expect(parsePreferences('{"animations":"turbo"}')).toEqual(DEFAULT_PREFERENCES);
     expect(parsePreferences('{"soundMuted":"sim"}')).toEqual(DEFAULT_PREFERENCES);
     expect(parsePreferences('{"hideTaunts":1}')).toEqual(DEFAULT_PREFERENCES);
+    // Registros anteriores não têm o novo campo; o aviso entra ligado.
+    expect(parsePreferences('{"animations":"reduced","soundMuted":true,"hideTaunts":false}')).toEqual({
+      animations: 'reduced',
+      soundMuted: true,
+      turnNotificationEnabled: true,
+      hideTaunts: false,
+    });
     // Parcial válido preserva o que há e completa o resto com o padrão.
     expect(parsePreferences('{"animations":"off"}')).toEqual({
       animations: 'off',
       soundMuted: false,
+      turnNotificationEnabled: true,
       hideTaunts: false,
     });
   });

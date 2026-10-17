@@ -1,0 +1,17 @@
+{
+  "total": 88,
+  "restored": 87,
+  "divergences": 1,
+  "missing": 0,
+  "pendingStatusAfter": 1
+}
+{
+  "divergences": [
+    {
+      "path": "docs/work/reports/assets/T007/ten-room-load.json",
+      "reason": "conteúdo atual não confere com workingSha256 registrado (nada tocado)",
+      "currentSha": "2fd39f6e34ee03b6bf33c5ae302d9c382baa12f0da0a5a0a4f3c0f4ddf4fad9f",
+      "workingSha256": "1ad8fa90613755b43442be1d681d09aa704500f24bfa7bf9e820d82e86c1bdbb"
+    }
+  ]
+}

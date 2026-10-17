@@ -200,7 +200,13 @@ describe('saída voluntária e controle da sala', () => {
     const finished = latestState(hostRec);
     expect(finished.room.status).toBe('finished');
     expect(finished.room.participants.map((p) => p.nickname)).toEqual(['Ana']);
-    expect(finished.room.lastRound).toEqual({ roundNumber: 1, winnerId: null, winnerNickname: null, substitute: false });
+    expect(finished.room.lastRound).toEqual({
+      roundNumber: 1,
+      winnerId: null,
+      winnerNickname: null,
+      substitute: false,
+      winnerKind: null,
+    });
     expect(finished.room.participants.reduce((sum, p) => sum + p.score, 0)).toBe(0);
 
     // Replay da intenção é inofensivo e mantém a resposta memorizada.

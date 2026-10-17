@@ -1,13 +1,33 @@
 'use client';
 
-import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type FormEvent, type ReactNode } from 'react';
 import type { ChatMessage } from '@tretta/protocol';
 import { CHAT_MESSAGE_MAX_LENGTH, chatCodePointLength } from '@tretta/protocol/shared';
 import { useRoom } from '@/app/providers';
 import { AvatarBadge } from '@/components/ui';
 
+const useIsomorphicLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect;
+
 function formatTime(sentAt: number): string {
   return new Date(sentAt).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+}
+
+interface ChatScrollAnchor {
+  seq: number;
+  top: number;
+}
+
+function visibleAnchor(element: HTMLUListElement): ChatScrollAnchor | null {
+  const listTop = element.getBoundingClientRect().top;
+  const listBottom = element.getBoundingClientRect().bottom;
+  for (const child of Array.from(element.children)) {
+    if (!(child instanceof HTMLElement)) continue;
+    const bounds = child.getBoundingClientRect();
+    if (bounds.bottom <= listTop || bounds.top >= listBottom) continue;
+    const seq = Number(child.dataset.chatSeq);
+    if (Number.isFinite(seq)) return { seq, top: bounds.top - listTop };
+  }
+  return null;
 }
 
 /**
@@ -21,7 +41,9 @@ export function ChatPanel(): ReactNode {
   const [chatError, setChatError] = useState<string | null>(null);
   const [sending, setSending] = useState(false);
   const listRef = useRef<HTMLUListElement | null>(null);
+  const scrollAnchorRef = useRef<ChatScrollAnchor | null>(null);
   const stickRef = useRef(true);
+  const scrollContextRef = useRef<{ roomCode: string | null; epoch: number } | null>(null);
   const roomCode = room.state?.room.roomCode ?? null;
   const loadHistory = room.loadChatHistory;
 
@@ -34,18 +56,54 @@ export function ChatPanel(): ReactNode {
   }, [roomCode, loadHistory, room.chatLinkEpoch]);
 
   const messages = room.chatMessages;
+  const displayMessages = [...messages].reverse();
 
   const onScroll = (): void => {
     const element = listRef.current;
     if (element === null) return;
-    stickRef.current = element.scrollHeight - element.scrollTop - element.clientHeight < 48;
+    stickRef.current = element.scrollTop < 48;
+    scrollAnchorRef.current = stickRef.current ? null : visibleAnchor(element);
   };
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const element = listRef.current;
-    if (element === null || !stickRef.current) return;
-    element.scrollTop = element.scrollHeight;
-  }, [messages]);
+    if (element === null) {
+      if (roomCode === null) {
+        scrollContextRef.current = null;
+        stickRef.current = true;
+        scrollAnchorRef.current = null;
+      }
+      return;
+    }
+
+    const previousContext = scrollContextRef.current;
+    if (
+      previousContext === null ||
+      previousContext.roomCode !== roomCode ||
+      previousContext.epoch !== room.chatLinkEpoch
+    ) {
+      scrollContextRef.current = { roomCode, epoch: room.chatLinkEpoch };
+      stickRef.current = true;
+      scrollAnchorRef.current = null;
+      element.scrollTop = 0;
+      return;
+    }
+
+    if (stickRef.current) {
+      element.scrollTop = 0;
+      return;
+    }
+
+    // Preserve the first visible message when a newer message is inserted at
+    // the top or a missing interval is filled above the reader's position.
+    const anchor = scrollAnchorRef.current;
+    if (anchor === null) return;
+    const anchoredMessage = element.querySelector<HTMLElement>(`[data-chat-seq="${anchor.seq}"]`);
+    if (anchoredMessage === null) return;
+    const currentTop = anchoredMessage.getBoundingClientRect().top - element.getBoundingClientRect().top;
+    const shift = currentTop - anchor.top;
+    if (Math.abs(shift) > 0.5) element.scrollTop += shift;
+  }, [messages, roomCode, room.chatLinkEpoch]);
 
   if (roomCode === null) return null;
 
@@ -70,9 +128,11 @@ export function ChatPanel(): ReactNode {
     const result = await room.sendChat(draft);
     setSending(false);
     if (result.ok) {
+      stickRef.current = true;
+      scrollAnchorRef.current = null;
+      if (listRef.current !== null) listRef.current.scrollTop = 0;
       setDraft('');
       setChatError(null);
-      stickRef.current = true;
       return;
     }
     // Recusa com explicação; o texto digitado permanece para tentar de novo.
@@ -94,7 +154,6 @@ export function ChatPanel(): ReactNode {
               // menor seq global: um cache destacado não fecha a paginação.
               const frontier = room.chatHistoryFrontier;
               if (frontier === null) return;
-              stickRef.current = false;
               void room.loadChatHistory(frontier);
             }}
           >
@@ -109,7 +168,7 @@ export function ChatPanel(): ReactNode {
             Ainda não há mensagens. Diga oi!
           </li>
         ) : null}
-        {messages.map((message: ChatMessage) => {
+        {displayMessages.map((message: ChatMessage) => {
           const muted = room.mutedPlayerIds.includes(message.author.playerId);
           const mine = message.author.playerId === room.state?.self.playerId;
           return (
@@ -117,6 +176,7 @@ export function ChatPanel(): ReactNode {
               key={message.seq}
               className={`chat-message${muted ? ' chat-message-muted' : ''}`}
               data-testid={`chat-message-${message.seq}`}
+              data-chat-seq={message.seq}
               data-author-player-id={message.author.playerId}
             >
               {muted ? (

@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-17T10:48:29.553439+00:00",
+  "mode": "manual_publication_prepared_not_executed",
+  "authorization": "User replied Vamos after local acceptance and publication authorization requirement",
+  "source_files_checked": 148,
+  "source_differences": [],
+  "git": {
+    "local_and_remote_main": "8967e94eae18a351c6c7b4c81a1f00ea5d6d1837",
+    "remote": "git@github.com:ivanseibel/tretta.git"
+  },
+  "render": {
+    "service": "srv-db95f2u7bikc73dpndt0",
+    "plan": "free",
+    "autoDeploy": "yes",
+    "autoDeployTrigger": "commit",
+    "branch": "main",
+    "live_deploy": "dep-db95f367bikc73dpnfs0",
+    "live_revision": "8967e94eae18a351c6c7b4c81a1f00ea5d6d1837"
+  },
+  "vercel": {
+    "deployment": "dpl_J9jjh4nHDUfMZj9cZU2JN8hKS6Tj",
+    "status": "READY",
+    "target": "production",
+    "url": "https://tretta-26gh6ystv-seibel.vercel.app",
+    "alias_list_source_for_tretta_vercel_app": "tretta-26gh6ystv-seibel.vercel.app",
+    "project_and_hobby_plan": "reference_from_previous_acceptance_recheck_at_execution"
+  },
+  "active_rooms": "not_observable_from_healthz; user selects a window without games",
+  "preparation_mutations": "local documentation only; no commit push deploy restart or successful alias mutation",
+  "cli_note": "alias inspect is unsupported; command failed to resolve inspect and alias list confirmed unchanged T010 target",
+  "docs": [
+    "https://vercel.com/docs/cli/deploy",
+    "https://vercel.com/docs/deployments/promoting-a-deployment",
+    "https://render.com/docs/deploys",
+    "https://render.com/docs/rollbacks"
+  ]
+}

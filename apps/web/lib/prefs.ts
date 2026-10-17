@@ -8,12 +8,14 @@ export type AnimationPreference = 'full' | 'reduced' | 'off';
 export interface MoodPreferences {
   readonly animations: AnimationPreference;
   readonly soundMuted: boolean;
+  readonly turnNotificationEnabled: boolean;
   readonly hideTaunts: boolean;
 }
 
 export const DEFAULT_PREFERENCES: MoodPreferences = {
   animations: 'full',
   soundMuted: false,
+  turnNotificationEnabled: true,
   hideTaunts: false,
 };
 
@@ -39,6 +41,10 @@ export function parsePreferences(raw: string | null): MoodPreferences {
     return {
       animations: normalizeAnimations(record.animations),
       soundMuted: normalizeBoolean(record.soundMuted, DEFAULT_PREFERENCES.soundMuted),
+      turnNotificationEnabled: normalizeBoolean(
+        record.turnNotificationEnabled,
+        DEFAULT_PREFERENCES.turnNotificationEnabled,
+      ),
       hideTaunts: normalizeBoolean(record.hideTaunts, DEFAULT_PREFERENCES.hideTaunts),
     };
   } catch {

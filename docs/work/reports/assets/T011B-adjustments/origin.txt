@@ -1,0 +1,27 @@
+T011B-ajustes — proveniência da cópia verificada
+=================================================
+Execução: 17/10/2026, 11:28 (horário local do executor), manual, sem subagentes.
+
+Fonte: /Users/ivanseibel/dev/personal/tretta (primário), working tree completo
+Método: cp -Rc (clone APFS; documentos/artefatos físicos, sem symlink para a fonte)
+Cópia: /private/tmp/tretta-t011b-adj-verify-01/tree
+
+Git: HEAD 8967e94eae18a351c6c7b4c81a1f00ea5d6d1837; nenhum commit/push/deploy foi feito.
+Node v22.23.1; pnpm 11.14.0.
+A cópia foi feita após a correção final do provider e do teste novo; o arquivo
+apps/web/test/training-entry-context.test.tsx foi ressincronizado byte a byte
+antes das rodadas formais (diff -q: idêntico).
+
+Conferência fonte (entrega no primário) × cópia, critério de manifesto do T011B
+(arquivos fora de .git/node_modules/.next/dist/test-results/playwright-report):
+- Lista da cópia: 651 arquivos; primário: 656 — a diferença são os 5 logs
+  novos deste ajuste, escritos somente no primário (assets/T011B-adjustments/).
+- Diferenças de hash: 12, todas esperadas e sem qualquer arquivo de código/doc:
+  * apps/web/next-env.d.ts — regenerado pelo `next dev`/build dentro da cópia;
+  * apps/web/tsconfig.tsbuildinfo — artefato do tsc na cópia;
+  * 8 capturas PNG em docs/work/reports/assets/T011B/ e 2 em assets/T004/ —
+    regravadas pelos próprios specs E2E executados na cópia (training.spec.ts
+    grava em assets/T011B/; recovery.spec.ts grava em assets/T004/).
+- Lista completa de diferenças: 04-preservacao-hashes.txt.
+- O runner do orquestrador foi copiado de assets/T011B-validation/ para a
+  cópia com os mesmos bytes e removido antes de build/tipos (evidência externa).

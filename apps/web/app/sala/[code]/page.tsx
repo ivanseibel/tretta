@@ -15,7 +15,57 @@ import { TauntOverlay } from '@/components/TauntOverlay';
 import { TauntPanel } from '@/components/TauntPanel';
 import { WaitingRoom } from '@/components/WaitingRoom';
 
-type Mode = 'checking' | 'join' | 'room' | 'not-found';
+type Mode = 'checking' | 'recovering' | 'exhausted' | 'join' | 'room' | 'not-found';
+
+/**
+ * Recusa definitiva da mesa de treino: só a pessoa dona retorna com a
+ * credencial original. Não há retry automático, criação de identidade nem
+ * troca de credencial aqui.
+ */
+function TrainingEntryRefused(): ReactNode {
+  return (
+    <section className="panel" aria-label="Entrada recusada" data-testid="training-entry-refused">
+      <p>
+        Esta mesa é de treino e é individual: só a pessoa que a criou pode jogar nela. Os três adversários da mesa são
+        bots e outras pessoas não entram.
+      </p>
+      <p className="muted">Para jogar com amigos, crie ou entre em uma sala comum pela página inicial.</p>
+      <Link className="button-link" href="/" data-testid="back-home">
+        Voltar ao início
+      </Link>
+    </section>
+  );
+}
+
+/**
+ * Prazo esgotado sem confirmação: mensagem neutra (a sessão pode estar viva em
+ * outra aba/dispositivo), sem entrar como pessoa nova e sem expulsar ninguém.
+ * A credencial guardada permanece; "Tentar novamente" inicia um ciclo novo.
+ */
+function RecoveryExhausted({ code }: { code: string }): ReactNode {
+  const room = useRoom();
+  return (
+    <section className="panel" aria-label="Retomada pendente" data-testid="recovery-exhausted">
+      <p>
+        Não foi possível retomar sua sessão automaticamente. Ela pode ainda estar ativa em outra aba ou dispositivo — a
+        credencial desta sala continua guardada neste navegador.
+      </p>
+      <div className="recovery-actions">
+        <button
+          type="button"
+          className="primary"
+          data-testid="retry-recovery-button"
+          onClick={() => void room.retryRecovery(code)}
+        >
+          Tentar novamente
+        </button>
+        <Link className="button-link" href="/" data-testid="back-home">
+          Voltar ao início
+        </Link>
+      </div>
+    </section>
+  );
+}
 
 export default function RoomPage(): ReactNode {
   const params = useParams<{ code: string }>();
@@ -51,6 +101,14 @@ export default function RoomPage(): ReactNode {
       setMode('not-found');
       return;
     }
+    if (room.recoveryPhase === 'recovering') {
+      setMode('recovering');
+      return;
+    }
+    if (room.recoveryPhase === 'exhausted') {
+      setMode('exhausted');
+      return;
+    }
     if (room.connection !== 'live') {
       setMode('checking');
       return;
@@ -61,18 +119,35 @@ export default function RoomPage(): ReactNode {
       if (cancelled) return;
       if (result === 'ok') setMode('room');
       else if (result === 'not-found') setMode('not-found');
-      else if (result === 'offline') setMode('checking');
+      else if (result === 'deadline') setMode('exhausted');
+      else if (result === 'offline' || result === 'cancelled' || result === 'refused') setMode('checking');
       else setMode('join');
     })();
     return () => {
       cancelled = true;
     };
-  }, [code, stateMatches, room.rejoin, room.connection, room.removedMessage, room.roomGone]);
+  }, [
+    code,
+    stateMatches,
+    room.rejoin,
+    room.connection,
+    room.removedMessage,
+    room.roomGone,
+    room.recoveryPhase,
+  ]);
+
+  // Sair da página (outra sala, início ou desmontagem) cancela a retomada:
+  // nenhuma resposta antiga pode tocar um contexto que não existe mais.
+  useEffect(() => {
+    return () => {
+      room.cancelRecovery();
+    };
+  }, [code, room.cancelRecovery]);
 
   useEffect(() => {
     if (previousFocusStage.current === focusStage) return;
     previousFocusStage.current = focusStage;
-    if (focusStage === 'checking' || document.activeElement !== document.body) return;
+    if (focusStage === 'checking' || focusStage === 'recovering' || document.activeElement !== document.body) return;
     globalThis.requestAnimationFrame(() => {
       if (document.activeElement === document.body) {
         document.querySelector<HTMLElement>('[data-focus-target]')?.focus({ preventScroll: true });
@@ -109,12 +184,49 @@ export default function RoomPage(): ReactNode {
     );
   }
 
+  if (room.trainingRefused) {
+    return (
+      <main className="screen">
+        <header className="screen-header">
+          <h1 data-focus-target tabIndex={-1}>Mesa de treino individual</h1>
+        </header>
+        <TrainingEntryRefused />
+      </main>
+    );
+  }
+
   if (mode === 'checking') {
     return (
       <main className="screen">
         <p className="muted" data-testid="connecting">
           Conectando…
         </p>
+      </main>
+    );
+  }
+
+  if (mode === 'recovering') {
+    return (
+      <main className="screen">
+        <p className="muted" role="status" data-testid="recovering">
+          Retomando sua sessão…
+        </p>
+        <p className="muted">
+          Esta pode levar alguns segundos. Se demorar, você poderá tentar de novo sem perder a identidade.
+        </p>
+      </main>
+    );
+  }
+
+  if (mode === 'exhausted') {
+    return (
+      <main className="screen">
+        <header className="screen-header">
+          <h1 data-focus-target tabIndex={-1}>
+            Sessão não retomada
+          </h1>
+        </header>
+        <RecoveryExhausted code={code} />
       </main>
     );
   }
@@ -178,11 +290,17 @@ export default function RoomPage(): ReactNode {
           Conexão perdida. Tentando reconectar — os envios ficam bloqueados até voltar.
         </p>
       ) : null}
+      {room.connection === 'live' && room.recoveryPhase === 'recovering' ? (
+        <p className="connection-banner" role="status" data-testid="recovering-banner">
+          Retomando sua sessão… os envios ficam bloqueados até a confirmação.
+        </p>
+      ) : null}
       {room.connection === 'live' && room.reconnectedAt !== null ? (
         <p className="connection-banner recovered" role="status" data-testid="connection-recovered">
           Conexão recuperada.
         </p>
       ) : null}
+      {room.recoveryPhase === 'exhausted' ? <RecoveryExhausted code={code} /> : null}
       {room.error !== null ? <ErrorBanner message={room.error} onDismiss={room.clearError} /> : null}
       {room.state.room.status === 'lobby' ? <Lobby state={room.state} /> : null}
       {room.state.room.status === 'playing' && room.state.self.view === null ? (

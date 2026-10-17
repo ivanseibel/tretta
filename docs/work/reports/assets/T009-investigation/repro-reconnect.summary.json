@@ -1,0 +1,34 @@
+{
+ "node": "v22.23.1",
+ "scenario": "G — perda de transporte sem reload (reconexão automática do socket.io)",
+ "setup": {
+  "topologia": "cliente socket.io -> proxy TCP 3160 -> servidor real (dist) 3150",
+  "corte": "proxy pause no par de sockets (sem FIN/RST) — queda abrupta/suspensão",
+  "cliente": "reexecução do fluxo de conexão do app (mesma credencial), sem reload"
+ },
+ "result": {
+  "rejoinAttempts": [
+   { "attempt": 1, "ms": 2375, "code": "ALREADY_CONNECTED" },
+   { "attempt": 2, "ms": 2778, "code": "ALREADY_CONNECTED" },
+   { "attempt": 3, "ms": 3181, "code": "ALREADY_CONNECTED" },
+   { "attempt": 4, "ms": 3586, "code": "ALREADY_CONNECTED" }
+  ],
+  "burstDuracaoMs": 1211,
+  "serverRecognizedOldSocketMs": 45078,
+  "autoRetryAfterRefusal": 0,
+  "roomStatusAfter": "paused",
+  "phoneStillBound": false,
+  "machineIsConnected": false
+ },
+ "interpretacao": [
+  "O socket.io reconecta o transporte, mas o vínculo da identidade é recusado enquanto o socket antigo (meio aberto) não expira no servidor (~45s).",
+  "O app esgota as 4 tentativas em ~1,2s e NÃO tenta novamente após a recusa: a sala fica pausada e o jogador não recupera a sessão sozinho.",
+  "Confirma a lacuna central: retry do cliente (~1,2s) << janela de reconhecimento do servidor (pingInterval 25s + pingTimeout 20s = ~45s)."
+ ],
+ "timeline": [
+  { "ms": 21, "kind": "proxy.blackhole", "id": 1 },
+  { "ms": 1225, "kind": "phone.disconnect", "reason": "forced close" },
+  { "ms": 2394, "kind": "phone.connect", "socket": "ojiM…" },
+  { "ms": 45020, "kind": "server.handleDisconnect", "socket": "4nJH…" }
+ ]
+}

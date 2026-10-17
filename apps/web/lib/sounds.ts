@@ -22,7 +22,7 @@ interface Tone {
   readonly gain: number;
 }
 
-function ensureContext(): AudioContext | null {
+function createContext(): AudioContext | null {
   if (typeof window === 'undefined') return null;
   try {
     const Ctor =
@@ -30,17 +30,37 @@ function ensureContext(): AudioContext | null {
       (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
     if (Ctor === undefined) return null;
     if (context === null) context = new Ctor();
-    if (context.state === 'suspended') void context.resume().catch(() => undefined);
     return context;
   } catch {
     return null;
   }
 }
 
+function resumeBestEffort(audio: AudioContext): void {
+  if (audio.state !== 'suspended' && (audio.state as string) !== 'interrupted') return;
+  try {
+    void audio.resume().catch(() => undefined);
+  } catch {
+    // A política de autoplay e falhas do dispositivo são opcionais.
+  }
+}
+
+/** Prepara WebAudio em um gesto humano sem criar nós audíveis nem tocar som. */
+export function prepareSoundPlayback(): void {
+  const audio = createContext();
+  if (audio !== null) resumeBestEffort(audio);
+}
+
 function playTones(tones: readonly Tone[]): void {
   if (muted) return;
-  const audio = ensureContext();
+  const audio = createContext();
   if (audio === null) return;
+  // A sound requested before the browser has unlocked WebAudio must not stay
+  // queued and surprise the player later when a gesture resumes the context.
+  if (audio.state !== 'running') {
+    resumeBestEffort(audio);
+    return;
+  }
   try {
     const base = audio.currentTime;
     for (const tone of tones) {
@@ -118,6 +138,14 @@ export function playTauntSound(type: TauntType): void {
     { frequency: 430, startAt: 0.11, duration: 0.1, type: 'sine', gain: 0.16 },
     { frequency: 340, startAt: 0.22, duration: 0.1, type: 'sine', gain: 0.16 },
     { frequency: 250, startAt: 0.33, duration: 0.16, type: 'sine', gain: 0.16 },
+  ]);
+}
+
+/** Dois tons ascendentes curtos e distintos para indicar o início da própria vez. */
+export function playTurnNotificationSound(): void {
+  playTones([
+    { frequency: 660, startAt: 0, duration: 0.09, type: 'sine', gain: 0.14 },
+    { frequency: 880, startAt: 0.1, duration: 0.13, type: 'sine', gain: 0.14 },
   ]);
 }
 

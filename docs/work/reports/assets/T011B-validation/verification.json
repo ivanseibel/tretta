@@ -1,0 +1,29 @@
+{
+  "source": "/Users/ivanseibel/dev/personal/tretta",
+  "isolated_review": "/private/tmp/tretta-t011b-review-82SqkI/tree",
+  "executor_clone": "/private/tmp/tretta-t011b-verify-01/tree",
+  "source_files_compared": 148,
+  "review_source_diffs": [],
+  "executor_source_diffs": [],
+  "changed_existing_source_files": [
+    "apps/web/app/globals.css",
+    "apps/web/app/page.tsx",
+    "apps/web/app/providers.tsx",
+    "apps/web/app/sala/[code]/page.tsx",
+    "apps/web/components/GameTable.tsx",
+    "apps/web/components/Lobby.tsx",
+    "apps/web/components/PausePanel.tsx",
+    "apps/web/components/Results.tsx"
+  ],
+  "historical_assets_checked": 417,
+  "historical_asset_diffs": [],
+  "independent_web_tests": {
+    "passed": 126,
+    "failed": 0
+  },
+  "supplemental_tests": {
+    "passed": 5,
+    "failed": 2
+  },
+  "decision": "requires_adjustments_B6"
+}

@@ -1,0 +1,24 @@
+{
+  "sourceCopy": "/private/tmp/tretta-t008-validation-bpp235w6",
+  "sourceFilesCompared": 19,
+  "sourceDifferences": 0,
+  "scriptSha256": "2b77a90d3c114b5994acb74d3d86a7a527a6651b5bcdef74861497faba63ffdd",
+  "exitCode": 0,
+  "checks": {
+    "gracefulRecoversSamePlayer": true,
+    "halfOpenRefusesFourTimes": true,
+    "lateRecoverySameIdentity": true,
+    "originalActiveTabProtected": true,
+    "concurrentExactlyOneOwner": true,
+    "definitiveErrors": true,
+    "freshJoinDuplicatesIdentity": true
+  },
+  "timings": {
+    "gracefulRecognitionMs": 22,
+    "halfOpenBurstMs": 1212,
+    "halfOpenFirstRecoveryMs": 45367,
+    "recognitionSampleMs": 45364,
+    "pauseObservedMs": 45003
+  },
+  "scope": "A-F repeated with real local server; G/H evidence reviewed separately; no public room accessed"
+}

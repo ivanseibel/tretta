@@ -172,8 +172,8 @@ describe('placar histórico independente da vaga', () => {
     await waitFor(() => latestState(pair.guestRec).room.status === 'finished', 'fim para Bia');
     const finished = latestState(pair.guestRec);
     expect(finished.room.scoreboard).toEqual([
-      { playerId: pair.hostId, nickname: 'Ana', avatar: 'raposa', wins: 1, current: true },
-      { playerId: pair.guestId, nickname: 'Bia', avatar: 'lobo', wins: 0, current: true },
+      { playerId: pair.hostId, kind: 'human', nickname: 'Ana', avatar: 'raposa', wins: 1, current: true },
+      { playerId: pair.guestId, kind: 'human', nickname: 'Bia', avatar: 'lobo', wins: 0, current: true },
     ]);
     expect(finished.room.participants.find((p) => p.id === pair.hostId)?.score).toBe(1);
 
@@ -183,8 +183,8 @@ describe('placar histórico independente da vaga', () => {
     const afterLeave = latestState(pair.guestRec);
     expect(afterLeave.room.participants.map((p) => p.nickname)).toEqual(['Bia']);
     expect(afterLeave.room.scoreboard).toEqual([
-      { playerId: pair.hostId, nickname: 'Ana', avatar: 'raposa', wins: 1, current: false },
-      { playerId: pair.guestId, nickname: 'Bia', avatar: 'lobo', wins: 0, current: true },
+      { playerId: pair.hostId, kind: 'human', nickname: 'Ana', avatar: 'raposa', wins: 1, current: false },
+      { playerId: pair.guestId, kind: 'human', nickname: 'Bia', avatar: 'lobo', wins: 0, current: true },
     ]);
 
     // Pessoa nova ocupa a vaga liberada; o placar conservado continua visível.
@@ -236,8 +236,8 @@ describe('placar histórico independente da vaga', () => {
     await waitFor(() => latestState(pair.hostRec).room.participants.length === 1, 'remoção');
     const afterRemoval = latestState(pair.hostRec);
     expect(afterRemoval.room.scoreboard).toEqual([
-      { playerId: pair.hostId, nickname: 'Ana', avatar: 'raposa', wins: 0, current: true },
-      { playerId: pair.guestId, nickname: 'Bia', avatar: 'lobo', wins: 1, current: false },
+      { playerId: pair.hostId, kind: 'human', nickname: 'Ana', avatar: 'raposa', wins: 0, current: true },
+      { playerId: pair.guestId, kind: 'human', nickname: 'Bia', avatar: 'lobo', wins: 1, current: false },
     ]);
 
     // Vaga liberada recebe pessoa nova e o histórico permanece.

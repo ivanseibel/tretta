@@ -158,6 +158,7 @@ describe('substituto automático integrado ao servidor', () => {
       winnerId: pair.guestId,
       winnerNickname: 'Bia',
       substitute: true,
+      winnerKind: 'human',
     });
     expect(finished.room.participants.map((p) => p.nickname)).toEqual(['Ana']);
     expect(finished.room.participants.reduce((sum, p) => sum + p.score, 0)).toBe(0);
@@ -244,6 +245,7 @@ describe('substituto automático integrado ao servidor', () => {
       winnerId: pair.guestId,
       winnerNickname: 'Bia',
       substitute: false,
+      winnerKind: 'human',
     });
     expect(finished.room.participants.find((p) => p.id === pair.guestId)?.score).toBe(1);
   });

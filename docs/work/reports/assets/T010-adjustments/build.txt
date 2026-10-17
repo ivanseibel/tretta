@@ -1,0 +1,26 @@
+$ pnpm -r --if-present build
+Scope: 4 of 5 workspace projects
+packages/rules build$ tsc -p tsconfig.build.json
+packages/rules build: Done
+packages/protocol build$ tsc -p tsconfig.build.json
+packages/protocol build: Done
+apps/server build$ tsc -p tsconfig.build.json
+apps/web build$ next build
+apps/web build: ▲ Next.js 16.4.1 (Turbopack)
+apps/web build: ✓ Running next.config.ts took 51ms
+apps/web build:   Creating an optimized production build ...
+apps/server build: Done
+apps/web build: ✓ Compiled successfully in 252ms
+apps/web build:   Running TypeScript ...
+apps/web build:   Finished TypeScript in 1031ms ...
+apps/web build:   Collecting page data using 5 workers ...
+apps/web build:   Generating static pages using 5 workers (0/3) ...
+apps/web build: ✓ Generating static pages using 5 workers (3/3) in 197ms
+apps/web build:   Finalizing page optimization ...
+apps/web build: Route (app)
+apps/web build: ┌ ○ /
+apps/web build: ├ ○ /_not-found
+apps/web build: └ ƒ /sala/[code]
+apps/web build: ○  (Static)   prerendered as static content
+apps/web build: ƒ  (Dynamic)  server-rendered on demand
+apps/web build: Done

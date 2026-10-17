@@ -1,0 +1,61 @@
+ M README.md
+ M apps/web/app/globals.css
+ M apps/web/app/providers.tsx
+ M apps/web/app/sala/[code]/page.tsx
+ M apps/web/components/ChatPanel.tsx
+ M apps/web/components/GameTable.tsx
+ M apps/web/components/Lobby.tsx
+ M apps/web/components/MoodSettings.tsx
+ M apps/web/components/PausePanel.tsx
+ M apps/web/components/Results.tsx
+ M apps/web/components/TauntPanel.tsx
+ M apps/web/components/ui.tsx
+ M apps/web/lib/prefs.ts
+ M apps/web/lib/sounds.ts
+ M apps/web/test/chat-sync.test.tsx
+ M apps/web/test/game-table-focus.test.tsx
+ M apps/web/test/mood-sync.test.tsx
+ M apps/web/test/prefs.test.ts
+ M apps/web/test/sounds.test.ts
+ M docs/work/deployment-free.md
+ M docs/work/plan.md
+ M docs/work/status.md
+?? apps/web/components/TurnNotifier.tsx
+?? apps/web/e2e/recovery-wait.spec.ts
+?? apps/web/e2e/refinements.spec.ts
+?? apps/web/lib/turnNotifications.ts
+?? apps/web/test/recovery-page.test.tsx
+?? apps/web/test/recovery-wait.test.tsx
+?? apps/web/test/turn-notification.test.tsx
+?? docs/product/backlog.md
+?? docs/work/T008-publication.md
+?? docs/work/T008.md
+?? docs/work/T009-investigation.md
+?? docs/work/T010-adjustments-2.md
+?? docs/work/T010-adjustments.md
+?? docs/work/T010-recovery-fix.md
+?? docs/work/reports/T007-public-validation.md
+?? docs/work/reports/T007-render-free-deploy.md
+?? docs/work/reports/T007-vercel-promotion.md
+?? docs/work/reports/T007-vercel-staged-deploy.md
+?? docs/work/reports/T008-publication.md
+?? docs/work/reports/T008-publication.validation.md
+?? docs/work/reports/T008.validation.md
+?? docs/work/reports/T008A.md
+?? docs/work/reports/T008B.md
+?? docs/work/reports/T008C.md
+?? docs/work/reports/T009-investigation.md
+?? docs/work/reports/T009-investigation.validation.md
+?? docs/work/reports/T010-adjustments.md
+?? docs/work/reports/T010.md
+?? docs/work/reports/T010.revalidation.md
+?? docs/work/reports/T010.validation.md
+?? docs/work/reports/assets/T007-public/
+?? docs/work/reports/assets/T008-public/
+?? docs/work/reports/assets/T008/
+?? docs/work/reports/assets/T009-investigation/
+?? docs/work/reports/assets/T010-adjustments-2/
+?? docs/work/reports/assets/T010-adjustments/
+?? docs/work/reports/assets/T010-revalidation/
+?? docs/work/reports/assets/T010-validation/
+?? docs/work/reports/assets/T010/

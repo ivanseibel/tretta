@@ -1,0 +1,24 @@
+{
+  "file": "docs/work/reports/assets/T007/ten-room-load.json",
+  "action": "restauracao-autorizada-do-blob-historico",
+  "reason": "Ajuste 2 (T010-adjustments-2): o orquestrador autorizou restaurar este caminho, o unico divergente entre os 88 historicos. A divergencia e causada por apps/server/test/ten-room-load.test.ts:196, que reescreve o artefato com metricas volateis a cada rodada de testes do servidor.",
+  "sha256AtPreservation": "2fd39f6e34ee03b6bf33c5ae302d9c382baa12f0da0a5a0a4f3c0f4ddf4fad9f",
+  "sha256AtRevalidation": "2fd39f6e34ee03b6bf33c5ae302d9c382baa12f0da0a5a0a4f3c0f4ddf4fad9f",
+  "matchesRevalidation": true,
+  "preservedCopy": "preserved/ten-room-load-divergent-current.json",
+  "preservedCopyBytes": 4668,
+  "restoreSource": "git blob HEAD:docs/work/reports/assets/T007/ten-room-load.json",
+  "headBlobSha256": "cacadfbb3bbd7624c21ccf244b48bd3e929ce660ef0aad8ef9c3a3e8c46299a9",
+  "headBlobBytesVerificado": 4668,
+  "provenance": {
+    "registry": "docs/work/reports/assets/T010-validation/historical-artifacts.json",
+    "registryHeadSha256": "cacadfbb3bbd7624c21ccf244b48bd3e929ce660ef0aad8ef9c3a3e8c46299a9",
+    "registryPublishedSha256": "cacadfbb3bbd7624c21ccf244b48bd3e929ce660ef0aad8ef9c3a3e8c46299a9",
+    "publishedEqualsHead": true
+  },
+  "rules": [
+    "Nenhum git reset/clean/restore: somente este caminho comprovado e reescrito, ao final da execucao.",
+    "Os outros 87 caminhos historicos ja restaurados byte a byte em T010-adjustments permanecem intocados.",
+    "Testes de servidor e E2E desta execucao rodam apenas na copia isolada."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "exitCode": 0,
+  "checks": {
+    "pnpm11140": true,
+    "frozenLockfile": true,
+    "next1641": true,
+    "typescript": true,
+    "serverUrlLiteralVisibleInLogs": false
+  },
+  "lineCount": 51,
+  "note": "A URL literal não aparece nos logs consultados. A guarda HTTPS consta do vercel.json conferido por hash; o bundle público contém a URL Render esperada."
+}

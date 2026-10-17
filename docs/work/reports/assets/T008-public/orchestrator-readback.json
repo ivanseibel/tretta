@@ -1,0 +1,46 @@
+{
+  "deployment": {
+    "id": "dpl_HMJVr7wLLfHAx6t3DKoFbTQ2dtey",
+    "url": "tretta-kyrddrenp-seibel.vercel.app",
+    "readyState": "READY",
+    "target": "production",
+    "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "teamId": null,
+    "alias": [
+      "tretta-seibel.vercel.app"
+    ],
+    "aliasAssigned": true,
+    "nodeVersion": "22.x",
+    "meta": {
+      "trettaBaseCommit": "8967e94",
+      "trettaSourceManifest": "78db6b5696ffcfbbbec05175b6437d3acb5cc70b07ac65717a21398d4a4fb0b0"
+    }
+  },
+  "alias": {
+    "alias": "tretta.vercel.app",
+    "deploymentId": "dpl_HMJVr7wLLfHAx6t3DKoFbTQ2dtey",
+    "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "deployment": {
+      "id": "dpl_HMJVr7wLLfHAx6t3DKoFbTQ2dtey",
+      "url": "tretta-kyrddrenp-seibel.vercel.app"
+    }
+  },
+  "team": {
+    "id": "team_4mQparNtNCNqsb95uxf2FzoD",
+    "slug": "seibel",
+    "plan": "hobby"
+  },
+  "project": {
+    "id": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "name": "tretta",
+    "accountId": "team_4mQparNtNCNqsb95uxf2FzoD",
+    "framework": "nextjs",
+    "rootDirectory": "apps/web",
+    "nodeVersion": "22.x",
+    "commandForIgnoringBuildStep": null,
+    "ssoProtection": {
+      "deploymentType": "all_except_custom_domains"
+    },
+    "productionDeploymentId": "dpl_HMJVr7wLLfHAx6t3DKoFbTQ2dtey"
+  }
+}

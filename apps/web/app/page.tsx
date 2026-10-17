@@ -19,6 +19,11 @@ export default function HomePage(): ReactNode {
     if (createdCode !== null) router.push(`/sala/${createdCode}`);
   }
 
+  async function handleTrain(): Promise<void> {
+    const createdCode = await room.createRoom(nickname.trim(), avatar, 'training');
+    if (createdCode !== null) router.push(`/sala/${createdCode}`);
+  }
+
   function handleJoin(event: FormEvent): void {
     event.preventDefault();
     const normalized = code.trim().toUpperCase();
@@ -50,6 +55,19 @@ export default function HomePage(): ReactNode {
         <button type="submit" className="primary" disabled={nickname.trim().length === 0 || room.busy} data-testid="create-room-button">
           Criar sala
         </button>
+        <button
+          type="button"
+          className="secondary"
+          disabled={nickname.trim().length === 0 || room.busy}
+          data-testid="train-solo-button"
+          onClick={() => void handleTrain()}
+        >
+          Treinar sozinho
+        </button>
+        <p className="muted">
+          Treinar sozinho abre uma mesa individual contra três bots simples, com as regras do Clássico. A partida roda no
+          servidor, como nas salas entre amigos.
+        </p>
       </form>
 
       <form className="panel" onSubmit={handleJoin}>

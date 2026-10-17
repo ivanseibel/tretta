@@ -1,0 +1,257 @@
+{
+  "node": "v22.23.1",
+  "roomCodeMasked": "M8…",
+  "results": {
+    "mode": "producao",
+    "heartbeat": "padrao (sem TRE_TTA_* de ping)",
+    "scenario": "c",
+    "setup": {
+      "connectionsBefore": [
+        1,
+        2
+      ],
+      "roomCodeMasked": "M8…"
+    },
+    "scenarioA": {},
+    "scenarioB": {},
+    "scenarioC": {
+      "anaHandCountBefore": 7,
+      "anaHandDigestBefore": "ef8aa42acef9584a994b510601602e8093b156ea86ec4fd919b64b6594dd3a1b",
+      "anaRosterBefore": {
+        "opponents": 1,
+        "waiting": 0
+      },
+      "biaRosterBefore": {
+        "opponents": 1,
+        "waiting": 0
+      },
+      "credentialBefore": {
+        "present": true,
+        "length": 43,
+        "checksum": 651362953
+      },
+      "anaReloads": 1,
+      "ackDropWindowMs": 70000,
+      "exhaustedMsAfterReload": 60243,
+      "credentialAtExhausted": {
+        "present": true,
+        "length": 43,
+        "checksum": 651362953
+      },
+      "actionsAtExhausted": {
+        "present": true,
+        "blocked": true,
+        "enabled": false
+      },
+      "msToRecoveryAfterRetry": 35051,
+      "msToRecoveryAfterReload": 106655,
+      "anaHandCountAfter": 7,
+      "anaHandDigestAfter": "ef8aa42acef9584a994b510601602e8093b156ea86ec4fd919b64b6594dd3a1b",
+      "handKept": true,
+      "credentialAfter": {
+        "present": true,
+        "length": 43,
+        "checksum": 651362953
+      },
+      "credentialKept": true,
+      "actionsAfterRecovery": {
+        "present": true,
+        "blocked": true,
+        "enabled": false
+      },
+      "anaRosterAfter": {
+        "opponents": 1,
+        "waiting": 0
+      },
+      "biaRosterAfter": {
+        "opponents": 1,
+        "waiting": 0
+      },
+      "noDuplicateParticipant": true,
+      "distinctJoinIntents": 0,
+      "joinIntentFingerprints": [],
+      "droppedAcks": 8,
+      "ackPassedAfterWindow": true,
+      "final": {
+        "hand": true,
+        "recovering": false,
+        "exhausted": false,
+        "error": null,
+        "joinForm": false
+      },
+      "acceptance": {
+        "exhaustedAtDeadline": true,
+        "recoveredAfterRetry": false,
+        "singleJoinIntentAcrossCycles": false,
+        "acksDroppedDuringWindow": true,
+        "ackPassedAfterWindow": true,
+        "sameHand": true,
+        "credentialPreserved": true,
+        "noDuplicateParticipant": true,
+        "actionsBlockedAtExhausted": true,
+        "actionsWorkAfterRecovery": false,
+        "noExtraReload": true,
+        "noError": true
+      }
+    },
+    "proxy": {},
+    "storage": {},
+    "pageErrors": []
+  },
+  "timeline": [
+    {
+      "ms": 4272,
+      "kind": "web.build"
+    },
+    {
+      "ms": 4561,
+      "kind": "server.ready"
+    },
+    {
+      "ms": 4845,
+      "kind": "web.ready"
+    },
+    {
+      "ms": 5257,
+      "kind": "proxy.connection",
+      "id": 1
+    },
+    {
+      "ms": 5861,
+      "kind": "proxy.connection",
+      "id": 2
+    },
+    {
+      "ms": 6323,
+      "kind": "round.started"
+    },
+    {
+      "ms": 6336,
+      "kind": "proxy.arm-cross-cycle-next",
+      "windowMs": 70000
+    },
+    {
+      "ms": 6358,
+      "kind": "scenarioC.ana-reloaded",
+      "ackDropWindowMs": 70000
+    },
+    {
+      "ms": 6363,
+      "kind": "proxy.ack-window-armed",
+      "id": 3,
+      "windowMs": 70000
+    },
+    {
+      "ms": 6363,
+      "kind": "proxy.connection",
+      "id": 3
+    },
+    {
+      "ms": 6365,
+      "kind": "proxy.ws-upgraded",
+      "id": 3
+    },
+    {
+      "ms": 6367,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175,
+      "droppedAcks": 1,
+      "windowLeftMs": 69996
+    },
+    {
+      "ms": 13122,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175,
+      "droppedAcks": 2,
+      "windowLeftMs": 63241
+    },
+    {
+      "ms": 20249,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175,
+      "droppedAcks": 3,
+      "windowLeftMs": 56114
+    },
+    {
+      "ms": 27940,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175,
+      "droppedAcks": 4,
+      "windowLeftMs": 48423
+    },
+    {
+      "ms": 36476,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175,
+      "droppedAcks": 5,
+      "windowLeftMs": 39887
+    },
+    {
+      "ms": 46278,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175,
+      "droppedAcks": 6,
+      "windowLeftMs": 30085
+    },
+    {
+      "ms": 56282,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175,
+      "droppedAcks": 7,
+      "windowLeftMs": 20081
+    },
+    {
+      "ms": 66285,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175,
+      "droppedAcks": 8,
+      "windowLeftMs": 10078
+    },
+    {
+      "ms": 66579,
+      "kind": "scenarioC.exhausted",
+      "msAfterReload": 60243,
+      "snap": {
+        "error": null,
+        "joinForm": false,
+        "connecting": false,
+        "recovering": false,
+        "recoveringBanner": false,
+        "connectionLost": false,
+        "exhausted": true,
+        "hand": true,
+        "pausePanel": false
+      }
+    },
+    {
+      "ms": 77940,
+      "kind": "scenarioC.ack-window-ended",
+      "msAfterReload": 71604,
+      "droppedAcks": 8
+    },
+    {
+      "ms": 77976,
+      "kind": "proxy.join-ack-passed-after-window",
+      "id": 3,
+      "droppedAcks": 8
+    },
+    {
+      "ms": 77984,
+      "kind": "scenarioC.retry-clicked"
+    },
+    {
+      "ms": 112991,
+      "kind": "scenarioC.recovered",
+      "msAfterRetry": 35051,
+      "msAfterReload": 106655
+    }
+  ]
+}

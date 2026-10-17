@@ -1,0 +1,35 @@
+$ node scripts/e2e-production.mjs
+$ pnpm -r --if-present build
+Scope: 4 of 5 workspace projects
+packages/rules build$ tsc -p tsconfig.build.json
+packages/rules build: Done
+packages/protocol build$ tsc -p tsconfig.build.json
+packages/protocol build: Done
+apps/web build$ next build
+apps/server build$ tsc -p tsconfig.build.json
+apps/web build: ▲ Next.js 16.4.1 (Turbopack)
+apps/web build: ✓ Running next.config.ts took 16ms
+apps/web build:   Creating an optimized production build ...
+apps/server build: Done
+apps/web build: ✓ Compiled successfully in 271ms
+apps/web build:   Running TypeScript ...
+apps/web build:   Finished TypeScript in 1620ms ...
+apps/web build:   Collecting page data using 5 workers ...
+apps/web build:   Generating static pages using 5 workers (0/3) ...
+apps/web build: ✓ Generating static pages using 5 workers (3/3) in 195ms
+apps/web build:   Finalizing page optimization ...
+apps/web build: Route (app)
+apps/web build: ┌ ○ /
+apps/web build: ├ ○ /_not-found
+apps/web build: └ ƒ /sala/[code]
+apps/web build: ○  (Static)   prerendered as static content
+apps/web build: ƒ  (Dynamic)  server-rendered on demand
+apps/web build: Done
+[WebServer] $ node dist/index.js
+[WebServer] $ next start
+
+Running 1 test using 1 worker
+
+  ✓  1 e2e/production-start.spec.ts:3:1 › build compilado inicia a mesa sem hooks de teste e conecta no servidor publicado localmente (277ms)
+
+  1 passed (1.4s)

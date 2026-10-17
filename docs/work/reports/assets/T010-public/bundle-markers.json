@@ -1,0 +1,18 @@
+{
+ "newBuild": {
+  "deploymentId": "dpl_J9jjh4nHDUfMZj9cZU2JN8hKS6Tj",
+  "chunk": "0o71oknalomjx.js",
+  "markers": [
+   "Tentar novamente",
+   "sessão em retomada",
+   "Recuperando o vínculo com a sala"
+  ],
+  "serverUrlEmbedded": "https://tretta-server.onrender.com"
+ },
+ "previousBuild": {
+  "deploymentId": "dpl_HMJVr7wLLfHAx6t3DKoFbTQ2dtey",
+  "markersFound": [],
+  "note": "chunks T008 não contêm os marcadores T010"
+ },
+ "servedOnPublicDomain": true
+}

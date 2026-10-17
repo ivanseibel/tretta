@@ -1,0 +1,26 @@
+{
+  "source": "/Users/ivanseibel/dev/personal/tretta",
+  "isolated_workspace": "/private/tmp/tretta-t011a-review-usByXi/tretta",
+  "node": "22.23.1",
+  "pnpm": "11.14.0",
+  "executor_source_files_checked": 141,
+  "executor_source_mismatches": [],
+  "delivered_vs_verified_source_files": 141,
+  "copy_source_mismatches": [],
+  "historical_files_checked": 385,
+  "historical_mismatches": [],
+  "checks": {
+    "build": 0,
+    "typecheck": 0,
+    "server": 0,
+    "protocol": 0,
+    "web": 0
+  },
+  "tests": {
+    "server_pass": 140,
+    "server_skip": 1,
+    "protocol_pass": 12,
+    "web_pass": 109,
+    "supplemental_included_in_server": 2
+  }
+}

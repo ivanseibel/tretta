@@ -1,0 +1,24 @@
+{
+  "isolated_review": "/private/tmp/tretta-t011b-revalidation-tR3EE9/tree",
+  "executor_clone": "/private/tmp/tretta-t011b-adj-verify-01/tree",
+  "source_files_compared": 148,
+  "review_source_diffs": [],
+  "executor_source_diffs": [],
+  "historical_checked": 417,
+  "historical_assets": 352,
+  "historical_reports": 65,
+  "historical_diffs": [],
+  "previous_report_files_compared": 456,
+  "previous_report_diffs": [],
+  "runner_sha256": "b9246b931f27553e4e9c8c5f64c70548be5349f8d15197b88c832f5490c61aaa",
+  "runner_unchanged": true,
+  "checks": {
+    "web": 0,
+    "runner": 0,
+    "build": 0,
+    "types": 0
+  },
+  "web_tests_pass": 131,
+  "runner_tests_pass": 7,
+  "decision": "accepted_locally"
+}

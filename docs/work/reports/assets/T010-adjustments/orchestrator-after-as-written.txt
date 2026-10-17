@@ -1,0 +1,53 @@
+
+ RUN  v4.1.11 /private/var/folders/r_/xrvhskhx45l6n66k99kzs61r0000gn/T/opencode/T010adj/repo/apps/web
+
+ ❯ test/orchestrator-recovery.test.tsx (12 tests | 2 failed) 49ms
+     × esgota o prazo de 60 s, para de tentar e a retomada explícita reinicia o ciclo 7ms
+     × não perde o sucesso do join quando o ack ultrapassa o timeout local 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/orchestrator-recovery.test.tsx > recuperação com espera limitada > esgota o prazo de 60 s, para de tentar e a retomada explícita reinicia o ciclo
+AssertionError: expected [ { event: 'client:joinRoom', …(2) } ] to have a length of +0 but got 1
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/orchestrator-recovery.test.tsx:275:28
+    273|     // Depois do prazo nenhuma tentativa nova parte sozinha.
+    274|     await advance(30_000);
+    275|     expect(joinRequests()).toHaveLength(0);
+       |                            ^
+    276|     expect(api().recoveryPhase).toBe('exhausted');
+    277|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  test/orchestrator-recovery.test.tsx > orquestrador: limites de recuperação > não perde o sucesso do join quando o ack ultrapassa o timeout local
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/orchestrator-recovery.test.tsx:551:33
+    549|       first.callback(okJoin('ROOMD3'));
+    550|     });
+    551|     expect(api().chatLinkReady).toBe(true);
+       |                                 ^
+    552|     expect(api().recoveryPhase).toBe('idle');
+    553|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 10 passed (12)
+   Start at  00:39:15
+   Duration  451ms (transform 56ms, setup 0ms, import 124ms, tests 49ms, environment 211ms)
+

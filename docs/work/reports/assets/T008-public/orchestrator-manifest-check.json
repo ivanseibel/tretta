@@ -1,0 +1,15 @@
+{
+  "fileCount": 360,
+  "totalBytes": 47125700,
+  "manifestDigestSha256": "78db6b5696ffcfbbbec05175b6437d3acb5cc70b07ac65717a21398d4a4fb0b0",
+  "currentFilesVerifiedSha1AndSize": 357,
+  "sha1OrSizeMismatches": [],
+  "sha256SourceMismatches": [],
+  "documentChangesAfterPublication": [
+    "docs/work/status.md",
+    "docs/work/deployment-free.md"
+  ],
+  "temporaryUploadOnlyFiles": [
+    ".vercelignore"
+  ]
+}

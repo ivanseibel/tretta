@@ -24,6 +24,7 @@ export function PausePanel({ state }: { state: StateMessage }): ReactNode {
   }, []);
 
   const pause = state.room.pause;
+  const training = state.room.mode === 'training';
   const isHost = state.room.hostId === state.self.playerId;
   // Relógio do servidor projetado no navegador para a contagem local dos prazos.
   const serverNow = state.room.serverTime + (clockNow - receivedAtRef.current);
@@ -31,15 +32,16 @@ export function PausePanel({ state }: { state: StateMessage }): ReactNode {
   const blockedAbsences = pause?.absent.filter((absent) => serverNow < absent.eligibleAt) ?? [];
   const participants = state.room.participants;
   const nicknameOf = (playerId: string): string => participants.find((participant) => participant.id === playerId)?.nickname ?? '—';
-  const live = room.connection === 'live';
+  const live = room.interactive;
 
   return (
     <section className="pause-panel" aria-label="Pausa" data-testid="pause-panel">
       <h2>Rodada pausada</h2>
       {pause?.retention ? (
         <p data-testid="pause-retention">
-          Ninguém está conectado. A sala fica retida por tempo limitado; quem chegar primeiro assume como anfitrião e decide como
-          continuar.
+          {training
+            ? 'Os bots esperam por você: a mesa segue reservada e a rodada continua de onde parou. Retome quando quiser.'
+            : 'Ninguém está conectado. A sala fica retida por tempo limitado; quem chegar primeiro assume como anfitrião e decide como continuar.'}
         </p>
       ) : null}
       {blockedAbsences.map((absent) => (

@@ -4,7 +4,14 @@
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { AutomaticEffect, EffectVariant, TauntType } from '@tretta/protocol';
-import { playEffectSound, playTauntSound, setSoundMuted, stopAllSounds } from '@/lib/sounds';
+import {
+  playEffectSound,
+  playTauntSound,
+  playTurnNotificationSound,
+  prepareSoundPlayback,
+  setSoundMuted,
+  stopAllSounds,
+} from '@/lib/sounds';
 
 class FakeOscillator {
   static readonly all: FakeOscillator[] = [];
@@ -47,15 +54,15 @@ class FakeGain {
 
 class FakeAudioContext {
   static created = 0;
+  static readonly instances: FakeAudioContext[] = [];
   currentTime = 0;
   state = 'running';
   destination = {};
   constructor() {
     FakeAudioContext.created += 1;
+    FakeAudioContext.instances.push(this);
   }
-  resume(): Promise<void> {
-    return Promise.resolve();
-  }
+  resume = vi.fn((): Promise<void> => Promise.resolve());
   createOscillator(): FakeOscillator {
     return new FakeOscillator();
   }
@@ -113,6 +120,10 @@ function tonesOf(variant: EffectVariant): FakeOscillator[] {
 beforeEach(() => {
   FakeOscillator.all.length = 0;
   FakeAudioContext.created = 0;
+  for (const audio of FakeAudioContext.instances) {
+    audio.state = 'running';
+    audio.resume.mockClear();
+  }
   installFakeAudio();
   setSoundMuted(false);
   stopAllSounds();
@@ -122,6 +133,35 @@ afterEach(() => {
   setSoundMuted(false);
   stopAllSounds();
   Reflect.deleteProperty(window, 'AudioContext');
+});
+
+describe('indisponibilidade antes da primeira reprodução', () => {
+  it('sem WebAudio não lança nem gera som', () => {
+    Reflect.deleteProperty(window, 'AudioContext');
+    const before = FakeOscillator.all.length;
+    expect(() => prepareSoundPlayback()).not.toThrow();
+    expect(() => playEffectSound(effectFixture('confetti'))).not.toThrow();
+    expect(() => playTauntSound('tomate')).not.toThrow();
+    expect(() => playTurnNotificationSound()).not.toThrow();
+    expect(FakeOscillator.all.length).toBe(before);
+    expect(FakeAudioContext.instances).toHaveLength(0);
+  });
+
+  it('falha ao criar o contexto é tolerada em silêncio', () => {
+    Object.defineProperty(window, 'AudioContext', {
+      value: class {
+        constructor() {
+          throw new Error('autoplay bloqueado');
+        }
+      },
+      configurable: true,
+      writable: true,
+    });
+    expect(() => prepareSoundPlayback()).not.toThrow();
+    expect(() => playEffectSound(effectFixture('trophy'))).not.toThrow();
+    expect(FakeOscillator.all).toHaveLength(0);
+    expect(FakeAudioContext.instances).toHaveLength(0);
+  });
 });
 
 describe('sons dos efeitos automáticos', () => {
@@ -172,6 +212,53 @@ describe('sons das provocações', () => {
   });
 });
 
+describe('aviso sonoro da vez e preparação do WebAudio', () => {
+  it('toca dois tons curtos ascendentes', () => {
+    playTurnNotificationSound();
+    expect(FakeOscillator.all).toHaveLength(2);
+    expect(FakeOscillator.all.every((tone) => tone.started)).toBe(true);
+    expect(FakeOscillator.all.map((tone) => tone.frequency.setValueAtTime.mock.calls[0]?.[0])).toEqual([660, 880]);
+  });
+
+  it('prepara o contexto sem criar osciladores audíveis', () => {
+    prepareSoundPlayback();
+    expect(FakeAudioContext.instances.length).toBeGreaterThan(0);
+    expect(FakeOscillator.all).toHaveLength(0);
+
+    const audio = FakeAudioContext.instances.at(-1);
+    if (audio === undefined) throw new Error('Contexto de áudio não criado.');
+    audio.state = 'suspended';
+    prepareSoundPlayback();
+    expect(audio.resume).toHaveBeenCalledTimes(1);
+    expect(FakeOscillator.all).toHaveLength(0);
+  });
+
+  it('descarta sons pedidos enquanto suspenso para não reproduzi-los depois de um gesto', () => {
+    prepareSoundPlayback();
+    const audio = FakeAudioContext.instances.at(-1);
+    if (audio === undefined) throw new Error('Contexto de áudio não criado.');
+    audio.state = 'suspended';
+
+    playTurnNotificationSound();
+
+    expect(audio.resume).toHaveBeenCalledTimes(1);
+    expect(FakeOscillator.all).toHaveLength(0);
+  });
+
+  it('tolera rejeição de resume e API ausente', async () => {
+    prepareSoundPlayback();
+    const audio = FakeAudioContext.instances.at(-1);
+    if (audio === undefined) throw new Error('Contexto de áudio não criado.');
+    audio.state = 'suspended';
+    audio.resume.mockRejectedValueOnce(new Error('autoplay bloqueado'));
+
+    expect(() => prepareSoundPlayback()).not.toThrow();
+    await Promise.resolve();
+    Reflect.deleteProperty(window, 'AudioContext');
+    expect(() => prepareSoundPlayback()).not.toThrow();
+  });
+});
+
 describe('mute e indisponibilidade', () => {
   it('silenciar corta o som em andamento e bloqueia os seguintes', () => {
     const first = tonesOf('cards-rain');
@@ -188,24 +275,4 @@ describe('mute e indisponibilidade', () => {
     expect(resumed.length).toBeGreaterThan(0);
   });
 
-  it('ambiente sem WebAudio não lança nem gera som', () => {
-    Reflect.deleteProperty(window, 'AudioContext');
-    const before = FakeOscillator.all.length;
-    expect(() => playEffectSound(effectFixture('confetti'))).not.toThrow();
-    expect(() => playTauntSound('tomate')).not.toThrow();
-    expect(FakeOscillator.all.length).toBe(before);
-  });
-
-  it('falha ao criar o contexto é tolerada em silêncio', () => {
-    Object.defineProperty(window, 'AudioContext', {
-      value: class {
-        constructor() {
-          throw new Error('autoplay bloqueado');
-        }
-      },
-      configurable: true,
-      writable: true,
-    });
-    expect(() => playEffectSound(effectFixture('trophy'))).not.toThrow();
-  });
 });

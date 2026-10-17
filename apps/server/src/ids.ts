@@ -5,6 +5,11 @@ export function createPlayerId(): string {
   return `p_${randomUUID()}`;
 }
 
+/** Id estável de bot fixo do treino: derivado do código da sala e do índice. */
+export function createBotId(roomCode: string, index: number): string {
+  return `b_${roomCode}_${index}`;
+}
+
 export function createRoundId(): string {
   return `r_${randomUUID()}`;
 }

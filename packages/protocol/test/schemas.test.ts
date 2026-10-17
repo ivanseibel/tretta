@@ -27,6 +27,15 @@ describe('schemas de entrada', () => {
     expect(parsed.nickname).toBe('Ana');
   });
 
+  it('aceita modo ausente, clássico explícito e treino; recusa modo desconhecido', () => {
+    const base = { intentId: 'intent-12345678', nickname: 'Ana', avatar: 'raposa' };
+    expect(createRoomPayloadSchema.parse(base).mode).toBeUndefined();
+    expect(createRoomPayloadSchema.parse({ ...base, mode: 'classic' }).mode).toBe('classic');
+    expect(createRoomPayloadSchema.parse({ ...base, mode: 'training' }).mode).toBe('training');
+    expect(createRoomPayloadSchema.safeParse({ ...base, mode: 'solo' }).success).toBe(false);
+    expect(createRoomPayloadSchema.safeParse({ ...base, mode: 7 }).success).toBe(false);
+  });
+
   it('recusa campos desconhecidos, apelido vazio e avatar inexistente', () => {
     expect(createRoomPayloadSchema.safeParse({ intentId: 'intent-12345678', nickname: 'Ana', avatar: 'raposa', extra: 1 }).success).toBe(false);
     expect(createRoomPayloadSchema.safeParse({ intentId: 'intent-12345678', nickname: '   ', avatar: 'raposa' }).success).toBe(false);

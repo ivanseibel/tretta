@@ -49,6 +49,15 @@ export function MoodSettings(): ReactNode {
       <label className="mood-option">
         <input
           type="checkbox"
+          data-testid="pref-turn-notification"
+          checked={preferences.turnNotificationEnabled}
+          onChange={(event) => setPreferences({ turnNotificationEnabled: event.target.checked })}
+        />
+        Aviso sonoro da sua vez
+      </label>
+      <label className="mood-option">
+        <input
+          type="checkbox"
           data-testid="pref-hide-taunts"
           checked={preferences.hideTaunts}
           onChange={(event) => setPreferences({ hideTaunts: event.target.checked })}

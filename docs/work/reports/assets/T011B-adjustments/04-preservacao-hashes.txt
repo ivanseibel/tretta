@@ -1,0 +1,84 @@
+T011B-ajustes — preservação, proveniência e hashes (J4)
+========================================================
+Execução: 17/10/2026, manual. Método: manifesto no critério do T011B —
+`find . -type f` fora de `.git/node_modules/.next/dist/test-results/playwright-report`,
+listas ordenadas + `shasum -a 256` por arquivo. Listas completas ficam em
+/private/tmp/tretta-t011b-adj/{baseline/before-files.txt,before.sha256,final-files.txt,final.sha256}.
+
+1) MANIFESTO HISTÓRICO — 417 ENTRADAS
+-------------------------------------
+`shasum -a 256 -c /private/tmp/tretta-t011b-baseline/reports-assets.sha256` na entrega:
+417/417 OK, EXIT 0 (352 assets + 65 reports conferidos byte a byte).
+Corrige a contagem de "352" citada no report original (a contagem do manifesto é 417);
+os reports anteriores não foram reescritos.
+
+2) ANTES × DEPOIS DESTA EXECUÇÃO (650 → 658 arquivos; este 04 fora do manifesto)
+--------------------------------------------------------------------------------
+Baseline: 650 arquivos, capturado antes das edições (17/10, 11:25).
+Final: 658 arquivos (inclui report e origin.txt; este arquivo 04 foi escrito por
+último e é o único sem linha no manifesto).
+
+MODIFICADOS (sha256 antes → depois):
+- ./apps/web/app/providers.tsx
+  antes  c6bb85546a900c5ae6217c7533ea9fe6fc0393e8f2c20048b6277bd064dd6d87
+  depois d95d1a4891fed266a5790077ee6a0fa5b010282239f9a885ba4a56b5ec2d32cf
+- ./docs/work/plan.md
+  antes  430cdc665d53e34ab16da55e212fead0b74407b94c18d31cd729c391a6e86a9a
+  depois 5b890c5cfc958c3e57411e462f672be5504a8c05f4e16df7a55b04180209ae0a
+- ./docs/work/status.md
+  antes  0e63d3113b3cb311ffaf3f83ef1d19b5816f77f94e3e9111cd9cc3965a2dee53
+  depois 3ff89d5d08c7aa6a1274b71fdf4a85c5a5e4fd7c9141173a91f690c32c106305
+
+ADICIONADOS (sha256):
+- ./apps/web/test/training-entry-context.test.tsx
+  6ab3fbd67dacbd10fc90aff55235c1514f03dd35cf9110afadea029a9f644d82
+- ./docs/work/reports/T011B-adjustments.md
+  93433f993d319380da6f0eac1847d6fed81aabc313816f1f522f664a309c5608
+- ./docs/work/reports/assets/T011B-adjustments/00a-build-typecheck-falha-tipos-corrigida.log
+  e7fb2622bf2c4ebe6b95dad23219fb36391d4649bb3d74a2122f4b04f38e4661
+- ./docs/work/reports/assets/T011B-adjustments/00b-build-typecheck.log
+  e39f162cd94b77a199f509ce54d432d981b54c62b7e99282c556c3b5a2e246f8
+- ./docs/work/reports/assets/T011B-adjustments/01-units-web.log
+  c68ea7dc65bab84cb010e539805521a38aa912a8e8c3ecaa5a0125a2e7deefee
+- ./docs/work/reports/assets/T011B-adjustments/02-runner-orquestrador.log
+  6c6aa04e6eccc8e17dbb0d0c46df1796cf5a7699e9f2a70ba52e5614f8e01975
+- ./docs/work/reports/assets/T011B-adjustments/03-e2e-treino-recuperacao.log
+  1d10df6559fc16d760087f4fec49907630426d01eab144484df1bb547ea5a6b2
+- ./docs/work/reports/assets/T011B-adjustments/origin.txt
+  94a6547319a5bc40adc821348dc7a0499c6058809594f8861c71ada780706747
+- ./docs/work/reports/assets/T011B-adjustments/04-preservacao-hashes.txt
+  (este arquivo; escrito por último, sem linha no manifesto)
+
+REMOVIDOS: nenhum.
+
+3) FONTE VERIFICADA (CÓPIA) × ENTREGA
+-------------------------------------
+Cópia: /private/tmp/tretta-t011b-adj-verify-01/tree (cp -Rc, 17/10 11:28; ver origin.txt).
+Conferência no critério acima: cópia 651 × entrega 656 no momento da conferência
+(antes de origin.txt/report); diferença de listas exata = os 5 logs desta entrega
+(escritos só na entrega). Depois disso, nada de código/doc mudou.
+Diferenças de hash entre cópia e entrega: 12, nenhuma de fonte/doc —
+- ./apps/web/next-env.d.ts — regenerado por `next dev`/build na cópia;
+- ./apps/web/tsconfig.tsbuildinfo — artefato do tsc na cópia;
+- 2 capturas regravadas pelo recovery.spec.ts na cópia:
+  ./docs/work/reports/assets/T004/mobile-conexao-perdida.png
+  ./docs/work/reports/assets/T004/mobile-recuperacao-apos-compra.png
+- 8 capturas regravadas pelo training.spec.ts na cópia:
+  ./docs/work/reports/assets/T011B/{mesa-treino-320,mesa-treino-desktop,
+  pausa-treino-320,pausa-treino-desktop,preparacao-treino-320,
+  preparacao-treino-desktop,resultados-treino-bot-320,resultados-treino-bot-desktop}.png
+As demais 4 capturas de assets/T011B/ saíram byte-idênticas na cópia
+(home-treino-320, home-treino-desktop, resultados-treino-pessoa-320,
+resultados-treino-pessoa-desktop). Nada disso toca a entrega: as capturas do
+primário são as aceitas e não foram alteradas.
+
+Runner do orquestrador: executado a partir de cópia byte-idêntica do preservado
+(sha256 b9246b931f27553e4e9c8c5f64c70548be5349f8d15197b88c832f5490c61aaa nos dois
+lados), removido da cópia antes de build/tipos.
+
+4) GARANTIAS
+------------
+- Nenhum commit, push, deploy, restart de Render, mudança de custo ou sala
+  pública/familiar nesta execução.
+- Nenhuma credencial, storage bruto ou mão adversária em logs.
+- `git diff --check` limpo ao final (working tree preservado).

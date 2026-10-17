@@ -515,6 +515,7 @@ button.playing-card {
 }
 
 .pause-actions,
+.recovery-actions,
 .host-controls {
   display: flex;
   flex-wrap: wrap;
@@ -694,23 +695,33 @@ button.small {
 }
 
 .taunt-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2) var(--space-3);
+  align-items: end;
+}
+
+.taunt-field {
+  min-width: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: flex-end;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: 0.85rem;
 }
 
 .taunt-label {
   font-size: 0.85rem;
   color: var(--muted);
-  flex: 1 1 9rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
 }
 
 .taunt-form select {
-  flex: 1 1 9rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.taunt-form button {
+  grid-column: 1 / -1;
+  justify-self: start;
 }
 
 .taunt-overlay {
@@ -1250,11 +1261,27 @@ button.small {
 
 /* Identidade Tretta: papel quente ao redor da sala e feltro verde no jogo. */
 :root {
+  --felt: #194832;
+  --felt-deep: #153d2a;
+  --felt-inset: #123b29;
+  --felt-raised: #23583e;
+  --paper: #fffaf0;
+  --paper-shade: #e8e0ce;
+  --paper-edge: #d9cfbb;
+  --wood: #d6bd78;
+  --lamp: #ffd36c;
+  --ink: #203a2f;
+  --ink-muted: #53645a;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
   --bg: #f4efe3;
-  --bg-soft: #e8e0ce;
-  --panel: #fffaf0;
-  --text: #203a2f;
-  --muted: #53645a;
+  --bg-soft: var(--paper-shade);
+  --panel: var(--paper);
+  --text: var(--ink);
+  --muted: var(--ink-muted);
   --accent: #b84331;
   --primary: #285d44;
   --danger: #a6332d;
@@ -1318,7 +1345,7 @@ h1 {
 .mood-settings,
 .public-table {
   background: var(--panel);
-  border: 1px solid #d9cfbb;
+  border: 1px solid var(--paper-edge);
   border-radius: 18px;
   box-shadow: 0 8px 22px rgba(48, 57, 39, 0.08);
 }
@@ -1340,7 +1367,7 @@ input:not([type]),
   border: 1px solid #8a9a84;
   border-radius: 11px;
   background: #fffdf7;
-  color: #203a2f;
+  color: var(--ink);
 }
 
 button,
@@ -1378,9 +1405,9 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 [tabindex='-1']:focus-visible {
-  outline: 3px solid #19372a;
+  outline: 3px solid var(--ink);
   outline-offset: 3px;
-  box-shadow: 0 0 0 6px #fffaf0;
+  box-shadow: 0 0 0 6px var(--paper);
 }
 
 button:disabled {
@@ -1449,6 +1476,11 @@ button:disabled {
 .tag-me {
   background: #f4d575;
   color: #382d0a;
+}
+
+.tag-bot {
+  background: #d9e4ec;
+  color: #2b4553;
 }
 
 .tag-turn {
@@ -1607,22 +1639,27 @@ button:disabled {
 
 /* O feltro cria uma zona de jogo distinta, enquanto controles mantêm alto contraste. */
 .screen.table {
-  --text: #fff8e7;
-  --muted: #d0dfcf;
-  --panel: #194832;
-  --bg-soft: #23583e;
-  --accent: #ffd36c;
+  --text: var(--paper);
+  --muted: #dce9d7;
+  --panel: var(--felt);
+  --bg-soft: var(--felt-raised);
+  --accent: var(--lamp);
   --primary: #327c52;
   --danger: #a6332d;
+  width: min(100%, 90rem);
   max-width: none;
-  padding: clamp(0.85rem, 2.5vw, 1.5rem);
-  border: 4px solid #d6bd78;
+  padding: clamp(var(--space-3), 2.5vw, var(--space-6));
+  border: 5px solid var(--wood);
   border-radius: 26px;
   background:
     radial-gradient(ellipse at 48% 43%, rgba(100, 152, 94, 0.24), transparent 62%),
     repeating-linear-gradient(7deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 13px),
-    #194832;
-  box-shadow: 0 12px 28px rgba(37, 48, 37, 0.2), inset 0 0 0 2px rgba(255, 248, 231, 0.11);
+    var(--felt);
+  box-shadow: 0 16px 36px rgba(37, 48, 37, 0.2), inset 0 0 0 2px rgba(255, 248, 231, 0.12);
+}
+
+.screen.table-own-turn {
+  box-shadow: 0 16px 36px rgba(37, 48, 37, 0.2), 0 0 0 3px rgba(255, 211, 108, 0.18), inset 0 0 0 2px rgba(255, 248, 231, 0.12);
 }
 
 .table h1,
@@ -1648,8 +1685,22 @@ button:disabled {
   overflow-wrap: anywhere;
   border: 1px solid rgba(255, 211, 108, 0.72);
   border-radius: 999px;
-  background: rgba(16, 56, 37, 0.72);
+  background: rgba(16, 56, 37, 0.82);
   color: #ffe197;
+}
+
+.table-own-turn .turn-indicator {
+  border-color: #fff0bd;
+  background: var(--lamp);
+  color: var(--ink);
+  box-shadow: 0 2px 0 rgba(94, 66, 16, 0.24), 0 0 0 3px rgba(255, 211, 108, 0.16);
+}
+
+.table-own-turn .turn-indicator::before {
+  content: '✦';
+  margin-right: 0.4rem;
+  font-size: 1.05rem;
+  line-height: 1;
 }
 
 .table .direction,
@@ -1661,13 +1712,20 @@ button:disabled {
 }
 
 .table .opponent {
-  color: #fff8e7;
-  background: rgba(13, 58, 37, 0.74);
+  color: var(--paper);
+  background: rgba(13, 58, 37, 0.78);
   border-color: rgba(230, 237, 210, 0.24);
 }
 
+.table .opponents:not(.waiting-participants) {
+  padding: var(--space-2);
+  border: 1px solid rgba(230, 237, 210, 0.16);
+  border-radius: 18px;
+  background: rgba(18, 61, 42, 0.38);
+}
+
 .table .participant-name {
-  color: #fff8e7;
+  color: var(--paper);
 }
 
 .table .waiting-participant-label {
@@ -1675,16 +1733,38 @@ button:disabled {
 }
 
 .table .opponent-current {
-  outline: 3px solid #ffd36c;
-  outline-offset: 1px;
+  outline: 2px solid var(--lamp);
+  outline-offset: 2px;
+  background: rgba(255, 211, 108, 0.12);
+  box-shadow: 0 0 10px rgba(255, 211, 108, 0.18);
 }
 
 .table .table-center {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  min-height: 13rem;
   gap: clamp(0.7rem, 3vw, 1.5rem);
   padding: clamp(0.75rem, 2.5vw, 1.25rem);
   border: 1px solid rgba(230, 237, 210, 0.2);
-  border-radius: 20px;
-  background: rgba(11, 52, 34, 0.35);
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 50% 44%, rgba(255, 211, 108, 0.1), transparent 58%),
+    repeating-linear-gradient(11deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 15px),
+    var(--felt-inset);
+  box-shadow: inset 0 2px 14px rgba(4, 27, 18, 0.28), 0 1px 0 rgba(255, 248, 231, 0.08);
+}
+
+.table .pile {
+  align-items: center;
+  text-align: center;
+}
+
+.table .pile-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 :is(.table, .public-table) .playing-card {
@@ -1695,7 +1775,7 @@ button:disabled {
   overflow: hidden;
   border: 3px solid #fff8e7;
   border-radius: 13px;
-  box-shadow: 0 5px 9px rgba(8, 33, 23, 0.25);
+  box-shadow: 0 1px 0 #efe1c5, 0 4px 0 #d7c8aa, 0 8px 14px rgba(8, 33, 23, 0.28);
 }
 
 :is(.table, .public-table) .playing-card::after {
@@ -1776,6 +1856,7 @@ button:disabled {
 :is(.table, .public-table) .card-back {
   background: repeating-linear-gradient(45deg, #f1d275 0 7px, #e1b94d 7px 14px);
   color: #253c31;
+  box-shadow: 1px 1px 0 #f5df9f, 3px 3px 0 #b8944d, 0 8px 14px rgba(8, 33, 23, 0.28);
 }
 
 .table .color-chip {
@@ -1804,11 +1885,12 @@ button:disabled {
 }
 
 .table .play-strip {
-  background: #17432f;
+  background: var(--paper);
+  color: var(--ink);
 }
 
 .table .play-strip .muted {
-  color: #fff8e7;
+  color: var(--ink);
 }
 
 .table .pause-panel {
@@ -1823,23 +1905,77 @@ button:disabled {
 
 .table .card-playable {
   border-color: #ffe197;
-  box-shadow: 0 0 0 2px #17432f, 0 0 0 4px #ffe197, 0 5px 9px rgba(8, 33, 23, 0.25);
+  box-shadow: 0 0 0 2px var(--felt-deep), 0 0 0 4px var(--lamp), 0 4px 0 #d7c8aa, 0 8px 14px rgba(8, 33, 23, 0.28);
 }
 
 .table .card-selected {
   transform: translateY(-7px) rotate(-1deg);
   border-color: #fff;
-  box-shadow: 0 0 0 3px #b84331, 0 8px 14px rgba(5, 27, 18, 0.4);
+  box-shadow: 0 0 0 3px #b84331, 0 10px 18px rgba(5, 27, 18, 0.38);
+}
+
+.table .hand-zone {
+  min-width: 0;
+  padding: clamp(var(--space-3), 2vw, 1.25rem);
+  border: 1px solid var(--paper-edge);
+  border-radius: 20px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 2px 0 rgba(119, 91, 42, 0.18), 0 9px 20px rgba(6, 31, 20, 0.2);
+}
+
+.table .hand-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-3);
+}
+
+.table .hand-heading h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.15rem;
+}
+
+.table .hand-turn-cue {
+  display: inline-flex;
+  min-height: 2rem;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: var(--paper-shade);
+  color: #43564a;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.table .hand-zone-your-turn {
+  border-color: #d9bd69;
+  box-shadow: 0 0 0 2px rgba(255, 211, 108, 0.42), 0 9px 20px rgba(6, 31, 20, 0.2);
+}
+
+.table .hand-zone-your-turn .hand-turn-cue {
+  background: var(--lamp);
+  color: var(--ink);
+  box-shadow: 0 2px 0 rgba(94, 66, 16, 0.2);
+}
+
+.table .hand-zone .hand-help {
+  margin: var(--space-2) 0 0;
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
 }
 
 .table .hand {
   display: flex;
   flex-wrap: nowrap;
-  gap: 0.65rem;
+  gap: var(--space-3);
   max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 0.75rem 0.4rem 1rem;
+  padding: var(--space-3) 0.25rem var(--space-4);
   overscroll-behavior-inline: contain;
   scroll-padding-inline: 0.5rem;
   scrollbar-color: #d6bd78 #17432f;
@@ -1865,7 +2001,7 @@ button:disabled {
 }
 
 .table .play-strip .announce-label {
-  color: #fff8e7;
+  color: var(--ink);
 }
 
 .table .color-options {
@@ -1937,6 +2073,22 @@ button:disabled {
     padding: 0.75rem 0.6rem 1rem;
     border-width: 3px;
     border-radius: 18px;
+  }
+
+  .taunt-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .taunt-form button {
+    width: 100%;
+  }
+
+  .table .hand-zone {
+    padding: var(--space-3);
+  }
+
+  .table .hand-heading {
+    align-items: flex-start;
   }
 
   .table-header .leave-button {

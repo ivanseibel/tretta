@@ -1,0 +1,9 @@
+
+ RUN  v4.1.11 /private/tmp/tretta-t010-review-_og8svsi/apps/web
+
+
+ Test Files  13 passed (13)
+      Tests  137 passed (137)
+   Start at  01:20:13
+   Duration  1.32s (transform 1.11s, setup 0ms, import 2.80s, tests 1.79s, environment 4.48s)
+

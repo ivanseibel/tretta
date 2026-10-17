@@ -1,0 +1,9 @@
+
+ RUN  v4.1.11 /Users/ivanseibel/dev/personal/tretta/apps/web
+
+
+ Test Files  11 passed (11)
+      Tests  109 passed (109)
+   Start at  01:05:05
+   Duration  1.67s (transform 1.19s, setup 0ms, import 3.77s, tests 1.82s, environment 6.24s)
+

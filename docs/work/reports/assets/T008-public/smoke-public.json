@@ -1,0 +1,69 @@
+{
+  "url": "https://tretta.vercel.app",
+  "checks": {
+    "roomCreated": true,
+    "hostCreateAttempts": 2,
+    "guestJoinAttempts": 2,
+    "hooksAbsent": true,
+    "turnNotificationDefaultOn": true,
+    "bothSidesMoved": true,
+    "chatNewestFirst": true,
+    "chatAtTop": true,
+    "turnNotificationStoredOff": true,
+    "turnNotificationPersistedOff": true,
+    "guestPrefUnaffected": true,
+    "alignment": {
+      "390": {
+        "noOverflow": true,
+        "labelAbove": true,
+        "labelAligned": true,
+        "usableWidth": true,
+        "withinViewport": true,
+        "sameRow": true
+      },
+      "768": {
+        "noOverflow": true,
+        "labelAbove": true,
+        "labelAligned": true,
+        "usableWidth": true,
+        "withinViewport": true,
+        "sameRow": true
+      },
+      "1024": {
+        "noOverflow": true,
+        "labelAbove": true,
+        "labelAligned": true,
+        "usableWidth": true,
+        "withinViewport": true,
+        "sameRow": true
+      },
+      "1440": {
+        "noOverflow": true,
+        "labelAbove": true,
+        "labelAligned": true,
+        "usableWidth": true,
+        "withinViewport": true,
+        "sameRow": true
+      }
+    },
+    "alignmentAllPass": true,
+    "hooksAbsentAfterReload": true,
+    "leaveConfirmed": true,
+    "noConsoleErrors": true
+  },
+  "consoleErrors": [],
+  "pageErrors": [],
+  "oscillatorCounts": {
+    "hostBeforeReload": 2,
+    "hostAfterReload": 0,
+    "guest": 0
+  },
+  "turns": [
+    "guest drew and passed",
+    "host played card-yellow-6-1"
+  ],
+  "roomCodeMasked": "XXXX",
+  "observations": [
+    "refresh-rejoin-pending: Esta identidade já está conectada em outra aba ou dispositivo."
+  ]
+}

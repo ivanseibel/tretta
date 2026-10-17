@@ -1,0 +1,119 @@
+
+ RUN  v4.1.11 /Users/ivanseibel/dev/personal/tretta/apps/web
+
+ ❯ test/recovery-wait.test.tsx (15 tests | 5 failed) 53ms
+     × encerra o ciclo no prazo de 60 s mesmo com um ack em voo e ignora o sucesso tardio 24ms
+     × ack de um transporte que caiu antes da continuação não habilita o vínculo novo 1ms
+     × ack perdido no timeout local: reenvia a MESMA intenção e recupera pelo replay 2ms
+     × recusa conhecida consome a intenção; resultado incerto a preserva 1ms
+     × queda e volta do transporte não reiniciam o prazo do ciclo em curso 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/recovery-wait.test.tsx > prazo e vínculo de transporte da retomada (ajustes pós-validação) > encerra o ciclo no prazo de 60 s mesmo com um ack em voo e ignora o sucesso tardio
+AssertionError: expected 'recovering' to be 'exhausted' // Object.is equality
+
+Expected: "exhausted"
+Received: "recovering"
+
+ ❯ test/recovery-wait.test.tsx:532:33
+    530|     // O ack em voo não estende o prazo: o ciclo vence no limite dos 6…
+    531|     await advance(60_000 - (Date.now() - startedAt));
+    532|     expect(api().recoveryPhase).toBe('exhausted');
+       |                                 ^
+    533|     await act(async () => {
+    534|       await promise;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  test/recovery-wait.test.tsx > prazo e vínculo de transporte da retomada (ajustes pós-validação) > ack de um transporte que caiu antes da continuação não habilita o vínculo novo
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ test/recovery-wait.test.tsx:565:33
+    563|       harness.state.handlers.get('disconnect')?.(undefined);
+    564|     });
+    565|     expect(api().chatLinkReady).toBe(false);
+       |                                 ^
+    566|     expect(api().interactive).toBe(false);
+    567|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  test/recovery-wait.test.tsx > prazo e vínculo de transporte da retomada (ajustes pós-validação) > ack perdido no timeout local: reenvia a MESMA intenção e recupera pelo replay
+AssertionError: expected { intentId: 'test_2', …(4) } to deeply equal { intentId: 'test_1', …(4) }
+
+- Expected
++ Received
+
+  {
+    "avatar": "raposa",
+    "credential": "cred_ROOMS3",
+-   "intentId": "test_1",
++   "intentId": "test_2",
+    "nickname": "Ana",
+    "roomCode": "ROOMS3",
+  }
+
+ ❯ test/recovery-wait.test.tsx:601:29
+    599|     // Reenvio com o MESMO payload (assinatura do dedupe do servidor):…
+    600|     // retentativa recebe a resposta memorizada em vez de recusa nova.
+    601|     expect(second?.payload).toEqual(first?.payload);
+       |                             ^
+    602|     expect(stale?.payload).toEqual(first?.payload);
+    603|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  test/recovery-wait.test.tsx > prazo e vínculo de transporte da retomada (ajustes pós-validação) > recusa conhecida consome a intenção; resultado incerto a preserva
+AssertionError: expected { intentId: 'test_3', …(4) } to deeply equal { intentId: 'test_2', …(4) }
+
+- Expected
++ Received
+
+  {
+    "avatar": "raposa",
+    "credential": "cred_ROOMS4",
+-   "intentId": "test_2",
++   "intentId": "test_3",
+    "nickname": "Ana",
+    "roomCode": "ROOMS4",
+  }
+
+ ❯ test/recovery-wait.test.tsx:633:34
+    631|     const attempts = joinRequests();
+    632|     expect(attempts).toHaveLength(2);
+    633|     expect(attempts[1]?.payload).toEqual(second?.payload);
+       |                                  ^
+    634|
+    635|     const target = attempts[1]!;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  test/recovery-wait.test.tsx > prazo e vínculo de transporte da retomada (ajustes pós-validação) > queda e volta do transporte não reiniciam o prazo do ciclo em curso
+AssertionError: expected 'recovering' to be 'exhausted' // Object.is equality
+
+Expected: "exhausted"
+Received: "recovering"
+
+ ❯ test/recovery-wait.test.tsx:668:33
+    666|     expect(api().recoveryPhase).toBe('recovering');
+    667|     await advance(500);
+    668|     expect(api().recoveryPhase).toBe('exhausted');
+       |                                 ^
+    669|     await act(async () => {
+    670|       await promise;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed | 10 passed (15)
+   Start at  00:35:26
+   Duration  459ms (transform 60ms, setup 0ms, import 130ms, tests 53ms, environment 211ms)
+

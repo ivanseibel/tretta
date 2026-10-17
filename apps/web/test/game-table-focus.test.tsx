@@ -6,6 +6,7 @@ import { createClassicDeck } from '@tretta/rules';
 const harness = vi.hoisted(() => ({
   room: {
     connection: 'live' as const,
+    interactive: true,
     sendCommand: vi.fn(),
     endRoundWithoutWinner: vi.fn(),
   },

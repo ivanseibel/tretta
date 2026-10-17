@@ -1,0 +1,178 @@
+{
+  "node": "v22.23.1",
+  "roomCodeMasked": "L2…",
+  "results": {
+    "mode": "producao",
+    "heartbeat": "padrao (sem TRE_TTA_* de ping)",
+    "scenario": "b",
+    "setup": {
+      "connectionsBefore": [
+        1,
+        2
+      ],
+      "roomCodeMasked": "L2…"
+    },
+    "scenarioA": {},
+    "scenarioB": {
+      "anaHandCountBefore": 7,
+      "anaHandDigestBefore": "53938cbe21788e959ab9302d19126bc18b373ca1ec5de42675e423c6cd35eef1",
+      "biaRosterBefore": {
+        "opponents": 1,
+        "waiting": 0
+      },
+      "anaRosterBefore": {
+        "opponents": 1,
+        "waiting": 0
+      },
+      "credentialBefore": {
+        "present": true,
+        "length": 43,
+        "checksum": 3092573877
+      },
+      "anaReloads": 1,
+      "recoveringEverSeen": true,
+      "connectionLostSeen": false,
+      "stateVisibleMsAfterReload": 649,
+      "bannerVisibleMsAfterReload": 649,
+      "windowProbe": {
+        "msAfterReload": 826,
+        "draftKept": true,
+        "sendDisabled": true
+      },
+      "exhaustedPanelSeen": true,
+      "msToRecoveryAfterReload": null,
+      "msToExhaustionAfterReload": 60046,
+      "joinFormEverSeen": false,
+      "errorEverSeen": null,
+      "final": {
+        "hand": true,
+        "joinForm": false,
+        "error": null,
+        "recovering": false,
+        "recoveringBanner": false,
+        "exhausted": true
+      },
+      "sameHandDigest": null,
+      "chatSendEnabledAfterRecovery": null,
+      "biaRosterAfter": {
+        "opponents": 1,
+        "waiting": 0
+      },
+      "anaRosterAfter": {
+        "opponents": 1,
+        "waiting": 0
+      },
+      "biaHandDigestAfter": "775165e2463bea926a95387d94e2d2c63f3bd9394cc34ad60693e6b353e53c41",
+      "biaHandStable": true,
+      "credentialAfter": {
+        "present": true,
+        "length": 43,
+        "checksum": 3092573877
+      },
+      "credentialPreserved": true,
+      "noDuplicateParticipant": true,
+      "acceptance": {
+        "recoveredAutomatically": false,
+        "recoveryUnderDeadline": false,
+        "neverExhausted": false,
+        "noJoinForm": true,
+        "noError": true,
+        "actionsBlockedDuringWindow": true,
+        "actionsWorkAfterConfirmation": false,
+        "sameHand": false,
+        "credentialPreserved": true,
+        "noDuplicateParticipant": true,
+        "noExtraReload": true
+      }
+    },
+    "proxy": {},
+    "storage": {},
+    "pageErrors": []
+  },
+  "timeline": [
+    {
+      "ms": 1991,
+      "kind": "web.build"
+    },
+    {
+      "ms": 2274,
+      "kind": "server.ready"
+    },
+    {
+      "ms": 2556,
+      "kind": "web.ready"
+    },
+    {
+      "ms": 2985,
+      "kind": "proxy.connection",
+      "id": 1
+    },
+    {
+      "ms": 3596,
+      "kind": "proxy.connection",
+      "id": 2
+    },
+    {
+      "ms": 4048,
+      "kind": "round.started"
+    },
+    {
+      "ms": 4063,
+      "kind": "proxy.arm-drop-next"
+    },
+    {
+      "ms": 4086,
+      "kind": "scenarioB.ana-reloaded"
+    },
+    {
+      "ms": 4091,
+      "kind": "proxy.drop-armed-connection",
+      "id": 3
+    },
+    {
+      "ms": 4091,
+      "kind": "proxy.connection",
+      "id": 3
+    },
+    {
+      "ms": 4092,
+      "kind": "proxy.ws-upgraded",
+      "id": 3
+    },
+    {
+      "ms": 4593,
+      "kind": "proxy.socketio-ack",
+      "id": 3,
+      "bytes": 175,
+      "rejoined": true
+    },
+    {
+      "ms": 4593,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175
+    },
+    {
+      "ms": 4712,
+      "kind": "scenarioB.state-arrived",
+      "msAfterReload": 649
+    },
+    {
+      "ms": 4712,
+      "kind": "scenarioB.recovering-banner",
+      "msAfterReload": 649
+    },
+    {
+      "ms": 4892,
+      "kind": "scenarioB.window-probe",
+      "msAfterReload": 826,
+      "draftKept": true,
+      "sendDisabled": true
+    },
+    {
+      "ms": 64109,
+      "kind": "scenarioB.exhausted",
+      "msAfterReload": 60046
+    }
+  ]
+}

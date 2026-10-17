@@ -1,0 +1,41 @@
+{
+  "deployment": {
+    "id": "dpl_J9jjh4nHDUfMZj9cZU2JN8hKS6Tj",
+    "url": "tretta-26gh6ystv-seibel.vercel.app",
+    "readyState": "READY",
+    "target": "production",
+    "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "nodeVersion": "22.x",
+    "aliasAssigned": true,
+    "meta": {
+      "trettaBaseCommit": "8967e94",
+      "trettaSourceManifest": "e917313dd0d798352ed1bd7c3249c3bf6000b126acdac438b0e0b1d2ed7ef82d"
+    }
+  },
+  "alias": {
+    "alias": "tretta.vercel.app",
+    "deploymentId": "dpl_J9jjh4nHDUfMZj9cZU2JN8hKS6Tj",
+    "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8"
+  },
+  "team": {
+    "id": "team_4mQparNtNCNqsb95uxf2FzoD",
+    "slug": "seibel",
+    "plan": "hobby"
+  },
+  "project": {
+    "id": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "name": "tretta",
+    "accountId": "team_4mQparNtNCNqsb95uxf2FzoD",
+    "framework": "nextjs",
+    "rootDirectory": "apps/web",
+    "nodeVersion": "22.x",
+    "productionDeploymentId": "dpl_J9jjh4nHDUfMZj9cZU2JN8hKS6Tj"
+  },
+  "render": [
+    {
+      "id": "dep-db95f367bikc73dpnfs0",
+      "status": "live",
+      "commit": "8967e94eae18a351c6c7b4c81a1f00ea5d6d1837"
+    }
+  ]
+}

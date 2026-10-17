@@ -106,6 +106,40 @@ function seqRange(from: number, to: number): ChatMessage[] {
   return messages;
 }
 
+function descendingSeqs(from: number, to: number): number[] {
+  const seqs: number[] = [];
+  for (let seq = to; seq >= from; seq--) seqs.push(seq);
+  return seqs;
+}
+
+function rect(top: number, bottom: number): DOMRect {
+  return {
+    x: 0,
+    y: top,
+    top,
+    right: 320,
+    bottom,
+    left: 0,
+    width: 320,
+    height: bottom - top,
+    toJSON: () => ({}),
+  };
+}
+
+function installChatLayout(list: HTMLUListElement): ReturnType<typeof vi.spyOn> {
+  Object.defineProperty(list, 'clientHeight', { configurable: true, value: 40 });
+  Object.defineProperty(list, 'scrollTop', { configurable: true, writable: true, value: 0 });
+  return vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(function (this: Element): DOMRect {
+    if (this === list) return rect(0, 40);
+    if (this.parentElement === list) {
+      const index = Array.from(list.children).indexOf(this);
+      const top = index * 30 - list.scrollTop;
+      return rect(top, top + 20);
+    }
+    return rect(0, 0);
+  });
+}
+
 function stateMessage(roomCode: string, playerId: string): StateMessage {
   return {
     room: {
@@ -272,9 +306,86 @@ beforeEach(() => {
 
 afterEach(() => {
   cleanup();
+  vi.restoreAllMocks();
 });
 
 describe('recuperação de intervalos do histórico', () => {
+  it('mostra o topo recente, acompanha novas mensagens e volta ao topo após enviar', async () => {
+    await mountRoom();
+    await enterRoom('ROOMORDER');
+    await respondHistory(seqRange(1, 5), false);
+
+    const list = screen.getByTestId('chat-messages') as HTMLUListElement;
+    const layout = installChatLayout(list);
+    expect(renderedSeqs()).toEqual([5, 4, 3, 2, 1]);
+    expect(api().chatMessages.map((message) => message.seq)).toEqual([1, 2, 3, 4, 5]);
+
+    // Ao ler o histórico, uma mensagem no topo mantém o mesmo conteúdo visível.
+    list.scrollTop = 60;
+    fireEvent.scroll(list);
+    expect(list.scrollTop).toBe(60);
+    expect(list.querySelector('[data-chat-seq="3"]')?.getBoundingClientRect().top).toBe(0);
+    broadcastChat('ROOMORDER', msg(6, 'nova mensagem'));
+    expect(renderedSeqs()).toEqual([6, 5, 4, 3, 2, 1]);
+    expect(list.scrollTop).toBe(90);
+    expect(list.querySelector('[data-chat-seq="3"]')?.getBoundingClientRect().top).toBe(0);
+
+    // No topo, mensagens novas permanecem visíveis sem empurrar a conversa.
+    list.scrollTop = 0;
+    fireEvent.scroll(list);
+    broadcastChat('ROOMORDER', msg(7, 'mais recente'));
+    expect(list.scrollTop).toBe(0);
+
+    // Um envio aceito leva a pessoa de volta para as mensagens mais novas.
+    list.scrollTop = 60;
+    fireEvent.scroll(list);
+    await act(async () => {
+      fireEvent.change(screen.getByTestId('chat-input'), { target: { value: 'minha mensagem' } });
+      fireEvent.click(screen.getByTestId('chat-send'));
+    });
+    const send = takePending('client:chatSend');
+    await act(async () => {
+      send.callback({ ok: true, message: msg(8, 'minha mensagem') });
+      await Promise.resolve();
+    });
+    broadcastChat('ROOMORDER', msg(8, 'minha mensagem'));
+    expect(renderedSeqs()).toEqual([8, 7, 6, 5, 4, 3, 2, 1]);
+    expect(api().chatMessages.map((message) => message.seq)).toEqual([1, 2, 3, 4, 5, 6, 7, 8]);
+    expect(list.scrollTop).toBe(0);
+    layout.mockRestore();
+  });
+
+  it('preenche uma lacuna acima da leitura sem deslocar a mensagem ancorada', async () => {
+    await mountRoom();
+    await enterRoom('ROOMANCHOR');
+    await respondHistory(seqRange(1, 2), false);
+
+    dropConnection();
+    await restoreConnection('ROOMANCHOR', 'player_anA');
+    await respondHistory(seqRange(12, 16), true);
+
+    const list = screen.getByTestId('chat-messages') as HTMLUListElement;
+    const layout = installChatLayout(list);
+    expect(renderedSeqs()).toEqual([16, 15, 14, 13, 12, 2, 1]);
+
+    // A mensagem antiga fica no topo da área visível enquanto o intervalo
+    // intermediário entra entre ela e a página recente.
+    list.scrollTop = 150;
+    fireEvent.scroll(list);
+    expect(list.querySelector('[data-chat-seq="2"]')?.getBoundingClientRect().top).toBe(0);
+    fireEvent.click(screen.getByTestId('chat-load-older'));
+    const older = takePending('client:chatHistory');
+    expect(older.payload.before).toBe(12);
+    await act(async () => {
+      older.callback({ ok: true, messages: seqRange(7, 11), hasMore: true });
+    });
+
+    expect(renderedSeqs()).toEqual([16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 2, 1]);
+    expect(list.scrollTop).toBe(300);
+    expect(list.querySelector('[data-chat-seq="2"]')?.getBoundingClientRect().top).toBe(0);
+    layout.mockRestore();
+  });
+
   it('recupera a lacuna entre o cache antigo e a página recente (cenário 1 + 60)', async () => {
     await mountRoom();
     await enterRoom('ROOM01');
@@ -287,7 +398,7 @@ describe('recuperação de intervalos do histórico', () => {
 
     // A recuperação só traz a página recente; o intervalo 2–11 fica abaixo dela.
     await respondHistory(seqRange(12, 61), true);
-    expect(renderedSeqs()).toEqual([1, ...Array.from({ length: 50 }, (_, index) => index + 12)]);
+    expect(renderedSeqs()).toEqual([...descendingSeqs(12, 61), 1]);
     const button = screen.getByTestId('chat-load-older');
     expect(button.isConnected).toBe(true);
 
@@ -298,7 +409,7 @@ describe('recuperação de intervalos do histórico', () => {
     await act(async () => {
       older.callback({ ok: true, messages: seqRange(2, 11), hasMore: false });
     });
-    expect(renderedSeqs()).toEqual(Array.from({ length: 61 }, (_, index) => index + 1));
+    expect(renderedSeqs()).toEqual(descendingSeqs(1, 61));
     expect(screen.queryByTestId('chat-load-older')).toBeNull();
   });
 
@@ -327,7 +438,7 @@ describe('recuperação de intervalos do histórico', () => {
     await act(async () => {
       thirdPage.callback({ ok: true, messages: seqRange(1, 30), hasMore: false });
     });
-    expect(renderedSeqs()).toEqual(Array.from({ length: 130 }, (_, index) => index + 1));
+    expect(renderedSeqs()).toEqual(descendingSeqs(1, 130));
     expect(screen.queryByTestId('chat-load-older')).toBeNull();
   });
 
@@ -342,14 +453,14 @@ describe('recuperação de intervalos do histórico', () => {
     });
     broadcastChat('ROOM03', msg(2, 'ao vivo'));
     await respondHistory([msg(1, 'mensagem 1'), msg(2, 'ao vivo')], false);
-    expect(renderedSeqs()).toEqual([1, 2]);
+    expect(renderedSeqs()).toEqual([2, 1]);
 
     // Página recente com lacuna abaixo do cache, e dois pedidos de anteriores
     // concorrentes respondidos fora de ordem.
     dropConnection();
     await restoreConnection('ROOM03', 'player_anA');
     await respondHistory(seqRange(12, 20), true);
-    expect(renderedSeqs()).toEqual([1, 2, ...Array.from({ length: 9 }, (_, index) => index + 12)]);
+    expect(renderedSeqs()).toEqual([...descendingSeqs(12, 20), 2, 1]);
 
     fireEvent.click(screen.getByTestId('chat-load-older'));
     const firstOlder = takePending('client:chatHistory');
@@ -365,7 +476,7 @@ describe('recuperação de intervalos do histórico', () => {
     await act(async () => {
       firstOlder.callback({ ok: true, messages: seqRange(1, 11), hasMore: false });
     });
-    expect(renderedSeqs()).toEqual(Array.from({ length: 20 }, (_, index) => index + 1));
+    expect(renderedSeqs()).toEqual(descendingSeqs(1, 20));
     expect(screen.queryByTestId('chat-load-older')).toBeNull();
   });
 });
@@ -390,7 +501,7 @@ describe('invalidação de respostas por contexto', () => {
     expect(api().chatHistoryLoading).toBe(true);
 
     await respondHistory([msg(1, 'B um'), msg(2, 'mensagem da sala B')], false);
-    expect(renderedTexts()).toEqual(['B um', 'mensagem da sala B']);
+    expect(renderedTexts()).toEqual(['mensagem da sala B', 'B um']);
     expect(api().chatHistoryLoading).toBe(false);
     expect(screen.queryByTestId('chat-load-older')).toBeNull();
   });
@@ -507,7 +618,7 @@ describe('autorização do vínculo para envio do chat', () => {
       version: 7,
     });
     await respondHistory([msg(1, 'mensagem 1'), msg(2, 'depois do join')], false);
-    expect(renderedSeqs()).toEqual([1, 2]);
+    expect(renderedSeqs()).toEqual([2, 1]);
     expect((screen.getByTestId('chat-send') as HTMLButtonElement).disabled).toBe(false);
   });
 
@@ -544,7 +655,7 @@ describe('autorização do vínculo para envio do chat', () => {
       sends[0]?.callback({ ok: true, message: sent });
     });
     broadcastChat('ROOMG2', sent);
-    expect(renderedSeqs()).toEqual([1, 2]);
+    expect(renderedSeqs()).toEqual([2, 1]);
     expect((screen.getByTestId('chat-input') as HTMLInputElement).value).toBe('');
   });
 
@@ -630,6 +741,6 @@ describe('autorização do vínculo para envio do chat', () => {
       version: 7,
     });
     await respondHistory([msg(1, 'mensagem 1'), msg(2, 'mensagem 2'), msg(3, 'mensagem 3')], false);
-    expect(renderedSeqs()).toEqual([1, 2, 3]);
+    expect(renderedSeqs()).toEqual([3, 2, 1]);
   });
 });

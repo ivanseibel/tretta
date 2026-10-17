@@ -1,0 +1,10 @@
+$ vitest run
+
+ RUN  v4.1.11 /Users/ivanseibel/dev/personal/tretta/apps/web
+
+
+ Test Files  11 passed (11)
+      Tests  104 passed (104)
+   Start at  00:38:56
+   Duration  1.25s (transform 1.09s, setup 0ms, import 2.72s, tests 1.44s, environment 4.12s)
+

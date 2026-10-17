@@ -1,0 +1,271 @@
+{
+  "node": "v22.23.1",
+  "roomCodeMasked": "C3…",
+  "results": {
+    "mode": "producao",
+    "heartbeat": "padrao (sem TRE_TTA_* de ping)",
+    "scenario": "c",
+    "setup": {
+      "connectionsBefore": [
+        1,
+        2
+      ],
+      "roomCodeMasked": "C3…"
+    },
+    "scenarioA": {},
+    "scenarioB": {},
+    "scenarioC": {
+      "anaHandCountBefore": 7,
+      "anaHandDigestBefore": "c5bc32b4670f6385bb8692b3649833c0f7a174d12ab26569c0e3e86ce28934ec",
+      "anaRosterBefore": {
+        "opponents": 1,
+        "waiting": 0
+      },
+      "biaRosterBefore": {
+        "opponents": 1,
+        "waiting": 0
+      },
+      "credentialBefore": {
+        "present": true,
+        "length": 43,
+        "checksum": 2000398649
+      },
+      "anaReloads": 1,
+      "ackDropWindowMs": 70000,
+      "exhaustedMsAfterReload": 60210,
+      "credentialAtExhausted": {
+        "present": true,
+        "length": 43,
+        "checksum": 2000398649
+      },
+      "actionsAtExhausted": {
+        "present": true,
+        "placeholder": "Recuperando a conexão com a sala…",
+        "inputDisabled": false,
+        "sendDisabled": true
+      },
+      "retryBannerSeen": true,
+      "retryBannerMsAfterRetry": 26,
+      "msToRecoveryAfterRetry": 63,
+      "msToRecoveryAfterReload": 71634,
+      "actionsAfterRecovery": {
+        "present": true,
+        "placeholder": "Escreva uma mensagem",
+        "inputDisabled": false,
+        "sendDisabled": true
+      },
+      "sendEnabledWithDraft": true,
+      "anaHandCountAfter": 7,
+      "anaHandDigestAfter": "c5bc32b4670f6385bb8692b3649833c0f7a174d12ab26569c0e3e86ce28934ec",
+      "handKept": true,
+      "credentialAfter": {
+        "present": true,
+        "length": 43,
+        "checksum": 2000398649
+      },
+      "credentialKept": true,
+      "anaRosterAfter": {
+        "opponents": 1,
+        "waiting": 0
+      },
+      "biaRosterAfter": {
+        "opponents": 1,
+        "waiting": 0
+      },
+      "noDuplicateParticipant": true,
+      "distinctJoinIntents": 1,
+      "joinIntentFingerprints": [
+        "207150ae9c6061cf"
+      ],
+      "droppedAcks": 8,
+      "ackPassedAfterWindow": true,
+      "final": {
+        "hand": true,
+        "recovering": false,
+        "exhausted": false,
+        "error": null,
+        "joinForm": false
+      },
+      "acceptance": {
+        "exhaustedAtDeadline": true,
+        "recoveredAfterRetry": true,
+        "singleJoinIntentAcrossCycles": true,
+        "acksDroppedDuringWindow": true,
+        "ackPassedAfterWindow": true,
+        "sameHand": true,
+        "credentialPreserved": true,
+        "noDuplicateParticipant": true,
+        "actionsBlockedAtExhausted": true,
+        "actionsWorkAfterRecovery": true,
+        "noExtraReload": true,
+        "noError": true
+      }
+    },
+    "proxy": {},
+    "storage": {},
+    "pageErrors": []
+  },
+  "timeline": [
+    {
+      "ms": 2547,
+      "kind": "web.build"
+    },
+    {
+      "ms": 2811,
+      "kind": "server.ready"
+    },
+    {
+      "ms": 3086,
+      "kind": "web.ready"
+    },
+    {
+      "ms": 3650,
+      "kind": "proxy.connection",
+      "id": 1
+    },
+    {
+      "ms": 4227,
+      "kind": "proxy.connection",
+      "id": 2
+    },
+    {
+      "ms": 4650,
+      "kind": "round.started"
+    },
+    {
+      "ms": 4669,
+      "kind": "proxy.arm-cross-cycle-next",
+      "windowMs": 70000
+    },
+    {
+      "ms": 4694,
+      "kind": "scenarioC.ana-reloaded",
+      "ackDropWindowMs": 70000
+    },
+    {
+      "ms": 4698,
+      "kind": "proxy.ack-window-armed",
+      "id": 3,
+      "windowMs": 70000
+    },
+    {
+      "ms": 4699,
+      "kind": "proxy.connection",
+      "id": 3
+    },
+    {
+      "ms": 4702,
+      "kind": "proxy.ws-upgraded",
+      "id": 3
+    },
+    {
+      "ms": 4703,
+      "kind": "proxy.join-intent",
+      "id": 3,
+      "fingerprint": "207150ae9c6061cf",
+      "total": 1
+    },
+    {
+      "ms": 4705,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175,
+      "droppedAcks": 1,
+      "windowLeftMs": 69994
+    },
+    {
+      "ms": 11458,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175,
+      "droppedAcks": 2,
+      "windowLeftMs": 63241
+    },
+    {
+      "ms": 18587,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175,
+      "droppedAcks": 3,
+      "windowLeftMs": 56112
+    },
+    {
+      "ms": 26280,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175,
+      "droppedAcks": 4,
+      "windowLeftMs": 48419
+    },
+    {
+      "ms": 34818,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175,
+      "droppedAcks": 5,
+      "windowLeftMs": 39881
+    },
+    {
+      "ms": 44619,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175,
+      "droppedAcks": 6,
+      "windowLeftMs": 30080
+    },
+    {
+      "ms": 54625,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175,
+      "droppedAcks": 7,
+      "windowLeftMs": 20074
+    },
+    {
+      "ms": 64629,
+      "kind": "proxy.join-ack-dropped",
+      "id": 3,
+      "bytes": 175,
+      "droppedAcks": 8,
+      "windowLeftMs": 10070
+    },
+    {
+      "ms": 64879,
+      "kind": "scenarioC.exhausted",
+      "msAfterReload": 60210,
+      "snap": {
+        "error": null,
+        "joinForm": false,
+        "connecting": false,
+        "recovering": false,
+        "recoveringBanner": false,
+        "connectionLost": false,
+        "exhausted": true,
+        "hand": true,
+        "pausePanel": false
+      }
+    },
+    {
+      "ms": 76240,
+      "kind": "scenarioC.ack-window-ended",
+      "msAfterReload": 71571,
+      "droppedAcks": 8
+    },
+    {
+      "ms": 76261,
+      "kind": "proxy.join-ack-passed-after-window",
+      "id": 3,
+      "droppedAcks": 8
+    },
+    {
+      "ms": 76264,
+      "kind": "scenarioC.retry-clicked"
+    },
+    {
+      "ms": 76303,
+      "kind": "scenarioC.recovered",
+      "msAfterRetry": 63,
+      "msAfterReload": 71634
+    }
+  ]
+}

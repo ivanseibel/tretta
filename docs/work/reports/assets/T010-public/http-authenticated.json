@@ -1,0 +1,18 @@
+{
+ "note": "HTTP autenticado via CLI (proteção de deployment contornada pelo próprio comando); sem tokens registrados.",
+ "stagedHome": {
+  "status": 200,
+  "bytes": 12687,
+  "title": "Tretta"
+ },
+ "stagedRoomShell": {
+  "status": 200,
+  "bytes": 7611
+ },
+ "publicHome": {
+  "status": 200
+ },
+ "healthz": {
+  "status": 200
+ }
+}

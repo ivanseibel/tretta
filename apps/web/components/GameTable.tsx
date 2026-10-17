@@ -78,7 +78,7 @@ export function GameTable({ state, events }: { state: StateMessage; events: Even
 
   const view = state.self.view;
   const paused = state.room.status === 'paused';
-  const live = room.connection === 'live';
+  const live = room.interactive;
   const isHost = state.room.hostId === state.self.playerId;
 
   const participants = state.room.participants;
@@ -142,9 +142,14 @@ export function GameTable({ state, events }: { state: StateMessage; events: Even
   if (view === null) return null;
 
   const lastCardWindow = view.lastCardWindow;
+  // Bots nunca "caem": conexão é conceito de pessoa; ausência de bot não pausa.
   const currentPlayerDisconnected =
     view.currentPlayerId !== null &&
+    participants.find((participant) => participant.id === view.currentPlayerId)?.kind === 'human' &&
     participants.find((participant) => participant.id === view.currentPlayerId)?.connected === false;
+  const currentIsBot =
+    view.currentPlayerId !== null &&
+    participants.find((participant) => participant.id === view.currentPlayerId)?.kind === 'bot';
 
   const pickCard = (card: Card): void => {
     if (!myTurn || playPending || !view.playableCardIds.includes(card.id)) return;
@@ -234,11 +239,11 @@ export function GameTable({ state, events }: { state: StateMessage; events: Even
   }
 
   return (
-    <div className="screen table">
+    <div className={`screen table${myTurn ? ' table-own-turn' : ''}`}>
       <header className="table-header">
         <h1 className="room-tag" data-focus-target tabIndex={-1}>Sala {state.room.roomCode}</h1>
         <span className="turn-indicator" role="status" aria-live="polite" aria-atomic="true" tabIndex={-1} data-testid="turn-indicator">
-          {view.status === 'finished' ? 'Rodada encerrada' : paused ? 'Rodada pausada' : myTurn ? 'Sua vez' : `Vez de ${nicknameOf(view.currentPlayerId ?? '')}`}
+          {view.status === 'finished' ? 'Rodada encerrada' : paused ? 'Rodada pausada' : myTurn ? 'Sua vez' : `Vez de ${nicknameOf(view.currentPlayerId ?? '')}${currentIsBot ? ' (bot)' : ''}`}
         </span>
         <span className="direction">{view.direction === 'clockwise' ? 'Sentido horário' : 'Sentido anti-horário'}</span>
         <LeaveButton />
@@ -273,10 +278,14 @@ export function GameTable({ state, events }: { state: StateMessage; events: Even
             key={participant.id}
             className={`opponent${view.currentPlayerId === participant.id ? ' opponent-current' : ''}`}
             data-testid={`opponent-${participant.nickname}`}
+            data-player-id={participant.id}
           >
             <AvatarBadge avatar={participant.avatar} size="small" />
             <span className="participant-name">{participant.nickname}</span>
-            {participant.connected ? null : <span className="status disconnected">desconectado</span>}
+            {participant.kind === 'bot' ? <span className="tag tag-bot">bot</span> : null}
+            {participant.kind === 'human' && !participant.connected ? (
+              <span className="status disconnected">desconectado</span>
+            ) : null}
             {participant.autoControlled ? <span className="tag tag-substitute">substituto</span> : null}
             <span className="hand-count" data-testid={`hand-count-${participant.nickname}`}>
               {view.players.find((player) => player.id === participant.id)?.handCount ?? 0} cartas
@@ -376,27 +385,35 @@ export function GameTable({ state, events }: { state: StateMessage; events: Even
         </section>
       ) : null}
 
-      <p className="hand-help" id="hand-help">
-        Cartas jogáveis recebem destaque. Use as setas para percorrer a mão e Enter ou Espaço para selecionar.
-      </p>
-      <section className="hand" ref={handRef} aria-label="Sua mão" aria-describedby="hand-help" data-testid="my-hand" tabIndex={-1}>
-        {view.hand.map((card) => {
-          const playable = myTurn && !playPending && view.playableCardIds.includes(card.id);
-          const tabIndex = focusedCardId === card.id || (focusedCardId === null && card.id === firstHandCardId) ? 0 : -1;
-          return (
-          <CardView
-            key={card.id}
-            card={card}
-            selected={selectedId === card.id}
-            playable={playable}
-            tabIndex={tabIndex}
-            onClick={() => pickCard(card)}
-            onFocus={() => setFocusedCardId(card.id)}
-            onKeyDown={(event) => handleCardKeyDown(event, card.id)}
-          />
-          );
-        })}
-      </section>
+      <div className={`hand-zone${myTurn ? ' hand-zone-your-turn' : ''}`}>
+        <div className="hand-heading">
+          <h2>Sua mão</h2>
+          <span className="hand-turn-cue" aria-hidden="true">
+            {view.status === 'finished' ? 'Rodada encerrada' : paused ? 'Aguardando a rodada' : myTurn ? 'Sua vez' : 'Aguardando a vez'}
+          </span>
+        </div>
+        <p className="hand-help" id="hand-help">
+          Cartas jogáveis recebem destaque. Use as setas para percorrer a mão e Enter ou Espaço para selecionar.
+        </p>
+        <section className="hand" ref={handRef} aria-label="Sua mão" aria-describedby="hand-help" data-testid="my-hand" tabIndex={-1}>
+          {view.hand.map((card) => {
+            const playable = myTurn && !playPending && view.playableCardIds.includes(card.id);
+            const tabIndex = focusedCardId === card.id || (focusedCardId === null && card.id === firstHandCardId) ? 0 : -1;
+            return (
+              <CardView
+                key={card.id}
+                card={card}
+                selected={selectedId === card.id}
+                playable={playable}
+                tabIndex={tabIndex}
+                onClick={() => pickCard(card)}
+                onFocus={() => setFocusedCardId(card.id)}
+                onKeyDown={(event) => handleCardKeyDown(event, card.id)}
+              />
+            );
+          })}
+        </section>
+      </div>
 
       {!paused && selectedCard !== null && canSelect ? (
         <section className="play-strip" aria-label="Confirmar jogada" data-testid="play-strip" onKeyDown={(event) => {
@@ -437,7 +454,7 @@ export function GameTable({ state, events }: { state: StateMessage; events: Even
               ref={selectedCard.kind === 'wild' ? colorTriggerRef : undefined}
               type="button"
               className="primary"
-              disabled={playPending}
+              disabled={playPending || !live}
               onClick={() => (selectedCard.kind === 'wild' ? setChoosingColor(true) : void sendPlay())}
               data-testid="play-button"
             >

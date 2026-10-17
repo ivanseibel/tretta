@@ -15,9 +15,12 @@ import {
   EFFECT_VARIANT_IDS,
   NICKNAME_MAX_LENGTH,
   ROOM_CODE_PATTERN,
+  ROOM_MODES,
   TAUNT_TYPES,
   type Avatar,
   type EffectVariant,
+  type ParticipantKind,
+  type RoomMode,
   type ServerErrorCode,
   type TauntType,
 } from './shared.js';
@@ -48,10 +51,16 @@ export const clientCommandSchema = z.discriminatedUnion('type', [
 
 export type ClientCommand = z.infer<typeof clientCommandSchema>;
 
+/**
+ * Criação da sala. `mode` ausente equivale a `classic`: payloads antigos
+ * continuam criando a sala humana comum; `training` cria a mesa de treino com
+ * a pessoa dona e exatamente três bots fixos.
+ */
 export const createRoomPayloadSchema = z.strictObject({
   intentId: intentIdSchema,
   nickname: nicknameSchema,
   avatar: avatarSchema,
+  mode: z.enum(ROOM_MODES).optional(),
 });
 
 export const joinRoomPayloadSchema = z.strictObject({
@@ -171,6 +180,8 @@ export type RoomStatus = 'lobby' | 'playing' | 'paused' | 'finished';
 
 export interface PublicParticipant {
   readonly id: string;
+  /** Pessoa real ou bot fixo da mesa de treino; não se deduz pelo apelido. */
+  readonly kind: ParticipantKind;
   readonly nickname: string;
   readonly avatar: Avatar;
   readonly ready: boolean;
@@ -205,6 +216,8 @@ export interface LastRoundSummary {
   readonly winnerNickname: string | null;
   /** Controle no momento da vitória: true quando quem venceu era um substituto. */
   readonly substitute: boolean;
+  /** Identidade do vencedor (pessoa, substituto de pessoa ou bot fixo); null sem vencedor. */
+  readonly winnerKind: ParticipantKind | null;
 }
 
 /**
@@ -215,6 +228,7 @@ export interface LastRoundSummary {
  */
 export interface ScoreboardEntry {
   readonly playerId: string;
+  readonly kind: ParticipantKind;
   readonly nickname: string;
   readonly avatar: Avatar;
   readonly wins: number;
@@ -224,6 +238,8 @@ export interface ScoreboardEntry {
 
 export interface RoomSnapshot {
   readonly roomCode: string;
+  /** `classic` ou `training`; orienta o cliente sem inferência por apelido. */
+  readonly mode: RoomMode;
   readonly hostId: string;
   readonly status: RoomStatus;
   readonly roundNumber: number;

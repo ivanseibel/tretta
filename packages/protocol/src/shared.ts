@@ -1,4 +1,4 @@
-export const PROTOCOL_VERSION = 4;
+export const PROTOCOL_VERSION = 5;
 
 export const ROOM_CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 export const ROOM_CODE_LENGTH = 6;
@@ -10,6 +10,22 @@ export type Avatar = (typeof AVATARS)[number];
 export const NICKNAME_MAX_LENGTH = 24;
 export const NICKNAME_MIN_LENGTH = 1;
 export const ROOM_CAPACITY = 8;
+
+/**
+ * Modo da sala. `classic` é a sala humana original; `training` é a mesa de
+ * treino individual, com a pessoa dona e três bots fixos que recusam entrada
+ * de outras pessoas. Ausente na criação equivale a `classic`.
+ */
+export const ROOM_MODES = ['classic', 'training'] as const;
+export type RoomMode = (typeof ROOM_MODES)[number];
+
+/**
+ * Identidade do assento. `human` é uma pessoa real, única recuperável por
+ * credencial; `bot` é um bot fixo da mesa de treino, que nunca se conecta,
+ * nunca assume anfitrião e não é identidade recuperável por clientes.
+ */
+export const PARTICIPANT_KINDS = ['human', 'bot'] as const;
+export type ParticipantKind = (typeof PARTICIPANT_KINDS)[number];
 
 /**
  * Contagem de caracteres do chat: pontos de código Unicode (`Array.from`), não
@@ -108,6 +124,7 @@ export const SERVER_ERROR_CODES = [
   'ROOM_NOT_FOUND',
   'ROOM_FULL',
   'CREDENTIAL_INVALID',
+  'TRAINING_ROOM_ENTRY_REFUSED',
   'ALREADY_CONNECTED',
   'ALREADY_IN_ROOM',
   'NOT_IN_ROOM',
@@ -124,6 +141,7 @@ export const SERVER_ERROR_CODES = [
   'SUBSTITUTE_NOT_ELIGIBLE',
   'SUBSTITUTE_TOO_EARLY',
   'CANNOT_REMOVE_SELF',
+  'CANNOT_REMOVE_BOT',
   'CHAT_EMPTY',
   'CHAT_TOO_LONG',
   'CHAT_RATE_LIMITED',

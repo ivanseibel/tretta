@@ -1,0 +1,4 @@
+v22.23.1
+11.14.0
+rtk 0.44.0
+frozen-install: nao repetido nesta execucao (lockfile sem mudanca; install congelado registrado em T010-adjustments)

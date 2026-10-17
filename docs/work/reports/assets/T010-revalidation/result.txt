@@ -1,0 +1,33 @@
+
+ RUN  v4.1.11 /private/tmp/tretta-t010-review-_og8svsi/apps/web
+
+ ❯ test/orchestrator-cross-cycle.test.tsx (16 tests | 1 failed) 74ms
+     × Tentar novamente recupera join aceito antes do deadline cujo ack só volta a passar depois 5ms
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 31 passed (32)
+   Start at  00:50:41
+   Duration  475ms (transform 281ms, setup 0ms, import 475ms, tests 192ms, environment 459ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/orchestrator-cross-cycle.test.tsx > orquestrador: resultado incerto entre ciclos > Tentar novamente recupera join aceito antes do deadline cujo ack só volta a passar depois
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/orchestrator-cross-cycle.test.tsx:736:35
+    734|         if (!api().chatLinkReady) await advance(1000);
+    735|       }
+    736|       expect(api().chatLinkReady).toBe(true);
+       |                                   ^
+    737|       expect(api().recoveryPhase).toBe('idle');
+    738|       expect(harness.state.identities.get('ROOMC1')?.credential).toBe(…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

@@ -1,0 +1,47 @@
+{
+  "project": "tretta",
+  "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+  "team": "seibel",
+  "teamId": "team_4mQparNtNCNqsb95uxf2FzoD",
+  "domain": "https://tretta.vercel.app",
+  "deployment": {
+    "id": "dpl_HMJVr7wLLfHAx6t3DKoFbTQ2dtey",
+    "url": "https://tretta-kyrddrenp-seibel.vercel.app",
+    "target": "production",
+    "readyState": "READY",
+    "aliases": [
+      "tretta-seibel.vercel.app",
+      "tretta.vercel.app"
+    ],
+    "aliasAssigned": true,
+    "regions": [
+      "iad1"
+    ],
+    "createdAt": 1792180868688
+  },
+  "previousProduction": {
+    "id": "dpl_4oPaKQDrLFLVjoQmSJgQgcHm4DUc",
+    "base": "8967e94"
+  },
+  "source": {
+    "baseCommit": "8967e94",
+    "manifestDigestSha256": "78db6b5696ffcfbbbec05175b6437d3acb5cc70b07ac65717a21398d4a4fb0b0",
+    "fileCount": 360,
+    "totalSize": 47125700,
+    "manifestFile": "source-manifest.sha256.txt",
+    "fileListFile": "source-files.json"
+  },
+  "build": {
+    "builderCli": "64.0.2",
+    "framework": "Next.js 16.4.1",
+    "pnpm": "11.14.0",
+    "corepack": "ENABLE_EXPERIMENTAL_COREPACK=1",
+    "hooks": "NEXT_PUBLIC_TEST_HOOKS=0",
+    "serverUrlEnv": "NEXT_PUBLIC_SERVER_URL=https://tretta-server.onrender.com"
+  },
+  "server": {
+    "healthz": "https://tretta-server.onrender.com/healthz",
+    "deployment": "dep-db95f367bikc73dpnfs0",
+    "untouched": true
+  }
+}
