@@ -2,17 +2,9 @@
 
 import type { ReactNode } from 'react';
 import type { AutomaticEffect, EffectVariant, TauntEvent } from '@tretta/protocol';
-import type { TauntType } from '@tretta/protocol/shared';
 import { useRoom } from '@/app/providers';
-import { TAUNT_LABELS } from '@/components/TauntPanel';
+import { TAUNT_EMOJI, TAUNT_LABELS } from '@/lib/mood';
 import { describeAutomaticEffect } from '@/lib/labels';
-
-const TAUNT_EMOJI: Record<TauntType, string> = {
-  tomate: '🍅',
-  torta: '🥧',
-  risadas: '😂',
-  choro: '😭',
-};
 
 /** Uma face por variação; a classe `fx-<variant>` carrega a animação própria. */
 const EFFECT_EMOJI: Record<EffectVariant, string> = {

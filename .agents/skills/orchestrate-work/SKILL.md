@@ -1,11 +1,27 @@
 ---
 name: orchestrate-work
-description: Coordenar tarefas do Tretta como orquestrador ou executor, preparar prompts portáveis e validar reports de execução automática ou manual.
+description: Coordenar tarefas do Tretta como orquestrador ou executor, preparar prompts portáveis, validar reports e notificar encerramentos conforme o modo de execução.
 ---
 
 # Orquestrador e executor
 
 O orquestrador define tarefas e valida resultados. O executor implementa uma tarefa delimitada e retorna um report. Os papéis continuam iguais em subagentes e em sessões independentes, inclusive com outro agente ou assinatura.
+
+## Notificação de encerramento
+
+Regra do workspace: **o orquestrador e todo executor manual devem ler e usar a skill `agent-notify` ao encerrar cada tarefa**, inclusive preparação de prompt e validação de report. A obrigação vale também para tarefas curtas; substitui a dispensa genérica de tarefas triviais da skill. Conversa de acompanhamento e updates intermediários não são encerramentos de tarefa.
+
+**Única exceção de papel/modo:** o executor lançado automaticamente como subagente pelo orquestrador devolve o report sem notificação própria; o orquestrador notifica ao concluir sua tarefa. Executor iniciado pelo usuário em outra sessão, interface ou assinatura é manual e deve notificar, mesmo que siga um prompt do orquestrador.
+
+Após salvar os artefatos, registrar o resultado e concluir as verificações, acione a notificação **como última ação antes da resposta final**, uma vez por encerramento:
+
+| Situação terminal | Comando no workspace |
+| --- | --- |
+| Tarefa concluída, inclusive report entregue para validação | `rtk proxy agent-notify done` |
+| Trabalho interrompido aguardando decisão, autorização ou informação do usuário | `rtk proxy agent-notify attention` |
+| Falha terminal impede continuar após tentativas pertinentes | `rtk proxy agent-notify error` |
+
+Passe somente o status; detalhes, caminhos, credenciais e contexto pertencem ao report/resposta, nunca ao comando. A notificação não concede aceite nem autoriza a próxima tarefa. Entrega do serviço é best-effort: se skill/utilitário estiverem indisponíveis ou a tentativa falhar, preserve o resultado do trabalho e informe a limitação sem afirmar envio confirmado. A [preparação de outro computador](../../../docs/work/setup.md) cobre essa dependência.
 
 ## Orquestrador
 
@@ -22,7 +38,7 @@ O orquestrador define tarefas e valida resultados. O executor implementa uma tar
 - **Escopo:** entregáveis, limites e dependências; explicite o que requer uma decisão do orquestrador.
 - **Critérios de aceite:** condições observáveis para cada entregável.
 - **Verificação:** comportamento a conferir e restrições do ambiente; comandos podem ser descobertos no projeto.
-- **Retorno:** report no formato abaixo, com evidências suficientes para validação em outra sessão.
+- **Retorno:** report no formato abaixo, com evidências suficientes para validação em outra sessão; explicite o modo manual/subagente e a obrigação ou dispensa de notificação conforme a seção “Notificação de encerramento”.
 
 ## Executor
 
@@ -39,6 +55,8 @@ O orquestrador define tarefas e valida resultados. O executor implementa uma tar
 - **Verificação:** comandos ou procedimentos executados, resultados e limitações.
 - **Decisões e desvios:** escolhas relevantes, suposições e divergências do prompt.
 - **Próximo passo:** ajustes necessários ou decisões aguardadas.
+
+O report é salvo antes da última ação de notificação; o resultado da tentativa pode ser informado na resposta final, sem reabrir o report depois dela.
 
 ## Continuidade
 

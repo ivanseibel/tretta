@@ -1,7 +1,8 @@
 /**
- * Preferências individuais de apresentação: animação, som e ocultação de
- * provocações. Valem só para este navegador, sem conta e sem tocar na sala.
- * Armazenamento indisponível ou corrompido cai nos padrões sem lançar.
+ * Preferências individuais de apresentação: animação, som, ocultação de
+ * provocações e de reações. Valem só para este navegador, sem conta e sem
+ * tocar na sala. Armazenamento indisponível ou corrompido cai nos padrões sem
+ * lançar.
  */
 export type AnimationPreference = 'full' | 'reduced' | 'off';
 
@@ -10,6 +11,7 @@ export interface MoodPreferences {
   readonly soundMuted: boolean;
   readonly turnNotificationEnabled: boolean;
   readonly hideTaunts: boolean;
+  readonly hideReactions: boolean;
 }
 
 export const DEFAULT_PREFERENCES: MoodPreferences = {
@@ -17,6 +19,7 @@ export const DEFAULT_PREFERENCES: MoodPreferences = {
   soundMuted: false,
   turnNotificationEnabled: true,
   hideTaunts: false,
+  hideReactions: false,
 };
 
 const STORAGE_KEY = 'tretta.mood';
@@ -46,6 +49,7 @@ export function parsePreferences(raw: string | null): MoodPreferences {
         DEFAULT_PREFERENCES.turnNotificationEnabled,
       ),
       hideTaunts: normalizeBoolean(record.hideTaunts, DEFAULT_PREFERENCES.hideTaunts),
+      hideReactions: normalizeBoolean(record.hideReactions, DEFAULT_PREFERENCES.hideReactions),
     };
   } catch {
     return DEFAULT_PREFERENCES;

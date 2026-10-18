@@ -1,0 +1,55 @@
+{
+  "alias": {
+    "alias": "tretta.vercel.app",
+    "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "deploymentId": "dpl_fiXC5suPTF2VCW22fEVf64HZYhNP",
+    "deployment": {
+      "id": "dpl_fiXC5suPTF2VCW22fEVf64HZYhNP",
+      "url": "tretta-qj6nwkkie-seibel.vercel.app",
+      "readyState": null
+    }
+  },
+  "project": {
+    "id": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "name": "tretta",
+    "accountId": "team_4mQparNtNCNqsb95uxf2FzoD",
+    "framework": "nextjs",
+    "rootDirectory": "apps/web",
+    "nodeVersion": "22.x",
+    "link": null,
+    "sourceFilesOutsideRootDirectory": true
+  },
+  "team": {
+    "id": "team_4mQparNtNCNqsb95uxf2FzoD",
+    "slug": "seibel",
+    "plan": "hobby"
+  },
+  "checkedAtUtc": "2026-10-17T15:50:57.597844+00:00",
+  "source": {
+    "acceptedFiles": 159,
+    "different": []
+  },
+  "http": {
+    "home": {
+      "status": 200
+    },
+    "health": {
+      "errorType": "TimeoutError"
+    },
+    "healthRetry": {
+      "checkedAtUtc": "2026-10-17T15:52:03.395298+00:00",
+      "status": 200,
+      "body": "{\"ok\":true}"
+    }
+  },
+  "deployment": {
+    "id": "dpl_fiXC5suPTF2VCW22fEVf64HZYhNP",
+    "url": "tretta-qj6nwkkie-seibel.vercel.app",
+    "readyState": "READY",
+    "target": "production",
+    "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8"
+  },
+  "projectFields": {
+    "sourceFilesOutsideRootDirectory": true
+  }
+}

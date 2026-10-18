@@ -77,8 +77,8 @@ test('entrada, preparação, cor do coringa, vitória da pessoa, nova rodada e s
 
   await setNextDeck(page, trainingWildDeck());
   await startTrainingRound(page);
-  await expect(page.getByTestId('opponent-Tico')).toContainText('bot');
-  await expect(page.getByTestId('opponent-Tico')).not.toContainText('desconectado');
+  await expect(page.getByTestId('seat-Tico')).toContainText('bot');
+  await expect(page.getByTestId('seat-Tico')).not.toContainText('desconectado');
   await capturePair(page, 'mesa-treino');
 
   // Teclado na mão: setas movem o foco, Enter seleciona, Escape cancela.
@@ -190,7 +190,7 @@ test('retomada no treino: pausa com continuação explícita preserva mão, fase
   await expect(page.getByTestId('pause-retention')).toContainText('Os bots esperam por você');
   expect(await page.locator('[data-testid^="pause-absent-"]').count()).toBe(0);
   for (const name of ['Tico', 'Lila', 'Nino']) {
-    await expect(page.getByTestId(`opponent-${name}`)).toContainText('bot');
+    await expect(page.getByTestId(`seat-${name}`)).toContainText('bot');
   }
   await capturePair(page, 'pausa-treino');
 

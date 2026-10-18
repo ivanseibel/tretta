@@ -1,0 +1,12 @@
+{
+ "checkedAtUtc": "2026-10-17T16:48:53.519109+00:00",
+ "source": "CDP Network.webSocket* durante reload do observador no dom\u00ednio p\u00fablico",
+ "events": 54,
+ "urls": [
+  "wss://tretta-server.onrender.com/socket.io/?EIO=4&transport=websocket"
+ ],
+ "protocols": {
+  "paginas": "https:",
+  "socket": "wss:"
+ }
+}

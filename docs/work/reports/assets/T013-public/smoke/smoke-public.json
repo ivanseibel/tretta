@@ -1,0 +1,362 @@
+{
+  "checkedAt": "2026-10-17T19:31:19.135Z",
+  "environment": {
+    "site": "https://tretta.vercel.app",
+    "deployment": "dpl_DARamMVYaXEgnZ2KvioZsMGRnf6k (T013 promovido)",
+    "http": {
+      "home": 200,
+      "salaProbe": 200
+    },
+    "transport": {
+      "https": true,
+      "wss": [
+        "wss://tretta-server.onrender.com/socket.io/?EIO=4&transport=websocket"
+      ]
+    },
+    "browser": "Chrome 155.0.8059.82 dedicado (perfil temporário, instância própria, CDP 127.0.0.1:9333); navegador pessoal não tocado",
+    "viewport": "emulação por CDP: 320x640 dsf2 mobile, 390x640 dsf2 mobile, 1280x800 dsf1; não é aparelho físico",
+    "room": {
+      "mode": "treino",
+      "humanIdentity": "Rosa",
+      "bots": [
+        "Tico",
+        "Lila",
+        "Nino"
+      ],
+      "codeMasked": "sala de treino própria (código mascarado)",
+      "exitUrl": "https://tretta.vercel.app/"
+    }
+  },
+  "words": {
+    "Inversao": {
+      "provenance": "Jogada legal própria \"Azul Inversão\" (feed em 10-inversao-390.png; efeito \"Sentido anti-horário\"). Captura 10 (ao vivo): topo \"Vermelho Inversão\" após jogada de bot na sequência. Captura 10b (congelada por reload de recuperação): topo \"Azul Inversão\" de jogadas legais da rodada; recuperação sem replay visual da inversão antiga.",
+      "measured": {
+        "320": {
+          "text": "Inversão",
+          "dataLong": "true",
+          "font": "11.2px",
+          "insideCard": true,
+          "overlapSymbol": false,
+          "overlapName": false,
+          "valueWidth": 49.71,
+          "cardWidth": 64,
+          "ariaLabel": "Descarte: Azul Inversão"
+        },
+        "390": {
+          "text": "Inversão",
+          "dataLong": "true",
+          "font": "11.2px",
+          "insideCard": true,
+          "overlapSymbol": false,
+          "overlapName": false,
+          "valueWidth": 49.71,
+          "cardWidth": 64,
+          "ariaLabel": "Descarte: Azul Inversão"
+        },
+        "1280": {
+          "text": "Inversão",
+          "dataLong": "true",
+          "font": "13.12px",
+          "insideCard": true,
+          "overlapSymbol": false,
+          "overlapName": false,
+          "valueWidth": 57.06,
+          "cardWidth": 76,
+          "ariaLabel": "Descarte: Azul Inversão"
+        }
+      },
+      "liveCaptureContext": {
+        "320": {
+          "discard": {
+            "text": "Inversão",
+            "dataLong": "true",
+            "font": "11.2px",
+            "valueRect": {
+              "x": 184.63,
+              "y": 312.54,
+              "w": 49.71,
+              "h": 12.09,
+              "right": 234.34,
+              "bottom": 324.63
+            },
+            "cardRect": {
+              "x": 177.49,
+              "y": 273.2,
+              "w": 64,
+              "h": 94,
+              "right": 241.49,
+              "bottom": 367.2
+            },
+            "symbolRect": {
+              "x": 201.91,
+              "y": 292.87,
+              "w": 15.17,
+              "h": 16.48,
+              "right": 217.08,
+              "bottom": 309.34
+            },
+            "nameRect": {
+              "x": 183.69,
+              "y": 327.83,
+              "w": 51.61,
+              "h": 19.7,
+              "right": 235.3,
+              "bottom": 347.53
+            },
+            "valueOverflow": {
+              "sw": 50,
+              "cw": 50,
+              "sh": 13,
+              "ch": 12
+            },
+            "cardOverflow": {
+              "sw": 58,
+              "cw": 58,
+              "sh": 88,
+              "ch": 88
+            },
+            "insideCard": true,
+            "overlapSymbol": false,
+            "overlapName": false,
+            "ariaLabel": "Descarte: Vermelho Inversão",
+            "cardName": "Vermelho Inversão",
+            "valueTextIsExact": "Inversão"
+          },
+          "turn": "Sua vez",
+          "activeColor": "●Vermelho"
+        },
+        "390": {
+          "discard": {
+            "text": "Inversão",
+            "dataLong": "true",
+            "font": "11.2px",
+            "valueRect": {
+              "x": 219.88,
+              "y": 312.31,
+              "w": 49.71,
+              "h": 12.09,
+              "right": 269.59,
+              "bottom": 324.41
+            },
+            "cardRect": {
+              "x": 212.74,
+              "y": 272.98,
+              "w": 64,
+              "h": 94,
+              "right": 276.74,
+              "bottom": 366.98
+            },
+            "symbolRect": {
+              "x": 237.16,
+              "y": 292.64,
+              "w": 15.17,
+              "h": 16.48,
+              "right": 252.33,
+              "bottom": 309.12
+            },
+            "nameRect": {
+              "x": 218.94,
+              "y": 327.6,
+              "w": 51.61,
+              "h": 19.7,
+              "right": 270.55,
+              "bottom": 347.3
+            },
+            "valueOverflow": {
+              "sw": 50,
+              "cw": 50,
+              "sh": 13,
+              "ch": 12
+            },
+            "cardOverflow": {
+              "sw": 58,
+              "cw": 58,
+              "sh": 88,
+              "ch": 88
+            },
+            "insideCard": true,
+            "overlapSymbol": false,
+            "overlapName": false,
+            "ariaLabel": "Descarte: Vermelho Inversão",
+            "cardName": "Vermelho Inversão",
+            "valueTextIsExact": "Inversão"
+          },
+          "turn": "Sua vez",
+          "activeColor": "●Vermelho"
+        },
+        "1280": {
+          "discard": {
+            "text": "Inversão",
+            "dataLong": "true",
+            "font": "13.12px",
+            "valueRect": {
+              "x": 558.79,
+              "y": 390.27,
+              "w": 57.06,
+              "h": 14.16,
+              "right": 615.85,
+              "bottom": 404.44
+            },
+            "cardRect": {
+              "x": 549.32,
+              "y": 346.03,
+              "w": 76,
+              "h": 108,
+              "right": 625.32,
+              "bottom": 454.03
+            },
+            "symbolRect": {
+              "x": 579.73,
+              "y": 370.6,
+              "w": 15.17,
+              "h": 16.48,
+              "right": 594.91,
+              "bottom": 387.08
+            },
+            "nameRect": {
+              "x": 555.52,
+              "y": 407.63,
+              "w": 63.61,
+              "h": 21.83,
+              "right": 619.13,
+              "bottom": 429.46
+            },
+            "valueOverflow": {
+              "sw": 57,
+              "cw": 57,
+              "sh": 15,
+              "ch": 14
+            },
+            "cardOverflow": {
+              "sw": 70,
+              "cw": 70,
+              "sh": 102,
+              "ch": 102
+            },
+            "insideCard": true,
+            "overlapSymbol": false,
+            "overlapName": false,
+            "ariaLabel": "Descarte: Vermelho Inversão",
+            "cardName": "Vermelho Inversão",
+            "valueTextIsExact": "Inversão"
+          },
+          "turn": "Sua vez",
+          "activeColor": "●Vermelho"
+        }
+      }
+    },
+    "Bloqueio": {
+      "provenance": "Primeira rodada: \"Vermelho Bloqueio\" sorteado e mantido. Segunda rodada: jogada legal própria \"Verde Bloqueio\" (log 21-loop-log.json t=39.8); jogadas seguintes legais (bots incluídos) encadeiam Bloqueios por símbolo: captura 20 (congelada) = \"Vermelho Bloqueio\"; captura 20b (congelada) = \"Amarelo Bloqueio\". Todas por ações legais da rodada, sem injeção de estado.",
+      "measured": {
+        "320": {
+          "text": "Bloqueio",
+          "dataLong": "true",
+          "font": "11.2px",
+          "insideCard": true,
+          "overlapSymbol": false,
+          "overlapName": false,
+          "valueWidth": 50.67,
+          "cardWidth": 64,
+          "ariaLabel": "Descarte: Amarelo Bloqueio"
+        },
+        "390": {
+          "text": "Bloqueio",
+          "dataLong": "true",
+          "font": "11.2px",
+          "insideCard": true,
+          "overlapSymbol": false,
+          "overlapName": false,
+          "valueWidth": 50.67,
+          "cardWidth": 64,
+          "ariaLabel": "Descarte: Amarelo Bloqueio"
+        },
+        "1280": {
+          "text": "Bloqueio",
+          "dataLong": "true",
+          "font": "13.12px",
+          "insideCard": true,
+          "overlapSymbol": false,
+          "overlapName": false,
+          "valueWidth": 58.19,
+          "cardWidth": 76,
+          "ariaLabel": "Descarte: Amarelo Bloqueio"
+        }
+      }
+    }
+  },
+  "checks": {
+    "dataLongPresent": {
+      "Inversao": true,
+      "Bloqueio": true
+    },
+    "wholeTextNoEllipsis": {
+      "Inversao": true,
+      "Bloqueio": true,
+      "note": "texto exato; sem reticências; dentro da carta; sem sobreposição com símbolo ou card-name em nenhuma largura"
+    },
+    "handConsistency": {
+      "handInversaoBeforePlay": {
+        "font": "11.2px",
+        "width": 49.71,
+        "viewport": 390,
+        "dataLong": true
+      },
+      "discardInversao": {
+        "font390": "11.2px",
+        "font1280": "13.12px"
+      },
+      "numbersUnaffected": "handValues com números em 23.2px nos dois descartes; +2/+4 com fonte grande como antes"
+    },
+    "draw": {
+      "performed": true,
+      "evidence": "log 21-loop-log.json (action=draw; compras reais; rótulo Compra (N) visível)"
+    },
+    "activeColor": {
+      "visible": true,
+      "values": [
+        "Azul",
+        "Amarelo",
+        "Vermelho (chip com label)"
+      ]
+    },
+    "keyboardInteraction": {
+      "target": "red-4-2",
+      "focus_path": [
+        "yellow-1-1",
+        "yellow-2-1",
+        "green-9-1",
+        "red-4-2"
+      ],
+      "aria_pressed": "true",
+      "strip": "Jogar: Vermelho 4JogarCancelar",
+      "discard_before": "Bloqueio",
+      "discard_after": "4"
+    },
+    "reload": {
+      "sameCode": true,
+      "sameHand": true,
+      "sameDiscard": true,
+      "note": "após reload: rodada pausada (retenção normal), mão idêntica, descarte 'Inversão' ainda legível (font 13.12px, dataLong true)",
+      "wsUrls": [
+        {
+          "method": "Network.webSocketCreated",
+          "url": "wss://tretta-server.onrender.com/socket.io/?EIO=4&transport=websocket"
+        }
+      ]
+    },
+    "errors": {
+      "pageErrors": [],
+      "unhandledRejections": [],
+      "consoleErrors": [],
+      "consoleWarnings": []
+    },
+    "circuitAndTraining": "seat-circuit, circuit-direction (horário/anti-horário), setas e tags na mesa; entrada e mesa de treino exercitadas; EventFeed registrou as jogadas; descarte público não re-amostrado (cobertura local aceita)"
+  },
+  "limitations": [
+    "Sem aparelho físico: larguras por emulação CDP.",
+    "Inversão capturada no descarte veio de jogada de bot após a minha jogada legal; a jogada própria de Inversão está registrada no feed (10-inversao-390.png).",
+    "Congelamento para captura usa o reload de recuperação (pausa normal do treino com humano ausente); não houve injeção de estado.",
+    "Capturas 'full viewport' 320/390 mostram o topo da mesa em pausa; a palavra é provada nos zooms e medições.",
+    "O código da sala foi mascarado nas evidências compartilhadas."
+  ]
+}

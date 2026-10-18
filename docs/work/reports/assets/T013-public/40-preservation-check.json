@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-17T19:36:45.267Z",
+  "baselineCount": 838,
+  "currentCount": 919,
+  "allowedModified": {},
+  "modified": [
+    "docs/work/deployment-free.md",
+    "docs/work/plan.md",
+    "docs/work/status.md",
+    "docs/work/T013-publication.md"
+  ],
+  "missing": [],
+  "addedCount": 81,
+  "addedTopLevel": [
+    "docs/work/reports/T013-publication.md",
+    "docs/work/reports/assets/T013-public/*"
+  ],
+  "unexpectedAdded": [],
+  "unexpectedModified": [],
+  "ok": true
+}

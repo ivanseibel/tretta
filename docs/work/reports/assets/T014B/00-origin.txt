@@ -1,0 +1,6 @@
+Fonte: /Users/ivanseibel/dev/personal/tretta (working tree completo, incluindo nao rastreados e T014A aceita)
+HEAD: 3ae459e5a88e612dc389e7bcb4570809ddcc3445
+Data da copia: 2026-10-18T17:44:10Z
+Copia: /private/var/folders/r_/xrvhskhx45l6n66k99kzs61r0000gn/T/opencode/tretta-t014b-verify-4UFi98/tretta
+Comando: rsync -a --exclude node_modules --exclude .next --exclude dist --exclude coverage --exclude test-results --exclude playwright-report --exclude .vercel --exclude '*.tsbuildinfo' --exclude '.DS_Store' /Users/ivanseibel/dev/personal/tretta/ /private/var/folders/r_/xrvhskhx45l6n66k99kzs61r0000gn/T/opencode/tretta-t014b-verify-4UFi98/tretta/
+git status (linhas): 100

@@ -1,0 +1,21 @@
+{
+  "acceptedSourceCount": 159,
+  "acceptedSourceDifferences": [],
+  "acceptedSourceMissingFromUpload": [],
+  "acceptedSourceDifferentFromUpload": [],
+  "uploadCount": 166,
+  "uploadBytes": 1404477,
+  "uploadDifferences": [],
+  "manifestMatchesFileList": true,
+  "manifestDigestSha256": "3e3c84dea1cfe719181c7f0fbc2b63b734f3ab949ab1d93cad5866afc6af6085",
+  "uploadExtras": [
+    ".agents/skills/orchestrate-work/SKILL.md",
+    ".nvmrc",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "README.md",
+    "apps/web/next-env.d.ts",
+    "render.yaml"
+  ],
+  "priorReportEvidenceFileCount": 874
+}

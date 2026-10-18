@@ -1,0 +1,407 @@
+{
+  "390": {
+    "discard": {
+      "text": "Invers\u00e3o",
+      "dataLong": "true",
+      "font": "11.2px",
+      "valueRect": {
+        "x": 220.27,
+        "y": 1177.91,
+        "w": 49.71,
+        "h": 12.09,
+        "right": 269.98,
+        "bottom": 1190
+      },
+      "cardRect": {
+        "x": 213.13,
+        "y": 1138.57,
+        "w": 64,
+        "h": 94,
+        "right": 277.13,
+        "bottom": 1232.57
+      },
+      "symbolRect": {
+        "x": 237.7,
+        "y": 1158.23,
+        "w": 14.88,
+        "h": 16.48,
+        "right": 252.57,
+        "bottom": 1174.71
+      },
+      "nameRect": {
+        "x": 219.33,
+        "y": 1193.2,
+        "w": 51.61,
+        "h": 19.7,
+        "right": 270.94,
+        "bottom": 1212.9
+      },
+      "valueOverflow": {
+        "sw": 50,
+        "cw": 50,
+        "sh": 13,
+        "ch": 12
+      },
+      "cardOverflow": {
+        "sw": 58,
+        "cw": 58,
+        "sh": 88,
+        "ch": 88
+      },
+      "insideCard": true,
+      "overlapSymbol": false,
+      "overlapName": false,
+      "ariaLabel": "Descarte: Azul Invers\u00e3o",
+      "cardName": "Azul Invers\u00e3o",
+      "valueTextIsExact": "Invers\u00e3o"
+    },
+    "turn": "Rodada pausada",
+    "activeColor": "\u25a0Azul",
+    "handValues": [
+      {
+        "text": "1",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "7",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "8",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "Invers\u00e3o",
+        "font": "11.2px",
+        "long": "true"
+      },
+      {
+        "text": "3",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "Cor",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      }
+    ],
+    "pileLabels": [
+      "Compra (65)",
+      "Descarte"
+    ]
+  },
+  "320": {
+    "discard": {
+      "text": "Invers\u00e3o",
+      "dataLong": "true",
+      "font": "11.2px",
+      "valueRect": {
+        "x": 185.02,
+        "y": 328.93,
+        "w": 49.71,
+        "h": 12.09,
+        "right": 234.73,
+        "bottom": 341.02
+      },
+      "cardRect": {
+        "x": 177.88,
+        "y": 289.59,
+        "w": 64,
+        "h": 94,
+        "right": 241.88,
+        "bottom": 383.59
+      },
+      "symbolRect": {
+        "x": 202.45,
+        "y": 309.26,
+        "w": 14.88,
+        "h": 16.48,
+        "right": 217.32,
+        "bottom": 325.73
+      },
+      "nameRect": {
+        "x": 184.08,
+        "y": 344.22,
+        "w": 51.61,
+        "h": 19.7,
+        "right": 235.69,
+        "bottom": 363.92
+      },
+      "valueOverflow": {
+        "sw": 50,
+        "cw": 50,
+        "sh": 13,
+        "ch": 12
+      },
+      "cardOverflow": {
+        "sw": 58,
+        "cw": 58,
+        "sh": 88,
+        "ch": 88
+      },
+      "insideCard": true,
+      "overlapSymbol": false,
+      "overlapName": false,
+      "ariaLabel": "Descarte: Azul Invers\u00e3o",
+      "cardName": "Azul Invers\u00e3o",
+      "valueTextIsExact": "Invers\u00e3o"
+    },
+    "turn": "Rodada pausada",
+    "activeColor": "\u25a0Azul",
+    "handValues": [
+      {
+        "text": "1",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "7",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "8",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "Invers\u00e3o",
+        "font": "11.2px",
+        "long": "true"
+      },
+      {
+        "text": "3",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "Cor",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      }
+    ],
+    "pileLabels": [
+      "Compra (65)",
+      "Descarte"
+    ]
+  },
+  "1280": {
+    "discard": {
+      "text": "Invers\u00e3o",
+      "dataLong": "true",
+      "font": "13.12px",
+      "valueRect": {
+        "x": 579.29,
+        "y": 80.37,
+        "w": 57.06,
+        "h": 14.16,
+        "right": 636.35,
+        "bottom": 94.53
+      },
+      "cardRect": {
+        "x": 569.82,
+        "y": 36.13,
+        "w": 76,
+        "h": 108,
+        "right": 645.82,
+        "bottom": 144.13
+      },
+      "symbolRect": {
+        "x": 600.38,
+        "y": 60.7,
+        "w": 14.88,
+        "h": 16.48,
+        "right": 615.26,
+        "bottom": 77.17
+      },
+      "nameRect": {
+        "x": 576.02,
+        "y": 97.73,
+        "w": 63.61,
+        "h": 21.83,
+        "right": 639.63,
+        "bottom": 119.55
+      },
+      "valueOverflow": {
+        "sw": 57,
+        "cw": 57,
+        "sh": 15,
+        "ch": 14
+      },
+      "cardOverflow": {
+        "sw": 70,
+        "cw": 70,
+        "sh": 102,
+        "ch": 102
+      },
+      "insideCard": true,
+      "overlapSymbol": false,
+      "overlapName": false,
+      "ariaLabel": "Descarte: Azul Invers\u00e3o",
+      "cardName": "Azul Invers\u00e3o",
+      "valueTextIsExact": "Invers\u00e3o"
+    },
+    "turn": "Rodada pausada",
+    "activeColor": "\u25a0Azul",
+    "handValues": [
+      {
+        "text": "1",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "7",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "8",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "Invers\u00e3o",
+        "font": "13.12px",
+        "long": "true"
+      },
+      {
+        "text": "3",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "Cor",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      }
+    ],
+    "pileLabels": [
+      "Compra (65)",
+      "Descarte"
+    ]
+  }
+}

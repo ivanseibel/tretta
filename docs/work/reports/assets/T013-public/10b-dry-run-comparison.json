@@ -1,0 +1,14 @@
+{
+  "dryRunFileCount": 166,
+  "dryRunTotalSize": 1404477,
+  "ignoredCount": 2,
+  "ignored": [
+    ".gitignore",
+    ".vercel"
+  ],
+  "missing": [],
+  "extra": [],
+  "sizeDiffs": [],
+  "snapshotFileCount": 166,
+  "snapshotTotalSize": 1404477
+}

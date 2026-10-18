@@ -18,6 +18,10 @@ export function createTauntId(): string {
   return `t_${randomUUID()}`;
 }
 
+export function createReactionId(): string {
+  return `rx_${randomUUID()}`;
+}
+
 export function createEffectId(): string {
   return `fx_${randomUUID()}`;
 }

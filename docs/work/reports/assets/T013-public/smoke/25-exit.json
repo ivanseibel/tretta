@@ -1,0 +1,17 @@
+{
+  "room_code_masked": "Sa\u2026(11)",
+  "url_after_leave": "https://tretta.vercel.app/",
+  "errors_before_exit": {
+    "errors": [],
+    "rejections": [],
+    "consoleErrors": [],
+    "consoleWarnings": []
+  },
+  "errors_after_exit": {
+    "errors": [],
+    "rejections": [],
+    "consoleErrors": [],
+    "consoleWarnings": []
+  },
+  "left_at": "2026-10-17T20:29:07+0100"
+}

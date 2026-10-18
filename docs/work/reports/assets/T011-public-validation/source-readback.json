@@ -1,0 +1,38 @@
+{
+  "checkedAtUtc": "2026-10-17T11:59:05.517637+00:00",
+  "commit": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+  "head": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+  "remoteMain": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+  "acceptedSourceWorkingTree": {
+    "files": 148,
+    "differences": []
+  },
+  "acceptedSourceCommit": {
+    "files": 148,
+    "differences": []
+  },
+  "historical": {
+    "files": 417,
+    "differences": []
+  },
+  "priorReports": {
+    "files": 456,
+    "differences": []
+  },
+  "upload": {
+    "fileCount": 163,
+    "totalSize": 1317728,
+    "differences": [
+      {
+        "path": ".vercelignore",
+        "workingTreeMatches": false,
+        "commitMatches": false
+      }
+    ],
+    "notInCommit": [
+      ".vercelignore",
+      "apps/web/next-env.d.ts"
+    ],
+    "manifestSha256": "80be664523f38e705e5917fa948d4daa228e24922c73827da435c4d829f194d5"
+  }
+}

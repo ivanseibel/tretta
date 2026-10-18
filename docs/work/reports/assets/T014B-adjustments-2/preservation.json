@@ -1,0 +1,18 @@
+{
+  "reference": "docs/work/reports/assets/T014B-revalidation/source-before.json (fonte da revalida\u00e7\u00e3o, 1230 arquivos)",
+  "baseline_files": 1230,
+  "matched": 1222,
+  "missing": [],
+  "changedByThisExecution": [
+    "apps/web/lib/moodTime.ts",
+    "apps/web/test/mood-time.test.ts"
+  ],
+  "otherPreparedChanges": [
+    "docs/product/backlog.md",
+    "docs/product/provocacoes-e-reacoes.md",
+    "docs/work/T014B-adjustments.md",
+    "docs/work/T014B.md",
+    "docs/work/plan.md",
+    "docs/work/status.md"
+  ]
+}

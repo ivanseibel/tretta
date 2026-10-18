@@ -1,0 +1,21 @@
+{
+  "validated-source.sha256.json": {
+    "files": 148,
+    "differences": []
+  },
+  "historical-baseline.sha256.json": {
+    "files": 417,
+    "differences": []
+  },
+  "previous-reports.sha256.json": {
+    "files": 456,
+    "differences": []
+  },
+  "validationReportMissingLinks": [],
+  "diffCheck": {
+    "exitCode": 0,
+    "output": ""
+  },
+  "head": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+  "checkedAtUtc": "2026-10-17T12:02:10.589913+00:00"
+}

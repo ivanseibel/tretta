@@ -1,0 +1,30 @@
+[
+  {
+    "commit": {
+      "createdAt": "2026-10-17T11:01:47Z",
+      "id": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+      "message": "feat: deliver family refinements, recovery fix and training table\n\nCumulative accepted version T008-T011: cozy table, chat order and turn sound notification (T008); bounded automatic recovery of the same identity and hand (T010); solo training table against three fixed bots, server and browser flow (T011A/T011B), accepted locally in docs/work/reports.\n\nFunctional and configuration source: 148 files matched against the accepted T011B manifest. Sanitized reports, manifests and evidence included; ignored logs, raw browser traces and generated files remain local."
+    },
+    "createdAt": "2026-10-17T11:28:38.567314Z",
+    "finishedAt": "2026-10-17T11:29:58.051942Z",
+    "id": "dep-db9lnpm1egvs73ct80ig",
+    "startedAt": "2026-10-17T11:28:38.542288Z",
+    "status": "live",
+    "trigger": "new_commit",
+    "updatedAt": "2026-10-17T19:01:00.114553Z"
+  },
+  {
+    "commit": {
+      "createdAt": "2026-10-16T16:53:33Z",
+      "id": "8967e94eae18a351c6c7b4c81a1f00ea5d6d1837",
+      "message": "docs: record Seibel Hobby project setup"
+    },
+    "createdAt": "2026-10-16T16:57:48.874231Z",
+    "finishedAt": "2026-10-16T16:59:04.64831Z",
+    "id": "dep-db95f367bikc73dpnfs0",
+    "startedAt": "2026-10-16T16:57:48.869387Z",
+    "status": "deactivated",
+    "trigger": "blueprint_sync",
+    "updatedAt": "2026-10-17T11:29:58.05101Z"
+  }
+]

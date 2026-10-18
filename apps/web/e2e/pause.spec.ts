@@ -35,7 +35,8 @@ test('pausa por queda, substituição após o prazo e retorno pela mesma vaga', 
   await substitute.click();
 
   await expect(pageA.getByTestId('pause-panel')).toHaveCount(0);
-  await expect(pageA.getByTestId('opponent-Bia').getByText('substituto')).toBeVisible();
+  await expect(pageA.getByTestId('seat-Bia').getByText('substituto')).toBeVisible();
+  await expect(pageA.locator('[data-testid="seat-circuit"] .seat')).toHaveCount(2);
   await pageA.screenshot({ path: join(shotsDir, 'desktop-substituto.png') });
 
   // Bia volta pela credencial do próprio navegador e retoma a mão do assento.
@@ -43,7 +44,7 @@ test('pausa por queda, substituição após o prazo e retorno pela mesma vaga', 
   await reopened.goto(inviteUrl);
   await expect(reopened.getByTestId('my-hand')).toBeVisible();
   await expect(reopened.getByTestId('join-name-input')).toHaveCount(0);
-  await expect(pageA.getByTestId('opponent-Bia').getByText('substituto')).toHaveCount(0);
+  await expect(pageA.getByTestId('seat-Bia').getByText('substituto')).toHaveCount(0);
   const handCount = await reopened.getByTestId('my-hand').locator('[data-testid^="card-"]').count();
   expect(handCount).toBeGreaterThanOrEqual(7);
   await pageA.screenshot({ path: join(shotsDir, 'desktop-retorno.png') });

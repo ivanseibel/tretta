@@ -1,0 +1,10 @@
+[
+  {
+    "step": "original-reproductions",
+    "exitCode": 0
+  },
+  {
+    "step": "scope-reproductions",
+    "exitCode": 1
+  }
+]

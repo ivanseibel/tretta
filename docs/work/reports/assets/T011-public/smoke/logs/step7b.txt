@@ -1,0 +1,18 @@
+room_tabs: 2
+current_is_B: True
+B_pref_turn_notification_default: True
+B_pref_after_toggle: False
+B_mood_persisted_false: True
+B_hand_before: 6
+B_recovering: True
+B_hand_equal: True 6
+B_pause_panel: False
+B_pref_still_off: True
+B_errors: {'errors': [], 'rejections': []}
+A_pause_gone: True
+B_pause_gone: True
+chat_after_recovery: True
+A_errors_final: {'errors': [], 'rejections': []}
+B_left_home: https://tretta.vercel.app/
+A_left_home: https://tretta.vercel.app/
+A_errors_final2: {'errors': [], 'rejections': []}

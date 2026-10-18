@@ -1,0 +1,25 @@
+title: Tretta
+protocol: https:
+hooks: undefined
+errors: {'errors': [], 'rejections': []}
+nickname: Checador
+note: Mesa de treino: você joga sozinho contra três bots simples, com as regras do Clássico. A partida roda no servidor, como nas salas entre amigos.
+rows: 4
+row_Tico: Ticobotpronto0 v.
+row_Lila: Lilabotpronto0 v.
+row_Nino: Ninobotpronto0 v.
+invite_link: 0 copy_invite: 0
+start_disabled: True
+start_hint: Confirme que você está pronto para iniciar.
+url_code: AS…(6)
+errors: {'errors': [], 'rejections': []}
+Traceback (most recent call last):
+  File "/Users/ivanseibel/.local/bin/browser-harness", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Users/ivanseibel/.local/share/uv/tools/browser-harness/lib/python3.12/site-packages/browser_harness/run.py", line 248, in main
+    _run(args)
+  File "/Users/ivanseibel/.local/share/uv/tools/browser-harness/lib/python3.12/site-packages/browser_harness/run.py", line 392, in _run
+    exec(code, globals())
+  File "<string>", line 33, in <module>
+AssertionError

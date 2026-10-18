@@ -1,0 +1,158 @@
+{
+  "geometryChecks": [
+    {
+      "path": "10-inversao-measurements.json/390/before_scroll",
+      "text": "Inversão",
+      "font": "11.2px",
+      "valueWidth": 49.71,
+      "cardWidth": 64,
+      "insideFromRectangles": true,
+      "noOverlapFromRectangles": true
+    },
+    {
+      "path": "10-inversao-measurements.json/390/after_zoom_scroll",
+      "text": "Inversão",
+      "font": "11.2px",
+      "valueWidth": 49.71,
+      "cardWidth": 64,
+      "insideFromRectangles": true,
+      "noOverlapFromRectangles": true
+    },
+    {
+      "path": "10-inversao-measurements.json/320/before_scroll",
+      "text": "Inversão",
+      "font": "11.2px",
+      "valueWidth": 49.71,
+      "cardWidth": 64,
+      "insideFromRectangles": true,
+      "noOverlapFromRectangles": true
+    },
+    {
+      "path": "10-inversao-measurements.json/320/after_zoom_scroll",
+      "text": "Inversão",
+      "font": "11.2px",
+      "valueWidth": 49.71,
+      "cardWidth": 64,
+      "insideFromRectangles": true,
+      "noOverlapFromRectangles": true
+    },
+    {
+      "path": "10-inversao-measurements.json/1280/before_scroll",
+      "text": "Inversão",
+      "font": "13.12px",
+      "valueWidth": 57.06,
+      "cardWidth": 76,
+      "insideFromRectangles": true,
+      "noOverlapFromRectangles": true
+    },
+    {
+      "path": "10-inversao-measurements.json/1280/after_zoom_scroll",
+      "text": "Inversão",
+      "font": "13.12px",
+      "valueWidth": 57.06,
+      "cardWidth": 76,
+      "insideFromRectangles": true,
+      "noOverlapFromRectangles": true
+    },
+    {
+      "path": "10b-inversao-measurements.json/390/discard",
+      "text": "Inversão",
+      "font": "11.2px",
+      "valueWidth": 49.71,
+      "cardWidth": 64,
+      "insideFromRectangles": true,
+      "noOverlapFromRectangles": true
+    },
+    {
+      "path": "10b-inversao-measurements.json/320/discard",
+      "text": "Inversão",
+      "font": "11.2px",
+      "valueWidth": 49.71,
+      "cardWidth": 64,
+      "insideFromRectangles": true,
+      "noOverlapFromRectangles": true
+    },
+    {
+      "path": "10b-inversao-measurements.json/1280/discard",
+      "text": "Inversão",
+      "font": "13.12px",
+      "valueWidth": 57.06,
+      "cardWidth": 76,
+      "insideFromRectangles": true,
+      "noOverlapFromRectangles": true
+    },
+    {
+      "path": "20-bloqueio-measurements.json/390/discard",
+      "text": "Bloqueio",
+      "font": "11.2px",
+      "valueWidth": 50.67,
+      "cardWidth": 64,
+      "insideFromRectangles": true,
+      "noOverlapFromRectangles": true
+    },
+    {
+      "path": "20-bloqueio-measurements.json/320/discard",
+      "text": "Bloqueio",
+      "font": "11.2px",
+      "valueWidth": 50.67,
+      "cardWidth": 64,
+      "insideFromRectangles": true,
+      "noOverlapFromRectangles": true
+    },
+    {
+      "path": "20-bloqueio-measurements.json/1280/discard",
+      "text": "Bloqueio",
+      "font": "13.12px",
+      "valueWidth": 58.19,
+      "cardWidth": 76,
+      "insideFromRectangles": true,
+      "noOverlapFromRectangles": true
+    },
+    {
+      "path": "20b-bloqueio-measurements.json/390/discard",
+      "text": "Bloqueio",
+      "font": "11.2px",
+      "valueWidth": 50.67,
+      "cardWidth": 64,
+      "insideFromRectangles": true,
+      "noOverlapFromRectangles": true
+    },
+    {
+      "path": "20b-bloqueio-measurements.json/320/discard",
+      "text": "Bloqueio",
+      "font": "11.2px",
+      "valueWidth": 50.67,
+      "cardWidth": 64,
+      "insideFromRectangles": true,
+      "noOverlapFromRectangles": true
+    },
+    {
+      "path": "20b-bloqueio-measurements.json/1280/discard",
+      "text": "Bloqueio",
+      "font": "13.12px",
+      "valueWidth": 58.19,
+      "cardWidth": 76,
+      "insideFromRectangles": true,
+      "noOverlapFromRectangles": true
+    }
+  ],
+  "reloadEquality": {
+    "hand": true,
+    "discard": true,
+    "aria": true,
+    "self": true
+  },
+  "reloadIdentityLimit": "Only nickname/self label and hand are available; raw player id is not recorded in the reload artifact. Room code is masked.",
+  "executorDocsBaselineCount": 838,
+  "missingDocs": [],
+  "modifiedDocs": [
+    "docs/work/deployment-free.md",
+    "docs/work/plan.md",
+    "docs/work/status.md",
+    "docs/work/T013-publication.md"
+  ],
+  "priorReportsEvidenceCount": 874,
+  "changedReportsEvidence": [],
+  "head": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+  "aheadBehindLocalOriginMain": "0\t0"
+}

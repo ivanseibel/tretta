@@ -10,6 +10,7 @@ import {
   endRoundWithoutWinnerPayloadSchema,
   joinRoomPayloadSchema,
   leaveRoomPayloadSchema,
+  reactionSendPayloadSchema,
   removeParticipantPayloadSchema,
   returnToLobbyPayloadSchema,
   setEffectVariantPayloadSchema,
@@ -25,6 +26,7 @@ import {
   type CommandAck,
   type CreateRoomAck,
   type JoinRoomAck,
+  type ReactionSendAck,
   type ServerToClientEvents,
   type SimpleAck,
   type TauntSendAck,
@@ -286,7 +288,26 @@ export function registerRoomHandlers(
         () => store.sendTaunt(participant, roomCode, type, targetId),
       );
       if (!response.ok) return ack({ ok: false, error: response.error });
-      ack({ ok: true, taunt: response.taunt });
+      ack({ ok: true, taunt: response.taunt, limits: response.limits });
+    });
+
+    socket.on(CLIENT_EVENTS.reactionSend, (payload: unknown, ack: (response: Ack<ReactionSendAck>) => void) => {
+      if (!isAck(ack)) return;
+      const parsed = reactionSendPayloadSchema.safeParse(payload);
+      if (!parsed.success) return ack(invalidPayload(parsed.error));
+      const participant = store.participantOf(socket.id);
+      if (participant === undefined) return ack(notInRoom());
+      const { intentId, roomCode, type } = parsed.data;
+      // Mesmo escopo do chat/provocação: replay devolve a reação original sem
+      // reexecutar, sem retransmitir e sem consumir o intervalo de novo.
+      const response = RoomStore.dedupe(
+        participant.intents,
+        intentId,
+        intentSignature(CLIENT_EVENTS.reactionSend, parsed.data),
+        () => store.sendReaction(participant, roomCode, type),
+      );
+      if (!response.ok) return ack({ ok: false, error: response.error });
+      ack({ ok: true, reaction: response.reaction, limits: response.limits });
     });
 
     socket.on(CLIENT_EVENTS.setNextDeck, (payload: unknown, ack: (response: SimpleAck) => void) => {

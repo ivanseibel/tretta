@@ -1,0 +1,57 @@
+{
+ "deployment": "dpl_5zzeCcbWYdEgZoz7d7pZUs7qTLtk",
+ "url": "https://tretta-66c9kswar-seibel.vercel.app",
+ "checkedAtUtc": "2026-10-17T16:05:47.069637+00:00",
+ "access": "Autenticado via `vercel curl` (deployment sob Vercel Authentication; HTTP an\u00f4nimo responde 302 para SSO, sem expor conte\u00fado)",
+ "homeChunks": [
+  "0c0hxoamwjsbw.js",
+  "1bvb71x0vwldf.js",
+  "1se615-mjrxvz.js",
+  "2-3au1mrczlgz.js",
+  "2d6cts1co-gyo.js",
+  "2q9q4qcdxq0te.js",
+  "3biwl7lok_myr.js",
+  "3zd908udbposi.js",
+  "turbopack-1cvbnb3nlabgn.js"
+ ],
+ "roomRouteChunks": [
+  "1obq5ikzs9qy3.js",
+  "2b2eetie8ke5z.js"
+ ],
+ "markersT012": {
+  "seat-circuit": [
+   "2b2eetie8ke5z.js"
+  ],
+  "circuit-order": [
+   "2b2eetie8ke5z.js"
+  ],
+  "circuit-direction": [
+   "2b2eetie8ke5z.js"
+  ],
+  "seat-details": [
+   "2b2eetie8ke5z.js"
+  ],
+  "Sentido hor\u00e1rio": [
+   "1obq5ikzs9qy3.js",
+   "2-3au1mrczlgz.js",
+   "2b2eetie8ke5z.js"
+  ]
+ },
+ "markersPrevious": {
+  "Treinar sozinho": [
+   "2-3au1mrczlgz.js"
+  ],
+  "tretta-server.onrender.com": [
+   "1bvb71x0vwldf.js"
+  ],
+  "Recuperando o v\u00ednculo": [
+   "1bvb71x0vwldf.js"
+  ]
+ },
+ "hooksAbsent": {
+  "__trettaTest": true,
+  "setNextDeck": true,
+  "setEffectVariant": true
+ },
+ "note": "Marcadores T012 presentes no chunk da rota /sala/[code] (2b2eetie8ke5z.js); rota /sala/ZZZZZZ usada s\u00f3 para carregar o chunk, sem criar sala. Hooks de teste ausentes nos chunks p\u00fablicos do home e da rota. Confer\u00eancia definitiva do dom\u00ednio ap\u00f3s a promo\u00e7\u00e3o."
+}

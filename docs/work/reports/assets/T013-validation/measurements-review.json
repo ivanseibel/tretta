@@ -1,0 +1,91 @@
+{
+  "measurementRowsEachPhase": 205,
+  "privateLongCorrectedRows": [
+    {
+      "width": 320,
+      "target": "descarte-privado-A",
+      "text": "Bloqueio",
+      "fontSize": "11.2px",
+      "valueWidth": 50.67,
+      "cardWidth": 64
+    },
+    {
+      "width": 390,
+      "target": "descarte-privado-A",
+      "text": "Bloqueio",
+      "fontSize": "11.2px",
+      "valueWidth": 50.67,
+      "cardWidth": 64
+    },
+    {
+      "width": 768,
+      "target": "descarte-privado-A",
+      "text": "Bloqueio",
+      "fontSize": "13.12px",
+      "valueWidth": 58.19,
+      "cardWidth": 76
+    },
+    {
+      "width": 1280,
+      "target": "descarte-privado-A",
+      "text": "Bloqueio",
+      "fontSize": "13.12px",
+      "valueWidth": 58.19,
+      "cardWidth": 76
+    },
+    {
+      "width": 1280,
+      "target": "descarte-privado-B",
+      "text": "Bloqueio",
+      "fontSize": "13.12px",
+      "valueWidth": 58.19,
+      "cardWidth": 76
+    },
+    {
+      "width": 320,
+      "target": "descarte-privado-A",
+      "text": "Inversão",
+      "fontSize": "11.2px",
+      "valueWidth": 49.72,
+      "cardWidth": 64
+    },
+    {
+      "width": 390,
+      "target": "descarte-privado-A",
+      "text": "Inversão",
+      "fontSize": "11.2px",
+      "valueWidth": 49.72,
+      "cardWidth": 64
+    },
+    {
+      "width": 768,
+      "target": "descarte-privado-A",
+      "text": "Inversão",
+      "fontSize": "13.12px",
+      "valueWidth": 57.06,
+      "cardWidth": 76
+    },
+    {
+      "width": 1280,
+      "target": "descarte-privado-A",
+      "text": "Inversão",
+      "fontSize": "13.12px",
+      "valueWidth": 57.06,
+      "cardWidth": 76
+    },
+    {
+      "width": 1280,
+      "target": "descarte-privado-B",
+      "text": "Inversão",
+      "fontSize": "13.12px",
+      "valueWidth": 57.06,
+      "cardWidth": 76
+    }
+  ],
+  "otherRowsUnchanged": 195,
+  "unexpectedChanges": [],
+  "publicOverflowRows": [],
+  "trainingBeforeClipped": true,
+  "trainingAfterFits": true,
+  "note": "B viewport remains 1280; JSON records B only at 1280. Geometry booleans are executor measurements; width/font comparisons independently recomputed."
+}

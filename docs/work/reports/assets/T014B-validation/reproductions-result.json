@@ -1,0 +1,17 @@
+{
+  "exitCode": 1,
+  "command": [
+    "rtk",
+    "proxy",
+    "pnpm",
+    "--filter",
+    "@tretta/web",
+    "exec",
+    "vitest",
+    "run",
+    "test/mood-avatar.test.tsx",
+    "test/orchestrator-mood-time.test.ts",
+    "--reporter=verbose"
+  ],
+  "scope": "c\u00f3pia isolada; seis casos novos de crit\u00e9rios j\u00e1 aprovados"
+}

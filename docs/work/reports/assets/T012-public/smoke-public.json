@@ -1,0 +1,102 @@
+{
+ "date": "2026-10-17",
+ "domain": "https://tretta.vercel.app",
+ "browser": "Chrome dedicado de automação (instância separada, perfil temporário, CDP em 127.0.0.1:9333; navegador do usuário não foi usado). Clientes reais via browser-harness; sem hooks de teste (__trettaTest ausente) e sem injeção de estado.",
+ "transport": {
+  "paginas": "https:",
+  "wss": "wss://tretta-server.onrender.com/socket.io/?EIO=4&transport=websocket (54 eventos Network.webSocket* no reload do observador)"
+ },
+ "commonRoom": {
+  "clients": "4 assentos ativos (Checador A, Bia, BeatrizDeAlmeidaCastroLB – 24 caracteres, Davi) + 1 observadora própria após o início",
+  "circuit": {
+   "ordem_equivalente_entre_perspectivas": true,
+   "propria_pessoa_na_base": true,
+   "contagens_coerentes": "6/6/7/7 após as jogadas iniciais",
+   "vez": "exatamente um cliente com \"Sua vez\"; demais \"Vez de Checador A\"; assento data-current coerente",
+   "consulta_do_nome": {
+    "toque": true,
+    "teclado_Enter_Escape": true,
+    "foco_retido": true,
+    "detalhes": "Assento consultado: BeatrizDeAlmeidaCastroLB · 7 cartas"
+   },
+   "larguras": {
+    "320": {
+     "overflow": false
+    },
+    "390": {
+     "overflow": false
+    }
+   }
+  },
+  "inversion": {
+   "jogada": "A jogou Coringa (wild-color-3) declarando Azul; B jogou \"Azul Inversão\" (blue-reverse-1), ambas legais pela UI",
+   "feltrada_visivel": "auto-effect-directionReversed \"Sentido anti-horário\" em A",
+   "direcao_pos_all": true,
+   "setas_mudaram_all": true,
+   "posicoes_estaveis": "data-ring-index idêntico por jogador antes/depois",
+   "vez_apos": "A recebeu a vez do servidor (\"Sua vez\")"
+  },
+  "reload": {
+   "participante": "Bia",
+   "mao_igual": true,
+   "ordem_igual": true,
+   "sentido_igual": "anti-horário",
+   "identidade_igual": true,
+   "chat_persistiu": true,
+   "evento_de_inversao_repetido": false
+  },
+  "chat": {
+   "A_para_B": true,
+   "B_para_A": true,
+   "historico_apos_reload": true
+  },
+  "preferencia_aviso_de_vez": {
+   "padrao": true,
+   "desligada": true,
+   "persistiu_apos_reload": true
+  }
+ },
+ "observer": {
+  "banner": "A rodada está em andamento. Você entra na próxima — aguarde aqui no lobby.",
+  "sem_mao": true,
+  "fora_do_circuito": true,
+  "contagens_publicas": true,
+  "recarga_do_observador": "mesmo estado de lobby/aguardando; sem mão"
+ },
+ "training": {
+  "entrada": "home → Treinar sozinho, 4 participantes (Treinadora + Tico/Lila/Nino), sem convite, início bloqueado até prontidão",
+  "rodada": "jogada legal (Amarelo 1) e avanço dos bots observado",
+  "falso_alerta_desconexao": false
+ },
+ "globalChecks": {
+  "protocolo_https": true,
+  "wss": true,
+  "hooks_ausentes": true,
+  "pageErrors": 0,
+  "consoleErrors": 0,
+  "salas_proprias_encerradas": true
+ },
+ "captures": [
+  "02-mesa-comum-desktop.png",
+  "03-consulta-nome-desktop.png",
+  "04-mesa-comum-390.png",
+  "05-consulta-nome-390.png",
+  "06-mesa-comum-320.png",
+  "07-consulta-nome-320.png",
+  "08-inversao-desktop.png",
+  "09-inversao-terceiro-desktop.png",
+  "10-observador-320.png",
+  "10b-observador-390.png",
+  "11-treino-desktop.png",
+  "12-treino-320.png"
+ ],
+ "sanitization": [
+  "Códigos das salas próprias redigidos (na mesa A e no observador, elementos ocultados antes da captura; nas capturas 09/11/12, edição de pixels sobre o título \"Sala …\"). Sem credenciais, storage bruto ou mãos de bots."
+ ],
+ "limitations": [
+  "Primeira conexão de cada contexto novo pode falhar enquanto o socket conecta (\"Sem conexão com o servidor\"); o clique de entrada precisou ser repetido — comportamento pré-existente registrado no T011.",
+  "No reload de B a UI \"Recuperando…\" não foi observada (recuperação rápida demais para a sondagem); identidade/mão/sentido comprovados por digests e igualdade de estados.",
+  "O banner de aguardando do observador não foi reconfirmado nos 3,5 s após o reload dele; ele permaneceu sem mão.",
+  "Sem aparelho físico; capturas por emulação de viewport (320/390 px) e desktop."
+ ]
+}

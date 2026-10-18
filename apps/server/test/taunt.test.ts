@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it } from 'vitest';
-import type { Ack, JoinRoomAck, TauntSendAck } from '@tretta/protocol';
+import type { Ack, JoinRoomAck, RetryInfo, TauntSendAck } from '@tretta/protocol';
 import { TAUNT_SENDER_COOLDOWN_MS, TAUNT_TARGET_WINDOW_MS } from '@tretta/protocol/shared';
 import { DEFAULT_BOT_DELAY_MS } from '../src/rooms.js';
 import {
@@ -12,6 +12,7 @@ import {
   leaveRoom,
   record,
   removeParticipant,
+  reactionSend,
   request,
   sendCommand,
   setNextDeck,
@@ -30,10 +31,15 @@ function expectOkAck<T extends { ok: boolean; error?: { message: string } }>(ack
   return ack as Extract<T, { ok: true }>;
 }
 
-function expectError(ack: { ok: boolean; error?: { code: string; message: string } }, code: string): void {
+function expectError(
+  ack: { ok: boolean; error?: { code: string; message: string; retry?: RetryInfo } },
+  code: string,
+): { code: string; message: string; retry?: RetryInfo } {
   expect(ack.ok).toBe(false);
   expect(ack.error?.code).toBe(code);
   expect(ack.error?.message.length).toBeGreaterThan(0);
+  if (ack.error === undefined) throw new Error(`Recusa esperada com o código ${code}.`);
+  return ack.error;
 }
 
 describe('provocações da sala', () => {
@@ -200,6 +206,8 @@ describe('provocações da sala', () => {
     const first = expectOkAck(await tauntSend(host, created.roomCode, 'tomate', joined.playerId, sharedIntent));
     const replay = expectOkAck(await tauntSend(host, created.roomCode, 'tomate', joined.playerId, sharedIntent));
     expect(replay.taunt).toEqual(first.taunt);
+    // Replay devolve a referência de tempo original: não renova o prazo.
+    expect(replay.limits).toEqual(first.limits);
     await waitFor(() => hostRec.taunts.length === 1, 'broadcast único');
     await new Promise((resolve) => setTimeout(resolve, 50));
     expect(hostRec.taunts.length).toBe(1);
@@ -438,9 +446,12 @@ describe('provocações da sala', () => {
     const versionBefore = latestState(hostRec).room.version;
     const botTimerBefore = room.botTimer;
 
-    // Recusa repetida e aceites a outro alvo não tocam versão nem timer.
+    // Recusa repetida e aceites a outro alvo não tocam versão nem timer. Reação
+    // aceita e recusa de reação também ficam fora do jogo.
     expectError(await tauntSend(fourth, created.roomCode, 'choro', joined.playerId), 'TAUNT_TARGET_LIMIT');
     expectOkAck(await tauntSend(fourth, created.roomCode, 'tomate', thirdJoin.playerId));
+    expectOkAck(await reactionSend(host, created.roomCode, 'rindo'));
+    expectError(await reactionSend(host, created.roomCode, 'bravo'), 'REACTION_SENDER_COOLDOWN');
     expect(latestState(hostRec).room.version).toBe(versionBefore);
     expect(room.botTimer).toBe(botTimerBefore);
     expect(room.botTimerVersion).toBe(versionBefore);
@@ -512,13 +523,14 @@ describe('provocações da sala', () => {
     expect(room.version).toBe(versionBeforeLate);
 
     // Queda e retorno durante a vez do bot: a provocação recebida na pausa não
-    // reaparece e a retomada preserva a mesa congelada.
+    // reaparece e a retomada preserva a mesa congelada. Ana está desconectada
+    // sem substituto, então o alvo é a Bia, elegível como assento substituído.
     host.disconnect();
     await waitFor(() => latestState(lateRec).room.status === 'paused', 'pausa');
     const pausedTable = latestState(lateRec).table;
     expect(pausedTable).not.toBeNull();
     ctx.clock.advance(TAUNT_SENDER_COOLDOWN_MS);
-    expectOkAck(await tauntSend(late, created.roomCode, 'choro', created.playerId));
+    expectOkAck(await tauntSend(late, created.roomCode, 'choro', joined.playerId));
     // O retorno da Ana com a credencial resolve a única causa da pausa e a
     // rodada retoma sozinha; a hostemia ficou com Dai e não reverte.
     const backHost = await newClient();
@@ -537,6 +549,138 @@ describe('provocações da sala', () => {
     // substituto retoma a vez e age (compra/jogada) — a provocação não interfere.
     expect(latestState(backRec).table?.players.map((player) => player.id).sort()).toEqual(pausedTable?.players.map((player) => player.id).sort());
     expect(latestState(backRec).room.version).toBeGreaterThan(versionBeforeLate);
+  });
+
+  it('alvo disponível: conectado, assento substituído e retorno valem; ausente sem substituto recusa sem consumir', async () => {
+    const ctx = await setup();
+    const host = await newClient();
+    const hostRec = record(host);
+    const created = expectOkAck(await createRoom(host, 'Ana'));
+    const guest = await newClient();
+    const joined = expectOkAck(await joinOrFail(guest, created.roomCode, 'Bia'));
+
+    // Pessoa conectada: aceita.
+    expectOkAck(await tauntSend(host, created.roomCode, 'tomate', joined.playerId));
+
+    // Rodada: Bia cai e fica ausente sem substituto; a provocação à identidade
+    // dela é recusada com explicação, sem consumir o recuo do emissor.
+    await setNextDeck(host, created.roomCode, scenarioDeck());
+    await setReady(host, true);
+    await setReady(guest, true);
+    expectOkAck(await startRound(host));
+    await waitFor(() => latestState(hostRec).room.status === 'playing', 'rodada');
+    const other = await newClient();
+    const otherJoin = expectOkAck(await joinOrFail(other, created.roomCode, 'Cai'));
+    guest.disconnect();
+    await waitFor(() => latestState(hostRec).room.status === 'paused', 'pausa');
+    ctx.clock.advance(TAUNT_SENDER_COOLDOWN_MS);
+    const unavailable = await tauntSend(host, created.roomCode, 'torta', joined.playerId);
+    const unavailableBody = expectError(unavailable, 'TAUNT_TARGET_UNAVAILABLE');
+    expect(unavailableBody.message.length).toBeGreaterThan(0);
+    expect(unavailableBody.retry).toBeUndefined();
+    // No mesmo instante, alvo conectado aceita: a recusa não consumiu nada.
+    expectOkAck(await tauntSend(host, created.roomCode, 'torta', otherJoin.playerId));
+
+    // Substituto automático na pausa: o assento volta a ser elegível sem trocar ids.
+    ctx.clock.advance(90_000);
+    expectOkAck(await request<{ ok: boolean }>(host, 'client:substituteAbsent', { intentId: intent(), targetId: joined.playerId }));
+    const room = ctx.server.server.rooms.debugRoom(created.roomCode);
+    if (room === undefined) throw new Error('sala ausente');
+    expect(room.participants.get(joined.playerId)?.autoControlled).toBe(true);
+    ctx.clock.advance(TAUNT_SENDER_COOLDOWN_MS);
+    const toSubstitute = expectOkAck(await tauntSend(host, created.roomCode, 'risadas', joined.playerId));
+    expect(toSubstitute.taunt.target.playerId).toBe(joined.playerId);
+
+    // Retorno com a mesma credencial: cancela o substituto e segue elegível.
+    const back = await newClient();
+    const rejoined = expectOkAck(
+      await request<Ack<JoinRoomAck>>(back, 'client:joinRoom', {
+        intentId: intent(),
+        roomCode: created.roomCode,
+        nickname: 'Bia',
+        avatar: 'lobo',
+        credential: joined.credential,
+      }),
+    );
+    expect(rejoined.playerId).toBe(joined.playerId);
+    expect(room.participants.get(joined.playerId)?.autoControlled).toBe(false);
+    ctx.clock.advance(TAUNT_SENDER_COOLDOWN_MS);
+    expectOkAck(await tauntSend(host, created.roomCode, 'choro', joined.playerId));
+  });
+
+  it('apelidos e avatares iguais não confundem alvos: a identidade vem do id', async () => {
+    const ctx = await setup();
+    const host = await newClient();
+    const hostRec = record(host);
+    const created = expectOkAck(await createRoom(host, 'Ana'));
+    const biaOne = await newClient();
+    const first = expectOkAck(await joinOrFail(biaOne, created.roomCode, 'Bia'));
+    const biaTwo = await newClient();
+    const second = expectOkAck(await joinOrFail(biaTwo, created.roomCode, 'Bia'));
+    expect(first.playerId).not.toBe(second.playerId);
+
+    const accepted = expectOkAck(await tauntSend(host, created.roomCode, 'tomate', first.playerId));
+    expect(accepted.taunt.target).toEqual({ playerId: first.playerId, nickname: 'Bia', avatar: 'lobo' });
+
+    // Só a segunda Bia cai; a primeira continua elegível e a recusa aponta a
+    // identidade ausente, sem redirecionar o envio.
+    await waitFor(() => latestState(hostRec).room.participants.length === 3, 'lobby completo');
+    biaTwo.disconnect();
+    await waitFor(
+      () => latestState(hostRec).room.participants.find((entry) => entry.id === second.playerId)?.connected === false,
+      'queda da segunda Bia',
+    );
+    ctx.clock.advance(TAUNT_SENDER_COOLDOWN_MS);
+    const toFirst = expectOkAck(await tauntSend(host, created.roomCode, 'torta', first.playerId));
+    expect(toFirst.taunt.target.playerId).toBe(first.playerId);
+    expectError(await tauntSend(host, created.roomCode, 'choro', second.playerId), 'TAUNT_TARGET_UNAVAILABLE');
+  });
+
+  it('metadados de tempo: sucesso, recuo do emissor e cota do alvo com escopos distintos', async () => {
+    const ctx = await setup();
+    const host = await newClient();
+    const created = expectOkAck(await createRoom(host, 'Ana'));
+    const guest = await newClient();
+    const joined = expectOkAck(await joinOrFail(guest, created.roomCode, 'Bia'));
+    const third = await newClient();
+    const thirdJoin = expectOkAck(await joinOrFail(third, created.roomCode, 'Cai'));
+
+    const t0 = ctx.clock.now();
+    const accepted = expectOkAck(await tauntSend(host, created.roomCode, 'tomate', joined.playerId));
+    expect(accepted.limits).toEqual({ serverTime: t0, nextSendAt: t0 + TAUNT_SENDER_COOLDOWN_MS });
+
+    // Recuo do emissor: escopo próprio, sem alvo, com o restante calculável.
+    ctx.clock.advance(TAUNT_SENDER_COOLDOWN_MS - 1);
+    const senderBody = expectError(await tauntSend(host, created.roomCode, 'torta', thirdJoin.playerId), 'TAUNT_SENDER_COOLDOWN');
+    expect(senderBody.retry).toEqual({
+      serverTime: t0 + TAUNT_SENDER_COOLDOWN_MS - 1,
+      retryAt: t0 + TAUNT_SENDER_COOLDOWN_MS,
+      scope: 'sender',
+    });
+    expect(senderBody.retry?.targetId).toBeUndefined();
+
+    // Cota do alvo: três aceites de emissores distintos esgotam a janela de Bia.
+    expectOkAck(await tauntSend(third, created.roomCode, 'torta', joined.playerId));
+    const fourth = await newClient();
+    const fourthJoin = expectOkAck(await joinOrFail(fourth, created.roomCode, 'Dai'));
+    expectOkAck(await tauntSend(fourth, created.roomCode, 'risadas', joined.playerId));
+
+    // No limite do recuo, a quarta provocação à Bia recusa pela cota do alvo e
+    // informa escopo/alvo; o próximo destinatário não herda a espera.
+    ctx.clock.advance(1);
+    const quotaBody = expectError(await tauntSend(host, created.roomCode, 'choro', joined.playerId), 'TAUNT_TARGET_LIMIT');
+    expect(quotaBody.retry).toEqual({
+      serverTime: t0 + TAUNT_SENDER_COOLDOWN_MS,
+      retryAt: t0 + TAUNT_TARGET_WINDOW_MS,
+      scope: 'target',
+      targetId: joined.playerId,
+    });
+    const nextTarget = expectOkAck(await tauntSend(host, created.roomCode, 'choro', fourthJoin.playerId));
+    expect(nextTarget.limits).toEqual({
+      serverTime: t0 + TAUNT_SENDER_COOLDOWN_MS,
+      nextSendAt: t0 + 2 * TAUNT_SENDER_COOLDOWN_MS,
+    });
+    expect(thirdJoin.playerId).not.toBe(fourthJoin.playerId);
   });
 });
 

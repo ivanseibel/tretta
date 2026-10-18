@@ -1,4 +1,4 @@
-export const PROTOCOL_VERSION = 5;
+export const PROTOCOL_VERSION = 6;
 
 export const ROOM_CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 export const ROOM_CODE_LENGTH = 6;
@@ -55,6 +55,24 @@ export const TAUNT_TARGET_WINDOW_MS = 60_000;
 export const TAUNT_TARGET_MAX_PER_WINDOW = 3;
 
 /**
+ * Reações sem destinatário: expressam como quem envia se sente, em vez de
+ * brincar com alguém. Correspondência exata com os rótulos exibidos no
+ * cliente: `rindo` = 😂 Rindo; `chorando` = 😭 Chorando; `bravo` = 😡 Bravo.
+ * Tipos próprios, separados das provocações `risadas`/`choro`, que continuam
+ * direcionadas a um alvo escolhido.
+ */
+export const REACTION_TYPES = ['rindo', 'chorando', 'bravo'] as const;
+export type ReactionType = (typeof REACTION_TYPES)[number];
+
+/**
+ * Intervalo de 5 segundos entre reações aceitas de um mesmo emissor, vale
+ * entre tipos diferentes e em todas as fases da sala. Independente do
+ * intervalo e da cota das provocações: reagir não consome provocação e
+ * provocar não bloqueia uma reação disponível.
+ */
+export const REACTION_SENDER_COOLDOWN_MS = 5_000;
+
+/**
  * Efeitos visuais derivados automaticamente do motor de rodada. Cada categoria
  * cobre um grupo de eventos de jogo; a apresentação é puramente cosmética.
  * Compra voluntária e encerramento sem vencedor não têm categoria: não geram
@@ -106,6 +124,7 @@ export const CLIENT_EVENTS = {
   chatSend: 'client:chatSend',
   chatHistory: 'client:chatHistory',
   tauntSend: 'client:tauntSend',
+  reactionSend: 'client:reactionSend',
   setNextDeck: 'test:setNextDeck',
   setEffectVariant: 'test:setEffectVariant',
 } as const;
@@ -115,6 +134,7 @@ export const SERVER_EVENTS = {
   events: 'server:events',
   chat: 'server:chat',
   taunt: 'server:taunt',
+  reaction: 'server:reaction',
   removed: 'server:removed',
 } as const;
 
@@ -147,6 +167,8 @@ export const SERVER_ERROR_CODES = [
   'CHAT_RATE_LIMITED',
   'TAUNT_SENDER_COOLDOWN',
   'TAUNT_TARGET_LIMIT',
+  'TAUNT_TARGET_UNAVAILABLE',
+  'REACTION_SENDER_COOLDOWN',
   'TEST_HOOKS_DISABLED',
   'INTERNAL',
 ] as const;

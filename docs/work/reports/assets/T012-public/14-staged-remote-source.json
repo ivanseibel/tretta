@@ -1,0 +1,10 @@
+{
+ "deployment": "dpl_5zzeCcbWYdEgZoz7d7pZUs7qTLtk",
+ "note": "\u00c1rvore remota do deployment (API v6 /files) usa raiz virtual src/; normalizada removendo o prefixo.",
+ "remoteFileCount": 166,
+ "uploadFileCount": 166,
+ "missingOnRemote": [],
+ "extraOnRemote": [],
+ "equal": true,
+ "remoteRootPrefix": "src/"
+}

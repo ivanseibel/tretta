@@ -1,0 +1,7 @@
+Vercel CLI 57.0.0 (Node.js 22.23.1)
+Fetching aliases under seibel
+> aliases found under seibel [2s]
+  source                                url                         age    
+  tretta-66c9kswar-seibel.vercel.app    tretta.vercel.app           23h    
+  tretta-66c9kswar-seibel.vercel.app    tretta-seibel.vercel.app    23h    
+

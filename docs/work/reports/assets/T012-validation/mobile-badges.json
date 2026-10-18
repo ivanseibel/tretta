@@ -1,0 +1,346 @@
+{
+  "seats": [
+    {
+      "name": "Ana",
+      "box": {
+        "left": 135.984375,
+        "top": -171.6484375,
+        "right": 184.015625,
+        "bottom": -106.6953125,
+        "width": 48.03125,
+        "height": 64.953125
+      },
+      "children": [
+        {
+          "text": "Ana",
+          "box": {
+            "left": 149.53125,
+            "top": -146.1953125,
+            "right": 170.453125,
+            "bottom": -134.2421875,
+            "width": 20.921875,
+            "height": 11.953125
+          },
+          "font": "10.88px"
+        },
+        {
+          "text": "Você",
+          "box": {
+            "left": 146.359375,
+            "top": -132.9765625,
+            "right": 173.625,
+            "bottom": -122.3515625,
+            "width": 27.265625,
+            "height": 10.625
+          },
+          "font": "8px"
+        },
+        {
+          "text": "7 cartas",
+          "box": {
+            "left": 141.78125,
+            "top": -121.0859375,
+            "right": 178.21875,
+            "bottom": -110.8828125,
+            "width": 36.4375,
+            "height": 10.203125
+          },
+          "font": "9.28px"
+        }
+      ]
+    },
+    {
+      "name": "Participante 1",
+      "box": {
+        "left": 74.5390625,
+        "top": -195.6484375,
+        "right": 128.9296875,
+        "bottom": -141.3203125,
+        "width": 54.390625,
+        "height": 54.328125
+      },
+      "children": [
+        {
+          "text": "Participante 1",
+          "box": {
+            "left": 80.3359375,
+            "top": -170.1953125,
+            "right": 123.1328125,
+            "bottom": -158.2421875,
+            "width": 42.796875,
+            "height": 11.953125
+          },
+          "font": "10.88px"
+        },
+        {
+          "text": "7 cartas",
+          "box": {
+            "left": 83.5078125,
+            "top": -155.7109375,
+            "right": 119.9453125,
+            "bottom": -145.5078125,
+            "width": 36.4375,
+            "height": 10.203125
+          },
+          "font": "9.28px"
+        }
+      ]
+    },
+    {
+      "name": "Participante 2",
+      "box": {
+        "left": 50.4140625,
+        "top": -271.7421875,
+        "right": 104.8046875,
+        "bottom": -206.7890625,
+        "width": 54.390625,
+        "height": 64.953125
+      },
+      "children": [
+        {
+          "text": "Participante 2",
+          "box": {
+            "left": 56.2109375,
+            "top": -246.2890625,
+            "right": 99.0078125,
+            "bottom": -234.3359375,
+            "width": 42.796875,
+            "height": 11.953125
+          },
+          "font": "10.88px"
+        },
+        {
+          "text": "desconectado",
+          "box": {
+            "left": 44.0703125,
+            "top": -233.0703125,
+            "right": 111.1640625,
+            "bottom": -222.4453125,
+            "width": 67.09375,
+            "height": 10.625
+          },
+          "font": "8px"
+        },
+        {
+          "text": "7 cartas",
+          "box": {
+            "left": 59.3828125,
+            "top": -221.1796875,
+            "right": 95.8203125,
+            "bottom": -210.9765625,
+            "width": 36.4375,
+            "height": 10.203125
+          },
+          "font": "9.28px"
+        }
+      ]
+    },
+    {
+      "name": "Participante 3",
+      "box": {
+        "left": 74.5390625,
+        "top": -337.2109375,
+        "right": 128.9296875,
+        "bottom": -282.8828125,
+        "width": 54.390625,
+        "height": 54.328125
+      },
+      "children": [
+        {
+          "text": "Participante 3",
+          "box": {
+            "left": 80.3359375,
+            "top": -311.7578125,
+            "right": 123.1328125,
+            "bottom": -299.8046875,
+            "width": 42.796875,
+            "height": 11.953125
+          },
+          "font": "10.88px"
+        },
+        {
+          "text": "7 cartas",
+          "box": {
+            "left": 83.5078125,
+            "top": -297.2734375,
+            "right": 119.9453125,
+            "bottom": -287.0703125,
+            "width": 36.4375,
+            "height": 10.203125
+          },
+          "font": "9.28px"
+        }
+      ]
+    },
+    {
+      "name": "Participante 4",
+      "box": {
+        "left": 132.8046875,
+        "top": -366.5234375,
+        "right": 187.1953125,
+        "bottom": -312.1953125,
+        "width": 54.390625,
+        "height": 54.328125
+      },
+      "children": [
+        {
+          "text": "Participante 4",
+          "box": {
+            "left": 138.6015625,
+            "top": -341.0703125,
+            "right": 181.3984375,
+            "bottom": -329.1171875,
+            "width": 42.796875,
+            "height": 11.953125
+          },
+          "font": "10.88px"
+        },
+        {
+          "text": "7 cartas",
+          "box": {
+            "left": 141.7734375,
+            "top": -326.5859375,
+            "right": 178.2109375,
+            "bottom": -316.3828125,
+            "width": 36.4375,
+            "height": 10.203125
+          },
+          "font": "9.28px"
+        }
+      ]
+    },
+    {
+      "name": "Participante 5",
+      "box": {
+        "left": 191.0546875,
+        "top": -337.2109375,
+        "right": 245.4453125,
+        "bottom": -282.8828125,
+        "width": 54.390625,
+        "height": 54.328125
+      },
+      "children": [
+        {
+          "text": "Participante 5",
+          "box": {
+            "left": 196.8515625,
+            "top": -311.7578125,
+            "right": 239.6484375,
+            "bottom": -299.8046875,
+            "width": 42.796875,
+            "height": 11.953125
+          },
+          "font": "10.88px"
+        },
+        {
+          "text": "7 cartas",
+          "box": {
+            "left": 200.0234375,
+            "top": -297.2734375,
+            "right": 236.4609375,
+            "bottom": -287.0703125,
+            "width": 36.4375,
+            "height": 10.203125
+          },
+          "font": "9.28px"
+        }
+      ]
+    },
+    {
+      "name": "Participante 6",
+      "box": {
+        "left": 215.1796875,
+        "top": -266.4296875,
+        "right": 269.5703125,
+        "bottom": -212.1015625,
+        "width": 54.390625,
+        "height": 54.328125
+      },
+      "children": [
+        {
+          "text": "Participante 6",
+          "box": {
+            "left": 220.9765625,
+            "top": -240.9765625,
+            "right": 263.7734375,
+            "bottom": -229.0234375,
+            "width": 42.796875,
+            "height": 11.953125
+          },
+          "font": "10.88px"
+        },
+        {
+          "text": "7 cartas",
+          "box": {
+            "left": 224.1484375,
+            "top": -226.4921875,
+            "right": 260.5859375,
+            "bottom": -216.2890625,
+            "width": 36.4375,
+            "height": 10.203125
+          },
+          "font": "9.28px"
+        }
+      ]
+    },
+    {
+      "name": "WWWWWWWWWWWWWWWWWWWWWWWx",
+      "box": {
+        "left": 191.0546875,
+        "top": -195.6484375,
+        "right": 245.4453125,
+        "bottom": -141.3203125,
+        "width": 54.390625,
+        "height": 54.328125
+      },
+      "children": [
+        {
+          "text": "WWWWWWWWWWWWWWWWWWWWWWWx",
+          "box": {
+            "left": 196.8515625,
+            "top": -170.1953125,
+            "right": 239.6484375,
+            "bottom": -158.2421875,
+            "width": 42.796875,
+            "height": 11.953125
+          },
+          "font": "10.88px"
+        },
+        {
+          "text": "7 cartas",
+          "box": {
+            "left": 200.0234375,
+            "top": -155.7109375,
+            "right": 236.4609375,
+            "bottom": -145.5078125,
+            "width": 36.4375,
+            "height": 10.203125
+          },
+          "font": "9.28px"
+        }
+      ]
+    }
+  ],
+  "outside": [
+    {
+      "seat": "Participante 2",
+      "text": "desconectado",
+      "child": {
+        "left": 44.0703125,
+        "top": -233.0703125,
+        "right": 111.1640625,
+        "bottom": -222.4453125,
+        "width": 67.09375,
+        "height": 10.625
+      },
+      "parent": {
+        "left": 50.4140625,
+        "top": -271.7421875,
+        "right": 104.8046875,
+        "bottom": -206.7890625,
+        "width": 54.390625,
+        "height": 64.953125
+      }
+    }
+  ]
+}

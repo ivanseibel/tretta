@@ -1,0 +1,92 @@
+{
+  "checkedAtUtc": "2026-10-17T11:59:14.433331+00:00",
+  "home": {
+    "status": 200,
+    "bytes": 12968,
+    "sha256": "a74ff6f92625ed04a8402f0940309d6c520200de1d2fa241463afa188fc987b2",
+    "trainingText": true
+  },
+  "chunks": [
+    {
+      "path": "/_next/static/immutable/chunks/0c0hxoamwjsbw.js",
+      "status": 200,
+      "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683",
+      "bytes": 112594
+    },
+    {
+      "path": "/_next/static/immutable/chunks/1bvb71x0vwldf.js",
+      "status": 200,
+      "sha256": "bb3f78df04a60429c0d08a6e6952802aa96c1bdac6d4c204568914f4f91b793a",
+      "bytes": 62564
+    },
+    {
+      "path": "/_next/static/immutable/chunks/2-3au1mrczlgz.js",
+      "status": 200,
+      "sha256": "62a6ddf710ad52f47cc9fe220d471a0b104e5e84d4be7e67764c0f989622f204",
+      "bytes": 9930
+    },
+    {
+      "path": "/_next/static/immutable/chunks/2d6cts1co-gyo.js",
+      "status": 200,
+      "sha256": "5d499ac8b750ca130a5faaa1351abbdc7d813c8e7ecd6ffdda7b4d4203f19dda",
+      "bytes": 13828
+    },
+    {
+      "path": "/_next/static/immutable/chunks/2q9q4qcdxq0te.js",
+      "status": 200,
+      "sha256": "b611153f847782c0a8f95bb73c69d46b35f32c7f5e36f3f938aa97b4f8821d6a",
+      "bytes": 34163
+    },
+    {
+      "path": "/_next/static/immutable/chunks/2zcydq1yx4ufa.js",
+      "status": 200,
+      "sha256": "c8642c934ebc9649c480fbab3a622ba7362df73318b734eb2bd19eeb852f101b",
+      "bytes": 230271
+    },
+    {
+      "path": "/_next/static/immutable/chunks/3biwl7lok_myr.js",
+      "status": 200,
+      "sha256": "17b6d71462ad7a737466a534404a70a5a9d2ec9d5d33909c17a8f3d6c4f010e2",
+      "bytes": 5361
+    },
+    {
+      "path": "/_next/static/immutable/chunks/3zd908udbposi.js",
+      "status": 200,
+      "sha256": "da31dc7bdf4fc6d65b70bd7c50ac833ae83204790c3f3e3e7d228afa298463e4",
+      "bytes": 163052
+    },
+    {
+      "path": "/_next/static/immutable/chunks/turbopack-1cvbnb3nlabgn.js",
+      "status": 200,
+      "sha256": "8bbb58cbfd4633c1d828c6bc37bc32abc768a149c01b1dfc4f5131fd81274551",
+      "bytes": 10030
+    }
+  ],
+  "markers": {
+    "Treinar sozinho": [
+      "/_next/static/immutable/chunks/2-3au1mrczlgz.js"
+    ],
+    "training": [
+      "/_next/static/immutable/chunks/1bvb71x0vwldf.js",
+      "/_next/static/immutable/chunks/2-3au1mrczlgz.js"
+    ],
+    "tretta-server.onrender.com": [
+      "/_next/static/immutable/chunks/1bvb71x0vwldf.js"
+    ],
+    "sessão em retomada": [
+      "/_next/static/immutable/chunks/1bvb71x0vwldf.js"
+    ],
+    "Recuperando o vínculo": [
+      "/_next/static/immutable/chunks/1bvb71x0vwldf.js"
+    ],
+    "__trettaTest": [],
+    "setNextDeck": [],
+    "setEffectVariant": []
+  },
+  "healthz": {
+    "status": 200,
+    "body": {
+      "ok": true
+    }
+  }
+}

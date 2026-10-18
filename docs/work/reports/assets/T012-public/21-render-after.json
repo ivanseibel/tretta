@@ -1,0 +1,26 @@
+{
+ "checkedAtUtc": "2026-10-17T16:49:18.151241+00:00",
+ "service": {
+  "id": "srv-db95f2u7bikc73dpndt0",
+  "name": "tretta-server",
+  "plan": "free",
+  "buildPlan": "starter",
+  "numInstances": 1,
+  "region": "oregon",
+  "autoDeploy": "yes",
+  "autoDeployTrigger": "commit",
+  "branch": "main",
+  "suspended": "not_suspended",
+  "workspace": "tea-cuhq60rv2p9s738m7us0"
+ },
+ "latestDeploy": {
+  "id": "dep-db9lnpm1egvs73ct80ig",
+  "status": "live",
+  "trigger": "new_commit",
+  "commit": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+  "startedAt": "2026-10-17T11:28:38.542288Z",
+  "finishedAt": "2026-10-17T11:29:58.051942Z",
+  "createdAt": "2026-10-17T11:28:38.567314Z"
+ },
+ "unchanged": "Mesmo deploy Live dep-db9lnpm1egvs73ct80ig da revis\u00e3o 3ae459e; nenhum deploy/restart do backend causado pela T012."
+}

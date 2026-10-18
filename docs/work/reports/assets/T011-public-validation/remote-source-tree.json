@@ -1,0 +1,1260 @@
+[
+  {
+    "name": "src",
+    "type": "directory",
+    "mode": 16749,
+    "children": [
+      {
+        "name": ".agents",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "skills",
+            "type": "directory",
+            "mode": 16749,
+            "children": [
+              {
+                "name": "orchestrate-work",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "SKILL.md",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "d9a866ea9f1010745237987e3e570d6e1faacf5a"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": ".nvmrc",
+        "type": "file",
+        "mode": 33188,
+        "uid": "48b20c17255387c039ed68277a51ffca31113eaa"
+      },
+      {
+        "name": ".vercelignore",
+        "type": "file",
+        "mode": 33188,
+        "uid": "2114cb96c9e6f4eb68872931f996373c2595dad3"
+      },
+      {
+        "name": "AGENTS.md",
+        "type": "file",
+        "mode": 33188,
+        "uid": "27bab2b1f013bd4bba70b08794a6037fd294fab4"
+      },
+      {
+        "name": "CLAUDE.md",
+        "type": "file",
+        "mode": 33188,
+        "uid": "c140473a3a5fbe89301c99d9d0d1b76c5971f2c3"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "mode": 33188,
+        "uid": "2dead36d06b92e53575ad71a9a6dd903cf9d2155"
+      },
+      {
+        "name": "apps",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "server",
+            "type": "directory",
+            "mode": 16749,
+            "children": [
+              {
+                "name": "package.json",
+                "type": "file",
+                "mode": 33188,
+                "uid": "36fa0702e23c1d410e35fe050c4927f8451b60cc"
+              },
+              {
+                "name": "railway.toml",
+                "type": "file",
+                "mode": 33188,
+                "uid": "63b84fb2000e2dc005331a57eca66ca8d2fb6b55"
+              },
+              {
+                "name": "src",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "bot.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "40f1f64750b640a65ac904a9f4fb5d157056bb2b"
+                  },
+                  {
+                    "name": "clock.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "aa6140d40419c09594820a616be517c6c2f7c36d"
+                  },
+                  {
+                    "name": "config.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "65471f68846d9907bf3772f7a878c839c43174b3"
+                  },
+                  {
+                    "name": "effects.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "3f6b0496c6a0845b101a12f26be9f085f2f24799"
+                  },
+                  {
+                    "name": "handlers.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "22a26923891a64184754a3b99eadfb9ec6cc69a6"
+                  },
+                  {
+                    "name": "ids.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "f994baf767cd3c84645447a6f42b5467fda03616"
+                  },
+                  {
+                    "name": "index.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "4d7cd52b126f26c51c48099f895ae530426655ed"
+                  },
+                  {
+                    "name": "rooms.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "0f98b1cb70a4b4847a385bf51a13223effcb8382"
+                  },
+                  {
+                    "name": "server.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "9a404a38e78d67b63ca082062e447a3b1770e538"
+                  }
+                ]
+              },
+              {
+                "name": "test",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "bot-callback.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "ebae7b2b7fbddb473c0321cd6e28019f3ba2eef4"
+                  },
+                  {
+                    "name": "bot-entry.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "adbd1fb18e8888ad25653ce6f57ed21a6c0b1a64"
+                  },
+                  {
+                    "name": "bot-flow.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "261adfa60ced60c550b91ce970411abd92a955f0"
+                  },
+                  {
+                    "name": "bot.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "b801231ba58a13baf6e2cb4272591b30e45b9a58"
+                  },
+                  {
+                    "name": "chat.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "61f9649b8623e2622c5a5d4868a7ed7edc159bb0"
+                  },
+                  {
+                    "name": "config.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "91e4585aeb9b086821da951a2e46fe39ed3b1a62"
+                  },
+                  {
+                    "name": "contracts.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "99a59cc2ffb41ef9582798eec6d5f061ac97455e"
+                  },
+                  {
+                    "name": "decks.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "92c3239e1007aaf16c1d4f7f98f1b6f373569269"
+                  },
+                  {
+                    "name": "dedupe-retention.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "76bba4ca340696174e69a8af8f31741111a27a49"
+                  },
+                  {
+                    "name": "dedupe.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "2b69efa9d2f46b5547758cb80f158096545f8e97"
+                  },
+                  {
+                    "name": "effects.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "d16495d65f8a7de5483096f322c8e029baefd8c0"
+                  },
+                  {
+                    "name": "eight-players.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "30f4627d4c6777515635ea89afb97687d5139489"
+                  },
+                  {
+                    "name": "expiry-cache.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "d3c3490dac80a2f3e5afbf1f26a07abf2b57fcce"
+                  },
+                  {
+                    "name": "helpers.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "fc041e7a36c9cf6c6b4c465eeb48cb4021553e7a"
+                  },
+                  {
+                    "name": "host.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "4591e727d6465e40babed872a24c9a789afae381"
+                  },
+                  {
+                    "name": "leave.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "f1314abe6810470c8ad7be019deb072a0a7cab57"
+                  },
+                  {
+                    "name": "pause.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "b94500c0ec13c406fa57ad0776f9325426cde1d2"
+                  },
+                  {
+                    "name": "privacy.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "92b60d54792249ff530dcc9a3288e93abe53115d"
+                  },
+                  {
+                    "name": "process.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "06e27f5b463b01fd5f02eec95f48b8c1c1b5b050"
+                  },
+                  {
+                    "name": "public-table.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "74845279b316dfe63f0c0d9673c8b5b302a8f5d4"
+                  },
+                  {
+                    "name": "recovery.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "de92430634274f5b680191da384497b5d9e28907"
+                  },
+                  {
+                    "name": "replay-transport.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "4c11edc6b8c1f0e001f99547a06c313254343368"
+                  },
+                  {
+                    "name": "restart.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "4dbdcd33d72419646903a0d8e4b59f98699f95e7"
+                  },
+                  {
+                    "name": "retention.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "398a5d3f2de5d5ddbcb1f337814b6f7522b7f588"
+                  },
+                  {
+                    "name": "room-flow.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "33a4602efdff8c8aa96c260ce9b0523c7f6d64eb"
+                  },
+                  {
+                    "name": "scoreboard.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "80c25ab5b5fe25f1c499c89e901d41024e871216"
+                  },
+                  {
+                    "name": "taunt.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "7cd96d2ca1b02910748803f51aa1e07fb13aec12"
+                  },
+                  {
+                    "name": "ten-room-load.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "f76753b1d1e969d62de85c5c0ec0eec71653565c"
+                  },
+                  {
+                    "name": "training-game.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "1c0b7cdf8af61303ae719494807582631d41c8f0"
+                  },
+                  {
+                    "name": "training-privacy.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "64365c0e9d7e2fb43d2ea847200e853147be3eed"
+                  },
+                  {
+                    "name": "training-recovery.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "5934477ceeeaad23fa25c90d7e8cc76486d7fe3c"
+                  },
+                  {
+                    "name": "training-room.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "1328903d8b238aece20c01b6b45aad1332791f0a"
+                  },
+                  {
+                    "name": "training.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "81b5c752266de63e35df7c982c751a45e28a6a9b"
+                  }
+                ]
+              },
+              {
+                "name": "tsconfig.build.json",
+                "type": "file",
+                "mode": 33188,
+                "uid": "42dbd62abf3910a39ae9fd197cf589d74ad6aaea"
+              },
+              {
+                "name": "tsconfig.json",
+                "type": "file",
+                "mode": 33188,
+                "uid": "649295ef64d68ac620010b497dc80088125b953b"
+              },
+              {
+                "name": "vitest.config.ts",
+                "type": "file",
+                "mode": 33188,
+                "uid": "5cf1ad9f4765b45b61d6ab78340a1758a5321cfd"
+              }
+            ]
+          },
+          {
+            "name": "web",
+            "type": "directory",
+            "mode": 16749,
+            "children": [
+              {
+                "name": "AGENTS.md",
+                "type": "file",
+                "mode": 33188,
+                "uid": "5ec4789692f7fa325f3c83427e98e934987d1bac"
+              },
+              {
+                "name": "app",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "globals.css",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "c90b78000658708b37c99dcde43c981956b413db"
+                  },
+                  {
+                    "name": "layout.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "e241193c50150af79327b4d45be88fbd6275e7e4"
+                  },
+                  {
+                    "name": "page.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "54fdf7d936d0d2f3d36016f00ee86cab9405ed4a"
+                  },
+                  {
+                    "name": "providers.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "eca380d3ca4983323239ea8f6bc2be373d61e8de"
+                  },
+                  {
+                    "name": "sala",
+                    "type": "directory",
+                    "mode": 16749,
+                    "children": [
+                      {
+                        "name": "[code]",
+                        "type": "directory",
+                        "mode": 16749,
+                        "children": [
+                          {
+                            "name": "page.tsx",
+                            "type": "file",
+                            "mode": 33188,
+                            "uid": "58c6f150415b1cedcefe49a94ac80e67425f38d5"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "components",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "ChatPanel.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "0c2fb2caabf24b5240e7bf6db91a8493ed5828c6"
+                  },
+                  {
+                    "name": "EventFeed.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "1141d8fa31e6f799fcf754772f84dab9121fef3b"
+                  },
+                  {
+                    "name": "GameTable.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "2e2d03d29c946898b3cf6c73fedb6d0e8ba5c36c"
+                  },
+                  {
+                    "name": "Lobby.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "a174cca8b8871929d686018fe52e9012ce6df331"
+                  },
+                  {
+                    "name": "MoodSettings.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "9a587111fc967a8465ec9e9012861a705968fa3a"
+                  },
+                  {
+                    "name": "PausePanel.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "0d87042c5d9f6d4c1236eaa077415b7c72d34d58"
+                  },
+                  {
+                    "name": "Results.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "ec103aaa35e7e49a25fea73a866670378bf53fcd"
+                  },
+                  {
+                    "name": "TauntOverlay.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "64ab8cfbd7cff27707b8ef5394da18710abbea84"
+                  },
+                  {
+                    "name": "TauntPanel.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "7330a6fa16f3cbce970787a8249f782e74b89893"
+                  },
+                  {
+                    "name": "TurnNotifier.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "a1fc170b11733cebe266694d694d7847f3350a73"
+                  },
+                  {
+                    "name": "WaitingRoom.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "016e26b8a081353f0d7b8b792e14e21e1bd39a86"
+                  },
+                  {
+                    "name": "ui.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "11a7734017b20db05bd8caef8a01c3a28c34f116"
+                  }
+                ]
+              },
+              {
+                "name": "e2e",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "chat.spec.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "e233c274e8293538120bd456cd58721193ba33af"
+                  },
+                  {
+                    "name": "deck.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "bca4e2326a3735fbba718aa3166f304cad033b4f"
+                  },
+                  {
+                    "name": "effects.spec.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "f4ceea706ff3b828e87987498c49de79d82f6148"
+                  },
+                  {
+                    "name": "fixtures.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "51b7984c25c55a6a93d2432e4c28843dbb919782"
+                  },
+                  {
+                    "name": "interface-keyboard.spec.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "6951330309f6865982acee0758ba2cb2f42efc21"
+                  },
+                  {
+                    "name": "interface-visual.spec.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "2ab9f6bd11f5df13bb9988fb15308cfce06f204e"
+                  },
+                  {
+                    "name": "leave-host.spec.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "35c3cd837a567f3896debdd6570187410d720188"
+                  },
+                  {
+                    "name": "pause.spec.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "a9b5f9fc9e43823c3d22c55d99234281e4e1bfce"
+                  },
+                  {
+                    "name": "production-start.spec.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "c5822ee8710b393d6f5ec0067cf2589ab1b9896e"
+                  },
+                  {
+                    "name": "recovery-wait.spec.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "623f6fbd225a38637d5b8995ed5eaabb3287e6e2"
+                  },
+                  {
+                    "name": "recovery.spec.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "418f11a13794a37012d8756015a7dce9d0ae0624"
+                  },
+                  {
+                    "name": "refinements.spec.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "1ae529293089974480c00b8119875d9040141fb0"
+                  },
+                  {
+                    "name": "room.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "a0ee6ce406073be8c3558ba4e3c03f31fff9c2c5"
+                  },
+                  {
+                    "name": "scoreboard.spec.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "0454a16293e7f6aa1cd8cb5cf32fe427c2c0f65a"
+                  },
+                  {
+                    "name": "server-restart.spec.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "fbf35f3bdc479dd3b962c245d247a8eb3ac8a20b"
+                  },
+                  {
+                    "name": "t007-eight-seat.spec.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "b81d62661c08d1ad4ac2bd18b08198a074dd9633"
+                  },
+                  {
+                    "name": "taunt.spec.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "a14330c9830ddc5d03a18afe5b7addf910913a3f"
+                  },
+                  {
+                    "name": "training.spec.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "25e381a451297b6fdd83b4a1f176a5163ba96db7"
+                  },
+                  {
+                    "name": "training.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "bbedb25af1c3487a517b1eab04453095cf2ad356"
+                  },
+                  {
+                    "name": "two-players.spec.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "f56b57141c52c0739bd82d938eeb4403dbf59893"
+                  }
+                ]
+              },
+              {
+                "name": "lib",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "chatMute.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "b339a1ffa13827c1a08ca2cca24f9e3b492749e8"
+                  },
+                  {
+                    "name": "client.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "fcb742dccf5a3cf9f754792986c73134bed13dd4"
+                  },
+                  {
+                    "name": "labels.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "b8536ad9d0ba1201bcee308d751d77b58b9bc4c8"
+                  },
+                  {
+                    "name": "prefs.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "3d5ed7c7cda467694bcb572c373e46fff8cf6336"
+                  },
+                  {
+                    "name": "presentationQueue.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "830af818d0a31aed8619539f57bb8bf1f2b994e6"
+                  },
+                  {
+                    "name": "sounds.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "b359fc1de343dd43b1f223e4095f3b4fabb5beb7"
+                  },
+                  {
+                    "name": "turnNotifications.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "f8098616558efe1e61af17989d848ec67af15164"
+                  }
+                ]
+              },
+              {
+                "name": "next-env.d.ts",
+                "type": "file",
+                "mode": 33188,
+                "uid": "915946e261450f4fb6aab2ca862c8b440b748240"
+              },
+              {
+                "name": "next.config.ts",
+                "type": "file",
+                "mode": 33188,
+                "uid": "6b47638c62d823bf6734ab0fd4833a8ba156d7fc"
+              },
+              {
+                "name": "package.json",
+                "type": "file",
+                "mode": 33188,
+                "uid": "a387dadaea7ec5fad62962f77b46bb19bea71935"
+              },
+              {
+                "name": "playwright.config.ts",
+                "type": "file",
+                "mode": 33188,
+                "uid": "61df6946ca491bd09f67624a633f5ad27d422b3e"
+              },
+              {
+                "name": "playwright.production.config.ts",
+                "type": "file",
+                "mode": 33188,
+                "uid": "533d28bb98ac8e937855c76561c1643c1d4509d9"
+              },
+              {
+                "name": "railway.toml",
+                "type": "file",
+                "mode": 33188,
+                "uid": "a937f7162ecf88c276a2442254e55af4057133a8"
+              },
+              {
+                "name": "scripts",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "e2e-production.mjs",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "45fa5acc2c87d8ccac3764f78cf8c2f345ef8aa8"
+                  }
+                ]
+              },
+              {
+                "name": "test",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "chat-sync.test.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "93feb542ec1b9db461eea2748ca84ac3ef7ae97c"
+                  },
+                  {
+                    "name": "effects-render.test.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "a76e768b3c5d6c40c24cc0a813aaf7a15aa99cbf"
+                  },
+                  {
+                    "name": "game-table-focus.test.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "684b3e017c8b833ce022361fd8cdcd4427ffa1d9"
+                  },
+                  {
+                    "name": "mood-sync.test.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "9bd1cb478f469c0c1ddf58ccb4a4be5f93608743"
+                  },
+                  {
+                    "name": "prefs.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "c37cec5877c4e6e2b3cc75ae06e7eef1a69ee245"
+                  },
+                  {
+                    "name": "presentation-queue.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "876f6dbcb58d6f10d76eb4d3ded150753236cea6"
+                  },
+                  {
+                    "name": "recovery-page.test.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "3fcdf05d49f04f4f4ff2e99ee8dac7fe54d43d5b"
+                  },
+                  {
+                    "name": "recovery-wait.test.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "9d65fdd98a2071ca1e88c6dfa7b9e10e5c7668b3"
+                  },
+                  {
+                    "name": "sounds.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "c3aba543fe98d6d36b2252fe2857c0fdf63ed94f"
+                  },
+                  {
+                    "name": "taunt-sync.test.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "3bd6f29079255f190f7ebd3c61d19d41009e1f1b"
+                  },
+                  {
+                    "name": "training-entry-context.test.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "87fac95be297072e78b7a1a995f8258418ed3827"
+                  },
+                  {
+                    "name": "training-entry.test.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "e31dfad44e162cc719faf05c8dd868faaa558dff"
+                  },
+                  {
+                    "name": "training-home.test.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "eda842782b3a6e023c7f5f05e38928df2aeda2b2"
+                  },
+                  {
+                    "name": "training-lobby.test.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "3bb015eb7e0c597e0e2d4be64f4e6e8d6119d5a6"
+                  },
+                  {
+                    "name": "training-results.test.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "202a38ba1197092f5493ff21203aeca8c5974b41"
+                  },
+                  {
+                    "name": "training-table.test.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "d8b813fadafa6d0ca46b82de963df08cba6c7b1b"
+                  },
+                  {
+                    "name": "turn-notification.test.tsx",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "f49ecdf7301a68b1e257109a73e8f2b34b6f7306"
+                  }
+                ]
+              },
+              {
+                "name": "tsconfig.json",
+                "type": "file",
+                "mode": 33188,
+                "uid": "8e7028db7321883e24d2845a57ec9a08923f034c"
+              },
+              {
+                "name": "vercel.json",
+                "type": "file",
+                "mode": 33188,
+                "uid": "06c9ac36e007ee8be50e4aa9ed43092ca1b632d1"
+              },
+              {
+                "name": "vitest.config.ts",
+                "type": "file",
+                "mode": 33188,
+                "uid": "38fa8a8782877aba41cba3baa3496420f7bac171"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "packages",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "protocol",
+            "type": "directory",
+            "mode": 16749,
+            "children": [
+              {
+                "name": "tsconfig.json",
+                "type": "file",
+                "mode": 33188,
+                "uid": "649295ef64d68ac620010b497dc80088125b953b"
+              },
+              {
+                "name": "package.json",
+                "type": "file",
+                "mode": 33188,
+                "uid": "e8643e1ce87e81eaef699142289f5534f1d6b23c"
+              },
+              {
+                "name": "src",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "index.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "c01eaf41fecfad61f57da60460ea099f0053c1ef"
+                  },
+                  {
+                    "name": "shared.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "6e1a5411c7f18af48c70628916e0359c98946a57"
+                  }
+                ]
+              },
+              {
+                "name": "test",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "schemas.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "9b9889b61fa3de6b0d3fd395f1ff1d39a7a1b684"
+                  }
+                ]
+              },
+              {
+                "name": "tsconfig.build.json",
+                "type": "file",
+                "mode": 33188,
+                "uid": "9a0e579a9f610552e944890d749f9fbdbdc3f272"
+              },
+              {
+                "name": "vitest.config.ts",
+                "type": "file",
+                "mode": 33188,
+                "uid": "6a52a558a2f513ff517a84c071f011189d611ba4"
+              }
+            ]
+          },
+          {
+            "name": "rules",
+            "type": "directory",
+            "mode": 16749,
+            "children": [
+              {
+                "name": "tsconfig.json",
+                "type": "file",
+                "mode": 33188,
+                "uid": "649295ef64d68ac620010b497dc80088125b953b"
+              },
+              {
+                "name": "tsconfig.build.json",
+                "type": "file",
+                "mode": 33188,
+                "uid": "9a0e579a9f610552e944890d749f9fbdbdc3f272"
+              },
+              {
+                "name": "package.json",
+                "type": "file",
+                "mode": 33188,
+                "uid": "51b4bc13a4cf38e05272cd8bc6995f79592240b0"
+              },
+              {
+                "name": "src",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "card.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "dac1a92b290d797a01e4c1c53da74979e9e467fc"
+                  },
+                  {
+                    "name": "commands.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "cb324ad3e233b72ec423e08882a682c147966dd2"
+                  },
+                  {
+                    "name": "errors.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "89e68e219ad657ecb9e693749ded57c3c092cdb8"
+                  },
+                  {
+                    "name": "index.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "313f7e9f606b57b04eed3ab7c666bbb389c7262b"
+                  },
+                  {
+                    "name": "projection.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "e9f2207f839752407209512e1a6ba2695db8080f"
+                  },
+                  {
+                    "name": "random.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "ec4f6887a66c2e07efa43a12479b66fdf2e6d722"
+                  },
+                  {
+                    "name": "round.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "e97e52582ac0ad31e0bf2aa66dbd54833c6c4958"
+                  },
+                  {
+                    "name": "state.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "559332452eb98b06a2feafe1a4b0bdf0d430da93"
+                  }
+                ]
+              },
+              {
+                "name": "test",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "classic-effects.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "0561835ed839c0e46380f595ec752a14ddaa5e0a"
+                  },
+                  {
+                    "name": "classic-finals.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "234c6b0802390b1285a7652a0835e0232c0bbae7"
+                  },
+                  {
+                    "name": "classic-last-card.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "369f158cbcc030e951d6a84ae1ebe369b7583129"
+                  },
+                  {
+                    "name": "classic-piles.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "5beaab1f99a8425a657b19e5e708c62fde3a0377"
+                  },
+                  {
+                    "name": "classic-projection.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "37fb31e379fbee2f68d12442c3990c6a1334aeb4"
+                  },
+                  {
+                    "name": "classic-public-table.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "872c6169c2b557c49efb30b477f8df01edd8ffc0"
+                  },
+                  {
+                    "name": "classic-simulation.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "293a4867c0e75815b3ae1c3f46e39481f3ad06c1"
+                  },
+                  {
+                    "name": "classic-turns.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "edbc9c8d0ff988f8b2374bf254c978cd6401a1e2"
+                  },
+                  {
+                    "name": "deck.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "f25a82c8674b725897d169287c932f5ac254fc5c"
+                  },
+                  {
+                    "name": "fixtures.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "b9e97570386c752620c37e9efa2cc3a69dfcd191"
+                  },
+                  {
+                    "name": "helpers-privacy.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "8a1eafebf28604c56bbc1e3e79a95572a42956a0"
+                  },
+                  {
+                    "name": "helpers.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "a99417c60dfdc6afbbada378271556ce82d871da"
+                  },
+                  {
+                    "name": "opening.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "add4e72946e9ec1222c0717bd1688f293d3c98f2"
+                  },
+                  {
+                    "name": "random.test.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "c494bdbe2719ff064c97d0715eb12948f9ef77b5"
+                  },
+                  {
+                    "name": "simulation.ts",
+                    "type": "file",
+                    "mode": 33188,
+                    "uid": "71e596044e2aef648fa6e0b66becefafd87b363c"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "package.json",
+        "type": "file",
+        "mode": 33188,
+        "uid": "c80bdb9c9ab3d6d1a1bd5c80e3fe0f90dbc1da14"
+      },
+      {
+        "name": "pnpm-lock.yaml",
+        "type": "file",
+        "mode": 33188,
+        "uid": "cb041818673869f6693a1cb2b502ed4f6c8c4b34"
+      },
+      {
+        "name": "pnpm-workspace.yaml",
+        "type": "file",
+        "mode": 33188,
+        "uid": "30cd9c2e706f215b9d5884c4289551bc4bfe884e"
+      },
+      {
+        "name": "render.yaml",
+        "type": "file",
+        "mode": 33188,
+        "uid": "6770e37d7748008aecfc272170fda813945febc5"
+      },
+      {
+        "name": "tsconfig.base.json",
+        "type": "file",
+        "mode": 33188,
+        "uid": "40e72cc0d717e00530e4a42bb03212d58905593b"
+      }
+    ]
+  },
+  {
+    "name": "out",
+    "type": "directory",
+    "mode": 16749,
+    "children": [
+      {
+        "name": "index",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_4mQparNtNCNqsb95uxf2FzoD-8234042e6767386e0d5c9d70415b3241d4"
+      },
+      {
+        "name": "_global-error",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_4mQparNtNCNqsb95uxf2FzoD-8234042e6767386e0d5c9d70415b3241d4"
+      },
+      {
+        "name": "_global-error.rsc",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_4mQparNtNCNqsb95uxf2FzoD-8234042e6767386e0d5c9d70415b3241d4"
+      },
+      {
+        "name": "_global-error.segments",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "__PAGE__.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_4mQparNtNCNqsb95uxf2FzoD-8234042e6767386e0d5c9d70415b3241d4"
+          },
+          {
+            "name": "_full.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_4mQparNtNCNqsb95uxf2FzoD-8234042e6767386e0d5c9d70415b3241d4"
+          },
+          {
+            "name": "_tree.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_4mQparNtNCNqsb95uxf2FzoD-8234042e6767386e0d5c9d70415b3241d4"
+          }
+        ]
+      },
+      {
+        "name": "index.rsc",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_4mQparNtNCNqsb95uxf2FzoD-8234042e6767386e0d5c9d70415b3241d4"
+      },
+      {
+        "name": "index.segments",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "_full.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_4mQparNtNCNqsb95uxf2FzoD-8234042e6767386e0d5c9d70415b3241d4"
+          },
+          {
+            "name": "__PAGE__.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_4mQparNtNCNqsb95uxf2FzoD-8234042e6767386e0d5c9d70415b3241d4"
+          },
+          {
+            "name": "_tree.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_4mQparNtNCNqsb95uxf2FzoD-8234042e6767386e0d5c9d70415b3241d4"
+          }
+        ]
+      },
+      {
+        "name": "_not-found",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_4mQparNtNCNqsb95uxf2FzoD-8234042e6767386e0d5c9d70415b3241d4"
+      },
+      {
+        "name": "_not-found.rsc",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_4mQparNtNCNqsb95uxf2FzoD-8234042e6767386e0d5c9d70415b3241d4"
+      },
+      {
+        "name": "sala",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "[code]",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_4mQparNtNCNqsb95uxf2FzoD-8234042e6767386e0d5c9d70415b3241d4"
+          },
+          {
+            "name": "[code].rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_4mQparNtNCNqsb95uxf2FzoD-8234042e6767386e0d5c9d70415b3241d4"
+          }
+        ]
+      }
+    ]
+  }
+]

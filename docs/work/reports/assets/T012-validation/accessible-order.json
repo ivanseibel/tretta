@@ -1,0 +1,10 @@
+{
+  "before": "Ordem dos assentos no circuito, a partir da base onde você está: Você (Ana), Bia, Cai, Davi. Sentido horário da rodada.",
+  "after": "Ordem dos assentos no circuito, a partir da base onde você está: Você (Ana), Bia, Cai, Davi. Sentido anti-horário da rodada.",
+  "expectedRoute": [
+    "Ana",
+    "Davi",
+    "Cai",
+    "Bia"
+  ]
+}

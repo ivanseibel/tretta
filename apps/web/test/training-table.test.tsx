@@ -17,7 +17,7 @@ const harness = vi.hoisted(() => ({
 }));
 
 vi.mock('@/app/providers', () => ({ useRoom: () => harness.room }));
-vi.mock('@/components/ui', () => ({ AvatarBadge: () => null, ColorSymbol: () => null, LeaveButton: () => null }));
+vi.mock('@/components/ui', () => ({ AvatarAction: () => null, AvatarBadge: () => null, ColorSymbol: () => null, LeaveButton: () => null }));
 vi.mock('@/components/EventFeed', () => ({ EventFeed: () => null }));
 vi.mock('@/components/PausePanel', () => ({ PausePanel: () => null }));
 
@@ -149,7 +149,7 @@ describe('mesa de treino na interface', () => {
 
     expect(screen.getByTestId('turn-indicator').textContent).toBe('Vez de Tico (bot)');
     for (const name of ['Tico', 'Lila', 'Nino']) {
-      const row = screen.getByTestId(`opponent-${name}`);
+      const row = screen.getByTestId(`seat-${name}`);
       expect(within(row).getByText('bot')).toBeTruthy();
       expect(within(row).queryByText('desconectado')).toBeNull();
     }
@@ -168,6 +168,6 @@ describe('mesa de treino na interface', () => {
 
     expect(screen.getByTestId('turn-indicator').textContent).toBe('Vez de Bia');
     expect(screen.getByTestId('disconnected-banner').textContent).toMatch(/Bia caiu/);
-    expect(within(screen.getByTestId('opponent-Bia')).getByText('desconectado')).toBeTruthy();
+    expect(within(screen.getByTestId('seat-Bia')).getByText('desconectado')).toBeTruthy();
   });
 });

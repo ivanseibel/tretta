@@ -1,0 +1,21 @@
+{
+  "reference": "docs/work/reports/assets/T014B-validation/source-before.json (fonte entregue T014B)",
+  "baseline_files": 1190,
+  "matched": 1179,
+  "missing": [],
+  "changedByThisExecution": [
+    "apps/web/app/providers.tsx",
+    "apps/web/components/MoodMenu.tsx",
+    "apps/web/components/TauntPanel.tsx",
+    "apps/web/lib/moodTime.ts",
+    "apps/web/test/mood-avatar.test.tsx",
+    "apps/web/test/mood-time.test.ts"
+  ],
+  "preexistingPreparationChanges": [
+    "docs/product/backlog.md",
+    "docs/product/provocacoes-e-reacoes.md",
+    "docs/work/T014B.md",
+    "docs/work/plan.md",
+    "docs/work/status.md"
+  ]
+}

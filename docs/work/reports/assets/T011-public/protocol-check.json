@@ -1,0 +1,123 @@
+{
+  "url": "https://tretta-server.onrender.com",
+  "checks": [
+    {
+      "name": "wss_transport",
+      "at": "2026-10-17T11:32:30.111Z",
+      "url": "https://tretta-server.onrender.com",
+      "transport": "websocket"
+    },
+    {
+      "name": "training_create_ack",
+      "at": "2026-10-17T11:32:30.300Z",
+      "ok": true,
+      "errorCode": null,
+      "roomCode": "BX…(6)",
+      "credentialChars": 43
+    },
+    {
+      "name": "training_state",
+      "at": "2026-10-17T11:32:30.300Z",
+      "mode": "training",
+      "participantCount": 4,
+      "botNames": [
+        "Lila",
+        "Nino",
+        "Tico"
+      ],
+      "botsReady": true,
+      "botsConnected": false,
+      "humanIsHost": true
+    },
+    {
+      "name": "training_refusal_no_credential",
+      "at": "2026-10-17T11:32:31.175Z",
+      "ok": false,
+      "errorCode": "TRAINING_ROOM_ENTRY_REFUSED"
+    },
+    {
+      "name": "training_refusal_fake_credential",
+      "at": "2026-10-17T11:32:32.206Z",
+      "ok": false,
+      "errorCode": "TRAINING_ROOM_ENTRY_REFUSED"
+    },
+    {
+      "name": "hook_set_next_deck",
+      "at": "2026-10-17T11:32:32.382Z",
+      "ok": false,
+      "errorCode": "TEST_HOOKS_DISABLED"
+    },
+    {
+      "name": "hook_set_effect_variant",
+      "at": "2026-10-17T11:32:32.558Z",
+      "ok": false,
+      "errorCode": "TEST_HOOKS_DISABLED"
+    },
+    {
+      "name": "classic_create_ack",
+      "at": "2026-10-17T11:32:33.450Z",
+      "ok": true,
+      "errorCode": null,
+      "roomCode": "FT…(6)"
+    },
+    {
+      "name": "classic_join_ack",
+      "at": "2026-10-17T11:32:34.379Z",
+      "ok": true,
+      "errorCode": null,
+      "rejoined": false
+    },
+    {
+      "name": "classic_ready_acks",
+      "at": "2026-10-17T11:32:34.730Z",
+      "ready1": true,
+      "ready2": true
+    },
+    {
+      "name": "classic_start_ack",
+      "at": "2026-10-17T11:32:34.905Z",
+      "ok": true,
+      "errorCode": null
+    },
+    {
+      "name": "classic_playing_state",
+      "at": "2026-10-17T11:32:34.905Z",
+      "status": "playing",
+      "tablePresent": true,
+      "selfInRound": true
+    },
+    {
+      "name": "classic_chat_ack",
+      "at": "2026-10-17T11:32:35.079Z",
+      "ok": true,
+      "errorCode": null,
+      "seq": 1
+    },
+    {
+      "name": "classic_chat_received",
+      "at": "2026-10-17T11:32:35.079Z",
+      "seq": 1,
+      "authorNickname": "Checador D",
+      "text": "check humano"
+    },
+    {
+      "name": "classic_chat_history",
+      "at": "2026-10-17T11:32:35.256Z",
+      "ok": true,
+      "messages": 1
+    },
+    {
+      "name": "leave_acks",
+      "at": "2026-10-17T11:32:35.779Z",
+      "h2": true,
+      "h1": true,
+      "trainingHost": true
+    },
+    {
+      "name": "summary",
+      "at": "2026-10-17T11:32:35.780Z",
+      "totalChecks": 16,
+      "allOk": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+ "checkedAtUtc": "2026-10-17T15:59:49.627957+00:00",
+ "home": {
+  "url": "https://tretta.vercel.app/",
+  "status": 200,
+  "markersT011": {
+   "Treinar sozinho": true
+  },
+  "hasCircuitoMarker": false
+ },
+ "health": {
+  "url": "https://tretta-server.onrender.com/healthz",
+  "status": 200,
+  "body": "{\"ok\":true}"
+ }
+}

@@ -1,0 +1,18 @@
+{
+  "reference": "docs/work/reports/assets/T014B-final-review/source-before.json (fonte da revis\u00e3o final, 1263 arquivos)",
+  "baseline_files": 1263,
+  "matched": 1255,
+  "missing": [],
+  "changedByThisExecution": [
+    "apps/web/lib/moodTime.ts",
+    "apps/web/test/mood-time.test.ts"
+  ],
+  "otherPreparedChanges": [
+    "docs/product/backlog.md",
+    "docs/product/provocacoes-e-reacoes.md",
+    "docs/work/T014B-adjustments-2.md",
+    "docs/work/T014B.md",
+    "docs/work/plan.md",
+    "docs/work/status.md"
+  ]
+}

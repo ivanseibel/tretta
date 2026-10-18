@@ -126,6 +126,37 @@ export function AvatarBadge({ avatar, size = 'normal' }: { avatar: Avatar; size?
   );
 }
 
+/**
+ * Avatar acionável para abrir o menu de humor. O rótulo acessível nomeia a
+ * ação e o alvo; o botão nunca envolve outro controle (o nome consultável dos
+ * assentos continua sendo um botão irmão).
+ */
+export function AvatarAction({
+  avatar,
+  label,
+  testId,
+  onActivate,
+  size = 'normal',
+}: {
+  avatar: Avatar;
+  label: string;
+  testId?: string;
+  onActivate: (trigger: HTMLButtonElement) => void;
+  size?: 'normal' | 'small';
+}): ReactNode {
+  return (
+    <button
+      type="button"
+      className="avatar-action"
+      aria-label={label}
+      data-testid={testId}
+      onClick={(event) => onActivate(event.currentTarget)}
+    >
+      <AvatarBadge avatar={avatar} size={size} />
+    </button>
+  );
+}
+
 export function AvatarPicker({
   value,
   onChange,

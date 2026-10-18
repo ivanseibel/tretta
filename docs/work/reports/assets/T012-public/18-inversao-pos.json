@@ -1,0 +1,231 @@
+{
+ "A": {
+  "order": "Ordem dos assentos no circuito, a partir da base onde você está: Você (Checador A), Davi, BeatrizDeAlmeidaCastroLB, Bia, de volta a Você (Checador A). Sentido anti-horário da rodada.",
+  "direction": "Ordem dos assentos · Sentido anti-horário",
+  "turn": "Sua vez",
+  "seats": [
+   [
+    "p_31dc",
+    "0",
+    "Checador A",
+    "true",
+    "true"
+   ],
+   [
+    "p_7205",
+    "1",
+    "Bia",
+    "false",
+    "false"
+   ],
+   [
+    "p_3693",
+    "2",
+    "BeatrizDeAlmeidaCastroLB",
+    "false",
+    "false"
+   ],
+   [
+    "p_d770",
+    "3",
+    "Davi",
+    "false",
+    "false"
+   ]
+  ],
+  "arrows": [
+   {
+    "slot": "seat-arrow-0",
+    "rot": "135.9"
+   },
+   {
+    "slot": "seat-arrow-1",
+    "rot": "224.1"
+   },
+   {
+    "slot": "seat-arrow-2",
+    "rot": "315.9"
+   },
+   {
+    "slot": "seat-arrow-3",
+    "rot": "44.1"
+   }
+  ],
+  "effects": [
+   "auto-effect-directionReversed",
+   "auto-effect-caption-fx_9f29552e-fdac-4649-a37e-1ddc7613a5e3"
+  ],
+  "hand": "11d06d7c1c69a0db"
+ },
+ "B": {
+  "order": "Ordem dos assentos no circuito, a partir da base onde você está: Você (Bia), Checador A, Davi, BeatrizDeAlmeidaCastroLB, de volta a Você (Bia). Sentido anti-horário da rodada.",
+  "direction": "Ordem dos assentos · Sentido anti-horário",
+  "turn": "Vez de Checador A",
+  "seats": [
+   [
+    "p_7205",
+    "0",
+    "Bia",
+    "true",
+    "false"
+   ],
+   [
+    "p_3693",
+    "1",
+    "BeatrizDeAlmeidaCastroLB",
+    "false",
+    "false"
+   ],
+   [
+    "p_d770",
+    "2",
+    "Davi",
+    "false",
+    "false"
+   ],
+   [
+    "p_31dc",
+    "3",
+    "Checador A",
+    "false",
+    "true"
+   ]
+  ],
+  "arrows": [
+   {
+    "slot": "seat-arrow-0",
+    "rot": "135.9"
+   },
+   {
+    "slot": "seat-arrow-1",
+    "rot": "224.1"
+   },
+   {
+    "slot": "seat-arrow-2",
+    "rot": "315.9"
+   },
+   {
+    "slot": "seat-arrow-3",
+    "rot": "44.1"
+   }
+  ],
+  "effects": [
+   "auto-effect-directionReversed",
+   "auto-effect-caption-fx_9f29552e-fdac-4649-a37e-1ddc7613a5e3"
+  ],
+  "hand": "be3cd0b4ab66a7e5"
+ },
+ "C": {
+  "order": "Ordem dos assentos no circuito, a partir da base onde você está: Você (BeatrizDeAlmeidaCastroLB), Bia, Checador A, Davi, de volta a Você (BeatrizDeAlmeidaCastroLB). Sentido anti-horário da rodada.",
+  "direction": "Ordem dos assentos · Sentido anti-horário",
+  "turn": "Vez de Checador A",
+  "seats": [
+   [
+    "p_3693",
+    "0",
+    "BeatrizDeAlmeidaCastroLB",
+    "true",
+    "false"
+   ],
+   [
+    "p_d770",
+    "1",
+    "Davi",
+    "false",
+    "false"
+   ],
+   [
+    "p_31dc",
+    "2",
+    "Checador A",
+    "false",
+    "true"
+   ],
+   [
+    "p_7205",
+    "3",
+    "Bia",
+    "false",
+    "false"
+   ]
+  ],
+  "arrows": [
+   {
+    "slot": "seat-arrow-0",
+    "rot": "135.9"
+   },
+   {
+    "slot": "seat-arrow-1",
+    "rot": "224.1"
+   },
+   {
+    "slot": "seat-arrow-2",
+    "rot": "315.9"
+   },
+   {
+    "slot": "seat-arrow-3",
+    "rot": "44.1"
+   }
+  ],
+  "effects": [
+   "auto-effect-directionReversed",
+   "auto-effect-caption-fx_9f29552e-fdac-4649-a37e-1ddc7613a5e3"
+  ],
+  "hand": "1bc4c1454d9875e4"
+ },
+ "D": {
+  "order": "Ordem dos assentos no circuito, a partir da base onde você está: Você (Davi), BeatrizDeAlmeidaCastroLB, Bia, Checador A, de volta a Você (Davi). Sentido anti-horário da rodada.",
+  "direction": "Ordem dos assentos · Sentido anti-horário",
+  "turn": "Vez de Checador A",
+  "seats": [
+   [
+    "p_d770",
+    "0",
+    "Davi",
+    "true",
+    "false"
+   ],
+   [
+    "p_31dc",
+    "1",
+    "Checador A",
+    "false",
+    "true"
+   ],
+   [
+    "p_7205",
+    "2",
+    "Bia",
+    "false",
+    "false"
+   ],
+   [
+    "p_3693",
+    "3",
+    "BeatrizDeAlmeidaCastroLB",
+    "false",
+    "false"
+   ]
+  ],
+  "arrows": [
+   {
+    "slot": "seat-arrow-0",
+    "rot": "135.9"
+   },
+   {
+    "slot": "seat-arrow-1",
+    "rot": "224.1"
+   },
+   {
+    "slot": "seat-arrow-2",
+    "rot": "315.9"
+   },
+   {
+    "slot": "seat-arrow-3",
+    "rot": "44.1"
+   }
+  ],
+  "effects": [],
+  "hand": "e42cb567d2060091"
+ }
+}

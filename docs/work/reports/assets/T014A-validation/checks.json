@@ -1,0 +1,26 @@
+[
+  {
+    "step": "install",
+    "exitCode": 0
+  },
+  {
+    "step": "build",
+    "exitCode": 0
+  },
+  {
+    "step": "typecheck",
+    "exitCode": 0
+  },
+  {
+    "step": "server-targeted",
+    "exitCode": 0
+  },
+  {
+    "step": "protocol",
+    "exitCode": 0
+  },
+  {
+    "step": "web-unit",
+    "exitCode": 0
+  }
+]

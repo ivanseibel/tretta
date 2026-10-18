@@ -1,0 +1,68 @@
+{
+  "checkedAtUtc": "2026-10-17T17:25:20.804760+00:00",
+  "method": "Recalculated from executor snapshots; screenshots inspected; no public game actions repeated.",
+  "inversion": {
+    "A": {
+      "ownAtBase": true,
+      "positionsStable": true,
+      "directionChanged": true,
+      "accessibleRouteReversed": true,
+      "allArrowRotationsChanged180": true,
+      "oneCurrentSeat": true
+    },
+    "B": {
+      "ownAtBase": true,
+      "positionsStable": true,
+      "directionChanged": true,
+      "accessibleRouteReversed": true,
+      "allArrowRotationsChanged180": true,
+      "oneCurrentSeat": true
+    },
+    "C": {
+      "ownAtBase": true,
+      "positionsStable": true,
+      "directionChanged": true,
+      "accessibleRouteReversed": true,
+      "allArrowRotationsChanged180": true,
+      "oneCurrentSeat": true
+    },
+    "D": {
+      "ownAtBase": true,
+      "positionsStable": true,
+      "directionChanged": true,
+      "accessibleRouteReversed": true,
+      "allArrowRotationsChanged180": true,
+      "oneCurrentSeat": true
+    }
+  },
+  "reloadEquality": {
+    "hand": true,
+    "order": true,
+    "direction": true,
+    "own": true,
+    "chat": true,
+    "turn": true
+  },
+  "preferenceStillOff": true,
+  "replayReportedAbsent": true,
+  "screenshotsInspected": [
+    "02-mesa-comum-desktop.png",
+    "03-consulta-nome-desktop.png",
+    "04-mesa-comum-390.png",
+    "05-consulta-nome-390.png",
+    "06-mesa-comum-320.png",
+    "07-consulta-nome-320.png",
+    "08-inversao-desktop.png",
+    "09-inversao-terceiro-desktop.png",
+    "10-observador-320.png",
+    "10b-observador-390.png",
+    "11-treino-desktop.png",
+    "12-treino-320.png"
+  ],
+  "limitations": [
+    "No physical device.",
+    "Snapshots include ring indices, not independent geometry measurements.",
+    "Interaction, error collectors and cleanup remain executor evidence, not fresh orchestrator browser runs.",
+    "Recovering UI not observed and observer banner not reconfirmed after reload."
+  ]
+}

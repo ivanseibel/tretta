@@ -1,0 +1,25 @@
+{
+ "checkedAtUtc": "2026-10-17T16:48:57.280955+00:00",
+ "alias": {
+  "alias": "tretta.vercel.app",
+  "deploymentId": "dpl_5zzeCcbWYdEgZoz7d7pZUs7qTLtk",
+  "url": "tretta-66c9kswar-seibel.vercel.app"
+ },
+ "deployment": {
+  "id": "dpl_5zzeCcbWYdEgZoz7d7pZUs7qTLtk",
+  "url": "tretta-66c9kswar-seibel.vercel.app",
+  "readyState": "READY",
+  "target": "production",
+  "meta": {
+   "trettaTask": "T012-publication",
+   "digest": "c0b0fc72042b37072d0e4f329e421c7414b4c5f9c3db2dfbf8fb9e639ce67615",
+   "base": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+   "actor": "opencode",
+   "lambdaRuntimeStats": "{\"nodejs\":1}",
+   "bundler": "turbopack"
+  },
+  "buildingAt": 1792252868232,
+  "ready": 1792252888398
+ },
+ "previousFrontend": "dpl_fiXC5suPTF2VCW22fEVf64HZYhNP (T011, rollback dispon\u00edvel no projeto)"
+}

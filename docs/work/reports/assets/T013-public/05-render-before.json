@@ -1,0 +1,56 @@
+[
+  {
+    "service": {
+      "autoDeploy": "yes",
+      "autoDeployTrigger": "commit",
+      "branch": "main",
+      "createdAt": "2026-10-16T16:57:48.526216Z",
+      "dashboardUrl": "https://dashboard.render.com/web/srv-db95f2u7bikc73dpndt0",
+      "id": "srv-db95f2u7bikc73dpndt0",
+      "name": "tretta-server",
+      "notifyOnFail": "default",
+      "ownerId": "tea-cuhq60rv2p9s738m7us0",
+      "repo": "https://github.com/ivanseibel/tretta",
+      "rootDir": "",
+      "serviceDetails": {
+        "buildPlan": "starter",
+        "cache": {
+          "profile": "no-cache"
+        },
+        "env": "node",
+        "envSpecificDetails": {
+          "buildCommand": "corepack enable \u0026\u0026 node --version \u0026\u0026 pnpm --version \u0026\u0026 pnpm install --frozen-lockfile \u0026\u0026 pnpm --filter @tretta/server... build",
+          "startCommand": "pnpm --filter @tretta/server start"
+        },
+        "healthCheckPath": "/healthz",
+        "ipAllowList": [
+          {
+            "cidrBlock": "0.0.0.0/0",
+            "description": "everywhere"
+          }
+        ],
+        "maintenanceMode": {
+          "enabled": false,
+          "uri": ""
+        },
+        "numInstances": 1,
+        "openPorts": [],
+        "plan": "free",
+        "previews": {
+          "generation": "off"
+        },
+        "pullRequestPreviewsEnabled": "no",
+        "region": "oregon",
+        "renderSubdomainPolicy": "enabled",
+        "runtime": "node",
+        "sshAddress": "srv-db95f2u7bikc73dpndt0@ssh.oregon.render.com",
+        "url": "https://tretta-server.onrender.com"
+      },
+      "slug": "tretta-server",
+      "suspended": "not_suspended",
+      "suspenders": [],
+      "type": "web_service",
+      "updatedAt": "2026-10-17T11:29:58.150414Z"
+    }
+  }
+]

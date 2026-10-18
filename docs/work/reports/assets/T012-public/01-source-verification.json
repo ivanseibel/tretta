@@ -1,0 +1,11 @@
+{
+ "task": "T012-publication",
+ "checkedAtUtc": "2026-10-17T15:57:39.764730+00:00",
+ "manifest": "docs/work/reports/assets/T012-final-validation/source-sha256.json",
+ "manifestSha256": "cca8ab2d40c88904f4f25f2c9e0649fa3229d0dc3b8720ae8c22b8c2fe8f6e1d",
+ "total": 159,
+ "matched": 159,
+ "missing": [],
+ "different": [],
+ "ok": true
+}

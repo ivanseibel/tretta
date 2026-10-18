@@ -1,0 +1,497 @@
+{
+  "390": {
+    "discard": {
+      "text": "Bloqueio",
+      "dataLong": "true",
+      "font": "11.2px",
+      "valueRect": {
+        "x": 218.75,
+        "y": 1177.91,
+        "w": 50.67,
+        "h": 12.09,
+        "right": 269.42,
+        "bottom": 1190
+      },
+      "cardRect": {
+        "x": 212.09,
+        "y": 1138.57,
+        "w": 64,
+        "h": 94,
+        "right": 276.09,
+        "bottom": 1232.57
+      },
+      "symbolRect": {
+        "x": 236.23,
+        "y": 1158.23,
+        "w": 15.72,
+        "h": 16.48,
+        "right": 251.95,
+        "bottom": 1174.71
+      },
+      "nameRect": {
+        "x": 218.28,
+        "y": 1193.2,
+        "w": 51.61,
+        "h": 19.7,
+        "right": 269.89,
+        "bottom": 1212.9
+      },
+      "valueOverflow": {
+        "sw": 51,
+        "cw": 51,
+        "sh": 13,
+        "ch": 12
+      },
+      "cardOverflow": {
+        "sw": 58,
+        "cw": 58,
+        "sh": 88,
+        "ch": 88
+      },
+      "insideCard": true,
+      "overlapSymbol": false,
+      "overlapName": false,
+      "ariaLabel": "Descarte: Amarelo Bloqueio",
+      "cardName": "Amarelo Bloqueio",
+      "valueTextIsExact": "Bloqueio"
+    },
+    "turn": "Rodada pausada",
+    "activeColor": "\u25c6Amarelo",
+    "handValues": [
+      {
+        "text": "1",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "7",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "8",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "Invers\u00e3o",
+        "font": "11.2px",
+        "long": "true"
+      },
+      {
+        "text": "3",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "Cor",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "Invers\u00e3o",
+        "font": "11.2px",
+        "long": "true"
+      },
+      {
+        "text": "Invers\u00e3o",
+        "font": "11.2px",
+        "long": "true"
+      },
+      {
+        "text": "Invers\u00e3o",
+        "font": "11.2px",
+        "long": "true"
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "8",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "8",
+        "font": "23.2px",
+        "long": null
+      }
+    ],
+    "pileLabels": [
+      "Compra (51)",
+      "Descarte"
+    ]
+  },
+  "320": {
+    "discard": {
+      "text": "Bloqueio",
+      "dataLong": "true",
+      "font": "11.2px",
+      "valueRect": {
+        "x": 183.5,
+        "y": 328.93,
+        "w": 50.67,
+        "h": 12.09,
+        "right": 234.17,
+        "bottom": 341.02
+      },
+      "cardRect": {
+        "x": 176.84,
+        "y": 289.59,
+        "w": 64,
+        "h": 94,
+        "right": 240.84,
+        "bottom": 383.59
+      },
+      "symbolRect": {
+        "x": 200.98,
+        "y": 309.26,
+        "w": 15.72,
+        "h": 16.48,
+        "right": 216.7,
+        "bottom": 325.73
+      },
+      "nameRect": {
+        "x": 183.03,
+        "y": 344.22,
+        "w": 51.61,
+        "h": 19.7,
+        "right": 234.64,
+        "bottom": 363.92
+      },
+      "valueOverflow": {
+        "sw": 51,
+        "cw": 51,
+        "sh": 13,
+        "ch": 12
+      },
+      "cardOverflow": {
+        "sw": 58,
+        "cw": 58,
+        "sh": 88,
+        "ch": 88
+      },
+      "insideCard": true,
+      "overlapSymbol": false,
+      "overlapName": false,
+      "ariaLabel": "Descarte: Amarelo Bloqueio",
+      "cardName": "Amarelo Bloqueio",
+      "valueTextIsExact": "Bloqueio"
+    },
+    "turn": "Rodada pausada",
+    "activeColor": "\u25c6Amarelo",
+    "handValues": [
+      {
+        "text": "1",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "7",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "8",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "Invers\u00e3o",
+        "font": "11.2px",
+        "long": "true"
+      },
+      {
+        "text": "3",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "Cor",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "Invers\u00e3o",
+        "font": "11.2px",
+        "long": "true"
+      },
+      {
+        "text": "Invers\u00e3o",
+        "font": "11.2px",
+        "long": "true"
+      },
+      {
+        "text": "Invers\u00e3o",
+        "font": "11.2px",
+        "long": "true"
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "8",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "8",
+        "font": "23.2px",
+        "long": null
+      }
+    ],
+    "pileLabels": [
+      "Compra (51)",
+      "Descarte"
+    ]
+  },
+  "1280": {
+    "discard": {
+      "text": "Bloqueio",
+      "dataLong": "true",
+      "font": "13.12px",
+      "valueRect": {
+        "x": 561.88,
+        "y": 80.37,
+        "w": 58.19,
+        "h": 14.16,
+        "right": 620.06,
+        "bottom": 94.53
+      },
+      "cardRect": {
+        "x": 552.97,
+        "y": 36.13,
+        "w": 76,
+        "h": 108,
+        "right": 628.97,
+        "bottom": 144.13
+      },
+      "symbolRect": {
+        "x": 583.11,
+        "y": 60.7,
+        "w": 15.72,
+        "h": 16.48,
+        "right": 598.83,
+        "bottom": 77.17
+      },
+      "nameRect": {
+        "x": 559.16,
+        "y": 97.73,
+        "w": 63.61,
+        "h": 21.83,
+        "right": 622.77,
+        "bottom": 119.55
+      },
+      "valueOverflow": {
+        "sw": 58,
+        "cw": 58,
+        "sh": 15,
+        "ch": 14
+      },
+      "cardOverflow": {
+        "sw": 70,
+        "cw": 70,
+        "sh": 102,
+        "ch": 102
+      },
+      "insideCard": true,
+      "overlapSymbol": false,
+      "overlapName": false,
+      "ariaLabel": "Descarte: Amarelo Bloqueio",
+      "cardName": "Amarelo Bloqueio",
+      "valueTextIsExact": "Bloqueio"
+    },
+    "turn": "Rodada pausada",
+    "activeColor": "\u25c6Amarelo",
+    "handValues": [
+      {
+        "text": "1",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "7",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "8",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "Invers\u00e3o",
+        "font": "13.12px",
+        "long": "true"
+      },
+      {
+        "text": "3",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "Cor",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "Invers\u00e3o",
+        "font": "13.12px",
+        "long": "true"
+      },
+      {
+        "text": "Invers\u00e3o",
+        "font": "13.12px",
+        "long": "true"
+      },
+      {
+        "text": "Invers\u00e3o",
+        "font": "13.12px",
+        "long": "true"
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "8",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "8",
+        "font": "23.2px",
+        "long": null
+      }
+    ],
+    "pileLabels": [
+      "Compra (51)",
+      "Descarte"
+    ]
+  }
+}

@@ -11,6 +11,7 @@ import {
   endRoundWithoutWinnerPayloadSchema,
   joinRoomPayloadSchema,
   leaveRoomPayloadSchema,
+  reactionSendPayloadSchema,
   removeParticipantPayloadSchema,
   roomCodeSchema,
   substituteAbsentPayloadSchema,
@@ -152,6 +153,31 @@ describe('schemas de entrada', () => {
     expect(tauntSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type: 'tomate', targetId: '' }).success).toBe(false);
     expect(tauntSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type: 'tomate' }).success).toBe(false);
     expect(tauntSendPayloadSchema.safeParse({ intentId: 'intent-12345678', type: 'tomate', targetId: 'p_1' }).success).toBe(false);
+  });
+
+  it('valida payloads de reação sem destinatário e com apenas os três tipos aprovados', () => {
+    for (const type of ['rindo', 'chorando', 'bravo']) {
+      expect(reactionSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type }).success).toBe(true);
+    }
+    // Sem destinatário: qualquer campo de alvo, autoria, id, horário ou
+    // desconhecido recusa a intenção inteira; a provocação segue exigindo alvo.
+    expect(reactionSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type: 'bolo' }).success).toBe(false);
+    expect(
+      reactionSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type: 'rindo', targetId: 'p_1' }).success,
+    ).toBe(false);
+    expect(
+      reactionSendPayloadSchema.safeParse({
+        intentId: 'intent-12345678',
+        roomCode: 'ABCDEF',
+        type: 'rindo',
+        author: { playerId: 'p2' },
+      }).success,
+    ).toBe(false);
+    expect(
+      reactionSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type: 'rindo', sentAt: 1 }).success,
+    ).toBe(false);
+    expect(reactionSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF' }).success).toBe(false);
+    expect(reactionSendPayloadSchema.safeParse({ intentId: 'intent-12345678', type: 'rindo' }).success).toBe(false);
   });
 
   it('conta caracteres do chat em pontos de código Unicode', () => {

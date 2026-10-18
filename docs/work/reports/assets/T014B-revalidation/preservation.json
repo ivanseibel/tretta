@@ -1,0 +1,39 @@
+{
+  "source": {
+    "matched": 1230,
+    "changed": [],
+    "missing": []
+  },
+  "copy": {
+    "matched": 1229,
+    "changed": [
+      "apps/web/test/mood-avatar.test.tsx"
+    ],
+    "missing": []
+  },
+  "acceptedBackend": {
+    "files": 81,
+    "allUnchanged": true
+  },
+  "originalT014B": {
+    "files": 1190,
+    "matched": 1179,
+    "changed": [
+      "docs/product/provocacoes-e-reacoes.md",
+      "docs/product/backlog.md",
+      "docs/work/T014B.md",
+      "docs/work/status.md",
+      "docs/work/plan.md",
+      "apps/web/app/providers.tsx",
+      "apps/web/test/mood-avatar.test.tsx",
+      "apps/web/test/mood-time.test.ts",
+      "apps/web/components/MoodMenu.tsx",
+      "apps/web/components/TauntPanel.tsx",
+      "apps/web/lib/moodTime.ts"
+    ]
+  },
+  "executorCode": {
+    "matched": 166,
+    "allUnchanged": true
+  }
+}

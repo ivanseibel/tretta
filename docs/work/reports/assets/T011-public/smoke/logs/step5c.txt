@@ -1,0 +1,9 @@
+main_tab_found: True
+D_refusal_immediate: True
+D_join_form_gone: True
+D_fake_[credencial-redigida]: True
+contexts_to_dispose: 2
+main_url_code: AS…(6)
+main_opponent: Ticobot6 cartas
+main_hand: True
+main_errors: {'errors': [], 'rejections': []}

@@ -1,0 +1,139 @@
+{
+  "checkedAtUtc": "2026-10-17T11:59:13.634476+00:00",
+  "alias": {
+    "alias": "tretta.vercel.app",
+    "deployment": {
+      "id": "dpl_fiXC5suPTF2VCW22fEVf64HZYhNP",
+      "url": "tretta-qj6nwkkie-seibel.vercel.app"
+    },
+    "deploymentId": "dpl_fiXC5suPTF2VCW22fEVf64HZYhNP",
+    "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "redirect": null,
+    "updatedAt": 1792236786914
+  },
+  "deployment": {
+    "id": "dpl_fiXC5suPTF2VCW22fEVf64HZYhNP",
+    "name": "tretta",
+    "url": "tretta-qj6nwkkie-seibel.vercel.app",
+    "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "ownerId": "team_4mQparNtNCNqsb95uxf2FzoD",
+    "plan": "hobby",
+    "team": {
+      "id": "team_4mQparNtNCNqsb95uxf2FzoD",
+      "name": "Seibel",
+      "slug": "seibel"
+    },
+    "target": "production",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "source": "cli",
+    "createdAt": 1792234996844,
+    "initReadyAt": 1792235020153,
+    "aliasAssignedAt": 1792236787019,
+    "meta": {
+      "trettaBaseCommit": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+      "trettaSourceManifest": "80be664523f38e705e5917fa948d4daa228e24922c73827da435c4d829f194d5",
+      "actor": "opencode",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "projectSettings": {
+      "buildCommand": "cd ../.. && node -e 'let u;try{u=new URL(process.env.NEXT_PUBLIC_SERVER_URL)}catch{};process.exit(!u||u.protocol!==\"https:\"||/^(localhost|127\\.|\\[::1\\])/i.test(u.hostname)?1:0)' && NEXT_PUBLIC_TEST_HOOKS=0 pnpm --filter @tretta/web... build",
+      "devCommand": null,
+      "framework": "nextjs",
+      "commandForIgnoringBuildStep": null,
+      "installCommand": "cd ../.. && pnpm --version && pnpm install --frozen-lockfile",
+      "outputDirectory": null,
+      "speedInsights": {
+        "id": "YaFSpXS1Z6cSj5HtLsOGUVbdLpe",
+        "hasData": false
+      },
+      "webAnalytics": {
+        "id": "YcMSNLU53XnAg9XtsiWnlOegr"
+      },
+      "nodeVersion": "22.x"
+    }
+  },
+  "renderService": {
+    "autoDeploy": "yes",
+    "autoDeployTrigger": "commit",
+    "branch": "main",
+    "createdAt": "2026-10-16T16:57:48.526216Z",
+    "dashboardUrl": "https://dashboard.render.com/web/srv-db95f2u7bikc73dpndt0",
+    "id": "srv-db95f2u7bikc73dpndt0",
+    "name": "tretta-server",
+    "notifyOnFail": "default",
+    "ownerId": "tea-cuhq60rv2p9s738m7us0",
+    "repo": "https://github.com/ivanseibel/tretta",
+    "rootDir": "",
+    "serviceDetails": {
+      "buildPlan": "starter",
+      "cache": {
+        "profile": "no-cache"
+      },
+      "env": "node",
+      "envSpecificDetails": {
+        "buildCommand": "corepack enable && node --version && pnpm --version && pnpm install --frozen-lockfile && pnpm --filter @tretta/server... build",
+        "startCommand": "pnpm --filter @tretta/server start"
+      },
+      "healthCheckPath": "/healthz",
+      "ipAllowList": [
+        {
+          "cidrBlock": "0.0.0.0/0",
+          "description": "everywhere"
+        }
+      ],
+      "maintenanceMode": {
+        "enabled": false,
+        "uri": ""
+      },
+      "numInstances": 1,
+      "openPorts": [],
+      "plan": "free",
+      "previews": {
+        "generation": "off"
+      },
+      "pullRequestPreviewsEnabled": "no",
+      "region": "oregon",
+      "renderSubdomainPolicy": "enabled",
+      "runtime": "node",
+      "sshAddress": "srv-db95f2u7bikc73dpndt0@ssh.oregon.render.com",
+      "url": "https://tretta-server.onrender.com"
+    },
+    "slug": "tretta-server",
+    "suspended": "not_suspended",
+    "suspenders": [],
+    "type": "web_service",
+    "updatedAt": "2026-10-17T11:29:58.150414Z"
+  },
+  "renderDeploys": [
+    {
+      "commit": {
+        "createdAt": "2026-10-17T11:01:47Z",
+        "id": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+        "message": "feat: deliver family refinements, recovery fix and training table\n\nCumulative accepted version T008-T011: cozy table, chat order and turn sound notification (T008); bounded automatic recovery of the same identity and hand (T010); solo training table against three fixed bots, server and browser flow (T011A/T011B), accepted locally in docs/work/reports.\n\nFunctional and configuration source: 148 files matched against the accepted T011B manifest. Sanitized reports, manifests and evidence included; ignored logs, raw browser traces and generated files remain local."
+      },
+      "createdAt": "2026-10-17T11:28:38.567314Z",
+      "finishedAt": "2026-10-17T11:29:58.051942Z",
+      "id": "dep-db9lnpm1egvs73ct80ig",
+      "startedAt": "2026-10-17T11:28:38.542288Z",
+      "status": "live",
+      "trigger": "new_commit",
+      "updatedAt": "2026-10-17T11:30:27.769762Z"
+    },
+    {
+      "commit": {
+        "createdAt": "2026-10-16T16:53:33Z",
+        "id": "8967e94eae18a351c6c7b4c81a1f00ea5d6d1837",
+        "message": "docs: record Seibel Hobby project setup"
+      },
+      "createdAt": "2026-10-16T16:57:48.874231Z",
+      "finishedAt": "2026-10-16T16:59:04.64831Z",
+      "id": "dep-db95f367bikc73dpnfs0",
+      "startedAt": "2026-10-16T16:57:48.869387Z",
+      "status": "deactivated",
+      "trigger": "blueprint_sync",
+      "updatedAt": "2026-10-17T11:29:58.05101Z"
+    }
+  ]
+}

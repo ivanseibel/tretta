@@ -1,0 +1,29 @@
+{
+  "id": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+  "name": "tretta",
+  "framework": "nextjs",
+  "rootDirectory": "apps/web",
+  "nodeVersion": "22.x",
+  "sourceFilesOutsideRootDirectory": true,
+  "gitLinked": false,
+  "production": {
+    "id": "dpl_DARamMVYaXEgnZ2KvioZsMGRnf6k",
+    "url": "tretta-1fes8gwbm-seibel.vercel.app",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "target": "production",
+    "plan": "hobby",
+    "meta": {
+      "trettaTask": "T013-publication",
+      "digest": "3e3c84dea1cfe719181c7f0fbc2b63b734f3ab949ab1d93cad5866afc6af6085",
+      "base": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+      "actor": "opencode",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "automaticAliases": [
+      "tretta-seibel.vercel.app"
+    ],
+    "teamId": "team_4mQparNtNCNqsb95uxf2FzoD"
+  }
+}

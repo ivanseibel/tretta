@@ -1,0 +1,20 @@
+{
+ "checkedAtUtc": "2026-10-17T16:48:53.519109+00:00",
+ "home": {
+  "url": "https://tretta.vercel.app/",
+  "status": 200,
+  "markersT011": {
+   "Treinar sozinho": true
+  }
+ },
+ "health": {
+  "url": "https://tretta-server.onrender.com/healthz",
+  "status": 200,
+  "body": "{\"ok\":true}"
+ },
+ "bundle": {
+  "t012RoomChunkSha256": "1a7b2e020039d5b4af244bd1d71d6b7cc0b5a31804d3cc6906ef49a7f1905b2a",
+  "t012RoomChunkMarker": "seat-circuit presente",
+  "hookStringsInPublicChunk": "ausentes (__trettaTest/setNextDeck/setEffectVariant = 0 ocorr\u00eancias no chunk do home e no chunk da rota)"
+ }
+}

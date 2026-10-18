@@ -1,0 +1,69 @@
+{
+  "checkedAtUtc": "2026-10-17T17:22:20.402797+00:00",
+  "alias": {
+    "alias": "tretta.vercel.app",
+    "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "deploymentId": "dpl_5zzeCcbWYdEgZoz7d7pZUs7qTLtk"
+  },
+  "deployment": {
+    "id": "dpl_5zzeCcbWYdEgZoz7d7pZUs7qTLtk",
+    "url": "tretta-66c9kswar-seibel.vercel.app",
+    "readyState": "READY",
+    "target": "production",
+    "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "createdAt": 1792252867229,
+    "buildingAt": 1792252868232,
+    "ready": 1792252888398,
+    "aliasAssigned": true,
+    "aliasAssignedAt": 1792253156731,
+    "isRollbackCandidate": null,
+    "teamId": null,
+    "meta": {
+      "trettaTask": "T012-publication",
+      "digest": "c0b0fc72042b37072d0e4f329e421c7414b4c5f9c3db2dfbf8fb9e639ce67615",
+      "base": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+      "actor": "opencode",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    }
+  },
+  "project": {
+    "id": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "name": "tretta",
+    "accountId": "team_4mQparNtNCNqsb95uxf2FzoD",
+    "rootDirectory": "apps/web",
+    "nodeVersion": "22.x",
+    "sourceFilesOutsideRootDirectory": true,
+    "framework": "nextjs",
+    "link": null
+  },
+  "team": {
+    "id": "team_4mQparNtNCNqsb95uxf2FzoD",
+    "slug": "seibel",
+    "plan": "hobby"
+  },
+  "previous": {
+    "id": "dpl_fiXC5suPTF2VCW22fEVf64HZYhNP",
+    "url": "tretta-qj6nwkkie-seibel.vercel.app",
+    "readyState": "READY",
+    "target": "production",
+    "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "createdAt": 1792234996844,
+    "buildingAt": 1792234997749,
+    "ready": 1792235020153,
+    "aliasAssigned": true,
+    "aliasAssignedAt": 1792236787019,
+    "isRollbackCandidate": null,
+    "teamId": null,
+    "meta": {
+      "trettaBaseCommit": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+      "trettaSourceManifest": "80be664523f38e705e5917fa948d4daa228e24922c73827da435c4d829f194d5",
+      "actor": "opencode",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    }
+  },
+  "files": {
+    "treeSaved": true
+  }
+}

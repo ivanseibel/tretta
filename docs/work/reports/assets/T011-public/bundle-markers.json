@@ -1,0 +1,53 @@
+{
+ "deployment": "dpl_fiXC5suPTF2VCW22fEVf64HZYhNP",
+ "note": "O domínio público serve o mesmo build staged (alias direto para o mesmo deployment); marcadores conferidos nos chunks públicos de https://tretta.vercel.app em 2026-10-17.",
+ "staged": {
+  "Treinar sozinho": [
+   "2-3au1mrczlgz.js"
+  ],
+  "Tico": [],
+  "Lila": [],
+  "Nino": [],
+  "training": [
+   "1bvb71x0vwldf.js",
+   "2-3au1mrczlgz.js"
+  ],
+  "tretta-server.onrender.com": [
+   "1bvb71x0vwldf.js"
+  ],
+  "__trettaTest": [],
+  "setNextDeck": [],
+  "setEffectVariant": [],
+  "Tentar novamente": [
+   "1bvb71x0vwldf.js"
+  ],
+  "Retomando sua sessão": [],
+  "sessão em retomada": [
+   "1bvb71x0vwldf.js"
+  ],
+  "Recuperando o vínculo": [
+   "1bvb71x0vwldf.js"
+  ]
+ },
+ "public": {
+  "Treinar sozinho": [
+   "2-3au1mrczlgz.js"
+  ],
+  "training": [
+   "1bvb71x0vwldf.js",
+   "2-3au1mrczlgz.js"
+  ],
+  "tretta-server.onrender.com": [
+   "1bvb71x0vwldf.js"
+  ],
+  "__trettaTest": [],
+  "setNextDeck": [],
+  "setEffectVariant": [],
+  "sessão em retomada": [
+   "1bvb71x0vwldf.js"
+  ],
+  "Recuperando o vínculo": [
+   "1bvb71x0vwldf.js"
+  ]
+ }
+}

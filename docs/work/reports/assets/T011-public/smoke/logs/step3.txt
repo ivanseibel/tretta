@@ -1,0 +1,29 @@
+hand_before: 8
+tab: 65639E2F983BA7683A2E319BE2CD446D
+recovering_seen: True
+hand_after: 8
+hand_equal: True
+pause_panel: True
+pause_retention: Os bots esperam por você: a mesa segue reservada e a rodada continua de onde parou. Retome quando quiser.
+pause_absent_count: 0
+opp_Tico: Ticobot7 cartas
+opp_Lila: Lilabot7 cartas
+opp_Nino: Ninobot7 cartas
+errors: {'errors': [], 'rejections': []}
+after_draw_hint: True
+playable_count: 0
+Traceback (most recent call last):
+  File "/Users/ivanseibel/.local/bin/browser-harness", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Users/ivanseibel/.local/share/uv/tools/browser-harness/lib/python3.12/site-packages/browser_harness/run.py", line 248, in main
+    _run(args)
+  File "/Users/ivanseibel/.local/share/uv/tools/browser-harness/lib/python3.12/site-packages/browser_harness/run.py", line 392, in _run
+    exec(code, globals())
+  File "<string>", line 37, in <module>
+  File "/Users/ivanseibel/.local/share/uv/tools/browser-harness/lib/python3.12/site-packages/browser_harness/run.py", line 161, in wrapper
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/ivanseibel/.config/browser-harness/agent-workspace/agent_helpers.py", line 43, in click_sel
+    raise RuntimeError("not visible: %s" % selector)
+RuntimeError: not visible: [data-testid="my-hand"] [data-card-id][aria-disabled="false"]

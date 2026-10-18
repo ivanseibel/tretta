@@ -25,7 +25,7 @@ test('saída voluntária ativa o substituto e a saída do anfitrião transfere o
   await expect(pageB.getByTestId('leave-button')).toBeVisible();
   await pageB.getByTestId('leave-button').click();
   await expect(pageB).toHaveURL('/');
-  await expect(pageA.getByTestId('opponent-Bia').getByText('substituto')).toBeVisible();
+  await expect(pageA.getByTestId('seat-Bia').getByText('substituto')).toBeVisible();
   await expect(pageA.getByTestId('pause-panel')).toHaveCount(0);
   await pageA.screenshot({ path: join(shotsDir, 'desktop-saida-substituto.png') });
 
@@ -33,7 +33,7 @@ test('saída voluntária ativa o substituto e a saída do anfitrião transfere o
   await pageA.getByTestId('leave-button').click();
   await expect(pageA).toHaveURL('/');
   await expect(pageC.getByTestId('end-round-button').first()).toBeVisible();
-  await expect(pageC.getByTestId('opponent-Ana').getByText('substituto')).toBeVisible();
+  await expect(pageC.getByTestId('seat-Ana').getByText('substituto')).toBeVisible();
 
   // Cai encerra a rodada sem vencedor: substituídos desconectados são retirados.
   await pageC.getByTestId('end-round-button').first().click();

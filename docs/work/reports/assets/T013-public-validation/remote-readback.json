@@ -1,0 +1,63 @@
+{
+  "checkedAtUtc": "2026-10-17T19:41:54.389083+00:00",
+  "alias": {
+    "alias": "tretta.vercel.app",
+    "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "deploymentId": "dpl_DARamMVYaXEgnZ2KvioZsMGRnf6k"
+  },
+  "deployment": {
+    "id": "dpl_DARamMVYaXEgnZ2KvioZsMGRnf6k",
+    "url": "tretta-1fes8gwbm-seibel.vercel.app",
+    "readyState": "READY",
+    "target": "production",
+    "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "createdAt": 1792263740624,
+    "buildingAt": 1792263741525,
+    "ready": 1792263757138,
+    "aliasAssigned": true,
+    "aliasAssignedAt": 1792263927841,
+    "meta": {
+      "trettaTask": "T013-publication",
+      "digest": "3e3c84dea1cfe719181c7f0fbc2b63b734f3ab949ab1d93cad5866afc6af6085",
+      "base": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+      "actor": "opencode",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    }
+  },
+  "previous": {
+    "id": "dpl_5zzeCcbWYdEgZoz7d7pZUs7qTLtk",
+    "url": "tretta-66c9kswar-seibel.vercel.app",
+    "readyState": "READY",
+    "target": "production",
+    "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "createdAt": 1792252867229,
+    "buildingAt": 1792252868232,
+    "ready": 1792252888398,
+    "aliasAssigned": true,
+    "aliasAssignedAt": 1792253156731,
+    "meta": {
+      "trettaTask": "T012-publication",
+      "digest": "c0b0fc72042b37072d0e4f329e421c7414b4c5f9c3db2dfbf8fb9e639ce67615",
+      "base": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+      "actor": "opencode",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    }
+  },
+  "project": {
+    "id": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "name": "tretta",
+    "accountId": "team_4mQparNtNCNqsb95uxf2FzoD",
+    "rootDirectory": "apps/web",
+    "nodeVersion": "22.x",
+    "sourceFilesOutsideRootDirectory": true,
+    "framework": "nextjs",
+    "link": null
+  },
+  "team": {
+    "id": "team_4mQparNtNCNqsb95uxf2FzoD",
+    "slug": "seibel",
+    "plan": "hobby"
+  }
+}

@@ -11,9 +11,9 @@ const ANIMATION_OPTIONS: readonly { value: AnimationPreference; label: string }[
 ];
 
 /**
- * Preferências de apresentação deste navegador: animação, som e ocultação de
- * provocações recebidas. Individuais e sem conta — valem só nesta aba de
- * armazenamento e não alteram sala, motor nem a visão dos demais.
+ * Preferências de apresentação deste navegador: animação, som, ocultação de
+ * provocações recebidas e de reações. Individuais e sem conta — valem só nesta
+ * aba de armazenamento e não alteram sala, motor nem a visão dos demais.
  */
 export function MoodSettings(): ReactNode {
   const { preferences, activeAnimations, setPreferences } = useRoom();
@@ -63,6 +63,15 @@ export function MoodSettings(): ReactNode {
           onChange={(event) => setPreferences({ hideTaunts: event.target.checked })}
         />
         Ocultar provocações recebidas
+      </label>
+      <label className="mood-option">
+        <input
+          type="checkbox"
+          data-testid="pref-hide-reactions"
+          checked={preferences.hideReactions}
+          onChange={(event) => setPreferences({ hideReactions: event.target.checked })}
+        />
+        Ocultar reações
       </label>
       {systemLimited ? (
         <p className="mood-note" data-testid="pref-animations-note">

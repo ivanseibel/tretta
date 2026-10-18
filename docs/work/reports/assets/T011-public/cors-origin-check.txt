@@ -1,0 +1,30 @@
+# CORS do servidor compilado — https://tretta-server.onrender.com/socket.io/ (17/10/2026)
+
+## Origin: https://tretta.vercel.app
+HTTP/2 200 
+date: Sat, 17 Oct 2026 11:32:29 GMT
+content-type: text/plain; charset=UTF-8
+access-control-allow-origin: https://tretta.vercel.app
+cache-control: no-store
+cf-cache-status: DYNAMIC
+rndr-id: 10847d0e-cf92-4a56
+server: cloudflare
+vary: Origin
+vary: Accept-Encoding
+x-render-origin-server: Render
+cf-ray: a4befba2ec75bdd2-DUB
+alt-svc: h3=":443"; ma=86400
+
+## Origin: https://example.com (sem cabeçalho Access-Control-Allow-Origin)
+HTTP/2 200 
+date: Sat, 17 Oct 2026 11:32:29 GMT
+content-type: text/plain; charset=UTF-8
+cache-control: no-store
+cf-cache-status: DYNAMIC
+rndr-id: 1f3c8256-7cdd-46b5
+server: cloudflare
+vary: Origin
+vary: Accept-Encoding
+x-render-origin-server: Render
+cf-ray: a4befba4efc26d32-DUB
+alt-svc: h3=":443"; ma=86400

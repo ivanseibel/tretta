@@ -1,0 +1,223 @@
+{
+  "viewportWidth": 320,
+  "documentWidth": 320,
+  "ring": {
+    "left": 48.359375,
+    "top": 981.4375,
+    "right": 271.640625,
+    "bottom": 1493.4375
+  },
+  "seats": [
+    {
+      "playerId": "p_5503138c-66d8-468a-be3b-557ad6472e82",
+      "nickname": "Ana",
+      "slot": "0",
+      "tags": [
+        "na vez"
+      ],
+      "truncated": false,
+      "left": 132.8046875,
+      "top": 1369.8125,
+      "right": 187.1953125,
+      "bottom": 1453.21875,
+      "children": [
+        {
+          "text": "",
+          "font": 10.4,
+          "left": 149.9921875,
+          "top": 1374,
+          "right": 169.9921875,
+          "bottom": 1394
+        },
+        {
+          "text": "Ana",
+          "font": 16,
+          "left": 138.6015625,
+          "top": 1395.265625,
+          "right": 181.3984375,
+          "bottom": 1423.265625
+        },
+        {
+          "text": "Ana",
+          "font": 12.48,
+          "left": 138.6015625,
+          "top": 1402.09375,
+          "right": 181.3984375,
+          "bottom": 1416.4375
+        },
+        {
+          "text": "na vez",
+          "font": 9.6,
+          "left": 141.1171875,
+          "top": 1424.53125,
+          "right": 178.8828125,
+          "bottom": 1436.15625
+        },
+        {
+          "text": "6 cartas",
+          "font": 10.56,
+          "left": 139.2578125,
+          "top": 1437.421875,
+          "right": 180.7421875,
+          "bottom": 1449.03125
+        }
+      ]
+    },
+    {
+      "playerId": "p_82a8ac88-aba6-444f-8cdc-688afa698b38",
+      "nickname": "Bia",
+      "slot": "1",
+      "tags": [],
+      "truncated": false,
+      "left": 59.1171875,
+      "top": 1201.546875,
+      "right": 113.5078125,
+      "bottom": 1273.328125,
+      "children": [
+        {
+          "text": "",
+          "font": 10.4,
+          "left": 76.3046875,
+          "top": 1205.734375,
+          "right": 96.3046875,
+          "bottom": 1225.734375
+        },
+        {
+          "text": "Bia",
+          "font": 16,
+          "left": 64.9140625,
+          "top": 1227,
+          "right": 107.7109375,
+          "bottom": 1255
+        },
+        {
+          "text": "Bia",
+          "font": 12.48,
+          "left": 64.9140625,
+          "top": 1233.828125,
+          "right": 107.7109375,
+          "bottom": 1248.171875
+        },
+        {
+          "text": "7 cartas",
+          "font": 10.56,
+          "left": 65.9296875,
+          "top": 1257.53125,
+          "right": 106.6953125,
+          "bottom": 1269.140625
+        }
+      ]
+    },
+    {
+      "playerId": "p_5b593395-1827-4e41-a71f-4aa8f6261722",
+      "nickname": "Cai",
+      "slot": "2",
+      "tags": [],
+      "truncated": false,
+      "left": 132.8046875,
+      "top": 1027.453125,
+      "right": 187.1953125,
+      "bottom": 1099.234375,
+      "children": [
+        {
+          "text": "",
+          "font": 10.4,
+          "left": 149.9921875,
+          "top": 1031.640625,
+          "right": 169.9921875,
+          "bottom": 1051.640625
+        },
+        {
+          "text": "Cai",
+          "font": 16,
+          "left": 138.6015625,
+          "top": 1052.90625,
+          "right": 181.3984375,
+          "bottom": 1080.90625
+        },
+        {
+          "text": "Cai",
+          "font": 12.48,
+          "left": 138.6015625,
+          "top": 1059.734375,
+          "right": 181.3984375,
+          "bottom": 1074.078125
+        },
+        {
+          "text": "7 cartas",
+          "font": 10.56,
+          "left": 139.6171875,
+          "top": 1083.4375,
+          "right": 180.3828125,
+          "bottom": 1095.046875
+        }
+      ]
+    },
+    {
+      "playerId": "p_b9032d43-f3b8-41b7-9912-c2fd108b7531",
+      "nickname": "Davi",
+      "slot": "3",
+      "tags": [],
+      "truncated": false,
+      "left": 206.4765625,
+      "top": 1201.546875,
+      "right": 260.8671875,
+      "bottom": 1273.328125,
+      "children": [
+        {
+          "text": "",
+          "font": 10.4,
+          "left": 223.6640625,
+          "top": 1205.734375,
+          "right": 243.6640625,
+          "bottom": 1225.734375
+        },
+        {
+          "text": "Davi",
+          "font": 16,
+          "left": 212.2734375,
+          "top": 1227,
+          "right": 255.0703125,
+          "bottom": 1255
+        },
+        {
+          "text": "Davi",
+          "font": 12.48,
+          "left": 212.2734375,
+          "top": 1233.828125,
+          "right": 255.0703125,
+          "bottom": 1248.171875
+        },
+        {
+          "text": "6 cartas",
+          "font": 10.56,
+          "left": 212.9296875,
+          "top": 1257.53125,
+          "right": 254.4140625,
+          "bottom": 1269.140625
+        }
+      ]
+    }
+  ],
+  "outside": [],
+  "overlaps": [],
+  "arrowChip": [],
+  "arrowsOutsideRing": [],
+  "fonts": {
+    "name": [
+      12.48,
+      12.48,
+      12.48,
+      12.48
+    ],
+    "tag": [
+      9.6
+    ],
+    "count": [
+      10.56,
+      10.56,
+      10.56,
+      10.56
+    ]
+  }
+}

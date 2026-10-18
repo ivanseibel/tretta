@@ -1,0 +1,114 @@
+[
+  {
+    "file": "medidas-publico-320.json",
+    "outside": [],
+    "overlaps": [],
+    "arrowChip": [],
+    "arrowsOutsideRing": [],
+    "viewport": 320,
+    "document": 320,
+    "minFonts": {
+      "name": 12.48,
+      "tag": 9.6,
+      "count": 10.56
+    }
+  },
+  {
+    "file": "medidas-oito-320-substituto.json",
+    "outside": [],
+    "overlaps": [],
+    "arrowChip": [],
+    "arrowsOutsideRing": [],
+    "viewport": 320,
+    "document": 320,
+    "minFonts": {
+      "name": 12.48,
+      "tag": 9.6,
+      "count": 10.56
+    }
+  },
+  {
+    "file": "medidas-quatro-320.json",
+    "outside": [],
+    "overlaps": [],
+    "arrowChip": [],
+    "arrowsOutsideRing": [],
+    "viewport": 320,
+    "document": 320,
+    "minFonts": {
+      "name": 12.48,
+      "tag": 9.6,
+      "count": 10.56
+    }
+  },
+  {
+    "file": "medidas-oito-320-ativo.json",
+    "outside": [],
+    "overlaps": [],
+    "arrowChip": [],
+    "arrowsOutsideRing": [],
+    "viewport": 320,
+    "document": 320,
+    "minFonts": {
+      "name": 12.48,
+      "tag": 9.6,
+      "count": 10.56
+    }
+  },
+  {
+    "file": "medidas-oito-320-desconectado.json",
+    "outside": [],
+    "overlaps": [],
+    "arrowChip": [],
+    "arrowsOutsideRing": [],
+    "viewport": 320,
+    "document": 320,
+    "minFonts": {
+      "name": 12.48,
+      "tag": 9.6,
+      "count": 10.56
+    }
+  },
+  {
+    "file": "medidas-quatro-390.json",
+    "outside": [],
+    "overlaps": [],
+    "arrowChip": [],
+    "arrowsOutsideRing": [],
+    "viewport": 390,
+    "document": 390,
+    "minFonts": {
+      "name": 12.48,
+      "tag": 9.6,
+      "count": 10.56
+    }
+  },
+  {
+    "file": "medidas-quatro-1280.json",
+    "outside": [],
+    "overlaps": [],
+    "arrowChip": [],
+    "arrowsOutsideRing": [],
+    "viewport": 1280,
+    "document": 1280,
+    "minFonts": {
+      "name": 12.48,
+      "tag": 9.6,
+      "count": 10.56
+    }
+  },
+  {
+    "file": "medidas-quatro-768.json",
+    "outside": [],
+    "overlaps": [],
+    "arrowChip": [],
+    "arrowsOutsideRing": [],
+    "viewport": 768,
+    "document": 768,
+    "minFonts": {
+      "name": 12.48,
+      "tag": 9.6,
+      "count": 10.56
+    }
+  }
+]

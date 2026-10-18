@@ -1,0 +1,9 @@
+{
+  "copy": "/var/folders/r_/xrvhskhx45l6n66k99kzs61r0000gn/T/tretta-t012-final-validation-tu3jcweh/copy",
+  "sources": 159,
+  "executorCopyDifferences": [],
+  "onlyInExecutorCopy": [
+    "apps/web/e2e/t012-review.spec.ts"
+  ],
+  "reportsBefore": 581
+}

@@ -24,3 +24,9 @@ Copie cada diretório abaixo para `~/.agents/skills/`, mantendo o nome final e t
 | skills/engineering/domain-modeling | domain-modeling |
 
 As duas últimas são dependências das entrevistas. As skills globais não fazem parte do Git do Tretta; o protocolo local em `.agents/skills/orchestrate-work` já acompanha o clone. Se a interface não descobrir uma skill automaticamente, leia o `SKILL.md` pelo caminho e siga suas referências.
+
+## Notificação obrigatória
+
+Além das skills da tabela, disponibilize a skill **`agent-notify`** e o utilitário de mesmo nome no PATH do agente. Essa dependência não vem do repositório `mattpocock/skills` citado acima. Transfira a instalação confiável já usada no seu ambiente, preservando arquivos e instruções da skill; configure o destino da notificação localmente, sem versionar credenciais ou configuração privada no Tretta. O clone do projeto sozinho não instala o utilitário nem configura o serviço de entrega.
+
+Confira a descoberta da skill e a disponibilidade do comando antes de iniciar tarefas. Orquestradores e executores manuais seguem a [regra de encerramento](../../.agents/skills/orchestrate-work/SKILL.md#notificação-de-encerramento); somente executores lançados automaticamente como subagentes estão dispensados. Indisponibilidade ou falha de entrega deve ser informada, sem apresentar uma notificação como confirmada.

@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-10-17T19:59:00+01:00",
+  "site": "https://tretta.vercel.app (servindo T012 antes da promoção)",
+  "home": {
+    "status": 200
+  },
+  "healthz": {
+    "firstAttempt": {
+      "result": "timeout após 20s",
+      "note": "cold start do Render Free; retomada leva cerca de 1 minuto"
+    },
+    "secondAttempt": {
+      "status": 200,
+      "body": {
+        "ok": true
+      }
+    }
+  },
+  "render": {
+    "service": "srv-db95f2u7bikc73dpndt0",
+    "liveDeploy": "dep-db9lnpm1egvs73ct80ig",
+    "revision": "3ae459e5a88e612dc389e7bcb4570809ddcc3445"
+  },
+  "productionDeployment": "dpl_5zzeCcbWYdEgZoz7d7pZUs7qTLtk (T012, READY/production)"
+}

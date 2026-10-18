@@ -1,0 +1,7 @@
+url: AS…(6)
+title: Tretta
+testids: ['error-banner', 'error-dismiss', 'join-name-input', 'avatar-option-raposa', 'avatar-option-pinguim', 'avatar-option-tucano', 'avatar-option-lobo', 'avatar-option-coruja', 'avatar-option-polvo', 'avatar-option-lince', 'avatar-option-sapo', 'join-room-button']
+join_btn_disabled: False
+name_value: Bia
+body_text: Entrar na sala [codigo-redigido] Escolha um apelido e um avatar. Sem cadastro. Sem conexão com o servidor. Aguarde a reconexão. Fechar Seu apelido Raposa Pinguim Tucano Lobo Coruja Polvo Lince Sapo Entrar
+errors: {'errors': [], 'rejections': []}

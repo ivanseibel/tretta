@@ -1,0 +1,18 @@
+{
+  "installInitialWrongNode": 1,
+  "installNode22": 0,
+  "build": 0,
+  "webUnit": {
+    "exit": 0,
+    "passed": 180
+  },
+  "reproductions": {
+    "exit": 0,
+    "passed": 46
+  },
+  "typecheck": 0,
+  "executorE2EReviewed": {
+    "passed": 5,
+    "rerunByOrchestrator": false
+  }
+}

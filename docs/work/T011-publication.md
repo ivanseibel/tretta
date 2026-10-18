@@ -1,6 +1,6 @@
 # Prompt manual — publicar a mesa de treino T011
 
-**Estado: preparado, aguardando execução manual.** Preferência `gpt-6-luna`, reasoning `max`. Não acione outros agentes. Publique a entrega aceita e devolva report para validação do orquestrador.
+**Estado: executada e aceita pelo orquestrador em 17/10/2026.** [Report](reports/T011-publication.md) e [aceite](reports/T011-publication.validation.md). Contrato histórico abaixo preservado; não repetir a publicação sem nova tarefa. Preferência `gpt-6-luna`, reasoning `max`. Não acione outros agentes.
 
 ## Papel, autorização e contexto
 

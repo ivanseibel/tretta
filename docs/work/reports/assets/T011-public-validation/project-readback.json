@@ -1,0 +1,32 @@
+{
+  "id": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+  "name": "tretta",
+  "accountId": "team_4mQparNtNCNqsb95uxf2FzoD",
+  "rootDirectory": "apps/web",
+  "nodeVersion": "22.x",
+  "sourceFilesOutsideRootDirectory": true,
+  "link": null,
+  "env": [
+    {
+      "key": "ENABLE_EXPERIMENTAL_COREPACK",
+      "target": [
+        "production",
+        "preview"
+      ]
+    },
+    {
+      "key": "NEXT_PUBLIC_TEST_HOOKS",
+      "target": [
+        "production",
+        "preview"
+      ]
+    },
+    {
+      "key": "NEXT_PUBLIC_SERVER_URL",
+      "target": [
+        "production",
+        "preview"
+      ]
+    }
+  ]
+}

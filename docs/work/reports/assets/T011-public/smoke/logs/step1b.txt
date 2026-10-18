@@ -1,0 +1,9 @@
+ready_toggle: Cancelar prontidão
+start_disabled: False
+start_hint: None
+start_enabled: True
+start_hint_now: None
+turn_indicator: Vez de Lila (bot)
+opponent_Tico: Ticobot7 cartas
+hand_size: 7
+errors: {'errors': [], 'rejections': []}

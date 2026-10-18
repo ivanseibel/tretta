@@ -1,6 +1,14 @@
 # Backlog após o primeiro teste em família
 
-Atualizado em 17/10/2026. Fonte: feedback do usuário após jogar no celular com a irmã, escopo aprovado e ideias adiadas na concepção. Prioridades abaixo são propostas do orquestrador; T008 foi implementada/publicada e a investigação T009 foi solicitada e aceita; T010 foi implementada, publicada e aceita; teste humano da recuperação no celular ainda pendente. Ideias futuras não alteram as regras vigentes do Clássico.
+Atualizado em 18/10/2026. Fonte: feedback do usuário após jogar no celular com a irmã, escopo aprovado e ideias adiadas na concepção. Prioridades abaixo são propostas do orquestrador; T008 foi implementada/publicada e a investigação T009 foi solicitada e aceita; T010 foi implementada, publicada e aceita; teste humano da recuperação no celular ainda pendente. Ideias futuras não alteram as regras vigentes do Clássico.
+
+## Prioridade atual — provocações pelo avatar e reações
+
+Escolhida pelo usuário em 18/10/2026, acima dos candidatos históricos abaixo. **[Escopo confirmado](provocacoes-e-reacoes.md)** após entrevista `grill-with-docs` Q1–Q19. [T014A](../work/T014A.md) aceita. [T014B](../work/T014B.md) e ajustes executados e [aceitos localmente](../work/reports/T014B.final-validation.md) em 18/10/2026; nenhum ajuste de implementação pendente. Próxima etapa: publicação manual mediante autorização específica; T013 segue publicada. Nenhum executor acionado automaticamente.
+
+## Publicada e aceita — ordem das jogadas (T012)
+
+Após o aceite público de T011, o usuário priorizou compreender o percurso da rodada e sua inversão, especialmente com mais de duas pessoas. **Mesa em circuito aprovada em 17/10/2026**, conforme [escopo](ordem-das-jogadas.md). [T012](../work/T012.md) executada manualmente e **aceita localmente após ajustes**, conforme [validação final](../work/reports/T012.final-validation.md). [Publicação manual](../work/T012-publication.md) executada e [aceita pelo orquestrador](../work/reports/T012-publication.validation.md) em 17/10/2026; nenhuma execução de T012 pendente. A próxima melhoria ainda precisa ser escolhida com o usuário. Essa escolha prevalece sobre a ordem dos candidatos abaixo; preserva as regras atuais e inclui treino e mesa pública.
 
 ## Publicada e aceita — T008
 
@@ -22,7 +30,7 @@ Contrato: [T008](../work/T008.md). [Validação local](../work/reports/T008.vali
 
 ## Próximos candidatos — prioridade proposta
 
-**Escolha posterior do usuário em 17/10/2026:** implementar a mesa de treino. Essa escolha prevalece sobre a ordem sugerida abaixo. [Escopo aprovado](mesa-de-treino.md); [T011A aceita](../work/reports/T011A.validation.md) e [T011B aceita após ajustes](../work/reports/T011B.final-validation.md). Implementação local concluída; [publicação manual autorizada e preparada](../work/T011-publication.md), ainda não executada. Os demais candidatos permanecem no backlog.
+**Escolha posterior do usuário em 17/10/2026:** implementar a mesa de treino. Essa escolha prevalece sobre a ordem sugerida abaixo. [Escopo aprovado](mesa-de-treino.md); [T011A aceita](../work/reports/T011A.validation.md) e [T011B aceita após ajustes](../work/reports/T011B.final-validation.md). Implementação e [publicação aceitas](../work/reports/T011-publication.validation.md) em 17/10/2026; sem execução pendente. Os demais candidatos permanecem no backlog.
 
 | Ordem | Ideia | Valor para a família | Limite / decisão antes de executar |
 | --- | --- | --- | --- |
@@ -31,7 +39,7 @@ Contrato: [T008](../work/T008.md). [Validação local](../work/reports/T008.vali
 | 3 | Convite pelo compartilhamento nativo | Enviar o link pelo menu do celular, mantendo Copiar link como alternativa | Nenhuma permissão de contatos e nenhum envio automático |
 | 4 | Resumo divertido da rodada | Criar histórias da partida: quem mais comprou, quem distribuiu penalidades, viradas e títulos humorísticos | Usar somente dados públicos; definir métricas e como tratar substitutos, sem revelar mãos |
 | 5 | Pequena noite de partidas | Dar continuidade ao encontro: melhor de três/cinco ou meta de vitórias | Escolher formato e definir encerramento/empate; a regra atual continua sendo rodada independente |
-| 6 | Mesa de treino | Uma pessoa conhecer as regras jogando contra três bots fixos desde o início | Implementada e aceita localmente em T011A/T011B, conforme [escopo](mesa-de-treino.md); publicação pendente |
+| 6 | Mesa de treino | Uma pessoa conhecer as regras jogando contra três bots fixos desde o início | Concluída em T011A/T011B, conforme [escopo](mesa-de-treino.md); [publicada e aceita](../work/reports/T011-publication.validation.md) |
 
 Eu começaria por ajuda rápida, chat acessível e resumo divertido: reduzem dúvidas e aumentam a conversa que já faz o jogo funcionar. Não exigem contas de usuário ou serviços pagos por definição; qualquer mudança de infraestrutura ainda precisa ser avaliada.
 

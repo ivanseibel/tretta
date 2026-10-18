@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { devices, type Page } from '@playwright/test';
 import { expect, test } from './fixtures';
 import { scenarioDeck } from './deck';
-import { createRoom, joinRoom, readyAll, setNextDeck, waitMyTurn } from './room';
+import { createRoom, joinRoom, openTauntPanel, readyAll, setNextDeck, waitMyTurn } from './room';
 
 const shotsDir = fileURLToPath(new URL('../../../docs/work/reports/assets/T005B/', import.meta.url));
 const adjustDir = fileURLToPath(new URL('../../../docs/work/reports/assets/T005B-adjustments/', import.meta.url));
@@ -20,6 +20,7 @@ async function joinAsWatcher(page: Page, inviteUrl: string, nickname: string): P
 
 async function sendTaunt(viewer: Page, sender: Page, type: string, target: string): Promise<void> {
   // Efeito é transitório: quem envia e quem recebe precisam conferir juntos.
+  await openTauntPanel(sender);
   await sender.getByTestId('taunt-type').selectOption(type);
   await sender.getByTestId('taunt-target').selectOption({ label: target });
   await sender.getByTestId('taunt-send').click();
@@ -82,17 +83,19 @@ test('quatro provocações com emissores distintos, recusa de cooldown e jogada 
   await pageC.screenshot({ path: join(shotsDir, 'desktop-third-taunt-risadas.png'), fullPage: true });
   await captureTaunt(pageC, 'Cai mandou chuva de risadas em Ana!', 'desktop-risadas-legenda.png');
 
-  // O mesmo emissor cai no cooldown: recusa explicada com seleção preservada.
+  // O mesmo emissor cai no cooldown: a interface mostra a espera calculada do
+  // ack (sem depender de texto), desabilita o envio e preserva tipo/alvo.
+  await openTauntPanel(pageA);
   await pageA.getByTestId('taunt-type').selectOption('choro');
   await pageA.getByTestId('taunt-target').selectOption({ label: 'Bia' });
-  await pageA.getByTestId('taunt-send').click();
-  await expect(pageA.getByTestId('taunt-error')).toContainText('Você pode provocar de novo em');
+  await expect(pageA.getByTestId('taunt-countdown')).toBeVisible();
+  await expect(pageA.getByTestId('taunt-send')).toBeDisabled();
   expect(await pageA.getByTestId('taunt-type').inputValue()).toBe('choro');
   expect(await pageA.getByTestId('taunt-target').inputValue()).toBeTruthy();
   await pageA.screenshot({ path: join(shotsDir, 'desktop-taunt-cooldown.png'), fullPage: true });
 
   // Depois do cooldown o quarto tipo passa; o efeito some sozinho em ~3s.
-  await pageA.waitForTimeout(15_500);
+  await expect(pageA.getByTestId('taunt-countdown')).toBeHidden({ timeout: 16_000 });
   await sendTaunt(pageB, pageA, 'choro', 'Bia');
   await captureTaunt(pageA, 'Ana mandou choro dramático em Bia!', 'desktop-choro-legenda.png');
   await expect(pageA.getByTestId('taunt-effect-choro')).toBeHidden({ timeout: 5_000 });

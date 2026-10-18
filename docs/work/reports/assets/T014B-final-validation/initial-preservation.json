@@ -1,0 +1,18 @@
+{
+  "previousBaselineFiles": 1263,
+  "previousChanged": [
+    "docs/product/provocacoes-e-reacoes.md",
+    "docs/product/backlog.md",
+    "docs/work/T014B.md",
+    "docs/work/T014B-adjustments-2.md",
+    "docs/work/status.md",
+    "docs/work/plan.md",
+    "apps/web/test/mood-time.test.ts",
+    "apps/web/lib/moodTime.ts"
+  ],
+  "previousMissing": [],
+  "backendFiles": 81,
+  "backendDifferences": [],
+  "executorCodeFiles": 166,
+  "executorCodeDifferences": []
+}

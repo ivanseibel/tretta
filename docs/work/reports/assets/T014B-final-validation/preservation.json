@@ -1,0 +1,12 @@
+{
+  "sourceFiles": 1294,
+  "sourceDifferences": [],
+  "copyBaseDifferences": [
+    "apps/web/test/mood-avatar.test.tsx"
+  ],
+  "backendFilesUnchanged": 81,
+  "executorCodeFilesEqual": 166,
+  "previousBaselineFiles": 1263,
+  "previousBaselineEqual": 1255,
+  "historicalReportsPreserved": true
+}

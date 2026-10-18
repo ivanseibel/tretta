@@ -14,12 +14,14 @@ import {
   CHAT_HISTORY_MAX_LIMIT,
   EFFECT_VARIANT_IDS,
   NICKNAME_MAX_LENGTH,
+  REACTION_TYPES,
   ROOM_CODE_PATTERN,
   ROOM_MODES,
   TAUNT_TYPES,
   type Avatar,
   type EffectVariant,
   type ParticipantKind,
+  type ReactionType,
   type RoomMode,
   type ServerErrorCode,
   type TauntType,
@@ -142,6 +144,17 @@ export const tauntSendPayloadSchema = z.strictObject({
   targetId: z.string().min(1).max(64),
 });
 
+/**
+ * Envio de reação sem destinatário. O emissor deriva do vínculo da conexão;
+ * `sentAt`, identidade do evento e autor não existem no payload, e qualquer
+ * campo desconhecido — em especial um destinatário — recusa a intenção.
+ */
+export const reactionSendPayloadSchema = z.strictObject({
+  intentId: intentIdSchema,
+  roomCode: roomCodeSchema,
+  type: z.enum(REACTION_TYPES),
+});
+
 export const setNextDeckPayloadSchema = z.strictObject({
   intentId: intentIdSchema,
   roomCode: roomCodeSchema,
@@ -173,6 +186,7 @@ export type RemoveParticipantPayload = z.infer<typeof removeParticipantPayloadSc
 export type ChatSendPayload = z.infer<typeof chatSendPayloadSchema>;
 export type ChatHistoryPayload = z.infer<typeof chatHistoryPayloadSchema>;
 export type TauntSendPayload = z.infer<typeof tauntSendPayloadSchema>;
+export type ReactionSendPayload = z.infer<typeof reactionSendPayloadSchema>;
 export type SetNextDeckPayload = z.infer<typeof setNextDeckPayloadSchema>;
 export type SetEffectVariantPayload = z.infer<typeof setEffectVariantPayloadSchema>;
 
@@ -264,6 +278,15 @@ export interface SelfSnapshot {
   readonly inRound: boolean;
   readonly waiting: boolean;
   readonly view: PlayerView | null;
+  /**
+   * Instante (epoch ms do servidor) em que nova provocação desta identidade
+   * volta a ser aceita; null quando não há janela ativa. Calculado no momento
+   * do envio do estado: após recuperar a mesma identidade, o cliente recalcula
+   * o restante a partir de `serverTime`, sem confiar no relógio do navegador.
+   */
+  readonly tauntNextSendAt: number | null;
+  /** Igual a `tauntNextSendAt`, para o intervalo próprio das reações. */
+  readonly reactionNextSendAt: number | null;
 }
 
 /**
@@ -301,7 +324,10 @@ export interface ChatHistoryAck {
   readonly hasMore: boolean;
 }
 
-/** Identidade pública de provocação, congelada no aceite como no chat. */
+/**
+ * Identidade pública de humor (provocação ou reação), congelada no aceite como
+ * no chat: distingue pessoas com o mesmo apelido pelo `playerId`.
+ */
 export interface TauntActor {
   readonly playerId: string;
   readonly nickname: string;
@@ -327,8 +353,61 @@ export interface TauntBroadcast {
   readonly taunt: TauntEvent;
 }
 
+/**
+ * Reação aceita pelo servidor, sem destinatário. `id` e `sentAt` são
+ * autoritativos; tipo e emissor são os mesmos para todos. Transitória como a
+ * provocação: sem histórico e sem reprodução ao reconectar.
+ */
+export interface ReactionEvent {
+  readonly id: string;
+  readonly type: ReactionType;
+  readonly sender: TauntActor;
+  /** Epoch ms do servidor. */
+  readonly sentAt: number;
+}
+
+export interface ReactionBroadcast {
+  readonly roomCode: string;
+  readonly reaction: ReactionEvent;
+}
+
+/**
+ * Referência de tempo estruturada de um envio de humor aceito. Todos os
+ * instantes são epoch ms do relógio do servidor. O restante do intervalo
+ * próprio é `nextSendAt - serverTime` (a resposta e o evento compartilham o
+ * mesmo instante), sem interpretar mensagens em português nem usar o relógio
+ * do navegador. Um replay devolve este mesmo objeto: repetir o ack não renova
+ * o prazo.
+ */
+export interface SendLimitInfo {
+  /** Relógio do servidor no instante em que a ação foi aceita. */
+  readonly serverTime: number;
+  /** Instante em que este emissor pode enviar de novo nesta categoria. */
+  readonly nextSendAt: number;
+}
+
+/**
+ * Espera estruturada de uma recusa por limite. `scope` distingue o intervalo
+ * do próprio emissor da cota compartilhada de um alvo; `targetId` só existe no
+ * escopo `target` e evita aplicar a cota do alvo anterior ao próximo
+ * destinatário. `retryAt` é epoch ms do servidor: o restante é
+ * `retryAt - serverTime`.
+ */
+export interface RetryInfo {
+  readonly serverTime: number;
+  readonly retryAt: number;
+  readonly scope: 'sender' | 'target';
+  readonly targetId?: string;
+}
+
 export interface TauntSendAck {
   readonly taunt: TauntEvent;
+  readonly limits: SendLimitInfo;
+}
+
+export interface ReactionSendAck {
+  readonly reaction: ReactionEvent;
+  readonly limits: SendLimitInfo;
 }
 
 export interface StateMessage {
@@ -400,6 +479,8 @@ export interface EventsMessage {
 export interface AckErrorBody {
   readonly code: ErrorCode;
   readonly message: string;
+  /** Presente quando a recusa impõe uma espera calculável (limites de humor). */
+  readonly retry?: RetryInfo;
 }
 
 export interface AckError {
@@ -451,6 +532,7 @@ export interface ClientToServerEvents {
   'client:chatSend': (payload: unknown, ack: (response: Ack<ChatSendAck>) => void) => void;
   'client:chatHistory': (payload: unknown, ack: (response: Ack<ChatHistoryAck>) => void) => void;
   'client:tauntSend': (payload: unknown, ack: (response: Ack<TauntSendAck>) => void) => void;
+  'client:reactionSend': (payload: unknown, ack: (response: Ack<ReactionSendAck>) => void) => void;
   'test:setNextDeck': (payload: unknown, ack: (response: SimpleAck) => void) => void;
   'test:setEffectVariant': (payload: unknown, ack: (response: SimpleAck) => void) => void;
 }
@@ -460,5 +542,6 @@ export interface ServerToClientEvents {
   'server:events': (message: EventsMessage) => void;
   'server:chat': (message: ChatBroadcast) => void;
   'server:taunt': (message: TauntBroadcast) => void;
+  'server:reaction': (message: ReactionBroadcast) => void;
   'server:removed': (message: RemovedMessage) => void;
 }

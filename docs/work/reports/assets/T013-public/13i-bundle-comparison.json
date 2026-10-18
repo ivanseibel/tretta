@@ -1,0 +1,105 @@
+{
+  "checkedAt": "2026-10-17T19:30:37.674Z",
+  "route": {
+    "onlyInStaged": [
+      "0pzjo0m_qc-nz.js",
+      "15a2jemz0kw1r.js"
+    ],
+    "onlyInPublicT012": [
+      "1se615-mjrxvz.js",
+      "2b2eetie8ke5z.js"
+    ],
+    "common": [
+      {
+        "name": "0c0hxoamwjsbw.js",
+        "same": true
+      },
+      {
+        "name": "1bvb71x0vwldf.js",
+        "same": true
+      },
+      {
+        "name": "1obq5ikzs9qy3.js",
+        "same": true
+      },
+      {
+        "name": "2d6cts1co-gyo.js",
+        "same": true
+      },
+      {
+        "name": "2q9q4qcdxq0te.js",
+        "same": true
+      },
+      {
+        "name": "3biwl7lok_myr.js",
+        "same": true
+      },
+      {
+        "name": "3zd908udbposi.js",
+        "same": true
+      }
+    ],
+    "keyChunkComparison": {
+      "t012Served": {
+        "name": "2b2eetie8ke5z.js",
+        "sha256": "1a7b2e020039d5b4af244bd1d71d6b7cc0b5a31804d3cc6906ef49a7f1905b2a",
+        "dataLongOccurrences": 2
+      },
+      "t013Staged": {
+        "name": "0pzjo0m_qc-nz.js",
+        "sha256": "aca6bb5fabd8545d6f3ddcef7c5e82bf0542c3a51ce4b85d75c164a076902839",
+        "dataLongOccurrences": 3,
+        "privateDiscardHasDataLong": true,
+        "publicDiscardHasDataLong": true,
+        "handHasDataLong": true
+      }
+    },
+    "hooksPresentAnyStagedChunk": false,
+    "note": "somente os chunks com hash mudado diferem; renomeados em par: 0pzjo0m_qc-nz.js (T013) <> 2b2eetie8ke5z.js (T012), 15a2jemz0kw1r.js <> 1se615-mjrxvz.js; 7 chunks idênticos por nome+conteúdo"
+  },
+  "home": {
+    "onlyInStaged": [
+      "15a2jemz0kw1r.js"
+    ],
+    "onlyInPublicT012": [
+      "1se615-mjrxvz.js"
+    ],
+    "common": [
+      {
+        "name": "0c0hxoamwjsbw.js",
+        "same": true
+      },
+      {
+        "name": "1bvb71x0vwldf.js",
+        "same": true
+      },
+      {
+        "name": "2-3au1mrczlgz.js",
+        "same": true
+      },
+      {
+        "name": "2d6cts1co-gyo.js",
+        "same": true
+      },
+      {
+        "name": "2q9q4qcdxq0te.js",
+        "same": true
+      },
+      {
+        "name": "3zd908udbposi.js",
+        "same": true
+      },
+      {
+        "name": "turbopack-1cvbnb3nlabgn.js",
+        "same": true
+      }
+    ],
+    "hooksPresentAnyStagedChunk": false,
+    "note": "7 chunks idênticos; renomeado: 15a2jemz0kw1r.js <> 1se615-mjrxvz.js"
+  },
+  "publicAfterPromotion": {
+    "name": "0pzjo0m_qc-nz.js",
+    "sha256": "aca6bb5fabd8545d6f3ddcef7c5e82bf0542c3a51ce4b85d75c164a076902839",
+    "sameAsStaged": true
+  }
+}

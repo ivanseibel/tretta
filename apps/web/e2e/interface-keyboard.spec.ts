@@ -1,6 +1,6 @@
 import { expect, test } from './fixtures';
 import { challengeDeck, scenarioDeck } from './deck';
-import { createRoom, drawAndPass, joinRoom, playCard, readyAll, setNextDeck, waitMyTurn } from './room';
+import { createRoom, drawAndPass, joinRoom, openTauntPanel, playCard, readyAll, setNextDeck, waitMyTurn } from './room';
 
 async function activate(page: import('@playwright/test').Page, testId: string, key = 'Enter'): Promise<void> {
   const button = page.getByTestId(testId);
@@ -200,6 +200,7 @@ test('chat, provocações e preferências funcionam sem mouse', async ({ browser
     await expect(hideTaunts).not.toBeChecked();
 
     const tauntType = host.getByTestId('taunt-type');
+    await openTauntPanel(host);
     await tauntType.focus();
     await expect(tauntType).toBeFocused();
     const target = host.getByTestId('taunt-target');

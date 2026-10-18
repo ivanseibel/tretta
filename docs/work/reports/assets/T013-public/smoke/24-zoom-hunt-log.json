@@ -1,0 +1,28 @@
+{
+  "log": [
+    {
+      "t": 12.2,
+      "word": "Bloqueio",
+      "trigger": "observed_on_top",
+      "frozen": "+4"
+    },
+    {
+      "t": 31.4,
+      "word": "Invers\u00e3o",
+      "trigger": "observed_on_top",
+      "frozen": "Invers\u00e3o"
+    },
+    {
+      "t": 34.0,
+      "action": "captured",
+      "word": "Invers\u00e3o"
+    },
+    {
+      "t": 57.3,
+      "word": "Bloqueio",
+      "trigger": "observed_on_top",
+      "frozen": "Bloqueio"
+    }
+  ],
+  "elapsed": 60.0
+}

@@ -1,0 +1,9 @@
+banner_gone: False
+C_refusal_individual: True
+C_refusal_bots: True
+C_back_home_href: /
+C_join_form_gone: True
+C_hand: 0
+C_identity_created: False
+C_reload_form_again: True
+C_reload_refusal_banner: 0

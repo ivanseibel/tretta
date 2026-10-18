@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import type { Page } from '@playwright/test';
 import { expect, test } from './fixtures';
 import { scenarioDeck } from './deck';
-import { createRoom, joinRoom, readyAll, setNextDeck, waitMyTurn, playCard, drawAndPass } from './room';
+import { createRoom, joinRoom, openTauntPanel, readyAll, setNextDeck, waitMyTurn, playCard, drawAndPass } from './room';
 
 const shotsDir = fileURLToPath(new URL('../../../docs/work/reports/assets/T006/', import.meta.url));
 mkdirSync(shotsDir, { recursive: true });
@@ -123,7 +123,7 @@ test('capturas e largura estreita em cada estado de sala real', async ({ browser
     const waitingParticipant = host.getByTestId('waiting-participant-Cai');
     await expect(waitingParticipant).toContainText('aguarda próxima rodada');
     await expect(waitingParticipant).not.toContainText('cartas');
-    await expect(host.getByTestId('opponent-Cai')).toHaveCount(0);
+    await expect(host.getByTestId('seat-Cai')).toHaveCount(0);
     const publicDiscard = watcher.getByTestId('public-discard-top');
     await expect(publicDiscard).toHaveAttribute('role', 'img');
     await expect(publicDiscard).toHaveAttribute('aria-label', /^Descarte:/);
@@ -145,7 +145,7 @@ test('capturas e largura estreita em cada estado de sala real', async ({ browser
       };
     });
     expect(contrastRatio(pauseColors.foreground, pauseColors.background)).toBeGreaterThanOrEqual(4.5);
-    const disconnected = host.locator('.opponent .status.disconnected').first();
+    const disconnected = host.locator('[data-testid="seat-circuit"] .status.disconnected').first();
     await expect(disconnected).toBeVisible();
     const disconnectedColors = await disconnected.evaluate((label) => ({
       foreground: getComputedStyle(label).color,
@@ -204,7 +204,7 @@ test('oito participantes com apelidos de 24 caracteres cabem em 320 px', async (
     await expect(host.getByTestId('lobby-participant')).toHaveCount(8);
     await noHorizontalOverflow(host);
     await readyAll(host, ...pages.slice(1));
-    await expect(host.locator('.opponents .opponent')).toHaveCount(7);
+    await expect(host.locator('[data-testid="seat-circuit"] .seat')).toHaveCount(8);
     await expect.poll(async () => {
       const turns = await Promise.all(pages.map(async (page) => (await page.getByTestId('turn-indicator').textContent()) === 'Sua vez'));
       return turns.filter(Boolean).length;
@@ -284,6 +284,7 @@ test('oito participantes com apelidos de 24 caracteres cabem em 320 px', async (
       background: getComputedStyle(input.closest('.chat-panel')!).backgroundColor,
     }));
     expect(contrastRatio(paperFocus.outline, paperFocus.background)).toBeGreaterThanOrEqual(3);
+    await openTauntPanel(host);
     await host.getByTestId('taunt-type').selectOption('tomate');
     await host.getByTestId('taunt-target').selectOption({ label: nickname(2) });
     await host.getByTestId('taunt-send').click();

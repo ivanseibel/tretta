@@ -1,0 +1,108 @@
+{
+  "checkedAtUtc": "2026-10-17T17:24:29.690391+00:00",
+  "home": {
+    "status": 200,
+    "url": "https://tretta.vercel.app/",
+    "sha256": "b49fe4afe1dc09e1551ad2491f9d4da27bf67262d257dd3c514aee86c105b093",
+    "trainingMarker": true
+  },
+  "health": {
+    "status": 200,
+    "url": "https://tretta-server.onrender.com/healthz",
+    "sha256": "4062edaf750fb8074e7e83e0c9028c94e32468a8b6f1614774328ef045150f93",
+    "body": "{\"ok\":true}"
+  },
+  "roomRoute": {
+    "status": 200,
+    "url": "https://tretta.vercel.app/sala/ZZZZZZ",
+    "sha256": "fcadfa64c12b5c7e5be1c313209057583a00a9b1c8bb37fab19cfb4c5f632505"
+  },
+  "chunks": [
+    {
+      "path": "/_next/static/immutable/chunks/0c0hxoamwjsbw.js",
+      "status": 200,
+      "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683",
+      "markers": [],
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/1bvb71x0vwldf.js",
+      "status": 200,
+      "sha256": "bb3f78df04a60429c0d08a6e6952802aa96c1bdac6d4c204568914f4f91b793a",
+      "markers": [
+        "tretta-server.onrender.com"
+      ],
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/1obq5ikzs9qy3.js",
+      "status": 200,
+      "sha256": "d12e453ad490a18cb826544e5e3f30eecff8a46ca8954ce29cb3c995d46bd4cc",
+      "markers": [],
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/1se615-mjrxvz.js",
+      "status": 200,
+      "sha256": "ed3e5adf7caf5c3fcc56a9b4a8d043ed64768a03fb95c740893d28940bfab887",
+      "markers": [],
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/2-3au1mrczlgz.js",
+      "status": 200,
+      "sha256": "62a6ddf710ad52f47cc9fe220d471a0b104e5e84d4be7e67764c0f989622f204",
+      "markers": [],
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/2b2eetie8ke5z.js",
+      "status": 200,
+      "sha256": "1a7b2e020039d5b4af244bd1d71d6b7cc0b5a31804d3cc6906ef49a7f1905b2a",
+      "markers": [
+        "seat-circuit",
+        "circuit-order",
+        "circuit-direction",
+        "seat-details"
+      ],
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/2d6cts1co-gyo.js",
+      "status": 200,
+      "sha256": "5d499ac8b750ca130a5faaa1351abbdc7d813c8e7ecd6ffdda7b4d4203f19dda",
+      "markers": [],
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/2q9q4qcdxq0te.js",
+      "status": 200,
+      "sha256": "b611153f847782c0a8f95bb73c69d46b35f32c7f5e36f3f938aa97b4f8821d6a",
+      "markers": [],
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/3biwl7lok_myr.js",
+      "status": 200,
+      "sha256": "17b6d71462ad7a737466a534404a70a5a9d2ec9d5d33909c17a8f3d6c4f010e2",
+      "markers": [],
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/3zd908udbposi.js",
+      "status": 200,
+      "sha256": "da31dc7bdf4fc6d65b70bd7c50ac833ae83204790c3f3e3e7d228afa298463e4",
+      "markers": [],
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/turbopack-1cvbnb3nlabgn.js",
+      "status": 200,
+      "sha256": "8bbb58cbfd4633c1d828c6bc37bc32abc768a149c01b1dfc4f5131fd81274551",
+      "markers": [],
+      "hooks": []
+    }
+  ],
+  "roomChunkMatchesStagedEvidence": true,
+  "hooksFound": []
+}

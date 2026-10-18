@@ -19,7 +19,7 @@ const harness = vi.hoisted(() => ({
 }));
 
 vi.mock('@/app/providers', () => ({ useRoom: () => harness.room }));
-vi.mock('@/components/ui', () => ({ AvatarBadge: () => null, LeaveButton: () => null }));
+vi.mock('@/components/ui', () => ({ AvatarAction: () => null, AvatarBadge: () => null, LeaveButton: () => null }));
 
 import { Lobby } from '@/components/Lobby';
 

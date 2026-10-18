@@ -9,10 +9,13 @@ import { AvatarPicker, ErrorBanner } from '@/components/ui';
 import { ChatPanel } from '@/components/ChatPanel';
 import { GameTable } from '@/components/GameTable';
 import { Lobby } from '@/components/Lobby';
+import { MoodFeedback, MoodAnnouncer } from '@/components/MoodFeedback';
+import { MoodMenu } from '@/components/MoodMenu';
 import { MoodSettings } from '@/components/MoodSettings';
 import { Results } from '@/components/Results';
 import { TauntOverlay } from '@/components/TauntOverlay';
 import { TauntPanel } from '@/components/TauntPanel';
+import { TauntResponseNotice } from '@/components/TauntResponseNotice';
 import { WaitingRoom } from '@/components/WaitingRoom';
 
 type Mode = 'checking' | 'recovering' | 'exhausted' | 'join' | 'room' | 'not-found';
@@ -313,10 +316,14 @@ export default function RoomPage(): ReactNode {
         <GameTable state={room.state} events={room.events} />
       ) : null}
       {room.state.room.status === 'finished' ? <Results state={room.state} events={room.events} /> : null}
+      <TauntResponseNotice />
       <TauntPanel />
       <MoodSettings />
       <ChatPanel />
       <TauntOverlay />
+      <MoodFeedback />
+      <MoodAnnouncer />
+      <MoodMenu />
     </main>
   );
 }

@@ -13,14 +13,18 @@ import type {
   EffectVariant,
   EventsMessage,
   JoinRoomAck,
+  ReactionEvent,
+  ReactionSendAck,
   RemovedMessage,
+  RetryInfo,
+  SendLimitInfo,
   SimpleAck,
   StateMessage,
   TauntEvent,
   TauntSendAck,
   TauntType,
 } from '@tretta/protocol';
-import { CHAT_HISTORY_PAGE_SIZE, type Avatar, type RoomMode } from '@tretta/protocol/shared';
+import { CHAT_HISTORY_PAGE_SIZE, type Avatar, type ReactionType, type RoomMode } from '@tretta/protocol/shared';
 import {
   clearIdentity,
   createSocket,
@@ -44,6 +48,8 @@ import {
   PresentationQueue,
   type Presentation,
 } from '@/lib/presentationQueue';
+import { MOOD_FEEDBACK_MS, REACTION_LABELS, REACTION_PRESENTATION_MS, reactionFeedback } from '@/lib/mood';
+import { MoodLimitTracker, type MoodCategory } from '@/lib/moodTime';
 import { playEffectSound, playTauntSound, setSoundMuted, stopAllSounds } from '@/lib/sounds';
 import { TurnNotifier } from '@/components/TurnNotifier';
 
@@ -68,6 +74,50 @@ export type RejoinResult =
  */
 export type RecoveryPhase = 'idle' | 'recovering' | 'exhausted';
 export type ConnectionState = 'live' | 'lost';
+
+/** Posição do controle de origem para ancorar o menu no desktop. */
+export interface MoodAnchor {
+  readonly left: number;
+  readonly top: number;
+  readonly right: number;
+  readonly bottom: number;
+  readonly width: number;
+  readonly height: number;
+}
+
+/** Aviso compacto da provocação recebida mais recente. */
+export interface MoodNotice {
+  readonly taunt: TauntEvent;
+  /** Relógio local da chegada; a janela de 30 s é contada daqui. */
+  readonly receivedAt: number;
+}
+
+/**
+ * Menu único de humor: provocação com alvo já escolhido ou reação sem alvo.
+ * `trigger` é o controle de origem, para devolver o foco no Escape.
+ */
+export type MoodMenuState =
+  | {
+      readonly kind: 'taunt';
+      /** Ordem de abertura: conclusões antigas não agem sobre o menu vigente. */
+      readonly seq: number;
+      readonly targetId: string;
+      readonly source: 'avatar' | 'respond';
+      readonly anchor: MoodAnchor;
+      readonly trigger: HTMLElement | null;
+    }
+  | {
+      readonly kind: 'reaction';
+      readonly seq: number;
+      readonly anchor: MoodAnchor;
+      readonly trigger: HTMLElement | null;
+    };
+
+/** Anúncio acessível de reação, uma vez por evento, sem depender do badge visual. */
+export interface ReactionAnnouncement {
+  readonly seq: number;
+  readonly text: string;
+}
 
 export interface RoomContextValue {
   state: StateMessage | null;
@@ -122,6 +172,33 @@ export interface RoomContextValue {
    */
   sendTaunt: (type: TauntType, targetId: string) => Promise<AckEnvelope>;
   /**
+   * Reação sem destinatário; mesmo gate de vínculo e mesma deduplicação do
+   * ack/broadcast. O estado local apresenta 4 s por emissor e não toca som.
+   */
+  sendReaction: (type: ReactionType) => Promise<AckEnvelope>;
+  /** Reações ativas por id do emissor; a mais nova substitui a anterior. */
+  activeReactions: Readonly<Record<string, ReactionEvent>>;
+  /** Último anúncio acessível de reação; não se repete no badge visual. */
+  reactionAnnouncement: ReactionAnnouncement | null;
+  /** Provocação recebida mais recente; null sem aviso ativo. */
+  moodNotice: MoodNotice | null;
+  clearMoodNotice: () => void;
+  /** Menu aberto (um por vez) e sua origem. */
+  moodMenu: MoodMenuState | null;
+  openTauntMenu: (targetId: string, trigger: HTMLElement, source?: 'avatar' | 'respond') => void;
+  openReactionMenu: (trigger: HTMLElement) => void;
+  closeMoodMenu: (restoreFocus?: boolean) => void;
+  /** O menu de `seq` ainda é o vigente? Conclusões antigas não agem no novo. */
+  isMoodMenuCurrent: (seq: number) => boolean;
+  /** Feedback breve de envio aceito; some sozinho. */
+  moodFeedback: string | null;
+  /** Envio de humor em voo: nenhum acesso dispara outro. */
+  moodPending: boolean;
+  /** Restante do intervalo próprio (ms); 0 quando pode enviar. */
+  moodRemaining: (category: MoodCategory) => number;
+  /** Restante da cota compartilhada do alvo (ms); 0 quando livre. */
+  moodTargetRemaining: (targetId: string) => number;
+  /**
    * Item em apresentação na fila serial única (efeito automático ou
    * provocação); `null` quando ociosa. Um por vez, na ordem de chegada —
    * a fila nunca sobrepõe efeitos maiores.
@@ -167,7 +244,8 @@ export interface RoomContextValue {
 
 interface AckEnvelope {
   ok: boolean;
-  error?: { code: string; message: string };
+  error?: { code: string; message: string; retry?: RetryInfo };
+  limits?: SendLimitInfo;
 }
 
 /**
@@ -196,6 +274,10 @@ const OFFLINE_ERROR = { code: 'OFFLINE', message: 'Sem conexão com o servidor. 
 const LINK_PENDING_ERROR = {
   code: 'LINK_PENDING',
   message: 'Recuperando o vínculo com a sala. Aguarde a confirmação para enviar.',
+};
+const MOOD_PENDING_ERROR = {
+  code: 'MOOD_PENDING',
+  message: 'Aguarde a confirmação do envio anterior.',
 };
 
 /**
@@ -227,6 +309,18 @@ function emitWithAck<T>(socket: RoomSocket, event: string, payload: unknown): Pr
       },
     );
   });
+}
+
+function anchorOf(trigger: HTMLElement): MoodAnchor {
+  const rect = trigger.getBoundingClientRect();
+  return {
+    left: rect.left,
+    top: rect.top,
+    right: rect.right,
+    bottom: rect.bottom,
+    width: rect.width,
+    height: rect.height,
+  };
 }
 
 /**
@@ -285,6 +379,12 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
   const [preferencesReady, setPreferencesReady] = useState(false);
   const [systemReduced, setSystemReduced] = useState(false);
   const [mutedPlayerIds, setMutedPlayerIds] = useState<readonly string[]>([]);
+  const [activeReactions, setActiveReactions] = useState<Record<string, ReactionEvent>>({});
+  const [reactionAnnouncement, setReactionAnnouncement] = useState<ReactionAnnouncement | null>(null);
+  const [moodNotice, setMoodNotice] = useState<MoodNotice | null>(null);
+  const [moodMenu, setMoodMenu] = useState<MoodMenuState | null>(null);
+  const [moodFeedback, setMoodFeedback] = useState<string | null>(null);
+  const [moodPending, setMoodPending] = useState(false);
   const socketRef = useRef<RoomSocket | null>(null);
   const activeRoomRef = useRef<string | null>(null);
   const lastRoomRef = useRef<string | null>(null);
@@ -347,6 +447,34 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
   // Impede que a limpeza de estado da saída voluntária dispare uma reentrada
   // automática antes de a navegação para o início concluir.
   const leavingRef = useRef<{ code: string; until: number } | null>(null);
+  // Reações já apresentadas nesta sala: ack e broadcast compartilham o id;
+  // replay/repetição não prolonga nem duplica os quatro segundos.
+  const seenReactionIdsRef = useRef<Set<string>>(new Set());
+  // Avisos já processados: a repetição do mesmo id não troca o aviso vigente,
+  // não renova a chegada e não reaparece após limpeza/ocultação.
+  const seenNoticeIdsRef = useRef<Set<string>>(new Set());
+  const reactionTimersRef = useRef<Map<string, ReturnType<typeof setTimeout>>>(new Map());
+  // Geração da apresentação: limpeza de contexto invalida callbacks em voo.
+  const reactionEpochRef = useRef(0);
+  const reactionAnnouncementSeqRef = useRef(0);
+  // Próprio id e ocultações espelhados para os callbacks do socket.
+  const selfIdRef = useRef<string | null>(null);
+  const hideTauntsRef = useRef(false);
+  const hideReactionsRef = useRef(false);
+  const moodFeedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Intervalos autoritativos traduzidos para tempo local relativo.
+  const moodTrackerRef = useRef(new MoodLimitTracker());
+  // Envio de humor em voo: token evita que resposta antiga libere o novo vínculo.
+  const moodPendingRef = useRef(false);
+  const moodPendingTokenRef = useRef(0);
+  // Rodada cujo estado já foi refletido: só uma rodada NOVA limpa humor transitório.
+  const moodRoundRef = useRef<string | null>(null);
+  const moodMenuRef = useRef<MoodMenuState | null>(null);
+  // Ordem de abertura dos menus: uma conclusão só age se ainda for o vigente.
+  const moodMenuSeqRef = useRef(0);
+  selfIdRef.current = state?.self.playerId ?? null;
+  hideTauntsRef.current = preferences.hideTaunts;
+  hideReactionsRef.current = preferences.hideReactions;
 
   /** Janela do item entrando agora, pelo modo efetivo no instante da entrada. */
   const durationFor = useCallback((kind: 'effect' | 'taunt'): number => {
@@ -410,6 +538,133 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
       });
     },
     [durationFor, getQueue],
+  );
+
+  /** Cancela timers das reações sem tocar no estado (desmontagem). */
+  const disposeReactionTimers = useCallback(() => {
+    reactionEpochRef.current += 1;
+    for (const timer of reactionTimersRef.current.values()) clearTimeout(timer);
+    reactionTimersRef.current.clear();
+  }, []);
+
+  /** Remove imediatamente todas as apresentações locais de reação. */
+  const clearReactions = useCallback(() => {
+    disposeReactionTimers();
+    setActiveReactions({});
+    setReactionAnnouncement(null);
+  }, [disposeReactionTimers]);
+
+  /**
+   * Reação aceita: uma vez por id, quatro segundos por emissor, sem fila
+   * central e sem som. Uma reação nova do mesmo emissor substitui a anterior.
+   * Ocultar descarta a apresentação local (o evento continua deduplicado).
+   */
+  const presentReaction = useCallback((reaction: ReactionEvent) => {
+    if (seenReactionIdsRef.current.has(reaction.id)) return;
+    seenReactionIdsRef.current.add(reaction.id);
+    if (hideReactionsRef.current) return;
+    const senderId = reaction.sender.playerId;
+    const existing = reactionTimersRef.current.get(senderId);
+    if (existing !== undefined) clearTimeout(existing);
+    setActiveReactions((previous) => ({ ...previous, [senderId]: reaction }));
+    reactionAnnouncementSeqRef.current += 1;
+    setReactionAnnouncement({
+      seq: reactionAnnouncementSeqRef.current,
+      text: `${reaction.sender.nickname}: ${REACTION_LABELS[reaction.type]}`,
+    });
+    const epoch = reactionEpochRef.current;
+    const timer = setTimeout(() => {
+      reactionTimersRef.current.delete(senderId);
+      if (reactionEpochRef.current !== epoch) return;
+      setActiveReactions((previous) => {
+        if (previous[senderId]?.id !== reaction.id) return previous;
+        const next = { ...previous };
+        delete next[senderId];
+        return next;
+      });
+    }, REACTION_PRESENTATION_MS);
+    reactionTimersRef.current.set(senderId, timer);
+  }, []);
+
+  /** Aviso de resposta: só para o destinatário, apenas a provocação mais recente. */
+  const receiveTaunt = useCallback((taunt: TauntEvent) => {
+    // Dedupe próprio do aviso: `presentTaunt` já protege o efeito central, e
+    // repetir o mesmo evento não pode reabrir/renovar este aviso.
+    if (seenNoticeIdsRef.current.has(taunt.id)) return;
+    seenNoticeIdsRef.current.add(taunt.id);
+    if (taunt.target.playerId !== selfIdRef.current) return;
+    if (hideTauntsRef.current) return;
+    setMoodNotice({ taunt, receivedAt: Date.now() });
+  }, []);
+
+  const clearMoodNotice = useCallback(() => {
+    setMoodNotice(null);
+  }, []);
+
+  const showMoodFeedback = useCallback((message: string) => {
+    if (moodFeedbackTimerRef.current !== null) clearTimeout(moodFeedbackTimerRef.current);
+    setMoodFeedback(message);
+    moodFeedbackTimerRef.current = setTimeout(() => {
+      moodFeedbackTimerRef.current = null;
+      setMoodFeedback(null);
+    }, MOOD_FEEDBACK_MS);
+  }, []);
+
+  const openTauntMenu = useCallback((targetId: string, trigger: HTMLElement, source: 'avatar' | 'respond' = 'avatar') => {
+    const menu: MoodMenuState = {
+      kind: 'taunt',
+      seq: ++moodMenuSeqRef.current,
+      targetId,
+      source,
+      anchor: anchorOf(trigger),
+      trigger,
+    };
+    moodMenuRef.current = menu;
+    setMoodMenu(menu);
+  }, []);
+
+  const openReactionMenu = useCallback((trigger: HTMLElement) => {
+    const menu: MoodMenuState = { kind: 'reaction', seq: ++moodMenuSeqRef.current, anchor: anchorOf(trigger), trigger };
+    moodMenuRef.current = menu;
+    setMoodMenu(menu);
+  }, []);
+
+  const closeMoodMenu = useCallback((restoreFocus = false) => {
+    const current = moodMenuRef.current;
+    moodMenuRef.current = null;
+    setMoodMenu(null);
+    if (!restoreFocus || current?.trigger == null) return;
+    const trigger = current.trigger;
+    globalThis.requestAnimationFrame(() => trigger.focus({ preventScroll: true }));
+  }, []);
+
+  const isMoodMenuCurrent = useCallback((seq: number): boolean => moodMenuRef.current?.seq === seq, []);
+
+  /** Limpa elementos transitórios de humor; não reinicia intervalos autoritativos. */
+  const clearMoodTemporary = useCallback(() => {
+    clearReactions();
+    setMoodNotice(null);
+    moodMenuRef.current = null;
+    setMoodMenu(null);
+    setMoodFeedback(null);
+    if (moodFeedbackTimerRef.current !== null) {
+      clearTimeout(moodFeedbackTimerRef.current);
+      moodFeedbackTimerRef.current = null;
+    }
+    // Resposta antiga não libera o estado pendente de um vínculo novo.
+    moodPendingTokenRef.current += 1;
+    moodPendingRef.current = false;
+    setMoodPending(false);
+  }, [clearReactions]);
+
+  const moodRemaining = useCallback(
+    (category: MoodCategory): number => moodTrackerRef.current.remainingSender(category),
+    [],
+  );
+
+  const moodTargetRemaining = useCallback(
+    (targetId: string): number => moodTrackerRef.current.remainingTarget(targetId),
+    [],
   );
 
   const bumpChatLink = useCallback(() => {
@@ -479,7 +734,13 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
     lastChatRoomRef.current = null;
     seenTauntIdsRef.current.clear();
     seenEffectIdsRef.current.clear();
+    seenReactionIdsRef.current.clear();
+    seenNoticeIdsRef.current.clear();
     lastRoundRef.current = null;
+    moodRoundRef.current = null;
+    // Intervalos pertencem à identidade/sala: contexto novo começa sem amostras.
+    moodTrackerRef.current.clear();
+    clearMoodTemporary();
     bumpChatLink();
     stopAllSounds();
     setChatLinkReady(false);
@@ -488,7 +749,7 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
     setChatMessages([]);
     setChatHistoryLoading(false);
     setMutedPlayerIds([]);
-  }, [bumpChatLink, cancelRecovery, setChatLinkReady]);
+  }, [bumpChatLink, cancelRecovery, clearMoodTemporary, setChatLinkReady]);
 
   const ensureSocket = useCallback((): RoomSocket => {
     if (socketRef.current !== null) return socketRef.current;
@@ -499,6 +760,7 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
       if (message.room.roomCode === knownRoom && message.room.version <= lastVersionRef.current) return;
       lastRoomRef.current = message.room.roomCode;
       lastVersionRef.current = message.room.version;
+      selfIdRef.current = message.self.playerId;
       // Troca de rodada cancela apresentações/timers/áudio do passado:
       // preparação e nova rodada não herdam vitória antiga. Finished da mesma
       // rodada não entra aqui e preserva a sequência final dos resultados.
@@ -508,6 +770,19 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
         setEvents([]);
         cancelPresentations(true);
       }
+      // Rodada NOVA (id diferente, inclusive vindo da preparação) limpa reações e
+      // avisos; pausa, resultado e volta à preparação preservam até o prazo.
+      if (message.room.roundId !== null && message.room.roundId !== moodRoundRef.current) {
+        moodRoundRef.current = message.room.roundId;
+        clearMoodTemporary();
+      }
+      // Snapshot autoritativo dos dois intervalos do próprio; um snapshot velho
+      // não sobrescreve dados mais novos (o rastreador descarta pela referência).
+      moodTrackerRef.current.noteState(
+        message.room.serverTime,
+        message.self.tauntNextSendAt ?? null,
+        message.self.reactionNextSendAt ?? null,
+      );
       setState(message);
     });
     socket.on('server:events', (message) => {
@@ -524,6 +799,11 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
     socket.on('server:taunt', (message) => {
       if (message.roomCode !== lastRoomRef.current) return;
       presentTaunt(message.taunt);
+      receiveTaunt(message.taunt);
+    });
+    socket.on('server:reaction', (message) => {
+      if (message.roomCode !== lastRoomRef.current) return;
+      presentReaction(message.reaction);
     });
     socket.on('server:removed', (message: RemovedMessage) => {
       clearRoomState();
@@ -544,6 +824,8 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
       setConnection('lost');
       // Conexão caiu: o vínculo autorizado deixa de valer até nova confirmação.
       setChatLinkReady(false);
+      // Elementos transitórios de humor não sobrevivem à perda de conexão.
+      clearMoodTemporary();
     });
     socket.on('connect', () => {
       setConnection('live');
@@ -561,7 +843,17 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
     });
     socketRef.current = socket;
     return socket;
-  }, [cancelPresentations, clearRoomState, presentEffect, presentTaunt, setChatLinkReady, wakeTransport]);
+  }, [
+    cancelPresentations,
+    clearMoodTemporary,
+    clearRoomState,
+    presentEffect,
+    presentReaction,
+    presentTaunt,
+    receiveTaunt,
+    setChatLinkReady,
+    wakeTransport,
+  ]);
 
   const resetRoomState = useCallback((code: string) => {
     const previousRoom = lastRoomRef.current;
@@ -580,7 +872,13 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
     if (previousRoom !== code) {
       seenTauntIdsRef.current.clear();
       seenEffectIdsRef.current.clear();
+      seenReactionIdsRef.current.clear();
+      seenNoticeIdsRef.current.clear();
+      moodTrackerRef.current.clear();
+      moodRoundRef.current = null;
     }
+    // Vínculo novo: menus, avisos e reações do contexto anterior não sobrevivem.
+    clearMoodTemporary();
     bumpChatLink();
     // Chamado só após ack de criação/entrada/reentrada: é a confirmação que
     // restabelece a disponibilidade do vínculo para o envio do chat.
@@ -597,7 +895,7 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
     setError(null);
     setRemovedMessage(null);
     setRoomGone(false);
-  }, [bumpChatLink, setChatLinkReady]);
+  }, [bumpChatLink, clearMoodTemporary, setChatLinkReady]);
 
   /**
    * Ciclo de retomada da identidade existente. Um por sala: disparos
@@ -806,9 +1104,11 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
       if (recoveredTimerRef.current !== null) clearTimeout(recoveredTimerRef.current);
       // Desmontagem: fila, timers e áudio da sala não sobrevivem.
       getQueue().cancelAll();
+      disposeReactionTimers();
+      if (moodFeedbackTimerRef.current !== null) clearTimeout(moodFeedbackTimerRef.current);
       stopAllSounds();
     };
-  }, [ensureSocket, getQueue, wakeTransport]);
+  }, [disposeReactionTimers, ensureSocket, getQueue, wakeTransport]);
 
   // Preferências persistidas + mídia do sistema (mudanças ao vivo são
   // consideradas; "completa" é limitada a "reduced" enquanto a mídia valer).
@@ -829,7 +1129,8 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
   }, [preferences.soundMuted]);
 
   // Ocultar descarta provocações na fila e a ativa; reativar não despeja as
-  // suprimidas (elas nunca entraram na fila nem tocaram som).
+  // suprimidas (elas nunca entraram na fila nem tocaram som). O aviso de
+  // resposta acompanha a mesma preferência.
   useEffect(() => {
     if (!preferences.hideTaunts) return;
     const queue = getQueue();
@@ -837,7 +1138,48 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
     // um automático que pode começar a tocar neste mesmo ciclo.
     if (queue.active?.kind === 'taunt') stopAllSounds();
     queue.remove((item) => item.kind === 'taunt');
+    setMoodNotice(null);
   }, [getQueue, preferences.hideTaunts]);
+
+  // Ocultar reações remove as apresentações imediatamente, inclusive as
+  // próprias; reativar deixa o palco vazio e só novas reações aparecem.
+  useEffect(() => {
+    if (!preferences.hideReactions) return;
+    clearReactions();
+  }, [clearReactions, preferences.hideReactions]);
+
+  // Emissor do aviso saiu da sala: o aviso termina e o menu aberto passa a
+  // explicar a ausência (o alvo deixa de existir na lista atual).
+  useEffect(() => {
+    if (moodNotice === null) return;
+    const senderPresent = state?.room.participants.some(
+      (participant) => participant.id === moodNotice.taunt.sender.playerId,
+    );
+    if (senderPresent === false) setMoodNotice(null);
+  }, [moodNotice, state?.room.participants]);
+
+  // Reação de quem saiu não fica pendurada junto à identificação.
+  useEffect(() => {
+    const participants = state?.room.participants;
+    if (participants === undefined) return;
+    const present = new Set(participants.map((participant) => participant.id));
+    setActiveReactions((previous) => {
+      let changed = false;
+      const next = { ...previous };
+      for (const playerId of Object.keys(next)) {
+        if (present.has(playerId)) continue;
+        delete next[playerId];
+        changed = true;
+      }
+      return changed ? next : previous;
+    });
+  }, [state?.room.participants]);
+
+  // Mudanças de fase, conexão ou vínculo fecham o menu aberto sem devolver o
+  // foco: o controle de origem pode nem existir mais no novo contexto.
+  useEffect(() => {
+    closeMoodMenu(false);
+  }, [chatLinkReady, closeMoodMenu, connection, state?.room.roomCode, state?.room.roundId, state?.room.status]);
 
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_TEST_HOOKS !== '1') return;
@@ -1121,25 +1463,118 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
       }
       // Mesmo gate do chat: sem vínculo autorizado confirmado não emite.
       if (!chatLinkReadyRef.current) return { ok: false, error: LINK_PENDING_ERROR };
+      // Um envio de humor por vez, inclusive ao alternar avatar/painel.
+      if (moodPendingRef.current) return { ok: false, error: MOOD_PENDING_ERROR };
+      const token = ++moodPendingTokenRef.current;
+      moodPendingRef.current = true;
+      setMoodPending(true);
       const generation = chatLinkRef.current;
-      const response = await emitWithAck<Ack<TauntSendAck>>(ensureSocket(), 'client:tauntSend', {
-        intentId: newIntentId(),
-        roomCode: code,
-        type,
-        targetId,
-      });
-      if (generation !== chatLinkRef.current) {
-        return {
-          ok: false,
-          error: { code: 'STALE_CONTEXT', message: 'A sala mudou antes da confirmação; envie de novo.' },
-        };
+      try {
+        const response = await emitWithAck<Ack<TauntSendAck>>(ensureSocket(), 'client:tauntSend', {
+          intentId: newIntentId(),
+          roomCode: code,
+          type,
+          targetId,
+        });
+        // Contexto invalidado (queda, rodada nova, sala/identidade) não deixa a
+        // conclusão antiga agir, mas os limites autoritativos continuam válidos
+        // enquanto a mesma identidade/vínculo permanecer.
+        const linkChanged = generation !== chatLinkRef.current;
+        const superseded = linkChanged || moodPendingTokenRef.current !== token;
+        if (!response.ok) {
+          // Recusa por limite atualiza a espera estruturada, sem ler o texto.
+          if (!linkChanged) moodTrackerRef.current.noteRetry('taunt', response.error.retry);
+          if (superseded) {
+            return {
+              ok: false,
+              error: { code: 'STALE_CONTEXT', message: 'A sala mudou antes da confirmação; o envio foi descartado.' },
+            };
+          }
+          return { ok: false, error: response.error };
+        }
+        if (!linkChanged) {
+          moodTrackerRef.current.noteSender('taunt', response.limits);
+          // Aceite ao alvo indica espaço de novo; um aceite anterior a uma
+          // recusa mais nova não apaga a espera.
+          if (response.limits !== undefined) {
+            moodTrackerRef.current.clearTarget(targetId, response.limits.serverTime);
+          }
+        }
+        // Contexto invalidado (queda, rodada nova, sala/identidade) já limpou
+        // os elementos: a conclusão antiga não os reapresenta nem dá feedback.
+        if (superseded) {
+          return {
+            ok: false,
+            error: { code: 'STALE_CONTEXT', message: 'A sala mudou antes da confirmação; o envio foi descartado.' },
+          };
+        }
+        // Ack e broadcast chegam com o mesmo id; a apresentação deduplica.
+        presentTaunt(response.taunt);
+        showMoodFeedback('Provocação enviada.');
+        return { ok: true, limits: response.limits };
+      } finally {
+        // Token: resposta antiga não libera o estado pendente de outro vínculo.
+        if (moodPendingTokenRef.current === token) {
+          moodPendingRef.current = false;
+          setMoodPending(false);
+        }
       }
-      if (!response.ok) return { ok: false, error: response.error };
-      // Ack e broadcast chegam com o mesmo id; a apresentação deduplica.
-      presentTaunt(response.taunt);
-      return { ok: true };
     },
-    [ensureSocket, presentTaunt],
+    [ensureSocket, presentTaunt, showMoodFeedback],
+  );
+
+  const sendReaction = useCallback(
+    async (type: ReactionType): Promise<AckEnvelope> => {
+      const code = activeRoomRef.current;
+      if (code === null) {
+        return { ok: false, error: { code: 'NOT_IN_ROOM', message: 'Você não está em uma sala.' } };
+      }
+      if (!chatLinkReadyRef.current) return { ok: false, error: LINK_PENDING_ERROR };
+      if (moodPendingRef.current) return { ok: false, error: MOOD_PENDING_ERROR };
+      const token = ++moodPendingTokenRef.current;
+      moodPendingRef.current = true;
+      setMoodPending(true);
+      const generation = chatLinkRef.current;
+      try {
+        const response = await emitWithAck<Ack<ReactionSendAck>>(ensureSocket(), 'client:reactionSend', {
+          intentId: newIntentId(),
+          roomCode: code,
+          type,
+        });
+        const linkChanged = generation !== chatLinkRef.current;
+        const superseded = linkChanged || moodPendingTokenRef.current !== token;
+        if (!response.ok) {
+          if (!linkChanged) moodTrackerRef.current.noteRetry('reaction', response.error.retry);
+          if (superseded) {
+            return {
+              ok: false,
+              error: { code: 'STALE_CONTEXT', message: 'A sala mudou antes da confirmação; o envio foi descartado.' },
+            };
+          }
+          return { ok: false, error: response.error };
+        }
+        if (!linkChanged) moodTrackerRef.current.noteSender('reaction', response.limits);
+        // Contexto invalidado limpa reações/feedback; a conclusão antiga não os
+        // restaura (os limites autoritativos já foram anotados acima).
+        if (superseded) {
+          return {
+            ok: false,
+            error: { code: 'STALE_CONTEXT', message: 'A sala mudou antes da confirmação; o envio foi descartado.' },
+          };
+        }
+        // Ack e broadcast compartilham o id; a apresentação deduplica por id.
+        presentReaction(response.reaction);
+        // Confirmação textual vale também com reações ocultas.
+        showMoodFeedback(reactionFeedback(type));
+        return { ok: true, limits: response.limits };
+      } finally {
+        if (moodPendingTokenRef.current === token) {
+          moodPendingRef.current = false;
+          setMoodPending(false);
+        }
+      }
+    },
+    [ensureSocket, presentReaction, showMoodFeedback],
   );
 
   const muteAuthor = useCallback((playerId: string): void => {
@@ -1206,6 +1641,20 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
       loadChatHistory,
       sendChat,
       sendTaunt,
+      sendReaction,
+      activeReactions,
+      reactionAnnouncement,
+      moodNotice,
+      clearMoodNotice,
+      moodMenu,
+      openTauntMenu,
+      openReactionMenu,
+      closeMoodMenu,
+      isMoodMenuCurrent,
+      moodFeedback,
+      moodPending,
+      moodRemaining,
+      moodTargetRemaining,
       activePresentation,
       preferences,
       preferencesReady,
@@ -1252,6 +1701,20 @@ export function RoomProvider({ children }: { children: ReactNode }): ReactNode {
       loadChatHistory,
       sendChat,
       sendTaunt,
+      sendReaction,
+      activeReactions,
+      reactionAnnouncement,
+      moodNotice,
+      clearMoodNotice,
+      moodMenu,
+      openTauntMenu,
+      openReactionMenu,
+      closeMoodMenu,
+      isMoodMenuCurrent,
+      moodFeedback,
+      moodPending,
+      moodRemaining,
+      moodTargetRemaining,
       activePresentation,
       preferences,
       preferencesReady,

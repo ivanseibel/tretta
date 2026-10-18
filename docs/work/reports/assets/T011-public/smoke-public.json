@@ -1,0 +1,104 @@
+{
+ "date": "2026-10-17",
+ "domain": "https://tretta.vercel.app",
+ "browser": "Chrome dedicado de automação (instância separada, perfil temporário, CDP em 127.0.0.1:9333; navegador do usuário não foi alterado)",
+ "training": {
+  "entry": "home -> 'Treinar sozinho' com apelido; preparação com 4 participantes (pessoa + Tico/Lila/Nino, 'bot' e 'pronto'), sem convite/remoção, iniciar bloqueado até prontidão",
+  "round1": {
+   "winner": "Lila (bot) venceu a rodada!",
+   "actions": {
+    "plays": 4,
+    "drawPass": 1,
+    "wildChoices": 0
+   },
+   "scores": {
+    "Checador": "0 rodada(s) (você)",
+    "Tico": "0",
+    "Lila": "1",
+    "Nino": "0"
+   }
+  },
+  "round2": {
+   "ended": "Rodada encerrada sem vencedor.",
+   "scoresPreserved": {
+    "Checador": 0,
+    "Lila": 1
+   }
+  },
+  "reloadRecovery": {
+   "recoveringSeen": true,
+   "handBefore": 8,
+   "handAfter": 8,
+   "handEqual": true,
+   "pauseRetentionText": "Os bots esperam por você: a mesa segue reservada e a rodada continua de onde parou. Retome quando quiser.",
+   "pauseAbsentEntries": 0,
+   "continued": true,
+   "postDrawPhaseKept": true
+  },
+  "twoTabs": {
+   "secondTabRecovering": true,
+   "secondTabJoinForm": false,
+   "firstTabKeptPlaying": true,
+   "afterClosingFirstHandEqual": true,
+   "handSize": 8,
+   "pausePanel": true,
+   "resumed": true
+  },
+  "entryRefusalNoCredential": {
+   "refused": true,
+   "messageMentionsIndividual": true,
+   "messageMentionsBots": true,
+   "backHomeHref": "/",
+   "joinFormGone": true,
+   "identityCreated": false,
+   "reloadBackToFormWithoutBanner": true
+  },
+  "entryRefusalFakeCredential": {
+   "refusedImmediately": true,
+   "joinFormGone": true,
+   "fakeCredentialUntouched": true
+  }
+ },
+ "commonRoom": {
+  "clients": 2,
+  "joinedAndReady": true,
+  "started": true,
+  "hands": [
+   7,
+   7
+  ],
+  "actions": {
+   "Checador A": 1,
+   "Checador B": 1
+  },
+  "chat": {
+   "AtoB": true,
+   "BtoA": true,
+   "afterRecovery": true
+  },
+  "turnNotificationPreference": {
+   "default": true,
+   "turnedOff": true,
+   "persistedInLocalStorage": true,
+   "stillOffAfterReload": true
+  },
+  "reloadRecovery": {
+   "recoveringSeen": true,
+   "handBefore": 6,
+   "handAfter": 6,
+   "handEqual": true
+  }
+ },
+ "globalChecks": {
+  "protocol": "https:",
+  "hooksPresent": false,
+  "pageErrors": 0,
+  "consoleErrors": 0,
+  "exitedOwnRooms": true
+ },
+ "limitations": [
+  "Sem endpoint de contagem de salas: ausência de partidas na janela foi confirmada pelo usuário antes do push (reinício apaga salas em memória).",
+  "Plano Free hiberna por inatividade; retomadas já zeram salas por projeto do serviço.",
+  "Na primeira tentativa em contexto novo, um clique em 'Entrar' ocorreu antes da reconexão do socket (aviso 'Sem conexão' pré-existente); aguardada a reconexão, o fluxo seguiu normal."
+ ]
+}

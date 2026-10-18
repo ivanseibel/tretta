@@ -1,0 +1,4 @@
+07-build exit=0
+08-typecheck exit=0
+09-web-test exit=0
+10-e2e-pertinente exit=0

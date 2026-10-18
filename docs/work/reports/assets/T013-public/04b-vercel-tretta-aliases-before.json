@@ -1,0 +1,16 @@
+{
+  "trettaAliases": [
+    {
+      "alias": "tretta.vercel.app",
+      "deploymentId": "dpl_5zzeCcbWYdEgZoz7d7pZUs7qTLtk",
+      "url": "tretta-66c9kswar-seibel.vercel.app",
+      "createdAt": 1792170689670
+    },
+    {
+      "alias": "tretta-seibel.vercel.app",
+      "deploymentId": "dpl_5zzeCcbWYdEgZoz7d7pZUs7qTLtk",
+      "url": "tretta-66c9kswar-seibel.vercel.app",
+      "createdAt": 1792170413864
+    }
+  ]
+}

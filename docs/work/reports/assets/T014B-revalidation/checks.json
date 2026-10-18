@@ -1,0 +1,14 @@
+[
+  {
+    "step": "install",
+    "exitCode": 0
+  },
+  {
+    "step": "build",
+    "exitCode": 0
+  },
+  {
+    "step": "web-unit-baseline",
+    "exitCode": 0
+  }
+]

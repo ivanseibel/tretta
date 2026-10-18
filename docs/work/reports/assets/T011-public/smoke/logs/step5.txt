@@ -1,0 +1,17 @@
+room_code_masked: AS…(6)
+C_join_form: True
+Traceback (most recent call last):
+  File "/Users/ivanseibel/.local/bin/browser-harness", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Users/ivanseibel/.local/share/uv/tools/browser-harness/lib/python3.12/site-packages/browser_harness/run.py", line 248, in main
+    _run(args)
+  File "/Users/ivanseibel/.local/share/uv/tools/browser-harness/lib/python3.12/site-packages/browser_harness/run.py", line 392, in _run
+    exec(code, globals())
+  File "<string>", line 19, in <module>
+  File "/Users/ivanseibel/.local/share/uv/tools/browser-harness/lib/python3.12/site-packages/browser_harness/run.py", line 161, in wrapper
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/ivanseibel/.config/browser-harness/agent-workspace/agent_helpers.py", line 77, in wait_tid
+    raise RuntimeError("timeout waiting for %s" % tid)
+RuntimeError: timeout waiting for training-entry-refused

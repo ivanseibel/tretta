@@ -1,0 +1,821 @@
+{
+ "fileCount": 163,
+ "totalSize": 1317728,
+ "files": [
+  {
+   "path": ".agents/skills/orchestrate-work/SKILL.md",
+   "size": 3959,
+   "sha256": "389fd12b90f1df711480c52ae71e74159c96ba3ec7e8a74e1e35d5ffb0163a3f"
+  },
+  {
+   "path": ".nvmrc",
+   "size": 8,
+   "sha256": "7d2df647f25529bd87500319c41564e032e2be642e565350fa6136d7a1ec4d10"
+  },
+  {
+   "path": ".vercelignore",
+   "size": 20,
+   "sha256": "18acec09c03ee73a45793b32d0f30ccd6a9ddc988461877f2a8ae032234a5971"
+  },
+  {
+   "path": "AGENTS.md",
+   "size": 1195,
+   "sha256": "d0e193104d26c3c17966d5301c0e59cbef119362669733d7af2285920083e031"
+  },
+  {
+   "path": "CLAUDE.md",
+   "size": 11,
+   "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49"
+  },
+  {
+   "path": "README.md",
+   "size": 36685,
+   "sha256": "4ad45e8fe7b5e92ecb344610ec443fcd2b98c4020b4ec56e5777386da1a6a342"
+  },
+  {
+   "path": "apps/server/package.json",
+   "size": 520,
+   "sha256": "23713fef8cd1fc076d39827a52ce298c6b31a33118aa547ad56be1e30e5774fa"
+  },
+  {
+   "path": "apps/server/railway.toml",
+   "size": 256,
+   "sha256": "abe98ffb96d84b3117ea3c3a6627b93ec6f006dba7b400330822910ffb06f484"
+  },
+  {
+   "path": "apps/server/src/bot.ts",
+   "size": 3008,
+   "sha256": "055d5c05a8dd12be4f1b791dce9e768f5f9cbb8178b8a58c72c7d3525f807233"
+  },
+  {
+   "path": "apps/server/src/clock.ts",
+   "size": 719,
+   "sha256": "27a2dd32d83fb95ce0832d120e51a41ce955ba55cbc08170fa3aabdbcddeebbd"
+  },
+  {
+   "path": "apps/server/src/config.ts",
+   "size": 2501,
+   "sha256": "cbcdfb8a67d52876c4a5fd15924c43b3d72eae3774f53b443668c535843927ff"
+  },
+  {
+   "path": "apps/server/src/effects.ts",
+   "size": 3358,
+   "sha256": "0eb5f6ab0cd200754e54ba606537d0fd450ef7668c17716d2862534a198ce04d"
+  },
+  {
+   "path": "apps/server/src/handlers.ts",
+   "size": 17088,
+   "sha256": "b23c5282978122dbe68c237201f98d8720686580655ce8b9cbeb0452cccc9a1c"
+  },
+  {
+   "path": "apps/server/src/ids.ts",
+   "size": 1140,
+   "sha256": "16e7a2f368f2e85ff283f6a0140c86e20666720f9f5ce749ca55bdc302ce7f59"
+  },
+  {
+   "path": "apps/server/src/index.ts",
+   "size": 1194,
+   "sha256": "a00f4e016be89867695a454259d37745066bd7b6497572be60be226fdce9f72f"
+  },
+  {
+   "path": "apps/server/src/rooms.ts",
+   "size": 54688,
+   "sha256": "d463acbea44c01d980f14f2b8d37c585e54fc44345c5ab0dd2c689e4ed4d662c"
+  },
+  {
+   "path": "apps/server/src/server.ts",
+   "size": 4620,
+   "sha256": "3e4dead207f42e7009a45585340f919587b3effc490f399e3bfc30b57f94b226"
+  },
+  {
+   "path": "apps/server/test/bot-callback.test.ts",
+   "size": 10171,
+   "sha256": "d43cb73aa4d860aa08873df9bf2586fd10bc87c23ef4ec1dbc65d50d31417662"
+  },
+  {
+   "path": "apps/server/test/bot-entry.test.ts",
+   "size": 15760,
+   "sha256": "d51feaebcdf17e8b6f374556b11f86883795e276c885a2486c6eb6be5bc660f9"
+  },
+  {
+   "path": "apps/server/test/bot-flow.test.ts",
+   "size": 13936,
+   "sha256": "ddd541bbd4e3985f759520966c67ea1ce84d613d6b562d8cdfccf3b153401f1b"
+  },
+  {
+   "path": "apps/server/test/bot.test.ts",
+   "size": 6127,
+   "sha256": "d4277baef7594f95364fa05ac5351be1fbf5033e6634c0dc2bcbd88d71dd6b35"
+  },
+  {
+   "path": "apps/server/test/chat.test.ts",
+   "size": 24328,
+   "sha256": "d72c0c6413ec89a3f8c473f3cad3ca1d471584ff2f03e4e9ea40a908591bd9dd"
+  },
+  {
+   "path": "apps/server/test/config.test.ts",
+   "size": 822,
+   "sha256": "6fd7c8fd0bd4541dd9789bef138a03dbf4c900b4ad58ae31103725b5af4bc273"
+  },
+  {
+   "path": "apps/server/test/contracts.test.ts",
+   "size": 7396,
+   "sha256": "572347b1854d544db5821358b9841d6dbbdf4a127dd5419a77acdee37f14e8ed"
+  },
+  {
+   "path": "apps/server/test/decks.ts",
+   "size": 5586,
+   "sha256": "4269e28780002446f5052c4f8bb0a3667187265cb43efc031163905a2c718c36"
+  },
+  {
+   "path": "apps/server/test/dedupe-retention.test.ts",
+   "size": 20382,
+   "sha256": "4693872d5b5779e42224494d0168d4949c966fda2849ebb405896cf390e836d6"
+  },
+  {
+   "path": "apps/server/test/dedupe.test.ts",
+   "size": 15621,
+   "sha256": "581b2856da861547abca50212bbbdd2e11e8e05972746dcb63176ccc296cacd2"
+  },
+  {
+   "path": "apps/server/test/effects.test.ts",
+   "size": 30425,
+   "sha256": "24238028c0425069d493777e9d98e580e7a0e33899d4f493101d0d14709614e3"
+  },
+  {
+   "path": "apps/server/test/eight-players.test.ts",
+   "size": 6023,
+   "sha256": "c1c338e75e298dc2f1a57a1ad0fe651c7b44fdd97b6b2fd5094fe1f5d1f91a7a"
+  },
+  {
+   "path": "apps/server/test/expiry-cache.test.ts",
+   "size": 6991,
+   "sha256": "ae50c5ed0c8fe4452117d00c2b87513cfa9d45582b0ebc81918c55426e3e8ec0"
+  },
+  {
+   "path": "apps/server/test/helpers.ts",
+   "size": 11089,
+   "sha256": "ec77288779ad08f79db5dce53a914970b55c3fac63b18a06f83bd58829b061ba"
+  },
+  {
+   "path": "apps/server/test/host.test.ts",
+   "size": 6215,
+   "sha256": "e0dbb38bffd17cc08ce3f0e1369b53062c09bce87965766812995350103ab1b5"
+  },
+  {
+   "path": "apps/server/test/leave.test.ts",
+   "size": 13523,
+   "sha256": "ed859a843b860bc54a4c2a3062cb319cbf198ba2d878a3545a4dac39a728e4cc"
+  },
+  {
+   "path": "apps/server/test/pause.test.ts",
+   "size": 11931,
+   "sha256": "45df71b439b48500ef0fb082888a04eb9e48135b5de26275509751b79c096a30"
+  },
+  {
+   "path": "apps/server/test/privacy.test.ts",
+   "size": 12648,
+   "sha256": "20fc0d3cddabfd2cd70492769303b1c8d88ae132771cec2170a0e07095ec261e"
+  },
+  {
+   "path": "apps/server/test/process.test.ts",
+   "size": 3532,
+   "sha256": "d6ee2bf8d579b2be76aedde72d90c0201816eb173f9884bcb3646975f98435cb"
+  },
+  {
+   "path": "apps/server/test/public-table.test.ts",
+   "size": 10336,
+   "sha256": "43752991f32a6183d492d4cd7898f56da5befbdec3fcfdcb56a9486514188835"
+  },
+  {
+   "path": "apps/server/test/recovery.test.ts",
+   "size": 12438,
+   "sha256": "8f33435ac5386c5b0e8c0ccefc5b10eb4ad01aab14a07b2f68fcbdf068b9a548"
+  },
+  {
+   "path": "apps/server/test/replay-transport.test.ts",
+   "size": 10214,
+   "sha256": "4621e3506d7e8ad5cdd3143e28433632ce47fdccfda791e47ab8ba430aa45de5"
+  },
+  {
+   "path": "apps/server/test/restart.test.ts",
+   "size": 3443,
+   "sha256": "074416191f373c7c3614b409c8e4ccb2431c7e416bbdf29d5c7c8d97daaac275"
+  },
+  {
+   "path": "apps/server/test/retention.test.ts",
+   "size": 10448,
+   "sha256": "bb0cdcceda7db6134933d490178915bfb44cfbd860ac14fcb1a1ec63ab39bab6"
+  },
+  {
+   "path": "apps/server/test/room-flow.test.ts",
+   "size": 7520,
+   "sha256": "ba9270c735a3f8eb2f96cfde1e9277e4c861b352dd5c2ad49a78919a56df3494"
+  },
+  {
+   "path": "apps/server/test/scoreboard.test.ts",
+   "size": 13892,
+   "sha256": "5a6e40e9b5b959c862c353f1dc4f39cb40b5024d1a6b0d63a5d628fde9e212f9"
+  },
+  {
+   "path": "apps/server/test/taunt.test.ts",
+   "size": 28283,
+   "sha256": "292dc231e348b5c15e27d96e4355cb38091591dc6a8fbfaa20c21732cdbd691b"
+  },
+  {
+   "path": "apps/server/test/ten-room-load.test.ts",
+   "size": 18135,
+   "sha256": "778152fbec67c0d82681e1ba27d9634dbdf41006ca7af95fc2f65f47c31129a8"
+  },
+  {
+   "path": "apps/server/test/training-game.test.ts",
+   "size": 8647,
+   "sha256": "7e9c70f5a3772fe6d6cfa447478f6cbe22589be83f7cca42778a6146c11d4e83"
+  },
+  {
+   "path": "apps/server/test/training-privacy.test.ts",
+   "size": 6028,
+   "sha256": "3f0c6434e56d14bfb7e30cff41be785910ab2b98fdc522f0560cd6e1657cad8b"
+  },
+  {
+   "path": "apps/server/test/training-recovery.test.ts",
+   "size": 13624,
+   "sha256": "e8f0642eaad7d9551817f7f9c784d15b40fe476ba9e8f94712738082bbe4748a"
+  },
+  {
+   "path": "apps/server/test/training-room.test.ts",
+   "size": 12789,
+   "sha256": "45e24ace09f004b553409cb57551fbb3ca279ba83fb5eb077846f54e44125198"
+  },
+  {
+   "path": "apps/server/test/training.ts",
+   "size": 8822,
+   "sha256": "36a22d146fa9a6861e2bd27dfe6d7ece3b70016e075def8dfb36d9404dae2e59"
+  },
+  {
+   "path": "apps/server/tsconfig.build.json",
+   "size": 149,
+   "sha256": "71739e11e05e7ab3777c01d07ebd319dfe831d614e9f33e8b8bf0a81e708286e"
+  },
+  {
+   "path": "apps/server/tsconfig.json",
+   "size": 74,
+   "sha256": "fea9cfcb057785994121b5c0768b9912cbcae898ce8c2c6c3ff57dd78ae99ee5"
+  },
+  {
+   "path": "apps/server/vitest.config.ts",
+   "size": 622,
+   "sha256": "e77d65b02f0f596f017d77ed3b408b3992c30d3aa080526de0862a4cc986e386"
+  },
+  {
+   "path": "apps/web/AGENTS.md",
+   "size": 679,
+   "sha256": "063098f6cb31bb44c6f8fbea25b3876de7ee1e5f7d00a50dbab506f6415eb7f0"
+  },
+  {
+   "path": "apps/web/app/globals.css",
+   "size": 35290,
+   "sha256": "d4cd00ceb554084193c6635a208105218fa6472c8bdc922e94a9ec8a24da838d"
+  },
+  {
+   "path": "apps/web/app/layout.tsx",
+   "size": 468,
+   "sha256": "ca045e6c25cec67d7b210a7cc80f218b4522136a463836e370d5b49d4039adb1"
+  },
+  {
+   "path": "apps/web/app/page.tsx",
+   "size": 3227,
+   "sha256": "94bd66d64e1f23902d1344fa647c3b03422de00ff5ee7b6495dca976c7945fce"
+  },
+  {
+   "path": "apps/web/app/providers.tsx",
+   "size": 52739,
+   "sha256": "d95d1a4891fed266a5790077ee6a0fa5b010282239f9a885ba4a56b5ec2d32cf"
+  },
+  {
+   "path": "apps/web/app/sala/[code]/page.tsx",
+   "size": 10952,
+   "sha256": "a2d4760941644358e38700197574ec03416b95321c5e3ab7869a841a1ce93699"
+  },
+  {
+   "path": "apps/web/components/ChatPanel.tsx",
+   "size": 9791,
+   "sha256": "eb491cc158151e71d537f5ac8cbd0fd74770a7a5dcce8b6182ba8d260408bf0b"
+  },
+  {
+   "path": "apps/web/components/EventFeed.tsx",
+   "size": 1693,
+   "sha256": "28c9137d53cb269a6450947d58fb2246c6713ec36c2100ac2869a80b50187618"
+  },
+  {
+   "path": "apps/web/components/GameTable.tsx",
+   "size": 20795,
+   "sha256": "6c7ebcda8c0bf871b785b0c089b9cb4b8076b5a427326a70bcf6fa4127a0df8f"
+  },
+  {
+   "path": "apps/web/components/Lobby.tsx",
+   "size": 6249,
+   "sha256": "1b6da6e929ec2261c4e6f77e0ad313fadbcd0ebe2029c58f783dae5d6d091860"
+  },
+  {
+   "path": "apps/web/components/MoodSettings.tsx",
+   "size": 2747,
+   "sha256": "72014abbe04010a119107f1489c86ab16b20d50974e8a91cc44598d5a3cba9fb"
+  },
+  {
+   "path": "apps/web/components/PausePanel.tsx",
+   "size": 4196,
+   "sha256": "e5922b5b1d52ef18873c04ad4220306d8e4bf490e253cc5b4863891be68fbc99"
+  },
+  {
+   "path": "apps/web/components/Results.tsx",
+   "size": 3163,
+   "sha256": "b57f91f38f18aedd8a1a6dcb9204ac31d8677e064d245070b76b888980f0d7fe"
+  },
+  {
+   "path": "apps/web/components/TauntOverlay.tsx",
+   "size": 2963,
+   "sha256": "d3fc528fa510044ff9791928a6ba4f69d8f229d446d2232c96ba550f2468855a"
+  },
+  {
+   "path": "apps/web/components/TauntPanel.tsx",
+   "size": 5783,
+   "sha256": "7b31c7e259e636378fab65b8d544ef2d004ff759ad3a4dffed273a3ba6f79e68"
+  },
+  {
+   "path": "apps/web/components/TurnNotifier.tsx",
+   "size": 2260,
+   "sha256": "3767b34e0edf9a8f0689b71dfbe6624fd094690645aa1347e699e10216b6c6bd"
+  },
+  {
+   "path": "apps/web/components/WaitingRoom.tsx",
+   "size": 5661,
+   "sha256": "ab2e0dd83fed60380c57add9e47bd3f8cc6006b57423a7ad4e5a4c0a4193628a"
+  },
+  {
+   "path": "apps/web/components/ui.tsx",
+   "size": 6856,
+   "sha256": "c3f9ff0527d62d9725ee66f00e591fb74ebe2bc95c066e98b62250b2a2b7aad5"
+  },
+  {
+   "path": "apps/web/e2e/chat.spec.ts",
+   "size": 11329,
+   "sha256": "5cc50f8182743211a6d893167003d5eb6cb8fa247b86f1a6b73bed938f347b48"
+  },
+  {
+   "path": "apps/web/e2e/deck.ts",
+   "size": 5501,
+   "sha256": "8b71f727e26d80dc260591f4679c5e4d6400cb2f6efc2810636bf32a1d7ac8ac"
+  },
+  {
+   "path": "apps/web/e2e/effects.spec.ts",
+   "size": 32889,
+   "sha256": "f471da4a34d8cd92e55c3d2349ef5a9648df006ea80fb2c2b173aa0b5e26fe66"
+  },
+  {
+   "path": "apps/web/e2e/fixtures.ts",
+   "size": 3257,
+   "sha256": "fc7812039e983f56203b62b8e5d1857cecd3363da6ab25884ce0274008bac861"
+  },
+  {
+   "path": "apps/web/e2e/interface-keyboard.spec.ts",
+   "size": 9288,
+   "sha256": "488d4c39816198c5569cb8dbc414c84815f21137f2667581e7546cbbb2491354"
+  },
+  {
+   "path": "apps/web/e2e/interface-visual.spec.ts",
+   "size": 17721,
+   "sha256": "e8e988936179625463bc70010623900e7d4309d44edf5340299664247140def0"
+  },
+  {
+   "path": "apps/web/e2e/leave-host.spec.ts",
+   "size": 3842,
+   "sha256": "eff31a0a57e9b76ff1c391c0c16bcbe7b9f70387c717e281e5e846da8dd6cfa5"
+  },
+  {
+   "path": "apps/web/e2e/pause.spec.ts",
+   "size": 4315,
+   "sha256": "73cb738ee68d26347d84641ee56e2ceb696a48bd185df9ef0d87e50611b2e1eb"
+  },
+  {
+   "path": "apps/web/e2e/production-start.spec.ts",
+   "size": 907,
+   "sha256": "7f62ed5b4418e015bd1bb9ea4fc34ebf0d77e013a815613b862de65c21f4960d"
+  },
+  {
+   "path": "apps/web/e2e/recovery-wait.spec.ts",
+   "size": 2446,
+   "sha256": "f5ab4c9ac8f9aded04ad71e3cf3bedff916f4beaddc9f2e7b74aec974f2b6847"
+  },
+  {
+   "path": "apps/web/e2e/recovery.spec.ts",
+   "size": 3384,
+   "sha256": "5940ee8be98d0a9da8ca898f899edbdac73a5998ba610c7b3ae4b5ab63684a47"
+  },
+  {
+   "path": "apps/web/e2e/refinements.spec.ts",
+   "size": 8027,
+   "sha256": "39e715e42159189c679f7fd73c0dfd4539d16070e089fc46148cda1e9842aedd"
+  },
+  {
+   "path": "apps/web/e2e/room.ts",
+   "size": 2819,
+   "sha256": "1b3c3316e55109ce6f139c63bb26c6456187824378bd6bf1549bed35966f806d"
+  },
+  {
+   "path": "apps/web/e2e/scoreboard.spec.ts",
+   "size": 3901,
+   "sha256": "a6ddeab6c0dfbb270a55824350b2787297da3b3f8d352c71fef857837ecebc48"
+  },
+  {
+   "path": "apps/web/e2e/server-restart.spec.ts",
+   "size": 1629,
+   "sha256": "bdbe7c68d534578bf392f5b849efc675fecace17e5ffb76a0c7fd773b619598f"
+  },
+  {
+   "path": "apps/web/e2e/t007-eight-seat.spec.ts",
+   "size": 6667,
+   "sha256": "28c83dcc3c38754273fcc6008370f35723de92fca438326fbbe6b046ec226a94"
+  },
+  {
+   "path": "apps/web/e2e/taunt.spec.ts",
+   "size": 6212,
+   "sha256": "749e2ce8bfcbf8aa1e040b6e55413eb4fad38641cf4ec7743404f7e637704e54"
+  },
+  {
+   "path": "apps/web/e2e/training.spec.ts",
+   "size": 13952,
+   "sha256": "dccd5b881d6f664e7556c557cdb2c69088846919e8b7c627bcfb42f173015340"
+  },
+  {
+   "path": "apps/web/e2e/training.ts",
+   "size": 8470,
+   "sha256": "16134b404d8f010ea94896194a180d6ce3ba776c204a0fac92d87e2c5bbd6155"
+  },
+  {
+   "path": "apps/web/e2e/two-players.spec.ts",
+   "size": 7832,
+   "sha256": "55afc060749d304a2800c2d8b3e171f17001114fb816ab0a5f2b57dd9d873cdd"
+  },
+  {
+   "path": "apps/web/lib/chatMute.ts",
+   "size": 1124,
+   "sha256": "b5705b7f15a01001ae0869712d6dad44a95fd738d45293e73b67e2ce361848e6"
+  },
+  {
+   "path": "apps/web/lib/client.ts",
+   "size": 2012,
+   "sha256": "2cda46b991631241448784fcbed78291a3283258bbb2e0d5b7661187b4a7b84e"
+  },
+  {
+   "path": "apps/web/lib/labels.ts",
+   "size": 3558,
+   "sha256": "01c29d21c47add4e45c73af67d9e772ebbe92130085597af4f519f87bda8e640"
+  },
+  {
+   "path": "apps/web/lib/prefs.ts",
+   "size": 3548,
+   "sha256": "78525c6858f38568ebbaf1ed67fee693b4efd939ee394aea20c87e9c124772c8"
+  },
+  {
+   "path": "apps/web/lib/presentationQueue.ts",
+   "size": 4748,
+   "sha256": "890ecfd650f0f997b9ed750e13c435882617c4f83c309c7233aa1a42623b7152"
+  },
+  {
+   "path": "apps/web/lib/sounds.ts",
+   "size": 7810,
+   "sha256": "dea32b6fb443fffd04ef4522ad22870074d42aaac281467460f12fc09b70ef16"
+  },
+  {
+   "path": "apps/web/lib/turnNotifications.ts",
+   "size": 2964,
+   "sha256": "83d5a3029851525a784dbfaa1fb34a7b961c6b4570d21bc50dc3b377f5901101"
+  },
+  {
+   "path": "apps/web/next-env.d.ts",
+   "size": 288,
+   "sha256": "1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b"
+  },
+  {
+   "path": "apps/web/next.config.ts",
+   "size": 129,
+   "sha256": "fe03e465e8c47ea1f71e2fd84e26ec1f19b043341c6e6a4f0002e6d2d939d74b"
+  },
+  {
+   "path": "apps/web/package.json",
+   "size": 813,
+   "sha256": "cfb2b9cb4ed087acb049bffbee9c55686025b672d35071d356520e79eea1dfdb"
+  },
+  {
+   "path": "apps/web/playwright.config.ts",
+   "size": 987,
+   "sha256": "5614b58ee018d70fddc6116e68484437e2087df053ab8bca0572d2acda0874a8"
+  },
+  {
+   "path": "apps/web/playwright.production.config.ts",
+   "size": 1243,
+   "sha256": "571d636df7bbacb6980c9993413c38c91bfaaee9b299be25adb3a5ffdb044674"
+  },
+  {
+   "path": "apps/web/railway.toml",
+   "size": 246,
+   "sha256": "2267be50efd75e2e937f5c5edf0521aa434ac55b9efab560538a9f45ebb8285a"
+  },
+  {
+   "path": "apps/web/scripts/e2e-production.mjs",
+   "size": 687,
+   "sha256": "22617f1bdd7cda490e508382276f2c09b71e70ff36eb79caee91496f8d2eb5ba"
+  },
+  {
+   "path": "apps/web/test/chat-sync.test.tsx",
+   "size": 27289,
+   "sha256": "36d00bde716d146fc59aea2237013148ad869b25e4d491d3de32c5a7750af9ff"
+  },
+  {
+   "path": "apps/web/test/effects-render.test.tsx",
+   "size": 7329,
+   "sha256": "c1ccd609d0d4745c4d02c1da8920d3cb042a14699b3b0236e642d2316960d2b3"
+  },
+  {
+   "path": "apps/web/test/game-table-focus.test.tsx",
+   "size": 4518,
+   "sha256": "06ee28d5bedb9deed51c7704b9076d3ab7f8a72f3c8a2242881c005b39239d5c"
+  },
+  {
+   "path": "apps/web/test/mood-sync.test.tsx",
+   "size": 23527,
+   "sha256": "17689b09e94e2e94d22c27f6f2adfc743e8ce986e2ed83dba751c0cdcd4ce55a"
+  },
+  {
+   "path": "apps/web/test/prefs.test.ts",
+   "size": 5086,
+   "sha256": "3e682a7890a618cef2acd36e44a9d1dc060ff63021641456c4acb5f9c66b003a"
+  },
+  {
+   "path": "apps/web/test/presentation-queue.test.ts",
+   "size": 6037,
+   "sha256": "c741a91ba058683aac41240c69ed9b2de299c329548a32c999479249082e3419"
+  },
+  {
+   "path": "apps/web/test/recovery-page.test.tsx",
+   "size": 11447,
+   "sha256": "9b73ebda3e322c8716ebba092e8b5f2992d7a3c8482b880f059dccfc8cff85c8"
+  },
+  {
+   "path": "apps/web/test/recovery-wait.test.tsx",
+   "size": 31415,
+   "sha256": "44f25b483e263a41471b90846e127cf8b41fe6c11cc8a9b367041eef3b1ed187"
+  },
+  {
+   "path": "apps/web/test/sounds.test.ts",
+   "size": 8737,
+   "sha256": "38f937787412e9a4591a89a1a6379870cd7f15a522b76040afd57c175b1e7e5d"
+  },
+  {
+   "path": "apps/web/test/taunt-sync.test.tsx",
+   "size": 20459,
+   "sha256": "1297a0874ac3d1b70eb8e0e4e38cfb853d7dd4e86c0577efc1320999e3a363d9"
+  },
+  {
+   "path": "apps/web/test/training-entry-context.test.tsx",
+   "size": 12950,
+   "sha256": "6ab3fbd67dacbd10fc90aff55235c1514f03dd35cf9110afadea029a9f644d82"
+  },
+  {
+   "path": "apps/web/test/training-entry.test.tsx",
+   "size": 10465,
+   "sha256": "264377c4fcba4a72246344d7cdaba2753e0afd94e74f4e96b29e0e7527d392b9"
+  },
+  {
+   "path": "apps/web/test/training-home.test.tsx",
+   "size": 7038,
+   "sha256": "4b9bbe842a64f17cea58c7f32af2254337667cd29a89bb153020ccfe385a6e98"
+  },
+  {
+   "path": "apps/web/test/training-lobby.test.tsx",
+   "size": 6301,
+   "sha256": "9c3983c2771ce124b67e54be3a1ff00c23fdf45449d0d741f9ef99f062f2e44a"
+  },
+  {
+   "path": "apps/web/test/training-results.test.tsx",
+   "size": 5646,
+   "sha256": "df4fe837bb635474aaffdeb793cc09da177ae72449e98f95581771e390033fce"
+  },
+  {
+   "path": "apps/web/test/training-table.test.tsx",
+   "size": 5350,
+   "sha256": "56bda8cb61e636410e19c9cebf348b7c05da261c2782a580cc39a0c8ae0bef83"
+  },
+  {
+   "path": "apps/web/test/turn-notification.test.tsx",
+   "size": 15815,
+   "sha256": "4822dbaf48ed7175ee84c2159853928fa60a1abac5619021c8d600c501333ce8"
+  },
+  {
+   "path": "apps/web/tsconfig.json",
+   "size": 1116,
+   "sha256": "8859a504a42dd739cdbec949d94877b71348dd528f832bb45f7d5116c3b05543"
+  },
+  {
+   "path": "apps/web/vercel.json",
+   "size": 408,
+   "sha256": "b6decf5a6e80ff509618f6d7eb78f5558b8dc3151ddeac38332a546633dae0bf"
+  },
+  {
+   "path": "apps/web/vitest.config.ts",
+   "size": 301,
+   "sha256": "0e46c87196344e59e65702adb9ee3892d800594f4970e41aa7f43bbf36fd6185"
+  },
+  {
+   "path": "package.json",
+   "size": 622,
+   "sha256": "8f5bbbed7be8cbf0b5f03db5dbd1a1a791d35c68a3b97e854d63cc7855961c45"
+  },
+  {
+   "path": "packages/protocol/package.json",
+   "size": 538,
+   "sha256": "f49869974d18be45202d13d953ce4ef7f1893df881cbbaade14ea944f3fb17f0"
+  },
+  {
+   "path": "packages/protocol/src/index.ts",
+   "size": 16111,
+   "sha256": "6d285744063eee88f23f1fd4ea9956c46ebc79832e9ca26061dc2e575f4c0376"
+  },
+  {
+   "path": "packages/protocol/src/shared.ts",
+   "size": 4970,
+   "sha256": "412a4b85525c828103aedbfb116dd1abe389a4775ed5c3aafad7b4c0f17dd7c3"
+  },
+  {
+   "path": "packages/protocol/test/schemas.test.ts",
+   "size": 9560,
+   "sha256": "c74e1025fcfe02e7007b9d06fd9f92087e73ba9443f4242a7ccda0ccfe6771b1"
+  },
+  {
+   "path": "packages/protocol/tsconfig.build.json",
+   "size": 174,
+   "sha256": "2829e0b9becfd5b81f4802bcc29304f9b64fb274fa223bf8458cc7db15d7300b"
+  },
+  {
+   "path": "packages/protocol/tsconfig.json",
+   "size": 74,
+   "sha256": "fea9cfcb057785994121b5c0768b9912cbcae898ce8c2c6c3ff57dd78ae99ee5"
+  },
+  {
+   "path": "packages/protocol/vitest.config.ts",
+   "size": 250,
+   "sha256": "dcb606db308049583026f48032729eeba13b5eb0027b6018630f6fa729d02d13"
+  },
+  {
+   "path": "packages/rules/package.json",
+   "size": 357,
+   "sha256": "3a25f2603bf5c72f1f935ed98d027281b7e21f9780ab9a2834bfb48f20f07918"
+  },
+  {
+   "path": "packages/rules/src/card.ts",
+   "size": 2178,
+   "sha256": "bbe565b788756953296d2716da0127fc2249b6186e5f7d22640d19e4a5b8a1a1"
+  },
+  {
+   "path": "packages/rules/src/commands.ts",
+   "size": 15655,
+   "sha256": "4f88f23ce11b14cf09a2c059617d465262e75ca5147b4b85b602b5dbad20c09f"
+  },
+  {
+   "path": "packages/rules/src/errors.ts",
+   "size": 504,
+   "sha256": "8b8cbcb1c937c923ad067f66500870bd75caddeee0c9f42b6666354ba3951cb0"
+  },
+  {
+   "path": "packages/rules/src/index.ts",
+   "size": 1056,
+   "sha256": "023379299560525de51f37f0ca75bd4da4354ebdda7fd85cd5fc0757095a60a4"
+  },
+  {
+   "path": "packages/rules/src/projection.ts",
+   "size": 4642,
+   "sha256": "1964dd813c825003740d28a58ae6c4ff21aa23f7f2ca02beb5f9babcff481a42"
+  },
+  {
+   "path": "packages/rules/src/random.ts",
+   "size": 1570,
+   "sha256": "9a7d75be664cf3580a5f26563f613da4ba554d7d890a38e7dd734868bf7c2171"
+  },
+  {
+   "path": "packages/rules/src/round.ts",
+   "size": 5358,
+   "sha256": "038fc8a73e76705b025614c3a8dacf7ce467a0d3a9299fee15700ba4b9857ebf"
+  },
+  {
+   "path": "packages/rules/src/state.ts",
+   "size": 5233,
+   "sha256": "9b1fc035bd51fea4e4d8fb99dae09d8cac115584b9f94f1b10d484377a5217cb"
+  },
+  {
+   "path": "packages/rules/test/classic-effects.test.ts",
+   "size": 6146,
+   "sha256": "6db2483c4aa40adec6d3abcf11226d4eec8c896db112474787125659538465de"
+  },
+  {
+   "path": "packages/rules/test/classic-finals.test.ts",
+   "size": 8967,
+   "sha256": "1cda1f74184ee3e0ce22ba2aee7fc7c7198b60eb1b675806b5178a1c1d0f18ea"
+  },
+  {
+   "path": "packages/rules/test/classic-last-card.test.ts",
+   "size": 9436,
+   "sha256": "5ffbad3bb15be8adea12e77449ce31ec4d658b1a5207ceb2615b8dceb0716a0b"
+  },
+  {
+   "path": "packages/rules/test/classic-piles.test.ts",
+   "size": 5890,
+   "sha256": "9263e7f58ec527a4ceb8c408ab1d412b587a8a83da20e68fdf03bbccb87a5dd1"
+  },
+  {
+   "path": "packages/rules/test/classic-projection.test.ts",
+   "size": 8291,
+   "sha256": "d3a985602792c3eb3d816004f380bd2cb7a7c5489b6c6790f9c339f726e6200d"
+  },
+  {
+   "path": "packages/rules/test/classic-public-table.test.ts",
+   "size": 3978,
+   "sha256": "e4678f374638f6bb06e7556c47caccb7161397f5f330223e91abdd97e98bd47c"
+  },
+  {
+   "path": "packages/rules/test/classic-simulation.test.ts",
+   "size": 1757,
+   "sha256": "e1100af1b226bacdfbeaa9fa3858bbc0e7177f919d467a5e5110e0bac642aa96"
+  },
+  {
+   "path": "packages/rules/test/classic-turns.test.ts",
+   "size": 8455,
+   "sha256": "b628caa52239f210cacc92bfba54a4de52d8cba8cd2f845add3abfc4aeda348b"
+  },
+  {
+   "path": "packages/rules/test/deck.test.ts",
+   "size": 2586,
+   "sha256": "983bd9e481a8ee0a927e160a136534f8159516b7d4edb3197697b3c56cc79313"
+  },
+  {
+   "path": "packages/rules/test/fixtures.ts",
+   "size": 3617,
+   "sha256": "f0d3c420250cf719177c415c850074c3d1bfd1a7d5a0f8e7d59e09f9cad29ae3"
+  },
+  {
+   "path": "packages/rules/test/helpers-privacy.ts",
+   "size": 1617,
+   "sha256": "d1c47ccf471a8bcb5c6e07acafc2d738a9894ff3d299e4266eec5fafd5ce0a43"
+  },
+  {
+   "path": "packages/rules/test/helpers.ts",
+   "size": 1402,
+   "sha256": "c0808995bddfdecf9da14ec6b8d9c242e8465c6a721250009efa80ee2f916c8d"
+  },
+  {
+   "path": "packages/rules/test/opening.test.ts",
+   "size": 11149,
+   "sha256": "0d19ef8baea98b6d743643e99f81f1715277b8b9e89b330a8ec73dbb6547cad0"
+  },
+  {
+   "path": "packages/rules/test/random.test.ts",
+   "size": 2069,
+   "sha256": "3afe2a846d338cbab7f15bef8f351388831540d7a5b62b8af2cd5eec052ab438"
+  },
+  {
+   "path": "packages/rules/test/simulation.ts",
+   "size": 6897,
+   "sha256": "d7602b0d2b0e6d7c57a4009922c1b4e9943effcf41bd5aae18879eb87e74f4f0"
+  },
+  {
+   "path": "packages/rules/tsconfig.build.json",
+   "size": 174,
+   "sha256": "2829e0b9becfd5b81f4802bcc29304f9b64fb274fa223bf8458cc7db15d7300b"
+  },
+  {
+   "path": "packages/rules/tsconfig.json",
+   "size": 74,
+   "sha256": "fea9cfcb057785994121b5c0768b9912cbcae898ce8c2c6c3ff57dd78ae99ee5"
+  },
+  {
+   "path": "pnpm-lock.yaml",
+   "size": 74591,
+   "sha256": "c6f954a24f5efb5664cc30ff082c6d5d93e7febdfdf2e8e22be712480f03a173"
+  },
+  {
+   "path": "pnpm-workspace.yaml",
+   "size": 555,
+   "sha256": "c2c2d39f8e0684a7354eddcd86a82be23ca99dd2e6e12d2a5359f97e2dede41b"
+  },
+  {
+   "path": "render.yaml",
+   "size": 476,
+   "sha256": "f6f4745bb9851eb89aa057ee6f76ed28ca4752b1030a1025f2a69e8429fada20"
+  },
+  {
+   "path": "tsconfig.base.json",
+   "size": 518,
+   "sha256": "d0eea10ce34798fcc9361244c4c798596d1219d983834dfcc42f7b453ac9a0ea"
+  }
+ ]
+}

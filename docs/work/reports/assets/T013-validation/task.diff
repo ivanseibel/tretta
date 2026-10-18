@@ -1,0 +1,13 @@
+--- T012/apps/web/components/GameTable.tsx
++++ T013/apps/web/components/GameTable.tsx
+@@ -319,7 +319,9 @@
+             <span className="card-symbol" aria-hidden="true">
+               {view.discardTop.kind === 'wild' ? <span className="color-symbol color-symbol-wild">✦</span> : <ColorSymbol color={view.discardTop.color} />}
+             </span>
+-            <span className="card-value" aria-hidden="true">{cardShort(view.discardTop)}</span>
++            <span className="card-value" data-long={cardShort(view.discardTop).length > 4 ? 'true' : undefined} aria-hidden="true">
++              {cardShort(view.discardTop)}
++            </span>
+             <span className="card-name" aria-hidden="true">{cardLabel(view.discardTop)}</span>
+           </div>
+         </div>

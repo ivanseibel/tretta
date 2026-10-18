@@ -1,0 +1,36 @@
+{
+  "source": {
+    "matched": 1263,
+    "changed": [],
+    "missing": []
+  },
+  "copy": {
+    "matched": 1262,
+    "changed": [
+      "apps/web/test/mood-avatar.test.tsx"
+    ],
+    "missing": []
+  },
+  "acceptedBackend": {
+    "files": 81,
+    "allUnchanged": true
+  },
+  "previousRevalidation": {
+    "files": 1230,
+    "matched": 1222,
+    "changed": [
+      "docs/product/provocacoes-e-reacoes.md",
+      "docs/product/backlog.md",
+      "docs/work/T014B.md",
+      "docs/work/status.md",
+      "docs/work/plan.md",
+      "docs/work/T014B-adjustments.md",
+      "apps/web/test/mood-time.test.ts",
+      "apps/web/lib/moodTime.ts"
+    ]
+  },
+  "executorCode": {
+    "matched": 166,
+    "allUnchanged": true
+  }
+}

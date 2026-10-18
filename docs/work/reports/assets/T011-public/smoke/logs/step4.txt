@@ -1,0 +1,16 @@
+tab1: 65639E2F983BA7683A2E319BE2CD446D
+hand1: 8
+tab2_recovering: True
+tab2_join_form: 0
+tab2_hand: 0
+tab2_error_banner: False
+tab1_hand_visible: True
+tab1_hand_size: 8
+tab1_errors: {'errors': [], 'rejections': []}
+hand2_equal: True 8
+pause_panel: True
+pause_absent_count: 0
+errors: {'errors': [], 'rejections': []}
+resumed: True
+turn: Sua vez
+errors: {'errors': [], 'rejections': []}

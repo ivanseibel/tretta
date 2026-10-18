@@ -9,6 +9,7 @@ import {
   drawAndPass,
   isMyTurn,
   joinRoom,
+  openTauntPanel,
   playCard,
   readyAll,
   setEffectVariant,
@@ -33,6 +34,7 @@ async function joinAsWatcher(page: Page, inviteUrl: string, nickname: string): P
 }
 
 async function sendTaunt(sender: Page, type: string, target: string): Promise<void> {
+  await openTauntPanel(sender);
   await sender.getByTestId('taunt-type').selectOption(type);
   await sender.getByTestId('taunt-target').selectOption({ label: target });
   await sender.getByTestId('taunt-send').click();
@@ -635,7 +637,7 @@ test('entrada de quem aguarda durante a vez do substituto com apresentação dif
 
   await substitute.click();
   await expect(pageA.getByTestId('pause-panel')).toHaveCount(0);
-  await expect(pageA.getByTestId('opponent-Bia')).toContainText('substituto');
+  await expect(pageA.getByTestId('seat-Bia')).toContainText('substituto');
 
   // Cede a vez para a vaga do substituto e entra na janela de ação dele.
   await pageA.getByTestId('draw-button').click();
@@ -665,7 +667,7 @@ test('entrada de quem aguarda durante a vez do substituto com apresentação dif
   const handCount = await pageB.getByTestId('my-hand').locator('[data-testid^="card-"]').count();
   expect(handCount).toBeGreaterThanOrEqual(7);
   await expect(pageA.getByTestId('pause-panel')).toHaveCount(0);
-  await expect(pageA.getByTestId('opponent-Bia').getByText('substituto')).toHaveCount(0);
+  await expect(pageA.getByTestId('seat-Bia').getByText('substituto')).toHaveCount(0);
 
   await desktop.close();
   await mobile.close();

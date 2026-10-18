@@ -51,6 +51,15 @@ export async function waitMyTurn(page: Page): Promise<void> {
   await expect(page.getByTestId('turn-indicator')).toHaveText('Sua vez');
 }
 
+/** Abre o painel recolhido "Mais opções de provocação" sem alternar duas vezes. */
+export async function openTauntPanel(page: Page): Promise<void> {
+  const panel = page.getByTestId('taunt-panel');
+  const open = await panel.evaluate((node) => (node as HTMLDetailsElement).open);
+  if (open) return;
+  await page.getByTestId('taunt-panel-toggle').click();
+  await expect(panel).toHaveAttribute('open', '');
+}
+
 export async function playCard(page: Page, cardId: string): Promise<void> {
   await waitMyTurn(page);
   await page.getByTestId(`card-${cardId}`).click();

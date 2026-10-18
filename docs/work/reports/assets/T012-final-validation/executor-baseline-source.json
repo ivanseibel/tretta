@@ -1,0 +1,22 @@
+[
+  {
+    "file": "apps/web/app/globals.css",
+    "sameAs3ae459e": true,
+    "baselineSHA256": "d4cd00ceb554084193c6635a208105218fa6472c8bdc922e94a9ec8a24da838d"
+  },
+  {
+    "file": "apps/web/components/GameTable.tsx",
+    "sameAs3ae459e": true,
+    "baselineSHA256": "6c7ebcda8c0bf871b785b0c089b9cb4b8076b5a427326a70bcf6fa4127a0df8f"
+  },
+  {
+    "file": "apps/web/components/WaitingRoom.tsx",
+    "sameAs3ae459e": true,
+    "baselineSHA256": "ab2e0dd83fed60380c57add9e47bd3f8cc6006b57423a7ad4e5a4c0a4193628a"
+  },
+  {
+    "file": "apps/web/e2e/t007-eight-seat.spec.ts",
+    "sameAs3ae459e": true,
+    "baselineSHA256": "28c83dcc3c38754273fcc6008370f35723de92fca438326fbbe6b046ec226a94"
+  }
+]

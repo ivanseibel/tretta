@@ -1,0 +1,5 @@
+Fonte: /Users/ivanseibel/dev/personal/tretta (working tree completo, incluindo nao rastreados)
+HEAD: 3ae459e5a88e612dc389e7bcb4570809ddcc3445
+Data da copia: 2026-10-18T18:13:12Z
+Copia: /private/var/folders/r_/xrvhskhx45l6n66k99kzs61r0000gn/T/opencode/tretta-t014b-adj-verify-GsVxwG/tretta
+git status (linhas): 104

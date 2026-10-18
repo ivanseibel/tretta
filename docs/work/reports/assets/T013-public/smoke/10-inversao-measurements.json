@@ -1,0 +1,443 @@
+{
+  "390": {
+    "before_scroll": {
+      "text": "Invers\u00e3o",
+      "dataLong": "true",
+      "font": "11.2px",
+      "valueRect": {
+        "x": 219.88,
+        "y": -184.09,
+        "w": 49.71,
+        "h": 12.09,
+        "right": 269.59,
+        "bottom": -171.99
+      },
+      "cardRect": {
+        "x": 212.74,
+        "y": -223.42,
+        "w": 64,
+        "h": 94,
+        "right": 276.74,
+        "bottom": -129.42
+      },
+      "symbolRect": {
+        "x": 237.3,
+        "y": -203.76,
+        "w": 14.88,
+        "h": 16.48,
+        "right": 252.18,
+        "bottom": -187.28
+      },
+      "nameRect": {
+        "x": 218.94,
+        "y": -168.8,
+        "w": 51.61,
+        "h": 19.7,
+        "right": 270.55,
+        "bottom": -149.09
+      },
+      "valueOverflow": {
+        "sw": 50,
+        "cw": 50,
+        "sh": 13,
+        "ch": 12
+      },
+      "cardOverflow": {
+        "sw": 58,
+        "cw": 58,
+        "sh": 88,
+        "ch": 88
+      },
+      "insideCard": true,
+      "overlapSymbol": false,
+      "overlapName": false,
+      "ariaLabel": "Descarte: Azul Invers\u00e3o",
+      "cardName": "Azul Invers\u00e3o",
+      "valueTextIsExact": "Invers\u00e3o"
+    },
+    "after_zoom_scroll": {
+      "text": "Invers\u00e3o",
+      "dataLong": "true",
+      "font": "11.2px",
+      "valueRect": {
+        "x": 219.88,
+        "y": 312.31,
+        "w": 49.71,
+        "h": 12.09,
+        "right": 269.59,
+        "bottom": 324.41
+      },
+      "cardRect": {
+        "x": 212.74,
+        "y": 272.98,
+        "w": 64,
+        "h": 94,
+        "right": 276.74,
+        "bottom": 366.98
+      },
+      "symbolRect": {
+        "x": 237.16,
+        "y": 292.64,
+        "w": 15.17,
+        "h": 16.48,
+        "right": 252.33,
+        "bottom": 309.12
+      },
+      "nameRect": {
+        "x": 218.94,
+        "y": 327.6,
+        "w": 51.61,
+        "h": 19.7,
+        "right": 270.55,
+        "bottom": 347.3
+      },
+      "valueOverflow": {
+        "sw": 50,
+        "cw": 50,
+        "sh": 13,
+        "ch": 12
+      },
+      "cardOverflow": {
+        "sw": 58,
+        "cw": 58,
+        "sh": 88,
+        "ch": 88
+      },
+      "insideCard": true,
+      "overlapSymbol": false,
+      "overlapName": false,
+      "ariaLabel": "Descarte: Vermelho Invers\u00e3o",
+      "cardName": "Vermelho Invers\u00e3o",
+      "valueTextIsExact": "Invers\u00e3o"
+    },
+    "handValues": [
+      {
+        "text": "0",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "+4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "1",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "+2",
+        "font": "23.2px",
+        "long": null
+      }
+    ],
+    "discard_text": "Invers\u00e3o",
+    "turn": "Sua vez",
+    "activeColor": "\u25cfVermelho"
+  },
+  "320": {
+    "before_scroll": {
+      "text": "Invers\u00e3o",
+      "dataLong": "true",
+      "font": "11.2px",
+      "valueRect": {
+        "x": 184.63,
+        "y": 300.54,
+        "w": 49.71,
+        "h": 12.09,
+        "right": 234.34,
+        "bottom": 312.63
+      },
+      "cardRect": {
+        "x": 177.49,
+        "y": 261.2,
+        "w": 64,
+        "h": 94,
+        "right": 241.49,
+        "bottom": 355.2
+      },
+      "symbolRect": {
+        "x": 201.91,
+        "y": 280.87,
+        "w": 15.17,
+        "h": 16.48,
+        "right": 217.08,
+        "bottom": 297.34
+      },
+      "nameRect": {
+        "x": 183.69,
+        "y": 315.83,
+        "w": 51.61,
+        "h": 19.7,
+        "right": 235.3,
+        "bottom": 335.53
+      },
+      "valueOverflow": {
+        "sw": 50,
+        "cw": 50,
+        "sh": 13,
+        "ch": 12
+      },
+      "cardOverflow": {
+        "sw": 58,
+        "cw": 58,
+        "sh": 88,
+        "ch": 88
+      },
+      "insideCard": true,
+      "overlapSymbol": false,
+      "overlapName": false,
+      "ariaLabel": "Descarte: Vermelho Invers\u00e3o",
+      "cardName": "Vermelho Invers\u00e3o",
+      "valueTextIsExact": "Invers\u00e3o"
+    },
+    "after_zoom_scroll": {
+      "text": "Invers\u00e3o",
+      "dataLong": "true",
+      "font": "11.2px",
+      "valueRect": {
+        "x": 184.63,
+        "y": 312.54,
+        "w": 49.71,
+        "h": 12.09,
+        "right": 234.34,
+        "bottom": 324.63
+      },
+      "cardRect": {
+        "x": 177.49,
+        "y": 273.2,
+        "w": 64,
+        "h": 94,
+        "right": 241.49,
+        "bottom": 367.2
+      },
+      "symbolRect": {
+        "x": 201.91,
+        "y": 292.87,
+        "w": 15.17,
+        "h": 16.48,
+        "right": 217.08,
+        "bottom": 309.34
+      },
+      "nameRect": {
+        "x": 183.69,
+        "y": 327.83,
+        "w": 51.61,
+        "h": 19.7,
+        "right": 235.3,
+        "bottom": 347.53
+      },
+      "valueOverflow": {
+        "sw": 50,
+        "cw": 50,
+        "sh": 13,
+        "ch": 12
+      },
+      "cardOverflow": {
+        "sw": 58,
+        "cw": 58,
+        "sh": 88,
+        "ch": 88
+      },
+      "insideCard": true,
+      "overlapSymbol": false,
+      "overlapName": false,
+      "ariaLabel": "Descarte: Vermelho Invers\u00e3o",
+      "cardName": "Vermelho Invers\u00e3o",
+      "valueTextIsExact": "Invers\u00e3o"
+    },
+    "handValues": [
+      {
+        "text": "0",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "+4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "1",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "+2",
+        "font": "23.2px",
+        "long": null
+      }
+    ],
+    "discard_text": "Invers\u00e3o",
+    "turn": "Sua vez",
+    "activeColor": "\u25cfVermelho"
+  },
+  "1280": {
+    "before_scroll": {
+      "text": "Invers\u00e3o",
+      "dataLong": "true",
+      "font": "13.12px",
+      "valueRect": {
+        "x": 558.79,
+        "y": 275.27,
+        "w": 57.06,
+        "h": 14.16,
+        "right": 615.85,
+        "bottom": 289.44
+      },
+      "cardRect": {
+        "x": 549.32,
+        "y": 231.03,
+        "w": 76,
+        "h": 108,
+        "right": 625.32,
+        "bottom": 339.03
+      },
+      "symbolRect": {
+        "x": 579.73,
+        "y": 255.6,
+        "w": 15.17,
+        "h": 16.48,
+        "right": 594.91,
+        "bottom": 272.08
+      },
+      "nameRect": {
+        "x": 555.52,
+        "y": 292.63,
+        "w": 63.61,
+        "h": 21.83,
+        "right": 619.13,
+        "bottom": 314.46
+      },
+      "valueOverflow": {
+        "sw": 57,
+        "cw": 57,
+        "sh": 15,
+        "ch": 14
+      },
+      "cardOverflow": {
+        "sw": 70,
+        "cw": 70,
+        "sh": 102,
+        "ch": 102
+      },
+      "insideCard": true,
+      "overlapSymbol": false,
+      "overlapName": false,
+      "ariaLabel": "Descarte: Vermelho Invers\u00e3o",
+      "cardName": "Vermelho Invers\u00e3o",
+      "valueTextIsExact": "Invers\u00e3o"
+    },
+    "after_zoom_scroll": {
+      "text": "Invers\u00e3o",
+      "dataLong": "true",
+      "font": "13.12px",
+      "valueRect": {
+        "x": 558.79,
+        "y": 390.27,
+        "w": 57.06,
+        "h": 14.16,
+        "right": 615.85,
+        "bottom": 404.44
+      },
+      "cardRect": {
+        "x": 549.32,
+        "y": 346.03,
+        "w": 76,
+        "h": 108,
+        "right": 625.32,
+        "bottom": 454.03
+      },
+      "symbolRect": {
+        "x": 579.73,
+        "y": 370.6,
+        "w": 15.17,
+        "h": 16.48,
+        "right": 594.91,
+        "bottom": 387.08
+      },
+      "nameRect": {
+        "x": 555.52,
+        "y": 407.63,
+        "w": 63.61,
+        "h": 21.83,
+        "right": 619.13,
+        "bottom": 429.46
+      },
+      "valueOverflow": {
+        "sw": 57,
+        "cw": 57,
+        "sh": 15,
+        "ch": 14
+      },
+      "cardOverflow": {
+        "sw": 70,
+        "cw": 70,
+        "sh": 102,
+        "ch": 102
+      },
+      "insideCard": true,
+      "overlapSymbol": false,
+      "overlapName": false,
+      "ariaLabel": "Descarte: Vermelho Invers\u00e3o",
+      "cardName": "Vermelho Invers\u00e3o",
+      "valueTextIsExact": "Invers\u00e3o"
+    },
+    "handValues": [
+      {
+        "text": "0",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "+4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "1",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "+2",
+        "font": "23.2px",
+        "long": null
+      }
+    ],
+    "discard_text": "Invers\u00e3o",
+    "turn": "Sua vez",
+    "activeColor": "\u25cfVermelho"
+  }
+}

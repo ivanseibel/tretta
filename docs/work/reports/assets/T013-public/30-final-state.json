@@ -1,0 +1,80 @@
+{
+  "checkedAt": "2026-10-17T19:30:48.160Z",
+  "vercel": {
+    "project": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+    "projectName": "tretta",
+    "team": "seibel (team_4mQparNtNCNqsb95uxf2FzoD)",
+    "plan": "hobby",
+    "production": {
+      "id": "dpl_DARamMVYaXEgnZ2KvioZsMGRnf6k",
+      "url": "tretta-1fes8gwbm-seibel.vercel.app",
+      "readyState": "READY",
+      "readySubstate": "PROMOTED",
+      "target": "production"
+    },
+    "meta": {
+      "trettaTask": "T013-publication",
+      "digest": "3e3c84dea1cfe719181c7f0fbc2b63b734f3ab949ab1d93cad5866afc6af6085",
+      "base": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+      "actor": "opencode",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "aliases": [
+      {
+        "alias": "tretta.vercel.app",
+        "deploymentId": "dpl_DARamMVYaXEgnZ2KvioZsMGRnf6k",
+        "url": "tretta-1fes8gwbm-seibel.vercel.app",
+        "createdAt": 1792170689670
+      },
+      {
+        "alias": "tretta-seibel.vercel.app",
+        "deploymentId": "dpl_DARamMVYaXEgnZ2KvioZsMGRnf6k",
+        "url": "tretta-1fes8gwbm-seibel.vercel.app",
+        "createdAt": 1792170413864
+      }
+    ]
+  },
+  "http": {
+    "checkedAt": "2026-10-17T19:29:38.645Z",
+    "publicHome": "200",
+    "publicSalaProbe": "200",
+    "publicChunkHttp": "200",
+    "chunkServedBeforePromotion": {
+      "file": "2b2eetie8ke5z.js",
+      "sha256": "1a7b2e020039d5b4af244bd1d71d6b7cc0b5a31804d3cc6906ef49a7f1905b2a"
+    },
+    "chunkStaged": {
+      "file": "0pzjo0m_qc-nz.js",
+      "sha256": "aca6bb5fabd8545d6f3ddcef7c5e82bf0542c3a51ce4b85d75c164a076902839"
+    },
+    "chunkServedAfterPromotion": {
+      "file": "0pzjo0m_qc-nz.js",
+      "sha256": "aca6bb5fabd8545d6f3ddcef7c5e82bf0542c3a51ce4b85d75c164a076902839"
+    },
+    "byteIdenticalStagedVsPublic": true
+  },
+  "render": {
+    "service": "srv-db95f2u7bikc73dpndt0",
+    "plan": "free",
+    "instances": 1,
+    "liveDeploy": {
+      "id": "dep-db9lnpm1egvs73ct80ig",
+      "status": "live",
+      "commit": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+      "finishedAt": "2026-10-17T11:29:58.051942Z"
+    },
+    "healthz": {
+      "status": 200,
+      "body": {
+        "ok": true
+      },
+      "note": "sem novo deploy/restart"
+    }
+  },
+  "rollback": {
+    "frontend": "dpl_5zzeCcbWYdEgZoz7d7pZUs7qTLtk (T012, READY)",
+    "command": "vercel alias set dpl_5zzeCcbWYdEgZoz7d7pZUs7qTLtk tretta.vercel.app --scope seibel",
+    "executed": false
+  }
+}

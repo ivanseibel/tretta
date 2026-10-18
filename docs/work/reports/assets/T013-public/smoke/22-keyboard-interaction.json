@@ -1,0 +1,13 @@
+{
+  "target": "red-4-2",
+  "focus_path": [
+    "yellow-1-1",
+    "yellow-2-1",
+    "green-9-1",
+    "red-4-2"
+  ],
+  "aria_pressed": "true",
+  "strip": "Jogar: Vermelho 4JogarCancelar",
+  "discard_before": "Bloqueio",
+  "discard_after": "4"
+}

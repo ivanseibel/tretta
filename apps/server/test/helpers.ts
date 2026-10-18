@@ -12,6 +12,9 @@ import type {
   EffectVariant,
   EventsMessage,
   JoinRoomAck,
+  ReactionBroadcast,
+  ReactionSendAck,
+  ReactionType,
   ServerToClientEvents,
   SimpleAck,
   StateMessage,
@@ -106,6 +109,7 @@ export interface TestServerOptions {
   readonly retentionMs?: number;
   readonly botDelayMs?: number;
   readonly tauntCooldownMs?: number;
+  readonly reactionCooldownMs?: number;
 }
 
 export interface TestServer {
@@ -125,6 +129,7 @@ export async function startTestServer(options: TestServerOptions = {}): Promise<
     ...(options.retentionMs === undefined ? {} : { retentionMs: options.retentionMs }),
     ...(options.botDelayMs === undefined ? {} : { botDelayMs: options.botDelayMs }),
     ...(options.tauntCooldownMs === undefined ? {} : { tauntCooldownMs: options.tauntCooldownMs }),
+    ...(options.reactionCooldownMs === undefined ? {} : { reactionCooldownMs: options.reactionCooldownMs }),
   });
   const port = await server.listen(0);
   return {
@@ -150,11 +155,12 @@ export interface Recorder {
   readonly events: EventsMessage[];
   readonly chat: ChatBroadcast[];
   readonly taunts: TauntBroadcast[];
+  readonly reactions: ReactionBroadcast[];
   readonly packets: unknown[];
 }
 
 export function record(socket: TestClient): Recorder {
-  const recorder: Recorder = { states: [], events: [], chat: [], taunts: [], packets: [] };
+  const recorder: Recorder = { states: [], events: [], chat: [], taunts: [], reactions: [], packets: [] };
   socket.onAny((event, ...args) => {
     recorder.packets.push({ event, args });
   });
@@ -169,6 +175,9 @@ export function record(socket: TestClient): Recorder {
   });
   socket.on('server:taunt', (message) => {
     recorder.taunts.push(message);
+  });
+  socket.on('server:reaction', (message) => {
+    recorder.reactions.push(message);
   });
   return recorder;
 }
@@ -303,6 +312,15 @@ export async function tauntSend(
   intentId = intent(),
 ): Promise<Ack<TauntSendAck>> {
   return request<Ack<TauntSendAck>>(socket, 'client:tauntSend', { intentId, roomCode, type, targetId });
+}
+
+export async function reactionSend(
+  socket: TestClient,
+  roomCode: string,
+  type: ReactionType,
+  intentId = intent(),
+): Promise<Ack<ReactionSendAck>> {
+  return request<Ack<ReactionSendAck>>(socket, 'client:reactionSend', { intentId, roomCode, type });
 }
 
 export function waitForDisconnect(socket: TestClient): Promise<void> {

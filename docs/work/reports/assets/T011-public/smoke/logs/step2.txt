@@ -1,0 +1,16 @@
+has_results: True
+winner: Lila (bot) venceu a rodada!
+score_Checador: Checadorvocê0 rodada(s)
+score_Tico: Ticobot0 rodada(s)
+score_Lila: Lilabot1 rodada(s)
+score_Nino: Ninobot0 rodada(s)
+actions_play: 4 draw_pass: 1 wild_choices: 0
+errors: {'errors': [], 'rejections': []}
+lobby_rows: 4
+ready_toggle: Estou pronto
+start_disabled: True
+my_row: Checadoranfitriãovocêaguardando0 v.
+errors: {'errors': [], 'rejections': []}
+round2_started: True
+turn2: Sua vez
+errors: {'errors': [], 'rejections': []}

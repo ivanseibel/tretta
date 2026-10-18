@@ -1,0 +1,42 @@
+[
+  {
+    "phase": "after",
+    "state": "treino-390",
+    "width": 390,
+    "target": "descarte",
+    "cardId": "red-reverse-1",
+    "text": "Inversão",
+    "dataLong": "true",
+    "fontSize": "11.2px",
+    "overflowWrap": "anywhere",
+    "lines": 1,
+    "valueWidth": 49.72,
+    "cardWidth": 64,
+    "valueHeight": 12.09,
+    "clippedHorizontally": false,
+    "insideCard": true,
+    "overlapsSymbol": false,
+    "overlapsName": false,
+    "ariaLabel": "Descarte: Vermelho Inversão"
+  },
+  {
+    "phase": "after",
+    "state": "treino-390",
+    "width": 390,
+    "target": "mão",
+    "cardId": "red-reverse-1",
+    "text": "Inversão",
+    "dataLong": "true",
+    "fontSize": "11.2px",
+    "overflowWrap": "anywhere",
+    "lines": 1,
+    "valueWidth": 49.72,
+    "cardWidth": 64,
+    "valueHeight": 12.09,
+    "clippedHorizontally": false,
+    "insideCard": true,
+    "overlapsSymbol": false,
+    "overlapsName": false,
+    "ariaLabel": "Vermelho Inversão, jogável"
+  }
+]

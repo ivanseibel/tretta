@@ -1,0 +1,11 @@
+{
+  "sourceCount": 159,
+  "changedFromAcceptedT012": [
+    "apps/web/components/GameTable.tsx"
+  ],
+  "reversingOnlyReportedEditMatchesAcceptedHash": true,
+  "testedCopyDifferences": [],
+  "executorHistoricalFileCount": 657,
+  "executorHistoricalDifferences": [],
+  "baselineThisValidationCount": 785
+}

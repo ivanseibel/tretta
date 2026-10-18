@@ -1,0 +1,233 @@
+{
+  "viewportWidth": 320,
+  "documentWidth": 320,
+  "ring": {
+    "left": 35.171875,
+    "top": 219.171875,
+    "right": 284.828125,
+    "bottom": 731.171875
+  },
+  "seats": [
+    {
+      "playerId": "p_977e023a-9035-4ebe-81a1-6a65a1d0dcc0",
+      "nickname": "Participante 1",
+      "slot": "0",
+      "tags": [
+        "Você",
+        "na vez"
+      ],
+      "truncated": false,
+      "left": 132.8046875,
+      "top": 593.0234375,
+      "right": 187.1953125,
+      "bottom": 705.4765625,
+      "children": [
+        {
+          "text": "",
+          "font": 10.4,
+          "left": 149.9921875,
+          "top": 597.2109375,
+          "right": 169.9921875,
+          "bottom": 617.2109375
+        },
+        {
+          "text": "Participante 1",
+          "font": 16,
+          "left": 138.6015625,
+          "top": 618.4765625,
+          "right": 181.3984375,
+          "bottom": 661.5078125
+        },
+        {
+          "text": "Participante 1",
+          "font": 12.48,
+          "left": 138.6015625,
+          "top": 618.4765625,
+          "right": 181.3984375,
+          "bottom": 661.5078125
+        },
+        {
+          "text": "Você",
+          "font": 9.6,
+          "left": 144.6171875,
+          "top": 662.7734375,
+          "right": 175.3671875,
+          "bottom": 674.3984375
+        },
+        {
+          "text": "na vez",
+          "font": 9.6,
+          "left": 141.1171875,
+          "top": 676.7890625,
+          "right": 178.8828125,
+          "bottom": 688.4140625
+        },
+        {
+          "text": "7 cartas",
+          "font": 10.56,
+          "left": 139.6171875,
+          "top": 689.6796875,
+          "right": 180.3828125,
+          "bottom": 701.2890625
+        }
+      ]
+    },
+    {
+      "playerId": "p_4f822055-ed7e-4386-af65-effe3a3ede39",
+      "nickname": "Participante 2",
+      "slot": "1",
+      "tags": [],
+      "truncated": false,
+      "left": 50.4140625,
+      "top": 431.765625,
+      "right": 104.8046875,
+      "bottom": 518.578125,
+      "children": [
+        {
+          "text": "",
+          "font": 10.4,
+          "left": 67.6015625,
+          "top": 435.953125,
+          "right": 87.6015625,
+          "bottom": 455.953125
+        },
+        {
+          "text": "Participante 2",
+          "font": 16,
+          "left": 56.2109375,
+          "top": 457.21875,
+          "right": 99.0078125,
+          "bottom": 500.25
+        },
+        {
+          "text": "Participante 2",
+          "font": 12.48,
+          "left": 56.2109375,
+          "top": 457.21875,
+          "right": 99.0078125,
+          "bottom": 500.25
+        },
+        {
+          "text": "7 cartas",
+          "font": 10.56,
+          "left": 57.2265625,
+          "top": 502.78125,
+          "right": 97.9921875,
+          "bottom": 514.390625
+        }
+      ]
+    },
+    {
+      "playerId": "p_668d6d14-9a65-4016-8b67-e2d761967e2a",
+      "nickname": "WWWWWWWWWWWWWWWWWWWWx",
+      "slot": "2",
+      "tags": [],
+      "truncated": true,
+      "left": 132.8046875,
+      "top": 257.671875,
+      "right": 187.1953125,
+      "bottom": 344.484375,
+      "children": [
+        {
+          "text": "",
+          "font": 10.4,
+          "left": 149.9921875,
+          "top": 261.859375,
+          "right": 169.9921875,
+          "bottom": 281.859375
+        },
+        {
+          "text": "WWWWWWWWWWWWWWWWWWWWx",
+          "font": 16,
+          "left": 138.6015625,
+          "top": 283.125,
+          "right": 181.3984375,
+          "bottom": 326.15625
+        },
+        {
+          "text": "WWWWWWWWWWWWWWWWWWWWx",
+          "font": 12.48,
+          "left": 138.6015625,
+          "top": 283.125,
+          "right": 181.3984375,
+          "bottom": 326.15625
+        },
+        {
+          "text": "7 cartas",
+          "font": 10.56,
+          "left": 139.6171875,
+          "top": 328.6875,
+          "right": 180.3828125,
+          "bottom": 340.296875
+        }
+      ]
+    },
+    {
+      "playerId": "p_0c5442b6-6d97-4795-9998-999d1d2602c4",
+      "nickname": "WWWWWWWWWWWWWWWWWWWWWWWW",
+      "slot": "3",
+      "tags": [],
+      "truncated": true,
+      "left": 215.1796875,
+      "top": 431.765625,
+      "right": 269.5703125,
+      "bottom": 518.578125,
+      "children": [
+        {
+          "text": "",
+          "font": 10.4,
+          "left": 232.3671875,
+          "top": 435.953125,
+          "right": 252.3671875,
+          "bottom": 455.953125
+        },
+        {
+          "text": "WWWWWWWWWWWWWWWWWWWWWWWW",
+          "font": 16,
+          "left": 220.9765625,
+          "top": 457.21875,
+          "right": 263.7734375,
+          "bottom": 500.25
+        },
+        {
+          "text": "WWWWWWWWWWWWWWWWWWWWWWWW",
+          "font": 12.48,
+          "left": 220.9765625,
+          "top": 457.21875,
+          "right": 263.7734375,
+          "bottom": 500.25
+        },
+        {
+          "text": "7 cartas",
+          "font": 10.56,
+          "left": 221.9921875,
+          "top": 502.78125,
+          "right": 262.7578125,
+          "bottom": 514.390625
+        }
+      ]
+    }
+  ],
+  "outside": [],
+  "overlaps": [],
+  "arrowChip": [],
+  "arrowsOutsideRing": [],
+  "fonts": {
+    "name": [
+      12.48,
+      12.48,
+      12.48,
+      12.48
+    ],
+    "tag": [
+      9.6,
+      9.6
+    ],
+    "count": [
+      10.56,
+      10.56,
+      10.56,
+      10.56
+    ]
+  }
+}

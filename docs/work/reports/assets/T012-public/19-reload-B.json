@@ -1,0 +1,48 @@
+{
+ "before": {
+  "hand": [
+   "be3cd0b4ab66a7e5",
+   6
+  ],
+  "order": "Ordem dos assentos no circuito, a partir da base onde você está: Você (Bia), Checador A, Davi, BeatrizDeAlmeidaCastroLB, de volta a Você (Bia). Sentido anti-horário da rodada.",
+  "direction": "Ordem dos assentos · Sentido anti-horário",
+  "own": "p_7205d241-7b35-4f50-a5b8-aab7028159dd",
+  "chat": [
+   "Valeu, Checador!",
+   "Oi, Bia! Boa inversão."
+  ],
+  "turn": "Vez de Checador A"
+ },
+ "after": {
+  "hand": [
+   "be3cd0b4ab66a7e5",
+   6
+  ],
+  "order": "Ordem dos assentos no circuito, a partir da base onde você está: Você (Bia), Checador A, Davi, BeatrizDeAlmeidaCastroLB, de volta a Você (Bia). Sentido anti-horário da rodada.",
+  "direction": "Ordem dos assentos · Sentido anti-horário",
+  "own": "p_7205d241-7b35-4f50-a5b8-aab7028159dd",
+  "chat": [
+   "Valeu, Checador!",
+   "Oi, Bia! Boa inversão."
+  ],
+  "turn": "Vez de Checador A",
+  "pref_still_off": true
+ },
+ "res": {
+  "seen_recovering": false,
+  "hand_back": true,
+  "recovering_gone": true,
+  "hand_equal": true,
+  "order_equal": true,
+  "direction_equal": true,
+  "own_equal": true,
+  "chat_equal": true,
+  "turn_after": "Vez de Checador A",
+  "pref_still_off": true,
+  "replay_inversion_event": false,
+  "chat_after": [
+   "Valeu, Checador!",
+   "Oi, Bia! Boa inversão."
+  ]
+ }
+}

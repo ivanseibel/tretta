@@ -5,9 +5,11 @@ import type { Card, Color } from '@tretta/rules';
 import { COLORS } from '@tretta/rules';
 import type { EventsMessage, StateMessage } from '@tretta/protocol';
 import { useRoom } from '@/app/providers';
-import { AvatarBadge, ColorSymbol, LeaveButton } from '@/components/ui';
+import { AvatarAction, ColorSymbol, LeaveButton } from '@/components/ui';
 import { EventFeed } from '@/components/EventFeed';
 import { PausePanel } from '@/components/PausePanel';
+import { ReactionBadge } from '@/components/ReactionBadge';
+import { SeatCircuit } from '@/components/SeatCircuit';
 import { COLOR_LABELS, cardLabel, cardShort } from '@/lib/labels';
 
 interface FocusAfterAck {
@@ -89,8 +91,12 @@ export function GameTable({ state, events }: { state: StateMessage; events: Even
   const firstHandCardId = view?.hand[0]?.id ?? null;
   const leavesOneCard = (view?.hand.length ?? 0) - 1 === 1 && selectedCard !== null;
   const seatedPlayerIds = new Set((view?.players ?? []).map((player) => player.id));
-  const opponents = participants.filter((participant) => participant.id !== state.self.playerId && seatedPlayerIds.has(participant.id));
   const waitingParticipants = participants.filter((participant) => participant.id !== state.self.playerId && !seatedPlayerIds.has(participant.id));
+
+  function activateAvatar(playerId: string, trigger: HTMLElement): void {
+    if (playerId === state.self.playerId) room.openReactionMenu(trigger);
+    else room.openTauntMenu(playerId, trigger);
+  }
 
   const applyFocusAfterAck = (): void => {
     const request = focusAfterStateRef.current;
@@ -245,7 +251,6 @@ export function GameTable({ state, events }: { state: StateMessage; events: Even
         <span className="turn-indicator" role="status" aria-live="polite" aria-atomic="true" tabIndex={-1} data-testid="turn-indicator">
           {view.status === 'finished' ? 'Rodada encerrada' : paused ? 'Rodada pausada' : myTurn ? 'Sua vez' : `Vez de ${nicknameOf(view.currentPlayerId ?? '')}${currentIsBot ? ' (bot)' : ''}`}
         </span>
-        <span className="direction">{view.direction === 'clockwise' ? 'Sentido horário' : 'Sentido anti-horário'}</span>
         <LeaveButton />
       </header>
 
@@ -272,28 +277,19 @@ export function GameTable({ state, events }: { state: StateMessage; events: Even
         </section>
       ) : null}
 
-      <section className="opponents" aria-label="Adversários">
-        {opponents.map((participant) => (
-          <div
-            key={participant.id}
-            className={`opponent${view.currentPlayerId === participant.id ? ' opponent-current' : ''}`}
-            data-testid={`opponent-${participant.nickname}`}
-            data-player-id={participant.id}
-          >
-            <AvatarBadge avatar={participant.avatar} size="small" />
-            <span className="participant-name">{participant.nickname}</span>
-            {participant.kind === 'bot' ? <span className="tag tag-bot">bot</span> : null}
-            {participant.kind === 'human' && !participant.connected ? (
-              <span className="status disconnected">desconectado</span>
-            ) : null}
-            {participant.autoControlled ? <span className="tag tag-substitute">substituto</span> : null}
-            <span className="hand-count" data-testid={`hand-count-${participant.nickname}`}>
-              {view.players.find((player) => player.id === participant.id)?.handCount ?? 0} cartas
-            </span>
-            {view.currentPlayerId === participant.id ? <span className="tag tag-turn">vez</span> : null}
-          </div>
-        ))}
-      </section>
+      <SeatCircuit
+        players={view.players}
+        direction={view.direction}
+        currentPlayerId={view.currentPlayerId}
+        selfId={state.self.playerId}
+        participants={participants}
+        paused={paused}
+        roundFinished={view.status === 'finished'}
+        variant="table"
+        onAvatarActivate={activateAvatar}
+        reactions={room.activeReactions ?? {}}
+        animations={room.activeAnimations ?? 'full'}
+      />
 
       {waitingParticipants.length > 0 ? (
         <section className="opponents waiting-participants" aria-label="Aguardam a próxima rodada">
@@ -302,9 +298,17 @@ export function GameTable({ state, events }: { state: StateMessage; events: Even
               key={participant.id}
               className="opponent waiting-participant"
               data-testid={`waiting-participant-${participant.nickname}`}
+              data-player-id={participant.id}
             >
-              <AvatarBadge avatar={participant.avatar} size="small" />
+              <AvatarAction
+                avatar={participant.avatar}
+                label={`Provocar ${participant.nickname}`}
+                testId={`mood-avatar-${participant.id}`}
+                size="small"
+                onActivate={(trigger) => activateAvatar(participant.id, trigger)}
+              />
               <span className="participant-name">{participant.nickname}</span>
+              <ReactionBadge reaction={room.activeReactions?.[participant.id]} animations={room.activeAnimations ?? 'full'} />
               {participant.connected ? null : <span className="status disconnected">desconectado</span>}
               <span className="waiting-participant-label">aguarda próxima rodada</span>
             </div>
@@ -332,7 +336,9 @@ export function GameTable({ state, events }: { state: StateMessage; events: Even
             <span className="card-symbol" aria-hidden="true">
               {view.discardTop.kind === 'wild' ? <span className="color-symbol color-symbol-wild">✦</span> : <ColorSymbol color={view.discardTop.color} />}
             </span>
-            <span className="card-value" aria-hidden="true">{cardShort(view.discardTop)}</span>
+            <span className="card-value" data-long={cardShort(view.discardTop).length > 4 ? 'true' : undefined} aria-hidden="true">
+              {cardShort(view.discardTop)}
+            </span>
             <span className="card-name" aria-hidden="true">{cardLabel(view.discardTop)}</span>
           </div>
         </div>

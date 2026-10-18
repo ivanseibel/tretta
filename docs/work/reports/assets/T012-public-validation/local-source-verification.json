@@ -1,0 +1,21 @@
+{
+  "acceptedSourceCount": 159,
+  "acceptedSourceMissingFromUpload": [],
+  "uploadExtras": [
+    ".agents/skills/orchestrate-work/SKILL.md",
+    ".nvmrc",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "README.md",
+    "apps/web/next-env.d.ts",
+    "render.yaml"
+  ],
+  "acceptedSourceDifferentFromUpload": [],
+  "acceptedSourceDifferentFromWorkingTree": [],
+  "uploadCount": 166,
+  "uploadBytes": 1404378,
+  "manifestDigestSha256": "c0b0fc72042b37072d0e4f329e421c7414b4c5f9c3db2dfbf8fb9e639ce67615",
+  "claimedDigestSha256": "c0b0fc72042b37072d0e4f329e421c7414b4c5f9c3db2dfbf8fb9e639ce67615",
+  "manifestListMatches": true,
+  "uploadVsWorkingTreeDifferences": []
+}

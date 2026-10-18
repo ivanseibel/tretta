@@ -1,0 +1,42 @@
+{
+  "pre": {
+    "code": "sala própria (código mascarado)",
+    "hand": [
+      "green-4-1",
+      "green-draw-two-2",
+      "red-0-1",
+      "red-1-1",
+      "wild-draw-four-4",
+      "yellow-9-2"
+    ],
+    "discard": "Inversão",
+    "aria": "Descarte: Vermelho Inversão",
+    "turn": "Sua vez",
+    "self": "Rosa"
+  },
+  "post": {
+    "code": "sala própria (código mascarado)",
+    "hand": [
+      "green-4-1",
+      "green-draw-two-2",
+      "red-0-1",
+      "red-1-1",
+      "wild-draw-four-4",
+      "yellow-9-2"
+    ],
+    "discard": "Inversão",
+    "aria": "Descarte: Vermelho Inversão",
+    "turn": "Rodada pausada",
+    "self": "Rosa"
+  },
+  "handEqual": true,
+  "codeEqual": true,
+  "discardEqual": true,
+  "ariaEqual": true,
+  "wsUrls": [
+    {
+      "method": "Network.webSocketCreated",
+      "url": "wss://tretta-server.onrender.com/socket.io/?EIO=4&transport=websocket"
+    }
+  ]
+}

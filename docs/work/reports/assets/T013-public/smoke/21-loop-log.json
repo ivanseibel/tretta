@@ -1,0 +1,131 @@
+{
+  "log": [
+    {
+      "t": 1.1,
+      "action": "draw",
+      "new": [
+        "Vermelho Bloqueio, n\u00e3o jog\u00e1vel neste turno"
+      ],
+      "handCount": 3
+    },
+    {
+      "t": 1.3,
+      "action": "pass"
+    },
+    {
+      "t": 1.5,
+      "action": "pass"
+    },
+    {
+      "t": 4.7,
+      "action": "draw",
+      "new": [
+        "Azul 3, n\u00e3o jog\u00e1vel neste turno"
+      ],
+      "handCount": 4
+    },
+    {
+      "t": 4.9,
+      "action": "pass"
+    },
+    {
+      "t": 5.1,
+      "action": "pass"
+    },
+    {
+      "t": 8.3,
+      "action": "draw",
+      "new": [
+        "Azul 6, jog\u00e1vel"
+      ],
+      "handCount": 5
+    },
+    {
+      "t": 14.7,
+      "action": "pass"
+    },
+    {
+      "t": 14.8,
+      "action": "pass"
+    },
+    {
+      "t": 20.9,
+      "action": "draw",
+      "new": [
+        "Vermelho 9, n\u00e3o jog\u00e1vel neste turno"
+      ],
+      "handCount": 6
+    },
+    {
+      "t": 21.0,
+      "action": "pass"
+    },
+    {
+      "t": 21.2,
+      "action": "pass"
+    },
+    {
+      "t": 28.1,
+      "action": "draw",
+      "new": [
+        "Verde 5, n\u00e3o jog\u00e1vel neste turno"
+      ],
+      "handCount": 11
+    },
+    {
+      "t": 28.3,
+      "action": "pass"
+    },
+    {
+      "t": 28.5,
+      "action": "pass"
+    },
+    {
+      "t": 32.4,
+      "action": "draw",
+      "new": [
+        "Amarelo 4, n\u00e3o jog\u00e1vel neste turno"
+      ],
+      "handCount": 12
+    },
+    {
+      "t": 32.5,
+      "action": "pass"
+    },
+    {
+      "t": 32.7,
+      "action": "pass"
+    },
+    {
+      "t": 35.8,
+      "action": "return_to_lobby"
+    },
+    {
+      "t": 37.9,
+      "action": "start_round"
+    },
+    {
+      "t": 39.8,
+      "action": "play_bloqueio",
+      "how": "held",
+      "card": "Verde Bloqueio, jog\u00e1vel"
+    },
+    {
+      "t": 52.3,
+      "action": "freeze_attempt",
+      "trigger": "my_bloqueio_play:held",
+      "frozen_discard": "Bloqueio"
+    },
+    {
+      "t": 54.5,
+      "action": "bloqueio_captured"
+    }
+  ],
+  "state": {
+    "bloqueio_captured": true,
+    "keyboard_done": false,
+    "draw_done": true
+  },
+  "elapsed": 54.7,
+  "tab": "https://tretta.vercel.app/sala/CO••••"
+}

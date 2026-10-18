@@ -1,0 +1,275 @@
+{
+  "390": {
+    "discard": {
+      "text": "Bloqueio",
+      "dataLong": "true",
+      "font": "11.2px",
+      "valueRect": {
+        "x": 219.41,
+        "y": 1177.91,
+        "w": 50.67,
+        "h": 12.09,
+        "right": 270.08,
+        "bottom": 1190
+      },
+      "cardRect": {
+        "x": 212.74,
+        "y": 1138.57,
+        "w": 64,
+        "h": 94,
+        "right": 276.74,
+        "bottom": 1232.57
+      },
+      "symbolRect": {
+        "x": 237.16,
+        "y": 1158.23,
+        "w": 15.17,
+        "h": 16.48,
+        "right": 252.33,
+        "bottom": 1174.71
+      },
+      "nameRect": {
+        "x": 218.94,
+        "y": 1193.2,
+        "w": 51.61,
+        "h": 19.7,
+        "right": 270.55,
+        "bottom": 1212.9
+      },
+      "valueOverflow": {
+        "sw": 51,
+        "cw": 51,
+        "sh": 13,
+        "ch": 12
+      },
+      "cardOverflow": {
+        "sw": 58,
+        "cw": 58,
+        "sh": 88,
+        "ch": 88
+      },
+      "insideCard": true,
+      "overlapSymbol": false,
+      "overlapName": false,
+      "ariaLabel": "Descarte: Vermelho Bloqueio",
+      "cardName": "Vermelho Bloqueio",
+      "valueTextIsExact": "Bloqueio"
+    },
+    "turn": "Rodada pausada",
+    "activeColor": "\u25cfVermelho",
+    "handValues": [
+      {
+        "text": "1",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "7",
+        "font": "23.2px",
+        "long": null
+      }
+    ]
+  },
+  "320": {
+    "discard": {
+      "text": "Bloqueio",
+      "dataLong": "true",
+      "font": "11.2px",
+      "valueRect": {
+        "x": 184.16,
+        "y": 300.43,
+        "w": 50.67,
+        "h": 12.09,
+        "right": 234.83,
+        "bottom": 312.52
+      },
+      "cardRect": {
+        "x": 177.49,
+        "y": 261.09,
+        "w": 64,
+        "h": 94,
+        "right": 241.49,
+        "bottom": 355.09
+      },
+      "symbolRect": {
+        "x": 201.91,
+        "y": 280.76,
+        "w": 15.17,
+        "h": 16.48,
+        "right": 217.08,
+        "bottom": 297.23
+      },
+      "nameRect": {
+        "x": 183.69,
+        "y": 315.72,
+        "w": 51.61,
+        "h": 19.7,
+        "right": 235.3,
+        "bottom": 335.42
+      },
+      "valueOverflow": {
+        "sw": 51,
+        "cw": 51,
+        "sh": 13,
+        "ch": 12
+      },
+      "cardOverflow": {
+        "sw": 58,
+        "cw": 58,
+        "sh": 88,
+        "ch": 88
+      },
+      "insideCard": true,
+      "overlapSymbol": false,
+      "overlapName": false,
+      "ariaLabel": "Descarte: Vermelho Bloqueio",
+      "cardName": "Vermelho Bloqueio",
+      "valueTextIsExact": "Bloqueio"
+    },
+    "turn": "Rodada pausada",
+    "activeColor": "\u25cfVermelho",
+    "handValues": [
+      {
+        "text": "1",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "7",
+        "font": "23.2px",
+        "long": null
+      }
+    ]
+  },
+  "1280": {
+    "discard": {
+      "text": "Bloqueio",
+      "dataLong": "true",
+      "font": "13.12px",
+      "valueRect": {
+        "x": 558.23,
+        "y": 63.37,
+        "w": 58.19,
+        "h": 14.16,
+        "right": 616.41,
+        "bottom": 77.53
+      },
+      "cardRect": {
+        "x": 549.32,
+        "y": 19.13,
+        "w": 76,
+        "h": 108,
+        "right": 625.32,
+        "bottom": 127.13
+      },
+      "symbolRect": {
+        "x": 579.73,
+        "y": 43.7,
+        "w": 15.17,
+        "h": 16.48,
+        "right": 594.91,
+        "bottom": 60.17
+      },
+      "nameRect": {
+        "x": 555.52,
+        "y": 80.73,
+        "w": 63.61,
+        "h": 21.83,
+        "right": 619.13,
+        "bottom": 102.55
+      },
+      "valueOverflow": {
+        "sw": 58,
+        "cw": 58,
+        "sh": 15,
+        "ch": 14
+      },
+      "cardOverflow": {
+        "sw": 70,
+        "cw": 70,
+        "sh": 102,
+        "ch": 102
+      },
+      "insideCard": true,
+      "overlapSymbol": false,
+      "overlapName": false,
+      "ariaLabel": "Descarte: Vermelho Bloqueio",
+      "cardName": "Vermelho Bloqueio",
+      "valueTextIsExact": "Bloqueio"
+    },
+    "turn": "Rodada pausada",
+    "activeColor": "\u25cfVermelho",
+    "handValues": [
+      {
+        "text": "1",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "2",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "4",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "9",
+        "font": "23.2px",
+        "long": null
+      },
+      {
+        "text": "7",
+        "font": "23.2px",
+        "long": null
+      }
+    ]
+  }
+}

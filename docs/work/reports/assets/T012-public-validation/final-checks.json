@@ -1,0 +1,19 @@
+{
+  "priorReportEvidenceFiles": 645,
+  "priorReportEvidencePreserved": 645,
+  "sourceUploadFilesRechecked": 166,
+  "sourceDifferences": [],
+  "localLinksCheckedIn": [
+    "docs/work/reports/T012-publication.validation.md",
+    "docs/work/status.md",
+    "docs/work/plan.md",
+    "docs/work/deployment-free.md",
+    "docs/work/T012-publication.md",
+    "docs/product/ordem-das-jogadas.md",
+    "docs/product/backlog.md"
+  ],
+  "brokenLocalLinks": [],
+  "gitDiffCheckExitCode": 0,
+  "gitDiffCheckOutput": "",
+  "head": "3ae459e5a88e612dc389e7bcb4570809ddcc3445"
+}

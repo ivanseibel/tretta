@@ -1,0 +1,38 @@
+{
+ "checkedAtUtc": "2026-10-17T15:59:49.627616+00:00",
+ "team": {
+  "id": "team_4mQparNtNCNqsb95uxf2FzoD",
+  "slug": "seibel",
+  "name": "Seibel",
+  "plan": "hobby",
+  "status": "active"
+ },
+ "project": {
+  "id": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+  "name": "tretta",
+  "accountId": "team_4mQparNtNCNqsb95uxf2FzoD",
+  "framework": "nextjs",
+  "rootDirectory": "apps/web",
+  "nodeVersion": "22.x",
+  "sourceFilesOutsideRootDirectory": true,
+  "link": null
+ },
+ "alias": {
+  "alias": "tretta.vercel.app",
+  "deploymentId": "dpl_fiXC5suPTF2VCW22fEVf64HZYhNP",
+  "url": "tretta-qj6nwkkie-seibel.vercel.app",
+  "readyState": "READY",
+  "target": null,
+  "readyStateSource": "v13/deployments readback (alias payload omite readyState)"
+ },
+ "servedDeployment": {
+  "id": "dpl_fiXC5suPTF2VCW22fEVf64HZYhNP",
+  "url": "tretta-qj6nwkkie-seibel.vercel.app",
+  "readyState": "READY",
+  "target": "production",
+  "buildingAt": 1792234997749,
+  "ready": 1792235020153,
+  "createdAt": 1792234996844
+ },
+ "publicFrontend": "T011 dpl_fiXC5suPTF2VCW22fEVf64HZYhNP (rollback de refer\u00eancia antes da publica\u00e7\u00e3o T012)"
+}

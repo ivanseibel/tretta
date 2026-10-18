@@ -1,0 +1,28 @@
+{
+ "deploy": "dep-db9lnpm1egvs73ct80ig",
+ "service": "srv-db95f2u7bikc73dpndt0",
+ "buildCommandEchoed": true,
+ "frozenLockfileSeen": true,
+ "buildSuccessfulSeen": true,
+ "cloningFromRepoSeen": true,
+ "runtimeListeningLine": "Tretta server listening on http://localhost:10000 (web origin: https://tretta.vercel.app)",
+ "listeningOriginMatches": true,
+ "observedListeningTimestampsUtc": [
+  "2026-10-16T16:58:54.526962763Z",
+  "2026-10-16T21:42:39.010972429Z",
+  "2026-10-16T22:11:30.954342196Z",
+  "2026-10-17T00:30:41.323528628Z",
+  "2026-10-17T01:03:35.930418936Z",
+  "2026-10-17T01:35:13.373491531Z",
+  "2026-10-17T11:04:19.005152077Z",
+  "2026-10-17T11:29:54.650248989Z"
+ ],
+ "note": "O plano Free hiberna por inatividade; cada retomada registra nova linha 'listening'. Salas vivem em memória e já são apagadas em cada hibernação/retomada.",
+ "testHooksBehaviorProof": "TEST_HOOKS_DISABLED em test:setNextDeck e test:setEffectVariant (protocol-check.json)",
+ "seedConfigProof": "render.yaml (Blueprint do serviço) não declara TRE_TTA_SEED; nenhuma variável de seed adicionada no serviço existente.",
+ "webOriginConfigProof": "runtime log acima; CORS restrito à origem em cors-origin-check.txt",
+ "observedListeningOriginValues": [
+  "https://tretta.vercel.app"
+ ],
+ "buildCommandMessage": "\u001b[34m\u001b[1m==>\u001b(B\u001b[m \u001b[1mRunning build command 'corepack enable && node --version && pnpm --version && pnpm install --frozen-lockfile && pnpm --filter @tretta/server... build'...\u001b(B\u001b[m"
+}

@@ -1,0 +1,222 @@
+{
+ "A": {
+  "order": "Ordem dos assentos no circuito, a partir da base onde você está: Você (Checador A), Bia, BeatrizDeAlmeidaCastroLB, Davi, de volta a Você (Checador A). Sentido horário da rodada.",
+  "direction": "Ordem dos assentos · Sentido horário",
+  "turn": "Sua vez",
+  "seats": [
+   [
+    "p_31dc",
+    "0",
+    "Checador A",
+    "true",
+    "true"
+   ],
+   [
+    "p_7205",
+    "1",
+    "Bia",
+    "false",
+    "false"
+   ],
+   [
+    "p_3693",
+    "2",
+    "BeatrizDeAlmeidaCastroLB",
+    "false",
+    "false"
+   ],
+   [
+    "p_d770",
+    "3",
+    "Davi",
+    "false",
+    "false"
+   ]
+  ],
+  "arrows": [
+   {
+    "slot": "seat-arrow-0",
+    "rot": "315.9"
+   },
+   {
+    "slot": "seat-arrow-1",
+    "rot": "44.1"
+   },
+   {
+    "slot": "seat-arrow-2",
+    "rot": "135.9"
+   },
+   {
+    "slot": "seat-arrow-3",
+    "rot": "224.1"
+   }
+  ],
+  "effects": [],
+  "hand": "94be3500f4ef5fe9"
+ },
+ "B": {
+  "order": "Ordem dos assentos no circuito, a partir da base onde você está: Você (Bia), BeatrizDeAlmeidaCastroLB, Davi, Checador A, de volta a Você (Bia). Sentido horário da rodada.",
+  "direction": "Ordem dos assentos · Sentido horário",
+  "turn": "Vez de Checador A",
+  "seats": [
+   [
+    "p_7205",
+    "0",
+    "Bia",
+    "true",
+    "false"
+   ],
+   [
+    "p_3693",
+    "1",
+    "BeatrizDeAlmeidaCastroLB",
+    "false",
+    "false"
+   ],
+   [
+    "p_d770",
+    "2",
+    "Davi",
+    "false",
+    "false"
+   ],
+   [
+    "p_31dc",
+    "3",
+    "Checador A",
+    "false",
+    "true"
+   ]
+  ],
+  "arrows": [
+   {
+    "slot": "seat-arrow-0",
+    "rot": "315.9"
+   },
+   {
+    "slot": "seat-arrow-1",
+    "rot": "44.1"
+   },
+   {
+    "slot": "seat-arrow-2",
+    "rot": "135.9"
+   },
+   {
+    "slot": "seat-arrow-3",
+    "rot": "224.1"
+   }
+  ],
+  "effects": [],
+  "hand": "99f59e18150ec3ba"
+ },
+ "C": {
+  "order": "Ordem dos assentos no circuito, a partir da base onde você está: Você (BeatrizDeAlmeidaCastroLB), Davi, Checador A, Bia, de volta a Você (BeatrizDeAlmeidaCastroLB). Sentido horário da rodada.",
+  "direction": "Ordem dos assentos · Sentido horário",
+  "turn": "Vez de Checador A",
+  "seats": [
+   [
+    "p_3693",
+    "0",
+    "BeatrizDeAlmeidaCastroLB",
+    "true",
+    "false"
+   ],
+   [
+    "p_d770",
+    "1",
+    "Davi",
+    "false",
+    "false"
+   ],
+   [
+    "p_31dc",
+    "2",
+    "Checador A",
+    "false",
+    "true"
+   ],
+   [
+    "p_7205",
+    "3",
+    "Bia",
+    "false",
+    "false"
+   ]
+  ],
+  "arrows": [
+   {
+    "slot": "seat-arrow-0",
+    "rot": "315.9"
+   },
+   {
+    "slot": "seat-arrow-1",
+    "rot": "44.1"
+   },
+   {
+    "slot": "seat-arrow-2",
+    "rot": "135.9"
+   },
+   {
+    "slot": "seat-arrow-3",
+    "rot": "224.1"
+   }
+  ],
+  "effects": [],
+  "hand": "1bc4c1454d9875e4"
+ },
+ "D": {
+  "order": "Ordem dos assentos no circuito, a partir da base onde você está: Você (Davi), Checador A, Bia, BeatrizDeAlmeidaCastroLB, de volta a Você (Davi). Sentido horário da rodada.",
+  "direction": "Ordem dos assentos · Sentido horário",
+  "turn": "Vez de Checador A",
+  "seats": [
+   [
+    "p_d770",
+    "0",
+    "Davi",
+    "true",
+    "false"
+   ],
+   [
+    "p_31dc",
+    "1",
+    "Checador A",
+    "false",
+    "true"
+   ],
+   [
+    "p_7205",
+    "2",
+    "Bia",
+    "false",
+    "false"
+   ],
+   [
+    "p_3693",
+    "3",
+    "BeatrizDeAlmeidaCastroLB",
+    "false",
+    "false"
+   ]
+  ],
+  "arrows": [
+   {
+    "slot": "seat-arrow-0",
+    "rot": "315.9"
+   },
+   {
+    "slot": "seat-arrow-1",
+    "rot": "44.1"
+   },
+   {
+    "slot": "seat-arrow-2",
+    "rot": "135.9"
+   },
+   {
+    "slot": "seat-arrow-3",
+    "rot": "224.1"
+   }
+  ],
+  "effects": [],
+  "hand": "e42cb567d2060091"
+ }
+}

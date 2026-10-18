@@ -131,6 +131,71 @@ export function reverseDeck(): string[] {
 }
 
 /**
+ * Quatro assentos em circuito: a primeira Inversão vem do assento que abre a
+ * rodada (o primeiro jogador sorteado com a semente da fixture é o assento 0) e a
+ * segunda vem do assento seguinte (o anterior no sentido horário, assento 3), sem
+ * cartas intermediárias. Por isso as duas Inversões vermelhas ficam nas mãos 0 e 3.
+ */
+export function circuitFourDeck(): string[] {
+  return buildDeck({
+    hands: [
+      ['red-reverse-1', 'red-1-1', 'red-2-1', 'red-3-1', 'red-4-1', 'red-5-1', 'red-6-1'],
+      ['red-skip-2', 'red-1-2', 'red-2-2', 'red-3-2', 'red-4-2', 'red-5-2', 'red-6-2'],
+      ['red-skip-1', 'red-7-1', 'red-8-1', 'red-7-2', 'red-8-2', 'red-0-1', 'wild-color-1'],
+      ['red-reverse-2', 'blue-1-1', 'wild-color-2', 'wild-color-3', 'wild-draw-four-1', 'wild-draw-four-2', 'red-draw-two-1'],
+    ],
+    discard: 'red-9-1',
+    draw: ['red-draw-two-2', 'red-9-2'],
+  });
+}
+
+/**
+ * Dois assentos: cada pessoa tem a Inversão vermelha do baralho. Com dois
+ * assentos o motor trata a Inversão como Bloqueio e mantém o sentido.
+ */
+export function twoSeatReverseDeck(): string[] {
+  return buildDeck({
+    hands: [
+      ['red-reverse-1', 'red-1-1', 'red-2-1', 'red-3-1', 'red-4-1', 'red-5-1', 'red-6-1'],
+      ['red-reverse-2', 'red-1-2', 'red-2-2', 'red-3-2', 'red-4-2', 'red-5-2', 'red-6-2'],
+    ],
+    discard: 'red-9-1',
+    draw: ['red-7-1', 'red-8-1', 'red-9-2'],
+  });
+}
+
+/**
+ * Treino: a pessoa abre com a Inversão vermelha e os bots só têm cartas de
+ * outras cores; compram de uma pilha não vermelha e passam, sem virar o
+ * sentido de volta enquanto o circuito é observado.
+ */
+export function trainingReverseDeck(): string[] {
+  return buildDeck({
+    hands: [
+      ['red-reverse-1', 'red-1-1', 'red-2-1', 'red-3-1', 'red-4-1', 'red-5-1', 'red-6-1'],
+      ['blue-skip-1', 'blue-1-1', 'blue-2-1', 'blue-3-1', 'green-1-1', 'green-2-1', 'yellow-1-1'],
+      ['blue-skip-2', 'blue-4-1', 'blue-5-1', 'green-3-1', 'green-4-1', 'yellow-2-1', 'yellow-3-1'],
+      ['blue-reverse-1', 'blue-6-1', 'green-5-1', 'green-6-1', 'yellow-4-1', 'yellow-5-1', 'yellow-6-1'],
+    ],
+    discard: 'red-9-1',
+    draw: [
+      'blue-7-1',
+      'blue-8-1',
+      'blue-9-1',
+      'blue-0-1',
+      'green-7-1',
+      'green-8-1',
+      'green-9-1',
+      'green-0-1',
+      'yellow-7-1',
+      'yellow-8-1',
+      'yellow-9-1',
+      'yellow-0-1',
+    ],
+  });
+}
+
+/**
  * Vaga da Bia sob substituto: A só tem azuis (compra e passa) e B guarda o
  * primeiro Bloqueio vermelho, que o substituto joga na primeira vez da vaga.
  */

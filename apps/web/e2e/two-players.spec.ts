@@ -73,7 +73,7 @@ test('rodada completa com desktop e celular', async ({ browser }) => {
   await readyBoth(pageA, pageB);
 
   await expect(pageA.getByTestId('turn-indicator')).toHaveText('Sua vez');
-  await expect(pageB.getByTestId('opponent-Ana')).toBeVisible();
+  await expect(pageB.getByTestId('seat-Ana')).toBeVisible();
   await expect(pageB.getByTestId('card-blue-1-1')).toBeVisible();
   await expect(pageB.getByTestId('card-red-1-1')).toHaveCount(0);
 

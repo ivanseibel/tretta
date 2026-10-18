@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import type { Page } from '@playwright/test';
 import { expect, test } from './fixtures';
 import { scenarioDeck } from './deck';
-import { createRoom, drawAndPass, joinRoom, readyAll, setNextDeck, waitMyTurn } from './room';
+import { createRoom, drawAndPass, joinRoom, openTauntPanel, readyAll, setNextDeck, waitMyTurn } from './room';
 
 const shots = fileURLToPath(new URL('../../../docs/work/reports/assets/T008/', import.meta.url));
 mkdirSync(shots, { recursive: true });
@@ -20,6 +20,7 @@ test('mesa e pares de provocação cabem de celular a desktop', async ({ browser
     await setNextDeck(host, scenarioDeck());
     await readyAll(host, guest);
     await expect(host.getByTestId('turn-indicator')).toHaveText('Sua vez');
+    await openTauntPanel(host);
     for (const width of [1440, 1024, 768, 390, 320]) {
       await host.setViewportSize({ width, height: 900 });
       const metrics = await host.evaluate(() => {

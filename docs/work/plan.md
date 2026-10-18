@@ -2,9 +2,41 @@
 
 Plano inicial, organizado pelo orquestrador a partir do escopo aprovado. As tarefas posteriores a T001 serão detalhadas conforme os resultados anteriores. Cada execução retorna report; o orquestrador valida os critérios antes de avançar.
 
+## Feature atual — provocações pelo avatar e reações
+
+Prioridade escolhida e **[escopo confirmado](../product/provocacoes-e-reacoes.md) em 18/10/2026**, após entrevista `grill-with-docs` Q1–Q19. O usuário confirmou o entendimento conjunto e pediu início pelos executores manuais. As menções históricas abaixo a uma próxima melhoria por escolher antecedem esta prioridade. T013 segue publicada e aceita.
+
+| Incremento | Entrega | Estado |
+| --- | --- | --- |
+| [T014A](T014A.md) | Protocolo e servidor: reações sem alvo, limites/metadados de tempo, autoridade/deduplicação e disponibilidade dos alvos | [Aceita A1–A8](reports/T014A.validation.md) em 18/10/2026; build/tipos e 201 testes independentes passando; históricos preservados |
+| [T014B](T014B.md) | Experiência no navegador: avatares, reações, resposta, preferências, painel alternativo e regressões de uso | [Aceita localmente B1–B10/U1–U3](reports/T014B.final-validation.md) em 18/10/2026; build/tipos, 180 unitários e 46 casos reunidos verdes; nenhum ajuste pendente |
+| [Ajustes T014B](T014B-adjustments.md) | Corrigir R1–R3 e incorporar regressões com tempo/acks controlados | Executados; R1/R3 aceitos antes e R2 encerrado no [aceite final](reports/T014B.final-validation.md). Report preservado |
+| [Complemento R2](T014B-adjustments-2.md) | Preservar metadados válidos por categoria/alvo sem retroceder o relógio nem renovar prazos | Executado; S1 aceito antes e S2 encerrado no [aceite final](reports/T014B.final-validation.md). Report preservado |
+| [Relógio e empates](T014B-adjustments-3.md) | Corrigir estimativa monotônica e replay de fatos superados no mesmo timestamp | Executado e [aceito U1–U3](reports/T014B.final-validation.md) em 18/10/2026; report e evidências preservados |
+
+T014A e T014B concluem a implementação local deste recorte. Usuário respondeu **“Ok, seguimos”** em 18/10/2026: [T014-publication](T014-publication.md) autorizada e preparada para execução manual, ainda não executada. Janela sem partidas deve ser confirmada antes do push/reinício do backend. T013 segue publicada; nenhum executor acionado automaticamente.
+
+Execução manual, preferência `gpt-6-luna`, reasoning `max`; sem despacho automático. Cada incremento depende do aceite anterior. Publicação será uma etapa posterior, sem commit/push/deploy/restart nesta implementação local.
+
+## T013 — texto do descarte publicado e aceito
+
+[Contrato T013](T013.md) executado manualmente e **aceito pelo orquestrador em 17/10/2026**, conforme [validação C1–C3](reports/T013.validation.md). Correção mínima em `GameTable.tsx`, sem CSS; fontes e históricos conferidos, capturas e medições antes/depois inspecionadas. [Report original](reports/T013.md) preservado. Nenhum ajuste de implementação pendente. A [T013-publication](T013-publication.md) foi **executada manualmente em 17/10/2026** e foi **aceita pelo orquestrador** em [reports/T013-publication.validation.md](reports/T013-publication.validation.md): staged production `dpl_DARamMVYaXEgnZ2KvioZsMGRnf6k` promovido o mesmo build, `tretta.vercel.app` servindo T013, smoke próprio de “Bloqueio”/“Inversão” no descarte, sem commit/push e com Render preservado. Report e evidências em [reports/T013-publication.md](reports/T013-publication.md) e `reports/assets/T013-public/`. P1–P4 atendidos, sem execução de T013 pendente; próxima melhoria depende de escolha do usuário.
+
+## Publicação T012 — concluída e aceita
+
+O usuário autorizou com **“Vamos”** em 17/10/2026 e a [T012-publication](T012-publication.md) foi **executada manualmente em 17/10/2026** (somente frontend; sem commit/push/restart Render): staged production `dpl_5zzeCcbWYdEgZoz7d7pZUs7qTLtk` promovido o mesmo build e `tretta.vercel.app` serve T012; smoke público de circuito/Inversão/recuperação/treino em salas próprias. 159/159 fontes conferidas; upload 166 arquivos/1.404.378 bytes, digest `c0b0fc72…`; backend preservado Live na revisão `3ae459e`. Report em [reports/T012-publication.md](reports/T012-publication.md). **Aceita pelo orquestrador** em [reports/T012-publication.validation.md](reports/T012-publication.validation.md): fontes/manifesto/UIDs remotos, alias/build, HTTP e backend conferidos; smoke inspecionado; históricos preservados. Sem execução pendente; rollback de frontend pelo T011 `dpl_fiXC5suPTF2VCW22fEVf64HZYhNP`. Preferência `gpt-6-luna`, reasoning `max`, sem despacho automático.
+
+## T012 — ordem das jogadas aceita localmente
+
+[Escopo aprovado](../product/ordem-das-jogadas.md) de mesa em circuito implementado por executor manual e **aceito após ajustes** em 17/10/2026, conforme [validação final](reports/T012.final-validation.md). [Contrato T012](T012.md), [report original](reports/T012.md), [revisão inicial](reports/T012.validation.md), [prompt A1–A3](T012-adjustments.md) e [report dos ajustes](reports/T012-adjustments.md) preservados como histórico.
+
+A1 resolveu leitura/conteúdo dos assentos e consulta por toque/teclado; A2 descreve o percurso no sentido vigente; A3 demonstrou uma corrida anterior do teste na tela de resultados e corrigiu sua sincronização. Revisão independente: build/tipos, 145 unitários e 14 E2E passando; 159 fontes/configurações conferidas e históricos intactos. Sem implementação pendente. **Publicação T012 executada em 17/10/2026** (ver acima), mantendo execução manual e custo zero, **aceita pelo orquestrador** em [reports/T012-publication.validation.md](reports/T012-publication.validation.md). A próxima melhoria ainda precisa ser escolhida com o usuário. Nenhum commit/push foi feito. T011 permanece disponível como rollback do frontend.
+
+## Modo de execução e trabalho anterior
+
 Modo atual, alterado pelo usuário em 16 de outubro de 2026: **acionamento manual de executores**. O orquestrador prepara prompts, valida reports e avança após aceite, sem novos despachos automáticos. Preferência de modelo `gpt-6-luna`, reasoning `max`, preservada. T008A–C foram entregues e aceitas após validação independente. Commit e push anteriores foram autorizados para a publicação já entregue. A hospedagem continua inteiramente gratuita; os refinamentos T008 estão publicados e aceitos em reports/T008-publication.validation.md.
 
-Prioridade escolhida e escopo aprovado em 17/10/2026: **mesa de treino**, conforme [fonte de produto](../product/mesa-de-treino.md). [T011A — protocolo e servidor](T011A.md) [aceita](reports/T011A.validation.md); [T011B — experiência no navegador](T011B.md) [aceita após ajustes](reports/T011B.final-validation.md). T011 concluída localmente; [publicação manual](T011-publication.md) autorizada pelo usuário (“Vamos”) e preparada, ainda não executada. T010 permanece em produção; suas etapas abaixo são históricas.
+Prioridade escolhida e escopo aprovado em 17/10/2026: **mesa de treino**, conforme [fonte de produto](../product/mesa-de-treino.md). [T011A — protocolo e servidor](T011A.md) [aceita](reports/T011A.validation.md); [T011B — experiência no navegador](T011B.md) [aceita após ajustes](reports/T011B.final-validation.md). T011 concluída localmente; [publicação manual](T011-publication.md) executada em 17/10/2026 pelo executor manual e registrada em [reports/T011-publication.md](reports/T011-publication.md), **aceita pelo orquestrador** em [reports/T011-publication.validation.md](reports/T011-publication.validation.md). Naquele aceite, `tretta.vercel.app` servia T011 e o Render ficou Live na revisão `3ae459e`; T010 era o rollback do frontend. Produção atual T012 está registrada acima; as etapas abaixo são históricas.
 
 ## Incrementos de T011 — mesa de treino
 
@@ -12,9 +44,9 @@ Prioridade escolhida e escopo aprovado em 17/10/2026: **mesa de treino**, confor
 | --- | --- | --- |
 | [T011A](T011A.md) | Protocolo e servidor: uma pessoa + três bots, rodadas, placar, privacidade e recuperação, verificados por clientes locais | [Aceita em 17/10/2026](reports/T011A.validation.md): build/tipos, servidor 140 + 1 pulado, protocolo 12, web 109; fonte e históricos conferidos |
 | [T011B](T011B.md) | Entrada “Treinar sozinho”, telas e fluxo completo responsivo, recuperação pelo navegador e regressões da sala humana | [Aceita em 17/10/2026](reports/T011B.final-validation.md): R1/B6 corrigido, web 131/131 e runner 7/7 independentes, build/tipos verdes; E2E do executor 7/7 inspecionados |
-| [T011-publication](T011-publication.md) | Publicar servidor e frontend compatíveis, confirmar fonte/planos/IDs e smoke público de treino e sala humana | Autorizada e preparada; aguardando execução manual em janela sem partidas e report para validação |
+| [T011-publication](T011-publication.md) | Publicar servidor e frontend compatíveis, confirmar fonte/planos/IDs e smoke público de treino e sala humana | [Aceita em 17/10/2026](reports/T011-publication.validation.md): fonte/manifesto remoto, Render Live, Vercel alias e planos conferidos; protocolo/smoke inspecionados, históricos intactos |
 
-T011A e T011B concluem a implementação local da mesa de treino. A publicação foi autorizada separadamente em 17/10/2026, após o aceite; o contrato delimita commit/push, sequência entre provedores, cuidado com salas em memória e recuperação se falhar. A tarefa preparada ainda não foi executada.
+T011A e T011B concluem a implementação local da mesa de treino. A publicação foi autorizada separadamente em 17/10/2026, após o aceite; o contrato delimita commit/push, sequência entre provedores, cuidado com salas em memória e recuperação se falhar. A tarefa foi executada e aceita em 17/10/2026. T011 concluída publicamente; sem execução pendente. Teste humano no celular continua desejável; próximos trabalhos serão delimitados manualmente. Documentos atuais permanecem locais, sem segundo push.
 
 ## Sequência inicial — histórico
 

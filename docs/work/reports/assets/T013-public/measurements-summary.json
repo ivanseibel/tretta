@@ -1,0 +1,142 @@
+{
+  "inv-live": {
+    "320": {
+      "text": "Inversão",
+      "font": "11.2px",
+      "dataLong": "true",
+      "valW": 49.71,
+      "cardW": 64,
+      "inside": true,
+      "ovfSym": false,
+      "ovfName": false,
+      "aria": "Descarte: Vermelho Inversão"
+    },
+    "390": {
+      "text": "Inversão",
+      "font": "11.2px",
+      "dataLong": "true",
+      "valW": 49.71,
+      "cardW": 64,
+      "inside": true,
+      "ovfSym": false,
+      "ovfName": false,
+      "aria": "Descarte: Vermelho Inversão"
+    },
+    "1280": {
+      "text": "Inversão",
+      "font": "13.12px",
+      "dataLong": "true",
+      "valW": 57.06,
+      "cardW": 76,
+      "inside": true,
+      "ovfSym": false,
+      "ovfName": false,
+      "aria": "Descarte: Vermelho Inversão"
+    }
+  },
+  "inv-frozen": {
+    "320": {
+      "text": "Inversão",
+      "font": "11.2px",
+      "dataLong": "true",
+      "valW": 49.71,
+      "cardW": 64,
+      "inside": true,
+      "ovfSym": false,
+      "ovfName": false,
+      "aria": "Descarte: Azul Inversão"
+    },
+    "390": {
+      "text": "Inversão",
+      "font": "11.2px",
+      "dataLong": "true",
+      "valW": 49.71,
+      "cardW": 64,
+      "inside": true,
+      "ovfSym": false,
+      "ovfName": false,
+      "aria": "Descarte: Azul Inversão"
+    },
+    "1280": {
+      "text": "Inversão",
+      "font": "13.12px",
+      "dataLong": "true",
+      "valW": 57.06,
+      "cardW": 76,
+      "inside": true,
+      "ovfSym": false,
+      "ovfName": false,
+      "aria": "Descarte: Azul Inversão"
+    }
+  },
+  "blo-frozen1": {
+    "320": {
+      "text": "Bloqueio",
+      "font": "11.2px",
+      "dataLong": "true",
+      "valW": 50.67,
+      "cardW": 64,
+      "inside": true,
+      "ovfSym": false,
+      "ovfName": false,
+      "aria": "Descarte: Vermelho Bloqueio"
+    },
+    "390": {
+      "text": "Bloqueio",
+      "font": "11.2px",
+      "dataLong": "true",
+      "valW": 50.67,
+      "cardW": 64,
+      "inside": true,
+      "ovfSym": false,
+      "ovfName": false,
+      "aria": "Descarte: Vermelho Bloqueio"
+    },
+    "1280": {
+      "text": "Bloqueio",
+      "font": "13.12px",
+      "dataLong": "true",
+      "valW": 58.19,
+      "cardW": 76,
+      "inside": true,
+      "ovfSym": false,
+      "ovfName": false,
+      "aria": "Descarte: Vermelho Bloqueio"
+    }
+  },
+  "blo-frozen2": {
+    "320": {
+      "text": "Bloqueio",
+      "font": "11.2px",
+      "dataLong": "true",
+      "valW": 50.67,
+      "cardW": 64,
+      "inside": true,
+      "ovfSym": false,
+      "ovfName": false,
+      "aria": "Descarte: Amarelo Bloqueio"
+    },
+    "390": {
+      "text": "Bloqueio",
+      "font": "11.2px",
+      "dataLong": "true",
+      "valW": 50.67,
+      "cardW": 64,
+      "inside": true,
+      "ovfSym": false,
+      "ovfName": false,
+      "aria": "Descarte: Amarelo Bloqueio"
+    },
+    "1280": {
+      "text": "Bloqueio",
+      "font": "13.12px",
+      "dataLong": "true",
+      "valW": 58.19,
+      "cardW": 76,
+      "inside": true,
+      "ovfSym": false,
+      "ovfName": false,
+      "aria": "Descarte: Amarelo Bloqueio"
+    }
+  }
+}

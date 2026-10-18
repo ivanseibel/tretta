@@ -1,9 +1,10 @@
 'use client';
 
 import { useEffect, useState, type ReactNode } from 'react';
-import type { StateMessage } from '@tretta/protocol';
+import type { PublicParticipant, StateMessage } from '@tretta/protocol';
 import { useRoom } from '@/app/providers';
-import { AvatarBadge, LeaveButton } from '@/components/ui';
+import { AvatarAction, AvatarBadge, LeaveButton } from '@/components/ui';
+import { ReactionBadge } from '@/components/ReactionBadge';
 
 export function Lobby({ state }: { state: StateMessage }): ReactNode {
   const room = useRoom();
@@ -25,6 +26,11 @@ export function Lobby({ state }: { state: StateMessage }): ReactNode {
   const canStart = isHost && everyoneReady && seated.length <= 8;
   // Vitórias de quem já deixou a vaga continuam no placar da sala.
   const historical = state.room.scoreboard.filter((entry) => !entry.current);
+
+  function activateAvatar(participant: PublicParticipant, trigger: HTMLButtonElement): void {
+    if (participant.id === me.playerId) room.openReactionMenu(trigger);
+    else room.openTauntMenu(participant.id, trigger);
+  }
 
   async function copyInvite(): Promise<void> {
     try {
@@ -67,8 +73,14 @@ export function Lobby({ state }: { state: StateMessage }): ReactNode {
         <ul className="participant-list" data-testid="lobby-participants">
           {state.room.participants.map((participant) => (
             <li key={participant.id} data-testid="lobby-participant" data-player-id={participant.id} className="participant-row">
-              <AvatarBadge avatar={participant.avatar} />
+              <AvatarAction
+                avatar={participant.avatar}
+                label={participant.id === me.playerId ? `Reagir como ${participant.nickname}` : `Provocar ${participant.nickname}`}
+                testId={`mood-avatar-${participant.id}`}
+                onActivate={(trigger) => activateAvatar(participant, trigger)}
+              />
               <span className="participant-name">{participant.nickname}</span>
+              <ReactionBadge reaction={room.activeReactions?.[participant.id]} animations={room.activeAnimations ?? 'full'} />
               {participant.isHost ? <span className="tag">anfitrião</span> : null}
               {participant.kind === 'bot' ? <span className="tag tag-bot">bot</span> : null}
               {participant.id === me.playerId ? <span className="tag tag-me">você</span> : null}
@@ -82,6 +94,16 @@ export function Lobby({ state }: { state: StateMessage }): ReactNode {
               <span className="score" title="Rodadas vencidas">
                 {participant.score} v.
               </span>
+              {participant.id === me.playerId ? (
+                <button
+                  type="button"
+                  className="secondary small"
+                  data-testid="self-reaction-button"
+                  onClick={(event) => room.openReactionMenu(event.currentTarget)}
+                >
+                  Reagir
+                </button>
+              ) : null}
               {isHost && !training && participant.id !== me.playerId ? (
                 <button
                   type="button"

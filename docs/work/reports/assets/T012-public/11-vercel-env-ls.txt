@@ -1,0 +1,12 @@
+Retrieving project…
+> Environment Variables found for seibel/tretta [500ms]
+
+ name                               value               environments                created    
+ NEXT_PUBLIC_SERVER_URL             Encrypted           Production, Preview         23h ago    
+ NEXT_PUBLIC_TEST_HOOKS             0                   Production, Preview         23h ago    
+ ENABLE_EXPERIMENTAL_COREPACK       1                   Production, Preview         23h ago    
+
+Common next commands:
+- `vercel env add`
+- `vercel env rm`
+- `vercel env pull`

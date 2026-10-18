@@ -1,0 +1,6 @@
+{
+  "privadoAntes": "Ordem dos assentos no circuito, a partir da base onde você está: Você (Ana), Bia, Cai, Davi, de volta a Você (Ana). Sentido horário da rodada.",
+  "privadoAposPrimeira": "Ordem dos assentos no circuito, a partir da base onde você está: Você (Ana), Davi, Cai, Bia, de volta a Você (Ana). Sentido anti-horário da rodada.",
+  "privadoAposSegunda": "Ordem dos assentos no circuito, a partir da base onde você está: Você (Ana), Bia, Cai, Davi, de volta a Você (Ana). Sentido horário da rodada.",
+  "publico": "Ordem dos assentos no circuito, a partir da base: Ana, Bia, Cai, Davi, de volta a Ana. Sentido horário da rodada."
+}

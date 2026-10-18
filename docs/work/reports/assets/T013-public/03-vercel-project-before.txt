@@ -1,0 +1,19 @@
+Vercel CLI 57.0.0 (Node.js 22.23.1)
+> Found Project seibel/tretta [216ms]
+
+  General
+
+    ID				prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8
+    Name			tretta
+    Owner			Seibel
+    Created At			16 October 2026 17:50:48 [1d ago]
+    Root Directory		apps/web
+    Node.js Version		22.x
+
+  Framework Settings
+
+    Framework Preset		Next.js
+    Build Command		`npm run build` or `next build`
+    Output Directory		Next.js default
+    Install Command		`yarn install`, `pnpm install`, `npm install`, or `bun install`
+

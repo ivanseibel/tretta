@@ -1,0 +1,1166 @@
+{
+  "fileCount": 163,
+  "manifestFileCount": 163,
+  "remoteSourceFileCount": 163,
+  "unexpectedRemoteSources": [],
+  "missingRemoteSources": [],
+  "differences": [],
+  "auxiliaryFiles": [
+    {
+      "path": ".vercelignore",
+      "content": ".env*\n*.zip\n.vercel\n",
+      "sha256": "18acec09c03ee73a45793b32d0f30ccd6a9ddc988461877f2a8ae032234a5971",
+      "reason": "upload-only ignore configuration"
+    },
+    {
+      "path": "apps/web/next-env.d.ts",
+      "content": "/// <reference types=\"next\" />\n/// <reference types=\"next/image-types/global\" />\nimport \"./.next/types/routes.d.ts\";\nimport \"./.next/types/root-params.d.ts\";\n\n// NOTE: This file should not be edited\n// see https://nextjs.org/docs/app/api-reference/config/typescript for more information.\n",
+      "sha256": "1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b",
+      "reason": "Next generated declaration; excluded from accepted functional baseline"
+    }
+  ],
+  "files": [
+    {
+      "path": ".agents/skills/orchestrate-work/SKILL.md",
+      "remoteUid": "d9a866ea9f1010745237987e3e570d6e1faacf5a",
+      "sha1": "d9a866ea9f1010745237987e3e570d6e1faacf5a",
+      "sha256": "389fd12b90f1df711480c52ae71e74159c96ba3ec7e8a74e1e35d5ffb0163a3f",
+      "matches": true
+    },
+    {
+      "path": ".nvmrc",
+      "remoteUid": "48b20c17255387c039ed68277a51ffca31113eaa",
+      "sha1": "48b20c17255387c039ed68277a51ffca31113eaa",
+      "sha256": "7d2df647f25529bd87500319c41564e032e2be642e565350fa6136d7a1ec4d10",
+      "matches": true
+    },
+    {
+      "path": ".vercelignore",
+      "remoteUid": "2114cb96c9e6f4eb68872931f996373c2595dad3",
+      "sha1": "2114cb96c9e6f4eb68872931f996373c2595dad3",
+      "sha256": "18acec09c03ee73a45793b32d0f30ccd6a9ddc988461877f2a8ae032234a5971",
+      "matches": true
+    },
+    {
+      "path": "AGENTS.md",
+      "remoteUid": "27bab2b1f013bd4bba70b08794a6037fd294fab4",
+      "sha1": "27bab2b1f013bd4bba70b08794a6037fd294fab4",
+      "sha256": "d0e193104d26c3c17966d5301c0e59cbef119362669733d7af2285920083e031",
+      "matches": true
+    },
+    {
+      "path": "CLAUDE.md",
+      "remoteUid": "c140473a3a5fbe89301c99d9d0d1b76c5971f2c3",
+      "sha1": "c140473a3a5fbe89301c99d9d0d1b76c5971f2c3",
+      "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+      "matches": true
+    },
+    {
+      "path": "README.md",
+      "remoteUid": "2dead36d06b92e53575ad71a9a6dd903cf9d2155",
+      "sha1": "2dead36d06b92e53575ad71a9a6dd903cf9d2155",
+      "sha256": "4ad45e8fe7b5e92ecb344610ec443fcd2b98c4020b4ec56e5777386da1a6a342",
+      "matches": true
+    },
+    {
+      "path": "apps/server/package.json",
+      "remoteUid": "36fa0702e23c1d410e35fe050c4927f8451b60cc",
+      "sha1": "36fa0702e23c1d410e35fe050c4927f8451b60cc",
+      "sha256": "23713fef8cd1fc076d39827a52ce298c6b31a33118aa547ad56be1e30e5774fa",
+      "matches": true
+    },
+    {
+      "path": "apps/server/railway.toml",
+      "remoteUid": "63b84fb2000e2dc005331a57eca66ca8d2fb6b55",
+      "sha1": "63b84fb2000e2dc005331a57eca66ca8d2fb6b55",
+      "sha256": "abe98ffb96d84b3117ea3c3a6627b93ec6f006dba7b400330822910ffb06f484",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/bot.ts",
+      "remoteUid": "40f1f64750b640a65ac904a9f4fb5d157056bb2b",
+      "sha1": "40f1f64750b640a65ac904a9f4fb5d157056bb2b",
+      "sha256": "055d5c05a8dd12be4f1b791dce9e768f5f9cbb8178b8a58c72c7d3525f807233",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/clock.ts",
+      "remoteUid": "aa6140d40419c09594820a616be517c6c2f7c36d",
+      "sha1": "aa6140d40419c09594820a616be517c6c2f7c36d",
+      "sha256": "27a2dd32d83fb95ce0832d120e51a41ce955ba55cbc08170fa3aabdbcddeebbd",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/config.ts",
+      "remoteUid": "65471f68846d9907bf3772f7a878c839c43174b3",
+      "sha1": "65471f68846d9907bf3772f7a878c839c43174b3",
+      "sha256": "cbcdfb8a67d52876c4a5fd15924c43b3d72eae3774f53b443668c535843927ff",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/effects.ts",
+      "remoteUid": "3f6b0496c6a0845b101a12f26be9f085f2f24799",
+      "sha1": "3f6b0496c6a0845b101a12f26be9f085f2f24799",
+      "sha256": "0eb5f6ab0cd200754e54ba606537d0fd450ef7668c17716d2862534a198ce04d",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/handlers.ts",
+      "remoteUid": "22a26923891a64184754a3b99eadfb9ec6cc69a6",
+      "sha1": "22a26923891a64184754a3b99eadfb9ec6cc69a6",
+      "sha256": "b23c5282978122dbe68c237201f98d8720686580655ce8b9cbeb0452cccc9a1c",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/ids.ts",
+      "remoteUid": "f994baf767cd3c84645447a6f42b5467fda03616",
+      "sha1": "f994baf767cd3c84645447a6f42b5467fda03616",
+      "sha256": "16e7a2f368f2e85ff283f6a0140c86e20666720f9f5ce749ca55bdc302ce7f59",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "remoteUid": "4d7cd52b126f26c51c48099f895ae530426655ed",
+      "sha1": "4d7cd52b126f26c51c48099f895ae530426655ed",
+      "sha256": "a00f4e016be89867695a454259d37745066bd7b6497572be60be226fdce9f72f",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/rooms.ts",
+      "remoteUid": "0f98b1cb70a4b4847a385bf51a13223effcb8382",
+      "sha1": "0f98b1cb70a4b4847a385bf51a13223effcb8382",
+      "sha256": "d463acbea44c01d980f14f2b8d37c585e54fc44345c5ab0dd2c689e4ed4d662c",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/server.ts",
+      "remoteUid": "9a404a38e78d67b63ca082062e447a3b1770e538",
+      "sha1": "9a404a38e78d67b63ca082062e447a3b1770e538",
+      "sha256": "3e4dead207f42e7009a45585340f919587b3effc490f399e3bfc30b57f94b226",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/bot-callback.test.ts",
+      "remoteUid": "ebae7b2b7fbddb473c0321cd6e28019f3ba2eef4",
+      "sha1": "ebae7b2b7fbddb473c0321cd6e28019f3ba2eef4",
+      "sha256": "d43cb73aa4d860aa08873df9bf2586fd10bc87c23ef4ec1dbc65d50d31417662",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/bot-entry.test.ts",
+      "remoteUid": "adbd1fb18e8888ad25653ce6f57ed21a6c0b1a64",
+      "sha1": "adbd1fb18e8888ad25653ce6f57ed21a6c0b1a64",
+      "sha256": "d51feaebcdf17e8b6f374556b11f86883795e276c885a2486c6eb6be5bc660f9",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/bot-flow.test.ts",
+      "remoteUid": "261adfa60ced60c550b91ce970411abd92a955f0",
+      "sha1": "261adfa60ced60c550b91ce970411abd92a955f0",
+      "sha256": "ddd541bbd4e3985f759520966c67ea1ce84d613d6b562d8cdfccf3b153401f1b",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/bot.test.ts",
+      "remoteUid": "b801231ba58a13baf6e2cb4272591b30e45b9a58",
+      "sha1": "b801231ba58a13baf6e2cb4272591b30e45b9a58",
+      "sha256": "d4277baef7594f95364fa05ac5351be1fbf5033e6634c0dc2bcbd88d71dd6b35",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/chat.test.ts",
+      "remoteUid": "61f9649b8623e2622c5a5d4868a7ed7edc159bb0",
+      "sha1": "61f9649b8623e2622c5a5d4868a7ed7edc159bb0",
+      "sha256": "d72c0c6413ec89a3f8c473f3cad3ca1d471584ff2f03e4e9ea40a908591bd9dd",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/config.test.ts",
+      "remoteUid": "91e4585aeb9b086821da951a2e46fe39ed3b1a62",
+      "sha1": "91e4585aeb9b086821da951a2e46fe39ed3b1a62",
+      "sha256": "6fd7c8fd0bd4541dd9789bef138a03dbf4c900b4ad58ae31103725b5af4bc273",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/contracts.test.ts",
+      "remoteUid": "99a59cc2ffb41ef9582798eec6d5f061ac97455e",
+      "sha1": "99a59cc2ffb41ef9582798eec6d5f061ac97455e",
+      "sha256": "572347b1854d544db5821358b9841d6dbbdf4a127dd5419a77acdee37f14e8ed",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/decks.ts",
+      "remoteUid": "92c3239e1007aaf16c1d4f7f98f1b6f373569269",
+      "sha1": "92c3239e1007aaf16c1d4f7f98f1b6f373569269",
+      "sha256": "4269e28780002446f5052c4f8bb0a3667187265cb43efc031163905a2c718c36",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/dedupe-retention.test.ts",
+      "remoteUid": "76bba4ca340696174e69a8af8f31741111a27a49",
+      "sha1": "76bba4ca340696174e69a8af8f31741111a27a49",
+      "sha256": "4693872d5b5779e42224494d0168d4949c966fda2849ebb405896cf390e836d6",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/dedupe.test.ts",
+      "remoteUid": "2b69efa9d2f46b5547758cb80f158096545f8e97",
+      "sha1": "2b69efa9d2f46b5547758cb80f158096545f8e97",
+      "sha256": "581b2856da861547abca50212bbbdd2e11e8e05972746dcb63176ccc296cacd2",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/effects.test.ts",
+      "remoteUid": "d16495d65f8a7de5483096f322c8e029baefd8c0",
+      "sha1": "d16495d65f8a7de5483096f322c8e029baefd8c0",
+      "sha256": "24238028c0425069d493777e9d98e580e7a0e33899d4f493101d0d14709614e3",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/eight-players.test.ts",
+      "remoteUid": "30f4627d4c6777515635ea89afb97687d5139489",
+      "sha1": "30f4627d4c6777515635ea89afb97687d5139489",
+      "sha256": "c1c338e75e298dc2f1a57a1ad0fe651c7b44fdd97b6b2fd5094fe1f5d1f91a7a",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/expiry-cache.test.ts",
+      "remoteUid": "d3c3490dac80a2f3e5afbf1f26a07abf2b57fcce",
+      "sha1": "d3c3490dac80a2f3e5afbf1f26a07abf2b57fcce",
+      "sha256": "ae50c5ed0c8fe4452117d00c2b87513cfa9d45582b0ebc81918c55426e3e8ec0",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/helpers.ts",
+      "remoteUid": "fc041e7a36c9cf6c6b4c465eeb48cb4021553e7a",
+      "sha1": "fc041e7a36c9cf6c6b4c465eeb48cb4021553e7a",
+      "sha256": "ec77288779ad08f79db5dce53a914970b55c3fac63b18a06f83bd58829b061ba",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/host.test.ts",
+      "remoteUid": "4591e727d6465e40babed872a24c9a789afae381",
+      "sha1": "4591e727d6465e40babed872a24c9a789afae381",
+      "sha256": "e0dbb38bffd17cc08ce3f0e1369b53062c09bce87965766812995350103ab1b5",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/leave.test.ts",
+      "remoteUid": "f1314abe6810470c8ad7be019deb072a0a7cab57",
+      "sha1": "f1314abe6810470c8ad7be019deb072a0a7cab57",
+      "sha256": "ed859a843b860bc54a4c2a3062cb319cbf198ba2d878a3545a4dac39a728e4cc",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/pause.test.ts",
+      "remoteUid": "b94500c0ec13c406fa57ad0776f9325426cde1d2",
+      "sha1": "b94500c0ec13c406fa57ad0776f9325426cde1d2",
+      "sha256": "45df71b439b48500ef0fb082888a04eb9e48135b5de26275509751b79c096a30",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/privacy.test.ts",
+      "remoteUid": "92b60d54792249ff530dcc9a3288e93abe53115d",
+      "sha1": "92b60d54792249ff530dcc9a3288e93abe53115d",
+      "sha256": "20fc0d3cddabfd2cd70492769303b1c8d88ae132771cec2170a0e07095ec261e",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/process.test.ts",
+      "remoteUid": "06e27f5b463b01fd5f02eec95f48b8c1c1b5b050",
+      "sha1": "06e27f5b463b01fd5f02eec95f48b8c1c1b5b050",
+      "sha256": "d6ee2bf8d579b2be76aedde72d90c0201816eb173f9884bcb3646975f98435cb",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/public-table.test.ts",
+      "remoteUid": "74845279b316dfe63f0c0d9673c8b5b302a8f5d4",
+      "sha1": "74845279b316dfe63f0c0d9673c8b5b302a8f5d4",
+      "sha256": "43752991f32a6183d492d4cd7898f56da5befbdec3fcfdcb56a9486514188835",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/recovery.test.ts",
+      "remoteUid": "de92430634274f5b680191da384497b5d9e28907",
+      "sha1": "de92430634274f5b680191da384497b5d9e28907",
+      "sha256": "8f33435ac5386c5b0e8c0ccefc5b10eb4ad01aab14a07b2f68fcbdf068b9a548",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/replay-transport.test.ts",
+      "remoteUid": "4c11edc6b8c1f0e001f99547a06c313254343368",
+      "sha1": "4c11edc6b8c1f0e001f99547a06c313254343368",
+      "sha256": "4621e3506d7e8ad5cdd3143e28433632ce47fdccfda791e47ab8ba430aa45de5",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/restart.test.ts",
+      "remoteUid": "4dbdcd33d72419646903a0d8e4b59f98699f95e7",
+      "sha1": "4dbdcd33d72419646903a0d8e4b59f98699f95e7",
+      "sha256": "074416191f373c7c3614b409c8e4ccb2431c7e416bbdf29d5c7c8d97daaac275",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/retention.test.ts",
+      "remoteUid": "398a5d3f2de5d5ddbcb1f337814b6f7522b7f588",
+      "sha1": "398a5d3f2de5d5ddbcb1f337814b6f7522b7f588",
+      "sha256": "bb0cdcceda7db6134933d490178915bfb44cfbd860ac14fcb1a1ec63ab39bab6",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/room-flow.test.ts",
+      "remoteUid": "33a4602efdff8c8aa96c260ce9b0523c7f6d64eb",
+      "sha1": "33a4602efdff8c8aa96c260ce9b0523c7f6d64eb",
+      "sha256": "ba9270c735a3f8eb2f96cfde1e9277e4c861b352dd5c2ad49a78919a56df3494",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/scoreboard.test.ts",
+      "remoteUid": "80c25ab5b5fe25f1c499c89e901d41024e871216",
+      "sha1": "80c25ab5b5fe25f1c499c89e901d41024e871216",
+      "sha256": "5a6e40e9b5b959c862c353f1dc4f39cb40b5024d1a6b0d63a5d628fde9e212f9",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/taunt.test.ts",
+      "remoteUid": "7cd96d2ca1b02910748803f51aa1e07fb13aec12",
+      "sha1": "7cd96d2ca1b02910748803f51aa1e07fb13aec12",
+      "sha256": "292dc231e348b5c15e27d96e4355cb38091591dc6a8fbfaa20c21732cdbd691b",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/ten-room-load.test.ts",
+      "remoteUid": "f76753b1d1e969d62de85c5c0ec0eec71653565c",
+      "sha1": "f76753b1d1e969d62de85c5c0ec0eec71653565c",
+      "sha256": "778152fbec67c0d82681e1ba27d9634dbdf41006ca7af95fc2f65f47c31129a8",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/training-game.test.ts",
+      "remoteUid": "1c0b7cdf8af61303ae719494807582631d41c8f0",
+      "sha1": "1c0b7cdf8af61303ae719494807582631d41c8f0",
+      "sha256": "7e9c70f5a3772fe6d6cfa447478f6cbe22589be83f7cca42778a6146c11d4e83",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/training-privacy.test.ts",
+      "remoteUid": "64365c0e9d7e2fb43d2ea847200e853147be3eed",
+      "sha1": "64365c0e9d7e2fb43d2ea847200e853147be3eed",
+      "sha256": "3f0c6434e56d14bfb7e30cff41be785910ab2b98fdc522f0560cd6e1657cad8b",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/training-recovery.test.ts",
+      "remoteUid": "5934477ceeeaad23fa25c90d7e8cc76486d7fe3c",
+      "sha1": "5934477ceeeaad23fa25c90d7e8cc76486d7fe3c",
+      "sha256": "e8f0642eaad7d9551817f7f9c784d15b40fe476ba9e8f94712738082bbe4748a",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/training-room.test.ts",
+      "remoteUid": "1328903d8b238aece20c01b6b45aad1332791f0a",
+      "sha1": "1328903d8b238aece20c01b6b45aad1332791f0a",
+      "sha256": "45e24ace09f004b553409cb57551fbb3ca279ba83fb5eb077846f54e44125198",
+      "matches": true
+    },
+    {
+      "path": "apps/server/test/training.ts",
+      "remoteUid": "81b5c752266de63e35df7c982c751a45e28a6a9b",
+      "sha1": "81b5c752266de63e35df7c982c751a45e28a6a9b",
+      "sha256": "36a22d146fa9a6861e2bd27dfe6d7ece3b70016e075def8dfb36d9404dae2e59",
+      "matches": true
+    },
+    {
+      "path": "apps/server/tsconfig.build.json",
+      "remoteUid": "42dbd62abf3910a39ae9fd197cf589d74ad6aaea",
+      "sha1": "42dbd62abf3910a39ae9fd197cf589d74ad6aaea",
+      "sha256": "71739e11e05e7ab3777c01d07ebd319dfe831d614e9f33e8b8bf0a81e708286e",
+      "matches": true
+    },
+    {
+      "path": "apps/server/tsconfig.json",
+      "remoteUid": "649295ef64d68ac620010b497dc80088125b953b",
+      "sha1": "649295ef64d68ac620010b497dc80088125b953b",
+      "sha256": "fea9cfcb057785994121b5c0768b9912cbcae898ce8c2c6c3ff57dd78ae99ee5",
+      "matches": true
+    },
+    {
+      "path": "apps/server/vitest.config.ts",
+      "remoteUid": "5cf1ad9f4765b45b61d6ab78340a1758a5321cfd",
+      "sha1": "5cf1ad9f4765b45b61d6ab78340a1758a5321cfd",
+      "sha256": "e77d65b02f0f596f017d77ed3b408b3992c30d3aa080526de0862a4cc986e386",
+      "matches": true
+    },
+    {
+      "path": "apps/web/AGENTS.md",
+      "remoteUid": "5ec4789692f7fa325f3c83427e98e934987d1bac",
+      "sha1": "5ec4789692f7fa325f3c83427e98e934987d1bac",
+      "sha256": "063098f6cb31bb44c6f8fbea25b3876de7ee1e5f7d00a50dbab506f6415eb7f0",
+      "matches": true
+    },
+    {
+      "path": "apps/web/app/globals.css",
+      "remoteUid": "c90b78000658708b37c99dcde43c981956b413db",
+      "sha1": "c90b78000658708b37c99dcde43c981956b413db",
+      "sha256": "d4cd00ceb554084193c6635a208105218fa6472c8bdc922e94a9ec8a24da838d",
+      "matches": true
+    },
+    {
+      "path": "apps/web/app/layout.tsx",
+      "remoteUid": "e241193c50150af79327b4d45be88fbd6275e7e4",
+      "sha1": "e241193c50150af79327b4d45be88fbd6275e7e4",
+      "sha256": "ca045e6c25cec67d7b210a7cc80f218b4522136a463836e370d5b49d4039adb1",
+      "matches": true
+    },
+    {
+      "path": "apps/web/app/page.tsx",
+      "remoteUid": "54fdf7d936d0d2f3d36016f00ee86cab9405ed4a",
+      "sha1": "54fdf7d936d0d2f3d36016f00ee86cab9405ed4a",
+      "sha256": "94bd66d64e1f23902d1344fa647c3b03422de00ff5ee7b6495dca976c7945fce",
+      "matches": true
+    },
+    {
+      "path": "apps/web/app/providers.tsx",
+      "remoteUid": "eca380d3ca4983323239ea8f6bc2be373d61e8de",
+      "sha1": "eca380d3ca4983323239ea8f6bc2be373d61e8de",
+      "sha256": "d95d1a4891fed266a5790077ee6a0fa5b010282239f9a885ba4a56b5ec2d32cf",
+      "matches": true
+    },
+    {
+      "path": "apps/web/app/sala/[code]/page.tsx",
+      "remoteUid": "58c6f150415b1cedcefe49a94ac80e67425f38d5",
+      "sha1": "58c6f150415b1cedcefe49a94ac80e67425f38d5",
+      "sha256": "a2d4760941644358e38700197574ec03416b95321c5e3ab7869a841a1ce93699",
+      "matches": true
+    },
+    {
+      "path": "apps/web/components/ChatPanel.tsx",
+      "remoteUid": "0c2fb2caabf24b5240e7bf6db91a8493ed5828c6",
+      "sha1": "0c2fb2caabf24b5240e7bf6db91a8493ed5828c6",
+      "sha256": "eb491cc158151e71d537f5ac8cbd0fd74770a7a5dcce8b6182ba8d260408bf0b",
+      "matches": true
+    },
+    {
+      "path": "apps/web/components/EventFeed.tsx",
+      "remoteUid": "1141d8fa31e6f799fcf754772f84dab9121fef3b",
+      "sha1": "1141d8fa31e6f799fcf754772f84dab9121fef3b",
+      "sha256": "28c9137d53cb269a6450947d58fb2246c6713ec36c2100ac2869a80b50187618",
+      "matches": true
+    },
+    {
+      "path": "apps/web/components/GameTable.tsx",
+      "remoteUid": "2e2d03d29c946898b3cf6c73fedb6d0e8ba5c36c",
+      "sha1": "2e2d03d29c946898b3cf6c73fedb6d0e8ba5c36c",
+      "sha256": "6c7ebcda8c0bf871b785b0c089b9cb4b8076b5a427326a70bcf6fa4127a0df8f",
+      "matches": true
+    },
+    {
+      "path": "apps/web/components/Lobby.tsx",
+      "remoteUid": "a174cca8b8871929d686018fe52e9012ce6df331",
+      "sha1": "a174cca8b8871929d686018fe52e9012ce6df331",
+      "sha256": "1b6da6e929ec2261c4e6f77e0ad313fadbcd0ebe2029c58f783dae5d6d091860",
+      "matches": true
+    },
+    {
+      "path": "apps/web/components/MoodSettings.tsx",
+      "remoteUid": "9a587111fc967a8465ec9e9012861a705968fa3a",
+      "sha1": "9a587111fc967a8465ec9e9012861a705968fa3a",
+      "sha256": "72014abbe04010a119107f1489c86ab16b20d50974e8a91cc44598d5a3cba9fb",
+      "matches": true
+    },
+    {
+      "path": "apps/web/components/PausePanel.tsx",
+      "remoteUid": "0d87042c5d9f6d4c1236eaa077415b7c72d34d58",
+      "sha1": "0d87042c5d9f6d4c1236eaa077415b7c72d34d58",
+      "sha256": "e5922b5b1d52ef18873c04ad4220306d8e4bf490e253cc5b4863891be68fbc99",
+      "matches": true
+    },
+    {
+      "path": "apps/web/components/Results.tsx",
+      "remoteUid": "ec103aaa35e7e49a25fea73a866670378bf53fcd",
+      "sha1": "ec103aaa35e7e49a25fea73a866670378bf53fcd",
+      "sha256": "b57f91f38f18aedd8a1a6dcb9204ac31d8677e064d245070b76b888980f0d7fe",
+      "matches": true
+    },
+    {
+      "path": "apps/web/components/TauntOverlay.tsx",
+      "remoteUid": "64ab8cfbd7cff27707b8ef5394da18710abbea84",
+      "sha1": "64ab8cfbd7cff27707b8ef5394da18710abbea84",
+      "sha256": "d3fc528fa510044ff9791928a6ba4f69d8f229d446d2232c96ba550f2468855a",
+      "matches": true
+    },
+    {
+      "path": "apps/web/components/TauntPanel.tsx",
+      "remoteUid": "7330a6fa16f3cbce970787a8249f782e74b89893",
+      "sha1": "7330a6fa16f3cbce970787a8249f782e74b89893",
+      "sha256": "7b31c7e259e636378fab65b8d544ef2d004ff759ad3a4dffed273a3ba6f79e68",
+      "matches": true
+    },
+    {
+      "path": "apps/web/components/TurnNotifier.tsx",
+      "remoteUid": "a1fc170b11733cebe266694d694d7847f3350a73",
+      "sha1": "a1fc170b11733cebe266694d694d7847f3350a73",
+      "sha256": "3767b34e0edf9a8f0689b71dfbe6624fd094690645aa1347e699e10216b6c6bd",
+      "matches": true
+    },
+    {
+      "path": "apps/web/components/WaitingRoom.tsx",
+      "remoteUid": "016e26b8a081353f0d7b8b792e14e21e1bd39a86",
+      "sha1": "016e26b8a081353f0d7b8b792e14e21e1bd39a86",
+      "sha256": "ab2e0dd83fed60380c57add9e47bd3f8cc6006b57423a7ad4e5a4c0a4193628a",
+      "matches": true
+    },
+    {
+      "path": "apps/web/components/ui.tsx",
+      "remoteUid": "11a7734017b20db05bd8caef8a01c3a28c34f116",
+      "sha1": "11a7734017b20db05bd8caef8a01c3a28c34f116",
+      "sha256": "c3f9ff0527d62d9725ee66f00e591fb74ebe2bc95c066e98b62250b2a2b7aad5",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/chat.spec.ts",
+      "remoteUid": "e233c274e8293538120bd456cd58721193ba33af",
+      "sha1": "e233c274e8293538120bd456cd58721193ba33af",
+      "sha256": "5cc50f8182743211a6d893167003d5eb6cb8fa247b86f1a6b73bed938f347b48",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/deck.ts",
+      "remoteUid": "bca4e2326a3735fbba718aa3166f304cad033b4f",
+      "sha1": "bca4e2326a3735fbba718aa3166f304cad033b4f",
+      "sha256": "8b71f727e26d80dc260591f4679c5e4d6400cb2f6efc2810636bf32a1d7ac8ac",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/effects.spec.ts",
+      "remoteUid": "f4ceea706ff3b828e87987498c49de79d82f6148",
+      "sha1": "f4ceea706ff3b828e87987498c49de79d82f6148",
+      "sha256": "f471da4a34d8cd92e55c3d2349ef5a9648df006ea80fb2c2b173aa0b5e26fe66",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/fixtures.ts",
+      "remoteUid": "51b7984c25c55a6a93d2432e4c28843dbb919782",
+      "sha1": "51b7984c25c55a6a93d2432e4c28843dbb919782",
+      "sha256": "fc7812039e983f56203b62b8e5d1857cecd3363da6ab25884ce0274008bac861",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/interface-keyboard.spec.ts",
+      "remoteUid": "6951330309f6865982acee0758ba2cb2f42efc21",
+      "sha1": "6951330309f6865982acee0758ba2cb2f42efc21",
+      "sha256": "488d4c39816198c5569cb8dbc414c84815f21137f2667581e7546cbbb2491354",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/interface-visual.spec.ts",
+      "remoteUid": "2ab9f6bd11f5df13bb9988fb15308cfce06f204e",
+      "sha1": "2ab9f6bd11f5df13bb9988fb15308cfce06f204e",
+      "sha256": "e8e988936179625463bc70010623900e7d4309d44edf5340299664247140def0",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/leave-host.spec.ts",
+      "remoteUid": "35c3cd837a567f3896debdd6570187410d720188",
+      "sha1": "35c3cd837a567f3896debdd6570187410d720188",
+      "sha256": "eff31a0a57e9b76ff1c391c0c16bcbe7b9f70387c717e281e5e846da8dd6cfa5",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/pause.spec.ts",
+      "remoteUid": "a9b5f9fc9e43823c3d22c55d99234281e4e1bfce",
+      "sha1": "a9b5f9fc9e43823c3d22c55d99234281e4e1bfce",
+      "sha256": "73cb738ee68d26347d84641ee56e2ceb696a48bd185df9ef0d87e50611b2e1eb",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/production-start.spec.ts",
+      "remoteUid": "c5822ee8710b393d6f5ec0067cf2589ab1b9896e",
+      "sha1": "c5822ee8710b393d6f5ec0067cf2589ab1b9896e",
+      "sha256": "7f62ed5b4418e015bd1bb9ea4fc34ebf0d77e013a815613b862de65c21f4960d",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/recovery-wait.spec.ts",
+      "remoteUid": "623f6fbd225a38637d5b8995ed5eaabb3287e6e2",
+      "sha1": "623f6fbd225a38637d5b8995ed5eaabb3287e6e2",
+      "sha256": "f5ab4c9ac8f9aded04ad71e3cf3bedff916f4beaddc9f2e7b74aec974f2b6847",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/recovery.spec.ts",
+      "remoteUid": "418f11a13794a37012d8756015a7dce9d0ae0624",
+      "sha1": "418f11a13794a37012d8756015a7dce9d0ae0624",
+      "sha256": "5940ee8be98d0a9da8ca898f899edbdac73a5998ba610c7b3ae4b5ab63684a47",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/refinements.spec.ts",
+      "remoteUid": "1ae529293089974480c00b8119875d9040141fb0",
+      "sha1": "1ae529293089974480c00b8119875d9040141fb0",
+      "sha256": "39e715e42159189c679f7fd73c0dfd4539d16070e089fc46148cda1e9842aedd",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/room.ts",
+      "remoteUid": "a0ee6ce406073be8c3558ba4e3c03f31fff9c2c5",
+      "sha1": "a0ee6ce406073be8c3558ba4e3c03f31fff9c2c5",
+      "sha256": "1b3c3316e55109ce6f139c63bb26c6456187824378bd6bf1549bed35966f806d",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/scoreboard.spec.ts",
+      "remoteUid": "0454a16293e7f6aa1cd8cb5cf32fe427c2c0f65a",
+      "sha1": "0454a16293e7f6aa1cd8cb5cf32fe427c2c0f65a",
+      "sha256": "a6ddeab6c0dfbb270a55824350b2787297da3b3f8d352c71fef857837ecebc48",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/server-restart.spec.ts",
+      "remoteUid": "fbf35f3bdc479dd3b962c245d247a8eb3ac8a20b",
+      "sha1": "fbf35f3bdc479dd3b962c245d247a8eb3ac8a20b",
+      "sha256": "bdbe7c68d534578bf392f5b849efc675fecace17e5ffb76a0c7fd773b619598f",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/t007-eight-seat.spec.ts",
+      "remoteUid": "b81d62661c08d1ad4ac2bd18b08198a074dd9633",
+      "sha1": "b81d62661c08d1ad4ac2bd18b08198a074dd9633",
+      "sha256": "28c83dcc3c38754273fcc6008370f35723de92fca438326fbbe6b046ec226a94",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/taunt.spec.ts",
+      "remoteUid": "a14330c9830ddc5d03a18afe5b7addf910913a3f",
+      "sha1": "a14330c9830ddc5d03a18afe5b7addf910913a3f",
+      "sha256": "749e2ce8bfcbf8aa1e040b6e55413eb4fad38641cf4ec7743404f7e637704e54",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/training.spec.ts",
+      "remoteUid": "25e381a451297b6fdd83b4a1f176a5163ba96db7",
+      "sha1": "25e381a451297b6fdd83b4a1f176a5163ba96db7",
+      "sha256": "dccd5b881d6f664e7556c557cdb2c69088846919e8b7c627bcfb42f173015340",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/training.ts",
+      "remoteUid": "bbedb25af1c3487a517b1eab04453095cf2ad356",
+      "sha1": "bbedb25af1c3487a517b1eab04453095cf2ad356",
+      "sha256": "16134b404d8f010ea94896194a180d6ce3ba776c204a0fac92d87e2c5bbd6155",
+      "matches": true
+    },
+    {
+      "path": "apps/web/e2e/two-players.spec.ts",
+      "remoteUid": "f56b57141c52c0739bd82d938eeb4403dbf59893",
+      "sha1": "f56b57141c52c0739bd82d938eeb4403dbf59893",
+      "sha256": "55afc060749d304a2800c2d8b3e171f17001114fb816ab0a5f2b57dd9d873cdd",
+      "matches": true
+    },
+    {
+      "path": "apps/web/lib/chatMute.ts",
+      "remoteUid": "b339a1ffa13827c1a08ca2cca24f9e3b492749e8",
+      "sha1": "b339a1ffa13827c1a08ca2cca24f9e3b492749e8",
+      "sha256": "b5705b7f15a01001ae0869712d6dad44a95fd738d45293e73b67e2ce361848e6",
+      "matches": true
+    },
+    {
+      "path": "apps/web/lib/client.ts",
+      "remoteUid": "fcb742dccf5a3cf9f754792986c73134bed13dd4",
+      "sha1": "fcb742dccf5a3cf9f754792986c73134bed13dd4",
+      "sha256": "2cda46b991631241448784fcbed78291a3283258bbb2e0d5b7661187b4a7b84e",
+      "matches": true
+    },
+    {
+      "path": "apps/web/lib/labels.ts",
+      "remoteUid": "b8536ad9d0ba1201bcee308d751d77b58b9bc4c8",
+      "sha1": "b8536ad9d0ba1201bcee308d751d77b58b9bc4c8",
+      "sha256": "01c29d21c47add4e45c73af67d9e772ebbe92130085597af4f519f87bda8e640",
+      "matches": true
+    },
+    {
+      "path": "apps/web/lib/prefs.ts",
+      "remoteUid": "3d5ed7c7cda467694bcb572c373e46fff8cf6336",
+      "sha1": "3d5ed7c7cda467694bcb572c373e46fff8cf6336",
+      "sha256": "78525c6858f38568ebbaf1ed67fee693b4efd939ee394aea20c87e9c124772c8",
+      "matches": true
+    },
+    {
+      "path": "apps/web/lib/presentationQueue.ts",
+      "remoteUid": "830af818d0a31aed8619539f57bb8bf1f2b994e6",
+      "sha1": "830af818d0a31aed8619539f57bb8bf1f2b994e6",
+      "sha256": "890ecfd650f0f997b9ed750e13c435882617c4f83c309c7233aa1a42623b7152",
+      "matches": true
+    },
+    {
+      "path": "apps/web/lib/sounds.ts",
+      "remoteUid": "b359fc1de343dd43b1f223e4095f3b4fabb5beb7",
+      "sha1": "b359fc1de343dd43b1f223e4095f3b4fabb5beb7",
+      "sha256": "dea32b6fb443fffd04ef4522ad22870074d42aaac281467460f12fc09b70ef16",
+      "matches": true
+    },
+    {
+      "path": "apps/web/lib/turnNotifications.ts",
+      "remoteUid": "f8098616558efe1e61af17989d848ec67af15164",
+      "sha1": "f8098616558efe1e61af17989d848ec67af15164",
+      "sha256": "83d5a3029851525a784dbfaa1fb34a7b961c6b4570d21bc50dc3b377f5901101",
+      "matches": true
+    },
+    {
+      "path": "apps/web/next-env.d.ts",
+      "remoteUid": "915946e261450f4fb6aab2ca862c8b440b748240",
+      "sha1": "915946e261450f4fb6aab2ca862c8b440b748240",
+      "sha256": "1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b",
+      "matches": true
+    },
+    {
+      "path": "apps/web/next.config.ts",
+      "remoteUid": "6b47638c62d823bf6734ab0fd4833a8ba156d7fc",
+      "sha1": "6b47638c62d823bf6734ab0fd4833a8ba156d7fc",
+      "sha256": "fe03e465e8c47ea1f71e2fd84e26ec1f19b043341c6e6a4f0002e6d2d939d74b",
+      "matches": true
+    },
+    {
+      "path": "apps/web/package.json",
+      "remoteUid": "a387dadaea7ec5fad62962f77b46bb19bea71935",
+      "sha1": "a387dadaea7ec5fad62962f77b46bb19bea71935",
+      "sha256": "cfb2b9cb4ed087acb049bffbee9c55686025b672d35071d356520e79eea1dfdb",
+      "matches": true
+    },
+    {
+      "path": "apps/web/playwright.config.ts",
+      "remoteUid": "61df6946ca491bd09f67624a633f5ad27d422b3e",
+      "sha1": "61df6946ca491bd09f67624a633f5ad27d422b3e",
+      "sha256": "5614b58ee018d70fddc6116e68484437e2087df053ab8bca0572d2acda0874a8",
+      "matches": true
+    },
+    {
+      "path": "apps/web/playwright.production.config.ts",
+      "remoteUid": "533d28bb98ac8e937855c76561c1643c1d4509d9",
+      "sha1": "533d28bb98ac8e937855c76561c1643c1d4509d9",
+      "sha256": "571d636df7bbacb6980c9993413c38c91bfaaee9b299be25adb3a5ffdb044674",
+      "matches": true
+    },
+    {
+      "path": "apps/web/railway.toml",
+      "remoteUid": "a937f7162ecf88c276a2442254e55af4057133a8",
+      "sha1": "a937f7162ecf88c276a2442254e55af4057133a8",
+      "sha256": "2267be50efd75e2e937f5c5edf0521aa434ac55b9efab560538a9f45ebb8285a",
+      "matches": true
+    },
+    {
+      "path": "apps/web/scripts/e2e-production.mjs",
+      "remoteUid": "45fa5acc2c87d8ccac3764f78cf8c2f345ef8aa8",
+      "sha1": "45fa5acc2c87d8ccac3764f78cf8c2f345ef8aa8",
+      "sha256": "22617f1bdd7cda490e508382276f2c09b71e70ff36eb79caee91496f8d2eb5ba",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/chat-sync.test.tsx",
+      "remoteUid": "93feb542ec1b9db461eea2748ca84ac3ef7ae97c",
+      "sha1": "93feb542ec1b9db461eea2748ca84ac3ef7ae97c",
+      "sha256": "36d00bde716d146fc59aea2237013148ad869b25e4d491d3de32c5a7750af9ff",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/effects-render.test.tsx",
+      "remoteUid": "a76e768b3c5d6c40c24cc0a813aaf7a15aa99cbf",
+      "sha1": "a76e768b3c5d6c40c24cc0a813aaf7a15aa99cbf",
+      "sha256": "c1ccd609d0d4745c4d02c1da8920d3cb042a14699b3b0236e642d2316960d2b3",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/game-table-focus.test.tsx",
+      "remoteUid": "684b3e017c8b833ce022361fd8cdcd4427ffa1d9",
+      "sha1": "684b3e017c8b833ce022361fd8cdcd4427ffa1d9",
+      "sha256": "06ee28d5bedb9deed51c7704b9076d3ab7f8a72f3c8a2242881c005b39239d5c",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/mood-sync.test.tsx",
+      "remoteUid": "9bd1cb478f469c0c1ddf58ccb4a4be5f93608743",
+      "sha1": "9bd1cb478f469c0c1ddf58ccb4a4be5f93608743",
+      "sha256": "17689b09e94e2e94d22c27f6f2adfc743e8ce986e2ed83dba751c0cdcd4ce55a",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/prefs.test.ts",
+      "remoteUid": "c37cec5877c4e6e2b3cc75ae06e7eef1a69ee245",
+      "sha1": "c37cec5877c4e6e2b3cc75ae06e7eef1a69ee245",
+      "sha256": "3e682a7890a618cef2acd36e44a9d1dc060ff63021641456c4acb5f9c66b003a",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/presentation-queue.test.ts",
+      "remoteUid": "876f6dbcb58d6f10d76eb4d3ded150753236cea6",
+      "sha1": "876f6dbcb58d6f10d76eb4d3ded150753236cea6",
+      "sha256": "c741a91ba058683aac41240c69ed9b2de299c329548a32c999479249082e3419",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/recovery-page.test.tsx",
+      "remoteUid": "3fcdf05d49f04f4f4ff2e99ee8dac7fe54d43d5b",
+      "sha1": "3fcdf05d49f04f4f4ff2e99ee8dac7fe54d43d5b",
+      "sha256": "9b73ebda3e322c8716ebba092e8b5f2992d7a3c8482b880f059dccfc8cff85c8",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/recovery-wait.test.tsx",
+      "remoteUid": "9d65fdd98a2071ca1e88c6dfa7b9e10e5c7668b3",
+      "sha1": "9d65fdd98a2071ca1e88c6dfa7b9e10e5c7668b3",
+      "sha256": "44f25b483e263a41471b90846e127cf8b41fe6c11cc8a9b367041eef3b1ed187",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/sounds.test.ts",
+      "remoteUid": "c3aba543fe98d6d36b2252fe2857c0fdf63ed94f",
+      "sha1": "c3aba543fe98d6d36b2252fe2857c0fdf63ed94f",
+      "sha256": "38f937787412e9a4591a89a1a6379870cd7f15a522b76040afd57c175b1e7e5d",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/taunt-sync.test.tsx",
+      "remoteUid": "3bd6f29079255f190f7ebd3c61d19d41009e1f1b",
+      "sha1": "3bd6f29079255f190f7ebd3c61d19d41009e1f1b",
+      "sha256": "1297a0874ac3d1b70eb8e0e4e38cfb853d7dd4e86c0577efc1320999e3a363d9",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/training-entry-context.test.tsx",
+      "remoteUid": "87fac95be297072e78b7a1a995f8258418ed3827",
+      "sha1": "87fac95be297072e78b7a1a995f8258418ed3827",
+      "sha256": "6ab3fbd67dacbd10fc90aff55235c1514f03dd35cf9110afadea029a9f644d82",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/training-entry.test.tsx",
+      "remoteUid": "e31dfad44e162cc719faf05c8dd868faaa558dff",
+      "sha1": "e31dfad44e162cc719faf05c8dd868faaa558dff",
+      "sha256": "264377c4fcba4a72246344d7cdaba2753e0afd94e74f4e96b29e0e7527d392b9",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/training-home.test.tsx",
+      "remoteUid": "eda842782b3a6e023c7f5f05e38928df2aeda2b2",
+      "sha1": "eda842782b3a6e023c7f5f05e38928df2aeda2b2",
+      "sha256": "4b9bbe842a64f17cea58c7f32af2254337667cd29a89bb153020ccfe385a6e98",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/training-lobby.test.tsx",
+      "remoteUid": "3bb015eb7e0c597e0e2d4be64f4e6e8d6119d5a6",
+      "sha1": "3bb015eb7e0c597e0e2d4be64f4e6e8d6119d5a6",
+      "sha256": "9c3983c2771ce124b67e54be3a1ff00c23fdf45449d0d741f9ef99f062f2e44a",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/training-results.test.tsx",
+      "remoteUid": "202a38ba1197092f5493ff21203aeca8c5974b41",
+      "sha1": "202a38ba1197092f5493ff21203aeca8c5974b41",
+      "sha256": "df4fe837bb635474aaffdeb793cc09da177ae72449e98f95581771e390033fce",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/training-table.test.tsx",
+      "remoteUid": "d8b813fadafa6d0ca46b82de963df08cba6c7b1b",
+      "sha1": "d8b813fadafa6d0ca46b82de963df08cba6c7b1b",
+      "sha256": "56bda8cb61e636410e19c9cebf348b7c05da261c2782a580cc39a0c8ae0bef83",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/turn-notification.test.tsx",
+      "remoteUid": "f49ecdf7301a68b1e257109a73e8f2b34b6f7306",
+      "sha1": "f49ecdf7301a68b1e257109a73e8f2b34b6f7306",
+      "sha256": "4822dbaf48ed7175ee84c2159853928fa60a1abac5619021c8d600c501333ce8",
+      "matches": true
+    },
+    {
+      "path": "apps/web/tsconfig.json",
+      "remoteUid": "8e7028db7321883e24d2845a57ec9a08923f034c",
+      "sha1": "8e7028db7321883e24d2845a57ec9a08923f034c",
+      "sha256": "8859a504a42dd739cdbec949d94877b71348dd528f832bb45f7d5116c3b05543",
+      "matches": true
+    },
+    {
+      "path": "apps/web/vercel.json",
+      "remoteUid": "06c9ac36e007ee8be50e4aa9ed43092ca1b632d1",
+      "sha1": "06c9ac36e007ee8be50e4aa9ed43092ca1b632d1",
+      "sha256": "b6decf5a6e80ff509618f6d7eb78f5558b8dc3151ddeac38332a546633dae0bf",
+      "matches": true
+    },
+    {
+      "path": "apps/web/vitest.config.ts",
+      "remoteUid": "38fa8a8782877aba41cba3baa3496420f7bac171",
+      "sha1": "38fa8a8782877aba41cba3baa3496420f7bac171",
+      "sha256": "0e46c87196344e59e65702adb9ee3892d800594f4970e41aa7f43bbf36fd6185",
+      "matches": true
+    },
+    {
+      "path": "package.json",
+      "remoteUid": "c80bdb9c9ab3d6d1a1bd5c80e3fe0f90dbc1da14",
+      "sha1": "c80bdb9c9ab3d6d1a1bd5c80e3fe0f90dbc1da14",
+      "sha256": "8f5bbbed7be8cbf0b5f03db5dbd1a1a791d35c68a3b97e854d63cc7855961c45",
+      "matches": true
+    },
+    {
+      "path": "packages/protocol/package.json",
+      "remoteUid": "e8643e1ce87e81eaef699142289f5534f1d6b23c",
+      "sha1": "e8643e1ce87e81eaef699142289f5534f1d6b23c",
+      "sha256": "f49869974d18be45202d13d953ce4ef7f1893df881cbbaade14ea944f3fb17f0",
+      "matches": true
+    },
+    {
+      "path": "packages/protocol/src/index.ts",
+      "remoteUid": "c01eaf41fecfad61f57da60460ea099f0053c1ef",
+      "sha1": "c01eaf41fecfad61f57da60460ea099f0053c1ef",
+      "sha256": "6d285744063eee88f23f1fd4ea9956c46ebc79832e9ca26061dc2e575f4c0376",
+      "matches": true
+    },
+    {
+      "path": "packages/protocol/src/shared.ts",
+      "remoteUid": "6e1a5411c7f18af48c70628916e0359c98946a57",
+      "sha1": "6e1a5411c7f18af48c70628916e0359c98946a57",
+      "sha256": "412a4b85525c828103aedbfb116dd1abe389a4775ed5c3aafad7b4c0f17dd7c3",
+      "matches": true
+    },
+    {
+      "path": "packages/protocol/test/schemas.test.ts",
+      "remoteUid": "9b9889b61fa3de6b0d3fd395f1ff1d39a7a1b684",
+      "sha1": "9b9889b61fa3de6b0d3fd395f1ff1d39a7a1b684",
+      "sha256": "c74e1025fcfe02e7007b9d06fd9f92087e73ba9443f4242a7ccda0ccfe6771b1",
+      "matches": true
+    },
+    {
+      "path": "packages/protocol/tsconfig.build.json",
+      "remoteUid": "9a0e579a9f610552e944890d749f9fbdbdc3f272",
+      "sha1": "9a0e579a9f610552e944890d749f9fbdbdc3f272",
+      "sha256": "2829e0b9becfd5b81f4802bcc29304f9b64fb274fa223bf8458cc7db15d7300b",
+      "matches": true
+    },
+    {
+      "path": "packages/protocol/tsconfig.json",
+      "remoteUid": "649295ef64d68ac620010b497dc80088125b953b",
+      "sha1": "649295ef64d68ac620010b497dc80088125b953b",
+      "sha256": "fea9cfcb057785994121b5c0768b9912cbcae898ce8c2c6c3ff57dd78ae99ee5",
+      "matches": true
+    },
+    {
+      "path": "packages/protocol/vitest.config.ts",
+      "remoteUid": "6a52a558a2f513ff517a84c071f011189d611ba4",
+      "sha1": "6a52a558a2f513ff517a84c071f011189d611ba4",
+      "sha256": "dcb606db308049583026f48032729eeba13b5eb0027b6018630f6fa729d02d13",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/package.json",
+      "remoteUid": "51b4bc13a4cf38e05272cd8bc6995f79592240b0",
+      "sha1": "51b4bc13a4cf38e05272cd8bc6995f79592240b0",
+      "sha256": "3a25f2603bf5c72f1f935ed98d027281b7e21f9780ab9a2834bfb48f20f07918",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/src/card.ts",
+      "remoteUid": "dac1a92b290d797a01e4c1c53da74979e9e467fc",
+      "sha1": "dac1a92b290d797a01e4c1c53da74979e9e467fc",
+      "sha256": "bbe565b788756953296d2716da0127fc2249b6186e5f7d22640d19e4a5b8a1a1",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/src/commands.ts",
+      "remoteUid": "cb324ad3e233b72ec423e08882a682c147966dd2",
+      "sha1": "cb324ad3e233b72ec423e08882a682c147966dd2",
+      "sha256": "4f88f23ce11b14cf09a2c059617d465262e75ca5147b4b85b602b5dbad20c09f",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/src/errors.ts",
+      "remoteUid": "89e68e219ad657ecb9e693749ded57c3c092cdb8",
+      "sha1": "89e68e219ad657ecb9e693749ded57c3c092cdb8",
+      "sha256": "8b8cbcb1c937c923ad067f66500870bd75caddeee0c9f42b6666354ba3951cb0",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/src/index.ts",
+      "remoteUid": "313f7e9f606b57b04eed3ab7c666bbb389c7262b",
+      "sha1": "313f7e9f606b57b04eed3ab7c666bbb389c7262b",
+      "sha256": "023379299560525de51f37f0ca75bd4da4354ebdda7fd85cd5fc0757095a60a4",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/src/projection.ts",
+      "remoteUid": "e9f2207f839752407209512e1a6ba2695db8080f",
+      "sha1": "e9f2207f839752407209512e1a6ba2695db8080f",
+      "sha256": "1964dd813c825003740d28a58ae6c4ff21aa23f7f2ca02beb5f9babcff481a42",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/src/random.ts",
+      "remoteUid": "ec4f6887a66c2e07efa43a12479b66fdf2e6d722",
+      "sha1": "ec4f6887a66c2e07efa43a12479b66fdf2e6d722",
+      "sha256": "9a7d75be664cf3580a5f26563f613da4ba554d7d890a38e7dd734868bf7c2171",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/src/round.ts",
+      "remoteUid": "e97e52582ac0ad31e0bf2aa66dbd54833c6c4958",
+      "sha1": "e97e52582ac0ad31e0bf2aa66dbd54833c6c4958",
+      "sha256": "038fc8a73e76705b025614c3a8dacf7ce467a0d3a9299fee15700ba4b9857ebf",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/src/state.ts",
+      "remoteUid": "559332452eb98b06a2feafe1a4b0bdf0d430da93",
+      "sha1": "559332452eb98b06a2feafe1a4b0bdf0d430da93",
+      "sha256": "9b1fc035bd51fea4e4d8fb99dae09d8cac115584b9f94f1b10d484377a5217cb",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/test/classic-effects.test.ts",
+      "remoteUid": "0561835ed839c0e46380f595ec752a14ddaa5e0a",
+      "sha1": "0561835ed839c0e46380f595ec752a14ddaa5e0a",
+      "sha256": "6db2483c4aa40adec6d3abcf11226d4eec8c896db112474787125659538465de",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/test/classic-finals.test.ts",
+      "remoteUid": "234c6b0802390b1285a7652a0835e0232c0bbae7",
+      "sha1": "234c6b0802390b1285a7652a0835e0232c0bbae7",
+      "sha256": "1cda1f74184ee3e0ce22ba2aee7fc7c7198b60eb1b675806b5178a1c1d0f18ea",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/test/classic-last-card.test.ts",
+      "remoteUid": "369f158cbcc030e951d6a84ae1ebe369b7583129",
+      "sha1": "369f158cbcc030e951d6a84ae1ebe369b7583129",
+      "sha256": "5ffbad3bb15be8adea12e77449ce31ec4d658b1a5207ceb2615b8dceb0716a0b",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/test/classic-piles.test.ts",
+      "remoteUid": "5beaab1f99a8425a657b19e5e708c62fde3a0377",
+      "sha1": "5beaab1f99a8425a657b19e5e708c62fde3a0377",
+      "sha256": "9263e7f58ec527a4ceb8c408ab1d412b587a8a83da20e68fdf03bbccb87a5dd1",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/test/classic-projection.test.ts",
+      "remoteUid": "37fb31e379fbee2f68d12442c3990c6a1334aeb4",
+      "sha1": "37fb31e379fbee2f68d12442c3990c6a1334aeb4",
+      "sha256": "d3a985602792c3eb3d816004f380bd2cb7a7c5489b6c6790f9c339f726e6200d",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/test/classic-public-table.test.ts",
+      "remoteUid": "872c6169c2b557c49efb30b477f8df01edd8ffc0",
+      "sha1": "872c6169c2b557c49efb30b477f8df01edd8ffc0",
+      "sha256": "e4678f374638f6bb06e7556c47caccb7161397f5f330223e91abdd97e98bd47c",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/test/classic-simulation.test.ts",
+      "remoteUid": "293a4867c0e75815b3ae1c3f46e39481f3ad06c1",
+      "sha1": "293a4867c0e75815b3ae1c3f46e39481f3ad06c1",
+      "sha256": "e1100af1b226bacdfbeaa9fa3858bbc0e7177f919d467a5e5110e0bac642aa96",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/test/classic-turns.test.ts",
+      "remoteUid": "edbc9c8d0ff988f8b2374bf254c978cd6401a1e2",
+      "sha1": "edbc9c8d0ff988f8b2374bf254c978cd6401a1e2",
+      "sha256": "b628caa52239f210cacc92bfba54a4de52d8cba8cd2f845add3abfc4aeda348b",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/test/deck.test.ts",
+      "remoteUid": "f25a82c8674b725897d169287c932f5ac254fc5c",
+      "sha1": "f25a82c8674b725897d169287c932f5ac254fc5c",
+      "sha256": "983bd9e481a8ee0a927e160a136534f8159516b7d4edb3197697b3c56cc79313",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/test/fixtures.ts",
+      "remoteUid": "b9e97570386c752620c37e9efa2cc3a69dfcd191",
+      "sha1": "b9e97570386c752620c37e9efa2cc3a69dfcd191",
+      "sha256": "f0d3c420250cf719177c415c850074c3d1bfd1a7d5a0f8e7d59e09f9cad29ae3",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/test/helpers-privacy.ts",
+      "remoteUid": "8a1eafebf28604c56bbc1e3e79a95572a42956a0",
+      "sha1": "8a1eafebf28604c56bbc1e3e79a95572a42956a0",
+      "sha256": "d1c47ccf471a8bcb5c6e07acafc2d738a9894ff3d299e4266eec5fafd5ce0a43",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/test/helpers.ts",
+      "remoteUid": "a99417c60dfdc6afbbada378271556ce82d871da",
+      "sha1": "a99417c60dfdc6afbbada378271556ce82d871da",
+      "sha256": "c0808995bddfdecf9da14ec6b8d9c242e8465c6a721250009efa80ee2f916c8d",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/test/opening.test.ts",
+      "remoteUid": "add4e72946e9ec1222c0717bd1688f293d3c98f2",
+      "sha1": "add4e72946e9ec1222c0717bd1688f293d3c98f2",
+      "sha256": "0d19ef8baea98b6d743643e99f81f1715277b8b9e89b330a8ec73dbb6547cad0",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/test/random.test.ts",
+      "remoteUid": "c494bdbe2719ff064c97d0715eb12948f9ef77b5",
+      "sha1": "c494bdbe2719ff064c97d0715eb12948f9ef77b5",
+      "sha256": "3afe2a846d338cbab7f15bef8f351388831540d7a5b62b8af2cd5eec052ab438",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/test/simulation.ts",
+      "remoteUid": "71e596044e2aef648fa6e0b66becefafd87b363c",
+      "sha1": "71e596044e2aef648fa6e0b66becefafd87b363c",
+      "sha256": "d7602b0d2b0e6d7c57a4009922c1b4e9943effcf41bd5aae18879eb87e74f4f0",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/tsconfig.build.json",
+      "remoteUid": "9a0e579a9f610552e944890d749f9fbdbdc3f272",
+      "sha1": "9a0e579a9f610552e944890d749f9fbdbdc3f272",
+      "sha256": "2829e0b9becfd5b81f4802bcc29304f9b64fb274fa223bf8458cc7db15d7300b",
+      "matches": true
+    },
+    {
+      "path": "packages/rules/tsconfig.json",
+      "remoteUid": "649295ef64d68ac620010b497dc80088125b953b",
+      "sha1": "649295ef64d68ac620010b497dc80088125b953b",
+      "sha256": "fea9cfcb057785994121b5c0768b9912cbcae898ce8c2c6c3ff57dd78ae99ee5",
+      "matches": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "remoteUid": "cb041818673869f6693a1cb2b502ed4f6c8c4b34",
+      "sha1": "cb041818673869f6693a1cb2b502ed4f6c8c4b34",
+      "sha256": "c6f954a24f5efb5664cc30ff082c6d5d93e7febdfdf2e8e22be712480f03a173",
+      "matches": true
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "remoteUid": "30cd9c2e706f215b9d5884c4289551bc4bfe884e",
+      "sha1": "30cd9c2e706f215b9d5884c4289551bc4bfe884e",
+      "sha256": "c2c2d39f8e0684a7354eddcd86a82be23ca99dd2e6e12d2a5359f97e2dede41b",
+      "matches": true
+    },
+    {
+      "path": "render.yaml",
+      "remoteUid": "6770e37d7748008aecfc272170fda813945febc5",
+      "sha1": "6770e37d7748008aecfc272170fda813945febc5",
+      "sha256": "f6f4745bb9851eb89aa057ee6f76ed28ca4752b1030a1025f2a69e8429fada20",
+      "matches": true
+    },
+    {
+      "path": "tsconfig.base.json",
+      "remoteUid": "40e72cc0d717e00530e4a42bb03212d58905593b",
+      "sha1": "40e72cc0d717e00530e4a42bb03212d58905593b",
+      "sha256": "d0eea10ce34798fcc9361244c4c798596d1219d983834dfcc42f7b453ac9a0ea",
+      "matches": true
+    }
+  ],
+  "method": "Vercel /v6 file tree UIDs compared with SHA-1 of source bytes; SHA-256 compared with executor manifest. Two auxiliary files fetched via /v8 contents; other 161 matched committed/local source."
+}

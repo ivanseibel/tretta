@@ -1,0 +1,14 @@
+[
+  {
+    "step": "known-reproductions",
+    "exitCode": 0
+  },
+  {
+    "step": "clock-tie-reproductions",
+    "exitCode": 1
+  },
+  {
+    "step": "typecheck",
+    "exitCode": 0
+  }
+]

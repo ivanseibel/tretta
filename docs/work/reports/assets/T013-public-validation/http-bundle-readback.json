@@ -1,0 +1,109 @@
+{
+  "checkedAtUtc": "2026-10-17T19:42:14.622894+00:00",
+  "home": {
+    "url": "https://tretta.vercel.app/",
+    "status": 200
+  },
+  "route": {
+    "url": "https://tretta.vercel.app/sala/ZZZZZZ",
+    "status": 200
+  },
+  "health": {
+    "url": "https://tretta-server.onrender.com/healthz",
+    "status": 200,
+    "body": "{\"ok\":true}"
+  },
+  "chunks": [
+    {
+      "path": "/_next/static/immutable/chunks/0c0hxoamwjsbw.js",
+      "url": "https://tretta.vercel.app/_next/static/immutable/chunks/0c0hxoamwjsbw.js",
+      "status": 200,
+      "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683",
+      "dataLongOccurrences": 0,
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/0pzjo0m_qc-nz.js",
+      "url": "https://tretta.vercel.app/_next/static/immutable/chunks/0pzjo0m_qc-nz.js",
+      "status": 200,
+      "sha256": "aca6bb5fabd8545d6f3ddcef7c5e82bf0542c3a51ce4b85d75c164a076902839",
+      "dataLongOccurrences": 3,
+      "hooks": [],
+      "byteIdenticalToStagedEvidence": true,
+      "privateDiscardContext": "\"pile-label\",children:\"Descarte\"}),(0,a.jsxs)(\"div\",{className:`playing-card card-${\"wild\"===P.discardTop.kind?\"wild\":P.discardTop.color}`,role:\"img\",\"aria-label\":`Descarte: ${(0,u.D)(P.discardTop)}`,\"data-testid\":\"discard-top\",\"data-card-id\":P.discardTop.id,title:(0,u.D)(P.discardTop),children:[(0,a.jsx)(\"span\",{className:\"card-symbol\",\"aria-hidden\":\"true\",children:\"wild\"===P.discardTop.kind?(0,a.jsx)(\"span\",{className:\"color-symbol color-symbol-wild\",children:\"\u2726\"}):(0,a.jsx)(i.i,{color:P.discardTop.color})}),(0,a.jsx)(\"span\",{className:\"card-value\",\"data-long\":(0,u.T)(P.discardTop).length>4?\"true\":void 0,\"aria-hidden\":\"true\",children:(0,u.T)(P.discardTop)}),(0,a.jsx)(\"span\",{className:\"card-name\",\"aria-hidden\":\"true\",children:(0,u.D)(P.discardTop)})]})]}),(0,a.jsxs)(\"div\",{className:\"active-color\",children:[(0,a.jsx)(\"span\",{className",
+      "privateDiscardHasLongCondition": true
+    },
+    {
+      "path": "/_next/static/immutable/chunks/15a2jemz0kw1r.js",
+      "url": "https://tretta.vercel.app/_next/static/immutable/chunks/15a2jemz0kw1r.js",
+      "status": 200,
+      "sha256": "4878ca0ba63b24bf0d222b2b6326f0f1605242b79c74006582fa4834970b833c",
+      "dataLongOccurrences": 0,
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/1bvb71x0vwldf.js",
+      "url": "https://tretta.vercel.app/_next/static/immutable/chunks/1bvb71x0vwldf.js",
+      "status": 200,
+      "sha256": "bb3f78df04a60429c0d08a6e6952802aa96c1bdac6d4c204568914f4f91b793a",
+      "dataLongOccurrences": 0,
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/1obq5ikzs9qy3.js",
+      "url": "https://tretta.vercel.app/_next/static/immutable/chunks/1obq5ikzs9qy3.js",
+      "status": 200,
+      "sha256": "d12e453ad490a18cb826544e5e3f30eecff8a46ca8954ce29cb3c995d46bd4cc",
+      "dataLongOccurrences": 0,
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/2-3au1mrczlgz.js",
+      "url": "https://tretta.vercel.app/_next/static/immutable/chunks/2-3au1mrczlgz.js",
+      "status": 200,
+      "sha256": "62a6ddf710ad52f47cc9fe220d471a0b104e5e84d4be7e67764c0f989622f204",
+      "dataLongOccurrences": 0,
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/2d6cts1co-gyo.js",
+      "url": "https://tretta.vercel.app/_next/static/immutable/chunks/2d6cts1co-gyo.js",
+      "status": 200,
+      "sha256": "5d499ac8b750ca130a5faaa1351abbdc7d813c8e7ecd6ffdda7b4d4203f19dda",
+      "dataLongOccurrences": 0,
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/2q9q4qcdxq0te.js",
+      "url": "https://tretta.vercel.app/_next/static/immutable/chunks/2q9q4qcdxq0te.js",
+      "status": 200,
+      "sha256": "b611153f847782c0a8f95bb73c69d46b35f32c7f5e36f3f938aa97b4f8821d6a",
+      "dataLongOccurrences": 0,
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/3biwl7lok_myr.js",
+      "url": "https://tretta.vercel.app/_next/static/immutable/chunks/3biwl7lok_myr.js",
+      "status": 200,
+      "sha256": "17b6d71462ad7a737466a534404a70a5a9d2ec9d5d33909c17a8f3d6c4f010e2",
+      "dataLongOccurrences": 0,
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/3zd908udbposi.js",
+      "url": "https://tretta.vercel.app/_next/static/immutable/chunks/3zd908udbposi.js",
+      "status": 200,
+      "sha256": "da31dc7bdf4fc6d65b70bd7c50ac833ae83204790c3f3e3e7d228afa298463e4",
+      "dataLongOccurrences": 0,
+      "hooks": []
+    },
+    {
+      "path": "/_next/static/immutable/chunks/turbopack-1cvbnb3nlabgn.js",
+      "url": "https://tretta.vercel.app/_next/static/immutable/chunks/turbopack-1cvbnb3nlabgn.js",
+      "status": 200,
+      "sha256": "8bbb58cbfd4633c1d828c6bc37bc32abc768a149c01b1dfc4f5131fd81274551",
+      "dataLongOccurrences": 0,
+      "hooks": []
+    }
+  ]
+}

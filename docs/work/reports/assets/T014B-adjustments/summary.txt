@@ -1,0 +1,5 @@
+06-build exit=0
+07-typecheck exit=0
+08-rules-test exit=0
+09-protocol-test exit=0
+10-web-test exit=0

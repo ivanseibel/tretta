@@ -1,0 +1,13 @@
+Vercel CLI 57.0.0 (Node.js 22.23.1)
+Retrieving project…
+> Environment Variables found for seibel/tretta [463ms]
+
+ name                               value               environments                created    
+ NEXT_PUBLIC_SERVER_URL             Encrypted           Production, Preview         1d ago     
+ NEXT_PUBLIC_TEST_HOOKS             0                   Production, Preview         1d ago     
+ ENABLE_EXPERIMENTAL_COREPACK       1                   Production, Preview         1d ago     
+
+Common next commands:
+- `vercel env add --project tretta`
+- `vercel env rm --project tretta`
+- `vercel env pull --project tretta`

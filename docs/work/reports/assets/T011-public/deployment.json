@@ -1,0 +1,51 @@
+{
+ "date": "2026-10-17",
+ "commit": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+ "upload": {
+  "fileCount": 163,
+  "totalSize": 1317728,
+  "manifestDigestSha256": "80be664523f38e705e5917fa948d4daa228e24922c73827da435c4d829f194d5",
+  "manifestFile": "source-manifest.sha256.txt"
+ },
+ "frontend": {
+  "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+  "team": "seibel",
+  "teamId": "team_4mQparNtNCNqsb95uxf2FzoD",
+  "plan": "hobby",
+  "staged": {
+   "id": "dpl_fiXC5suPTF2VCW22fEVf64HZYhNP",
+   "url": "https://tretta-qj6nwkkie-seibel.vercel.app",
+   "target": "production",
+   "readyState": "READY",
+   "metadataNote": "vercel inspect --json reporta meta: null (sem metadados customizados visíveis); a fonte é identificada pelo commit 3ae459e5… e pelo manifesto SHA-256 do upload"
+  },
+  "promoted": {
+   "domain": "https://tretta.vercel.app",
+   "deploymentId": "dpl_fiXC5suPTF2VCW22fEVf64HZYhNP",
+   "mode": "promote of the same staged build (no rebuild)"
+  },
+  "previous": {
+   "id": "dpl_J9jjh4nHDUfMZj9cZU2JN8hKS6Tj",
+   "url": "https://tretta-26gh6ystv-seibel.vercel.app"
+  }
+ },
+ "backend": {
+  "serviceId": "srv-db95f2u7bikc73dpndt0",
+  "workspace": "tea-cuhq60rv2p9s738m7us0",
+  "url": "https://tretta-server.onrender.com",
+  "plan": "free",
+  "instances": 1,
+  "deploy": {
+   "id": "dep-db9lnpm1egvs73ct80ig",
+   "trigger": "new_commit",
+   "status": "live",
+   "commit": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+   "startedAt": "2026-10-17T11:28:38Z",
+   "finishedAt": "2026-10-17T11:29:58Z"
+  },
+  "previous": {
+   "id": "dep-db95f367bikc73dpnfs0",
+   "revision": "8967e94eae18a351c6c7b4c81a1f00ea5d6d1837"
+  }
+ }
+}

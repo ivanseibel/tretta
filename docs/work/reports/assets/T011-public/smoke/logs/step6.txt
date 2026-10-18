@@ -1,0 +1,9 @@
+turn: Sua vez
+end_round_visible: True
+results: Rodada encerrada sem vencedor.
+score_Checador: Checadorvocê0 rodada(s)
+score_Lila: Lilabot1 rodada(s)
+errors: {'errors': [], 'rejections': []}
+home_url: https://tretta.vercel.app/
+url_stable_after_leave: True
+errors: {'errors': [], 'rejections': []}

@@ -1,0 +1,10 @@
+[
+  {
+    "step": "scope-deadlines",
+    "exitCode": 1
+  },
+  {
+    "step": "typecheck",
+    "exitCode": 0
+  }
+]
