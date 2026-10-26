@@ -1,5 +1,7 @@
 # Provocações pelo avatar e reações
 
+**Substituído em 25/10/2026** por [mesa-e-reacoes.md](mesa-e-reacoes.md): as provocações com alvo saíram do produto e as reações individuais passaram a ser 12. Documento preservado como histórico.
+
 **Escopo confirmado pelo usuário em 18/10/2026**, após entrevista com `grill-with-docs` (`grilling` e `domain-modeling`). O usuário aceitou as rodadas Q1–Q3, Q4–Q7, Q8–Q11 e Q12–Q15 com “Aceito” e Q16–Q19 com “sim”; confirmou o conjunto com “Confirmo, prontos para iniciarmos a execução através dos agentes executores, vamos de execução manual.” Execução dos agentes permanece manual, conforme o [protocolo](../../.agents/skills/orchestrate-work/SKILL.md).
 
 ## Objetivo
@@ -48,7 +50,7 @@ O recorte reúne provocações pelo avatar, resposta rápida, reações sem dest
 
 Histórico de reações, conversas vinculadas a provocações, humor automático dos bots, novas regras de cartas e correção de áudio no iPhone ficam fora deste recorte. O [Clássico aprovado](first-version.md) permanece como referência das regras; este documento detalha a ampliação do humor e seus acessos.
 
-Primeiro incremento: [T014A — protocolo e servidor](../work/T014A.md), executada manualmente e [aceita A1–A8](../work/reports/T014A.validation.md) em 18/10/2026. [T014B](../work/T014B.md) e ajustes executados e [aceitos localmente B1–B10/U1–U3](../work/reports/T014B.final-validation.md) em 18/10/2026; C1–C7 atendidos com T014A. Nenhum ajuste de implementação pendente; publicação manual depende de autorização específica. As regras de produto acima permanecem aprovadas. Preferência registrada de executor: `gpt-6-luna`, reasoning `max`. Publicação é uma etapa posterior. Este aceite não autoriza commit, push, deploy ou reinício de serviços; hospedagem permanece gratuita.
+Primeiro incremento: [T014A — protocolo e servidor](../work/T014A.md), executada manualmente e [aceita A1–A8](../work/reports/T014A.validation.md) em 18/10/2026. [T014B](../work/T014B.md) e ajustes executados e [aceitos localmente B1–B10/U1–U3](../work/reports/T014B.final-validation.md) em 18/10/2026; C1–C7 atendidos com T014A. [Publicação T014 executada manualmente e aceita P1–P5](../work/reports/T014-publication.validation.md) em 18/10/2026, após autorização específica e janela confirmada. Nenhum ajuste de implementação ou publicação pendente; versão pública atual T014. Próximo passo: uso humano e feedback no celular/som. As regras de produto acima permanecem aprovadas. Preferência de executor: `gpt-6-luna`, reasoning `max`. Hospedagem permanece gratuita; o aceite não autoriza novos pushes/reinícios.
 
 ## Referências vigentes
 

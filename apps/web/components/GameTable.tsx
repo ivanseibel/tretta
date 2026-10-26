@@ -5,12 +5,16 @@ import type { Card, Color } from '@tretta/rules';
 import { COLORS } from '@tretta/rules';
 import type { EventsMessage, StateMessage } from '@tretta/protocol';
 import { useRoom } from '@/app/providers';
-import { AvatarAction, ColorSymbol, LeaveButton } from '@/components/ui';
-import { EventFeed } from '@/components/EventFeed';
 import { PausePanel } from '@/components/PausePanel';
-import { ReactionBadge } from '@/components/ReactionBadge';
+import { AvatarBadge, ColorSymbol } from '@/components/ui';
+import { Chip, TableShell } from '@/components/chrome';
 import { SeatCircuit } from '@/components/SeatCircuit';
-import { COLOR_LABELS, cardLabel, cardShort } from '@/lib/labels';
+import { COLOR_LABELS, cardLabel } from '@/lib/labels';
+import { CardFace } from './table/CardFace';
+import { TableActions } from './table/TableActions';
+import { TableBarNav } from './drawer/TableBarNav';
+import { TableCenter } from './table/TableCenter';
+import './table/table.css';
 
 interface FocusAfterAck {
   readonly selector: string;
@@ -21,6 +25,7 @@ function CardView({
   card,
   selected,
   playable,
+  drawn,
   tabIndex,
   onClick,
   onFocus,
@@ -29,21 +34,23 @@ function CardView({
   card: Card;
   selected: boolean;
   playable: boolean;
+  drawn: boolean;
   tabIndex: 0 | -1;
   onClick: () => void;
   onFocus: () => void;
   onKeyDown: (event: ReactKeyboardEvent<HTMLButtonElement>) => void;
 }): ReactNode {
   const color = card.kind === 'wild' ? 'wild' : card.color;
-  const short = cardShort(card);
   return (
     <button
       type="button"
-      className={`playing-card card-${color}${selected ? ' card-selected' : ''}${playable ? ' card-playable' : ''}`}
+      className={`playing-card tv2-card card-${color}${selected ? ' card-selected tv2-card--selected' : ''}${playable ? ' card-playable tv2-card--playable' : ''}${drawn ? ' tv2-card--drawn' : ''}`}
       data-testid={`card-${card.id}`}
       data-card-id={card.id}
       data-color={color}
-      aria-label={`${cardLabel(card)}${playable ? ', jogável' : ', não jogável neste turno'}`}
+      data-playable={playable ? 'true' : 'false'}
+      data-drawn={drawn ? 'true' : 'false'}
+      aria-label={`${cardLabel(card)}${playable ? ', jogável' : ', não jogável neste turno'}${drawn ? ', carta comprada' : ''}`}
       aria-pressed={selected}
       aria-disabled={!playable}
       tabIndex={tabIndex}
@@ -52,25 +59,26 @@ function CardView({
       onKeyDown={onKeyDown}
       title={cardLabel(card)}
     >
-      <span className="card-symbol" aria-hidden="true">
-        {card.kind === 'wild' ? <span className="color-symbol color-symbol-wild">✦</span> : <ColorSymbol color={card.color} />}
-      </span>
-      <span className="card-value" data-long={short.length > 4 ? 'true' : undefined} aria-hidden="true">
-        {short}
-      </span>
-      <span className="card-name" aria-hidden="true">{cardLabel(card)}</span>
+      <CardFace card={card} />
     </button>
   );
 }
 
+/** Sulco do trilho desenhado no palco; a geometria dos assentos vem de `SeatCircuit`. */
+function RailSlot({ children }: { children: ReactNode }): ReactNode {
+  return <div className="tv2-table-stage">{children}</div>;
+}
+
 export function GameTable({ state, events }: { state: StateMessage; events: EventsMessage[] }): ReactNode {
   const room = useRoom();
+  void events;
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [choosingColor, setChoosingColor] = useState(false);
   const [announce, setAnnounce] = useState(false);
   const [focusedCardId, setFocusedCardId] = useState<string | null>(null);
   const [playPending, setPlayPending] = useState(false);
-  const handRef = useRef<HTMLElement | null>(null);
+  const [handMore, setHandMore] = useState(false);
+  const handRef = useRef<HTMLDivElement | null>(null);
   const firstColorRef = useRef<HTMLButtonElement | null>(null);
   const colorTriggerRef = useRef<HTMLButtonElement | null>(null);
   const focusAfterStateRef = useRef<FocusAfterAck | null>(null);
@@ -81,7 +89,6 @@ export function GameTable({ state, events }: { state: StateMessage; events: Even
   const view = state.self.view;
   const paused = state.room.status === 'paused';
   const live = room.interactive;
-  const isHost = state.room.hostId === state.self.playerId;
 
   const participants = state.room.participants;
   const nicknameOf = (playerId: string): string => participants.find((participant) => participant.id === playerId)?.nickname ?? '—';
@@ -92,11 +99,6 @@ export function GameTable({ state, events }: { state: StateMessage; events: Even
   const leavesOneCard = (view?.hand.length ?? 0) - 1 === 1 && selectedCard !== null;
   const seatedPlayerIds = new Set((view?.players ?? []).map((player) => player.id));
   const waitingParticipants = participants.filter((participant) => participant.id !== state.self.playerId && !seatedPlayerIds.has(participant.id));
-
-  function activateAvatar(playerId: string, trigger: HTMLElement): void {
-    if (playerId === state.self.playerId) room.openReactionMenu(trigger);
-    else room.openTauntMenu(playerId, trigger);
-  }
 
   const applyFocusAfterAck = (): void => {
     const request = focusAfterStateRef.current;
@@ -133,29 +135,37 @@ export function GameTable({ state, events }: { state: StateMessage; events: Even
   }, [myTurn, selectedId, view]);
 
   useEffect(() => {
-    if (focusedCardId !== null && (view === null || !view.hand.some((card) => card.id === focusedCardId))) {
-      setFocusedCardId(firstHandCardId);
-    }
-  }, [firstHandCardId, focusedCardId, view]);
-
-  useEffect(() => {
-    if (focusedCardId !== null && (view === null || !view.hand.some((card) => card.id === focusedCardId))) {
+    if (focusedCardId === null) return;
+    if (view === null || !view.hand.some((card) => card.id === focusedCardId)) {
       if (document.activeElement === document.body) handRef.current?.focus({ preventScroll: true });
       setFocusedCardId(firstHandCardId);
     }
   }, [firstHandCardId, focusedCardId, view]);
 
+  useEffect(() => {
+    const element = handRef.current;
+    if (element === null) return;
+    const update = (): void => {
+      setHandMore(element.scrollHeight - element.scrollTop - element.clientHeight > 4);
+    };
+    update();
+    element.addEventListener('scroll', update, { passive: true });
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(update);
+    observer?.observe(element);
+    return () => {
+      element.removeEventListener('scroll', update);
+      observer?.disconnect();
+    };
+  }, [view?.hand.length]);
+
   if (view === null) return null;
 
-  const lastCardWindow = view.lastCardWindow;
   // Bots nunca "caem": conexão é conceito de pessoa; ausência de bot não pausa.
+  const currentParticipant =
+    view.currentPlayerId === null ? undefined : participants.find((participant) => participant.id === view.currentPlayerId);
   const currentPlayerDisconnected =
-    view.currentPlayerId !== null &&
-    participants.find((participant) => participant.id === view.currentPlayerId)?.kind === 'human' &&
-    participants.find((participant) => participant.id === view.currentPlayerId)?.connected === false;
-  const currentIsBot =
-    view.currentPlayerId !== null &&
-    participants.find((participant) => participant.id === view.currentPlayerId)?.kind === 'bot';
+    currentParticipant !== undefined && currentParticipant.kind === 'human' && currentParticipant.connected === false;
+  const currentIsBot = currentParticipant?.kind === 'bot';
 
   const pickCard = (card: Card): void => {
     if (!myTurn || playPending || !view.playableCardIds.includes(card.id)) return;
@@ -229,13 +239,23 @@ export function GameTable({ state, events }: { state: StateMessage; events: Even
       cancelCardSelection();
       return;
     }
-    if (view === null || (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight')) return;
+    if (view === null) return;
+    const desktop =
+      typeof globalThis.matchMedia === 'function' && globalThis.matchMedia('(min-width: 900px)').matches;
+    const columns = view.hand.length > 8 ? 1 : desktop ? 8 : 4;
+    const offsets: Record<string, number> = {
+      ArrowLeft: -1,
+      ArrowRight: 1,
+      ArrowUp: -columns,
+      ArrowDown: columns,
+    };
+    const offset = offsets[event.key];
+    if (offset === undefined) return;
     const handIds = view.hand.map((card) => card.id);
     const currentIndex = handIds.indexOf(cardId);
     if (currentIndex < 0 || handIds.length < 2) return;
     event.preventDefault();
-    const offset = event.key === 'ArrowRight' ? 1 : -1;
-    const nextId = handIds[(currentIndex + offset + handIds.length) % handIds.length];
+    const nextId = handIds[(currentIndex + offset + handIds.length * 2) % handIds.length];
     if (nextId === undefined) return;
     setFocusedCardId(nextId);
     const buttons = handRef.current?.querySelectorAll<HTMLButtonElement>('[data-card-id]');
@@ -244,236 +264,257 @@ export function GameTable({ state, events }: { state: StateMessage; events: Even
     nextCard?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
   }
 
+  const turnText =
+    view.status === 'finished'
+      ? 'Rodada encerrada'
+      : paused
+        ? 'Rodada pausada'
+        : myTurn
+          ? 'Sua vez'
+          : `Vez de ${nicknameOf(view.currentPlayerId ?? '')}${currentIsBot ? ' (bot)' : ''}`;
+  const directionLabel = view.direction === 'clockwise' ? 'Sentido horário' : 'Sentido anti-horário';
+  const currentIndex = view.currentPlayerId === null ? -1 : view.players.findIndex((player) => player.id === view.currentPlayerId);
+  const step = view.direction === 'clockwise' ? 1 : -1;
+  const nextPlayer = currentIndex < 0 ? undefined : view.players[(currentIndex + step + view.players.length) % view.players.length];
+  const nextParticipant = nextPlayer === undefined ? undefined : participants.find((participant) => participant.id === nextPlayer.id);
+  const nextName = nextPlayer === undefined
+    ? null
+    : nextPlayer.id === state.self.playerId
+      ? 'você'
+      : nextParticipant?.nickname ?? nicknameOf(nextPlayer.id);
+  const showNext = nextName !== null && !paused && view.status === 'playing';
+  const liveSummary = `Cor ativa ${COLOR_LABELS[view.activeColor]}. Descarte ${cardLabel(view.discardTop)}. ${directionLabel}.`;
+
   return (
-    <div className={`screen table${myTurn ? ' table-own-turn' : ''}`}>
-      <header className="table-header">
-        <h1 className="room-tag" data-focus-target tabIndex={-1}>Sala {state.room.roomCode}</h1>
-        <span className="turn-indicator" role="status" aria-live="polite" aria-atomic="true" tabIndex={-1} data-testid="turn-indicator">
-          {view.status === 'finished' ? 'Rodada encerrada' : paused ? 'Rodada pausada' : myTurn ? 'Sua vez' : `Vez de ${nicknameOf(view.currentPlayerId ?? '')}${currentIsBot ? ' (bot)' : ''}`}
-        </span>
-        <LeaveButton />
-      </header>
-
-      {paused ? <PausePanel state={state} /> : null}
-
-      {!paused && currentPlayerDisconnected ? (
-        <p className="waiting-banner" data-testid="disconnected-banner">
-          {nicknameOf(view.currentPlayerId ?? '')} caiu. A rodada pausa por até 90 segundos para o retorno; depois disso o
-          anfitrião decide entre substituto ou encerrar sem vencedor.
-        </p>
-      ) : null}
-
-      {!paused && isHost && view.status === 'playing' ? (
-        <section className="host-controls" aria-label="Controles do anfitrião">
-          <button
-            type="button"
-            className="danger"
-            data-testid="end-round-button"
-            disabled={!live}
-            onClick={() => void room.endRoundWithoutWinner()}
-          >
-            Encerrar rodada sem vencedor
-          </button>
-        </section>
-      ) : null}
-
-      <SeatCircuit
-        players={view.players}
-        direction={view.direction}
-        currentPlayerId={view.currentPlayerId}
-        selfId={state.self.playerId}
-        participants={participants}
-        paused={paused}
-        roundFinished={view.status === 'finished'}
-        variant="table"
-        onAvatarActivate={activateAvatar}
-        reactions={room.activeReactions ?? {}}
-        animations={room.activeAnimations ?? 'full'}
-      />
-
-      {waitingParticipants.length > 0 ? (
-        <section className="opponents waiting-participants" aria-label="Aguardam a próxima rodada">
-          {waitingParticipants.map((participant) => (
-            <div
-              key={participant.id}
-              className="opponent waiting-participant"
-              data-testid={`waiting-participant-${participant.nickname}`}
-              data-player-id={participant.id}
-            >
-              <AvatarAction
-                avatar={participant.avatar}
-                label={`Provocar ${participant.nickname}`}
-                testId={`mood-avatar-${participant.id}`}
-                size="small"
-                onActivate={(trigger) => activateAvatar(participant.id, trigger)}
-              />
-              <span className="participant-name">{participant.nickname}</span>
-              <ReactionBadge reaction={room.activeReactions?.[participant.id]} animations={room.activeAnimations ?? 'full'} />
-              {participant.connected ? null : <span className="status disconnected">desconectado</span>}
-              <span className="waiting-participant-label">aguarda próxima rodada</span>
-            </div>
-          ))}
-        </section>
-      ) : null}
-
-      <section className="table-center" aria-label="Mesa">
-        <div className="pile">
-          <span className="pile-label">Compra ({view.drawPileCount})</span>
-          <div className="playing-card card-back" role="img" aria-label={`Pilha de compra com ${view.drawPileCount} cartas`} data-testid="draw-pile">
-            <span className="card-value" aria-hidden="true">?</span>
-          </div>
-        </div>
-        <div className="pile">
-          <span className="pile-label">Descarte</span>
-          <div
-            className={`playing-card card-${view.discardTop.kind === 'wild' ? 'wild' : view.discardTop.color}`}
-            role="img"
-            aria-label={`Descarte: ${cardLabel(view.discardTop)}`}
-            data-testid="discard-top"
-            data-card-id={view.discardTop.id}
-            title={cardLabel(view.discardTop)}
-          >
-            <span className="card-symbol" aria-hidden="true">
-              {view.discardTop.kind === 'wild' ? <span className="color-symbol color-symbol-wild">✦</span> : <ColorSymbol color={view.discardTop.color} />}
-            </span>
-            <span className="card-value" data-long={cardShort(view.discardTop).length > 4 ? 'true' : undefined} aria-hidden="true">
-              {cardShort(view.discardTop)}
-            </span>
-            <span className="card-name" aria-hidden="true">{cardLabel(view.discardTop)}</span>
-          </div>
-        </div>
-        <div className="active-color">
-          <span className="pile-label">Cor ativa</span>
-          <span className={`color-chip chip-${view.activeColor}`} data-testid="active-color">
-            <ColorSymbol color={view.activeColor} />
-            {COLOR_LABELS[view.activeColor]}
-          </span>
-        </div>
-      </section>
-
-      {!paused ? (
-        <section className="actions" aria-label="Ações">
-          {myTurn && view.phase === 'play' ? (
-            <button type="button" className="primary" onClick={() => void sendAction({ type: 'draw' }, '[data-testid="pass-button"]')} data-testid="draw-button">
-              Comprar carta
-            </button>
-          ) : null}
-          {myTurn && view.phase === 'after-draw' ? (
-            <>
-              <p className="muted" data-testid="after-draw-hint">
-                Você comprou. Pode descartar a carta comprada ou passar.
-              </p>
-              <button type="button" className="secondary" onClick={() => void sendAction({ type: 'pass' }, '[data-testid="turn-indicator"]')} data-focus-after-state data-testid="pass-button">
-                Passar a vez
-              </button>
-            </>
-          ) : null}
-          {lastCardWindow !== null && lastCardWindow.playerId === state.self.playerId && !lastCardWindow.announced ? (
-            <button type="button" className="secondary" onClick={() => void sendAction({ type: 'announceLastCard' }, '[data-testid="turn-indicator"]')} data-testid="announce-button">
-              Avisar "Última carta!"
-            </button>
-          ) : null}
-          {lastCardWindow !== null && lastCardWindow.playerId !== state.self.playerId && !lastCardWindow.announced ? (
-            <button
-              type="button"
-              className="danger"
-              onClick={() => void sendAction({ type: 'challengeLastCard', targetId: lastCardWindow.playerId }, '[data-testid="turn-indicator"]')}
-              data-testid="challenge-button"
-            >
-              Denunciar {nicknameOf(lastCardWindow.playerId)}
-            </button>
-          ) : null}
-          {lastCardWindow !== null && lastCardWindow.announced ? (
-            <p className="muted" data-testid="last-card-note">
-              {nicknameOf(lastCardWindow.playerId)} avisou a última carta.
-            </p>
-          ) : null}
-        </section>
-      ) : null}
-
-      <div className={`hand-zone${myTurn ? ' hand-zone-your-turn' : ''}`}>
-        <div className="hand-heading">
-          <h2>Sua mão</h2>
-          <span className="hand-turn-cue" aria-hidden="true">
-            {view.status === 'finished' ? 'Rodada encerrada' : paused ? 'Aguardando a rodada' : myTurn ? 'Sua vez' : 'Aguardando a vez'}
-          </span>
-        </div>
-        <p className="hand-help" id="hand-help">
-          Cartas jogáveis recebem destaque. Use as setas para percorrer a mão e Enter ou Espaço para selecionar.
-        </p>
-        <section className="hand" ref={handRef} aria-label="Sua mão" aria-describedby="hand-help" data-testid="my-hand" tabIndex={-1}>
-          {view.hand.map((card) => {
-            const playable = myTurn && !playPending && view.playableCardIds.includes(card.id);
-            const tabIndex = focusedCardId === card.id || (focusedCardId === null && card.id === firstHandCardId) ? 0 : -1;
-            return (
-              <CardView
-                key={card.id}
-                card={card}
-                selected={selectedId === card.id}
-                playable={playable}
-                tabIndex={tabIndex}
-                onClick={() => pickCard(card)}
-                onFocus={() => setFocusedCardId(card.id)}
-                onKeyDown={(event) => handleCardKeyDown(event, card.id)}
-              />
-            );
-          })}
-        </section>
-      </div>
-
-      {!paused && selectedCard !== null && canSelect ? (
-        <section className="play-strip" aria-label="Confirmar jogada" data-testid="play-strip" onKeyDown={(event) => {
-          if (event.key === 'Escape' && choosingColor) {
-            event.preventDefault();
-            closeColorChooser();
-          }
-        }}>
-          <span className="muted">
-            {selectedCard.id === view.drawnCardId ? 'Carta comprada: ' : 'Jogar: '}
-            {cardLabel(selectedCard)}
-          </span>
-          {leavesOneCard ? (
-            <label className="announce-label">
-              <input type="checkbox" checked={announce} onChange={(event) => setAnnounce(event.target.checked)} data-testid="last-card-checkbox" />
-              Avisar "Última carta!"
-            </label>
-          ) : null}
-          {selectedCard.kind === 'wild' && choosingColor ? (
-            <span className="color-options" role="group" aria-label="Escolha a cor do coringa" data-testid="color-chooser">
-              {COLORS.map((color, index) => (
-                <button
-                  key={color}
-                  ref={index === 0 ? firstColorRef : undefined}
-                  type="button"
-                  className={`color-button chip-${color}`}
-                  aria-label={COLOR_LABELS[color]}
-                  onClick={() => void sendPlay(color)}
-                  data-testid={`color-option-${color}`}
+    <div className="screen table tv2-table-root" data-direction={view.direction} data-seat-count={view.players.length}>
+      <TableShell
+        rotuloMesa="Mesa de jogo"
+        rotuloAcoes="Ações da rodada"
+        rotuloMao="Sua mão"
+        rotuloBarra="Conteúdo da sala"
+        topo={
+          <>
+            <div className="tv2-top-vez">
+              <div className="tv2-top-line">
+                <span
+                  className="turn-indicator tv2-turn"
+                  role="status"
+                  aria-live="polite"
+                  aria-atomic="true"
+                  tabIndex={-1}
+                  data-focus-target
+                  data-testid="turn-indicator"
                 >
-                  <ColorSymbol color={color} />
-                  {COLOR_LABELS[color]}
-                </button>
-              ))}
-            </span>
-          ) : (
-            <button
-              ref={selectedCard.kind === 'wild' ? colorTriggerRef : undefined}
-              type="button"
-              className="primary"
-              disabled={playPending || !live}
-              onClick={() => (selectedCard.kind === 'wild' ? setChoosingColor(true) : void sendPlay())}
-              data-testid="play-button"
+                  {turnText}
+                </span>
+                {myTurn ? <Chip tone="latao">na vez</Chip> : null}
+                {state.room.mode === 'training' ? <Chip tone="creme">treino</Chip> : null}
+              </div>
+              <div className="tv2-direction" data-testid="table-direction">
+                <DirectionArrow reversed={view.direction === 'counterclockwise'} />
+                <strong>{directionLabel}</strong>
+                {showNext ? (
+                  <span className="tv2-next">
+                    · próximo na ordem: <span className="tv2-next-name">{nextName}{nextParticipant?.kind === 'bot' ? ' (bot)' : ''}</span>
+                  </span>
+                ) : null}
+              </div>
+            </div>
+          </>
+        }
+        mesa={
+          <RailSlot>
+            <SeatCircuit
+              players={view.players}
+              direction={view.direction}
+              currentPlayerId={view.currentPlayerId}
+              selfId={state.self.playerId}
+              participants={participants}
+              paused={paused}
+              roundFinished={view.status === 'finished'}
+              variant="table"
+              reactions={room.activeReactions ?? {}}
+              animations={room.activeAnimations ?? 'full'}
+            />
+            <TableCenter
+              drawPileCount={view.drawPileCount}
+              discardTop={view.discardTop}
+              activeColor={view.activeColor}
+            />
+            <div className="tv2-corner-stack">
+              {!paused && currentPlayerDisconnected ? (
+                <p className="tv2-corner-banner" data-testid="disconnected-banner">
+                  {nicknameOf(view.currentPlayerId ?? '')} caiu. A rodada espera o retorno ou a decisão do anfitrião.
+                </p>
+              ) : null}
+              {waitingParticipants.length > 0 ? (
+                <section className="waiting-participants tv2-waiting" aria-label="Aguardam a próxima rodada" data-testid="waiting-participants">
+                  {waitingParticipants.slice(0, 2).map((participant) => (
+                    <div
+                      key={participant.id}
+                      className="waiting-participant tv2-waiting-item"
+                      data-testid={`waiting-participant-${participant.nickname}`}
+                      data-player-id={participant.id}
+                    >
+                      <AvatarBadge avatar={participant.avatar} size="small" />
+                      <span className="participant-name">{participant.nickname}</span>
+                      <span className="tv2-waiting-label">aguarda próxima rodada</span>
+                    </div>
+                  ))}
+                  {waitingParticipants.length > 2 ? (
+                    <span className="tv2-waiting-more">+{waitingParticipants.length - 2}</span>
+                  ) : null}
+                </section>
+              ) : null}
+            </div>
+            {paused ? (
+              <div className="tv2-pause-overlay">
+                <PausePanel state={state} />
+              </div>
+            ) : null}
+            <p className="tv2-sr-only" role="status" aria-live="polite" aria-atomic="true" data-testid="table-live-summary">
+              {liveSummary}
+            </p>
+          </RailSlot>
+        }
+        acoes={
+          <TableActions
+            view={view}
+            myTurn={myTurn}
+            paused={paused}
+            live={live}
+            selfId={state.self.playerId}
+            nicknameOf={nicknameOf}
+            sendAction={sendAction}
+          />
+        }
+        mao={
+          <div className={`tv2-hand-zone${myTurn ? ' tv2-hand-zone--turn' : ''}`}>
+            <div className="tv2-hand-head">
+              <h2>Sua mão</h2>
+              <span className="tv2-hand-count">
+                <strong>{view.hand.length}</strong> cartas
+                {handMore ? <span className="tv2-hand-more-cue" aria-hidden="true">▾</span> : null}
+              </span>
+            </div>
+            <p className="tv2-sr-only" id="hand-help">
+              Cartas jogáveis recebem destaque. Use as setas para percorrer a mão e Enter ou Espaço para selecionar.
+            </p>
+            <div
+              className="hand tv2-hand-cards"
+              ref={handRef}
+              aria-label="Sua mão"
+              aria-describedby="hand-help"
+              data-testid="my-hand"
+              tabIndex={-1}
             >
-              {playPending ? 'Aguardando a confirmação…' : 'Jogar'}
-            </button>
-          )}
-          <button type="button" className="secondary" onClick={cancelCardSelection} data-testid="cancel-play">
-            {choosingColor ? 'Cancelar escolha de cor' : 'Cancelar'}
-          </button>
-        </section>
-      ) : null}
-
-      <EventFeed events={events} participants={participants} lastRound={state.room.lastRound} />
+              {view.hand.map((card) => {
+                const playable = myTurn && !playPending && view.playableCardIds.includes(card.id);
+                const tabIndex = focusedCardId === card.id || (focusedCardId === null && card.id === firstHandCardId) ? 0 : -1;
+                return (
+                  <CardView
+                    key={card.id}
+                    card={card}
+                    selected={selectedId === card.id}
+                    playable={playable}
+                    drawn={view.drawnCardId === card.id}
+                    tabIndex={tabIndex}
+                    onClick={() => pickCard(card)}
+                    onFocus={() => setFocusedCardId(card.id)}
+                    onKeyDown={(event) => handleCardKeyDown(event, card.id)}
+                  />
+                );
+              })}
+            </div>
+            {!paused && selectedCard !== null && canSelect ? (
+              <section
+                className="play-strip tv2-play-strip"
+                aria-label="Confirmar jogada"
+                data-testid="play-strip"
+                onKeyDown={(event) => {
+                  if (event.key !== 'Escape') return;
+                  event.preventDefault();
+                  if (choosingColor) closeColorChooser();
+                  else cancelCardSelection();
+                }}
+              >
+                <span className="tv2-play-label">
+                  <small>{selectedCard.id === view.drawnCardId ? 'Carta comprada' : 'Jogar'}</small>
+                  <strong>{cardLabel(selectedCard)}</strong>
+                </span>
+                {leavesOneCard ? (
+                  <label className="announce-label tv2-announce">
+                    <input
+                      type="checkbox"
+                      checked={announce}
+                      onChange={(event) => setAnnounce(event.target.checked)}
+                      data-testid="last-card-checkbox"
+                    />
+                    Avisar última
+                  </label>
+                ) : null}
+                {selectedCard.kind === 'wild' && choosingColor ? (
+                  <span
+                    className="color-options tv2-color-options"
+                    role="group"
+                    aria-label="Escolha a cor do coringa"
+                    data-testid="color-chooser"
+                  >
+                    {COLORS.map((color, index) => (
+                      <button
+                        key={color}
+                        ref={index === 0 ? firstColorRef : undefined}
+                        type="button"
+                        className={`color-button chip-${color} tv2-color-button`}
+                        aria-label={COLOR_LABELS[color]}
+                        onClick={() => void sendPlay(color)}
+                        data-testid={`color-option-${color}`}
+                      >
+                        <ColorSymbol color={color} />
+                        <span className="tv2-color-name">{COLOR_LABELS[color]}</span>
+                      </button>
+                    ))}
+                  </span>
+                ) : (
+                  <button
+                    ref={selectedCard.kind === 'wild' ? colorTriggerRef : undefined}
+                    type="button"
+                    className="primary tv2-btn tv2-btn--principal"
+                    disabled={playPending || !live}
+                    onClick={() => (selectedCard.kind === 'wild' ? setChoosingColor(true) : void sendPlay())}
+                    data-testid="play-button"
+                  >
+                    {playPending ? 'Aguardando…' : 'Jogar'}
+                  </button>
+                )}
+                <button
+                  type="button"
+                  className="secondary tv2-btn tv2-btn--secundario"
+                  onClick={cancelCardSelection}
+                  data-testid="cancel-play"
+                >
+                  Cancelar
+                </button>
+              </section>
+            ) : null}
+          </div>
+        }
+        barra={<TableBarNav />}
+      />
     </div>
+  );
+}
+
+/** Seta do sentido: para a direita no horário e para a esquerda no anti-horário. */
+function DirectionArrow({ reversed }: { reversed: boolean }): ReactNode {
+  return (
+    <svg
+      className={`tv2-direction-arrow${reversed ? ' tv2-direction-arrow--reversed' : ''}`}
+      viewBox="0 0 24 24"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <path d="M4 12h16M14 5l7 7-7 7" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }

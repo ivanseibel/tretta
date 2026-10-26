@@ -37,21 +37,19 @@ afterEach(() => {
 
 describe('storage das preferências', () => {
   it('roundtrip save/load preserva as escolhas', () => {
-    savePreferences({ animations: 'off', soundMuted: true, turnNotificationEnabled: false, hideTaunts: true, hideReactions: true });
+    savePreferences({ animations: 'off', soundMuted: true, turnNotificationEnabled: false, hideReactions: true });
     expect(loadPreferences()).toEqual({
       animations: 'off',
       soundMuted: true,
       turnNotificationEnabled: false,
-      hideTaunts: true,
       hideReactions: true,
     });
 
-    savePreferences({ animations: 'reduced', soundMuted: false, turnNotificationEnabled: true, hideTaunts: false, hideReactions: false });
+    savePreferences({ animations: 'reduced', soundMuted: false, turnNotificationEnabled: true, hideReactions: false });
     expect(loadPreferences()).toEqual({
       animations: 'reduced',
       soundMuted: false,
       turnNotificationEnabled: true,
-      hideTaunts: false,
       hideReactions: false,
     });
   });
@@ -62,7 +60,6 @@ describe('storage das preferências', () => {
       animations: 'full',
       soundMuted: false,
       turnNotificationEnabled: true,
-      hideTaunts: false,
       hideReactions: false,
     });
   });
@@ -73,14 +70,14 @@ describe('storage das preferências', () => {
     expect(parsePreferences('null')).toEqual(DEFAULT_PREFERENCES);
     expect(parsePreferences('{"animations":"turbo"}')).toEqual(DEFAULT_PREFERENCES);
     expect(parsePreferences('{"soundMuted":"sim"}')).toEqual(DEFAULT_PREFERENCES);
-    expect(parsePreferences('{"hideTaunts":1}')).toEqual(DEFAULT_PREFERENCES);
+    // Preferência removida do produto: o valor antigo é ignorado sem quebrar.
+    expect(parsePreferences('{"hideOldPreference":1}')).toEqual(DEFAULT_PREFERENCES);
     expect(parsePreferences('{"hideReactions":"sim"}')).toEqual(DEFAULT_PREFERENCES);
     // Registros anteriores não têm o novo campo; ocultar reações entra desligado.
-    expect(parsePreferences('{"animations":"reduced","soundMuted":true,"hideTaunts":false}')).toEqual({
+    expect(parsePreferences('{"animations":"reduced","soundMuted":true,"hideOldPreference":false}')).toEqual({
       animations: 'reduced',
       soundMuted: true,
       turnNotificationEnabled: true,
-      hideTaunts: false,
       hideReactions: false,
     });
     // Parcial válido preserva o que há e completa o resto com o padrão.
@@ -88,7 +85,6 @@ describe('storage das preferências', () => {
       animations: 'off',
       soundMuted: false,
       turnNotificationEnabled: true,
-      hideTaunts: false,
       hideReactions: true,
     });
   });

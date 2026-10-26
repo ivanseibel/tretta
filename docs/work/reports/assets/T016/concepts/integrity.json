@@ -1,0 +1,12 @@
+{
+  "productionDiff": "",
+  "linksMissing": [],
+  "newPNGs": 12,
+  "contrastPairsPassing": 37,
+  "cleanup": {
+    "namedDaemonStopped": true,
+    "endpointClosed": true,
+    "profileRemoved": true,
+    "personalBrowserTouched": false
+  }
+}

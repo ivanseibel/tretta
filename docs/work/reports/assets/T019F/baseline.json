@@ -1,0 +1,5056 @@
+{
+  "schema": "t019f-baseline/1",
+  "generatedAt": "2026-10-26T00:57:10.565Z",
+  "source": "docs/work/reports/assets/T018",
+  "sourceReport": "docs/work/reports/T018.md",
+  "sourceMeasurements": "docs/work/reports/assets/T018/measurements.json",
+  "sourceMeasurementsSha256": "b8c9cf3426b0bc301dee08b8675bc308d848cba6010e7d1d493e3da9cf16acf6",
+  "count": 105,
+  "viewports": [
+    "1280x800",
+    "360x640",
+    "412x915"
+  ],
+  "entries": [
+    {
+      "route": "ausente",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-ausente.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 499370,
+      "sha256": "d7a9850b0a43b69c67c76082b351fdc67bd3a75de06fe5cda47d60090644db98",
+      "metrics": {
+        "seatCount": 8,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 3
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "carta",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-carta.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 531768,
+      "sha256": "1bfbdd41fff6729e55d8a41eeaf51dcdf2ab4a82be86bd117d9f7174ea34d937",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "conversa",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-conversa.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 196942,
+      "sha256": "84d0b635f34666ba94d97830dfdefb3936d0889addce92ac2c5d2db6b469e508",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "cor",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-cor.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 244588,
+      "sha256": "2b73ae2aa5366b4b171f5415f149518a8f7d0f6650e12c4b78d78cb49791d5a6",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": null,
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "denuncia",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-denuncia.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 527404,
+      "sha256": "d50868d1b6d26376dd1f5e6129e7488f4fef8ab8306c6fbb90ca7b46ff449e5d",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "erro-conexao",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-erro-conexao.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 261099,
+      "sha256": "88765a1c15935862a0914fd3350a6be327a151e7174b4c7a14d756172a97c9db",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": null,
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "erro-link",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-erro-link.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 258108,
+      "sha256": "ca232056f8e067e3ba1d3ee6943a856eb20e5c050e4da3cdd6f04b4a6ed81e92",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": null,
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "erro-sala",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-erro-sala.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 262534,
+      "sha256": "39d9b01e45839cfbf1c79a9fee426f14626aff32c051476bb41ea6e1a1e0f117",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": null,
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "espera",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-espera.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 653018,
+      "sha256": "48bfc116bb27554edc825a6cfffcbd259b754b2a8653a57c57f240144bca8a06",
+      "metrics": {
+        "seatCount": 6,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 2,
+          "direita": 2
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": "14px",
+          "corpo": null,
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "home",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-home.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 321497,
+      "sha256": "fca7090864617579ec4fcf49c3d563a723137fb2e7b554da05c1e026818a59c1",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": null,
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": "14px",
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "inversao",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-inversao.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 498904,
+      "sha256": "880385d6decc80e5819853d20a04c36973d21f816471863f00e57d765de72549",
+      "metrics": {
+        "seatCount": 8,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 3
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-2",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-mesa-2.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 525786,
+      "sha256": "5322c3511516b449a7cfe6e72d8ec05ba0e42589f52d96b2fbbc8f3516075c6c",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-3",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-mesa-3.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 522859,
+      "sha256": "d9c14da6af1b76895183c3ad85d9badda6b72f1c2e27e66e2f02500e00bcedb4",
+      "metrics": {
+        "seatCount": 3,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-5",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-mesa-5.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 514669,
+      "sha256": "232d4256a1242f96500a309b9478091f2528580f16c339d8b747ac41b3542f60",
+      "metrics": {
+        "seatCount": 5,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 2,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-6",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-mesa-6.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 509728,
+      "sha256": "a557e6e2b8efdb45a7e290d3fce4a74bb863641019d2c4adbdbb93460e1711c1",
+      "metrics": {
+        "seatCount": 6,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 2,
+          "direita": 2
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-7",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-mesa-7.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 510207,
+      "sha256": "f5f4ce0265d0d2959d21a888d0ad87b53a9e98da92efa48cda94685f6575656b",
+      "metrics": {
+        "seatCount": 7,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 2
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-8",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-mesa-8.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 499256,
+      "sha256": "fec4bccb4bbd429c2a83aee6a48a9171fb4ba2bb1a39c90e8adc712257ece829",
+      "metrics": {
+        "seatCount": 8,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 3
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-cheia",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-mesa-cheia.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 495943,
+      "sha256": "13a3f6590ad63b20b8eb3e3b056aaf55264bad0ae0ca5b7bb9004050c36bea52",
+      "metrics": {
+        "seatCount": 8,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 3
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-mesa.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 519615,
+      "sha256": "46ab13e0cacf944ce8918ca0fa61e7e21ab7d0325dc46a84a40ce52dade5f7e5",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "pausada",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-pausada.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 328044,
+      "sha256": "7b5d099488b76813dd819fb0aeb792810a60ec78638eb48cd66eb69dc54dd3ab",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "preparacao-cheia",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-preparacao-cheia.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 439682,
+      "sha256": "5abc4435470bc928eec73bc0ddeda10e65d6d823fcc30b3ac133b74544069615",
+      "metrics": {
+        "seatCount": 8,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 3
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "preparacao-paineis",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-preparacao-paineis.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 287408,
+      "sha256": "381156c3d744b5d38d9f6d2f95de0a397f6826af0b2cb4f7b86fa8527975ae17",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "preparacao-pronta",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-preparacao-pronta.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 459218,
+      "sha256": "d947b956bb76620cb47c1da2e768c430da55bb282fc6930a7665e62cd9641675",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "preparacao-sala",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-preparacao-sala.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 180556,
+      "sha256": "b5496e1002013f16dfda005671654da9ffa5765082de94a6d3faf23ad6db510f",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "preparacao",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-preparacao.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 459458,
+      "sha256": "53d5831376a00e98327433cc72af9089b8a974e10c40827a84b3ef6e092b976f",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "reacao",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-reacao.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 533378,
+      "sha256": "f0b832b0c38a8f6156927ea32b26b19a8527fa90b5998936726577c56a95b2fd",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "reacoes",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-reacoes.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 530758,
+      "sha256": "95333163abb8f9cbf2c6cfeaff17e538397558ce7fdc9f0f22be32f30c3dddd5",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 12,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "resultado-convidado",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-resultado-convidado.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 251827,
+      "sha256": "8d2371f9593d89449a270d571efe40f0aa3ae3f1a8bc20617b69a34090548f6b",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": null,
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "resultado-sem-vencedor",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-resultado-sem-vencedor.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 241622,
+      "sha256": "3764e7a398315dc1002c0b119c1d2e6e98837417af4eae68d986aeaefa2b5bf0",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "resultado",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-resultado.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 238276,
+      "sha256": "64f724c09e0f4eec834e19fb7c84dabb6ba1ea8b5edac8592e6d66ee30a2f13d",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "sala-anfitriao",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-sala-anfitriao.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 206012,
+      "sha256": "7a1455dda321cda0192c770e26558dc657b7737cfa3470283d1d9e6244cd838a",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "sala-apresentacao",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-sala-apresentacao.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 207686,
+      "sha256": "aec988d46d1c1ad082b6d096371e75751a03ea2f19bf57a698fa777433d467ea",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "sala",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-sala.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 195002,
+      "sha256": "4d9447e003ba7539b460a5187e48b050b11de60f88c61a5dd0ca27d076041c74",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "treino",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-treino.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 514004,
+      "sha256": "ea46a655dfc258ee522bd485b891d6cd39052a66cd69b0e8df6d74f460bfa287",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "ultima",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "file": "docs/work/reports/assets/T018/1280x800-ultima.png",
+      "width": 1280,
+      "height": 800,
+      "bytes": 512853,
+      "sha256": "5b0e5f373ce98ab7651447a574800ec64ccd4548aae07ef361fd6bfb290521e7",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 2,
+        "cardsMinWidth": 92,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 1280,
+          "docH": 800,
+          "innerW": 1280,
+          "innerH": 800,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "ausente",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-ausente.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 148977,
+      "sha256": "35cb510837d9b5ba0ca376ffbad4f67b729e84c25a9bca06ccfa458e9f44e35d",
+      "metrics": {
+        "seatCount": 8,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 3
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "carta",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-carta.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 148592,
+      "sha256": "8cd02c5c894ac72a024818b62c70c53c50ac7c359b20d5663671ff02bce2857d",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "conversa",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-conversa.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 63640,
+      "sha256": "e9112c8cdd6bd8dbd0593550b3b68232efc3eb656efc810d43a1ed3eda85e8a6",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "cor",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-cor.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 72080,
+      "sha256": "468cc1608e3b29fa0796faa0d2dcd0b230a3f0e9c37ea0ce6f108703c8d10959",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": null,
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "denuncia",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-denuncia.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 152692,
+      "sha256": "141b8436cfd3c4e392cc7fcf6806ed86aee4170ce9037d7182e391a929e8a345",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "erro-conexao",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-erro-conexao.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 75652,
+      "sha256": "5bbe424f60aa3ab131b6808a820f3ab28b8633ad367620164fade0c0fc081003",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": null,
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "erro-link",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-erro-link.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 75747,
+      "sha256": "486d53c193c378bd9529fe63b88b78dd149d58b30728dad10547e2cd780ab1cb",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": null,
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "erro-sala",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-erro-sala.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 77421,
+      "sha256": "aa96a7fe10dfe0a5aec968721069aa1fd1d796fbcd8ed17cfe4e1f90322a3d80",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": null,
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "espera",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-espera.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 191892,
+      "sha256": "9edb20485ddbdbb1c1ed8534613a5252d0d258815a19e8ba59f1c2f3c02cd0fe",
+      "metrics": {
+        "seatCount": 6,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 2,
+          "direita": 2
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": "14px",
+          "corpo": null,
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "home",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-home.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 124694,
+      "sha256": "34c5285bc4813686ab250c31ddab63ff2df3b5722fef2c46461164bd67392ea7",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": null,
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": "14px",
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "inversao",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-inversao.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 148334,
+      "sha256": "9dbe377ca66404464ddb31dd745e944671994e198e6d4a90feedcda4de20108b",
+      "metrics": {
+        "seatCount": 8,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 3
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-2",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-mesa-2.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 151048,
+      "sha256": "5db8e086be04d239aceef2ba50e5d297c98d28137564782c1c6326c9d934422e",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-3",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-mesa-3.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 153301,
+      "sha256": "ae421172bf2eda15e0392cf0c8604d86b64ceaed1ec335e36d397a7ace63d4c8",
+      "metrics": {
+        "seatCount": 3,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-5",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-mesa-5.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 151812,
+      "sha256": "f4b1389e66bbf2a463be2b671479d07c5dee1cc721e83698c2afe9cf77049495",
+      "metrics": {
+        "seatCount": 5,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 2,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-6",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-mesa-6.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 151419,
+      "sha256": "fe9bb590b543e6547eb97e445713a41a6d3eec275c7080d8e75358c3b5663b04",
+      "metrics": {
+        "seatCount": 6,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 2,
+          "direita": 2
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-7",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-mesa-7.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 152549,
+      "sha256": "363978b30cc03b8dd360ad58c6af1dbf161a9e5d765c3909180ded324e9658b1",
+      "metrics": {
+        "seatCount": 7,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 2
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-8",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-mesa-8.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 151922,
+      "sha256": "c58164e10684ce58186c7ec6008dcfe8b6979d3f2e865ba40edb8bfdad57de67",
+      "metrics": {
+        "seatCount": 8,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 3
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-cheia",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-mesa-cheia.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 147256,
+      "sha256": "8637bc9c1d6eec866d14bf77851739847a9c91c37111fde9bdf49a54c6897287",
+      "metrics": {
+        "seatCount": 8,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 3
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-mesa.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 152820,
+      "sha256": "7e03931e559573d995803111e443a24ab4ce8e07d455a618c59526d69bbd7db2",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "pausada",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-pausada.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 84729,
+      "sha256": "13835fdd03b0aedb4165b2e731b35d982eb6ce823c17ee54ab9d72a868b464f0",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "preparacao-cheia",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-preparacao-cheia.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 136067,
+      "sha256": "cbe40b95aaa2815f9a64e56761f367aefde2f5a0e7beb2acb1f7e3c4c8cebb86",
+      "metrics": {
+        "seatCount": 8,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 3
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "preparacao-paineis",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-preparacao-paineis.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 67940,
+      "sha256": "c4031b7d039c352c8ed9c6404d74906a0f413335c4b853af508ab184d952fad0",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "preparacao-pronta",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-preparacao-pronta.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 134998,
+      "sha256": "8e9f407404c7ccf853b8b93b73093400d34cd04892ce67a668b3e5195bf3495d",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "preparacao-sala",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-preparacao-sala.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 53345,
+      "sha256": "46a82f3347c610c6d938bd344a3dde15785157a021309cdf4e4a27210c19c6e6",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "preparacao",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-preparacao.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 134688,
+      "sha256": "93b2aa019b650ee4279dbf307115f546328773536e3c4ef0aea6c52c257d97d3",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "reacao",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-reacao.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 169272,
+      "sha256": "340aa12150b2fbd932052f079543b3c0de98274b053bb33f102e1dc391d71511",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "reacoes",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-reacoes.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 143868,
+      "sha256": "d79ced9993ef764b2e7b56851eb18cef5918d975342c99a498589ca1fa78dd84",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 12,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "resultado-convidado",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-resultado-convidado.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 67313,
+      "sha256": "0628f645fda6cb278e6f7f6f0a7175652470c0e077e4ee6c548b41cfdabc5d10",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": null,
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "resultado-sem-vencedor",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-resultado-sem-vencedor.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 66338,
+      "sha256": "aedaf75f868107720f89ab61106cae3548b634e0d7e52ef5fefff309cd1f7ec8",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "resultado",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-resultado.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 65445,
+      "sha256": "f1905a281cc092670bfac37221a553da6282268b2baf016f7a8bd974ac2fffad",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "sala-anfitriao",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-sala-anfitriao.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 58528,
+      "sha256": "4e611d0e118c9b076ddd4f474e209422ab43fd4c248a72eb71cc9ba032eaba8b",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "sala-apresentacao",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-sala-apresentacao.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 66667,
+      "sha256": "339b9f7f2d7a5edde857f797b407ccde0aca787bf786aa540728e57e0463e3a9",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "sala",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-sala.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 57520,
+      "sha256": "a0aa3d761be505cae4e897ea0adbab0b1ecc415c8553569f391ff97a60affef1",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "treino",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-treino.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 152311,
+      "sha256": "b6d82b49b1d85b966f2b59890ef5db3a97b67d6ef00b46f51233fb7f79f3c2a3",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "ultima",
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "file": "docs/work/reports/assets/T018/360x640-ultima.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 168213,
+      "sha256": "00e64f0d174b8ffd9f8999a20989445276511bd68af14e902c0c7707b15799e6",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 2,
+        "cardsMinWidth": 74,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 360,
+          "docH": 640,
+          "innerW": 360,
+          "innerH": 640,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "ausente",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-ausente.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 234135,
+      "sha256": "0211d05eeef1845e1cdae46048978627a1b0625dee273c52990d57885d7f6ac7",
+      "metrics": {
+        "seatCount": 8,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 3
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "carta",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-carta.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 247381,
+      "sha256": "46b9290baadede272becd78814271e09bfe1374ef932dc3ccfa2a45a5d8f85fb",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "conversa",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-conversa.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 99850,
+      "sha256": "2db25010e946a282b085fc65b201ded92f2e1cc8c70f49ac5b9fdb4fb6d02248",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "cor",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-cor.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 112411,
+      "sha256": "6b6e2f8db2d41e2a5208997538d9ae71eece0fe22baf4fe5798c6fb325037878",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": null,
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "denuncia",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-denuncia.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 239027,
+      "sha256": "6b3e835f2869bdc4e264f63bac745c45b160f0cf885fa0f27cca74b5a6c2e7c5",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "erro-conexao",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-erro-conexao.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 95783,
+      "sha256": "d6f5ece59955e193f75c3e1681cffc84c3f695a4c073fdf7a77814d7f716b365",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": null,
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "erro-link",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-erro-link.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 95013,
+      "sha256": "7c8634bb599f783306d700e518348d30483141587442179745007eb8e32e0eb9",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": null,
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "erro-sala",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-erro-sala.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 97559,
+      "sha256": "c3a8ce8b552a5ecc205f1772f7524a88dbe0b87e6dbf46460a0c0457a237a6a2",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": null,
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "espera",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-espera.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 315094,
+      "sha256": "57ab7fdf4bec431e90b458f0bcdbfc4c892f0505ddb9e7ddae254da4cc087742",
+      "metrics": {
+        "seatCount": 6,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 2,
+          "direita": 2
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": "14px",
+          "corpo": null,
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "home",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-home.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 166135,
+      "sha256": "9b0033722e95ceec5c1a79ac739121194a733ca25f53ac94c6e681a235cfbb4d",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": null,
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": "14px",
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "inversao",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-inversao.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 234331,
+      "sha256": "824364e25d4d638af02f3ab2f4ad63fe051bc05501922ff12396e300b140c9ad",
+      "metrics": {
+        "seatCount": 8,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 3
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-2",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-mesa-2.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 238509,
+      "sha256": "9242439eb51fd40e7e0e2e8df2a6cc0f22452b9d05bc64bd562d0007dda0b1c4",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-3",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-mesa-3.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 240603,
+      "sha256": "52e6cbb82a630b0f09e1576b363da751ad6b028bfc8898353a66495f345d4c0d",
+      "metrics": {
+        "seatCount": 3,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-5",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-mesa-5.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 238796,
+      "sha256": "3baeabba2fa7c9572f1d8ffb5aeddfc92979ec13b140b19cb01cd29829c3db9c",
+      "metrics": {
+        "seatCount": 5,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 2,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-6",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-mesa-6.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 236737,
+      "sha256": "6eb5e221309a9f612f3318cf727b0d5eeeef58330975e1323b532e6263e99cd7",
+      "metrics": {
+        "seatCount": 6,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 2,
+          "direita": 2
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-7",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-mesa-7.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 236259,
+      "sha256": "18200b60528b54a6685bffdbe78254734a22c5c0ba33837c971f82654411a9fc",
+      "metrics": {
+        "seatCount": 7,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 2
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-8",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-mesa-8.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 234507,
+      "sha256": "1bda9ad45f1c7e2bfa9383fb0058785dad6a3cb6fdf9f21ce9f5317e3aa1a2e3",
+      "metrics": {
+        "seatCount": 8,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 3
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa-cheia",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-mesa-cheia.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 232095,
+      "sha256": "ba46d8fd2e7985ec9ed3acaceec28b75a247acdb1b32bf9ff4cf2ebac55d7126",
+      "metrics": {
+        "seatCount": 8,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 3
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "mesa",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-mesa.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 238992,
+      "sha256": "c5f17e438047d858818c5712c0acb52f06f26657d66f2e86bf75dec07879deec",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "pausada",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-pausada.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 144927,
+      "sha256": "c8c65e7c75897d8d2aa8daaf062d11e05e5346a9b932ae2fcc99ac7983660c60",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "preparacao-cheia",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-preparacao-cheia.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 218564,
+      "sha256": "eb75cc581b20e52da7a3a332fc643a9040473a1c9f003c9f01d01237c661f71d",
+      "metrics": {
+        "seatCount": 8,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 3,
+          "direita": 3
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "preparacao-paineis",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-preparacao-paineis.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 104641,
+      "sha256": "adcbf58a318c0500cc47183513c23e52d7439445bae90d4707d31933b9e6a9f5",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "preparacao-pronta",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-preparacao-pronta.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 217812,
+      "sha256": "f7727b5f0f29246790d0dd5978682dd5fc369c7e6c48824d26fd4cc832a29da5",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "preparacao-sala",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-preparacao-sala.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 85930,
+      "sha256": "ee2fe686b76be2e368a1e7241b3d57b7a94949b0daa0eb392a3a4f7609adf808",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "preparacao",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-preparacao.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 217383,
+      "sha256": "d07dd692008571d6f1ff4c3edc8d5793469ff9755b9da89f13480fee4e279b38",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": "16px",
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "reacao",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-reacao.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 250986,
+      "sha256": "cbb12c27f7fa182ab7252f291027c7929248e5d22268275c27d249da2cd46369",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "reacoes",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-reacoes.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 252975,
+      "sha256": "e677cd253834718025e8ddc58122b6ea9baac6c2a5b2b26ef3277e64b895f0c7",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 12,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "resultado-convidado",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-resultado-convidado.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 99780,
+      "sha256": "2e0e0daafa9c5356b3d4482c7db68fba32d777fb69d64d9269b1d865fba2ae42",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": null,
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "resultado-sem-vencedor",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-resultado-sem-vencedor.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 99322,
+      "sha256": "4bfa0f4e397b425fb82d95b21154c082b42877d3b6b091bbae872825c3dd0e4a",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "resultado",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-resultado.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 96563,
+      "sha256": "ca2a61a64987018943f5dabb796381595da1d85800c5bcb45bb92ec36962eb42",
+      "metrics": {
+        "seatCount": 0,
+        "seatSides": {
+          "topo": 0,
+          "base": 0,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 0,
+        "cardsMinWidth": null,
+        "reactions": 0,
+        "ariaCurrent": 0,
+        "fonts": {
+          "vez": "20px",
+          "sentido": null,
+          "contaNum": null,
+          "contaRot": null,
+          "assentoNome": null,
+          "cartaNome": null,
+          "corRotulo": null,
+          "corpo": "16px",
+          "naVez": null,
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": true
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "sala-anfitriao",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-sala-anfitriao.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 105152,
+      "sha256": "962afaa5f6f3bad243727f74ce1e2fb237f6903c54897b3cc05c3ea0982e22a6",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "sala-apresentacao",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-sala-apresentacao.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 106928,
+      "sha256": "a78eb79f5eb261d516a95f0abd3dfafc2ecf1cf06cb90b8f971d53fe629714d3",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "sala",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-sala.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 100958,
+      "sha256": "3424395595ebdf41b77a4e20d7b9b1c87343d8abaf78f67565cfa7ab40aea802",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "treino",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-treino.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 237133,
+      "sha256": "cab682b41cb2a02400ab1e7227c5e46df2b97e38ca619a2b749ff51b0f877136",
+      "metrics": {
+        "seatCount": 4,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 1,
+          "direita": 1
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 8,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": "14px"
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    },
+    {
+      "route": "ultima",
+      "viewport": {
+        "width": 412,
+        "height": 915
+      },
+      "file": "docs/work/reports/assets/T018/412x915-ultima.png",
+      "width": 412,
+      "height": 915,
+      "bytes": 264941,
+      "sha256": "b83b85195d96c1544564bbec72f0d1cd3b64b90e9cdcbe52a138a94752ce10bd",
+      "metrics": {
+        "seatCount": 2,
+        "seatSides": {
+          "topo": 1,
+          "base": 1,
+          "esquerda": 0,
+          "direita": 0
+        },
+        "overlaps": 0,
+        "seatsOutsideTable": 0,
+        "cards": 2,
+        "cardsMinWidth": 89,
+        "reactions": 0,
+        "ariaCurrent": 1,
+        "fonts": {
+          "vez": "20px",
+          "sentido": "18px",
+          "contaNum": "26px",
+          "contaRot": "14px",
+          "assentoNome": "16px",
+          "cartaNome": "14px",
+          "corRotulo": "14px",
+          "corpo": "16px",
+          "naVez": "14px",
+          "status": null
+        },
+        "scroll": {
+          "docW": 412,
+          "docH": 915,
+          "innerW": 412,
+          "innerH": 915,
+          "tableVertical": false
+        },
+        "smallTargets": 0,
+        "forbiddenText": 0
+      }
+    }
+  ]
+}

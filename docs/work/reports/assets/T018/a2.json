@@ -1,0 +1,1210 @@
+{
+ "posicoes": {
+  "2": [
+   {
+    "classe": "assento--base"
+   },
+   {
+    "classe": "assento--topo",
+    "x": "50%",
+    "w": "46%"
+   }
+  ],
+  "3": [
+   {
+    "classe": "assento--base"
+   },
+   {
+    "classe": "assento--esq",
+    "y": "50%"
+   },
+   {
+    "classe": "assento--topo",
+    "x": "50%",
+    "w": "42%"
+   }
+  ],
+  "4": [
+   {
+    "classe": "assento--base"
+   },
+   {
+    "classe": "assento--esq",
+    "y": "50%"
+   },
+   {
+    "classe": "assento--topo",
+    "x": "50%",
+    "w": "42%"
+   },
+   {
+    "classe": "assento--dir",
+    "y": "50%"
+   }
+  ],
+  "5": [
+   {
+    "classe": "assento--base"
+   },
+   {
+    "classe": "assento--esq",
+    "y": "30%"
+   },
+   {
+    "classe": "assento--esq",
+    "y": "70%"
+   },
+   {
+    "classe": "assento--topo",
+    "x": "50%",
+    "w": "42%"
+   },
+   {
+    "classe": "assento--dir",
+    "y": "50%"
+   }
+  ],
+  "6": [
+   {
+    "classe": "assento--base"
+   },
+   {
+    "classe": "assento--esq",
+    "y": "30%"
+   },
+   {
+    "classe": "assento--esq",
+    "y": "70%"
+   },
+   {
+    "classe": "assento--topo",
+    "x": "50%",
+    "w": "42%"
+   },
+   {
+    "classe": "assento--dir",
+    "y": "30%"
+   },
+   {
+    "classe": "assento--dir",
+    "y": "70%"
+   }
+  ],
+  "7": [
+   {
+    "classe": "assento--base"
+   },
+   {
+    "classe": "assento--esq",
+    "y": "22%"
+   },
+   {
+    "classe": "assento--esq",
+    "y": "50%"
+   },
+   {
+    "classe": "assento--esq",
+    "y": "78%"
+   },
+   {
+    "classe": "assento--topo",
+    "x": "50%",
+    "w": "42%"
+   },
+   {
+    "classe": "assento--dir",
+    "y": "30%"
+   },
+   {
+    "classe": "assento--dir",
+    "y": "70%"
+   }
+  ],
+  "8": [
+   {
+    "classe": "assento--base"
+   },
+   {
+    "classe": "assento--esq",
+    "y": "22%"
+   },
+   {
+    "classe": "assento--esq",
+    "y": "50%"
+   },
+   {
+    "classe": "assento--esq",
+    "y": "78%"
+   },
+   {
+    "classe": "assento--topo",
+    "x": "50%",
+    "w": "42%"
+   },
+   {
+    "classe": "assento--dir",
+    "y": "22%"
+   },
+   {
+    "classe": "assento--dir",
+    "y": "50%"
+   },
+   {
+    "classe": "assento--dir",
+    "y": "78%"
+   }
+  ],
+  "3-anti": [
+   {
+    "classe": "assento--base"
+   },
+   {
+    "classe": "assento--dir",
+    "y": "50%"
+   },
+   {
+    "classe": "assento--topo",
+    "x": "50%",
+    "w": "42%"
+   }
+  ]
+ },
+ "compacto360": {
+  "media": true,
+  "tokens": {
+   "cardW": "74px",
+   "cardH": "calc(74px * 1.10)",
+   "discardW": "72px",
+   "discardH": "88px",
+   "monteW": "46px",
+   "monteH": "60px",
+   "pad": "8px",
+   "gap": "5px",
+   "drawerH": "46px",
+   "handHead": "24px"
+  },
+  "cartas": [
+   {
+    "w": 74,
+    "h": 81.3984375
+   },
+   {
+    "w": 74,
+    "h": 81.3984375
+   },
+   {
+    "w": 74,
+    "h": 81.3984375
+   },
+   {
+    "w": 74,
+    "h": 81.3984375
+   },
+   {
+    "w": 74,
+    "h": 81.3984375
+   },
+   {
+    "w": 74,
+    "h": 81.3984375
+   },
+   {
+    "w": 74,
+    "h": 81.3984375
+   },
+   {
+    "w": 74,
+    "h": 81.3984375
+   }
+  ],
+  "fileiras": 2,
+  "mao": {
+   "x": 0,
+   "y": 421.2,
+   "w": 360,
+   "h": 172.8
+  },
+  "maoScrollW": 360,
+  "maoClientW": 360,
+  "rolagem": false,
+  "conta": "8cartas",
+  "ariaMao": "Sua mão, 8 cartas",
+  "fontePisos": [
+   [
+    ".vez-nome",
+    "20px"
+   ],
+   [
+    ".sentido-valor",
+    "18px"
+   ],
+   [
+    ".conta-num",
+    "26px"
+   ],
+   [
+    ".conta-rot",
+    "14px"
+   ],
+   [
+    ".assento-nome",
+    "16px"
+   ],
+   [
+    ".carta-nome",
+    "14px"
+   ],
+   [
+    ".cor-rotulo",
+    "14px"
+   ],
+   [
+    ".botao",
+    "16px"
+   ],
+   [
+    ".tag-na-vez",
+    "14px"
+   ]
+  ],
+  "fileirasY": [
+   {
+    "y": 420.2,
+    "n": 4
+   },
+   {
+    "y": 506.6,
+    "n": 4
+   }
+  ],
+  "gridRows": "81.4px 81.4px",
+  "gridCols": "74px 74px 74px 74px"
+ },
+ "normal412": {
+  "media": false,
+  "cardW": "clamp(72px, calc((100vw - 56px) / 4), 92px)",
+  "cardH": "calc(clamp(72px, calc((100vw - 56px) / 4), 92px) * 1.20)",
+  "drawerH": "50px",
+  "pad": "12px"
+ },
+ "medicoes": {
+  "total": 105,
+  "rotas": 35,
+  "larguras": [
+   "1280x800",
+   "360x640",
+   "412x915"
+  ],
+  "sobreposicoes": 0,
+  "assentosForaDaMesa": [],
+  "alvosMenores": 0,
+  "textoProibido": 0,
+  "mesaComRolagemVertical": [],
+  "maoComRolagem": [],
+  "nomesCurtos": "333/333",
+  "nomesLongosComReticencias": "36/42",
+  "fontes": {
+   "vez": [
+    "20px"
+   ],
+   "sentido": [
+    "18px"
+   ],
+   "contaNum": [
+    "26px"
+   ],
+   "contaRot": [
+    "14px"
+   ],
+   "assentoNome": [
+    "16px"
+   ],
+   "cartaNome": [
+    "14px"
+   ],
+   "corRotulo": [
+    "14px"
+   ],
+   "corpo": [
+    "16px"
+   ],
+   "naVez": [
+    "14px"
+   ],
+   "status": [
+    "14px"
+   ]
+  },
+  "assentoLados": [
+   [
+    "preparacao",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "preparacao-paineis",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "preparacao-pronta",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "preparacao-cheia",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 3
+    }
+   ],
+   [
+    "preparacao-sala",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "espera",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 2,
+     "direita": 2
+    }
+   ],
+   [
+    "mesa",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "mesa-cheia",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 3
+    }
+   ],
+   [
+    "inversao",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 3
+    }
+   ],
+   [
+    "carta",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "cor",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "conversa",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "sala",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "sala-apresentacao",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "sala-anfitriao",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "pausada",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "ausente",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 3
+    }
+   ],
+   [
+    "reacoes",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "reacao",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "ultima",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "denuncia",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "treino",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "mesa-2",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "mesa-3",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 0
+    }
+   ],
+   [
+    "mesa-5",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 2,
+     "direita": 1
+    }
+   ],
+   [
+    "mesa-6",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 2,
+     "direita": 2
+    }
+   ],
+   [
+    "mesa-7",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 2
+    }
+   ],
+   [
+    "mesa-8",
+    412,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 3
+    }
+   ],
+   [
+    "preparacao",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "preparacao-paineis",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "preparacao-pronta",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "preparacao-cheia",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 3
+    }
+   ],
+   [
+    "preparacao-sala",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "espera",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 2,
+     "direita": 2
+    }
+   ],
+   [
+    "mesa",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "mesa-cheia",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 3
+    }
+   ],
+   [
+    "inversao",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 3
+    }
+   ],
+   [
+    "carta",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "cor",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "conversa",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "sala",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "sala-apresentacao",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "sala-anfitriao",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "pausada",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "ausente",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 3
+    }
+   ],
+   [
+    "reacoes",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "reacao",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "ultima",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "denuncia",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "treino",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "mesa-2",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "mesa-3",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 0
+    }
+   ],
+   [
+    "mesa-5",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 2,
+     "direita": 1
+    }
+   ],
+   [
+    "mesa-6",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 2,
+     "direita": 2
+    }
+   ],
+   [
+    "mesa-7",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 2
+    }
+   ],
+   [
+    "mesa-8",
+    360,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 3
+    }
+   ],
+   [
+    "preparacao",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "preparacao-paineis",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "preparacao-pronta",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "preparacao-cheia",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 3
+    }
+   ],
+   [
+    "preparacao-sala",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "espera",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 2,
+     "direita": 2
+    }
+   ],
+   [
+    "mesa",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "mesa-cheia",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 3
+    }
+   ],
+   [
+    "inversao",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 3
+    }
+   ],
+   [
+    "carta",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "cor",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "conversa",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "sala",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "sala-apresentacao",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "sala-anfitriao",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "pausada",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "ausente",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 3
+    }
+   ],
+   [
+    "reacoes",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "reacao",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "ultima",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "denuncia",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "treino",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 1
+    }
+   ],
+   [
+    "mesa-2",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 0,
+     "direita": 0
+    }
+   ],
+   [
+    "mesa-3",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 1,
+     "direita": 0
+    }
+   ],
+   [
+    "mesa-5",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 2,
+     "direita": 1
+    }
+   ],
+   [
+    "mesa-6",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 2,
+     "direita": 2
+    }
+   ],
+   [
+    "mesa-7",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 2
+    }
+   ],
+   [
+    "mesa-8",
+    1280,
+    {
+     "topo": 1,
+     "base": 1,
+     "esquerda": 3,
+     "direita": 3
+    }
+   ]
+  ]
+ },
+ "smoke": {
+  "mesa": {
+   "antes": "turno 0, 8 cartas",
+   "comprou": "9 cartas, comprada=true",
+   "passou": "turno 1, comprada=false"
+  },
+  "reacoes": {
+   "count": 12,
+   "alvos": 0,
+   "overlay": true
+  },
+  "preparacao": {
+   "pronto_alternou": true,
+   "iniciar_desabilitado_com_pessoa_nao_pronta": true
+  },
+  "sala": {
+   "secoes": [
+    "Sala",
+    "Jogadores",
+    "Apresentação",
+    "Anfitrião"
+   ],
+   "ultimo_item": "Sair da sala"
+  },
+  "resultado": {
+   "topo": "Rodada encerrada",
+   "acao": "Voltar à preparação"
+  }
+ }
+}

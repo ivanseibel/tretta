@@ -1,37 +1,29 @@
-import type { AutomaticEffect, TauntEvent } from '@tretta/protocol';
+import type { AutomaticEffect } from '@tretta/protocol';
 
 /**
- * Fila serial única de apresentações (efeitos automáticos e provocações
- * manuais): um item na tela por vez, na ordem de chegada. O encerramento é por
- * timer — nunca depende de `animationend`, que pode faltar com animação
- * desligada, desmontagem ou troca de preferência. Preferência alterada muda a
- * aparência via CSS (`data-anim`) sem reanimação nem travamento; a duração do
- * item ativo permanece a decidida na entrada na fila.
+ * Fila serial única de apresentações automáticas: um item na tela por vez, na
+ * ordem de chegada. O encerramento é por timer — nunca depende de
+ * `animationend`, que pode faltar com animação desligada, desmontagem ou troca
+ * de preferência. Preferência alterada muda a aparência via CSS (`data-anim`)
+ * sem reanimação nem travamento; a duração do item ativo permanece a decidida
+ * na entrada na fila.
  */
-export type Presentation =
-  | {
-      readonly kind: 'taunt';
-      readonly id: string;
-      readonly durationMs: number;
-      readonly taunt: TauntEvent;
-    }
-  | {
-      readonly kind: 'effect';
-      readonly id: string;
-      readonly durationMs: number;
-      readonly effect: AutomaticEffect;
-    };
+export interface Presentation {
+  readonly kind: 'effect';
+  readonly id: string;
+  readonly durationMs: number;
+  readonly effect: AutomaticEffect;
+}
 
-/** Janelas curtas por tipo e modo; "off" ainda exibe a legenda estática. */
+/** Janelas curtas por modo; "off" ainda exibe a legenda estática. */
 export const PRESENTATION_DURATIONS = {
   effect: { full: 2600, reduced: 2000, off: 1400 },
-  taunt: { full: 3200, reduced: 2400, off: 1600 },
 } as const;
 
 /**
- * Limite de pendências: rajadas (compra + bloqueio + provocação) ficam na
- * ordem; com excedente descarta a mais antiga pendente, nunca o item ativo nem
- * o mais recente — o aviso mais recente é o mais relevante.
+ * Limite de pendências: rajadas de efeitos ficam na ordem; com excedente
+ * descarta a mais antiga pendente, nunca o item ativo nem o mais recente — o
+ * aviso mais recente é o mais relevante.
  */
 export const MAX_PENDING_PRESENTATIONS = 8;
 

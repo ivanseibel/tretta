@@ -1,0 +1,101 @@
+{
+  "checkedAt": "2026-10-18T19:44:31.871Z",
+  "publicUrl": "https://tretta.vercel.app",
+  "deployment": "dpl_613qfXj17XFdFctcg5HjsEimhfpz",
+  "rooms": {
+    "humanCompat": "GK** (T013 antigo + parceiro de protocolo)",
+    "humanSmoke": "99Z9RL (Nina, Rui, Olho)",
+    "humanIsolatedRerun": "NM** (Nina 9333 + Dora 9335)",
+    "training": "X4SFXN (Nina + Tico/Lila/Nino)"
+  },
+  "checks": {
+    "https_wss": [
+      "location.protocol=https:",
+      "wss://tretta-server.onrender.com/socket.io/?EIO=4&transport=websocket"
+    ],
+    "hooksPublic": false,
+    "probe": {
+      "a": "vazio; b: vazio; obs: vazio (errors/rejections/consoleErrors/consoleWarnings)"
+    },
+    "reactions": {
+      "types": [
+        "😂Rindo",
+        "😭Chorando",
+        "😡Bravo"
+      ],
+      "durationS": "~4s confirmado (presente 2.5s, ausente 5.6s)",
+      "duplication": "1 badge por reação",
+      "simultaneity": "3 contextos: obs viu chorando+bravo ao mesmo tempo",
+      "waitingPerson": "Olho enviou Bravo pelo botão Reagir; badge junto à identificação de espera em A e B"
+    },
+    "tauntUX": {
+      "avatarTouch": "Provocar <nome> correto via toque",
+      "notice": "só destinatário; Responder abre com emissor selecionado",
+      "keyboard": "Enter abre (1ª opção focada com focus-emulation), Escape fecha e devolve foco ao avatar",
+      "outsideTap": "fecha sem acionar carta por baixo"
+    },
+    "limits": {
+      "reaction": "Aguarde 4s|sender após reação",
+      "taunt": "Aguarde 13-15s|sender após provocação",
+      "independence": "reação disponível logo após provocar; após reação, provocação segue em espera; relógios separados no menu"
+    },
+    "preferences": {
+      "hideReactions": "oculta imediatamente; envio oculto com confirmação textual; reativar sem replay",
+      "persist": "preferência mantida após reload"
+    },
+    "reload": {
+      "identity": "Nina Prova recuperada",
+      "hand": "6→6",
+      "discard": "Amarelo 1 (igual)",
+      "moodReplay": "sem badges/aviso antigos",
+      "limits": "countdown continuou (Aguarde 4s, não reiniciado)",
+      "twoTabs": "2ª aba mostra recovering e não assume assento; 1ª segue viva"
+    },
+    "training": {
+      "bots": [
+        "Tico",
+        "Lila",
+        "Nino"
+      ],
+      "provokeBot": "tomate aceito, bot não responde",
+      "botMood": "nenhum badge de bot; nenhum aviso de bot",
+      "legalMove": "wild-draw-four com cor",
+      "discardMeasures": "320/390/1280 dentro da carta, sem sobreposição/overflow (amostra Vermelho 0); mão continha Verde Inversão com data-long=true",
+      "nameLookup": "Assento consultado: Tico · bot · 9 cartas"
+    },
+    "chat": "A↔B e A↔D visíveis nos dois lados",
+    "legalMove": "A (yellow-3-1), B (red-1-1), treino (wild-draw-four-2 com cor)"
+  },
+  "isolation": {
+    "dedicatedInstances": [
+      {
+        "daemon": "t014a",
+        "chromePid": 69285,
+        "endpoint": "http://127.0.0.1:9333",
+        "profile": "/tmp/t014-chrome-a",
+        "role": "Nina (anfitriã/observações principais)"
+      },
+      {
+        "daemon": "t014obs",
+        "chromePid": 69287,
+        "endpoint": "http://127.0.0.1:9335",
+        "profile": "/tmp/t014-chrome-c",
+        "role": "Olho/Dora"
+      },
+      {
+        "daemon": "descartado (não usado)",
+        "chromePid": 69286,
+        "endpoint": "http://127.0.0.1:9334",
+        "profile": "/tmp/t014-chrome-b"
+      }
+    ],
+    "deviation": "A primeira passada (sala 99Z9RL) usou o Chrome padrão para a identidade Rui/observador antes de a regra de isolamento entrar no AGENTS.md durante a sessão. A partir da regra, todo trabalho de navegador ocorreu nas instâncias dedicadas; o recorte-núcleo (sala NM**) foi refeito inteiramente dedicado. Nenhuma sessão pessoal foi usada como fallback; salas próprias do Chrome padrão foram encerradas.",
+    "cleanup": "daemons t014a/t014obs/t014b/t014c encerrados (pid 70435/74496/70868/73571); Chromes 69285/69286/69287 encerrados; perfis /tmp/t014-chrome-{a,b,c} removidos; daemon default (22217) e navegador pessoal preservados"
+  },
+  "limitations": [
+    "Headless: áudio mutado — ausência de som de reação não auditável; cobertura por código/aceite local",
+    "Aparelho físico e leitor de tela ausentes; viewport emulado",
+    "Cliques por coordenada exigem elemento visível; toque sintetizado (synthesizeTapGesture) instável quando a emulação de foco estava ativa em parte das sessões",
+    "Colapso por toque/teclado e demais matrizes artificiais cobertos pelos unitários/E2E aceitos, não repetidos em produção"
+  ]
+}

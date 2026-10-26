@@ -1,0 +1,16 @@
+{
+ "gavetaFocoInicial": "{\"tag\":\"BUTTON\",\"id\":\"aba-conversa\",\"text\":\"Conversa3\",\"hash\":\"#mesa\"}",
+ "trapUltimoParaPrimeiro": "{\"tag\":\"BUTTON\",\"id\":\"gaveta-fechar\",\"text\":\"Fechar gaveta\",\"hash\":\"#mesa\"}",
+ "trapPrimeiroParaUltimo": "{\"tag\":\"BUTTON\",\"id\":\"\",\"text\":\"Enviar\",\"hash\":\"#mesa\"}",
+ "escapeGaveta": "{\"tag\":\"BUTTON\",\"id\":\"\",\"text\":\"Conversa, 3 mensagens não lidas\",\"abrir\":\"conversa\",\"hash\":\"#mesa\"}",
+ "tabArrowRight": "{\"tag\":\"BUTTON\",\"id\":\"aba-historico\",\"text\":\"Histórico\",\"hash\":\"#mesa\"}",
+ "assentoDialogoFoco": "{\"tag\":\"BUTTON\",\"id\":\"\",\"text\":\"Fechar\",\"hash\":\"#mesa\"}",
+ "assentoDialogoNome": "Vó Cida",
+ "assentoEscapeFoco": "{\"tag\":\"BUTTON\",\"id\":\"\",\"text\":\"Vó Cida, 6 cartas. Toque para ver detalhes.\",\"jogador\":\"cida\",\"hash\":\"#mesa\"}",
+ "corFoco": "{\"tag\":\"BUTTON\",\"id\":\"\",\"text\":\"Escolher Vermelho\",\"hash\":\"#cor\"}",
+ "corEscape": "{\"tag\":\"BODY\",\"id\":\"\",\"text\":\"Pular para o conteúdo Sua vez na vez sentido horário 79carta\",\"hash\":\"#mesa\"}",
+ "ariaCurrent": 1,
+ "liveMesa": "Sua vez. Cor ativa vermelha. Descarte vermelho seis. Oito cartas na mão.",
+ "liveInversao": "Sentido anti-horário. Inversão jogada. Vez de Léo. Cor ativa azul.",
+ "reducedMotion": "{\"matches\":true,\"anim\":\"1e-06s\",\"visible\":true}"
+}

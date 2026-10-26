@@ -1,0 +1,9 @@
+{
+  "readOnlyFiles": {
+    "apps/web/app/globals.css": "13df5db01c891ee38a8f5fd81d6ed205cfd1368fba9964723d82dcbe18bee746",
+    "apps/web/components/GameTable.tsx": "b738d7b5d8579bd85cea70f4eaa5f74d2b004f0eecf780844516b9c66bb72737",
+    "apps/web/components/SeatCircuit.tsx": "b13a4ad6de53f5d3a3597a7b28ba514098f24e38cf5f51e2f7564e316e8a669a"
+  },
+  "productionDiff": "",
+  "pngCount": 40
+}

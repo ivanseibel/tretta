@@ -1,0 +1,12 @@
+{
+  "pid": 77510,
+  "profile": "/var/folders/r_/xrvhskhx45l6n66k99kzs61r0000gn/T/tretta-T016-A2-c8qi6n23",
+  "endpoint": "http://127.0.0.1:19418",
+  "daemon": "tretta-t016-a2-codex",
+  "cleanup": {
+    "namedDaemonStopped": true,
+    "endpointClosed": true,
+    "profileRemoved": true,
+    "personalBrowserTouched": false
+  }
+}

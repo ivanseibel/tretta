@@ -1,0 +1,78 @@
+{
+  "routes": [
+    "/",
+    "/sala/VALIDATION"
+  ],
+  "chunkCount": 11,
+  "chunks": [
+    {
+      "path": "/_next/static/immutable/chunks/0c0hxoamwjsbw.js",
+      "status": 200,
+      "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683"
+    },
+    {
+      "path": "/_next/static/immutable/chunks/0v-rwx7tb_qua.js",
+      "status": 200,
+      "sha256": "7d2e56911119c398d6bc31146277e0f5455389019c7f601b232d36c7919919eb"
+    },
+    {
+      "path": "/_next/static/immutable/chunks/1-2lcy_o25dr9.js",
+      "status": 200,
+      "sha256": "8ccf6573dd16d758a814beafda8fd9dbf622d56e1a144b74a59d35c27b85c914"
+    },
+    {
+      "path": "/_next/static/immutable/chunks/2d6cts1co-gyo.js",
+      "status": 200,
+      "sha256": "5d499ac8b750ca130a5faaa1351abbdc7d813c8e7ecd6ffdda7b4d4203f19dda"
+    },
+    {
+      "path": "/_next/static/immutable/chunks/2q9q4qcdxq0te.js",
+      "status": 200,
+      "sha256": "b611153f847782c0a8f95bb73c69d46b35f32c7f5e36f3f938aa97b4f8821d6a"
+    },
+    {
+      "path": "/_next/static/immutable/chunks/3-ol8uox1g7of.js",
+      "status": 200,
+      "sha256": "816fa0d50b0010949e1bee6fb17731943327609c9dd2d3c30ea98dbc89e8842f"
+    },
+    {
+      "path": "/_next/static/immutable/chunks/3biwl7lok_myr.js",
+      "status": 200,
+      "sha256": "17b6d71462ad7a737466a534404a70a5a9d2ec9d5d33909c17a8f3d6c4f010e2"
+    },
+    {
+      "path": "/_next/static/immutable/chunks/3tqm981grz082.js",
+      "status": 200,
+      "sha256": "825b3f590eb8901c8937d0225b2f9d0e0026f5d5be8a38c71f59e17754ab3b81"
+    },
+    {
+      "path": "/_next/static/immutable/chunks/3zd908udbposi.js",
+      "status": 200,
+      "sha256": "da31dc7bdf4fc6d65b70bd7c50ac833ae83204790c3f3e3e7d228afa298463e4"
+    },
+    {
+      "path": "/_next/static/immutable/chunks/41pxfgh1ayru1.js",
+      "status": 200,
+      "sha256": "d5720869cfe360f819f6dcf249a09072b97d0b69cae19ebd08d0aed02cbc0673"
+    },
+    {
+      "path": "/_next/static/immutable/chunks/turbopack-1cvbnb3nlabgn.js",
+      "status": 200,
+      "sha256": "8bbb58cbfd4633c1d828c6bc37bc32abc768a149c01b1dfc4f5131fd81274551"
+    }
+  ],
+  "markers": {
+    "Rindo": true,
+    "Chorando": true,
+    "Bravo": true,
+    "Ocultar reações": true,
+    "provocou você": true,
+    "Mais opções de provocação": true,
+    "https://tretta-server.onrender.com": true
+  },
+  "hooks": {
+    "__trettaTest": false,
+    "test:setNextDeck": false,
+    "test:setEffectVariant": false
+  }
+}

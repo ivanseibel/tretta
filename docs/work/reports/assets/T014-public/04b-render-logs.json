@@ -1,0 +1,1157 @@
+{
+  "id": "ec28ceec-2058-42c7-b922-476946bdb63e",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-kcbzd"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "/opt/render/project/src/apps/server:",
+  "timestamp": "2026-10-18T16:06:29.295321388Z"
+}{
+  "id": "a66d65f7-df2b-4429-bab4-ab98a3fd55fa",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-kcbzd"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "[ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @tretta/server@0.0.0 start: `node dist/index.js`",
+  "timestamp": "2026-10-18T16:06:29.2953486Z"
+}{
+  "id": "555e3297-e3bd-4a27-ae8b-4b7345f7903e",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-kcbzd"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Command failed with signal \"SIGTERM\"",
+  "timestamp": "2026-10-18T16:06:29.29535546Z"
+}{
+  "id": "58b83132-d900-44e0-8150-d5e65db7ab70",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-9f842"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[32m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mRunning 'pnpm --filter @tretta/server start'\u001b(B\u001b[m",
+  "timestamp": "2026-10-18T16:09:33.800667604Z"
+}{
+  "id": "1538f16e-60e5-46f6-89a1-45124c9d5661",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-9f842"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-11.14.0.tgz",
+  "timestamp": "2026-10-18T16:09:34.307891344Z"
+}{
+  "id": "0c9a50c9-5ee5-424f-ad23-68dc58a61a1b",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-9f842"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "$ node dist/index.js",
+  "timestamp": "2026-10-18T16:09:51.398902915Z"
+}{
+  "id": "90d156ef-0034-4bcf-a753-f316528afd9a",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-9f842"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Tretta server listening on http://localhost:10000 (web origin: https://tretta.vercel.app)",
+  "timestamp": "2026-10-18T16:09:53.405768389Z"
+}{
+  "id": "356eb9c5-5f6a-4519-836f-aa9adc712bdf",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-9f842"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "/opt/render/project/src/apps/server:",
+  "timestamp": "2026-10-18T16:26:41.309772361Z"
+}{
+  "id": "d216b4e7-4c47-44c9-b85d-603dccee7baa",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-9f842"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "[ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @tretta/server@0.0.0 start: `node dist/index.js`",
+  "timestamp": "2026-10-18T16:26:41.309803892Z"
+}{
+  "id": "5f31b7b1-f1b6-4a9d-8214-f3618cdd4030",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-9f842"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Command failed with signal \"SIGTERM\"",
+  "timestamp": "2026-10-18T16:26:41.309809192Z"
+}{
+  "id": "a7d7faaa-0621-4e97-8d00-d91546e23b16",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-4mhq9"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[32m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mRunning 'pnpm --filter @tretta/server start'\u001b(B\u001b[m",
+  "timestamp": "2026-10-18T17:17:23.280461787Z"
+}{
+  "id": "d2a0c46b-9364-4cdc-a095-f8cc06bdc511",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-4mhq9"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-11.14.0.tgz",
+  "timestamp": "2026-10-18T17:17:23.876095586Z"
+}{
+  "id": "68b12d47-fa33-4a9b-ab23-30277f362b77",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-4mhq9"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "$ node dist/index.js",
+  "timestamp": "2026-10-18T17:17:40.171142357Z"
+}{
+  "id": "0b9edbf5-5cd8-49fd-99de-6a8ea446123f",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-4mhq9"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Tretta server listening on http://localhost:10000 (web origin: https://tretta.vercel.app)",
+  "timestamp": "2026-10-18T17:17:41.98005355Z"
+}{
+  "id": "d0a72b59-87fc-4bac-bf8a-1235c8b39b27",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-4mhq9"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "/opt/render/project/src/apps/server:",
+  "timestamp": "2026-10-18T17:32:18.37418654Z"
+}{
+  "id": "b5442a35-3905-4102-a202-34d89de888a9",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-4mhq9"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "[ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @tretta/server@0.0.0 start: `node dist/index.js`",
+  "timestamp": "2026-10-18T17:32:18.374215Z"
+}{
+  "id": "6eabad81-b28c-4855-8946-b36fcda0c4b0",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-4mhq9"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Command failed with signal \"SIGTERM\"",
+  "timestamp": "2026-10-18T17:32:18.37422071Z"
+}{
+  "id": "2e3e0c4f-66cf-4305-a664-801415218f7a",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-rd9bg"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[32m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mRunning 'pnpm --filter @tretta/server start'\u001b(B\u001b[m",
+  "timestamp": "2026-10-18T19:02:34.091003304Z"
+}{
+  "id": "447c237f-2cb2-4051-9fbf-598d5ead318b",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-rd9bg"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-11.14.0.tgz",
+  "timestamp": "2026-10-18T19:02:34.686762724Z"
+}{
+  "id": "a22f2901-f28f-461a-8f6b-fb7c7e02db3d",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-rd9bg"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "$ node dist/index.js",
+  "timestamp": "2026-10-18T19:02:52.393557178Z"
+}{
+  "id": "9fb6d4cb-e45c-4239-90ba-5aa9895ef4d8",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-rd9bg"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Tretta server listening on http://localhost:10000 (web origin: https://tretta.vercel.app)",
+  "timestamp": "2026-10-18T19:02:54.485390682Z"
+}{
+  "id": "038339f8-3e19-44bf-97bc-47fb1e791a9e",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mDownloading cache...\u001b(B\u001b[m",
+  "timestamp": "2026-10-18T19:09:20.066446389Z"
+}{
+  "id": "a8a1038a-1c2d-4fab-baaa-e5cf869f3dd1",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mCloning from https://github.com/ivanseibel/tretta\u001b(B\u001b[m",
+  "timestamp": "2026-10-18T19:09:20.09215448Z"
+}{
+  "id": "461de253-718a-4292-95e1-8227bc48f3ef",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mChecking out commit 90aff00645fe42f60ab68fb4ce96e527c081c95c in branch main\u001b(B\u001b[m",
+  "timestamp": "2026-10-18T19:09:32.15675038Z"
+}{
+  "id": "c7278b13-4825-4dd5-8f0e-cdae6d745a74",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mDownloaded 160MB in 7s. Extraction took 4s.\u001b(B\u001b[m",
+  "timestamp": "2026-10-18T19:09:36.441223519Z"
+}{
+  "id": "4dfc9092-4769-4de2-b355-e3dde07fcea1",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mUsing Node.js version 22.23.1 via environment variable NODE_VERSION\u001b[22m",
+  "timestamp": "2026-10-18T19:09:37.225098166Z"
+}{
+  "id": "5458b4a3-7390-42b6-a42e-e77e343e7bd1",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mDocs on specifying a Node.js version: https://render.com/docs/node-version\u001b[22m",
+  "timestamp": "2026-10-18T19:09:37.225110018Z"
+}{
+  "id": "122a59d1-8f5a-4ccd-870f-13f037d51f2a",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mInstalling Node.js version 22.23.1...\u001b[22m",
+  "timestamp": "2026-10-18T19:09:37.22522183Z"
+}{
+  "id": "b80ae320-923d-44d9-94e5-04557a49f39a",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mRunning build command 'corepack enable \u0026\u0026 node --version \u0026\u0026 pnpm --version \u0026\u0026 pnpm install --frozen-lockfile \u0026\u0026 pnpm --filter @tretta/server... build'...\u001b(B\u001b[m",
+  "timestamp": "2026-10-18T19:09:38.281329662Z"
+}{
+  "id": "09d2e0ff-0f7e-4668-919a-db3e220ad612",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "v22.23.1",
+  "timestamp": "2026-10-18T19:09:38.353063773Z"
+}{
+  "id": "f307a0ee-8364-4c30-878b-06bc526d4bef",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "11.14.0",
+  "timestamp": "2026-10-18T19:09:38.920045121Z"
+}{
+  "id": "f2cc5839-f894-4a0d-8e0b-511030f0b5aa",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Scope: all 5 workspace projects",
+  "timestamp": "2026-10-18T19:09:39.387488836Z"
+}{
+  "id": "866436f3-93f1-4eae-98b8-bf1c7fd46d70",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Already up to date",
+  "timestamp": "2026-10-18T19:09:39.419628497Z"
+}{
+  "id": "4ffd5408-6c1b-45c3-a582-d3313d014a56",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Done in 432ms using pnpm v11.14.0",
+  "timestamp": "2026-10-18T19:09:39.420259481Z"
+}{
+  "id": "836b8404-658a-4bc1-a743-943ce7d1bd0c",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Scope: 3 of 5 workspace projects",
+  "timestamp": "2026-10-18T19:09:39.873393179Z"
+}{
+  "id": "2de07a4d-994d-4340-8ff9-7085e51fafd5",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "packages/rules build$ tsc -p tsconfig.build.json",
+  "timestamp": "2026-10-18T19:09:39.878650228Z"
+}{
+  "id": "05cb71a1-bef8-433a-9332-c9ce0d4ae846",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "packages/rules build: Done",
+  "timestamp": "2026-10-18T19:09:40.76687411Z"
+}{
+  "id": "1c89b3f1-d577-40ef-906e-ecf97255e6f1",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "packages/protocol build$ tsc -p tsconfig.build.json",
+  "timestamp": "2026-10-18T19:09:40.767718141Z"
+}{
+  "id": "165476b0-3164-43a0-a3d1-6089c679b0b5",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "packages/protocol build: Done",
+  "timestamp": "2026-10-18T19:09:41.69079848Z"
+}{
+  "id": "db5f3f5d-9247-4f52-8231-637c6bc9dab0",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "apps/server build$ tsc -p tsconfig.build.json",
+  "timestamp": "2026-10-18T19:09:41.691323865Z"
+}{
+  "id": "8c7e73cf-43e3-4b29-96fc-7b80b1824e6e",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "apps/server build: Done",
+  "timestamp": "2026-10-18T19:09:43.063638836Z"
+}{
+  "id": "e0020a3f-bc5d-48cf-88c9-8168aa4f310d",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mUploading build...\u001b[22m",
+  "timestamp": "2026-10-18T19:09:44.127571327Z"
+}{
+  "id": "76502ef0-e0e2-4e96-8d93-9f6727a56881",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[34;1m==\u003e\u001b[0;22m \u001b[1mUploaded in 9.9s. Compression took 2.4s\u001b[22m",
+  "timestamp": "2026-10-18T19:09:56.45265406Z"
+}{
+  "id": "09fd80b0-09a5-4c4c-a84b-723d66a525b9",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[32;1m==\u003e\u001b[0;22m \u001b[1mBuild successful 🎉\u001b[22m",
+  "timestamp": "2026-10-18T19:09:56.458337497Z"
+}{
+  "id": "dbahjlom7kps738slkkg",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;34m\u001b[1m==\u003e \u001b[0m\u001b[1mDeploying...\u001b[0m",
+  "timestamp": "2026-10-18T19:09:57.362530247Z"
+}{
+  "id": "dbahjlom7kps738slkk0",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;34m\u001b[1m==\u003e \u001b[0m\u001b[1mSetting WEB_CONCURRENCY=1 by default, based on available CPUs in the instance\u001b[0m",
+  "timestamp": "2026-10-18T19:09:57.466895046Z"
+}{
+  "id": "2692aead-61f0-4c9d-a044-1915b655c288",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-f89g7"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[32m\u001b[1m==\u003e\u001b(B\u001b[m \u001b[1mRunning 'pnpm --filter @tretta/server start'\u001b(B\u001b[m",
+  "timestamp": "2026-10-18T19:10:21.132348109Z"
+}{
+  "id": "a9338c06-52cd-4a9e-b08b-0fa366483bb8",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-f89g7"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-11.14.0.tgz",
+  "timestamp": "2026-10-18T19:10:21.73878903Z"
+}{
+  "id": "f1fccb3e-77d3-4fb4-a498-e5cbf0e6f491",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-f89g7"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "$ node dist/index.js",
+  "timestamp": "2026-10-18T19:10:41.628144264Z"
+}{
+  "id": "3b16e714-efb9-4e83-beda-f12528e3ac83",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-f89g7"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Tretta server listening on http://localhost:10000 (web origin: https://tretta.vercel.app)",
+  "timestamp": "2026-10-18T19:10:43.539108992Z"
+}{
+  "id": "e96db14f-b101-4cd4-b466-1436228b652a",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-rd9bg"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "/opt/render/project/src/apps/server:",
+  "timestamp": "2026-10-18T19:10:48.188981712Z"
+}{
+  "id": "e1188861-d5a1-439a-b44f-bb1330bacdb4",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-rd9bg"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "[ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @tretta/server@0.0.0 start: `node dist/index.js`",
+  "timestamp": "2026-10-18T19:10:48.189021473Z"
+}{
+  "id": "80e75bad-51d2-4912-9389-313991280e6e",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "instance",
+      "value": "srv-db95f2u7bikc73dpndt0-rd9bg"
+    },
+    {
+      "name": "level",
+      "value": "info"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "Command failed with signal \"SIGTERM\"",
+  "timestamp": "2026-10-18T19:10:48.189026213Z"
+}{
+  "id": "dbahjlom7kps738slkjg",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;32m\u001b[1m==\u003e \u001b[0m\u001b[1mYour service is live 🎉\u001b[0m",
+  "timestamp": "2026-10-18T19:10:48.554820774Z"
+}{
+  "id": "dbahjlom7kps738slkj0",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;32m\u001b[1m==\u003e \u001b[0m\u001b[1m\u001b[0m",
+  "timestamp": "2026-10-18T19:10:48.715089558Z"
+}{
+  "id": "dbahjlom7kps738slkig",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;32m\u001b[1m==\u003e \u001b[0m\u001b[1m///////////////////////////////////////////////////////////\u001b[0m",
+  "timestamp": "2026-10-18T19:10:48.776154836Z"
+}{
+  "id": "dbahjlom7kps738slki0",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;32m\u001b[1m==\u003e \u001b[0m\u001b[1m\u001b[0m",
+  "timestamp": "2026-10-18T19:10:48.781142792Z"
+}{
+  "id": "dbahjlom7kps738slkhg",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;32m\u001b[1m==\u003e \u001b[0m\u001b[1mAvailable at your primary URL https://tretta-server.onrender.com\u001b[0m",
+  "timestamp": "2026-10-18T19:10:48.785551012Z"
+}{
+  "id": "dbahjlom7kps738slkh0",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;32m\u001b[1m==\u003e \u001b[0m\u001b[1m\u001b[0m",
+  "timestamp": "2026-10-18T19:10:48.791441537Z"
+}{
+  "id": "dbahjlom7kps738slkgg",
+  "labels": [
+    {
+      "name": "resource",
+      "value": "srv-db95f2u7bikc73dpndt0"
+    },
+    {
+      "name": "type",
+      "value": "app"
+    }
+  ],
+  "message": "\u001b[0;32m\u001b[1m==\u003e \u001b[0m\u001b[1m///////////////////////////////////////////////////////////\u001b[0m",
+  "timestamp": "2026-10-18T19:10:48.797449338Z"
+}

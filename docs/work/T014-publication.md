@@ -1,10 +1,12 @@
 # Prompt manual — T014-publication: publicar provocações pelo avatar e reações
 
-**Estado: preparado em 18/10/2026; não executado.** Após o [aceite local final](reports/T014B.final-validation.md), o usuário respondeu **“Ok, seguimos”**. A publicação manual está autorizada no recorte abaixo, incluindo commit/push necessário ao Render. A janela sem partidas ainda precisa ser estabelecida antes do push/reinício. Preferência `gpt-6-luna`, reasoning `max`; execute você mesmo, sem acionar outros agentes.
+**Estado: executada manualmente e aceita pelo orquestrador em 18/10/2026.** [Report](reports/T014-publication.md) e [aceite P1–P5](reports/T014-publication.validation.md). Git `origin/main` em `90aff00`; Render Live `dep-dbahinbm8hqs73be533g` na revisão exata; `tretta.vercel.app` serve `dpl_613qfXj17XFdFctcg5HjsEimhfpz`, promovido o mesmo build. Contrato abaixo preservado como histórico; não repetir sem nova tarefa. Preferência `gpt-6-luna`, reasoning `max`; execução manual.
 
 **Encerramento obrigatório do executor manual:** use a skill `agent-notify` conforme [o protocolo](../../.agents/skills/orchestrate-work/SKILL.md#notificação-de-encerramento). Depois de salvar o report e terminar as verificações, notifique como última ação antes da resposta final. Report concluído aguardando validação usa `rtk proxy agent-notify done`; se precisar parar por decisão/autorização/informação pendente, use `attention`; falha terminal usa `error`. A dispensa vale somente para executor lançado automaticamente como subagente, não para esta execução manual.
 
 ## Papel, fonte e contexto
+
+**Browser dedicado obrigatório:** antes de qualquer inspeção/smoke, siga o [isolamento do navegador](../../.agents/skills/orchestrate-work/SKILL.md#isolamento-do-navegador): processo/perfil temporário próprios, endpoint CDP explícito e `BU_NAME` exclusivo da tarefa. Não conecte ao Chrome pessoal já aberto. Contextos independentes para os jogadores devem pertencer à instância dedicada; registre a comprovação e a limpeza no report.
 
 Você é o executor de **T014-publication**, em `/Users/ivanseibel/dev/personal/tretta`. Publique a fonte aceita de T014A/T014B nos serviços existentes e devolva report para validação do orquestrador. O working tree contém também T012/T013 aceitas que ainda não estão no Git remoto; preserve e publique essa fonte acumulada. HEAD sozinho não reproduz a entrega.
 
@@ -63,7 +65,7 @@ Confira o projeto resolvido no diretório real do comando, proprietário, plano,
 
 ### 5. Smoke público próprio
 
-Use navegador via `browser-harness`, contextos independentes para identidades diferentes e salas criadas para esta prova. Duas abas do mesmo perfil têm proteção de identidade e não substituem dois clientes independentes. Sem hooks/seed, injeção de estado, alteração de relógio/infra pública ou salas da família.
+Use navegador via `browser-harness` na instância dedicada da tarefa, contextos independentes para identidades diferentes e salas criadas para esta prova. Duas abas do mesmo perfil têm proteção de identidade e não substituem dois clientes independentes. Sem hooks/seed, injeção de estado, alteração de relógio/infra pública ou salas da família.
 
 1. Sala humana com duas pessoas: avatar alheio → provocação com alvo correto; só destinatário vê o aviso e responde ao emissor. Chat e uma jogada legal continuam funcionando. Conferir menu/feedback por toque e teclado/Escape.
 2. Próprio avatar → 😂 Rindo / 😭 Chorando / 😡 Bravo. Confirmar recepção por outro cliente, identificação do emissor, duração breve, ausência de duplicação e de som de reação. Verificar simultaneidade entre pessoas e acesso “Reagir” de quem aguarda; use terceiro contexto próprio para observador, sem inventar assento.

@@ -14,10 +14,6 @@ export function createRoundId(): string {
   return `r_${randomUUID()}`;
 }
 
-export function createTauntId(): string {
-  return `t_${randomUUID()}`;
-}
-
 export function createReactionId(): string {
   return `rx_${randomUUID()}`;
 }

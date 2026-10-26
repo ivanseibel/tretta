@@ -1,0 +1,19 @@
+{
+  "commit": "90aff00645fe42f60ab68fb4ce96e527c081c95c",
+  "acceptedFiles": 172,
+  "commitDifferences": [],
+  "workingDifferences": [],
+  "snapshotFiles": 179,
+  "snapshotBytes": 1570127,
+  "snapshotDifferences": [],
+  "generatedNotInCommit": [
+    "apps/web/next-env.d.ts"
+  ],
+  "remoteUIDFiles": 178,
+  "expectedUIDFiles": 178,
+  "uidDifferences": [],
+  "remoteExtras": [],
+  "historicalReportsFiles": 1064,
+  "historicalDifferences": [],
+  "manifestTextDigest": "a22d4f59c57f067dc1e482cb11f39c33d3a2c53ee3580766456b251a091a91b7"
+}

@@ -1,0 +1,28 @@
+Vercel CLI 57.0.0 (Node.js 22.23.1)
+Fetching deployment "tretta-qtxwt717c-seibel.vercel.app" in seibel
+> Fetched deployment "tretta-qtxwt717c-seibel.vercel.app" in seibel [462ms]
+
+  General
+
+    id		dpl_613qfXj17XFdFctcg5HjsEimhfpz
+    name	tretta
+    target	production
+    status	● Ready
+    url		https://tretta-qtxwt717c-seibel.vercel.app
+    created	Sun Oct 18 2026 20:05:22 GMT+0100 (Irish Standard Time) [37s ago]
+
+
+  Aliases
+
+    ╶ https://tretta-seibel.vercel.app
+
+
+  Builds
+
+    ┌ .        [0ms]
+    ├── λ index (760.24KB) [iad1]
+    ├── λ _global-error (760.24KB) [iad1]
+    ├── λ _global-error.rsc (760.24KB) [iad1]
+    ├── λ _global-error.segments/__PAGE__.segment.rsc (760.24KB) [iad1]
+    ├── λ _global-error.segments/_full.segment.rsc (760.24KB) [iad1]
+    └── 9 output items hidden

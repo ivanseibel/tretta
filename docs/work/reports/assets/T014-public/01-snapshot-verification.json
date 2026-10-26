@@ -1,0 +1,19 @@
+{
+  "source": "commit 90aff00645fe42f60ab68fb4ce96e527c081c95c",
+  "base": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+  "files": 179,
+  "bytes": 1570127,
+  "digest": "a22d4f59c57f067dc1e482cb11f39c33d3a2c53ee3580766456b251a091a91b7",
+  "acceptedManifestEntries": 172,
+  "acceptedMatched": 172,
+  "acceptedMismatched": [],
+  "extras": [
+    ".agents/skills/orchestrate-work/SKILL.md",
+    ".gitignore",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "CONTEXT.md",
+    "README.md",
+    "apps/web/next-env.d.ts"
+  ]
+}

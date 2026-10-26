@@ -8,7 +8,6 @@ import { MoodSettings } from '@/components/MoodSettings';
 
 const soundSpy = vi.hoisted(() => ({
   playEffectSound: vi.fn(),
-  playTauntSound: vi.fn(),
   playTurnNotificationSound: vi.fn(),
   prepareSoundPlayback: vi.fn(),
   setSoundMuted: vi.fn(),

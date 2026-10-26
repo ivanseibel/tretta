@@ -1,0 +1,225 @@
+{
+  "viewport": {
+    "width": 412,
+    "height": 915,
+    "dpr": 1
+  },
+  "base": "http://localhost:3101",
+  "initial": {
+    "labels": [
+      {
+        "text": "Seu apelido",
+        "for": "_R_5flb_"
+      },
+      {
+        "text": "Código do convite",
+        "for": "_R_5flbH1_"
+      }
+    ],
+    "groups": [
+      {
+        "name": "Seu avatar"
+      }
+    ],
+    "controls": {
+      "nickname": {
+        "tag": "input",
+        "w": 340,
+        "h": 48,
+        "disabled": false
+      },
+      "code": {
+        "tag": "input",
+        "w": 257,
+        "h": 48,
+        "disabled": false
+      },
+      "enter": {
+        "tag": "button",
+        "w": 75,
+        "h": 48,
+        "disabled": true
+      },
+      "train": {
+        "tag": "button",
+        "w": 340,
+        "h": 44,
+        "disabled": true
+      },
+      "create": {
+        "tag": "button",
+        "w": 388,
+        "h": 56,
+        "disabled": true
+      },
+      "avatars": [
+        {
+          "name": "Avatar Raposa",
+          "pressed": "true",
+          "w": 82,
+          "h": 64
+        },
+        {
+          "name": "Avatar Pinguim",
+          "pressed": "false",
+          "w": 82,
+          "h": 64
+        },
+        {
+          "name": "Avatar Tucano",
+          "pressed": "false",
+          "w": 82,
+          "h": 64
+        },
+        {
+          "name": "Avatar Lobo",
+          "pressed": "false",
+          "w": 82,
+          "h": 64
+        },
+        {
+          "name": "Avatar Coruja",
+          "pressed": "false",
+          "w": 82,
+          "h": 64
+        },
+        {
+          "name": "Avatar Polvo",
+          "pressed": "false",
+          "w": 82,
+          "h": 64
+        },
+        {
+          "name": "Avatar Lince",
+          "pressed": "false",
+          "w": 82,
+          "h": 64
+        },
+        {
+          "name": "Avatar Sapo",
+          "pressed": "false",
+          "w": 82,
+          "h": 64
+        }
+      ]
+    },
+    "formAssociation": true,
+    "lang": "pt-BR",
+    "h1Count": 1
+  },
+  "tabOrderInitial": [
+    {
+      "tag": "input",
+      "name": "_R_5flb_",
+      "testid": "nickname-input",
+      "outline": "3px solid rgb(122, 63, 14)"
+    },
+    {
+      "tag": "button",
+      "name": "Avatar Raposa",
+      "testid": "avatar-option-raposa",
+      "outline": "3px solid rgb(122, 63, 14)"
+    },
+    {
+      "tag": "button",
+      "name": "Avatar Pinguim",
+      "testid": "avatar-option-pinguim",
+      "outline": "3px solid rgb(122, 63, 14)"
+    },
+    {
+      "tag": "button",
+      "name": "Avatar Tucano",
+      "testid": "avatar-option-tucano",
+      "outline": "3px solid rgb(122, 63, 14)"
+    },
+    {
+      "tag": "button",
+      "name": "Avatar Lobo",
+      "testid": "avatar-option-lobo",
+      "outline": "3px solid rgb(122, 63, 14)"
+    },
+    {
+      "tag": "button",
+      "name": "Avatar Coruja",
+      "testid": "avatar-option-coruja",
+      "outline": "3px solid rgb(122, 63, 14)"
+    },
+    {
+      "tag": "button",
+      "name": "Avatar Polvo",
+      "testid": "avatar-option-polvo",
+      "outline": "3px solid rgb(122, 63, 14)"
+    },
+    {
+      "tag": "button",
+      "name": "Avatar Lince",
+      "testid": "avatar-option-lince",
+      "outline": "3px solid rgb(122, 63, 14)"
+    },
+    {
+      "tag": "button",
+      "name": "Avatar Sapo",
+      "testid": "avatar-option-sapo",
+      "outline": "3px solid rgb(122, 63, 14)"
+    },
+    {
+      "tag": "input",
+      "name": "_R_5flbH1_",
+      "testid": "room-code-input",
+      "outline": "3px solid rgb(122, 63, 14)"
+    }
+  ],
+  "tabOrderEnabled": [
+    {
+      "tag": "button",
+      "name": "Entrar",
+      "testid": "enter-code-button",
+      "outline": "3px solid rgb(242, 199, 102)"
+    },
+    {
+      "tag": "button",
+      "name": "Treinar sozinho",
+      "testid": "train-solo-button",
+      "outline": "3px solid rgb(242, 199, 102)"
+    },
+    {
+      "tag": "button",
+      "name": "Criar sala",
+      "testid": "create-room-button",
+      "outline": "3px solid rgb(242, 199, 102)"
+    }
+  ],
+  "enabled": {
+    "enter": {
+      "w": 75,
+      "h": 48,
+      "disabled": false,
+      "text": "Entrar"
+    },
+    "train": {
+      "w": 340,
+      "h": 44,
+      "disabled": false,
+      "text": "Treinar sozinho"
+    },
+    "create": {
+      "w": 388,
+      "h": 56,
+      "disabled": false,
+      "text": "Criar sala"
+    },
+    "tucanoPressed": "true",
+    "scroll": {
+      "clientH": 842,
+      "scrollH": 842,
+      "clientW": 412,
+      "scrollW": 412
+    }
+  },
+  "focus": {
+    "tag": "input",
+    "testid": "nickname-input",
+    "outline": "3px solid rgb(122, 63, 14)",
+    "offset": "2px"
+  }
+}

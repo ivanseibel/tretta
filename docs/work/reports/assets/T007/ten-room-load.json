@@ -119,23 +119,23 @@
     "ackErrors": 0
   },
   "timings": {
-    "elapsedMs": 2047.6,
-    "concurrentPlayDurationMs": 1805.56,
+    "elapsedMs": 5011.93,
+    "concurrentPlayDurationMs": 4440.15,
     "measuredAcks": 1621,
     "ackLatencyMs": {
-      "p50": 2.89,
-      "p95": 9.54,
-      "p99": 27.33,
-      "max": 28.46
+      "p50": 5.42,
+      "p95": 139.77,
+      "p99": 166.59,
+      "max": 167.95
     }
   },
   "processResources": {
     "measurementScope": "single Vitest Node process containing in-process HTTP/Socket.IO server, 80 socket.io-client sockets, and harness",
-    "cpuUserSeconds": 1.06,
-    "cpuSystemSeconds": 0.17,
-    "rssInitialBytes": 99287040,
-    "rssPeakSampledBytes": 217792512,
-    "rssFinalBytes": 220102656,
+    "cpuUserSeconds": 1.69,
+    "cpuSystemSeconds": 0.31,
+    "rssInitialBytes": 93241344,
+    "rssPeakSampledBytes": 181010432,
+    "rssFinalBytes": 186662912,
     "samplingIntervalMs": 100,
     "node": "v22.23.1",
     "platform": "darwin 25.6.0 arm64",

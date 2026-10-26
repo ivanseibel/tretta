@@ -1,0 +1,27 @@
+{
+  "id": "dpl_613qfXj17XFdFctcg5HjsEimhfpz",
+  "url": "tretta-qtxwt717c-seibel.vercel.app",
+  "readyState": "READY",
+  "readySubstate": "STAGED",
+  "target": "production",
+  "projectId": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+  "name": "tretta",
+  "createdAt": 1792350322671,
+  "meta": {
+    "trettaTask": "T014-publication",
+    "digest": "a22d4f59c57f067dc1e482cb11f39c33d3a2c53ee3580766456b251a091a91b7",
+    "commit": "90aff00645fe42f60ab68fb4ce96e527c081c95c",
+    "base": "3ae459e5a88e612dc389e7bcb4570809ddcc3445",
+    "actor": "opencode",
+    "lambdaRuntimeStats": "{\"nodejs\":1}",
+    "bundler": "turbopack"
+  },
+  "alias": [
+    "tretta-seibel.vercel.app"
+  ],
+  "regions": [
+    "iad1"
+  ],
+  "source": "cli",
+  "nodeVersion": "22.x"
+}

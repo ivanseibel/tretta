@@ -1,0 +1,67 @@
+[
+  {
+    "path": "/_next/static/immutable/chunks/2q9q4qcdxq0te.js",
+    "bytes": 34163,
+    "serverUrls": [],
+    "websocketOnly": false,
+    "offlineMessage": false
+  },
+  {
+    "path": "/_next/static/immutable/chunks/3tqm981grz082.js",
+    "bytes": 230271,
+    "serverUrls": [],
+    "websocketOnly": false,
+    "offlineMessage": false
+  },
+  {
+    "path": "/_next/static/immutable/chunks/3zd908udbposi.js",
+    "bytes": 163052,
+    "serverUrls": [],
+    "websocketOnly": false,
+    "offlineMessage": false
+  },
+  {
+    "path": "/_next/static/immutable/chunks/turbopack-1cvbnb3nlabgn.js",
+    "bytes": 10030,
+    "serverUrls": [],
+    "websocketOnly": false,
+    "offlineMessage": false
+  },
+  {
+    "path": "/_next/static/immutable/chunks/2d6cts1co-gyo.js",
+    "bytes": 13826,
+    "serverUrls": [],
+    "websocketOnly": false,
+    "offlineMessage": false
+  },
+  {
+    "path": "/_next/static/immutable/chunks/3-ol8uox1g7of.js",
+    "bytes": 70296,
+    "serverUrls": [
+      "https://tretta-server.onrender.com"
+    ],
+    "websocketOnly": true,
+    "offlineMessage": true
+  },
+  {
+    "path": "/_next/static/immutable/chunks/0v-rwx7tb_qua.js",
+    "bytes": 10154,
+    "serverUrls": [],
+    "websocketOnly": false,
+    "offlineMessage": false
+  },
+  {
+    "path": "/_next/static/immutable/chunks/0c0hxoamwjsbw.js",
+    "bytes": 112541,
+    "serverUrls": [],
+    "websocketOnly": false,
+    "offlineMessage": false
+  },
+  {
+    "path": "/_next/static/immutable/chunks/3biwl7lok_myr.js",
+    "bytes": 5359,
+    "serverUrls": [],
+    "websocketOnly": false,
+    "offlineMessage": false
+  }
+]

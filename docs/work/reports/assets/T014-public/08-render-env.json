@@ -1,0 +1,19 @@
+{
+  "service": "srv-db95f2u7bikc73dpndt0",
+  "checkedAt": "2026-10-18T19:22:43.959Z",
+  "vars": [
+    {
+      "key": "TRE_TTA_WEB_ORIGIN",
+      "value": "https://tretta.vercel.app"
+    },
+    {
+      "key": "TRE_TTA_TEST_HOOKS",
+      "value": "0"
+    },
+    {
+      "key": "NODE_VERSION",
+      "value": "22.23.1"
+    }
+  ],
+  "seedPresent": false
+}

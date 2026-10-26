@@ -1,0 +1,1213 @@
+{
+  "framework": {
+    "name": "Next.js",
+    "slug": "nextjs"
+  },
+  "basePath": "/private/var/folders/r_/xrvhskhx45l6n66k99kzs61r0000gn/T/opencode/tretta-t014-snapshot",
+  "fileCount": 178,
+  "totalSize": 1569828,
+  "ignoredCount": 2,
+  "ignored": [
+    ".gitignore",
+    ".vercel"
+  ],
+  "directories": [
+    {
+      "path": "apps",
+      "fileCount": 134,
+      "size": 1291863
+    },
+    {
+      "path": "packages",
+      "fileCount": 33,
+      "size": 156272
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "fileCount": 1,
+      "size": 74591
+    },
+    {
+      "path": "README.md",
+      "fileCount": 1,
+      "size": 36685
+    },
+    {
+      "path": ".agents",
+      "fileCount": 1,
+      "size": 6060
+    },
+    {
+      "path": "AGENTS.md",
+      "fileCount": 1,
+      "size": 1519
+    },
+    {
+      "path": "CONTEXT.md",
+      "fileCount": 1,
+      "size": 648
+    },
+    {
+      "path": "package.json",
+      "fileCount": 1,
+      "size": 622
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "fileCount": 1,
+      "size": 555
+    },
+    {
+      "path": "tsconfig.base.json",
+      "fileCount": 1,
+      "size": 518
+    },
+    {
+      "path": "render.yaml",
+      "fileCount": 1,
+      "size": 476
+    },
+    {
+      "path": "CLAUDE.md",
+      "fileCount": 1,
+      "size": 11
+    },
+    {
+      "path": ".nvmrc",
+      "fileCount": 1,
+      "size": 8
+    }
+  ],
+  "largestFiles": [
+    {
+      "path": "pnpm-lock.yaml",
+      "size": 74591,
+      "mode": 33188,
+      "sha": "cb041818673869f6693a1cb2b502ed4f6c8c4b34"
+    },
+    {
+      "path": "apps/web/app/providers.tsx",
+      "size": 71849,
+      "mode": 33188,
+      "sha": "6710d5d9be8b854bd481d0bc2649028561e3f744"
+    },
+    {
+      "path": "apps/server/src/rooms.ts",
+      "size": 59509,
+      "mode": 33188,
+      "sha": "12ec22d973c2b092b488a74fe98a41da951679d0"
+    },
+    {
+      "path": "apps/web/app/globals.css",
+      "size": 44648,
+      "mode": 33188,
+      "sha": "8b47e85d496d4e25782e40402c8b4fa8bccde9e7"
+    },
+    {
+      "path": "README.md",
+      "size": 36685,
+      "mode": 33188,
+      "sha": "2dead36d06b92e53575ad71a9a6dd903cf9d2155"
+    },
+    {
+      "path": "apps/server/test/taunt.test.ts",
+      "size": 35921,
+      "mode": 33188,
+      "sha": "e4da819f648d8cd4da3ae373c3aefc475a384263"
+    },
+    {
+      "path": "apps/web/test/mood-avatar.test.tsx",
+      "size": 33586,
+      "mode": 33188,
+      "sha": "e6288c069dc19c584345eac31aa188c6ea17291e"
+    },
+    {
+      "path": "apps/web/e2e/effects.spec.ts",
+      "size": 32931,
+      "mode": 33188,
+      "sha": "4038364a34093a11b833fba8c0eebafb0c7bb304"
+    },
+    {
+      "path": "apps/web/test/recovery-wait.test.tsx",
+      "size": 31415,
+      "mode": 33188,
+      "sha": "9d65fdd98a2071ca1e88c6dfa7b9e10e5c7668b3"
+    },
+    {
+      "path": "apps/server/test/effects.test.ts",
+      "size": 30425,
+      "mode": 33188,
+      "sha": "d16495d65f8a7de5483096f322c8e029baefd8c0"
+    }
+  ],
+  "files": [
+    {
+      "path": ".agents/skills/orchestrate-work/SKILL.md",
+      "size": 6060,
+      "mode": 33188,
+      "sha": "d609bfaf9e9dd58c3cdc31712ef35544a4323f92"
+    },
+    {
+      "path": ".nvmrc",
+      "size": 8,
+      "mode": 33188,
+      "sha": "48b20c17255387c039ed68277a51ffca31113eaa"
+    },
+    {
+      "path": "AGENTS.md",
+      "size": 1519,
+      "mode": 33188,
+      "sha": "1b13b338cfbba838457f11cc5dfa79f99e871a2b"
+    },
+    {
+      "path": "apps/server/package.json",
+      "size": 520,
+      "mode": 33188,
+      "sha": "36fa0702e23c1d410e35fe050c4927f8451b60cc"
+    },
+    {
+      "path": "apps/server/railway.toml",
+      "size": 256,
+      "mode": 33188,
+      "sha": "63b84fb2000e2dc005331a57eca66ca8d2fb6b55"
+    },
+    {
+      "path": "apps/server/src/bot.ts",
+      "size": 3008,
+      "mode": 33188,
+      "sha": "40f1f64750b640a65ac904a9f4fb5d157056bb2b"
+    },
+    {
+      "path": "apps/server/src/clock.ts",
+      "size": 719,
+      "mode": 33188,
+      "sha": "aa6140d40419c09594820a616be517c6c2f7c36d"
+    },
+    {
+      "path": "apps/server/src/config.ts",
+      "size": 2501,
+      "mode": 33188,
+      "sha": "65471f68846d9907bf3772f7a878c839c43174b3"
+    },
+    {
+      "path": "apps/server/src/effects.ts",
+      "size": 3358,
+      "mode": 33188,
+      "sha": "3f6b0496c6a0845b101a12f26be9f085f2f24799"
+    },
+    {
+      "path": "apps/server/src/handlers.ts",
+      "size": 18167,
+      "mode": 33188,
+      "sha": "1443a8029138ed8766cc3937434b53364c01b5e4"
+    },
+    {
+      "path": "apps/server/src/ids.ts",
+      "size": 1219,
+      "mode": 33188,
+      "sha": "60114e025f1414f3c2bd04c1ed3a58c84d5d589f"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "size": 1194,
+      "mode": 33188,
+      "sha": "4d7cd52b126f26c51c48099f895ae530426655ed"
+    },
+    {
+      "path": "apps/server/src/rooms.ts",
+      "size": 59509,
+      "mode": 33188,
+      "sha": "12ec22d973c2b092b488a74fe98a41da951679d0"
+    },
+    {
+      "path": "apps/server/src/server.ts",
+      "size": 4957,
+      "mode": 33188,
+      "sha": "1080e4787391caf15891d9545ba51bdd7430898d"
+    },
+    {
+      "path": "apps/server/test/bot-callback.test.ts",
+      "size": 10171,
+      "mode": 33188,
+      "sha": "ebae7b2b7fbddb473c0321cd6e28019f3ba2eef4"
+    },
+    {
+      "path": "apps/server/test/bot-entry.test.ts",
+      "size": 15760,
+      "mode": 33188,
+      "sha": "adbd1fb18e8888ad25653ce6f57ed21a6c0b1a64"
+    },
+    {
+      "path": "apps/server/test/bot-flow.test.ts",
+      "size": 13936,
+      "mode": 33188,
+      "sha": "261adfa60ced60c550b91ce970411abd92a955f0"
+    },
+    {
+      "path": "apps/server/test/bot.test.ts",
+      "size": 6127,
+      "mode": 33188,
+      "sha": "b801231ba58a13baf6e2cb4272591b30e45b9a58"
+    },
+    {
+      "path": "apps/server/test/chat.test.ts",
+      "size": 24328,
+      "mode": 33188,
+      "sha": "61f9649b8623e2622c5a5d4868a7ed7edc159bb0"
+    },
+    {
+      "path": "apps/server/test/config.test.ts",
+      "size": 822,
+      "mode": 33188,
+      "sha": "91e4585aeb9b086821da951a2e46fe39ed3b1a62"
+    },
+    {
+      "path": "apps/server/test/contracts.test.ts",
+      "size": 7396,
+      "mode": 33188,
+      "sha": "99a59cc2ffb41ef9582798eec6d5f061ac97455e"
+    },
+    {
+      "path": "apps/server/test/decks.ts",
+      "size": 5586,
+      "mode": 33188,
+      "sha": "92c3239e1007aaf16c1d4f7f98f1b6f373569269"
+    },
+    {
+      "path": "apps/server/test/dedupe-retention.test.ts",
+      "size": 20382,
+      "mode": 33188,
+      "sha": "76bba4ca340696174e69a8af8f31741111a27a49"
+    },
+    {
+      "path": "apps/server/test/dedupe.test.ts",
+      "size": 15621,
+      "mode": 33188,
+      "sha": "2b69efa9d2f46b5547758cb80f158096545f8e97"
+    },
+    {
+      "path": "apps/server/test/effects.test.ts",
+      "size": 30425,
+      "mode": 33188,
+      "sha": "d16495d65f8a7de5483096f322c8e029baefd8c0"
+    },
+    {
+      "path": "apps/server/test/eight-players.test.ts",
+      "size": 6023,
+      "mode": 33188,
+      "sha": "30f4627d4c6777515635ea89afb97687d5139489"
+    },
+    {
+      "path": "apps/server/test/expiry-cache.test.ts",
+      "size": 6991,
+      "mode": 33188,
+      "sha": "d3c3490dac80a2f3e5afbf1f26a07abf2b57fcce"
+    },
+    {
+      "path": "apps/server/test/helpers.ts",
+      "size": 11704,
+      "mode": 33188,
+      "sha": "f8dc0be08a7ad43be80bad809124cabe2d858f1e"
+    },
+    {
+      "path": "apps/server/test/host.test.ts",
+      "size": 6215,
+      "mode": 33188,
+      "sha": "4591e727d6465e40babed872a24c9a789afae381"
+    },
+    {
+      "path": "apps/server/test/leave.test.ts",
+      "size": 13523,
+      "mode": 33188,
+      "sha": "f1314abe6810470c8ad7be019deb072a0a7cab57"
+    },
+    {
+      "path": "apps/server/test/pause.test.ts",
+      "size": 11931,
+      "mode": 33188,
+      "sha": "b94500c0ec13c406fa57ad0776f9325426cde1d2"
+    },
+    {
+      "path": "apps/server/test/privacy.test.ts",
+      "size": 12648,
+      "mode": 33188,
+      "sha": "92b60d54792249ff530dcc9a3288e93abe53115d"
+    },
+    {
+      "path": "apps/server/test/process.test.ts",
+      "size": 3532,
+      "mode": 33188,
+      "sha": "06e27f5b463b01fd5f02eec95f48b8c1c1b5b050"
+    },
+    {
+      "path": "apps/server/test/public-table.test.ts",
+      "size": 10336,
+      "mode": 33188,
+      "sha": "74845279b316dfe63f0c0d9673c8b5b302a8f5d4"
+    },
+    {
+      "path": "apps/server/test/reaction.test.ts",
+      "size": 20626,
+      "mode": 33188,
+      "sha": "2c3d8d651d25ed521d064311e07967e1c6fb03f3"
+    },
+    {
+      "path": "apps/server/test/recovery.test.ts",
+      "size": 12438,
+      "mode": 33188,
+      "sha": "de92430634274f5b680191da384497b5d9e28907"
+    },
+    {
+      "path": "apps/server/test/replay-transport.test.ts",
+      "size": 10214,
+      "mode": 33188,
+      "sha": "4c11edc6b8c1f0e001f99547a06c313254343368"
+    },
+    {
+      "path": "apps/server/test/restart.test.ts",
+      "size": 3443,
+      "mode": 33188,
+      "sha": "4dbdcd33d72419646903a0d8e4b59f98699f95e7"
+    },
+    {
+      "path": "apps/server/test/retention.test.ts",
+      "size": 10448,
+      "mode": 33188,
+      "sha": "398a5d3f2de5d5ddbcb1f337814b6f7522b7f588"
+    },
+    {
+      "path": "apps/server/test/room-flow.test.ts",
+      "size": 7520,
+      "mode": 33188,
+      "sha": "33a4602efdff8c8aa96c260ce9b0523c7f6d64eb"
+    },
+    {
+      "path": "apps/server/test/scoreboard.test.ts",
+      "size": 13892,
+      "mode": 33188,
+      "sha": "80c25ab5b5fe25f1c499c89e901d41024e871216"
+    },
+    {
+      "path": "apps/server/test/taunt.test.ts",
+      "size": 35921,
+      "mode": 33188,
+      "sha": "e4da819f648d8cd4da3ae373c3aefc475a384263"
+    },
+    {
+      "path": "apps/server/test/ten-room-load.test.ts",
+      "size": 18135,
+      "mode": 33188,
+      "sha": "f76753b1d1e969d62de85c5c0ec0eec71653565c"
+    },
+    {
+      "path": "apps/server/test/training-game.test.ts",
+      "size": 8647,
+      "mode": 33188,
+      "sha": "1c0b7cdf8af61303ae719494807582631d41c8f0"
+    },
+    {
+      "path": "apps/server/test/training-privacy.test.ts",
+      "size": 6028,
+      "mode": 33188,
+      "sha": "64365c0e9d7e2fb43d2ea847200e853147be3eed"
+    },
+    {
+      "path": "apps/server/test/training-recovery.test.ts",
+      "size": 13624,
+      "mode": 33188,
+      "sha": "5934477ceeeaad23fa25c90d7e8cc76486d7fe3c"
+    },
+    {
+      "path": "apps/server/test/training-room.test.ts",
+      "size": 12789,
+      "mode": 33188,
+      "sha": "1328903d8b238aece20c01b6b45aad1332791f0a"
+    },
+    {
+      "path": "apps/server/test/training.ts",
+      "size": 8822,
+      "mode": 33188,
+      "sha": "81b5c752266de63e35df7c982c751a45e28a6a9b"
+    },
+    {
+      "path": "apps/server/tsconfig.build.json",
+      "size": 149,
+      "mode": 33188,
+      "sha": "42dbd62abf3910a39ae9fd197cf589d74ad6aaea"
+    },
+    {
+      "path": "apps/server/tsconfig.json",
+      "size": 74,
+      "mode": 33188,
+      "sha": "649295ef64d68ac620010b497dc80088125b953b"
+    },
+    {
+      "path": "apps/server/vitest.config.ts",
+      "size": 622,
+      "mode": 33188,
+      "sha": "5cf1ad9f4765b45b61d6ab78340a1758a5321cfd"
+    },
+    {
+      "path": "apps/web/AGENTS.md",
+      "size": 679,
+      "mode": 33188,
+      "sha": "5ec4789692f7fa325f3c83427e98e934987d1bac"
+    },
+    {
+      "path": "apps/web/app/globals.css",
+      "size": 44648,
+      "mode": 33188,
+      "sha": "8b47e85d496d4e25782e40402c8b4fa8bccde9e7"
+    },
+    {
+      "path": "apps/web/app/layout.tsx",
+      "size": 468,
+      "mode": 33188,
+      "sha": "e241193c50150af79327b4d45be88fbd6275e7e4"
+    },
+    {
+      "path": "apps/web/app/page.tsx",
+      "size": 3227,
+      "mode": 33188,
+      "sha": "54fdf7d936d0d2f3d36016f00ee86cab9405ed4a"
+    },
+    {
+      "path": "apps/web/app/providers.tsx",
+      "size": 71849,
+      "mode": 33188,
+      "sha": "6710d5d9be8b854bd481d0bc2649028561e3f744"
+    },
+    {
+      "path": "apps/web/app/sala/[code]/page.tsx",
+      "size": 11243,
+      "mode": 33188,
+      "sha": "9de0cb470fd106845232e61d7dbbfdf321fe2071"
+    },
+    {
+      "path": "apps/web/components/ChatPanel.tsx",
+      "size": 9791,
+      "mode": 33188,
+      "sha": "0c2fb2caabf24b5240e7bf6db91a8493ed5828c6"
+    },
+    {
+      "path": "apps/web/components/EventFeed.tsx",
+      "size": 1693,
+      "mode": 33188,
+      "sha": "1141d8fa31e6f799fcf754772f84dab9121fef3b"
+    },
+    {
+      "path": "apps/web/components/GameTable.tsx",
+      "size": 20579,
+      "mode": 33188,
+      "sha": "caac28aefebba0f4a45d3b4ad1aa103607c3abfe"
+    },
+    {
+      "path": "apps/web/components/Lobby.tsx",
+      "size": 7373,
+      "mode": 33188,
+      "sha": "e64828a5b65c941e8e8d0f0b3ac9731944855a21"
+    },
+    {
+      "path": "apps/web/components/MoodFeedback.tsx",
+      "size": 946,
+      "mode": 33188,
+      "sha": "30b80c47c65cfbd8ea43ffcf22dbb6a47f381e7d"
+    },
+    {
+      "path": "apps/web/components/MoodMenu.tsx",
+      "size": 9151,
+      "mode": 33188,
+      "sha": "d0a2fdccbe1b600a53a6dd4ec4e1fa5d66065ba9"
+    },
+    {
+      "path": "apps/web/components/MoodSettings.tsx",
+      "size": 3070,
+      "mode": 33188,
+      "sha": "5dbd753c4b3f225cd0a375347a1ee3b7ad87b794"
+    },
+    {
+      "path": "apps/web/components/PausePanel.tsx",
+      "size": 4196,
+      "mode": 33188,
+      "sha": "0d87042c5d9f6d4c1236eaa077415b7c72d34d58"
+    },
+    {
+      "path": "apps/web/components/ReactionBadge.tsx",
+      "size": 1448,
+      "mode": 33188,
+      "sha": "65e5aff958fb477cfeddc0bdcca4a578bbea4bbc"
+    },
+    {
+      "path": "apps/web/components/Results.tsx",
+      "size": 5334,
+      "mode": 33188,
+      "sha": "26add09a2e61703ddab91c605d2fa97498fda683"
+    },
+    {
+      "path": "apps/web/components/SeatCircuit.tsx",
+      "size": 11808,
+      "mode": 33188,
+      "sha": "fdf9c833c1cc96fa43e42fab724c515bcfd70caf"
+    },
+    {
+      "path": "apps/web/components/TauntOverlay.tsx",
+      "size": 2781,
+      "mode": 33188,
+      "sha": "895b3e3489c42b9b688f3f561644423dcca7499b"
+    },
+    {
+      "path": "apps/web/components/TauntPanel.tsx",
+      "size": 7855,
+      "mode": 33188,
+      "sha": "fe315f2199868c3bf29986a7a3b31518dbbc1a2e"
+    },
+    {
+      "path": "apps/web/components/TauntResponseNotice.tsx",
+      "size": 2218,
+      "mode": 33188,
+      "sha": "84fa8215a88bafc506ed8fed0cf6891ba0eda57f"
+    },
+    {
+      "path": "apps/web/components/TurnNotifier.tsx",
+      "size": 2260,
+      "mode": 33188,
+      "sha": "a1fc170b11733cebe266694d694d7847f3350a73"
+    },
+    {
+      "path": "apps/web/components/ui.tsx",
+      "size": 7585,
+      "mode": 33188,
+      "sha": "2e8668fe61a65aa78bb21172b635eed2f9650b7a"
+    },
+    {
+      "path": "apps/web/components/WaitingRoom.tsx",
+      "size": 8018,
+      "mode": 33188,
+      "sha": "6f5b3b199054c975dd440284b5d8df10e7a80588"
+    },
+    {
+      "path": "apps/web/e2e/chat.spec.ts",
+      "size": 11329,
+      "mode": 33188,
+      "sha": "e233c274e8293538120bd456cd58721193ba33af"
+    },
+    {
+      "path": "apps/web/e2e/deck.ts",
+      "size": 7894,
+      "mode": 33188,
+      "sha": "6c3365afaae75f13133863fbad521ad8729dfca3"
+    },
+    {
+      "path": "apps/web/e2e/effects.spec.ts",
+      "size": 32931,
+      "mode": 33188,
+      "sha": "4038364a34093a11b833fba8c0eebafb0c7bb304"
+    },
+    {
+      "path": "apps/web/e2e/fixtures.ts",
+      "size": 3257,
+      "mode": 33188,
+      "sha": "51b7984c25c55a6a93d2432e4c28843dbb919782"
+    },
+    {
+      "path": "apps/web/e2e/interface-keyboard.spec.ts",
+      "size": 9336,
+      "mode": 33188,
+      "sha": "35cfcfd30ff3dee7dd55c1758707b1c2f5fbbace"
+    },
+    {
+      "path": "apps/web/e2e/interface-visual.spec.ts",
+      "size": 17798,
+      "mode": 33188,
+      "sha": "6d8b2ab22cf4000a36c67d8e874e7db00997034b"
+    },
+    {
+      "path": "apps/web/e2e/leave-host.spec.ts",
+      "size": 3834,
+      "mode": 33188,
+      "sha": "cb9998f082aa9489771579744a57a60d81ec803b"
+    },
+    {
+      "path": "apps/web/e2e/mood.spec.ts",
+      "size": 11045,
+      "mode": 33188,
+      "sha": "be03c380a4e763b37a2517b56b71c7fc7607e871"
+    },
+    {
+      "path": "apps/web/e2e/pause.spec.ts",
+      "size": 4391,
+      "mode": 33188,
+      "sha": "cff51f6933eb64b2ece1c89cd481ce664e8176d9"
+    },
+    {
+      "path": "apps/web/e2e/production-start.spec.ts",
+      "size": 907,
+      "mode": 33188,
+      "sha": "c5822ee8710b393d6f5ec0067cf2589ab1b9896e"
+    },
+    {
+      "path": "apps/web/e2e/recovery-wait.spec.ts",
+      "size": 2446,
+      "mode": 33188,
+      "sha": "623f6fbd225a38637d5b8995ed5eaabb3287e6e2"
+    },
+    {
+      "path": "apps/web/e2e/recovery.spec.ts",
+      "size": 3384,
+      "mode": 33188,
+      "sha": "418f11a13794a37012d8756015a7dce9d0ae0624"
+    },
+    {
+      "path": "apps/web/e2e/refinements.spec.ts",
+      "size": 8075,
+      "mode": 33188,
+      "sha": "87dd71d4dd5cec6082ee33caf6dd817023a0d781"
+    },
+    {
+      "path": "apps/web/e2e/room.ts",
+      "size": 3234,
+      "mode": 33188,
+      "sha": "cdb9580aa21eef6692b072afdd9dfb9fdd4cb1f3"
+    },
+    {
+      "path": "apps/web/e2e/scoreboard.spec.ts",
+      "size": 3901,
+      "mode": 33188,
+      "sha": "0454a16293e7f6aa1cd8cb5cf32fe427c2c0f65a"
+    },
+    {
+      "path": "apps/web/e2e/server-restart.spec.ts",
+      "size": 1629,
+      "mode": 33188,
+      "sha": "fbf35f3bdc479dd3b962c245d247a8eb3ac8a20b"
+    },
+    {
+      "path": "apps/web/e2e/t007-eight-seat.spec.ts",
+      "size": 15668,
+      "mode": 33188,
+      "sha": "05a06ce84b472b7ead003da5b9da3fe1571c29c0"
+    },
+    {
+      "path": "apps/web/e2e/t012-adjustments.spec.ts",
+      "size": 19301,
+      "mode": 33188,
+      "sha": "fb3a7966885df0057bdba5ab08d583244fc5dc39"
+    },
+    {
+      "path": "apps/web/e2e/t012-circuit.spec.ts",
+      "size": 23603,
+      "mode": 33188,
+      "sha": "8dfee50d95891cb1a01f07dbb3a3523126546f82"
+    },
+    {
+      "path": "apps/web/e2e/taunt.spec.ts",
+      "size": 6397,
+      "mode": 33188,
+      "sha": "316a8e0590c31f0d731fa454a511eff8f0e18342"
+    },
+    {
+      "path": "apps/web/e2e/training.spec.ts",
+      "size": 13940,
+      "mode": 33188,
+      "sha": "dee8a05a3ff9be4b556ab50ab9aeb0495a279d80"
+    },
+    {
+      "path": "apps/web/e2e/training.ts",
+      "size": 8470,
+      "mode": 33188,
+      "sha": "bbedb25af1c3487a517b1eab04453095cf2ad356"
+    },
+    {
+      "path": "apps/web/e2e/two-players.spec.ts",
+      "size": 7828,
+      "mode": 33188,
+      "sha": "5aaec87c16872ef07323cd828d8e7f2b0cbad128"
+    },
+    {
+      "path": "apps/web/lib/chatMute.ts",
+      "size": 1124,
+      "mode": 33188,
+      "sha": "b339a1ffa13827c1a08ca2cca24f9e3b492749e8"
+    },
+    {
+      "path": "apps/web/lib/client.ts",
+      "size": 2012,
+      "mode": 33188,
+      "sha": "fcb742dccf5a3cf9f754792986c73134bed13dd4"
+    },
+    {
+      "path": "apps/web/lib/labels.ts",
+      "size": 3558,
+      "mode": 33188,
+      "sha": "b8536ad9d0ba1201bcee308d751d77b58b9bc4c8"
+    },
+    {
+      "path": "apps/web/lib/mood.ts",
+      "size": 2857,
+      "mode": 33188,
+      "sha": "b99833aaa3e30f8766e8263fb3f8f35b282e0888"
+    },
+    {
+      "path": "apps/web/lib/moodTime.ts",
+      "size": 7268,
+      "mode": 33188,
+      "sha": "e4e30b5e441e083f94e6acab5d7527dcc94f0c3b"
+    },
+    {
+      "path": "apps/web/lib/prefs.ts",
+      "size": 3720,
+      "mode": 33188,
+      "sha": "c314b212e9b1859991be0b694640dfd2f470e02c"
+    },
+    {
+      "path": "apps/web/lib/presentationQueue.ts",
+      "size": 4748,
+      "mode": 33188,
+      "sha": "830af818d0a31aed8619539f57bb8bf1f2b994e6"
+    },
+    {
+      "path": "apps/web/lib/sounds.ts",
+      "size": 7810,
+      "mode": 33188,
+      "sha": "b359fc1de343dd43b1f223e4095f3b4fabb5beb7"
+    },
+    {
+      "path": "apps/web/lib/turnNotifications.ts",
+      "size": 2964,
+      "mode": 33188,
+      "sha": "f8098616558efe1e61af17989d848ec67af15164"
+    },
+    {
+      "path": "apps/web/lib/useSecondTick.ts",
+      "size": 563,
+      "mode": 33188,
+      "sha": "92fc79adb3f53c9f01e9a5263fa7312222cebbf3"
+    },
+    {
+      "path": "apps/web/next-env.d.ts",
+      "size": 288,
+      "mode": 33188,
+      "sha": "915946e261450f4fb6aab2ca862c8b440b748240"
+    },
+    {
+      "path": "apps/web/next.config.ts",
+      "size": 129,
+      "mode": 33188,
+      "sha": "6b47638c62d823bf6734ab0fd4833a8ba156d7fc"
+    },
+    {
+      "path": "apps/web/package.json",
+      "size": 813,
+      "mode": 33188,
+      "sha": "a387dadaea7ec5fad62962f77b46bb19bea71935"
+    },
+    {
+      "path": "apps/web/playwright.config.ts",
+      "size": 987,
+      "mode": 33188,
+      "sha": "61df6946ca491bd09f67624a633f5ad27d422b3e"
+    },
+    {
+      "path": "apps/web/playwright.production.config.ts",
+      "size": 1243,
+      "mode": 33188,
+      "sha": "533d28bb98ac8e937855c76561c1643c1d4509d9"
+    },
+    {
+      "path": "apps/web/railway.toml",
+      "size": 246,
+      "mode": 33188,
+      "sha": "a937f7162ecf88c276a2442254e55af4057133a8"
+    },
+    {
+      "path": "apps/web/scripts/e2e-production.mjs",
+      "size": 687,
+      "mode": 33188,
+      "sha": "45fa5acc2c87d8ccac3764f78cf8c2f345ef8aa8"
+    },
+    {
+      "path": "apps/web/test/chat-sync.test.tsx",
+      "size": 27289,
+      "mode": 33188,
+      "sha": "93feb542ec1b9db461eea2748ca84ac3ef7ae97c"
+    },
+    {
+      "path": "apps/web/test/effects-render.test.tsx",
+      "size": 7329,
+      "mode": 33188,
+      "sha": "a76e768b3c5d6c40c24cc0a813aaf7a15aa99cbf"
+    },
+    {
+      "path": "apps/web/test/game-table-focus.test.tsx",
+      "size": 4544,
+      "mode": 33188,
+      "sha": "22192a885f1fca4509edcdd108be8250bd914306"
+    },
+    {
+      "path": "apps/web/test/mood-avatar.test.tsx",
+      "size": 33586,
+      "mode": 33188,
+      "sha": "e6288c069dc19c584345eac31aa188c6ea17291e"
+    },
+    {
+      "path": "apps/web/test/mood-sync.test.tsx",
+      "size": 23527,
+      "mode": 33188,
+      "sha": "9bd1cb478f469c0c1ddf58ccb4a4be5f93608743"
+    },
+    {
+      "path": "apps/web/test/mood-time.test.ts",
+      "size": 15858,
+      "mode": 33188,
+      "sha": "a59032aa3385af1a66203f63563ba9836b10f798"
+    },
+    {
+      "path": "apps/web/test/prefs.test.ts",
+      "size": 5387,
+      "mode": 33188,
+      "sha": "1c4bd8bde63ce23c686ff8aa0e72fca988ae5486"
+    },
+    {
+      "path": "apps/web/test/presentation-queue.test.ts",
+      "size": 6037,
+      "mode": 33188,
+      "sha": "876f6dbcb58d6f10d76eb4d3ded150753236cea6"
+    },
+    {
+      "path": "apps/web/test/recovery-page.test.tsx",
+      "size": 11447,
+      "mode": 33188,
+      "sha": "3fcdf05d49f04f4f4ff2e99ee8dac7fe54d43d5b"
+    },
+    {
+      "path": "apps/web/test/recovery-wait.test.tsx",
+      "size": 31415,
+      "mode": 33188,
+      "sha": "9d65fdd98a2071ca1e88c6dfa7b9e10e5c7668b3"
+    },
+    {
+      "path": "apps/web/test/seat-circuit.test.tsx",
+      "size": 18696,
+      "mode": 33188,
+      "sha": "ad32e65a5970387a0165ac46055c4c99e8155e9f"
+    },
+    {
+      "path": "apps/web/test/sounds.test.ts",
+      "size": 8737,
+      "mode": 33188,
+      "sha": "c3aba543fe98d6d36b2252fe2857c0fdf63ed94f"
+    },
+    {
+      "path": "apps/web/test/taunt-sync.test.tsx",
+      "size": 20459,
+      "mode": 33188,
+      "sha": "3bd6f29079255f190f7ebd3c61d19d41009e1f1b"
+    },
+    {
+      "path": "apps/web/test/training-entry-context.test.tsx",
+      "size": 12950,
+      "mode": 33188,
+      "sha": "87fac95be297072e78b7a1a995f8258418ed3827"
+    },
+    {
+      "path": "apps/web/test/training-entry.test.tsx",
+      "size": 10465,
+      "mode": 33188,
+      "sha": "e31dfad44e162cc719faf05c8dd868faaa558dff"
+    },
+    {
+      "path": "apps/web/test/training-home.test.tsx",
+      "size": 7038,
+      "mode": 33188,
+      "sha": "eda842782b3a6e023c7f5f05e38928df2aeda2b2"
+    },
+    {
+      "path": "apps/web/test/training-lobby.test.tsx",
+      "size": 6327,
+      "mode": 33188,
+      "sha": "d657d453b0bdd8b53982e4d4c2d2235983bf90cb"
+    },
+    {
+      "path": "apps/web/test/training-results.test.tsx",
+      "size": 5672,
+      "mode": 33188,
+      "sha": "fe9c593f304c0e61d9ee0caaa21c540f33052a77"
+    },
+    {
+      "path": "apps/web/test/training-table.test.tsx",
+      "size": 5368,
+      "mode": 33188,
+      "sha": "9186491e155ee6e4628d7891985a83bc8eb017a1"
+    },
+    {
+      "path": "apps/web/test/turn-notification.test.tsx",
+      "size": 15815,
+      "mode": 33188,
+      "sha": "f49ecdf7301a68b1e257109a73e8f2b34b6f7306"
+    },
+    {
+      "path": "apps/web/tsconfig.json",
+      "size": 1116,
+      "mode": 33188,
+      "sha": "8e7028db7321883e24d2845a57ec9a08923f034c"
+    },
+    {
+      "path": "apps/web/vercel.json",
+      "size": 408,
+      "mode": 33188,
+      "sha": "06c9ac36e007ee8be50e4aa9ed43092ca1b632d1"
+    },
+    {
+      "path": "apps/web/vitest.config.ts",
+      "size": 301,
+      "mode": 33188,
+      "sha": "38fa8a8782877aba41cba3baa3496420f7bac171"
+    },
+    {
+      "path": "CLAUDE.md",
+      "size": 11,
+      "mode": 33188,
+      "sha": "c140473a3a5fbe89301c99d9d0d1b76c5971f2c3"
+    },
+    {
+      "path": "CONTEXT.md",
+      "size": 648,
+      "mode": 33188,
+      "sha": "23d6c92d08ffc0b419b5906d4cafd4d731855523"
+    },
+    {
+      "path": "package.json",
+      "size": 622,
+      "mode": 33188,
+      "sha": "c80bdb9c9ab3d6d1a1bd5c80e3fe0f90dbc1da14"
+    },
+    {
+      "path": "packages/protocol/package.json",
+      "size": 538,
+      "mode": 33188,
+      "sha": "e8643e1ce87e81eaef699142289f5534f1d6b23c"
+    },
+    {
+      "path": "packages/protocol/src/index.ts",
+      "size": 19279,
+      "mode": 33188,
+      "sha": "494aff3d98436593b052035340dec9e9fb759ad4"
+    },
+    {
+      "path": "packages/protocol/src/shared.ts",
+      "size": 5931,
+      "mode": 33188,
+      "sha": "e7b9847fd446e53333926cc73f5fac7882184e7c"
+    },
+    {
+      "path": "packages/protocol/test/schemas.test.ts",
+      "size": 10968,
+      "mode": 33188,
+      "sha": "d2c8bab4b7d011ecc6d48a79f3e8163dd82d678e"
+    },
+    {
+      "path": "packages/protocol/tsconfig.build.json",
+      "size": 174,
+      "mode": 33188,
+      "sha": "9a0e579a9f610552e944890d749f9fbdbdc3f272"
+    },
+    {
+      "path": "packages/protocol/tsconfig.json",
+      "size": 74,
+      "mode": 33188,
+      "sha": "649295ef64d68ac620010b497dc80088125b953b"
+    },
+    {
+      "path": "packages/protocol/vitest.config.ts",
+      "size": 250,
+      "mode": 33188,
+      "sha": "6a52a558a2f513ff517a84c071f011189d611ba4"
+    },
+    {
+      "path": "packages/rules/package.json",
+      "size": 357,
+      "mode": 33188,
+      "sha": "51b4bc13a4cf38e05272cd8bc6995f79592240b0"
+    },
+    {
+      "path": "packages/rules/src/card.ts",
+      "size": 2178,
+      "mode": 33188,
+      "sha": "dac1a92b290d797a01e4c1c53da74979e9e467fc"
+    },
+    {
+      "path": "packages/rules/src/commands.ts",
+      "size": 15655,
+      "mode": 33188,
+      "sha": "cb324ad3e233b72ec423e08882a682c147966dd2"
+    },
+    {
+      "path": "packages/rules/src/errors.ts",
+      "size": 504,
+      "mode": 33188,
+      "sha": "89e68e219ad657ecb9e693749ded57c3c092cdb8"
+    },
+    {
+      "path": "packages/rules/src/index.ts",
+      "size": 1056,
+      "mode": 33188,
+      "sha": "313f7e9f606b57b04eed3ab7c666bbb389c7262b"
+    },
+    {
+      "path": "packages/rules/src/projection.ts",
+      "size": 4642,
+      "mode": 33188,
+      "sha": "e9f2207f839752407209512e1a6ba2695db8080f"
+    },
+    {
+      "path": "packages/rules/src/random.ts",
+      "size": 1570,
+      "mode": 33188,
+      "sha": "ec4f6887a66c2e07efa43a12479b66fdf2e6d722"
+    },
+    {
+      "path": "packages/rules/src/round.ts",
+      "size": 5358,
+      "mode": 33188,
+      "sha": "e97e52582ac0ad31e0bf2aa66dbd54833c6c4958"
+    },
+    {
+      "path": "packages/rules/src/state.ts",
+      "size": 5233,
+      "mode": 33188,
+      "sha": "559332452eb98b06a2feafe1a4b0bdf0d430da93"
+    },
+    {
+      "path": "packages/rules/test/classic-effects.test.ts",
+      "size": 6146,
+      "mode": 33188,
+      "sha": "0561835ed839c0e46380f595ec752a14ddaa5e0a"
+    },
+    {
+      "path": "packages/rules/test/classic-finals.test.ts",
+      "size": 8967,
+      "mode": 33188,
+      "sha": "234c6b0802390b1285a7652a0835e0232c0bbae7"
+    },
+    {
+      "path": "packages/rules/test/classic-last-card.test.ts",
+      "size": 9436,
+      "mode": 33188,
+      "sha": "369f158cbcc030e951d6a84ae1ebe369b7583129"
+    },
+    {
+      "path": "packages/rules/test/classic-piles.test.ts",
+      "size": 5890,
+      "mode": 33188,
+      "sha": "5beaab1f99a8425a657b19e5e708c62fde3a0377"
+    },
+    {
+      "path": "packages/rules/test/classic-projection.test.ts",
+      "size": 8291,
+      "mode": 33188,
+      "sha": "37fb31e379fbee2f68d12442c3990c6a1334aeb4"
+    },
+    {
+      "path": "packages/rules/test/classic-public-table.test.ts",
+      "size": 3978,
+      "mode": 33188,
+      "sha": "872c6169c2b557c49efb30b477f8df01edd8ffc0"
+    },
+    {
+      "path": "packages/rules/test/classic-simulation.test.ts",
+      "size": 1757,
+      "mode": 33188,
+      "sha": "293a4867c0e75815b3ae1c3f46e39481f3ad06c1"
+    },
+    {
+      "path": "packages/rules/test/classic-turns.test.ts",
+      "size": 8455,
+      "mode": 33188,
+      "sha": "edbc9c8d0ff988f8b2374bf254c978cd6401a1e2"
+    },
+    {
+      "path": "packages/rules/test/deck.test.ts",
+      "size": 2586,
+      "mode": 33188,
+      "sha": "f25a82c8674b725897d169287c932f5ac254fc5c"
+    },
+    {
+      "path": "packages/rules/test/fixtures.ts",
+      "size": 3617,
+      "mode": 33188,
+      "sha": "b9e97570386c752620c37e9efa2cc3a69dfcd191"
+    },
+    {
+      "path": "packages/rules/test/helpers-privacy.ts",
+      "size": 1617,
+      "mode": 33188,
+      "sha": "8a1eafebf28604c56bbc1e3e79a95572a42956a0"
+    },
+    {
+      "path": "packages/rules/test/helpers.ts",
+      "size": 1402,
+      "mode": 33188,
+      "sha": "a99417c60dfdc6afbbada378271556ce82d871da"
+    },
+    {
+      "path": "packages/rules/test/opening.test.ts",
+      "size": 11149,
+      "mode": 33188,
+      "sha": "add4e72946e9ec1222c0717bd1688f293d3c98f2"
+    },
+    {
+      "path": "packages/rules/test/random.test.ts",
+      "size": 2069,
+      "mode": 33188,
+      "sha": "c494bdbe2719ff064c97d0715eb12948f9ef77b5"
+    },
+    {
+      "path": "packages/rules/test/simulation.ts",
+      "size": 6897,
+      "mode": 33188,
+      "sha": "71e596044e2aef648fa6e0b66becefafd87b363c"
+    },
+    {
+      "path": "packages/rules/tsconfig.build.json",
+      "size": 174,
+      "mode": 33188,
+      "sha": "9a0e579a9f610552e944890d749f9fbdbdc3f272"
+    },
+    {
+      "path": "packages/rules/tsconfig.json",
+      "size": 74,
+      "mode": 33188,
+      "sha": "649295ef64d68ac620010b497dc80088125b953b"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "size": 74591,
+      "mode": 33188,
+      "sha": "cb041818673869f6693a1cb2b502ed4f6c8c4b34"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "size": 555,
+      "mode": 33188,
+      "sha": "30cd9c2e706f215b9d5884c4289551bc4bfe884e"
+    },
+    {
+      "path": "README.md",
+      "size": 36685,
+      "mode": 33188,
+      "sha": "2dead36d06b92e53575ad71a9a6dd903cf9d2155"
+    },
+    {
+      "path": "render.yaml",
+      "size": 476,
+      "mode": 33188,
+      "sha": "6770e37d7748008aecfc272170fda813945febc5"
+    },
+    {
+      "path": "tsconfig.base.json",
+      "size": 518,
+      "mode": 33188,
+      "sha": "40e72cc0d717e00530e4a42bb03212d58905593b"
+    }
+  ]
+}

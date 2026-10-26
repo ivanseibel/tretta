@@ -1,0 +1,13 @@
+{
+  "pid": 63135,
+  "profile": "/var/folders/r_/xrvhskhx45l6n66k99kzs61r0000gn/T/tretta-T016-A1-8xmp97nm",
+  "endpoint": "http://127.0.0.1:19417",
+  "daemon": "tretta-t016-a1-codex",
+  "cleanup": {
+    "namedDaemonStopped": true,
+    "endpointClosed": true,
+    "profileRemoved": true,
+    "personalBrowserTouched": false,
+    "isolationVerified": "process command and lsof listener PID 63135 matched dedicated profile/loopback endpoint; explicit unique BU_NAME and BU_CDP_URL on every harness call"
+  }
+}

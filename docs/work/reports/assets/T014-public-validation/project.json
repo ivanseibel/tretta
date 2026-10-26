@@ -1,0 +1,9 @@
+{
+  "id": "prj_CYHWGKoqqCZEGVVXN3Tbx1nnBMw8",
+  "name": "tretta",
+  "accountId": "team_4mQparNtNCNqsb95uxf2FzoD",
+  "rootDirectory": "apps/web",
+  "nodeVersion": "22.x",
+  "sourceFilesOutsideRootDirectory": true,
+  "framework": "nextjs"
+}

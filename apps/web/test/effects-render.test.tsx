@@ -4,12 +4,7 @@
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
-import type {
-  AutomaticEffect,
-  EffectCategory,
-  EffectVariant,
-  TauntEvent,
-} from '@tretta/protocol';
+import type { AutomaticEffect, EffectCategory, EffectVariant } from '@tretta/protocol';
 import type { AnimationPreference } from '@/lib/prefs';
 import type { Presentation } from '@/lib/presentationQueue';
 
@@ -24,7 +19,7 @@ vi.mock('@/app/providers', () => ({
   useRoom: () => holder.room,
 }));
 
-import { TauntOverlay } from '@/components/TauntOverlay';
+import { EffectOverlay } from '@/components/reactions/EffectOverlay';
 
 function effectFixture(variant: EffectVariant, category: EffectCategory): AutomaticEffect {
   const base = { id: `fx_${variant}`, roundId: 'r1', seq: 1, eventIndex: 0, variant };
@@ -83,7 +78,7 @@ describe('matriz das oito apresentações', () => {
     it(`${entry.category}/${entry.variant} renderiza legenda, emoji e classe próprios`, () => {
       const effect = effectFixture(entry.variant, entry.category);
       present({ kind: 'effect', id: effect.id, durationMs: 2600, effect });
-      render(<TauntOverlay />);
+      render(<EffectOverlay />);
 
       const node = screen.getByTestId(`auto-effect-${entry.category}`);
       expect(node.getAttribute('data-effect-variant')).toBe(entry.variant);
@@ -105,7 +100,7 @@ describe('matriz das oito apresentações', () => {
 describe('legendas refletem dados reais', () => {
   function captionFor(effect: AutomaticEffect): string {
     present({ kind: 'effect', id: effect.id, durationMs: 2600, effect });
-    render(<TauntOverlay />);
+    render(<EffectOverlay />);
     return screen.getByTestId(`auto-effect-caption-${effect.id}`).textContent ?? '';
   }
 
@@ -172,37 +167,22 @@ describe('legendas refletem dados reais', () => {
   });
 });
 
-describe('provocação e modos de preferência', () => {
-  it('provocação mantém testids e legenda existentes', () => {
-    const taunt: TauntEvent = {
-      id: 't_1',
-      type: 'tomate',
-      sender: { playerId: 'p1', nickname: 'Ana', avatar: 'raposa' },
-      target: { playerId: 'p2', nickname: 'Bia', avatar: 'lobo' },
-      sentAt: 1_000_000,
-    };
-    present({ kind: 'taunt', id: taunt.id, durationMs: 3200, taunt });
-    render(<TauntOverlay />);
-
-    expect(screen.getByTestId('taunt-effect-tomate').getAttribute('data-taunt-id')).toBe('t_1');
-    expect(screen.getByTestId('taunt-caption-t_1').textContent).toBe('Ana mandou tomate voador em Bia!');
-    expect(screen.getByTestId('taunt-overlay').getAttribute('data-anim')).toBe('full');
-  });
-
+describe('apresentações automáticas e modos de preferência', () => {
   it('overlay espelha o modo efetivo em data-anim', () => {
     const effect = effectFixture('brick-wall', 'blocked');
     present({ kind: 'effect', id: effect.id, durationMs: 2000, effect }, 'reduced');
-    const view = render(<TauntOverlay />);
-    expect(screen.getByTestId('taunt-overlay').getAttribute('data-anim')).toBe('reduced');
+    const view = render(<EffectOverlay />);
+    expect(screen.getByTestId('effect-overlay').getAttribute('data-anim')).toBe('reduced');
 
     present({ kind: 'effect', id: effect.id, durationMs: 1400, effect }, 'off');
-    view.rerender(<TauntOverlay />);
-    expect(screen.getByTestId('taunt-overlay').getAttribute('data-anim')).toBe('off');
+    view.rerender(<EffectOverlay />);
+    expect(screen.getByTestId('effect-overlay').getAttribute('data-anim')).toBe('off');
   });
 
   it('sem apresentação ativa não há overlay', () => {
     present(null);
-    render(<TauntOverlay />);
-    expect(screen.queryByTestId('taunt-overlay')).toBeNull();
+    render(<EffectOverlay />);
+    expect(screen.queryByTestId('effect-overlay')).toBeNull();
   });
+
 });

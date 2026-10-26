@@ -23,6 +23,17 @@ Após salvar os artefatos, registrar o resultado e concluir as verificações, a
 
 Passe somente o status; detalhes, caminhos, credenciais e contexto pertencem ao report/resposta, nunca ao comando. A notificação não concede aceite nem autoriza a próxima tarefa. Entrega do serviço é best-effort: se skill/utilitário estiverem indisponíveis ou a tentativa falhar, preserve o resultado do trabalho e informe a limitação sem afirmar envio confirmado. A [preparação de outro computador](../../../docs/work/setup.md) cobre essa dependência.
 
+## Isolamento do navegador
+
+Para qualquer teste ou inspeção de navegador no Tretta, **orquestrador e executor, manual ou subagente, usam uma instância dedicada à própria tarefa**. Use `browser-harness` e aplique esta regra antes da primeira conexão: o fluxo local padrão da skill descobre o Chrome já aberto, portanto não atende ao isolamento exigido aqui.
+
+1. Inicie um processo Chrome/Chromium próprio, com diretório temporário novo de dados (`--user-data-dir`) e endpoint de depuração exclusivo em loopback. Registre o PID, o diretório e o endpoint que pertencem à tarefa. Outra aba, janela, modo anônimo ou contexto no navegador pessoal não substitui esse processo/perfil dedicado. Não copie cookies, sessões, extensões ou storage do perfil pessoal.
+2. Use um **`BU_NAME` novo e exclusivo por tarefa/executor** e configure explicitamente **um** dos destinos `BU_CDP_URL` ou `BU_CDP_WS` da instância criada, desde a primeira chamada e em todas as chamadas do harness. Remova valores conflitantes herdados; `BU_CDP_WS` tem precedência sobre `BU_CDP_URL`. Um daemon já existente pode manter a conexão anterior mesmo com novas variáveis: não use `default`, não reutilize nome de outra tarefa e não reinicie o daemon do usuário para tomar seu lugar.
+3. Antes de navegar, alterar viewport ou enviar input, confira que processo, perfil, endpoint e daemon correspondem à instância da tarefa. Se não conseguir comprovar isolamento, suspenda somente a prova de navegador e reporte a limitação, continuando o trabalho independente. Nunca use o navegador pessoal como fallback, nem habilite depuração nele para contornar a falha.
+4. Crie e controle apenas abas/contextos dessa instância. Para vários jogadores, use contextos independentes dentro do navegador dedicado; eles separam identidades de teste, mas não dispensam o isolamento do navegador em relação ao usuário. Executores concorrentes precisam de processos, perfis, endpoints e nomes de daemon distintos. Login necessário deve ocorrer na instância dedicada, com participação do usuário quando exigida; não aproveite sua sessão pessoal.
+5. Ao concluir ou interromper a prova, encerre somente os processos/daemons/abas que criou e descarte o perfil temporário após salvar evidências sanitizadas. Preserve janelas, abas, foco, preferências, sessões e processos preexistentes do usuário e de outros agentes. Não use encerramento global de Chrome ou do harness. Instância remota paga não é solução automática para isolamento; mantenha o custo zero aprovado.
+6. No report, registre como o isolamento foi conferido, identificadores técnicos do processo/perfil/endpoint/daemon, resultado da limpeza e eventuais limitações. Não inclua cookies, tokens, storage bruto ou URLs com credenciais. Teste em instância dedicada continua sendo emulação/navegador, não teste em aparelho físico.
+
 ## Orquestrador
 
 1. Leia as instruções do projeto e o estado relevante dos arquivos. Separe decisões aceitas, propostas e dúvidas. A tarefa está pronta quando tem objetivo delimitado e critérios de aceite verificáveis; esclareça com o usuário as dúvidas que mudam o escopo.
@@ -37,7 +48,7 @@ Passe somente o status; detalhes, caminhos, credenciais e contexto pertencem ao 
 - **Contexto:** decisões aceitas, instruções aplicáveis e arquivos ou referências necessários.
 - **Escopo:** entregáveis, limites e dependências; explicite o que requer uma decisão do orquestrador.
 - **Critérios de aceite:** condições observáveis para cada entregável.
-- **Verificação:** comportamento a conferir e restrições do ambiente; comandos podem ser descobertos no projeto.
+- **Verificação:** comportamento a conferir e restrições do ambiente; para testes/inspeções de browser, exija instância dedicada e evidência conforme “Isolamento do navegador”. Comandos podem ser descobertos no projeto.
 - **Retorno:** report no formato abaixo, com evidências suficientes para validação em outra sessão; explicite o modo manual/subagente e a obrigação ou dispensa de notificação conforme a seção “Notificação de encerramento”.
 
 ## Executor

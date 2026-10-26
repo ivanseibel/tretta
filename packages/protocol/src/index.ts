@@ -17,14 +17,12 @@ import {
   REACTION_TYPES,
   ROOM_CODE_PATTERN,
   ROOM_MODES,
-  TAUNT_TYPES,
   type Avatar,
   type EffectVariant,
   type ParticipantKind,
   type ReactionType,
   type RoomMode,
   type ServerErrorCode,
-  type TauntType,
 } from './shared.js';
 
 export * from './shared.js';
@@ -133,21 +131,10 @@ export const chatHistoryPayloadSchema = z.strictObject({
 });
 
 /**
- * Envio de provocação. O emissor deriva do vínculo da conexão; `sentAt`,
- * identidade do evento e autor não existem no payload e um campo desconhecido
- * recusa a intenção inteira. O alvo precisa ser identidade atual da sala.
- */
-export const tauntSendPayloadSchema = z.strictObject({
-  intentId: intentIdSchema,
-  roomCode: roomCodeSchema,
-  type: z.enum(TAUNT_TYPES),
-  targetId: z.string().min(1).max(64),
-});
-
-/**
- * Envio de reação sem destinatário. O emissor deriva do vínculo da conexão;
- * `sentAt`, identidade do evento e autor não existem no payload, e qualquer
- * campo desconhecido — em especial um destinatário — recusa a intenção.
+ * Envio de reação sem destinatário, com um dos doze tipos aprovados. O emissor
+ * deriva do vínculo da conexão; `sentAt`, identidade do evento e autor não
+ * existem no payload, e qualquer campo desconhecido — em especial um
+ * destinatário — recusa a intenção.
  */
 export const reactionSendPayloadSchema = z.strictObject({
   intentId: intentIdSchema,
@@ -185,7 +172,6 @@ export type EndRoundWithoutWinnerPayload = z.infer<typeof endRoundWithoutWinnerP
 export type RemoveParticipantPayload = z.infer<typeof removeParticipantPayloadSchema>;
 export type ChatSendPayload = z.infer<typeof chatSendPayloadSchema>;
 export type ChatHistoryPayload = z.infer<typeof chatHistoryPayloadSchema>;
-export type TauntSendPayload = z.infer<typeof tauntSendPayloadSchema>;
 export type ReactionSendPayload = z.infer<typeof reactionSendPayloadSchema>;
 export type SetNextDeckPayload = z.infer<typeof setNextDeckPayloadSchema>;
 export type SetEffectVariantPayload = z.infer<typeof setEffectVariantPayloadSchema>;
@@ -279,13 +265,11 @@ export interface SelfSnapshot {
   readonly waiting: boolean;
   readonly view: PlayerView | null;
   /**
-   * Instante (epoch ms do servidor) em que nova provocação desta identidade
-   * volta a ser aceita; null quando não há janela ativa. Calculado no momento
-   * do envio do estado: após recuperar a mesma identidade, o cliente recalcula
-   * o restante a partir de `serverTime`, sem confiar no relógio do navegador.
+   * Instante (epoch ms do servidor) em que nova reação desta identidade volta
+   * a ser aceita; null quando não há janela ativa. Calculado no momento do
+   * envio do estado: após recuperar a mesma identidade, o cliente recalcula o
+   * restante a partir de `serverTime`, sem confiar no relógio do navegador.
    */
-  readonly tauntNextSendAt: number | null;
-  /** Igual a `tauntNextSendAt`, para o intervalo próprio das reações. */
   readonly reactionNextSendAt: number | null;
 }
 
@@ -325,43 +309,24 @@ export interface ChatHistoryAck {
 }
 
 /**
- * Identidade pública de humor (provocação ou reação), congelada no aceite como
- * no chat: distingue pessoas com o mesmo apelido pelo `playerId`.
+ * Identidade pública de humor (reação), congelada no aceite como no chat:
+ * distingue pessoas com o mesmo apelido pelo `playerId`.
  */
-export interface TauntActor {
+export interface ReactionActor {
   readonly playerId: string;
   readonly nickname: string;
   readonly avatar: Avatar;
 }
 
 /**
- * Provocação aceita pelo servidor. `id` e `sentAt` são autoritativos; tipo,
- * emissor e alvo são os mesmos para todos. Evento transitório: não há
- * histórico paginado nem reprodução ao reconectar.
- */
-export interface TauntEvent {
-  readonly id: string;
-  readonly type: TauntType;
-  readonly sender: TauntActor;
-  readonly target: TauntActor;
-  /** Epoch ms do servidor. */
-  readonly sentAt: number;
-}
-
-export interface TauntBroadcast {
-  readonly roomCode: string;
-  readonly taunt: TauntEvent;
-}
-
-/**
- * Reação aceita pelo servidor, sem destinatário. `id` e `sentAt` são
- * autoritativos; tipo e emissor são os mesmos para todos. Transitória como a
- * provocação: sem histórico e sem reprodução ao reconectar.
+ * Reação aceita pelo servidor, sem destinatário, com um dos doze tipos. `id` e
+ * `sentAt` são autoritativos; tipo e emissor são os mesmos para todos.
+ * Transitória: sem histórico e sem reprodução ao reconectar.
  */
 export interface ReactionEvent {
   readonly id: string;
   readonly type: ReactionType;
-  readonly sender: TauntActor;
+  readonly sender: ReactionActor;
   /** Epoch ms do servidor. */
   readonly sentAt: number;
 }
@@ -387,22 +352,13 @@ export interface SendLimitInfo {
 }
 
 /**
- * Espera estruturada de uma recusa por limite. `scope` distingue o intervalo
- * do próprio emissor da cota compartilhada de um alvo; `targetId` só existe no
- * escopo `target` e evita aplicar a cota do alvo anterior ao próximo
- * destinatário. `retryAt` é epoch ms do servidor: o restante é
- * `retryAt - serverTime`.
+ * Espera estruturada de uma recusa por limite do próprio emissor. `retryAt` é
+ * epoch ms do servidor: o restante é `retryAt - serverTime`.
  */
 export interface RetryInfo {
   readonly serverTime: number;
   readonly retryAt: number;
-  readonly scope: 'sender' | 'target';
-  readonly targetId?: string;
-}
-
-export interface TauntSendAck {
-  readonly taunt: TauntEvent;
-  readonly limits: SendLimitInfo;
+  readonly scope: 'sender';
 }
 
 export interface ReactionSendAck {
@@ -531,7 +487,6 @@ export interface ClientToServerEvents {
   'client:removeParticipant': (payload: unknown, ack: (response: SimpleAck) => void) => void;
   'client:chatSend': (payload: unknown, ack: (response: Ack<ChatSendAck>) => void) => void;
   'client:chatHistory': (payload: unknown, ack: (response: Ack<ChatHistoryAck>) => void) => void;
-  'client:tauntSend': (payload: unknown, ack: (response: Ack<TauntSendAck>) => void) => void;
   'client:reactionSend': (payload: unknown, ack: (response: Ack<ReactionSendAck>) => void) => void;
   'test:setNextDeck': (payload: unknown, ack: (response: SimpleAck) => void) => void;
   'test:setEffectVariant': (payload: unknown, ack: (response: SimpleAck) => void) => void;
@@ -541,7 +496,6 @@ export interface ServerToClientEvents {
   'server:state': (message: StateMessage) => void;
   'server:events': (message: EventsMessage) => void;
   'server:chat': (message: ChatBroadcast) => void;
-  'server:taunt': (message: TauntBroadcast) => void;
   'server:reaction': (message: ReactionBroadcast) => void;
   'server:removed': (message: RemovedMessage) => void;
 }

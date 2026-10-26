@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { devices } from '@playwright/test';
 import { expect, test } from './fixtures';
-import { createRoom, joinRoom, readyAll } from './room';
+import { closeDrawer, createRoom, endRoundViaDrawer, joinRoom, leaveViaDrawer, openDrawer, readyAll } from './room';
 
 const shotsDir = fileURLToPath(new URL('../../../docs/work/reports/assets/T004/', import.meta.url));
 mkdirSync(shotsDir, { recursive: true });
@@ -22,21 +22,22 @@ test('saída voluntária ativa o substituto e a saída do anfitrião transfere o
   await readyAll(pageA, pageB, pageC);
 
   // Bia sai voluntariamente: o substituto assume a vaga sem pausa e a página volta ao início.
-  await expect(pageB.getByTestId('leave-button')).toBeVisible();
-  await pageB.getByTestId('leave-button').click();
+  await leaveViaDrawer(pageB);
   await expect(pageB).toHaveURL('/');
   await expect(pageA.getByTestId('seat-Bia').getByText('substituto')).toBeVisible();
   await expect(pageA.getByTestId('pause-panel')).toHaveCount(0);
   await pageA.screenshot({ path: join(shotsDir, 'desktop-saida-substituto.png') });
 
   // Ana (anfitriã) sai: o papel passa para quem está conectado há mais tempo — Cai.
-  await pageA.getByTestId('leave-button').click();
+  await leaveViaDrawer(pageA);
   await expect(pageA).toHaveURL('/');
-  await expect(pageC.getByTestId('end-round-button').first()).toBeVisible();
   await expect(pageC.getByTestId('seat-Ana').getByText('substituto')).toBeVisible();
+  await openDrawer(pageC, 'sala');
+  await expect(pageC.getByTestId('drawer-end-round')).toBeVisible();
+  await closeDrawer(pageC);
 
   // Cai encerra a rodada sem vencedor: substituídos desconectados são retirados.
-  await pageC.getByTestId('end-round-button').first().click();
+  await endRoundViaDrawer(pageC);
   await expect(pageC.getByTestId('results-winner')).toContainText('sem vencedor');
   await expect(pageC.getByTestId('score-Cai')).toBeVisible();
   await expect(pageC.getByTestId('score-Bia')).toHaveCount(0);

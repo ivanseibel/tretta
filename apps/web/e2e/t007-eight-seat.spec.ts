@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { devices, type Page } from '@playwright/test';
 import { expect, test } from './fixtures';
 import { eightSeatValidationDeck } from './deck';
-import { createRoom, handIds, joinRoom, openTauntPanel, readyAll, setNextDeck } from './room';
+import { closeDrawer, createRoom, handIds, joinRoom, openDrawer, readyAll, setNextDeck } from './room';
 
 const shotsDir = fileURLToPath(new URL('../../../docs/work/reports/assets/T007/', import.meta.url));
 mkdirSync(shotsDir, { recursive: true });
@@ -250,15 +250,16 @@ test('T007: oito clientes entram por convite, jogam e concluem uma rodada', asyn
     expect(new Set(dealtCards).size).toBe(56);
     await expect.poll(async () => (await currentTurnIndices(pages)).length).toBe(1);
 
+    await openDrawer(host, 'conversa');
     await host.getByTestId('chat-input').fill('Mensagem compartilhada da mesa T007.');
     await host.getByTestId('chat-send').click();
-    await Promise.all(pages.map((page) => expect(page.getByTestId('chat-messages')).toContainText('Mensagem compartilhada da mesa T007.')));
-
-    await openTauntPanel(host);
-    await host.getByTestId('taunt-type').selectOption('tomate');
-    await host.getByTestId('taunt-target').selectOption({ label: names[1]! });
-    await host.getByTestId('taunt-send').click();
-    await Promise.all(pages.map((page) => expect(page.getByTestId('taunt-effect-tomate')).toBeVisible({ timeout: 8_000 })));
+    await expect(host.getByTestId('chat-messages')).toContainText('Mensagem compartilhada da mesa T007.');
+    await closeDrawer(host);
+    for (const page of pages.slice(1)) {
+      await openDrawer(page, 'conversa');
+      await expect(page.getByTestId('chat-messages')).toContainText('Mensagem compartilhada da mesa T007.');
+      await closeDrawer(page);
+    }
 
     await host.screenshot({ path: join(shotsDir, 'eight-seat-table-mobile.png'), fullPage: true });
     await pages[1]!.screenshot({ path: join(shotsDir, 'eight-seat-table-desktop.png'), fullPage: true });

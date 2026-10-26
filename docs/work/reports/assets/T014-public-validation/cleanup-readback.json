@@ -1,0 +1,17 @@
+{
+  "previousOwnedPids": [
+    69285,
+    69286,
+    69287,
+    70435,
+    74496,
+    70868,
+    73571
+  ],
+  "stillPresent": "",
+  "profilesExist": {
+    "/tmp/t014-chrome-a": false,
+    "/tmp/t014-chrome-b": false,
+    "/tmp/t014-chrome-c": false
+  }
+}

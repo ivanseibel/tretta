@@ -1,0 +1,2370 @@
+[
+  {
+    "state": "home",
+    "label": "Home",
+    "viewport": "412x915",
+    "viewportPx": {
+      "width": 412,
+      "height": 915,
+      "dpr": 1
+    },
+    "mode": "app",
+    "url": "http://localhost:3101/",
+    "screenshot": "screenshots/home-412x915.png",
+    "totals": {
+      "pass": 18,
+      "fail": 0,
+      "review": 0,
+      "skip": 10
+    },
+    "checks": [
+      {
+        "id": "viewport.exact",
+        "label": "Viewport exato 412×915 @1x",
+        "status": "pass",
+        "detail": "medido 412×915 @1x"
+      },
+      {
+        "id": "scroll.no-horizontal",
+        "label": "Sem rolagem horizontal da página",
+        "status": "pass",
+        "detail": "docW 412 / innerW 412"
+      },
+      {
+        "id": "names.short-not-truncated",
+        "label": "Nomes curtos (até 12) sem truncar",
+        "status": "skip",
+        "detail": "sem assentos/nomes neste estado"
+      },
+      {
+        "id": "names.long-ellipsis",
+        "label": "Nomes longos usam reticências quando não cabem",
+        "status": "skip",
+        "detail": "sem nomes longos"
+      },
+      {
+        "id": "names.accessible-full",
+        "label": "Nome completo no nome acessível do assento",
+        "status": "pass",
+        "detail": "todos os nomes completos no aria"
+      },
+      {
+        "id": "fonts.turn",
+        "label": "Piso de fonte turn (20px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.direction",
+        "label": "Piso de fonte direction (18px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.countNum",
+        "label": "Piso de fonte countNum (26px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.countLabel",
+        "label": "Piso de fonte countLabel (14px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.seatName",
+        "label": "Piso de fonte seatName (16px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.cardName",
+        "label": "Piso de fonte cardName (14px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.body",
+        "label": "Piso de fonte body (16px)",
+        "status": "pass",
+        "detail": "medido 16px em 3 elemento(s)",
+        "data": [
+          {
+            "px": 16,
+            "text": "Entrar",
+            "el": "button.tv2-btn.tv2-btn--secundario._4IyTFa_entrarBotao"
+          },
+          {
+            "px": 16,
+            "text": "Treinar sozinho",
+            "el": "button.tv2-btn.tv2-btn--fantasma.tv2-btn--bloco"
+          },
+          {
+            "px": 16,
+            "text": "Criar sala",
+            "el": "button.tv2-btn.tv2-btn--principal.tv2-btn--bloco"
+          }
+        ]
+      },
+      {
+        "id": "fonts.label",
+        "label": "Piso de fonte label (14px)",
+        "status": "pass",
+        "detail": "medido 14px em 1 elemento(s)",
+        "data": [
+          {
+            "px": 14,
+            "text": "Sem login",
+            "el": "span.tv2-chip.tv2-chip--latao"
+          }
+        ]
+      },
+      {
+        "id": "fonts.onTurn",
+        "label": "Piso de fonte onTurn (14px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.minimum-functional",
+        "label": "Nenhum texto funcional abaixo de 14px",
+        "status": "pass",
+        "detail": "22 elemento(s) com texto direto conferido(s)"
+      },
+      {
+        "id": "fonts.loaded",
+        "label": "Fraunces e Atkinson carregadas",
+        "status": "pass",
+        "detail": "status loaded; Atkinson true; Fraunces true"
+      },
+      {
+        "id": "cards.no-hand",
+        "label": "Estado sem mão privada",
+        "status": "pass",
+        "detail": "nenhuma mão visível"
+      },
+      {
+        "id": "targets.min",
+        "label": "Alvos interativos ≥ 44×44px",
+        "status": "pass",
+        "detail": "10 alvo(s) conferido(s)"
+      },
+      {
+        "id": "contrast.text",
+        "label": "Contraste de texto ≥ 4,5:1 (3:1 para texto grande)",
+        "status": "pass",
+        "detail": "22 par(es) conferido(s); 0 revisão(ões) por fundo com imagem",
+        "data": {
+          "failures": [],
+          "reviews": [],
+          "unresolved": []
+        }
+      },
+      {
+        "id": "contrast.ui",
+        "label": "Contraste de limites/foco ≥ 3:1",
+        "status": "pass",
+        "detail": "13 limite(s) conferido(s)",
+        "data": {
+          "failures": [],
+          "unresolved": []
+        }
+      },
+      {
+        "id": "reactions.no-target",
+        "label": "Reação sem alvo/destinatário",
+        "status": "pass",
+        "detail": "nenhum atributo de alvo nos controles de reação"
+      },
+      {
+        "id": "forbidden.taunt-copy",
+        "label": "Nenhuma provocação/resposta na copy renderizada",
+        "status": "pass",
+        "detail": "nenhum termo proibido no texto visível",
+        "data": {
+          "hardMatches": [],
+          "reviewMatches": []
+        }
+      },
+      {
+        "id": "forbidden.taunt-dom",
+        "label": "Nenhum resto de provocação em classes/atributos",
+        "status": "pass",
+        "detail": "nenhum token de provocação no DOM"
+      },
+      {
+        "id": "forbidden.review",
+        "label": "Termos ambíguos para inspeção",
+        "status": "pass",
+        "detail": "nenhum termo ambíguo",
+        "data": {
+          "reviewMatches": []
+        }
+      },
+      {
+        "id": "aria.live",
+        "label": "Região aria-live (opcional neste estado)",
+        "status": "skip",
+        "detail": "sem região aria-live"
+      },
+      {
+        "id": "aria.names",
+        "label": "Todo controle interativo tem nome acessível",
+        "status": "pass",
+        "detail": "todos nomeados"
+      },
+      {
+        "id": "runtime.console",
+        "label": "Sem erros de console/página na captura",
+        "status": "pass",
+        "detail": "nenhum erro"
+      },
+      {
+        "id": "runtime.requests",
+        "label": "Sem requisições de rede falhando",
+        "status": "pass",
+        "detail": "nenhuma requisição falhou"
+      }
+    ],
+    "keyboard": null,
+    "runtime": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "measurement": {
+      "meta": {
+        "url": "http://localhost:3101/",
+        "hash": "",
+        "title": "Tretta",
+        "lang": "pt-BR",
+        "readyState": "complete",
+        "state": "home",
+        "kind": "home",
+        "screenKind": "home",
+        "measuredAt": "2026-10-26T02:41:38.973Z",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+        "warnings": [],
+        "mode": "app",
+        "baseline": "home",
+        "browser": "156.0.8078.4",
+        "scenario": "scenarios/default.mjs"
+      },
+      "viewport": {
+        "width": 412,
+        "height": 915,
+        "dpr": 1,
+        "visualWidth": 412,
+        "visualHeight": 915
+      },
+      "scroll": {
+        "docW": 412,
+        "docH": 915,
+        "bodyW": 412,
+        "bodyH": 915,
+        "innerW": 412,
+        "innerH": 915,
+        "horizontalOverflow": false,
+        "verticalOverflow": false,
+        "scrollingElement": "html",
+        "candidates": []
+      },
+      "screen": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 412,
+          "h": 915,
+          "top": 0,
+          "right": 412,
+          "bottom": 915,
+          "left": 0
+        },
+        "kind": "home"
+      },
+      "table": {
+        "rect": null,
+        "centerRect": null
+      },
+      "hand": {
+        "rect": null,
+        "scrollWidth": null,
+        "clientWidth": null,
+        "overflowX": null
+      },
+      "seats": [],
+      "seatCount": 0,
+      "seatSides": {
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "unknown": 0
+      },
+      "seatOverlaps": [],
+      "seatsOutsideTable": [],
+      "names": [],
+      "cards": [],
+      "cardsMin": null,
+      "cardRows": [],
+      "fonts": {
+        "turn": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "direction": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "countNum": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "countLabel": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "seatName": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "cardName": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "body": {
+          "px": 16,
+          "minPx": 16,
+          "maxPx": 16,
+          "count": 3,
+          "samples": [
+            {
+              "px": 16,
+              "text": "Entrar",
+              "el": "button.tv2-btn.tv2-btn--secundario._4IyTFa_entrarBotao"
+            },
+            {
+              "px": 16,
+              "text": "Treinar sozinho",
+              "el": "button.tv2-btn.tv2-btn--fantasma.tv2-btn--bloco"
+            },
+            {
+              "px": 16,
+              "text": "Criar sala",
+              "el": "button.tv2-btn.tv2-btn--principal.tv2-btn--bloco"
+            }
+          ]
+        },
+        "label": {
+          "px": 14,
+          "minPx": 14,
+          "maxPx": 14,
+          "count": 1,
+          "samples": [
+            {
+              "px": 14,
+              "text": "Sem login",
+              "el": "span.tv2-chip.tv2-chip--latao"
+            }
+          ]
+        },
+        "onTurn": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        }
+      },
+      "textBelowMinimum": [],
+      "textElementsChecked": 22,
+      "targets": {
+        "total": 10,
+        "belowMin": []
+      },
+      "contrast": {
+        "text": {
+          "checked": 22,
+          "failures": [],
+          "reviews": [],
+          "unresolved": [],
+          "pairs": [
+            {
+              "el": "p._4IyTFa_sobretitulo",
+              "text": "Jogo de cartas para família e amigos",
+              "color": "rgb(240, 212, 155)",
+              "background": "rgb(27, 76, 59)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 6.809,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "h1#home-titulo._4IyTFa_titulo",
+              "text": "Tretta",
+              "color": "rgb(247, 237, 216)",
+              "background": "rgb(27, 76, 59)",
+              "fontSize": 53.56,
+              "fontWeight": 700,
+              "ratio": 8.425,
+              "required": 3,
+              "image": false
+            },
+            {
+              "el": "p._4IyTFa_chamada",
+              "text": "A mesa está posta. Sente-se, escolha um apelido e chame quem você gost",
+              "color": "rgb(232, 221, 200)",
+              "background": "rgb(27, 76, 59)",
+              "fontSize": 16,
+              "fontWeight": 400,
+              "ratio": 7.281000000000001,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "p.tv2-panel-sobretitulo",
+              "text": "Convite",
+              "color": "rgb(90, 68, 48)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 8.254,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "h2.tv2-panel-titulo",
+              "text": "Entre na mesa",
+              "color": "rgb(42, 32, 24)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 26,
+              "fontWeight": 600,
+              "ratio": 14.429,
+              "required": 3,
+              "image": false
+            },
+            {
+              "el": "span.tv2-chip.tv2-chip--latao",
+              "text": "Sem login",
+              "color": "rgb(27, 20, 16)",
+              "background": "rgb(215, 171, 99)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 8.573,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "p._4IyTFa_dica",
+              "text": "Sem login, sem instalação. Só a mesa e as pessoas.",
+              "color": "rgb(90, 68, 48)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 16,
+              "fontWeight": 400,
+              "ratio": 8.254,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "label._4IyTFa_rotulo",
+              "text": "Seu apelido",
+              "color": "rgb(90, 68, 48)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 8.254,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "legend._4IyTFa_rotulo",
+              "text": "Seu avatar",
+              "color": "rgb(90, 68, 48)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 8.254,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "span._4IyTFa_avatarNome",
+              "text": "Raposa",
+              "color": "rgb(42, 32, 24)",
+              "background": "rgb(243, 228, 200)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 12.7,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "span._4IyTFa_avatarNome",
+              "text": "Pinguim",
+              "color": "rgb(42, 32, 24)",
+              "background": "rgb(255, 253, 247)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 15.661,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "span._4IyTFa_avatarNome",
+              "text": "Tucano",
+              "color": "rgb(42, 32, 24)",
+              "background": "rgb(255, 253, 247)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 15.661,
+              "required": 4.5,
+              "image": false
+            }
+          ]
+        },
+        "ui": {
+          "checked": 13,
+          "failures": [],
+          "unresolved": []
+        }
+      },
+      "reactions": {
+        "count": 0,
+        "labels": [],
+        "targetAttributes": [],
+        "trayVisible": false,
+        "overlayVisible": false
+      },
+      "aria": {
+        "liveRegions": [],
+        "currentElements": [],
+        "currentSeats": 0,
+        "dialogs": [],
+        "unnamedTargets": [],
+        "tablists": 0,
+        "tabs": 0
+      },
+      "drawer": {
+        "visible": false
+      },
+      "overlays": [],
+      "previewFrames": [
+        {
+          "largura": "ampla",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 412,
+            "h": 915,
+            "top": 0,
+            "right": 412,
+            "bottom": 915,
+            "left": 0
+          },
+          "label": "",
+          "tableshell": false
+        }
+      ],
+      "domTokens": [],
+      "fontsLoaded": {
+        "atkinson": true,
+        "fraunces": true,
+        "status": "loaded"
+      },
+      "bodyText": "Jogo de cartas para família e amigos\n\nTretta\n\nA mesa está posta. Sente-se, escolha um apelido e chame quem você gosta.\n\nVermelho\n7\n●\nAmarelo\n4\n◆\nCoringa\n★\n●\n◆\n▲\n■\n\nConvite\n\nEntre na mesa\nSem login\n\nSem login, sem instalação. Só a mesa e as pessoas.\n\nSeu apelido\nSeu avatar\nRaposa\nPinguim\nTucano\nLobo\nCoruja\nPolvo\nLince\nSapo\nou\nCódigo do convite\nEntrar\nTreinar sozinho\n\nMesa contra três bots. Você pode sair quando quiser.\n\nCriar sala",
+      "counts": {
+        "buttons": 11,
+        "links": 0,
+        "dialogs": 0
+      }
+    }
+  },
+  {
+    "state": "home",
+    "label": "Home",
+    "viewport": "360x640",
+    "viewportPx": {
+      "width": 360,
+      "height": 640,
+      "dpr": 1
+    },
+    "mode": "app",
+    "url": "http://localhost:3101/",
+    "screenshot": "screenshots/home-360x640.png",
+    "totals": {
+      "pass": 18,
+      "fail": 0,
+      "review": 0,
+      "skip": 10
+    },
+    "checks": [
+      {
+        "id": "viewport.exact",
+        "label": "Viewport exato 360×640 @1x",
+        "status": "pass",
+        "detail": "medido 360×640 @1x"
+      },
+      {
+        "id": "scroll.no-horizontal",
+        "label": "Sem rolagem horizontal da página",
+        "status": "pass",
+        "detail": "docW 360 / innerW 360"
+      },
+      {
+        "id": "names.short-not-truncated",
+        "label": "Nomes curtos (até 12) sem truncar",
+        "status": "skip",
+        "detail": "sem assentos/nomes neste estado"
+      },
+      {
+        "id": "names.long-ellipsis",
+        "label": "Nomes longos usam reticências quando não cabem",
+        "status": "skip",
+        "detail": "sem nomes longos"
+      },
+      {
+        "id": "names.accessible-full",
+        "label": "Nome completo no nome acessível do assento",
+        "status": "pass",
+        "detail": "todos os nomes completos no aria"
+      },
+      {
+        "id": "fonts.turn",
+        "label": "Piso de fonte turn (20px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.direction",
+        "label": "Piso de fonte direction (18px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.countNum",
+        "label": "Piso de fonte countNum (26px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.countLabel",
+        "label": "Piso de fonte countLabel (14px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.seatName",
+        "label": "Piso de fonte seatName (16px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.cardName",
+        "label": "Piso de fonte cardName (14px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.body",
+        "label": "Piso de fonte body (16px)",
+        "status": "pass",
+        "detail": "medido 16px em 3 elemento(s)",
+        "data": [
+          {
+            "px": 16,
+            "text": "Entrar",
+            "el": "button.tv2-btn.tv2-btn--secundario._4IyTFa_entrarBotao"
+          },
+          {
+            "px": 16,
+            "text": "Treinar sozinho",
+            "el": "button.tv2-btn.tv2-btn--fantasma.tv2-btn--bloco"
+          },
+          {
+            "px": 16,
+            "text": "Criar sala",
+            "el": "button.tv2-btn.tv2-btn--principal.tv2-btn--bloco"
+          }
+        ]
+      },
+      {
+        "id": "fonts.label",
+        "label": "Piso de fonte label (14px)",
+        "status": "pass",
+        "detail": "medido 14px em 1 elemento(s)",
+        "data": [
+          {
+            "px": 14,
+            "text": "Sem login",
+            "el": "span.tv2-chip.tv2-chip--latao"
+          }
+        ]
+      },
+      {
+        "id": "fonts.onTurn",
+        "label": "Piso de fonte onTurn (14px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.minimum-functional",
+        "label": "Nenhum texto funcional abaixo de 14px",
+        "status": "pass",
+        "detail": "22 elemento(s) com texto direto conferido(s)"
+      },
+      {
+        "id": "fonts.loaded",
+        "label": "Fraunces e Atkinson carregadas",
+        "status": "pass",
+        "detail": "status loaded; Atkinson true; Fraunces true"
+      },
+      {
+        "id": "cards.no-hand",
+        "label": "Estado sem mão privada",
+        "status": "pass",
+        "detail": "nenhuma mão visível"
+      },
+      {
+        "id": "targets.min",
+        "label": "Alvos interativos ≥ 44×44px",
+        "status": "pass",
+        "detail": "10 alvo(s) conferido(s)"
+      },
+      {
+        "id": "contrast.text",
+        "label": "Contraste de texto ≥ 4,5:1 (3:1 para texto grande)",
+        "status": "pass",
+        "detail": "22 par(es) conferido(s); 0 revisão(ões) por fundo com imagem",
+        "data": {
+          "failures": [],
+          "reviews": [],
+          "unresolved": []
+        }
+      },
+      {
+        "id": "contrast.ui",
+        "label": "Contraste de limites/foco ≥ 3:1",
+        "status": "pass",
+        "detail": "13 limite(s) conferido(s)",
+        "data": {
+          "failures": [],
+          "unresolved": []
+        }
+      },
+      {
+        "id": "reactions.no-target",
+        "label": "Reação sem alvo/destinatário",
+        "status": "pass",
+        "detail": "nenhum atributo de alvo nos controles de reação"
+      },
+      {
+        "id": "forbidden.taunt-copy",
+        "label": "Nenhuma provocação/resposta na copy renderizada",
+        "status": "pass",
+        "detail": "nenhum termo proibido no texto visível",
+        "data": {
+          "hardMatches": [],
+          "reviewMatches": []
+        }
+      },
+      {
+        "id": "forbidden.taunt-dom",
+        "label": "Nenhum resto de provocação em classes/atributos",
+        "status": "pass",
+        "detail": "nenhum token de provocação no DOM"
+      },
+      {
+        "id": "forbidden.review",
+        "label": "Termos ambíguos para inspeção",
+        "status": "pass",
+        "detail": "nenhum termo ambíguo",
+        "data": {
+          "reviewMatches": []
+        }
+      },
+      {
+        "id": "aria.live",
+        "label": "Região aria-live (opcional neste estado)",
+        "status": "skip",
+        "detail": "sem região aria-live"
+      },
+      {
+        "id": "aria.names",
+        "label": "Todo controle interativo tem nome acessível",
+        "status": "pass",
+        "detail": "todos nomeados"
+      },
+      {
+        "id": "runtime.console",
+        "label": "Sem erros de console/página na captura",
+        "status": "pass",
+        "detail": "nenhum erro"
+      },
+      {
+        "id": "runtime.requests",
+        "label": "Sem requisições de rede falhando",
+        "status": "pass",
+        "detail": "nenhuma requisição falhou"
+      }
+    ],
+    "keyboard": null,
+    "runtime": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "measurement": {
+      "meta": {
+        "url": "http://localhost:3101/",
+        "hash": "",
+        "title": "Tretta",
+        "lang": "pt-BR",
+        "readyState": "complete",
+        "state": "home",
+        "kind": "home",
+        "screenKind": "home",
+        "measuredAt": "2026-10-26T02:41:39.469Z",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+        "warnings": [],
+        "mode": "app",
+        "baseline": "home",
+        "browser": "156.0.8078.4",
+        "scenario": "scenarios/default.mjs"
+      },
+      "viewport": {
+        "width": 360,
+        "height": 640,
+        "dpr": 1,
+        "visualWidth": 360,
+        "visualHeight": 640
+      },
+      "scroll": {
+        "docW": 360,
+        "docH": 640,
+        "bodyW": 360,
+        "bodyH": 640,
+        "innerW": 360,
+        "innerH": 640,
+        "horizontalOverflow": false,
+        "verticalOverflow": false,
+        "scrollingElement": "html",
+        "candidates": [
+          {
+            "el": "div.tv2-screen-conteudo",
+            "data": [],
+            "scrollHeight": 844,
+            "clientHeight": 567,
+            "scrollWidth": 360,
+            "clientWidth": 360,
+            "overflowX": "auto",
+            "overflowY": "auto",
+            "insideTable": false
+          }
+        ]
+      },
+      "screen": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 360,
+          "h": 640,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "left": 0
+        },
+        "kind": "home"
+      },
+      "table": {
+        "rect": null,
+        "centerRect": null
+      },
+      "hand": {
+        "rect": null,
+        "scrollWidth": null,
+        "clientWidth": null,
+        "overflowX": null
+      },
+      "seats": [],
+      "seatCount": 0,
+      "seatSides": {
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "unknown": 0
+      },
+      "seatOverlaps": [],
+      "seatsOutsideTable": [],
+      "names": [],
+      "cards": [],
+      "cardsMin": null,
+      "cardRows": [],
+      "fonts": {
+        "turn": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "direction": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "countNum": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "countLabel": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "seatName": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "cardName": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "body": {
+          "px": 16,
+          "minPx": 16,
+          "maxPx": 16,
+          "count": 3,
+          "samples": [
+            {
+              "px": 16,
+              "text": "Entrar",
+              "el": "button.tv2-btn.tv2-btn--secundario._4IyTFa_entrarBotao"
+            },
+            {
+              "px": 16,
+              "text": "Treinar sozinho",
+              "el": "button.tv2-btn.tv2-btn--fantasma.tv2-btn--bloco"
+            },
+            {
+              "px": 16,
+              "text": "Criar sala",
+              "el": "button.tv2-btn.tv2-btn--principal.tv2-btn--bloco"
+            }
+          ]
+        },
+        "label": {
+          "px": 14,
+          "minPx": 14,
+          "maxPx": 14,
+          "count": 1,
+          "samples": [
+            {
+              "px": 14,
+              "text": "Sem login",
+              "el": "span.tv2-chip.tv2-chip--latao"
+            }
+          ]
+        },
+        "onTurn": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        }
+      },
+      "textBelowMinimum": [],
+      "textElementsChecked": 22,
+      "targets": {
+        "total": 10,
+        "belowMin": []
+      },
+      "contrast": {
+        "text": {
+          "checked": 22,
+          "failures": [],
+          "reviews": [],
+          "unresolved": [],
+          "pairs": [
+            {
+              "el": "p._4IyTFa_sobretitulo",
+              "text": "Jogo de cartas para família e amigos",
+              "color": "rgb(240, 212, 155)",
+              "background": "rgb(27, 76, 59)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 6.809,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "h1#home-titulo._4IyTFa_titulo",
+              "text": "Tretta",
+              "color": "rgb(247, 237, 216)",
+              "background": "rgb(27, 76, 59)",
+              "fontSize": 46.8,
+              "fontWeight": 700,
+              "ratio": 8.425,
+              "required": 3,
+              "image": false
+            },
+            {
+              "el": "p._4IyTFa_chamada",
+              "text": "A mesa está posta. Sente-se, escolha um apelido e chame quem você gost",
+              "color": "rgb(232, 221, 200)",
+              "background": "rgb(27, 76, 59)",
+              "fontSize": 16,
+              "fontWeight": 400,
+              "ratio": 7.281000000000001,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "p.tv2-panel-sobretitulo",
+              "text": "Convite",
+              "color": "rgb(90, 68, 48)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 8.254,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "h2.tv2-panel-titulo",
+              "text": "Entre na mesa",
+              "color": "rgb(42, 32, 24)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 26,
+              "fontWeight": 600,
+              "ratio": 14.429,
+              "required": 3,
+              "image": false
+            },
+            {
+              "el": "span.tv2-chip.tv2-chip--latao",
+              "text": "Sem login",
+              "color": "rgb(27, 20, 16)",
+              "background": "rgb(215, 171, 99)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 8.573,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "p._4IyTFa_dica",
+              "text": "Sem login, sem instalação. Só a mesa e as pessoas.",
+              "color": "rgb(90, 68, 48)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 16,
+              "fontWeight": 400,
+              "ratio": 8.254,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "label._4IyTFa_rotulo",
+              "text": "Seu apelido",
+              "color": "rgb(90, 68, 48)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 8.254,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "legend._4IyTFa_rotulo",
+              "text": "Seu avatar",
+              "color": "rgb(90, 68, 48)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 8.254,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "span._4IyTFa_avatarNome",
+              "text": "Raposa",
+              "color": "rgb(42, 32, 24)",
+              "background": "rgb(243, 228, 200)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 12.7,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "span._4IyTFa_avatarNome",
+              "text": "Pinguim",
+              "color": "rgb(42, 32, 24)",
+              "background": "rgb(255, 253, 247)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 15.661,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "span._4IyTFa_avatarNome",
+              "text": "Tucano",
+              "color": "rgb(42, 32, 24)",
+              "background": "rgb(255, 253, 247)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 15.661,
+              "required": 4.5,
+              "image": false
+            }
+          ]
+        },
+        "ui": {
+          "checked": 13,
+          "failures": [],
+          "unresolved": []
+        }
+      },
+      "reactions": {
+        "count": 0,
+        "labels": [],
+        "targetAttributes": [],
+        "trayVisible": false,
+        "overlayVisible": false
+      },
+      "aria": {
+        "liveRegions": [],
+        "currentElements": [],
+        "currentSeats": 0,
+        "dialogs": [],
+        "unnamedTargets": [],
+        "tablists": 0,
+        "tabs": 0
+      },
+      "drawer": {
+        "visible": false
+      },
+      "overlays": [],
+      "previewFrames": [
+        {
+          "largura": "ampla",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 360,
+            "h": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "label": "",
+          "tableshell": false
+        }
+      ],
+      "domTokens": [],
+      "fontsLoaded": {
+        "atkinson": true,
+        "fraunces": true,
+        "status": "loaded"
+      },
+      "bodyText": "Jogo de cartas para família e amigos\n\nTretta\n\nA mesa está posta. Sente-se, escolha um apelido e chame quem você gosta.\n\nVermelho\n7\n●\nAmarelo\n4\n◆\nCoringa\n★\n●\n◆\n▲\n■\n\nConvite\n\nEntre na mesa\nSem login\n\nSem login, sem instalação. Só a mesa e as pessoas.\n\nSeu apelido\nSeu avatar\nRaposa\nPinguim\nTucano\nLobo\nCoruja\nPolvo\nLince\nSapo\nou\nCódigo do convite\nEntrar\nTreinar sozinho\n\nMesa contra três bots. Você pode sair quando quiser.\n\nCriar sala",
+      "counts": {
+        "buttons": 11,
+        "links": 0,
+        "dialogs": 0
+      }
+    }
+  },
+  {
+    "state": "home",
+    "label": "Home",
+    "viewport": "1280x800",
+    "viewportPx": {
+      "width": 1280,
+      "height": 800,
+      "dpr": 1
+    },
+    "mode": "app",
+    "url": "http://localhost:3101/",
+    "screenshot": "screenshots/home-1280x800.png",
+    "totals": {
+      "pass": 18,
+      "fail": 0,
+      "review": 0,
+      "skip": 10
+    },
+    "checks": [
+      {
+        "id": "viewport.exact",
+        "label": "Viewport exato 1280×800 @1x",
+        "status": "pass",
+        "detail": "medido 1280×800 @1x"
+      },
+      {
+        "id": "scroll.no-horizontal",
+        "label": "Sem rolagem horizontal da página",
+        "status": "pass",
+        "detail": "docW 1280 / innerW 1280"
+      },
+      {
+        "id": "names.short-not-truncated",
+        "label": "Nomes curtos (até 12) sem truncar",
+        "status": "skip",
+        "detail": "sem assentos/nomes neste estado"
+      },
+      {
+        "id": "names.long-ellipsis",
+        "label": "Nomes longos usam reticências quando não cabem",
+        "status": "skip",
+        "detail": "sem nomes longos"
+      },
+      {
+        "id": "names.accessible-full",
+        "label": "Nome completo no nome acessível do assento",
+        "status": "pass",
+        "detail": "todos os nomes completos no aria"
+      },
+      {
+        "id": "fonts.turn",
+        "label": "Piso de fonte turn (20px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.direction",
+        "label": "Piso de fonte direction (18px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.countNum",
+        "label": "Piso de fonte countNum (26px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.countLabel",
+        "label": "Piso de fonte countLabel (14px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.seatName",
+        "label": "Piso de fonte seatName (16px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.cardName",
+        "label": "Piso de fonte cardName (14px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.body",
+        "label": "Piso de fonte body (16px)",
+        "status": "pass",
+        "detail": "medido 16px em 3 elemento(s)",
+        "data": [
+          {
+            "px": 16,
+            "text": "Entrar",
+            "el": "button.tv2-btn.tv2-btn--secundario._4IyTFa_entrarBotao"
+          },
+          {
+            "px": 16,
+            "text": "Treinar sozinho",
+            "el": "button.tv2-btn.tv2-btn--fantasma.tv2-btn--bloco"
+          },
+          {
+            "px": 16,
+            "text": "Criar sala",
+            "el": "button.tv2-btn.tv2-btn--principal.tv2-btn--bloco"
+          }
+        ]
+      },
+      {
+        "id": "fonts.label",
+        "label": "Piso de fonte label (14px)",
+        "status": "pass",
+        "detail": "medido 14px em 1 elemento(s)",
+        "data": [
+          {
+            "px": 14,
+            "text": "Sem login",
+            "el": "span.tv2-chip.tv2-chip--latao"
+          }
+        ]
+      },
+      {
+        "id": "fonts.onTurn",
+        "label": "Piso de fonte onTurn (14px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.minimum-functional",
+        "label": "Nenhum texto funcional abaixo de 14px",
+        "status": "pass",
+        "detail": "22 elemento(s) com texto direto conferido(s)"
+      },
+      {
+        "id": "fonts.loaded",
+        "label": "Fraunces e Atkinson carregadas",
+        "status": "pass",
+        "detail": "status loaded; Atkinson true; Fraunces true"
+      },
+      {
+        "id": "cards.no-hand",
+        "label": "Estado sem mão privada",
+        "status": "pass",
+        "detail": "nenhuma mão visível"
+      },
+      {
+        "id": "targets.min",
+        "label": "Alvos interativos ≥ 44×44px",
+        "status": "pass",
+        "detail": "10 alvo(s) conferido(s)"
+      },
+      {
+        "id": "contrast.text",
+        "label": "Contraste de texto ≥ 4,5:1 (3:1 para texto grande)",
+        "status": "pass",
+        "detail": "22 par(es) conferido(s); 0 revisão(ões) por fundo com imagem",
+        "data": {
+          "failures": [],
+          "reviews": [],
+          "unresolved": []
+        }
+      },
+      {
+        "id": "contrast.ui",
+        "label": "Contraste de limites/foco ≥ 3:1",
+        "status": "pass",
+        "detail": "13 limite(s) conferido(s)",
+        "data": {
+          "failures": [],
+          "unresolved": []
+        }
+      },
+      {
+        "id": "reactions.no-target",
+        "label": "Reação sem alvo/destinatário",
+        "status": "pass",
+        "detail": "nenhum atributo de alvo nos controles de reação"
+      },
+      {
+        "id": "forbidden.taunt-copy",
+        "label": "Nenhuma provocação/resposta na copy renderizada",
+        "status": "pass",
+        "detail": "nenhum termo proibido no texto visível",
+        "data": {
+          "hardMatches": [],
+          "reviewMatches": []
+        }
+      },
+      {
+        "id": "forbidden.taunt-dom",
+        "label": "Nenhum resto de provocação em classes/atributos",
+        "status": "pass",
+        "detail": "nenhum token de provocação no DOM"
+      },
+      {
+        "id": "forbidden.review",
+        "label": "Termos ambíguos para inspeção",
+        "status": "pass",
+        "detail": "nenhum termo ambíguo",
+        "data": {
+          "reviewMatches": []
+        }
+      },
+      {
+        "id": "aria.live",
+        "label": "Região aria-live (opcional neste estado)",
+        "status": "skip",
+        "detail": "sem região aria-live"
+      },
+      {
+        "id": "aria.names",
+        "label": "Todo controle interativo tem nome acessível",
+        "status": "pass",
+        "detail": "todos nomeados"
+      },
+      {
+        "id": "runtime.console",
+        "label": "Sem erros de console/página na captura",
+        "status": "pass",
+        "detail": "nenhum erro"
+      },
+      {
+        "id": "runtime.requests",
+        "label": "Sem requisições de rede falhando",
+        "status": "pass",
+        "detail": "nenhuma requisição falhou"
+      }
+    ],
+    "keyboard": null,
+    "runtime": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "measurement": {
+      "meta": {
+        "url": "http://localhost:3101/",
+        "hash": "",
+        "title": "Tretta",
+        "lang": "pt-BR",
+        "readyState": "complete",
+        "state": "home",
+        "kind": "home",
+        "screenKind": "home",
+        "measuredAt": "2026-10-26T02:41:39.964Z",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+        "warnings": [],
+        "mode": "app",
+        "baseline": "home",
+        "browser": "156.0.8078.4",
+        "scenario": "scenarios/default.mjs"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 800,
+        "dpr": 1,
+        "visualWidth": 1280,
+        "visualHeight": 800
+      },
+      "scroll": {
+        "docW": 1280,
+        "docH": 800,
+        "bodyW": 1280,
+        "bodyH": 800,
+        "innerW": 1280,
+        "innerH": 800,
+        "horizontalOverflow": false,
+        "verticalOverflow": false,
+        "scrollingElement": "html",
+        "candidates": []
+      },
+      "screen": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 800,
+          "top": 0,
+          "right": 1280,
+          "bottom": 800,
+          "left": 0
+        },
+        "kind": "home"
+      },
+      "table": {
+        "rect": null,
+        "centerRect": null
+      },
+      "hand": {
+        "rect": null,
+        "scrollWidth": null,
+        "clientWidth": null,
+        "overflowX": null
+      },
+      "seats": [],
+      "seatCount": 0,
+      "seatSides": {
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "unknown": 0
+      },
+      "seatOverlaps": [],
+      "seatsOutsideTable": [],
+      "names": [],
+      "cards": [],
+      "cardsMin": null,
+      "cardRows": [],
+      "fonts": {
+        "turn": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "direction": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "countNum": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "countLabel": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "seatName": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "cardName": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "body": {
+          "px": 16,
+          "minPx": 16,
+          "maxPx": 16,
+          "count": 3,
+          "samples": [
+            {
+              "px": 16,
+              "text": "Entrar",
+              "el": "button.tv2-btn.tv2-btn--secundario._4IyTFa_entrarBotao"
+            },
+            {
+              "px": 16,
+              "text": "Treinar sozinho",
+              "el": "button.tv2-btn.tv2-btn--fantasma.tv2-btn--bloco"
+            },
+            {
+              "px": 16,
+              "text": "Criar sala",
+              "el": "button.tv2-btn.tv2-btn--principal.tv2-btn--bloco"
+            }
+          ]
+        },
+        "label": {
+          "px": 14,
+          "minPx": 14,
+          "maxPx": 14,
+          "count": 1,
+          "samples": [
+            {
+              "px": 14,
+              "text": "Sem login",
+              "el": "span.tv2-chip.tv2-chip--latao"
+            }
+          ]
+        },
+        "onTurn": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        }
+      },
+      "textBelowMinimum": [],
+      "textElementsChecked": 22,
+      "targets": {
+        "total": 10,
+        "belowMin": []
+      },
+      "contrast": {
+        "text": {
+          "checked": 22,
+          "failures": [],
+          "reviews": [],
+          "unresolved": [],
+          "pairs": [
+            {
+              "el": "p._4IyTFa_sobretitulo",
+              "text": "Jogo de cartas para família e amigos",
+              "color": "rgb(240, 212, 155)",
+              "background": "rgb(27, 76, 59)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 6.809,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "h1#home-titulo._4IyTFa_titulo",
+              "text": "Tretta",
+              "color": "rgb(247, 237, 216)",
+              "background": "rgb(27, 76, 59)",
+              "fontSize": 72,
+              "fontWeight": 700,
+              "ratio": 8.425,
+              "required": 3,
+              "image": false
+            },
+            {
+              "el": "p._4IyTFa_chamada",
+              "text": "A mesa está posta. Sente-se, escolha um apelido e chame quem você gost",
+              "color": "rgb(232, 221, 200)",
+              "background": "rgb(27, 76, 59)",
+              "fontSize": 18,
+              "fontWeight": 400,
+              "ratio": 7.281000000000001,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "p.tv2-panel-sobretitulo",
+              "text": "Convite",
+              "color": "rgb(90, 68, 48)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 8.254,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "h2.tv2-panel-titulo",
+              "text": "Entre na mesa",
+              "color": "rgb(42, 32, 24)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 26,
+              "fontWeight": 600,
+              "ratio": 14.429,
+              "required": 3,
+              "image": false
+            },
+            {
+              "el": "span.tv2-chip.tv2-chip--latao",
+              "text": "Sem login",
+              "color": "rgb(27, 20, 16)",
+              "background": "rgb(215, 171, 99)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 8.573,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "p._4IyTFa_dica",
+              "text": "Sem login, sem instalação. Só a mesa e as pessoas.",
+              "color": "rgb(90, 68, 48)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 16,
+              "fontWeight": 400,
+              "ratio": 8.254,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "label._4IyTFa_rotulo",
+              "text": "Seu apelido",
+              "color": "rgb(90, 68, 48)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 8.254,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "legend._4IyTFa_rotulo",
+              "text": "Seu avatar",
+              "color": "rgb(90, 68, 48)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 8.254,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "span._4IyTFa_avatarNome",
+              "text": "Raposa",
+              "color": "rgb(42, 32, 24)",
+              "background": "rgb(243, 228, 200)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 12.7,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "span._4IyTFa_avatarNome",
+              "text": "Pinguim",
+              "color": "rgb(42, 32, 24)",
+              "background": "rgb(255, 253, 247)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 15.661,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "span._4IyTFa_avatarNome",
+              "text": "Tucano",
+              "color": "rgb(42, 32, 24)",
+              "background": "rgb(255, 253, 247)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 15.661,
+              "required": 4.5,
+              "image": false
+            }
+          ]
+        },
+        "ui": {
+          "checked": 13,
+          "failures": [],
+          "unresolved": []
+        }
+      },
+      "reactions": {
+        "count": 0,
+        "labels": [],
+        "targetAttributes": [],
+        "trayVisible": false,
+        "overlayVisible": false
+      },
+      "aria": {
+        "liveRegions": [],
+        "currentElements": [],
+        "currentSeats": 0,
+        "dialogs": [],
+        "unnamedTargets": [],
+        "tablists": 0,
+        "tabs": 0
+      },
+      "drawer": {
+        "visible": false
+      },
+      "overlays": [],
+      "previewFrames": [
+        {
+          "largura": "ampla",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 1280,
+            "h": 800,
+            "top": 0,
+            "right": 1280,
+            "bottom": 800,
+            "left": 0
+          },
+          "label": "",
+          "tableshell": false
+        }
+      ],
+      "domTokens": [],
+      "fontsLoaded": {
+        "atkinson": true,
+        "fraunces": true,
+        "status": "loaded"
+      },
+      "bodyText": "Jogo de cartas para família e amigos\n\nTretta\n\nA mesa está posta. Sente-se, escolha um apelido e chame quem você gosta.\n\nVermelho\n7\n●\nAmarelo\n4\n◆\nCoringa\n★\n●\n◆\n▲\n■\n\nConvite\n\nEntre na mesa\nSem login\n\nSem login, sem instalação. Só a mesa e as pessoas.\n\nSeu apelido\nSeu avatar\nRaposa\nPinguim\nTucano\nLobo\nCoruja\nPolvo\nLince\nSapo\nou\nCódigo do convite\nEntrar\nTreinar sozinho\n\nMesa contra três bots. Você pode sair quando quiser.\n\nCriar sala",
+      "counts": {
+        "buttons": 11,
+        "links": 0,
+        "dialogs": 0
+      }
+    }
+  },
+  {
+    "state": "home",
+    "label": "Home",
+    "viewport": "640x800",
+    "viewportPx": {
+      "width": 640,
+      "height": 800,
+      "dpr": 1
+    },
+    "mode": "app",
+    "url": "http://localhost:3101/",
+    "screenshot": "screenshots/home-640x800.png",
+    "totals": {
+      "pass": 18,
+      "fail": 0,
+      "review": 0,
+      "skip": 10
+    },
+    "checks": [
+      {
+        "id": "viewport.exact",
+        "label": "Viewport exato 640×800 @1x",
+        "status": "pass",
+        "detail": "medido 640×800 @1x"
+      },
+      {
+        "id": "scroll.no-horizontal",
+        "label": "Sem rolagem horizontal da página",
+        "status": "pass",
+        "detail": "docW 640 / innerW 640"
+      },
+      {
+        "id": "names.short-not-truncated",
+        "label": "Nomes curtos (até 12) sem truncar",
+        "status": "skip",
+        "detail": "sem assentos/nomes neste estado"
+      },
+      {
+        "id": "names.long-ellipsis",
+        "label": "Nomes longos usam reticências quando não cabem",
+        "status": "skip",
+        "detail": "sem nomes longos"
+      },
+      {
+        "id": "names.accessible-full",
+        "label": "Nome completo no nome acessível do assento",
+        "status": "pass",
+        "detail": "todos os nomes completos no aria"
+      },
+      {
+        "id": "fonts.turn",
+        "label": "Piso de fonte turn (20px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.direction",
+        "label": "Piso de fonte direction (18px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.countNum",
+        "label": "Piso de fonte countNum (26px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.countLabel",
+        "label": "Piso de fonte countLabel (14px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.seatName",
+        "label": "Piso de fonte seatName (16px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.cardName",
+        "label": "Piso de fonte cardName (14px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.body",
+        "label": "Piso de fonte body (16px)",
+        "status": "pass",
+        "detail": "medido 16px em 3 elemento(s)",
+        "data": [
+          {
+            "px": 16,
+            "text": "Entrar",
+            "el": "button.tv2-btn.tv2-btn--secundario._4IyTFa_entrarBotao"
+          },
+          {
+            "px": 16,
+            "text": "Treinar sozinho",
+            "el": "button.tv2-btn.tv2-btn--fantasma.tv2-btn--bloco"
+          },
+          {
+            "px": 16,
+            "text": "Criar sala",
+            "el": "button.tv2-btn.tv2-btn--principal.tv2-btn--bloco"
+          }
+        ]
+      },
+      {
+        "id": "fonts.label",
+        "label": "Piso de fonte label (14px)",
+        "status": "pass",
+        "detail": "medido 14px em 1 elemento(s)",
+        "data": [
+          {
+            "px": 14,
+            "text": "Sem login",
+            "el": "span.tv2-chip.tv2-chip--latao"
+          }
+        ]
+      },
+      {
+        "id": "fonts.onTurn",
+        "label": "Piso de fonte onTurn (14px)",
+        "status": "skip",
+        "detail": "categoria ausente neste estado"
+      },
+      {
+        "id": "fonts.minimum-functional",
+        "label": "Nenhum texto funcional abaixo de 14px",
+        "status": "pass",
+        "detail": "22 elemento(s) com texto direto conferido(s)"
+      },
+      {
+        "id": "fonts.loaded",
+        "label": "Fraunces e Atkinson carregadas",
+        "status": "pass",
+        "detail": "status loaded; Atkinson true; Fraunces true"
+      },
+      {
+        "id": "cards.no-hand",
+        "label": "Estado sem mão privada",
+        "status": "pass",
+        "detail": "nenhuma mão visível"
+      },
+      {
+        "id": "targets.min",
+        "label": "Alvos interativos ≥ 44×44px",
+        "status": "pass",
+        "detail": "10 alvo(s) conferido(s)"
+      },
+      {
+        "id": "contrast.text",
+        "label": "Contraste de texto ≥ 4,5:1 (3:1 para texto grande)",
+        "status": "pass",
+        "detail": "22 par(es) conferido(s); 0 revisão(ões) por fundo com imagem",
+        "data": {
+          "failures": [],
+          "reviews": [],
+          "unresolved": []
+        }
+      },
+      {
+        "id": "contrast.ui",
+        "label": "Contraste de limites/foco ≥ 3:1",
+        "status": "pass",
+        "detail": "13 limite(s) conferido(s)",
+        "data": {
+          "failures": [],
+          "unresolved": []
+        }
+      },
+      {
+        "id": "reactions.no-target",
+        "label": "Reação sem alvo/destinatário",
+        "status": "pass",
+        "detail": "nenhum atributo de alvo nos controles de reação"
+      },
+      {
+        "id": "forbidden.taunt-copy",
+        "label": "Nenhuma provocação/resposta na copy renderizada",
+        "status": "pass",
+        "detail": "nenhum termo proibido no texto visível",
+        "data": {
+          "hardMatches": [],
+          "reviewMatches": []
+        }
+      },
+      {
+        "id": "forbidden.taunt-dom",
+        "label": "Nenhum resto de provocação em classes/atributos",
+        "status": "pass",
+        "detail": "nenhum token de provocação no DOM"
+      },
+      {
+        "id": "forbidden.review",
+        "label": "Termos ambíguos para inspeção",
+        "status": "pass",
+        "detail": "nenhum termo ambíguo",
+        "data": {
+          "reviewMatches": []
+        }
+      },
+      {
+        "id": "aria.live",
+        "label": "Região aria-live (opcional neste estado)",
+        "status": "skip",
+        "detail": "sem região aria-live"
+      },
+      {
+        "id": "aria.names",
+        "label": "Todo controle interativo tem nome acessível",
+        "status": "pass",
+        "detail": "todos nomeados"
+      },
+      {
+        "id": "runtime.console",
+        "label": "Sem erros de console/página na captura",
+        "status": "pass",
+        "detail": "nenhum erro"
+      },
+      {
+        "id": "runtime.requests",
+        "label": "Sem requisições de rede falhando",
+        "status": "pass",
+        "detail": "nenhuma requisição falhou"
+      }
+    ],
+    "keyboard": null,
+    "runtime": {
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    "measurement": {
+      "meta": {
+        "url": "http://localhost:3101/",
+        "hash": "",
+        "title": "Tretta",
+        "lang": "pt-BR",
+        "readyState": "complete",
+        "state": "home",
+        "kind": "home",
+        "screenKind": "home",
+        "measuredAt": "2026-10-26T02:41:40.500Z",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+        "warnings": [],
+        "mode": "app",
+        "baseline": "home",
+        "browser": "156.0.8078.4",
+        "scenario": "scenarios/default.mjs"
+      },
+      "viewport": {
+        "width": 640,
+        "height": 800,
+        "dpr": 1,
+        "visualWidth": 640,
+        "visualHeight": 800
+      },
+      "scroll": {
+        "docW": 640,
+        "docH": 800,
+        "bodyW": 640,
+        "bodyH": 800,
+        "innerW": 640,
+        "innerH": 800,
+        "horizontalOverflow": false,
+        "verticalOverflow": false,
+        "scrollingElement": "html",
+        "candidates": [
+          {
+            "el": "div.tv2-screen-conteudo",
+            "data": [],
+            "scrollHeight": 861,
+            "clientHeight": 727,
+            "scrollWidth": 640,
+            "clientWidth": 640,
+            "overflowX": "auto",
+            "overflowY": "auto",
+            "insideTable": false
+          }
+        ]
+      },
+      "screen": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 640,
+          "h": 800,
+          "top": 0,
+          "right": 640,
+          "bottom": 800,
+          "left": 0
+        },
+        "kind": "home"
+      },
+      "table": {
+        "rect": null,
+        "centerRect": null
+      },
+      "hand": {
+        "rect": null,
+        "scrollWidth": null,
+        "clientWidth": null,
+        "overflowX": null
+      },
+      "seats": [],
+      "seatCount": 0,
+      "seatSides": {
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "unknown": 0
+      },
+      "seatOverlaps": [],
+      "seatsOutsideTable": [],
+      "names": [],
+      "cards": [],
+      "cardsMin": null,
+      "cardRows": [],
+      "fonts": {
+        "turn": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "direction": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "countNum": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "countLabel": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "seatName": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "cardName": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        },
+        "body": {
+          "px": 16,
+          "minPx": 16,
+          "maxPx": 16,
+          "count": 3,
+          "samples": [
+            {
+              "px": 16,
+              "text": "Entrar",
+              "el": "button.tv2-btn.tv2-btn--secundario._4IyTFa_entrarBotao"
+            },
+            {
+              "px": 16,
+              "text": "Treinar sozinho",
+              "el": "button.tv2-btn.tv2-btn--fantasma.tv2-btn--bloco"
+            },
+            {
+              "px": 16,
+              "text": "Criar sala",
+              "el": "button.tv2-btn.tv2-btn--principal.tv2-btn--bloco"
+            }
+          ]
+        },
+        "label": {
+          "px": 14,
+          "minPx": 14,
+          "maxPx": 14,
+          "count": 1,
+          "samples": [
+            {
+              "px": 14,
+              "text": "Sem login",
+              "el": "span.tv2-chip.tv2-chip--latao"
+            }
+          ]
+        },
+        "onTurn": {
+          "px": null,
+          "count": 0,
+          "samples": []
+        }
+      },
+      "textBelowMinimum": [],
+      "textElementsChecked": 22,
+      "targets": {
+        "total": 10,
+        "belowMin": []
+      },
+      "contrast": {
+        "text": {
+          "checked": 22,
+          "failures": [],
+          "reviews": [],
+          "unresolved": [],
+          "pairs": [
+            {
+              "el": "p._4IyTFa_sobretitulo",
+              "text": "Jogo de cartas para família e amigos",
+              "color": "rgb(240, 212, 155)",
+              "background": "rgb(27, 76, 59)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 6.809,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "h1#home-titulo._4IyTFa_titulo",
+              "text": "Tretta",
+              "color": "rgb(247, 237, 216)",
+              "background": "rgb(27, 76, 59)",
+              "fontSize": 57.6,
+              "fontWeight": 700,
+              "ratio": 8.425,
+              "required": 3,
+              "image": false
+            },
+            {
+              "el": "p._4IyTFa_chamada",
+              "text": "A mesa está posta. Sente-se, escolha um apelido e chame quem você gost",
+              "color": "rgb(232, 221, 200)",
+              "background": "rgb(27, 76, 59)",
+              "fontSize": 16,
+              "fontWeight": 400,
+              "ratio": 7.281000000000001,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "p.tv2-panel-sobretitulo",
+              "text": "Convite",
+              "color": "rgb(90, 68, 48)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 8.254,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "h2.tv2-panel-titulo",
+              "text": "Entre na mesa",
+              "color": "rgb(42, 32, 24)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 26,
+              "fontWeight": 600,
+              "ratio": 14.429,
+              "required": 3,
+              "image": false
+            },
+            {
+              "el": "span.tv2-chip.tv2-chip--latao",
+              "text": "Sem login",
+              "color": "rgb(27, 20, 16)",
+              "background": "rgb(215, 171, 99)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 8.573,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "p._4IyTFa_dica",
+              "text": "Sem login, sem instalação. Só a mesa e as pessoas.",
+              "color": "rgb(90, 68, 48)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 16,
+              "fontWeight": 400,
+              "ratio": 8.254,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "label._4IyTFa_rotulo",
+              "text": "Seu apelido",
+              "color": "rgb(90, 68, 48)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 8.254,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "legend._4IyTFa_rotulo",
+              "text": "Seu avatar",
+              "color": "rgb(90, 68, 48)",
+              "background": "rgb(251, 243, 226)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 8.254,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "span._4IyTFa_avatarNome",
+              "text": "Raposa",
+              "color": "rgb(42, 32, 24)",
+              "background": "rgb(243, 228, 200)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 12.7,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "span._4IyTFa_avatarNome",
+              "text": "Pinguim",
+              "color": "rgb(42, 32, 24)",
+              "background": "rgb(255, 253, 247)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 15.661,
+              "required": 4.5,
+              "image": false
+            },
+            {
+              "el": "span._4IyTFa_avatarNome",
+              "text": "Tucano",
+              "color": "rgb(42, 32, 24)",
+              "background": "rgb(255, 253, 247)",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "ratio": 15.661,
+              "required": 4.5,
+              "image": false
+            }
+          ]
+        },
+        "ui": {
+          "checked": 13,
+          "failures": [],
+          "unresolved": []
+        }
+      },
+      "reactions": {
+        "count": 0,
+        "labels": [],
+        "targetAttributes": [],
+        "trayVisible": false,
+        "overlayVisible": false
+      },
+      "aria": {
+        "liveRegions": [],
+        "currentElements": [],
+        "currentSeats": 0,
+        "dialogs": [],
+        "unnamedTargets": [],
+        "tablists": 0,
+        "tabs": 0
+      },
+      "drawer": {
+        "visible": false
+      },
+      "overlays": [],
+      "previewFrames": [
+        {
+          "largura": "ampla",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 640,
+            "h": 800,
+            "top": 0,
+            "right": 640,
+            "bottom": 800,
+            "left": 0
+          },
+          "label": "",
+          "tableshell": false
+        }
+      ],
+      "domTokens": [],
+      "fontsLoaded": {
+        "atkinson": true,
+        "fraunces": true,
+        "status": "loaded"
+      },
+      "bodyText": "Jogo de cartas para família e amigos\n\nTretta\n\nA mesa está posta. Sente-se, escolha um apelido e chame quem você gosta.\n\nVermelho\n7\n●\nAmarelo\n4\n◆\nCoringa\n★\n●\n◆\n▲\n■\n\nConvite\n\nEntre na mesa\nSem login\n\nSem login, sem instalação. Só a mesa e as pessoas.\n\nSeu apelido\nSeu avatar\nRaposa\nPinguim\nTucano\nLobo\nCoruja\nPolvo\nLince\nSapo\nou\nCódigo do convite\nEntrar\nTreinar sozinho\n\nMesa contra três bots. Você pode sair quando quiser.\n\nCriar sala",
+      "counts": {
+        "buttons": 11,
+        "links": 0,
+        "dialogs": 0
+      }
+    }
+  }
+]

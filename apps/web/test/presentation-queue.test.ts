@@ -121,13 +121,13 @@ describe('PresentationQueue', () => {
 
   it('remove por predicado tira pendentes e, se casar com o ativo, avança na hora', () => {
     const harness = manualQueue();
-    harness.queue.enqueue(item('taunt-1', 'taunt'));
+    harness.queue.enqueue(item('old-1', 'old'));
     harness.queue.enqueue(item('fx-1', 'effect'));
-    harness.queue.enqueue(item('taunt-2', 'taunt'));
-    expect(harness.active()?.id).toBe('taunt-1');
+    harness.queue.enqueue(item('old-2', 'old'));
+    expect(harness.active()?.id).toBe('old-1');
 
-    harness.queue.remove((entry) => entry.tag === 'taunt');
-    // `taunt-2` sai da fila; `taunt-1` (ativo) some e `fx-1` é promovido na hora.
+    harness.queue.remove((entry) => entry.tag === 'old');
+    // `old-2` sai da fila; `old-1` (ativo) some e `fx-1` é promovido na hora.
     expect(harness.queue.pendingCount).toBe(0);
     expect(harness.active()?.id).toBe('fx-1');
     harness.fire();

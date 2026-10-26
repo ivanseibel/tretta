@@ -8,7 +8,6 @@ const server = createTrettaServer({
   testHooks: config.testHooks,
   pauseGraceMs: config.pauseGraceMs,
   retentionMs: config.retentionMs,
-  tauntCooldownMs: config.tauntCooldownMs,
   ...(config.seed === null
     ? {}
     : {

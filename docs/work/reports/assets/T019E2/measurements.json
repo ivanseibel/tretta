@@ -1,0 +1,1077 @@
+{
+  "capturedAt": "2026-10-26T03:49:43.773Z",
+  "results": [
+    "preparacao-412x915",
+    "preparacao-360x640",
+    "preparacao-1280x800",
+    "preparacao-gaveta-412x915",
+    "preparacao-reacoes-412x915",
+    "recuperacao-412x915",
+    "recuperacao-360x640",
+    "recuperacao-esgotada-412x915",
+    "espera-412x915",
+    "espera-360x640",
+    "espera-1280x800",
+    "erro-conexao-412x915",
+    "resultado-412x915",
+    "resultado-360x640",
+    "resultado-1280x800",
+    "entrada-412x915",
+    "entrada-360x640",
+    "erro-link-412x915",
+    "erro-link-360x640",
+    "erro-link-1280x800",
+    "erro-sala-412x915",
+    "erro-sala-360x640",
+    "erro-sala-1280x800"
+  ],
+  "measurements": [
+    {
+      "name": "preparacao-412x915",
+      "viewport": {
+        "w": 412,
+        "h": 915
+      },
+      "doc": {
+        "scrollWidth": 412,
+        "scrollHeight": 915,
+        "clientWidth": 412
+      },
+      "body": {
+        "scrollWidth": 412
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "footer": {
+        "x": 0,
+        "y": 743,
+        "w": 412,
+        "h": 122,
+        "bottom": 865
+      },
+      "content": {
+        "scrollHeight": 719,
+        "clientHeight": 544,
+        "overflowY": "auto"
+      },
+      "seats": 2,
+      "hand": 0,
+      "results": 0,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Preparação"
+    },
+    {
+      "name": "preparacao-360x640",
+      "viewport": {
+        "w": 360,
+        "h": 640
+      },
+      "doc": {
+        "scrollWidth": 360,
+        "scrollHeight": 640,
+        "clientWidth": 360
+      },
+      "body": {
+        "scrollWidth": 360
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 640,
+        "bottom": 640
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 640,
+        "bottom": 640
+      },
+      "footer": {
+        "x": 0,
+        "y": 404,
+        "w": 360,
+        "h": 186,
+        "bottom": 590
+      },
+      "content": {
+        "scrollHeight": 763,
+        "clientHeight": 155,
+        "overflowY": "auto"
+      },
+      "seats": 2,
+      "hand": 0,
+      "results": 0,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Preparação"
+    },
+    {
+      "name": "preparacao-1280x800",
+      "viewport": {
+        "w": 1280,
+        "h": 800
+      },
+      "doc": {
+        "scrollWidth": 1280,
+        "scrollHeight": 800,
+        "clientWidth": 1280
+      },
+      "body": {
+        "scrollWidth": 1280
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 800,
+        "bottom": 800
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 800,
+        "bottom": 800
+      },
+      "footer": {
+        "x": 0,
+        "y": 646,
+        "w": 1280,
+        "h": 98,
+        "bottom": 744
+      },
+      "content": {
+        "scrollHeight": 688,
+        "clientHeight": 457,
+        "overflowY": "auto"
+      },
+      "seats": 2,
+      "hand": 0,
+      "results": 0,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Preparação"
+    },
+    {
+      "name": "preparacao-gaveta-412x915",
+      "viewport": {
+        "w": 412,
+        "h": 915
+      },
+      "doc": {
+        "scrollWidth": 412,
+        "scrollHeight": 915,
+        "clientWidth": 412
+      },
+      "body": {
+        "scrollWidth": 412
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "footer": {
+        "x": 0,
+        "y": 743,
+        "w": 412,
+        "h": 122,
+        "bottom": 865
+      },
+      "content": {
+        "scrollHeight": 719,
+        "clientHeight": 544,
+        "overflowY": "auto"
+      },
+      "seats": 2,
+      "hand": 0,
+      "results": 0,
+      "waiting": 0,
+      "smallTargets": [
+        {
+          "label": "http://localhost:3000/sala/7FK2UM",
+          "w": 219,
+          "h": 18
+        },
+        {
+          "label": "",
+          "w": 20,
+          "h": 20
+        },
+        {
+          "label": "",
+          "w": 20,
+          "h": 20
+        },
+        {
+          "label": "",
+          "w": 20,
+          "h": 20
+        },
+        {
+          "label": "",
+          "w": 20,
+          "h": 20
+        },
+        {
+          "label": "",
+          "w": 20,
+          "h": 20
+        },
+        {
+          "label": "",
+          "w": 20,
+          "h": 20
+        }
+      ],
+      "h1": "Preparação"
+    },
+    {
+      "name": "preparacao-reacoes-412x915",
+      "viewport": {
+        "w": 412,
+        "h": 915
+      },
+      "doc": {
+        "scrollWidth": 412,
+        "scrollHeight": 915,
+        "clientWidth": 412
+      },
+      "body": {
+        "scrollWidth": 412
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "footer": {
+        "x": 0,
+        "y": 743,
+        "w": 412,
+        "h": 122,
+        "bottom": 865
+      },
+      "content": {
+        "scrollHeight": 719,
+        "clientHeight": 544,
+        "overflowY": "auto"
+      },
+      "seats": 2,
+      "hand": 0,
+      "results": 0,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Preparação"
+    },
+    {
+      "name": "recuperacao-412x915",
+      "viewport": {
+        "w": 412,
+        "h": 915
+      },
+      "doc": {
+        "scrollWidth": 412,
+        "scrollHeight": 915,
+        "clientWidth": 412
+      },
+      "body": {
+        "scrollWidth": 412
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "footer": null,
+      "content": {
+        "scrollHeight": 867,
+        "clientHeight": 867,
+        "overflowY": "auto"
+      },
+      "seats": 0,
+      "hand": 0,
+      "results": 0,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Retomando sua sessão"
+    },
+    {
+      "name": "recuperacao-360x640",
+      "viewport": {
+        "w": 360,
+        "h": 640
+      },
+      "doc": {
+        "scrollWidth": 360,
+        "scrollHeight": 640,
+        "clientWidth": 360
+      },
+      "body": {
+        "scrollWidth": 360
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 640,
+        "bottom": 640
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 640,
+        "bottom": 640
+      },
+      "footer": null,
+      "content": {
+        "scrollHeight": 594,
+        "clientHeight": 594,
+        "overflowY": "auto"
+      },
+      "seats": 0,
+      "hand": 0,
+      "results": 0,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Retomando sua sessão"
+    },
+    {
+      "name": "recuperacao-esgotada-412x915",
+      "viewport": {
+        "w": 412,
+        "h": 915
+      },
+      "doc": {
+        "scrollWidth": 412,
+        "scrollHeight": 915,
+        "clientWidth": 412
+      },
+      "body": {
+        "scrollWidth": 412
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "footer": null,
+      "content": {
+        "scrollHeight": 867,
+        "clientHeight": 867,
+        "overflowY": "auto"
+      },
+      "seats": 0,
+      "hand": 0,
+      "results": 0,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Sessão não retomada"
+    },
+    {
+      "name": "espera-412x915",
+      "viewport": {
+        "w": 412,
+        "h": 915
+      },
+      "doc": {
+        "scrollWidth": 412,
+        "scrollHeight": 915,
+        "clientWidth": 412
+      },
+      "body": {
+        "scrollWidth": 412
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "footer": {
+        "x": 0,
+        "y": 865,
+        "w": 412,
+        "h": 50,
+        "bottom": 915
+      },
+      "content": null,
+      "seats": 0,
+      "hand": 0,
+      "results": 0,
+      "waiting": 1,
+      "smallTargets": [],
+      "h1": "Vez de Bia"
+    },
+    {
+      "name": "espera-360x640",
+      "viewport": {
+        "w": 360,
+        "h": 640
+      },
+      "doc": {
+        "scrollWidth": 360,
+        "scrollHeight": 640,
+        "clientWidth": 360
+      },
+      "body": {
+        "scrollWidth": 360
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 640,
+        "bottom": 640
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 640,
+        "bottom": 640
+      },
+      "footer": {
+        "x": 0,
+        "y": 594,
+        "w": 360,
+        "h": 46,
+        "bottom": 640
+      },
+      "content": null,
+      "seats": 0,
+      "hand": 0,
+      "results": 0,
+      "waiting": 1,
+      "smallTargets": [],
+      "h1": "Vez de Bia"
+    },
+    {
+      "name": "espera-1280x800",
+      "viewport": {
+        "w": 1280,
+        "h": 800
+      },
+      "doc": {
+        "scrollWidth": 1280,
+        "scrollHeight": 800,
+        "clientWidth": 1280
+      },
+      "body": {
+        "scrollWidth": 1280
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 800,
+        "bottom": 800
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 800,
+        "bottom": 800
+      },
+      "footer": {
+        "x": 0,
+        "y": 744,
+        "w": 1280,
+        "h": 56,
+        "bottom": 800
+      },
+      "content": null,
+      "seats": 0,
+      "hand": 0,
+      "results": 0,
+      "waiting": 1,
+      "smallTargets": [],
+      "h1": "Vez de Bia"
+    },
+    {
+      "name": "erro-conexao-412x915",
+      "viewport": {
+        "w": 412,
+        "h": 915
+      },
+      "doc": {
+        "scrollWidth": 412,
+        "scrollHeight": 915,
+        "clientWidth": 412
+      },
+      "body": {
+        "scrollWidth": 412
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "footer": {
+        "x": 0,
+        "y": 865,
+        "w": 412,
+        "h": 50,
+        "bottom": 915
+      },
+      "content": null,
+      "seats": 0,
+      "hand": 0,
+      "results": 0,
+      "waiting": 1,
+      "smallTargets": [],
+      "h1": "Vez de Bia"
+    },
+    {
+      "name": "resultado-412x915",
+      "viewport": {
+        "w": 412,
+        "h": 915
+      },
+      "doc": {
+        "scrollWidth": 412,
+        "scrollHeight": 915,
+        "clientWidth": 412
+      },
+      "body": {
+        "scrollWidth": 412
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "footer": {
+        "x": 0,
+        "y": 768,
+        "w": 412,
+        "h": 97,
+        "bottom": 865
+      },
+      "content": {
+        "scrollHeight": 595,
+        "clientHeight": 593,
+        "overflowY": "auto"
+      },
+      "seats": 0,
+      "hand": 0,
+      "results": 1,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Resultado"
+    },
+    {
+      "name": "resultado-360x640",
+      "viewport": {
+        "w": 360,
+        "h": 640
+      },
+      "doc": {
+        "scrollWidth": 360,
+        "scrollHeight": 640,
+        "clientWidth": 360
+      },
+      "body": {
+        "scrollWidth": 360
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 640,
+        "bottom": 640
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 640,
+        "bottom": 640
+      },
+      "footer": {
+        "x": 0,
+        "y": 474,
+        "w": 360,
+        "h": 116,
+        "bottom": 590
+      },
+      "content": {
+        "scrollHeight": 622,
+        "clientHeight": 250,
+        "overflowY": "auto"
+      },
+      "seats": 0,
+      "hand": 0,
+      "results": 1,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Resultado"
+    },
+    {
+      "name": "resultado-1280x800",
+      "viewport": {
+        "w": 1280,
+        "h": 800
+      },
+      "doc": {
+        "scrollWidth": 1280,
+        "scrollHeight": 800,
+        "clientWidth": 1280
+      },
+      "body": {
+        "scrollWidth": 1280
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 800,
+        "bottom": 800
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 800,
+        "bottom": 800
+      },
+      "footer": {
+        "x": 0,
+        "y": 647,
+        "w": 1280,
+        "h": 97,
+        "bottom": 744
+      },
+      "content": {
+        "scrollHeight": 634,
+        "clientHeight": 482,
+        "overflowY": "auto"
+      },
+      "seats": 0,
+      "hand": 0,
+      "results": 1,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Resultado"
+    },
+    {
+      "name": "entrada-412x915",
+      "viewport": {
+        "w": 412,
+        "h": 915
+      },
+      "doc": {
+        "scrollWidth": 412,
+        "scrollHeight": 915,
+        "clientWidth": 412
+      },
+      "body": {
+        "scrollWidth": 412
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "footer": {
+        "x": 0,
+        "y": 842,
+        "w": 412,
+        "h": 73,
+        "bottom": 915
+      },
+      "content": {
+        "scrollHeight": 688,
+        "clientHeight": 688,
+        "overflowY": "auto"
+      },
+      "seats": 0,
+      "hand": 0,
+      "results": 0,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Entrar na mesa"
+    },
+    {
+      "name": "entrada-360x640",
+      "viewport": {
+        "w": 360,
+        "h": 640
+      },
+      "doc": {
+        "scrollWidth": 360,
+        "scrollHeight": 640,
+        "clientWidth": 360
+      },
+      "body": {
+        "scrollWidth": 360
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 640,
+        "bottom": 640
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 640,
+        "bottom": 640
+      },
+      "footer": {
+        "x": 0,
+        "y": 567,
+        "w": 360,
+        "h": 73,
+        "bottom": 640
+      },
+      "content": {
+        "scrollHeight": 415,
+        "clientHeight": 415,
+        "overflowY": "auto"
+      },
+      "seats": 0,
+      "hand": 0,
+      "results": 0,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Entrar na mesa"
+    },
+    {
+      "name": "erro-link-412x915",
+      "viewport": {
+        "w": 412,
+        "h": 915
+      },
+      "doc": {
+        "scrollWidth": 412,
+        "scrollHeight": 915,
+        "clientWidth": 412
+      },
+      "body": {
+        "scrollWidth": 412
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "footer": null,
+      "content": {
+        "scrollHeight": 867,
+        "clientHeight": 867,
+        "overflowY": "auto"
+      },
+      "seats": 0,
+      "hand": 0,
+      "results": 0,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Este link não abre uma sala"
+    },
+    {
+      "name": "erro-link-360x640",
+      "viewport": {
+        "w": 360,
+        "h": 640
+      },
+      "doc": {
+        "scrollWidth": 360,
+        "scrollHeight": 640,
+        "clientWidth": 360
+      },
+      "body": {
+        "scrollWidth": 360
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 640,
+        "bottom": 640
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 640,
+        "bottom": 640
+      },
+      "footer": null,
+      "content": {
+        "scrollHeight": 594,
+        "clientHeight": 594,
+        "overflowY": "auto"
+      },
+      "seats": 0,
+      "hand": 0,
+      "results": 0,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Este link não abre uma sala"
+    },
+    {
+      "name": "erro-link-1280x800",
+      "viewport": {
+        "w": 1280,
+        "h": 800
+      },
+      "doc": {
+        "scrollWidth": 1280,
+        "scrollHeight": 800,
+        "clientWidth": 1280
+      },
+      "body": {
+        "scrollWidth": 1280
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 800,
+        "bottom": 800
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 800,
+        "bottom": 800
+      },
+      "footer": null,
+      "content": {
+        "scrollHeight": 752,
+        "clientHeight": 752,
+        "overflowY": "auto"
+      },
+      "seats": 0,
+      "hand": 0,
+      "results": 0,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Este link não abre uma sala"
+    },
+    {
+      "name": "erro-sala-412x915",
+      "viewport": {
+        "w": 412,
+        "h": 915
+      },
+      "doc": {
+        "scrollWidth": 412,
+        "scrollHeight": 915,
+        "clientWidth": 412
+      },
+      "body": {
+        "scrollWidth": 412
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 412,
+        "h": 915,
+        "bottom": 915
+      },
+      "footer": null,
+      "content": {
+        "scrollHeight": 867,
+        "clientHeight": 867,
+        "overflowY": "auto"
+      },
+      "seats": 0,
+      "hand": 0,
+      "results": 0,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Esta sala expirou"
+    },
+    {
+      "name": "erro-sala-360x640",
+      "viewport": {
+        "w": 360,
+        "h": 640
+      },
+      "doc": {
+        "scrollWidth": 360,
+        "scrollHeight": 640,
+        "clientWidth": 360
+      },
+      "body": {
+        "scrollWidth": 360
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 640,
+        "bottom": 640
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 640,
+        "bottom": 640
+      },
+      "footer": null,
+      "content": {
+        "scrollHeight": 594,
+        "clientHeight": 594,
+        "overflowY": "auto"
+      },
+      "seats": 0,
+      "hand": 0,
+      "results": 0,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Esta sala expirou"
+    },
+    {
+      "name": "erro-sala-1280x800",
+      "viewport": {
+        "w": 1280,
+        "h": 800
+      },
+      "doc": {
+        "scrollWidth": 1280,
+        "scrollHeight": 800,
+        "clientWidth": 1280
+      },
+      "body": {
+        "scrollWidth": 1280
+      },
+      "shell": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 800,
+        "bottom": 800
+      },
+      "main": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 800,
+        "bottom": 800
+      },
+      "footer": null,
+      "content": {
+        "scrollHeight": 752,
+        "clientHeight": 752,
+        "overflowY": "auto"
+      },
+      "seats": 0,
+      "hand": 0,
+      "results": 0,
+      "waiting": 0,
+      "smallTargets": [],
+      "h1": "Esta sala expirou"
+    }
+  ]
+}

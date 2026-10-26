@@ -1,0 +1,57 @@
+{
+  "startedAt": "2026-10-18T19:18:49.217Z",
+  "roomCodeMasked": "GK**",
+  "steps": [
+    {
+      "name": "join",
+      "ok": true
+    },
+    {
+      "name": "ready",
+      "ok": true
+    },
+    {
+      "name": "roundStarted",
+      "ok": true,
+      "roundId": "r_68e3e3…"
+    },
+    {
+      "name": "partnerMove",
+      "command": "play"
+    },
+    {
+      "name": "tauntSent",
+      "ok": true,
+      "code": null
+    },
+    {
+      "name": "reactionSent",
+      "ok": true,
+      "code": null
+    },
+    {
+      "name": "chatSent",
+      "ok": true,
+      "code": null
+    },
+    {
+      "name": "receivedCounts",
+      "chats": 1,
+      "taunts": 1,
+      "reactions": 1,
+      "states": 5
+    }
+  ],
+  "errors": [],
+  "tauntDone": true,
+  "reactionDone": true,
+  "chatDone": true,
+  "received": {
+    "chats": 1,
+    "taunts": 1,
+    "reactions": 1,
+    "states": 5
+  },
+  "leave": true,
+  "finishedAt": "2026-10-18T19:20:03.462Z"
+}

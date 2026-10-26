@@ -1,0 +1,14 @@
+{
+  "baseFiles": 1343,
+  "unchanged": 1337,
+  "continuityDocumentsChanged": [
+    "docs/product/provocacoes-e-reacoes.md",
+    "docs/work/deployment-free.md",
+    "docs/work/plan.md",
+    "docs/work/T014-publication.md",
+    "docs/work/status.md",
+    "docs/product/backlog.md"
+  ],
+  "productSourceUnchanged": true,
+  "executorReportAndPreviousEvidenceUnchanged": true
+}

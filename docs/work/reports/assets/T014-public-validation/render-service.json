@@ -1,0 +1,19 @@
+[
+  {
+    "id": "srv-db95f2u7bikc73dpndt0",
+    "name": "tretta-server",
+    "ownerId": "tea-cuhq60rv2p9s738m7us0",
+    "branch": "main",
+    "autoDeploy": "yes",
+    "repo": "https://github.com/ivanseibel/tretta",
+    "numInstances": null,
+    "suspended": "not_suspended",
+    "serviceDetails": {
+      "plan": "free",
+      "numInstances": 1,
+      "url": "https://tretta-server.onrender.com",
+      "runtime": "node",
+      "healthCheckPath": "/healthz"
+    }
+  }
+]

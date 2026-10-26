@@ -1,0 +1,48 @@
+{
+  "regrasFechado": "{\"open\":false,\"altura\":52.7,\"preview\":\"Cor, número ou símbolo; última carta; compras.\",\"previewDisplay\":\"block\",\"chevron\":\"matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0)\",\"summaryTabIndex\":0,\"role\":\"summary nativo\"}",
+  "regrasAberto": "{\"open\":true,\"previewDisplay\":\"none\",\"paragrafos\":2,\"texto\":\"Resumo das regras\\n\\nCombine por cor, número ou símbolo. Bloqueio pula a pessoa seguinte. Inversão troca o sentido. Compra 2 e Compra 4 fazem a pessoa seguinte comprar e perder a vez. Coringa escolhe a cor. Quem fica sem cartas vence a rodada.\\n\\nAntes do descarte que deixa uma carta, avise Última. Quem não avisar pode ser denunciado e compra duas.\"}",
+  "regrasFechadoDeNovo": "{\"open\":false,\"previewDisplay\":\"block\"}",
+  "sair": "{\"ultimo\":true,\"botoesSair\":1,\"altura\":44,\"label\":\"Sair da sala\"}",
+  "sairModal": "{\"modal\":true,\"titulo\":\"Sair da sala?\",\"confirmar\":true}",
+  "chat": "{\"bone\":true,\"tomate\":false,\"proibido\":false,\"mensagens\":[\"Boa noite, gente. A mesa tá posta.\",\"Vó, quantas cartas a senhora tem?\",\"Sete. Igual todo mundo, minha filha.\",\"Essa rodada vai longe.\",\"Alguém viu meu boné?\"]}",
+  "resultado": {
+    "resultado": "{\"topo\":\"Rodada encerrada\",\"sentido\":false,\"placa\":false}",
+    "resultado-convidado": "{\"topo\":\"Rodada encerrada\",\"sentido\":false,\"placa\":false}",
+    "resultado-sem-vencedor": "{\"topo\":\"Rodada encerrada\",\"sentido\":false,\"placa\":false}"
+  },
+  "regressao": {
+    "medicoes": 105,
+    "rotas": 35,
+    "larguras": [
+      360,
+      412,
+      1280
+    ],
+    "sobreposicoes": 0,
+    "alvosMenores": 0,
+    "textoProibido": 0,
+    "secoes": [
+      [
+        "Sala",
+        "Jogadores",
+        "Apresentação",
+        "Anfitrião"
+      ]
+    ],
+    "nomesCurtos": "135/135",
+    "nomesLongosComReticencias": "26/30",
+    "reacoes": 12,
+    "reacoesSemAlvo": 0,
+    "tempos": {
+      "reacao": 4000,
+      "limite": 5000,
+      "fila": 3
+    }
+  },
+  "regrasTeclado": {
+    "abre": "{\"foco\":\"SUMMARY\",\"open\":true,\"preview\":\"none\"}",
+    "fecha": "{\"open\":false,\"preview\":\"block\"}"
+  },
+  "trapSala": "{\"total\":18,\"ultimo\":\"Sair da sala\",\"depois\":\"Fechar gaveta\"}",
+  "escapeSala": "{\"aberta\":false,\"foco\":\"palco\",\"hash\":\"#mesa\"}"
+}

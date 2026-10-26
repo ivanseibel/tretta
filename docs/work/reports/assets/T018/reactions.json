@@ -1,0 +1,15 @@
+{
+  "tempos": {
+    "reacao": 4000,
+    "limite": 5000,
+    "fila": 3
+  },
+  "reacoesTray": "{\"count\":12,\"labels\":[\"Eita!\",\"Que injustiça!\",\"Aí eu gostei!\",\"Não acredito!\",\"Boa jogada!\",\"Que comédia!\",\"Que tédio!\",\"Uau!\",\"Já era!\",\"Suspeito...\",\"Com carinho!\",\"Tá pegando fogo!\"],\"alvos\":0,\"texto\":\"Reagir à jogada\\n\\n😂\\nEita!\\n😭\\nQue injustiça!\\n😈\\nAí eu gostei!\\n🤬\\nNão acredito!\\n👏\\nBoa jogada!\\n🤡\\nQue comédia!\\n🥱\\nQue tédio!\\n😱\\nUau!\\n💀\\nJá era!\\n🤔\\nSuspeito...\\n😘\\nCom carinho!\\n🔥\\nTá pegando fogo!\\n\\nTodos na mesa veem · individual, sem destinatário · some sozinho\"}",
+  "filaAposQuatro": "{\"fila\":[{\"tipo\":\"uau\",\"autor\":\"Você\"},{\"tipo\":\"fogo\",\"autor\":\"Você\"},{\"tipo\":\"tedio\",\"autor\":\"Você\"}],\"atual\":{\"tipo\":\"eita\",\"autor\":\"Você\",\"rotulo\":\"Eita!\"},\"toast\":\"Reação na sequência. Até três aparecem em ordem.\"}",
+  "quintaReacao": "{\"fila\":3,\"toast\":\"A sequência de reações está cheia. A reação não entrou.\"}",
+  "logReacoes": "[{\"tipo\":\"add\",\"t\":763},{\"tipo\":\"remove\",\"t\":5099},{\"tipo\":\"add\",\"t\":5225}]",
+  "limite5s": "{\"atual\":{\"tipo\":\"eita\",\"autor\":\"Você\",\"rotulo\":\"Eita!\"},\"fila\":0,\"toast\":\"Calma: uma reação a cada 5 segundos.\"}",
+  "ocultarAtivado": "{\"prefs\":true,\"pressed\":\"true\"}",
+  "ocultoNaoMostra": "{\"overlay\":false,\"toast\":\"Reação enviada. As apresentações estão ocultas.\"}",
+  "reativadoMostraNova": "{\"overlay\":true,\"atual\":{\"tipo\":\"uau\",\"autor\":\"Você\",\"rotulo\":\"Uau!\"}}"
+}

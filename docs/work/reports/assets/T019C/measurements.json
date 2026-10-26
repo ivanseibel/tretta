@@ -1,0 +1,620 @@
+[
+  {
+    "viewport": {
+      "width": 412,
+      "height": 915
+    },
+    "document": {
+      "scrollWidth": 412,
+      "scrollHeight": 915,
+      "clientHeight": 915
+    },
+    "shell": {
+      "x": 0,
+      "y": 0,
+      "width": 412,
+      "height": 915
+    },
+    "stage": {
+      "x": 0,
+      "y": 60.390625,
+      "width": 412,
+      "height": 470.015625
+    },
+    "seats": [
+      {
+        "name": "Ana",
+        "side": "base",
+        "current": true,
+        "longClass": false,
+        "rect": {
+          "x": 123.6015625,
+          "y": 458.390625,
+          "width": 164.796875,
+          "height": 67.3125
+        },
+        "nameRect": {
+          "x": 150.6015625,
+          "y": 462.390625,
+          "width": 131.796875,
+          "height": 16.3125
+        },
+        "truncated": false
+      },
+      {
+        "name": "Bia",
+        "side": "left",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 12.359375,
+          "y": 414.796875,
+          "width": 103,
+          "height": 62
+        },
+        "nameRect": {
+          "x": 39.359375,
+          "y": 425.640625,
+          "width": 70,
+          "height": 16.3125
+        },
+        "truncated": false
+      },
+      {
+        "name": "Vó Cida",
+        "side": "left",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 12.359375,
+          "y": 264.390625,
+          "width": 103,
+          "height": 62
+        },
+        "nameRect": {
+          "x": 39.359375,
+          "y": 275.234375,
+          "width": 70,
+          "height": 16.3125
+        },
+        "truncated": false
+      },
+      {
+        "name": "Seu Nilton",
+        "side": "left",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 12.359375,
+          "y": 113.515625,
+          "width": 103,
+          "height": 62.9375
+        },
+        "nameRect": {
+          "x": 39.359375,
+          "y": 117.515625,
+          "width": 70,
+          "height": 32.625
+        },
+        "truncated": false
+      },
+      {
+        "name": "Cai",
+        "side": "top",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 123.6015625,
+          "y": 65.078125,
+          "width": 164.796875,
+          "height": 62
+        },
+        "nameRect": {
+          "x": 150.6015625,
+          "y": 75.921875,
+          "width": 131.796875,
+          "height": 16.3125
+        },
+        "truncated": false
+      },
+      {
+        "name": "Duda",
+        "side": "right",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 296.640625,
+          "y": 113.984375,
+          "width": 103,
+          "height": 62
+        },
+        "nameRect": {
+          "x": 323.640625,
+          "y": 124.828125,
+          "width": 70,
+          "height": 16.3125
+        },
+        "truncated": false
+      },
+      {
+        "name": "Nina",
+        "side": "right",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 296.640625,
+          "y": 264.390625,
+          "width": 103,
+          "height": 62
+        },
+        "nameRect": {
+          "x": 323.640625,
+          "y": 275.234375,
+          "width": 70,
+          "height": 16.3125
+        },
+        "truncated": false
+      },
+      {
+        "name": "WWWWWWWWWWWWWWWWWWWWWWWW",
+        "side": "right",
+        "current": false,
+        "longClass": true,
+        "rect": {
+          "x": 296.640625,
+          "y": 414.796875,
+          "width": 103,
+          "height": 62
+        },
+        "nameRect": {
+          "x": 323.640625,
+          "y": 425.640625,
+          "width": 70,
+          "height": 16.3125
+        },
+        "truncated": true
+      }
+    ],
+    "overlaps": [],
+    "centerOverlaps": [],
+    "center": {
+      "x": 131.96875,
+      "y": 225.296875,
+      "width": 148.0625,
+      "height": 140.1875
+    },
+    "hand": {
+      "count": 8,
+      "columns": 4,
+      "rowsByTop": 2,
+      "cardWidth": 89,
+      "cardHeight": 106.796875,
+      "scrolls": false
+    },
+    "fonts": {
+      "turn": 20,
+      "direction": 18,
+      "name": 16,
+      "count": 26,
+      "countLabel": 14,
+      "now": 14,
+      "cardColor": 14,
+      "cardName": 14,
+      "body": 16
+    },
+    "smallTargets": [],
+    "pageScrolls": false
+  },
+  {
+    "viewport": {
+      "width": 360,
+      "height": 640
+    },
+    "document": {
+      "scrollWidth": 360,
+      "scrollHeight": 640,
+      "clientHeight": 640
+    },
+    "shell": {
+      "x": 0,
+      "y": 0,
+      "width": 360,
+      "height": 640
+    },
+    "stage": {
+      "x": 0,
+      "y": 60.390625,
+      "width": 360,
+      "height": 267.609375
+    },
+    "seats": [
+      {
+        "name": "Ana",
+        "side": "base",
+        "current": true,
+        "longClass": false,
+        "rect": {
+          "x": 108,
+          "y": 266,
+          "width": 144,
+          "height": 59.3125
+        },
+        "nameRect": {
+          "x": 132,
+          "y": 269,
+          "width": 115,
+          "height": 15.671875
+        },
+        "truncated": false
+      },
+      {
+        "name": "Bia",
+        "side": "left",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 10.796875,
+          "y": 253.828125,
+          "width": 90,
+          "height": 52
+        },
+        "nameRect": {
+          "x": 34.796875,
+          "y": 261.171875,
+          "width": 61,
+          "height": 15.671875
+        },
+        "truncated": false
+      },
+      {
+        "name": "Vó Cida",
+        "side": "left",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 10.796875,
+          "y": 168.1875,
+          "width": 90,
+          "height": 52
+        },
+        "nameRect": {
+          "x": 34.796875,
+          "y": 175.53125,
+          "width": 61,
+          "height": 15.671875
+        },
+        "truncated": false
+      },
+      {
+        "name": "Seu Nilton",
+        "side": "left",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 10.796875,
+          "y": 79.21875,
+          "width": 90,
+          "height": 58.65625
+        },
+        "nameRect": {
+          "x": 34.796875,
+          "y": 82.21875,
+          "width": 61,
+          "height": 31.34375
+        },
+        "truncated": false
+      },
+      {
+        "name": "Cai",
+        "side": "top",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 108,
+          "y": 63.0625,
+          "width": 144,
+          "height": 52
+        },
+        "nameRect": {
+          "x": 132,
+          "y": 70.40625,
+          "width": 115,
+          "height": 15.671875
+        },
+        "truncated": false
+      },
+      {
+        "name": "Duda",
+        "side": "right",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 259.203125,
+          "y": 82.546875,
+          "width": 90,
+          "height": 52
+        },
+        "nameRect": {
+          "x": 283.203125,
+          "y": 89.890625,
+          "width": 61,
+          "height": 15.671875
+        },
+        "truncated": false
+      },
+      {
+        "name": "Nina",
+        "side": "right",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 259.203125,
+          "y": 168.1875,
+          "width": 90,
+          "height": 52
+        },
+        "nameRect": {
+          "x": 283.203125,
+          "y": 175.53125,
+          "width": 61,
+          "height": 15.671875
+        },
+        "truncated": false
+      },
+      {
+        "name": "WWWWWWWWWWWWWWWWWWWWWWWW",
+        "side": "right",
+        "current": false,
+        "longClass": true,
+        "rect": {
+          "x": 259.203125,
+          "y": 253.828125,
+          "width": 90,
+          "height": 52
+        },
+        "nameRect": {
+          "x": 283.203125,
+          "y": 261.171875,
+          "width": 61,
+          "height": 15.671875
+        },
+        "truncated": true
+      }
+    ],
+    "overlaps": [],
+    "centerOverlaps": [],
+    "center": {
+      "x": 119.5,
+      "y": 136.1875,
+      "width": 121,
+      "height": 116
+    },
+    "hand": {
+      "count": 8,
+      "columns": 4,
+      "rowsByTop": 2,
+      "cardWidth": 74,
+      "cardHeight": 83,
+      "scrolls": false
+    },
+    "fonts": {
+      "turn": 20,
+      "direction": 18,
+      "name": 16,
+      "count": 26,
+      "countLabel": 14,
+      "now": 14,
+      "cardColor": 14,
+      "cardName": 14,
+      "body": 16
+    },
+    "smallTargets": [],
+    "pageScrolls": false
+  },
+  {
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "document": {
+      "scrollWidth": 1280,
+      "scrollHeight": 800,
+      "clientHeight": 800
+    },
+    "shell": {
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 800
+    },
+    "stage": {
+      "x": 0,
+      "y": 60.390625,
+      "width": 1280,
+      "height": 454.21875
+    },
+    "seats": [
+      {
+        "name": "Ana",
+        "side": "base",
+        "current": true,
+        "longClass": false,
+        "rect": {
+          "x": 540,
+          "y": 434.75,
+          "width": 200,
+          "height": 75.3125
+        },
+        "nameRect": {
+          "x": 575,
+          "y": 440.75,
+          "width": 157,
+          "height": 16.3125
+        },
+        "truncated": false
+      },
+      {
+        "name": "Bia",
+        "side": "left",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 38.390625,
+          "y": 401.84375,
+          "width": 160,
+          "height": 62
+        },
+        "nameRect": {
+          "x": 73.390625,
+          "y": 410.6875,
+          "width": 117,
+          "height": 16.3125
+        },
+        "truncated": false
+      },
+      {
+        "name": "Vó Cida",
+        "side": "left",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 38.390625,
+          "y": 256.5,
+          "width": 160,
+          "height": 62
+        },
+        "nameRect": {
+          "x": 73.390625,
+          "y": 265.34375,
+          "width": 117,
+          "height": 16.3125
+        },
+        "truncated": false
+      },
+      {
+        "name": "Seu Nilton",
+        "side": "left",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 38.390625,
+          "y": 111.140625,
+          "width": 160,
+          "height": 62
+        },
+        "nameRect": {
+          "x": 73.390625,
+          "y": 119.984375,
+          "width": 117,
+          "height": 16.3125
+        },
+        "truncated": false
+      },
+      {
+        "name": "Cai",
+        "side": "top",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 540,
+          "y": 64.921875,
+          "width": 200,
+          "height": 62
+        },
+        "nameRect": {
+          "x": 575,
+          "y": 73.765625,
+          "width": 157,
+          "height": 16.3125
+        },
+        "truncated": false
+      },
+      {
+        "name": "Duda",
+        "side": "right",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 1081.609375,
+          "y": 111.140625,
+          "width": 160,
+          "height": 62
+        },
+        "nameRect": {
+          "x": 1116.609375,
+          "y": 119.984375,
+          "width": 117,
+          "height": 16.3125
+        },
+        "truncated": false
+      },
+      {
+        "name": "Nina",
+        "side": "right",
+        "current": false,
+        "longClass": false,
+        "rect": {
+          "x": 1081.609375,
+          "y": 256.5,
+          "width": 160,
+          "height": 62
+        },
+        "nameRect": {
+          "x": 1116.609375,
+          "y": 265.34375,
+          "width": 117,
+          "height": 16.3125
+        },
+        "truncated": false
+      },
+      {
+        "name": "WWWWWWWWWWWWWWWWWWWWWWWW",
+        "side": "right",
+        "current": false,
+        "longClass": true,
+        "rect": {
+          "x": 1081.609375,
+          "y": 401.84375,
+          "width": 160,
+          "height": 62
+        },
+        "nameRect": {
+          "x": 1116.609375,
+          "y": 410.6875,
+          "width": 117,
+          "height": 16.3125
+        },
+        "truncated": true
+      }
+    ],
+    "overlaps": [],
+    "centerOverlaps": [],
+    "center": {
+      "x": 552,
+      "y": 207.34375,
+      "width": 176,
+      "height": 160.3125
+    },
+    "hand": {
+      "count": 8,
+      "columns": 8,
+      "rowsByTop": 1,
+      "cardWidth": 92,
+      "cardHeight": 110.390625,
+      "scrolls": false
+    },
+    "fonts": {
+      "turn": 20,
+      "direction": 18,
+      "name": 16,
+      "count": 26,
+      "countLabel": 14,
+      "now": 14,
+      "cardColor": 14,
+      "cardName": 14,
+      "body": 16
+    },
+    "smallTargets": [],
+    "pageScrolls": false
+  }
+]

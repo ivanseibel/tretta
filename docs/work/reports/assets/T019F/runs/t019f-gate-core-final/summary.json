@@ -1,0 +1,62 @@
+{
+  "schema": "t019f-run/1",
+  "runId": "app-20261026-170251",
+  "mode": "app",
+  "url": "http://localhost:3101",
+  "startedAt": "2026-10-26T17:02:51.390Z",
+  "finishedAt": "2026-10-26T17:09:09.722Z",
+  "durationMs": 378332,
+  "node": "v22.23.1",
+  "browser": "156.0.8078.4",
+  "viewports": [
+    "412x915",
+    "360x640",
+    "1280x800",
+    "640x800"
+  ],
+  "states": [
+    "home",
+    "preparacao",
+    "preparacao-8",
+    "espera",
+    "observador",
+    "mesa-2",
+    "mesa-3",
+    "mesa-4",
+    "mesa-5",
+    "mesa-6",
+    "mesa-7",
+    "mesa-8",
+    "mesa-cheia",
+    "pausa",
+    "ultima",
+    "denuncia",
+    "treino",
+    "bots",
+    "substituto",
+    "resultado",
+    "resultado-sem-vencedor",
+    "erro-conexao",
+    "erro-sala",
+    "erro-link",
+    "reacoes",
+    "sala",
+    "inversao"
+  ],
+  "matrix": {
+    "expectedCells": 108,
+    "completedCells": 108,
+    "failedCells": 0,
+    "skippedCells": 0
+  },
+  "totals": {
+    "pass": 3940,
+    "fail": 0,
+    "review": 4,
+    "skip": 392
+  },
+  "exitCode": 0,
+  "rawExitCode": 0,
+  "error": null,
+  "note": "Este harness não declara aceite. A revisão visual e a decisão são da T019F/orquestrador."
+}

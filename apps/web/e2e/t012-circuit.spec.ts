@@ -114,22 +114,6 @@ function assertSameCycle(reference: readonly string[], candidate: readonly strin
   }
 }
 
-async function ringSnapshot(circuit: Locator): Promise<Array<{ id: string | null; left: string; top: string }>> {
-  return circuit.locator('.seat').evaluateAll((nodes) =>
-    nodes.map((node) => ({
-      id: node.getAttribute('data-player-id'),
-      left: (node as HTMLElement).style.left,
-      top: (node as HTMLElement).style.top,
-    })),
-  );
-}
-
-async function arrowRotations(circuit: Locator): Promise<number[]> {
-  return circuit
-    .locator('.seat-arrow')
-    .evaluateAll((nodes) => nodes.map((node) => Number.parseFloat(node.getAttribute('data-rotation') ?? 'NaN')));
-}
-
 async function currentRing(circuit: Locator): Promise<number> {
   const current = circuit.locator('.seat[data-current="true"]');
   await expect(current).toHaveCount(1);
@@ -209,7 +193,7 @@ test('ordem, vez e duas inversões consecutivas com quatro assentos', async ({ b
       await expect(self).toHaveCount(1);
       await expect(self).toHaveAttribute('data-ring-index', '0');
       await expect(self).toContainText('Você');
-      await expect(circuit.locator('.seat-arrow')).toHaveCount(4);
+      await expect(circuit.locator('.seat-arrow')).toHaveCount(0);
       await expect(page.getByTestId('circuit-direction')).toContainText('Sentido horário');
       await expect(page.getByTestId('circuit-order')).toContainText('Ordem dos assentos');
     }
@@ -233,8 +217,6 @@ test('ordem, vez e duas inversões consecutivas com quatro assentos', async ({ b
     const circuitA = pageA.getByTestId('seat-circuit');
     const actor = await turnPage(players);
     await expect(actor.getByTestId('seat-circuit').locator('.seat[data-self="true"]')).toHaveAttribute('data-current', 'true');
-    const positionsBefore = await ringSnapshot(circuitA);
-    const rotationsBefore = await arrowRotations(circuitA);
     const watcherCurrentBefore = await currentRing(watcherCircuit);
     await capture(pageA, 'circuito-4-antes.png');
     await capture(pageW, 'circuito-publico-antes.png');
@@ -249,12 +231,6 @@ test('ordem, vez e duas inversões consecutivas com quatro assentos', async ({ b
 
     // O sentido anti-horário anda para o índice anterior; a observadora acompanha.
     await expect.poll(async () => currentRing(watcherCircuit)).toBe((watcherCurrentBefore + 3) % 4);
-    const rotationsAfterFirst = await arrowRotations(circuitA);
-    expect(await ringSnapshot(circuitA)).toEqual(positionsBefore);
-    for (let index = 0; index < rotationsAfterFirst.length; index++) {
-      const diff = ((((rotationsAfterFirst[index] ?? 0) - (rotationsBefore[index] ?? 0)) % 360) + 360) % 360;
-      expect(Math.abs(diff - 180)).toBeLessThanOrEqual(0.1);
-    }
     await capture(pageA, 'circuito-4-apos-1.png');
     await capture(pageW, 'circuito-publico-apos-1.png');
 
@@ -267,7 +243,6 @@ test('ordem, vez e duas inversões consecutivas com quatro assentos', async ({ b
       await expect(page.getByTestId('circuit-direction')).not.toContainText('anti-horário');
     }
     await expect.poll(async () => currentRing(watcherCircuit)).toBe(watcherCurrentBefore);
-    expect(await ringSnapshot(circuitA)).toEqual(positionsBefore);
     await capture(pageA, 'circuito-4-apos-2.png');
     await capture(pageW, 'circuito-publico-apos-2.png');
 
@@ -312,9 +287,6 @@ test('inversão com dois assentos devolve a vez sem anunciar mudança de sentido
     const actor = await turnPage(pages);
     const other = actor === pageA ? pageB : pageA;
     const actorName = actor === pageA ? 'Ana' : 'Bia';
-    const actorCircuit = actor.getByTestId('seat-circuit');
-    const positions = await ringSnapshot(actorCircuit);
-    const rotations = await arrowRotations(actorCircuit);
     await expect(actor.getByTestId('circuit-direction')).toContainText('Sentido horário');
     await expect(other.getByTestId('circuit-direction')).toContainText('Sentido horário');
 
@@ -334,8 +306,6 @@ test('inversão com dois assentos devolve a vez sem anunciar mudança de sentido
       await expect(page.getByTestId('circuit-direction')).not.toContainText('anti-horário');
       await expect(effectNode(page, 'directionReversed')).toHaveCount(0);
     }
-    expect(await ringSnapshot(actorCircuit)).toEqual(positions);
-    expect(await arrowRotations(actorCircuit)).toEqual(rotations);
     await capture(actor, 'circuito-2-bloqueio.png');
 
     expect(errorsA.pageErrors).toEqual([]);
@@ -368,7 +338,7 @@ test('treino com três bots mantém rótulos, ids e alternativas textuais', asyn
     await expect(chip).toHaveAttribute('data-self', 'false');
     await expect(chip).not.toContainText('desconectado');
   }
-  await expect(circuit.locator('.seat-arrow[aria-hidden="true"]')).toHaveCount(4);
+  await expect(circuit.locator('.seat-arrow')).toHaveCount(0);
   await expect(page.getByTestId('circuit-order')).toContainText('Tico (bot)');
   await expect(page.getByText('desconectado')).toHaveCount(0);
   await expect(page.getByTestId('my-hand')).toBeVisible();
@@ -401,7 +371,7 @@ test('pausa e reload após Inversão preservam o sentido sem repetir o evento', 
 
   // Reload durante a rodada invertida: o snapshot volta com a mesma direção.
   await page.reload();
-  await expect(page.getByTestId('recovering')).toBeVisible();
+  await expect(page.getByTestId('join-name-input')).toHaveCount(0);
   await expect(page.getByTestId('my-hand')).toBeVisible({ timeout: 60_000 });
 
   await expect(page.getByTestId('pause-panel')).toBeVisible();

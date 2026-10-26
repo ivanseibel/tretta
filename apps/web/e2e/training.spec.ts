@@ -9,7 +9,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Page } from '@playwright/test';
 import { expect, test } from './fixtures';
-import { handIds, setNextDeck } from './room';
+import { closeDrawer, endRoundViaDrawer, handIds, leaveViaDrawer, openDrawer, setNextDeck } from './room';
 import { botWinsDeck, playTrainingRound, startTrainingRound, trainSolo, trainingDeck, trainingWildDeck } from './training';
 
 const shotsDir = fileURLToPath(new URL('../../../docs/work/reports/assets/T011B/', import.meta.url));
@@ -119,7 +119,7 @@ test('entrada, preparação, cor do coringa, vitória da pessoa, nova rodada e s
   await expect(page.getByTestId('my-hand')).toBeVisible();
 
   // Saída deliberada: volta ao início e não dispara recuperação automática.
-  await page.getByTestId('leave-button').click();
+  await leaveViaDrawer(page);
   await expect(page.getByTestId('create-room-button')).toBeVisible();
   const homeUrl = page.url();
   await page.waitForTimeout(4_000);
@@ -142,7 +142,9 @@ test('vitória de bot com apelido coincidente: rótulos e placar desambiguam', a
   await expect(ticoRows).toHaveCount(2);
   await expect(ticoRows.filter({ hasText: 'você' })).toHaveCount(1);
   await expect(ticoRows.filter({ hasText: 'bot' })).toHaveCount(1);
+  await openDrawer(page, 'sala');
   await expect(page.getByTestId('pref-animations-note')).toBeVisible();
+  await closeDrawer(page);
 
   await setNextDeck(page, botWinsDeck());
   await startTrainingRound(page);
@@ -182,8 +184,10 @@ test('retomada no treino: pausa com continuação explícita preserva mão, fase
   expect(before).toHaveLength(8);
 
   // Recarga: identidade, mão e fase pós-compra voltam; a mesa retém e pausa.
+  // A tela "Retomando" é transitória e pode terminar antes do primeiro expect;
+  // o contrato estável é não pedir identidade de novo e devolver a mesma mão.
   await page.reload();
-  await expect(page.getByTestId('recovering')).toBeVisible();
+  await expect(page.getByTestId('join-name-input')).toHaveCount(0);
   await expect(page.getByTestId('my-hand')).toBeVisible({ timeout: 60_000 });
   expect(await handIds(page)).toEqual(before);
   await expect(page.getByTestId('pause-panel')).toBeVisible();
@@ -206,7 +210,7 @@ test('retomada no treino: pausa com continuação explícita preserva mão, fase
 
   // Placar não zero atravessa a retomada.
   await expect(page.getByTestId('turn-indicator')).not.toHaveText('Sua vez');
-  await page.getByTestId('end-round-button').click();
+  await endRoundViaDrawer(page);
   await expect(page.getByTestId('results-winner')).toHaveText('Rodada encerrada sem vencedor.');
   await expect(page.getByTestId('score-Bia')).toContainText('1 rodada(s)');
   for (const name of ['Tico', 'Lila', 'Nino']) {

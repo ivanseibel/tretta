@@ -40,9 +40,6 @@ import type {
   SelfSnapshot,
   SendLimitInfo,
   StateMessage,
-  TauntBroadcast,
-  TauntEvent,
-  TauntType,
 } from '@tretta/protocol';
 import {
   AVATARS,
@@ -54,9 +51,6 @@ import {
   EFFECT_VARIANTS,
   REACTION_SENDER_COOLDOWN_MS,
   ROOM_CAPACITY,
-  TAUNT_SENDER_COOLDOWN_MS,
-  TAUNT_TARGET_MAX_PER_WINDOW,
-  TAUNT_TARGET_WINDOW_MS,
 } from '@tretta/protocol/shared';
 import { decideBotCommand } from './bot.js';
 import { systemClock, type RoomClock, type TimerHandle } from './clock.js';
@@ -69,7 +63,6 @@ import {
   createReactionId,
   createRoomCode,
   createRoundId,
-  createTauntId,
 } from './ids.js';
 
 export const DEFAULT_PAUSE_GRACE_MS = 90_000;
@@ -96,8 +89,6 @@ export interface RoomTransport {
   toRoom: (roomCode: string, message: EventsMessage) => void;
   /** Broadcast do chat na sala; canal separado da versão de jogo. */
   toRoomChat: (roomCode: string, message: ChatBroadcast) => void;
-  /** Broadcast de provocação transitória; mesma sala, sem alterar versão. */
-  toRoomTaunt: (roomCode: string, message: TauntBroadcast) => void;
   /** Broadcast de reação transitória; mesma sala, sem alterar versão. */
   toRoomReaction: (roomCode: string, message: ReactionBroadcast) => void;
   /**
@@ -131,8 +122,6 @@ export interface Participant {
   absentSince: number | null;
   /** Instantes (relógio da sala) dos envios de chat aceitos na janela móvel. */
   readonly chatSentAts: number[];
-  /** Instante da última provocação aceita desta identidade; janela de 15s do emissor. */
-  tauntLastSentAt: number | null;
   /** Instante da última reação aceita desta identidade; janela de 5s do emissor. */
   reactionLastSentAt: number | null;
   readonly intents: Map<string, IntentEntry>;
@@ -197,13 +186,6 @@ export interface Room {
   readonly chatMessages: ChatMessage[];
   /** Próximo `seq` do chat; monotônico por sala. */
   chatNextSeq: number;
-  /**
-   * Janela móvel de provocações aceitas por alvo (playerId → instantes).
-   * Identidades distintas nunca compartilham a cota; entrada limpa na remoção.
-   */
-  readonly tauntTargetAts: Map<string, number[]>;
-  /** Próximo número da provocação; só ordena, não vira histórico. */
-  tauntNextSeq: number;
   /** Próximo número da reação; só ordena, não vira histórico. */
   reactionNextSeq: number;
   /**
@@ -250,8 +232,6 @@ export interface RoomStoreOptions {
   readonly pauseGraceMs?: number;
   readonly retentionMs?: number;
   readonly botDelayMs?: number;
-  /** Recuo do emissor de provocação; só encurta em testes, nunca alonga a regra. */
-  readonly tauntCooldownMs?: number;
   /** Intervalo do emissor de reação; só encurta em testes, nunca alonga a regra. */
   readonly reactionCooldownMs?: number;
   /**
@@ -271,7 +251,6 @@ export class RoomStore {
   private readonly pauseGraceMs: number;
   private readonly retentionMs: number;
   private readonly botDelayMs: number;
-  private readonly tauntCooldownMs: number;
   private readonly reactionCooldownMs: number;
   private readonly effectRandomFactory: () => RandomSource;
 
@@ -284,7 +263,6 @@ export class RoomStore {
     this.pauseGraceMs = options.pauseGraceMs ?? DEFAULT_PAUSE_GRACE_MS;
     this.retentionMs = options.retentionMs ?? DEFAULT_RETENTION_MS;
     this.botDelayMs = options.botDelayMs ?? DEFAULT_BOT_DELAY_MS;
-    this.tauntCooldownMs = options.tauntCooldownMs ?? TAUNT_SENDER_COOLDOWN_MS;
     this.reactionCooldownMs = options.reactionCooldownMs ?? REACTION_SENDER_COOLDOWN_MS;
     this.effectRandomFactory = options.effectRandomFactory ?? ((): RandomSource => Math.random);
   }
@@ -310,7 +288,6 @@ export class RoomStore {
       autoControlled: false,
       absentSince: null,
       chatSentAts: [],
-      tauntLastSentAt: null,
       reactionLastSentAt: null,
       intents: new Map(),
     };
@@ -336,8 +313,6 @@ export class RoomStore {
       ]),
       chatMessages: [],
       chatNextSeq: 1,
-      tauntTargetAts: new Map(),
-      tauntNextSeq: 1,
       reactionNextSeq: 1,
       effectRandom: this.effectRandomFactory(),
       effectNextSeq: 1,
@@ -384,7 +359,6 @@ export class RoomStore {
         autoControlled: false,
         absentSince: null,
         chatSentAts: [],
-        tauntLastSentAt: null,
         reactionLastSentAt: null,
         intents: new Map(),
       };
@@ -467,7 +441,6 @@ export class RoomStore {
       autoControlled: false,
       absentSince: null,
       chatSentAts: [],
-      tauntLastSentAt: null,
       reactionLastSentAt: null,
       intents: new Map(),
     };
@@ -875,85 +848,12 @@ export class RoomStore {
   }
 
   /**
-   * Provocação manual compartilhada. O ator deriva da conexão; o alvo precisa
-   * ser identidade atual da sala (entradas históricas do placar não contam) e
-   * estar disponível: pessoa conectada, bot fixo de treino ou assento sob
-   * substituto — nome/avatar iguais nunca redirecionam a identidade. Janelas:
-   * `tauntCooldownMs` por emissor e 3 por alvo em 60s, somando emissores.
-   * Recusa não consome cota nem altera `version`/motor/bot. O sucesso e as
-   * recusas por limite devolvem referência de tempo estruturada.
-   */
-  sendTaunt(
-    actor: Participant,
-    roomCode: string,
-    type: TauntType,
-    targetId: string,
-  ): RoomResult<{ taunt: TauntEvent; limits: SendLimitInfo }> {
-    const room = this.roomOf(actor);
-    if (room === undefined) return reject('NOT_IN_ROOM', 'Você não está em uma sala.');
-    if (actor.roomCode !== roomCode) {
-      return reject('NOT_IN_ROOM', 'Esta conexão pertence a outra sala. Atualize a tela e tente de novo.');
-    }
-    const target = room.participants.get(targetId);
-    if (target === undefined) {
-      return reject('UNKNOWN_PARTICIPANT', 'Este participante não está mais na sala.');
-    }
-    // Disponibilidade revalidada no envio: pessoa desconectada sem substituto
-    // ativo não recebe; bot fixo e assento substituído continuam elegíveis.
-    if (target.kind === 'human' && !target.connected && !target.autoControlled) {
-      return reject('TAUNT_TARGET_UNAVAILABLE', `${target.nickname} está desconectado(a) agora; a provocação não foi enviada.`);
-    }
-
-    const now = this.clock.now();
-    // Recuo do emissor: espaçamento entre envios aceitos, qualquer tipo ou alvo.
-    if (actor.tauntLastSentAt !== null && now < actor.tauntLastSentAt + this.tauntCooldownMs) {
-      const retryAt = actor.tauntLastSentAt + this.tauntCooldownMs;
-      const retrySeconds = Math.max(1, Math.ceil((retryAt - now) / 1000));
-      return rejectRetry('TAUNT_SENDER_COOLDOWN', `Calma um pouco! Você pode provocar de novo em ${retrySeconds}s.`, {
-        serverTime: now,
-        retryAt,
-        scope: 'sender',
-      });
-    }
-    // Cota do alvo: janela móvel compartilhada por identidade, independente de quem provocou.
-    const targetAts = room.tauntTargetAts.get(targetId) ?? [];
-    const windowStart = now - TAUNT_TARGET_WINDOW_MS;
-    while (targetAts.length > 0 && (targetAts[0] ?? 0) <= windowStart) {
-      targetAts.shift();
-    }
-    if (targetAts.length >= TAUNT_TARGET_MAX_PER_WINDOW) {
-      const oldest = targetAts[0] ?? now;
-      const retryAt = oldest + TAUNT_TARGET_WINDOW_MS;
-      const retrySeconds = Math.max(1, Math.ceil((retryAt - now) / 1000));
-      return rejectRetry('TAUNT_TARGET_LIMIT', `${target.nickname} já levou provocação demais. Tente de novo em ${retrySeconds}s.`, {
-        serverTime: now,
-        retryAt,
-        scope: 'target',
-        targetId,
-      });
-    }
-    // Aceite: só agora as janelas consomem; a provocação é transitória, sem histórico.
-    actor.tauntLastSentAt = now;
-    targetAts.push(now);
-    room.tauntTargetAts.set(targetId, targetAts);
-    const taunt: TauntEvent = Object.freeze({
-      id: createTauntId(),
-      type,
-      sender: Object.freeze({ playerId: actor.id, nickname: actor.nickname, avatar: actor.avatar }),
-      target: Object.freeze({ playerId: target.id, nickname: target.nickname, avatar: target.avatar }),
-      sentAt: now,
-    });
-    room.tauntNextSeq += 1;
-    this.transport.toRoomTaunt(room.code, { roomCode: room.code, taunt });
-    return { ok: true, taunt, limits: { serverTime: now, nextSendAt: now + this.tauntCooldownMs } };
-  }
-
-  /**
-   * Reação sem destinatário. O ator deriva do vínculo da conexão e a sala do
-   * payload; bot nenhum envia, pois não tem conexão. Cada reação aceita vai a
-   * todos os participantes conectados da sala (incluindo quem aguarda) e vale
-   * só para o instante: sem histórico, sem replays e sem tocar
-   * `version`/motor/bot. O intervalo próprio é independente do de provocação.
+   * Reação sem destinatário, com um dos doze tipos aprovados. O ator deriva do
+   * vínculo da conexão e a sala do payload; bot nenhum envia, pois não tem
+   * conexão. Cada reação aceita vai a todos os participantes conectados da
+   * sala (incluindo quem aguarda) e vale só para o instante: sem histórico,
+   * sem replays, sem alvo, sem áudio e sem tocar `version`/motor/bot. O
+   * intervalo próprio de 5s é por emissor.
    */
   sendReaction(actor: Participant, roomCode: string, type: ReactionType): RoomResult<{ reaction: ReactionEvent; limits: SendLimitInfo }> {
     const room = this.roomOf(actor);
@@ -1103,8 +1003,6 @@ export class RoomStore {
     const participant = room.participants.get(participantId);
     if (participant === undefined) return;
     room.participants.delete(participantId);
-    // Alvo removido deixa de ser elegível e a janela morre com a identidade.
-    room.tauntTargetAts.delete(participantId);
     const index = room.order.indexOf(participantId);
     if (index >= 0) room.order.splice(index, 1);
     this.participantsById.delete(participantId);
@@ -1338,7 +1236,6 @@ export class RoomStore {
       room: snapshotOf(room, now, this.pauseGraceMs),
       self: selfSnapshotOf(room, participant, {
         now,
-        tauntCooldownMs: this.tauntCooldownMs,
         reactionCooldownMs: this.reactionCooldownMs,
       }),
       table: publicTableOf(room),
@@ -1400,7 +1297,7 @@ export function snapshotOf(room: Room, now: number, pauseGraceMs: number): RoomS
 export function selfSnapshotOf(
   room: Room,
   participant: Participant,
-  limits: { now: number; tauntCooldownMs: number; reactionCooldownMs: number },
+  limits: { now: number; reactionCooldownMs: number },
 ): SelfSnapshot {
   const inRound = room.round !== null && room.round.seatIds.includes(participant.id);
   const roundActive = room.status === 'playing' || room.status === 'paused';
@@ -1412,7 +1309,6 @@ export function selfSnapshotOf(
     inRound,
     waiting: roundActive && room.round !== null && !inRound,
     view: inRound && room.round !== null ? projectForPlayer(room.round.state, participant.id) : null,
-    tauntNextSendAt: nextSendAtOf(participant.tauntLastSentAt, limits.tauntCooldownMs, limits.now),
     reactionNextSendAt: nextSendAtOf(participant.reactionLastSentAt, limits.reactionCooldownMs, limits.now),
   };
 }

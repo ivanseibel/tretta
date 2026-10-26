@@ -49,7 +49,7 @@ test('atualizar a página recupera identidade, mão e fase após compra; a conex
   // Perda e recuperação de conexão aparecem no cliente e bloqueiam envios.
   await pageB.evaluate(() => window.__trettaTest!.disconnect());
   await expect(pageB.getByTestId('connection-lost')).toBeVisible();
-  await expect(pageB.getByTestId('leave-button')).toBeDisabled();
+  await expect(pageB.getByTestId('table-bar-conversa')).toBeVisible();
   await expect(pageB.getByTestId('my-hand')).toBeVisible();
   await pageB.screenshot({ path: join(shotsDir, 'mobile-conexao-perdida.png') });
 

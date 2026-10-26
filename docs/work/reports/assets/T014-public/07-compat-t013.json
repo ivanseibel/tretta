@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-18T19:22:00Z",
+  "backend": {
+    "service": "srv-db95f2u7bikc73dpndt0",
+    "deploy": "dep-dbahinbm8hqs73be533g",
+    "revision": "90aff00645fe42f60ab68fb4ce96e527c081c95c",
+    "trigger": "new_commit (auto-deploy, sem deploy manual duplicado)",
+    "plan": "free",
+    "instances": 1,
+    "suspended": "not_suspended",
+    "node": "22.23.1",
+    "install": "pnpm 11.14.0 --frozen-lockfile (Already up to date, 432ms)",
+    "build": "packages/rules, packages/protocol, apps/server tsc build: Done",
+    "healthz": "HTTP 200 {\"ok\":true}",
+    "env": {
+      "TRE_TTA_TEST_HOOKS": "0",
+      "TRE_TTA_WEB_ORIGIN": "https://tretta.vercel.app",
+      "TRE_TTA_SEED": "absent",
+      "NODE_VERSION": "22.23.1"
+    }
+  },
+  "oldClient": {
+    "url": "https://tretta.vercel.app",
+    "deployment": "dpl_DARamMVYaXEgnZ2KvioZsMGRnf6k (T013)"
+  },
+  "humanRoom": {
+    "roomCodeMasked": "GK**",
+    "identities": ["Vera Prova (navegador, cliente antigo T013)", "Tino Prova (cliente próprio de protocolo)"],
+    "flow": [
+      "createRoom pelo cliente antigo: ack ok, lobby renderizado",
+      "joinRoom pelo cliente próprio: ack ok, lista com 2 participantes",
+      "preparação: ambos prontos; anfitriã (cliente antigo) iniciou a rodada",
+      "jogada legal pelo cliente próprio: comando play aceito (roundId r_68e3e3…)",
+      "jogada legal pelo cliente antigo: seleção por teclado (Enter, aria-pressed) + botão da jogada; mão 7→6, sem alertas",
+      "chat: mensagem do parceiro exibida no cliente antigo; mensagem do cliente antigo exibida no histórico",
+      "provocação enviada pelo cliente antigo ao substituto: caption \"Vera Prova mandou tomate voador em Tino Prova!\" capturada, sem erros",
+      "provocação recebida do parceiro: ack ok no parceiro; cliente antigo sem erros de página",
+      "reação recebida do parceiro (server:reaction): cliente antigo sem erros de página"
+    ],
+    "pageErrors": [],
+    "consoleCollector": "window.__errs (error + unhandledrejection) permaneceu vazio em toda a sessão",
+    "notes": [
+      "O aviso de resposta (Q7) é UI nova de T014B e não existe no cliente antigo; a tolerância verificada é a ausência de erro ao receber estado/eventos aditivos.",
+      "Cliques por coordenada exigem elemento no viewport; a jogada foi concluída com foco + Enter e botão, sem injeção de estado."
+    ]
+  },
+  "protocolRoom": {
+    "evidence": "06-protocol-verification.json",
+    "roomCodeMasked": "KJ**",
+    "steps": "create/join/ready/start, jogada legal, chat, reactionSend (1 broadcast por cliente, sem duplicação), intervalo de reação recusado, provocação aceita logo após reação (categorias independentes), intervalo de provocação recusado, reação com destinatário recusada (INVALID_PAYLOAD), provocação a ausente recusada (TAUNT_TARGET_UNAVAILABLE), reação aceita após 5s com provocação ainda em intervalo, saída das salas"
+  },
+  "conclusion": "Backend Live saudável e compatível com o frontend T013 ainda público; staged frontend T014 pode ser promovido."
+}

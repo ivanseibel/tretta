@@ -18,8 +18,6 @@ export interface TrettaServerOptions {
   readonly pauseGraceMs?: number;
   readonly retentionMs?: number;
   readonly botDelayMs?: number;
-  /** Recuo do emissor de provocação; padrão 15s, encurtado só em testes. */
-  readonly tauntCooldownMs?: number;
   /** Intervalo do emissor de reação; padrão 5s, encurtado só em testes. */
   readonly reactionCooldownMs?: number;
 }
@@ -50,9 +48,6 @@ export function createTrettaServer(options: TrettaServerOptions = {}): TrettaSer
     toRoomChat: (roomCode, message) => {
       io.to(roomCode).emit('server:chat', message);
     },
-    toRoomTaunt: (roomCode, message) => {
-      io.to(roomCode).emit('server:taunt', message);
-    },
     toRoomReaction: (roomCode, message) => {
       io.to(roomCode).emit('server:reaction', message);
     },
@@ -76,7 +71,6 @@ export function createTrettaServer(options: TrettaServerOptions = {}): TrettaSer
     ...(options.pauseGraceMs === undefined ? {} : { pauseGraceMs: options.pauseGraceMs }),
     ...(options.retentionMs === undefined ? {} : { retentionMs: options.retentionMs }),
     ...(options.botDelayMs === undefined ? {} : { botDelayMs: options.botDelayMs }),
-    ...(options.tauntCooldownMs === undefined ? {} : { tauntCooldownMs: options.tauntCooldownMs }),
     ...(options.reactionCooldownMs === undefined ? {} : { reactionCooldownMs: options.reactionCooldownMs }),
     ...(options.effectRandomFactory === undefined ? {} : { effectRandomFactory: options.effectRandomFactory }),
   });

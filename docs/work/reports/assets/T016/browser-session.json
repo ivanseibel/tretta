@@ -1,0 +1,17 @@
+{
+  "pid": 32761,
+  "profile": "/var/folders/r_/xrvhskhx45l6n66k99kzs61r0000gn/T/tretta-T016-rwa3n3t2",
+  "endpoint": "http://127.0.0.1:19416",
+  "daemon": "tretta-t016-codex-2510",
+  "cleanup": {
+    "namedDaemonStopped": true,
+    "endpointClosed": true,
+    "profileRemoved": true,
+    "personalBrowserTouched": false,
+    "initialAttempt": {
+      "pid": 30895,
+      "result": "exited before first connection; explicit endpoint refused; no fallback"
+    },
+    "isolationVerified": "ps process command confirmed exact profile and port; lsof 127.0.0.1:19416 owned by PID 32761; all harness calls explicit unique BU_NAME and BU_CDP_URL with BU_CDP_WS removed"
+  }
+}

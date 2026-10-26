@@ -40,8 +40,8 @@ export function PausePanel({ state }: { state: StateMessage }): ReactNode {
       {pause?.retention ? (
         <p data-testid="pause-retention">
           {training
-            ? 'Os bots esperam por você: a mesa segue reservada e a rodada continua de onde parou. Retome quando quiser.'
-            : 'Ninguém está conectado. A sala fica retida por tempo limitado; quem chegar primeiro assume como anfitrião e decide como continuar.'}
+            ? 'Os bots esperam por você. A mesa está reservada; retome quando quiser.'
+            : 'Ninguém está conectado. A sala fica reservada por tempo limitado; quem chegar primeiro assume como anfitrião.'}
         </p>
       ) : null}
       {blockedAbsences.map((absent) => (
@@ -55,9 +55,6 @@ export function PausePanel({ state }: { state: StateMessage }): ReactNode {
           {nicknameOf(absent.playerId)} passou do prazo de 90 segundos. Pode voltar ou ser substituído pelo anfitrião.
         </p>
       ))}
-      {pause?.retention && pause.absent.length === 0 ? (
-        <p data-testid="pause-no-absences">Todas as ausências estão resolvidas; retome quando quiser.</p>
-      ) : null}
       {isHost ? (
         <div className="pause-actions">
           {eligibleAbsences.map((absent) => (

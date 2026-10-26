@@ -1,0 +1,399 @@
+/* Gaveta da sala (T019D). Sobreposição fixa: não ocupa espaço no fluxo da
+   mesa nem altera a altura do palco. */
+
+.tv2-drawer-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 max(0px, calc((100vw - 760px) / 2)) var(--tv2-safe-bottom);
+}
+
+.tv2-drawer-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 9, 7, 0.66);
+  animation: tv2-scrim-in 180ms ease-out both;
+}
+
+.tv2-drawer-layer .tv2-drawer {
+  position: relative;
+  width: min(100%, 760px);
+  max-height: min(86dvh, 720px);
+  animation: tv2-drawer-in 220ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes tv2-scrim-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes tv2-drawer-in {
+  from {
+    transform: translateY(18px);
+    opacity: 0.4;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ---------- Sala ---------- */
+.tv2-sala {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tv2-space-4);
+}
+
+.tv2-sala-secao {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tv2-space-2);
+  padding-bottom: var(--tv2-space-4);
+  border-bottom: 1px solid var(--tv2-line);
+}
+
+.tv2-sala-secao:last-of-type {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.tv2-sala-secao h3 {
+  margin: 0;
+  color: var(--tv2-cream);
+  font-family: var(--tv2-font-display);
+  font-size: var(--tv2-fs-20);
+  font-weight: 600;
+  line-height: var(--tv2-leading-tight);
+}
+
+.tv2-sala-dica {
+  margin: 0;
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-rotulo);
+  line-height: 1.4;
+}
+
+.tv2-sala-codigo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tv2-space-3);
+  padding: var(--tv2-space-3);
+  background: var(--tv2-surface-2);
+  border: 1px solid var(--tv2-line);
+  border-radius: var(--tv2-r-panel);
+}
+
+.tv2-sala-codigo strong {
+  display: block;
+  margin-top: 2px;
+  color: var(--tv2-cream);
+  font-family: var(--tv2-font-display);
+  font-size: var(--tv2-fs-24);
+  letter-spacing: 0.06em;
+}
+
+.tv2-sala-rotulo {
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-rotulo);
+}
+
+.tv2-sala-convite {
+  margin: 0;
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-rotulo);
+  overflow-wrap: anywhere;
+}
+
+.tv2-sala-convite a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tv2-target);
+  color: var(--tv2-cream);
+  text-underline-offset: 3px;
+}
+
+.tv2-sala-convite a:focus-visible {
+  outline: 3px solid var(--tv2-focus);
+  outline-offset: 3px;
+}
+
+.tv2-sala-regras {
+  border: 1px solid var(--tv2-line);
+  border-radius: var(--tv2-r-panel);
+  background: var(--tv2-surface);
+}
+
+.tv2-sala-regras summary {
+  display: flex;
+  align-items: center;
+  gap: var(--tv2-space-2);
+  min-height: var(--tv2-target);
+  padding: var(--tv2-space-2) var(--tv2-space-3);
+  color: var(--tv2-cream);
+  cursor: pointer;
+  list-style: none;
+}
+
+.tv2-sala-regras summary::-webkit-details-marker {
+  display: none;
+}
+
+.tv2-sala-regras summary:focus-visible {
+  outline: 3px solid var(--tv2-focus);
+  outline-offset: 2px;
+}
+
+.tv2-sala-regras-titulo {
+  flex: none;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tv2-sala-regras-previa {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-rotulo);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tv2-sala-regras-seta {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--tv2-brass);
+  border-bottom: 2px solid var(--tv2-brass);
+  transform: rotate(45deg);
+  transition: transform 160ms ease-out;
+}
+
+.tv2-sala-regras[open] .tv2-sala-regras-seta {
+  transform: rotate(-135deg);
+}
+
+.tv2-sala-regras p {
+  margin: 0;
+  padding: 0 var(--tv2-space-3) var(--tv2-space-3);
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-rotulo);
+  line-height: 1.5;
+}
+
+/* ---------- Jogadores ---------- */
+.tv2-jogadores-lista {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tv2-jogador {
+  display: flex;
+  align-items: center;
+  gap: var(--tv2-space-2);
+  min-height: 56px;
+  padding: var(--tv2-space-2) 0;
+  border-bottom: 1px solid var(--tv2-line-soft);
+}
+
+.tv2-jogador:last-child {
+  border-bottom: 0;
+}
+
+.tv2-jogador-avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--tv2-cream);
+  color: var(--tv2-ink);
+  font-family: var(--tv2-font-display);
+  font-size: var(--tv2-fs-18);
+  font-weight: 700;
+}
+
+.tv2-jogador-corpo {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.tv2-jogador-nome {
+  color: var(--tv2-cream);
+  font-size: var(--tv2-text-nome);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.tv2-jogador-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-rotulo);
+}
+
+.tv2-jogador-presenca {
+  color: var(--tv2-cream);
+}
+
+.tv2-jogador-presenca--off {
+  color: var(--tv2-muted);
+}
+
+.tv2-jogador-acoes {
+  flex: none;
+  display: flex;
+  gap: 2px;
+}
+
+.tv2-jogador-acoes .tv2-btn {
+  min-width: var(--tv2-target);
+  min-height: var(--tv2-target);
+  padding: 0;
+  border-color: var(--tv2-line-forte);
+  font-size: var(--tv2-fs-18);
+}
+
+/* ---------- Apresentação (componente MoodSettings) ---------- */
+.tv2-drawer .mood-settings {
+  padding: 0;
+  gap: var(--tv2-space-3);
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.tv2-drawer .mood-settings h2 {
+  color: var(--tv2-cream);
+  font-family: var(--tv2-font-display);
+  font-size: var(--tv2-fs-20);
+}
+
+.tv2-drawer .mood-fieldset {
+  border: 0;
+  padding: 0;
+  gap: var(--tv2-space-2);
+  align-items: stretch;
+}
+
+.tv2-drawer .mood-fieldset legend {
+  flex: 0 0 100%;
+  margin: 0;
+  padding: 0;
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-rotulo);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.tv2-drawer .mood-option {
+  min-height: var(--tv2-target);
+  width: auto;
+  padding: 0 var(--tv2-space-2);
+  border-color: transparent;
+  background: transparent;
+  color: var(--tv2-cream);
+  font-size: var(--tv2-text-corpo);
+  font-weight: 400;
+}
+
+.tv2-drawer .mood-settings > .mood-option {
+  width: 100%;
+  padding: 0;
+}
+
+.tv2-drawer .mood-fieldset .mood-option {
+  flex: 1 1 0;
+  justify-content: center;
+  background: var(--tv2-surface-2);
+  border-color: var(--tv2-line);
+  border-radius: var(--tv2-r-btn);
+}
+
+.tv2-drawer .mood-fieldset .mood-option:hover {
+  border-color: var(--tv2-brass-deep);
+}
+
+.tv2-drawer .mood-option input:focus-visible {
+  outline-color: var(--tv2-focus);
+}
+
+.tv2-drawer .mood-option input {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--tv2-brass);
+}
+
+.tv2-drawer .mood-note {
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-rotulo);
+}
+
+/* ---------- Sair e confirmação ---------- */
+.tv2-sala-sair {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--tv2-space-2);
+  padding-top: var(--tv2-space-2);
+}
+
+.tv2-sala-confirmacao {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tv2-space-2);
+  padding: var(--tv2-space-3);
+  background: var(--tv2-surface-2);
+  border: 1px solid var(--tv2-line-forte);
+  border-radius: var(--tv2-r-panel);
+  box-shadow: var(--tv2-shadow-panel);
+}
+
+.tv2-sala-confirmacao h4 {
+  margin: 0;
+  color: var(--tv2-cream);
+  font-family: var(--tv2-font-display);
+  font-size: var(--tv2-fs-18);
+}
+
+.tv2-sala-confirmacao p {
+  margin: 0;
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-rotulo);
+}
+
+.tv2-sala-confirmacao-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tv2-space-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tv2-drawer-scrim,
+  .tv2-drawer-layer .tv2-drawer {
+    animation: none;
+  }
+
+  .tv2-sala-regras-seta {
+    transition: none;
+  }
+}

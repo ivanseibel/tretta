@@ -1,0 +1,279 @@
+{
+  "task": "T019B",
+  "generatedAt": "2026-10-26T00:34:16.129304+00:00",
+  "viewports": {
+    "412x915": {
+      "frame": {
+        "w": 412,
+        "h": 915
+      },
+      "shell": {
+        "w": 410,
+        "h": 914,
+        "clientH": 914,
+        "scrollH": 914
+      },
+      "rows": {
+        "topo": {
+          "w": 410,
+          "h": 52
+        },
+        "mesa": {
+          "w": 410,
+          "h": 511
+        },
+        "acoes": {
+          "w": 410,
+          "h": 66
+        },
+        "mao": {
+          "w": 410,
+          "h": 235
+        },
+        "barra": {
+          "w": 410,
+          "h": 50
+        }
+      },
+      "fonts": {
+        "vez": "20px",
+        "sentido": "18px",
+        "nome": "16px",
+        "contagem": "26px",
+        "contagemRotulo": "14px",
+        "rotuloBarra": "14px"
+      },
+      "buttons": [
+        {
+          "text": "Comprar",
+          "h": 44
+        },
+        {
+          "text": "Jogar",
+          "h": 56
+        }
+      ],
+      "cards": {
+        "min": 76,
+        "max": 76,
+        "columns": 4
+      },
+      "drawer": {
+        "abas": {
+          "w": 126.7,
+          "h": 44,
+          "font": "16px"
+        },
+        "fechar": {
+          "w": 44,
+          "h": 44
+        }
+      },
+      "fontFamilies": {
+        "ui": "\"Atkinson Hyperlegible Next\", \"Atkinson Hyperlegible\", \"Segoe UI\", system-ui, sans-serif",
+        "display": "Fraunces, \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif"
+      },
+      "page": {
+        "scrollWidth": 412,
+        "innerWidth": 412
+      },
+      "fontStatus": "loaded",
+      "fontChecks": {
+        "atkinson": true,
+        "fraunces": true
+      },
+      "preloads": [
+        "/fonts/fraunces.woff2",
+        "/fonts/atkinson.woff2"
+      ]
+    },
+    "1280x900": {
+      "frame": {
+        "w": 1280,
+        "h": 800
+      },
+      "shell": {
+        "w": 1278,
+        "h": 799,
+        "clientH": 799,
+        "scrollH": 799
+      },
+      "rows": {
+        "topo": {
+          "w": 1278,
+          "h": 60
+        },
+        "mesa": {
+          "w": 1278,
+          "h": 456
+        },
+        "acoes": {
+          "w": 1278,
+          "h": 66
+        },
+        "mao": {
+          "w": 1278,
+          "h": 161
+        },
+        "barra": {
+          "w": 1278,
+          "h": 56
+        }
+      },
+      "fonts": {
+        "vez": "20px",
+        "sentido": "18px",
+        "nome": "16px",
+        "contagem": "26px",
+        "contagemRotulo": "14px",
+        "rotuloBarra": "14px"
+      },
+      "buttons": [
+        {
+          "text": "Comprar",
+          "h": 44
+        },
+        {
+          "text": "Jogar",
+          "h": 56
+        }
+      ],
+      "cards": {
+        "min": 92,
+        "max": 92,
+        "columns": 8
+      },
+      "drawer": {
+        "abas": {
+          "w": 242.7,
+          "h": 44,
+          "font": "16px"
+        },
+        "fechar": {
+          "w": 44,
+          "h": 44
+        }
+      },
+      "fontFamilies": {
+        "ui": "\"Atkinson Hyperlegible Next\", \"Atkinson Hyperlegible\", \"Segoe UI\", system-ui, sans-serif",
+        "display": "Fraunces, \"Iowan Old Style\", \"Palatino Linotype\", Georgia, serif"
+      },
+      "page": {
+        "scrollWidth": 1280,
+        "innerWidth": 1280
+      },
+      "fontStatus": "loaded",
+      "fontChecks": {
+        "atkinson": true,
+        "fraunces": true
+      },
+      "preloads": [
+        "/fonts/fraunces.woff2",
+        "/fonts/atkinson.woff2"
+      ]
+    }
+  },
+  "focus": {
+    "text": "Jogar carta",
+    "focusVisible": true,
+    "outline": "3px solid rgb(242, 199, 102)",
+    "offset": "3px"
+  },
+  "contrast": [
+    {
+      "pair": "creme/feltro",
+      "fg": "#F7EDD8",
+      "bg": "#123B2D",
+      "ratio": 10.69
+    },
+    {
+      "pair": "tinta/latão",
+      "fg": "#1B1410",
+      "bg": "#D7AB63",
+      "ratio": 8.57
+    },
+    {
+      "pair": "creme/vermelho",
+      "fg": "#F7EDD8",
+      "bg": "#C4322A",
+      "ratio": 4.71
+    },
+    {
+      "pair": "creme/verde",
+      "fg": "#F7EDD8",
+      "bg": "#277147",
+      "ratio": 5.1
+    },
+    {
+      "pair": "creme/azul",
+      "fg": "#F7EDD8",
+      "bg": "#2857B8",
+      "ratio": 5.74
+    },
+    {
+      "pair": "tinta/creme",
+      "fg": "#1B1410",
+      "bg": "#F7EDD8",
+      "ratio": 15.65
+    },
+    {
+      "pair": "borda #8A6234/creme",
+      "fg": "#8A6234",
+      "bg": "#F7EDD8",
+      "ratio": 4.66
+    },
+    {
+      "pair": "borda #8A7660/gaveta",
+      "fg": "#8A7660",
+      "bg": "#14100C",
+      "ratio": 4.36
+    },
+    {
+      "pair": "borda assento #B08A54/feltro",
+      "fg": "#B08A54",
+      "bg": "#123B2D",
+      "ratio": 3.91
+    },
+    {
+      "pair": "foco/feltro",
+      "fg": "#F2C766",
+      "bg": "#123B2D",
+      "ratio": 7.78
+    },
+    {
+      "pair": "foco/madeira",
+      "fg": "#F2C766",
+      "bg": "#3B2418",
+      "ratio": 9.05
+    },
+    {
+      "pair": "foco escuro/papel",
+      "fg": "#7A3F0E",
+      "bg": "#FBF3E2",
+      "ratio": 7.47
+    },
+    {
+      "pair": "papel muted/papel",
+      "fg": "#5A4430",
+      "bg": "#FBF3E2",
+      "ratio": 8.25
+    },
+    {
+      "pair": "muted/feltro",
+      "fg": "#CBBAA7",
+      "bg": "#123B2D",
+      "ratio": 6.58
+    },
+    {
+      "pair": "creme/página",
+      "fg": "#F7EDD8",
+      "bg": "#0A1310",
+      "ratio": 16.22
+    }
+  ],
+  "notes": [
+    "Shell height 914/799 = frame height minus 1px border; shell clientHeight == scrollHeight (no vertical overflow).",
+    "412: two rows of four cards, 76px; 1280: one row of eight cards, 92px.",
+    "Preload links: Next emits an automatic pair from the CSS font faces and the root layout repeats both; same URLs, browser coalesces."
+  ]
+}

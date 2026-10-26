@@ -1,0 +1,23 @@
+{
+  "base": "http://localhost:3101",
+  "create": {
+    "code": "ZV7XQ7",
+    "inviteVisible": true
+  },
+  "enterWithCode": {
+    "url": "http://localhost:3101/sala/ZV7XQ7",
+    "joinFormVisible": true
+  },
+  "join": {
+    "readyVisible": true,
+    "hostParticipants": 2
+  },
+  "train": {
+    "readyVisible": true,
+    "participantRows": 4
+  },
+  "enterKey": {
+    "ok": true,
+    "url": "http://localhost:3101/sala/XAFYAX"
+  }
+}

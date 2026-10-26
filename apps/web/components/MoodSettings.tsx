@@ -11,16 +11,22 @@ const ANIMATION_OPTIONS: readonly { value: AnimationPreference; label: string }[
 ];
 
 /**
- * Preferências de apresentação deste navegador: animação, som, ocultação de
- * provocações recebidas e de reações. Individuais e sem conta — valem só nesta
- * aba de armazenamento e não alteram sala, motor nem a visão dos demais.
+ * Preferências de apresentação deste navegador: animação, som, aviso da vez e
+ * ocultação de reações. Individuais e sem conta — valem só nesta aba de
+ * armazenamento e não alteram sala, motor nem a visão dos demais. Sem
+ * "ocultar provocações": provocações saíram do produto.
  */
-export function MoodSettings(): ReactNode {
+export function MoodSettings({ semTitulo = false }: { semTitulo?: boolean } = {}): ReactNode {
   const { preferences, activeAnimations, setPreferences } = useRoom();
   const systemLimited = activeAnimations !== preferences.animations;
   return (
-    <section className="mood-settings" data-testid="mood-settings" aria-labelledby="mood-settings-title">
-      <h2 id="mood-settings-title">Apresentação</h2>
+    <section
+      className="mood-settings"
+      data-testid="mood-settings"
+      aria-labelledby={semTitulo ? undefined : 'mood-settings-title'}
+      aria-label={semTitulo ? 'Preferências de apresentação' : undefined}
+    >
+      {semTitulo ? null : <h2 id="mood-settings-title">Apresentação</h2>}
       <fieldset className="mood-fieldset">
         <legend>Animações</legend>
         {ANIMATION_OPTIONS.map((option) => (
@@ -54,15 +60,6 @@ export function MoodSettings(): ReactNode {
           onChange={(event) => setPreferences({ turnNotificationEnabled: event.target.checked })}
         />
         Aviso sonoro da sua vez
-      </label>
-      <label className="mood-option">
-        <input
-          type="checkbox"
-          data-testid="pref-hide-taunts"
-          checked={preferences.hideTaunts}
-          onChange={(event) => setPreferences({ hideTaunts: event.target.checked })}
-        />
-        Ocultar provocações recebidas
       </label>
       <label className="mood-option">
         <input

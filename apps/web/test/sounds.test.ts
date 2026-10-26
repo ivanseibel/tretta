@@ -3,10 +3,9 @@
  * variação/tipo, corte no mute e tolerância a ambiente sem WebAudio.
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import type { AutomaticEffect, EffectVariant, TauntType } from '@tretta/protocol';
+import type { AutomaticEffect, EffectVariant } from '@tretta/protocol';
 import {
   playEffectSound,
-  playTauntSound,
   playTurnNotificationSound,
   prepareSoundPlayback,
   setSoundMuted,
@@ -141,7 +140,6 @@ describe('indisponibilidade antes da primeira reprodução', () => {
     const before = FakeOscillator.all.length;
     expect(() => prepareSoundPlayback()).not.toThrow();
     expect(() => playEffectSound(effectFixture('confetti'))).not.toThrow();
-    expect(() => playTauntSound('tomate')).not.toThrow();
     expect(() => playTurnNotificationSound()).not.toThrow();
     expect(FakeOscillator.all.length).toBe(before);
     expect(FakeAudioContext.instances).toHaveLength(0);
@@ -195,20 +193,6 @@ describe('sons dos efeitos automáticos', () => {
           .join('|');
       expect(signature(a)).not.toBe(signature(b));
     }
-  });
-});
-
-describe('sons das provocações', () => {
-  it('cada tipo tem padrão próprio', () => {
-    const types: readonly TauntType[] = ['tomate', 'torta', 'risadas', 'choro'];
-    const signatures = types.map((type) => {
-      FakeOscillator.all.length = 0;
-      playTauntSound(type);
-      return FakeOscillator.all
-        .map((tone) => `${tone.type}:${tone.frequency.setValueAtTime.mock.calls[0]?.[0] ?? ''}`)
-        .join('|');
-    });
-    expect(new Set(signatures).size).toBe(types.length);
   });
 });
 

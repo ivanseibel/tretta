@@ -18,7 +18,6 @@ import {
   setReadyPayloadSchema,
   startRoundPayloadSchema,
   substituteAbsentPayloadSchema,
-  tauntSendPayloadSchema,
   type Ack,
   type ChatHistoryAck,
   type ChatSendAck,
@@ -29,7 +28,6 @@ import {
   type ReactionSendAck,
   type ServerToClientEvents,
   type SimpleAck,
-  type TauntSendAck,
 } from '@tretta/protocol';
 import { RoomStore, type RoomResult, type ServerErrorBody } from './rooms.js';
 
@@ -273,24 +271,6 @@ export function registerRoomHandlers(
       ack({ ok: true, messages: response.messages, hasMore: response.hasMore });
     });
 
-    socket.on(CLIENT_EVENTS.tauntSend, (payload: unknown, ack: (response: Ack<TauntSendAck>) => void) => {
-      if (!isAck(ack)) return;
-      const parsed = tauntSendPayloadSchema.safeParse(payload);
-      if (!parsed.success) return ack(invalidPayload(parsed.error));
-      const participant = store.participantOf(socket.id);
-      if (participant === undefined) return ack(notInRoom());
-      const { intentId, roomCode, type, targetId } = parsed.data;
-      // Mesmo escopo do chat: replay devolve o evento original sem reexecutar nem retransmitir.
-      const response = RoomStore.dedupe(
-        participant.intents,
-        intentId,
-        intentSignature(CLIENT_EVENTS.tauntSend, parsed.data),
-        () => store.sendTaunt(participant, roomCode, type, targetId),
-      );
-      if (!response.ok) return ack({ ok: false, error: response.error });
-      ack({ ok: true, taunt: response.taunt, limits: response.limits });
-    });
-
     socket.on(CLIENT_EVENTS.reactionSend, (payload: unknown, ack: (response: Ack<ReactionSendAck>) => void) => {
       if (!isAck(ack)) return;
       const parsed = reactionSendPayloadSchema.safeParse(payload);
@@ -298,8 +278,8 @@ export function registerRoomHandlers(
       const participant = store.participantOf(socket.id);
       if (participant === undefined) return ack(notInRoom());
       const { intentId, roomCode, type } = parsed.data;
-      // Mesmo escopo do chat/provocação: replay devolve a reação original sem
-      // reexecutar, sem retransmitir e sem consumir o intervalo de novo.
+      // Mesmo escopo do chat: replay devolve a reação original sem reexecutar,
+      // sem retransmitir e sem consumir o intervalo de novo.
       const response = RoomStore.dedupe(
         participant.intents,
         intentId,

@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-18T19:44:31.872Z",
+  "render": {
+    "healthz": "HTTP 200",
+    "liveDeploy": "dep-dbahinbm8hqs73be533g",
+    "revision": "90aff00645fe42f60ab68fb4ce96e527c081c95c",
+    "plan": "free",
+    "instances": 1
+  },
+  "vercel": {
+    "alias": "tretta.vercel.app -> tretta-qtxwt717c-seibel.vercel.app",
+    "deployment": "dpl_613qfXj17XFdFctcg5HjsEimhfpz",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED"
+  },
+  "git": {
+    "head": "90aff00645fe42f60ab68fb4ce96e527c081c95c",
+    "originMain": "90aff00645fe42f60ab68fb4ce96e527c081c95c",
+    "rollbackFrontend": "dpl_DARamMVYaXEgnZ2KvioZsMGRnf6k (T013, READY)",
+    "rollbackBackend": "revisão 3ae459e5a88e612dc389e7bcb4570809ddcc3445 (redeploy/rollback no mesmo serviço Free)"
+  }
+}

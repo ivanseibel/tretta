@@ -1,0 +1,250 @@
+[
+  {
+    "usage": "Texto principal / papel",
+    "fg": "#203a2f",
+    "bg": "#fffaf0",
+    "ratio": 11.82,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Texto secundário / papel",
+    "fg": "#4d5e54",
+    "bg": "#fffaf0",
+    "ratio": 6.629,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Texto principal / papel sombreado",
+    "fg": "#203a2f",
+    "bg": "#ece4d2",
+    "ratio": 9.718,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Texto secundário / papel sombreado",
+    "fg": "#4d5e54",
+    "bg": "#ece4d2",
+    "ratio": 5.45,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Texto / mensagem própria",
+    "fg": "#203a2f",
+    "bg": "#dfeee2",
+    "ratio": 10.228,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Papel / feltro",
+    "fg": "#fffaf0",
+    "bg": "#194832",
+    "ratio": 10.02,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Texto auxiliar / feltro",
+    "fg": "#dce9d7",
+    "bg": "#194832",
+    "ratio": 8.281,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Papel / assento",
+    "fg": "#fffaf0",
+    "bg": "#123526",
+    "ratio": 12.914,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Texto auxiliar / assento",
+    "fg": "#dce9d7",
+    "bg": "#123526",
+    "ratio": 10.672,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Texto / dourado da vez",
+    "fg": "#203a2f",
+    "bg": "#ffd36c",
+    "ratio": 8.659,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Texto / carta vermelha",
+    "fg": "#fffaf0",
+    "bg": "#b83c2b",
+    "ratio": 5.427,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Texto / carta azul",
+    "fg": "#fffaf0",
+    "bg": "#236394",
+    "ratio": 6.147,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Texto / carta verde",
+    "fg": "#fffaf0",
+    "bg": "#2e6542",
+    "ratio": 6.604,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Texto / carta coringa",
+    "fg": "#fffaf0",
+    "bg": "#574276",
+    "ratio": 8.252,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Texto / carta amarela",
+    "fg": "#342a10",
+    "bg": "#e8b941",
+    "ratio": 7.71,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Branco / cor vermelha ativa",
+    "fg": "#ffffff",
+    "bg": "#b83c2b",
+    "ratio": 5.646,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Branco / cor azul ativa",
+    "fg": "#ffffff",
+    "bg": "#236394",
+    "ratio": 6.395,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Branco / cor verde ativa",
+    "fg": "#ffffff",
+    "bg": "#2e6542",
+    "ratio": 6.871,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Selo não lidas",
+    "fg": "#ffffff",
+    "bg": "#b84331",
+    "ratio": 5.405,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Texto / input",
+    "fg": "#4d5e54",
+    "bg": "#fffdf7",
+    "ratio": 6.781,
+    "minimum": 4.5,
+    "pass_": true
+  },
+  {
+    "usage": "Limite assento / feltro",
+    "fg": "#93b596",
+    "bg": "#194832",
+    "ratio": 4.612,
+    "minimum": 3,
+    "pass_": true
+  },
+  {
+    "usage": "Limite assento / fundo do assento",
+    "fg": "#93b596",
+    "bg": "#123526",
+    "ratio": 5.944,
+    "minimum": 3,
+    "pass_": true
+  },
+  {
+    "usage": "Limite ativo / feltro",
+    "fg": "#ffd36c",
+    "bg": "#194832",
+    "ratio": 7.34,
+    "minimum": 3,
+    "pass_": true
+  },
+  {
+    "usage": "Foco interno escuro / papel da mão",
+    "fg": "#203a2f",
+    "bg": "#fffaf0",
+    "ratio": 11.82,
+    "minimum": 3,
+    "pass_": true
+  },
+  {
+    "usage": "Foco externo claro / feltro",
+    "fg": "#fffaf0",
+    "bg": "#194832",
+    "ratio": 10.02,
+    "minimum": 3,
+    "pass_": true
+  },
+  {
+    "usage": "Foco interno / dourado",
+    "fg": "#203a2f",
+    "bg": "#ffd36c",
+    "ratio": 8.659,
+    "minimum": 3,
+    "pass_": true
+  },
+  {
+    "usage": "Borda externa da carta / papel",
+    "fg": "#5b4a22",
+    "bg": "#fffaf0",
+    "ratio": 8.247,
+    "minimum": 3,
+    "pass_": true
+  },
+  {
+    "usage": "Carta jogável / papel",
+    "fg": "#7a5200",
+    "bg": "#fffaf0",
+    "ratio": 6.652,
+    "minimum": 3,
+    "pass_": true
+  },
+  {
+    "usage": "Carta selecionada / papel",
+    "fg": "#b84331",
+    "bg": "#fffaf0",
+    "ratio": 5.195,
+    "minimum": 3,
+    "pass_": true
+  },
+  {
+    "usage": "Borda input / fundo",
+    "fg": "#6f7f72",
+    "bg": "#fffdf7",
+    "ratio": 4.167,
+    "minimum": 3,
+    "pass_": true
+  },
+  {
+    "usage": "Botão e foco no papel",
+    "fg": "#203a2f",
+    "bg": "#fffaf0",
+    "ratio": 11.82,
+    "minimum": 3,
+    "pass_": true
+  }
+]

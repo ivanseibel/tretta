@@ -1,0 +1,12 @@
+{
+  "pid": 15304,
+  "profile": "/var/folders/r_/xrvhskhx45l6n66k99kzs61r0000gn/T/tretta-T016-concepts-0r24zx9_",
+  "endpoint": "http://127.0.0.1:19419",
+  "daemon": "tretta-t016-concepts-codex",
+  "cleanup": {
+    "namedDaemonStopped": true,
+    "endpointClosed": true,
+    "profileRemoved": true,
+    "personalBrowserTouched": false
+  }
+}

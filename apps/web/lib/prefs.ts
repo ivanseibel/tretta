@@ -1,8 +1,7 @@
 /**
- * Preferências individuais de apresentação: animação, som, ocultação de
- * provocações e de reações. Valem só para este navegador, sem conta e sem
- * tocar na sala. Armazenamento indisponível ou corrompido cai nos padrões sem
- * lançar.
+ * Preferências individuais de apresentação: animação, som e ocultação de
+ * reações. Valem só para este navegador, sem conta e sem tocar na sala.
+ * Armazenamento indisponível ou corrompido cai nos padrões sem lançar.
  */
 export type AnimationPreference = 'full' | 'reduced' | 'off';
 
@@ -10,7 +9,6 @@ export interface MoodPreferences {
   readonly animations: AnimationPreference;
   readonly soundMuted: boolean;
   readonly turnNotificationEnabled: boolean;
-  readonly hideTaunts: boolean;
   readonly hideReactions: boolean;
 }
 
@@ -18,7 +16,6 @@ export const DEFAULT_PREFERENCES: MoodPreferences = {
   animations: 'full',
   soundMuted: false,
   turnNotificationEnabled: true,
-  hideTaunts: false,
   hideReactions: false,
 };
 
@@ -48,7 +45,6 @@ export function parsePreferences(raw: string | null): MoodPreferences {
         record.turnNotificationEnabled,
         DEFAULT_PREFERENCES.turnNotificationEnabled,
       ),
-      hideTaunts: normalizeBoolean(record.hideTaunts, DEFAULT_PREFERENCES.hideTaunts),
       hideReactions: normalizeBoolean(record.hideReactions, DEFAULT_PREFERENCES.hideReactions),
     };
   } catch {

@@ -10,6 +10,8 @@ Toda execução tem dois papéis: orquestrador e executor. Antes de preparar uma
 
 **Notificação obrigatória:** orquestradores e executores manuais devem usar a skill `agent-notify` ao encerrar cada tarefa. A única exceção é o executor lançado automaticamente como subagente pelo orquestrador. Siga a seção “Notificação de encerramento” do protocolo, inclusive ao preparar prompts manuais.
 
+**Browser isolado:** testes e inspeções de navegador devem usar uma instância dedicada à tarefa, com processo, perfil e conexão do harness próprios. Preserve o navegador pessoal do usuário; outra aba ou janela no mesmo perfil não é isolamento. Siga a seção “Isolamento do navegador” do protocolo.
+
 Ao escrever ou editar instruções para agentes, use `writing-for-agents`. Veja [a preparação de outro computador](docs/work/setup.md) se as skills globais estiverem ausentes.
 
 Para definição de escopo, o usuário pode invocar `grill-me` ou `grill-with-docs`; para transferência entre sessões, `handoff`. Leia suas instruções quando forem invocadas.

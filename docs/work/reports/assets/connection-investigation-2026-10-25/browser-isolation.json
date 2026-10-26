@@ -1,0 +1,10 @@
+{
+  "pid": 9320,
+  "profile": "/var/folders/r_/xrvhskhx45l6n66k99kzs61r0000gn/T/tretta-connection-20261025-bjlnj8yn",
+  "endpoint": "http://127.0.0.1:56769",
+  "daemon": "tretta-connection-20261025-v1",
+  "browserStopped": true,
+  "profileRemoved": true,
+  "daemonStopCommandSucceeded": true,
+  "checkedAt": "2026-10-25T13:45:13.574612+00:00"
+}

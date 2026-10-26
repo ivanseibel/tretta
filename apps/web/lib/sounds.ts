@@ -1,4 +1,4 @@
-import type { AutomaticEffect, TauntType } from '@tretta/protocol';
+import type { AutomaticEffect } from '@tretta/protocol';
 import { EFFECT_VARIANTS } from '@tretta/protocol/shared';
 
 /**
@@ -108,37 +108,6 @@ export function setSoundMuted(next: boolean): void {
   const wasMuted = muted;
   muted = next;
   if (next && !wasMuted) stopAllSounds();
-}
-
-export function playTauntSound(type: TauntType): void {
-  if (type === 'tomate') {
-    playTones([
-      { frequency: 240, rampTo: 90, startAt: 0, duration: 0.22, type: 'sine', gain: 0.25 },
-      { frequency: 520, startAt: 0.06, duration: 0.1, type: 'triangle', gain: 0.12 },
-    ]);
-    return;
-  }
-  if (type === 'torta') {
-    playTones([
-      { frequency: 640, rampTo: 140, startAt: 0, duration: 0.3, type: 'triangle', gain: 0.22 },
-      { frequency: 120, startAt: 0.18, duration: 0.14, type: 'sine', gain: 0.18 },
-    ]);
-    return;
-  }
-  if (type === 'risadas') {
-    playTones([
-      { frequency: 480, startAt: 0, duration: 0.09, type: 'square', gain: 0.1 },
-      { frequency: 560, startAt: 0.09, duration: 0.09, type: 'square', gain: 0.1 },
-      { frequency: 700, startAt: 0.18, duration: 0.12, type: 'square', gain: 0.1 },
-    ]);
-    return;
-  }
-  playTones([
-    { frequency: 520, startAt: 0, duration: 0.1, type: 'sine', gain: 0.16 },
-    { frequency: 430, startAt: 0.11, duration: 0.1, type: 'sine', gain: 0.16 },
-    { frequency: 340, startAt: 0.22, duration: 0.1, type: 'sine', gain: 0.16 },
-    { frequency: 250, startAt: 0.33, duration: 0.16, type: 'sine', gain: 0.16 },
-  ]);
 }
 
 /** Dois tons ascendentes curtos e distintos para indicar o início da própria vez. */

@@ -2,9 +2,34 @@
 
 Plano inicial, organizado pelo orquestrador a partir do escopo aprovado. As tarefas posteriores a T001 serão detalhadas conforme os resultados anteriores. Cada execução retorna report; o orquestrador valida os critérios antes de avançar.
 
-## Feature atual — provocações pelo avatar e reações
+## Feature atual — mesa de jogo, reações e telas
 
-Prioridade escolhida e **[escopo confirmado](../product/provocacoes-e-reacoes.md) em 18/10/2026**, após entrevista `grill-with-docs` Q1–Q19. O usuário confirmou o entendimento conjunto e pediu início pelos executores manuais. As menções históricas abaixo a uma próxima melhoria por escolher antecedem esta prioridade. T013 segue publicada e aceita.
+**[Escopo aprovado](../product/mesa-e-reacoes.md) em 25/10/2026**, após entrevista `grill-with-docs` em quatro rodadas. O protótipo do usuário (`docs/work/t016-prototype/`) vira a base de um redesign de **todas as telas**, com trilho ([ADR 0002](../adr/0002-trilho-de-mesa-substitui-a-faixa.md)), 12 reações individuais ([ADR 0003](../adr/0003-reacoes-substituem-provocacoes.md)) e remoção completa das provocações com alvo. A análise técnica do protótipo está em [T017](T017.md).
+
+| Etapa | Entrega | Estado |
+| --- | --- | --- |
+| [T018](T018.md) | Extensão do protótipo: home, preparação, espera, mesa, resultado, erros; 12 reações; Sala; 2–8 assentos | Aprovado em 26/10/2026; A2 aplicado |
+| T019A | Protocolo/servidor: 12 reações, provocações preservadas | Aceito em 26/10/2026: protocolo 14 e servidor 149+1 testes verdes |
+| T019B | Base web: tokens, fontes, casca, catálogo de 12 reações | Aceito em 26/10/2026: typecheck, 180 testes e build verdes; preview |
+| T019C | Mesa: trilho, 2–8 assentos, centro, mão, ações | Entregue em 26/10/2026: typecheck/build/188 testes web; e2e transitórios para D/F |
+| T019F-prep | Harness de verificação e baseline visual | Aceito em 26/10/2026: harness, baseline e smoke prontos |
+| T019D | Gaveta/Sala/preferências/reações e remoção das provocações da UI | Aceito em 26/10/2026: 181 testes web e smoke em 412/360 |
+| T019D2 | Limpeza da plumbing de taunts no web | Aceito em 26/10/2026: provider/sons/prefs limpos; 169 testes |
+| T019E1 | Home no visual novo | Aceito em 26/10/2026: typecheck/build/169 testes e harness |
+| T019E2 | Preparação, espera, resultado, erros | Aceito em 26/10/2026: 181 testes web, 23 capturas |
+| T019A2 | Limpeza final de protocolo/servidor de provocações | Aceito em 26/10/2026: protocolo 13, servidor 137+1, grep limpo |
+| T019F | Integração, e2e, matriz completa e aceite local | Concluída tecnicamente em 26/10/2026: e2e 42/42, matriz 108/108, build/tipos/testes verdes; aguardando teste no iPhone |
+| Publicação | Publicar web + servidor juntos | Só com autorização específica |
+
+Execução: Orca como orquestrador e **opencode** como executor. O plano de ondas, donos de arquivo e contratos está em [T019](T019.md): **2 agentes em paralelo por onda**, com validação entre ondas. T014 permanece a versão pública até a publicação desta feature; sem commit/push/deploy sem autorização.
+
+## Feature anterior — acessibilidade visual da mesa (T016, substituída)
+
+Escopo e protótipo de 25/10/2026 preservados como histórico. A faixa linear do ADR 0001 e o plano de port T017 foram substituídos por [mesa-e-reacoes](../product/mesa-e-reacoes.md), [ADR 0002](../adr/0002-trilho-de-mesa-substitui-a-faixa.md) e [T018](T018.md).
+
+## Feature anterior — provocações pelo avatar e reações
+
+Prioridade escolhida e **[escopo confirmado](../product/provocacoes-e-reacoes.md) em 18/10/2026**, após entrevista `grill-with-docs` Q1–Q19. O usuário confirmou o entendimento conjunto e pediu início pelos executores manuais. As menções históricas abaixo a uma próxima melhoria por escolher antecedem esta prioridade. T014 está publicada e aceita; T013 é o rollback do frontend.
 
 | Incremento | Entrega | Estado |
 | --- | --- | --- |
@@ -13,10 +38,11 @@ Prioridade escolhida e **[escopo confirmado](../product/provocacoes-e-reacoes.md
 | [Ajustes T014B](T014B-adjustments.md) | Corrigir R1–R3 e incorporar regressões com tempo/acks controlados | Executados; R1/R3 aceitos antes e R2 encerrado no [aceite final](reports/T014B.final-validation.md). Report preservado |
 | [Complemento R2](T014B-adjustments-2.md) | Preservar metadados válidos por categoria/alvo sem retroceder o relógio nem renovar prazos | Executado; S1 aceito antes e S2 encerrado no [aceite final](reports/T014B.final-validation.md). Report preservado |
 | [Relógio e empates](T014B-adjustments-3.md) | Corrigir estimativa monotônica e replay de fatos superados no mesmo timestamp | Executado e [aceito U1–U3](reports/T014B.final-validation.md) em 18/10/2026; report e evidências preservados |
+| [T014-publication](T014-publication.md) | Publicar protocolo/servidor e experiência T014 compatíveis, com commit/push, staged promovido e smoke próprio | [Aceita P1–P5](reports/T014-publication.validation.md) em 18/10/2026: commit `90aff00`, Render Live `dep-dbahinbm8hqs73be533g`, frontend `dpl_613qfXj17XFdFctcg5HjsEimhfpz`; desvio de isolamento registrado e núcleo repetido em browser dedicado |
 
-T014A e T014B concluem a implementação local deste recorte. Usuário respondeu **“Ok, seguimos”** em 18/10/2026: [T014-publication](T014-publication.md) autorizada e preparada para execução manual, ainda não executada. Janela sem partidas deve ser confirmada antes do push/reinício do backend. T013 segue publicada; nenhum executor acionado automaticamente.
+T014A e T014B concluem o recorte, **publicado e aceito em 18/10/2026** pelo [aceite público](reports/T014-publication.validation.md). Fonte/manifestos, Git/provedores/alias/bundle e históricos conferidos independentemente. Smoke do executor inspecionado; sem novo gameplay ou alteração de produção pelo orquestrador. Nenhum ajuste/execução/publicação pendente; próximo passo é uso humano no celular/som e feedback. T013 é o rollback do frontend; backend anterior `3ae459e` exige cuidado com auto-deploy em eventual restauração.
 
-Execução manual, preferência `gpt-6-luna`, reasoning `max`; sem despacho automático. Cada incremento depende do aceite anterior. Publicação será uma etapa posterior, sem commit/push/deploy/restart nesta implementação local.
+Execução manual, preferência `gpt-6-luna`, reasoning `max`; sem despacho automático. Notificação e isolamento do navegador seguem o protocolo atual. Documentos/harness posteriores ao commit permanecem locais; nenhum segundo push documental autorizado.
 
 ## T013 — texto do descarte publicado e aceito
 

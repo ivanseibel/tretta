@@ -1,75 +1,40 @@
 'use client';
 
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react';
-import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import type { Avatar } from '@tretta/protocol/shared';
+import { ROOM_CODE_LENGTH } from '@tretta/protocol/shared';
 import { useRoom } from '@/app/providers';
-import { AvatarPicker, ErrorBanner } from '@/components/ui';
-import { ChatPanel } from '@/components/ChatPanel';
 import { GameTable } from '@/components/GameTable';
 import { Lobby } from '@/components/Lobby';
 import { MoodFeedback, MoodAnnouncer } from '@/components/MoodFeedback';
-import { MoodMenu } from '@/components/MoodMenu';
-import { MoodSettings } from '@/components/MoodSettings';
+import { TableDrawer } from '@/components/drawer/TableDrawer';
+import { TableDrawerProvider } from '@/components/drawer/TableDrawerProvider';
+import { EffectOverlay } from '@/components/reactions/EffectOverlay';
+import { ReactionOverlay } from '@/components/reactions/ReactionOverlay';
+import { ReactionTray } from '@/components/reactions/ReactionTray';
 import { Results } from '@/components/Results';
-import { TauntOverlay } from '@/components/TauntOverlay';
-import { TauntPanel } from '@/components/TauntPanel';
-import { TauntResponseNotice } from '@/components/TauntResponseNotice';
 import { WaitingRoom } from '@/components/WaitingRoom';
+import {
+  ConnectingScreen,
+  JoinRoomScreen,
+  RecoveringScreen,
+  RecoveryExhaustedScreen,
+  RemovedScreen,
+  RoomGoneScreen,
+  RoomNotices,
+  TrainingRefusedScreen,
+} from '@/components/screens/StatusScreens';
+import styles from '@/components/screens/room.module.css';
 
-type Mode = 'checking' | 'recovering' | 'exhausted' | 'join' | 'room' | 'not-found';
-
-/**
- * Recusa definitiva da mesa de treino: só a pessoa dona retorna com a
- * credencial original. Não há retry automático, criação de identidade nem
- * troca de credencial aqui.
- */
-function TrainingEntryRefused(): ReactNode {
-  return (
-    <section className="panel" aria-label="Entrada recusada" data-testid="training-entry-refused">
-      <p>
-        Esta mesa é de treino e é individual: só a pessoa que a criou pode jogar nela. Os três adversários da mesa são
-        bots e outras pessoas não entram.
-      </p>
-      <p className="muted">Para jogar com amigos, crie ou entre em uma sala comum pela página inicial.</p>
-      <Link className="button-link" href="/" data-testid="back-home">
-        Voltar ao início
-      </Link>
-    </section>
-  );
-}
+type Mode = 'checking' | 'recovering' | 'exhausted' | 'invalid' | 'join' | 'room' | 'not-found';
 
 /**
- * Prazo esgotado sem confirmação: mensagem neutra (a sessão pode estar viva em
- * outra aba/dispositivo), sem entrar como pessoa nova e sem expulsar ninguém.
- * A credencial guardada permanece; "Tentar novamente" inicia um ciclo novo.
+ * Página da sala: decide somente qual das telas reais está no ar e mantém a
+ * recuperação/reconexão que já existia. A composição visual mora em Lobby,
+ * WaitingRoom, Results e nas telas de entrada/erro; a gaveta e a bandeja de
+ * reações são montadas uma vez para todas as fases.
  */
-function RecoveryExhausted({ code }: { code: string }): ReactNode {
-  const room = useRoom();
-  return (
-    <section className="panel" aria-label="Retomada pendente" data-testid="recovery-exhausted">
-      <p>
-        Não foi possível retomar sua sessão automaticamente. Ela pode ainda estar ativa em outra aba ou dispositivo — a
-        credencial desta sala continua guardada neste navegador.
-      </p>
-      <div className="recovery-actions">
-        <button
-          type="button"
-          className="primary"
-          data-testid="retry-recovery-button"
-          onClick={() => void room.retryRecovery(code)}
-        >
-          Tentar novamente
-        </button>
-        <Link className="button-link" href="/" data-testid="back-home">
-          Voltar ao início
-        </Link>
-      </div>
-    </section>
-  );
-}
-
 export default function RoomPage(): ReactNode {
   const params = useParams<{ code: string }>();
   const code = (params?.code ?? '').toUpperCase();
@@ -96,7 +61,14 @@ export default function RoomPage(): ReactNode {
 
   useEffect(() => {
     if (room.removedMessage !== null) return;
-    if (stateMatches) {
+    // Código truncado/colado errado não chega ao servidor: o convite tem
+    // exatamente seis caracteres. Salas válidas porém inexistentes seguem
+    // para a entrada normal, que explica o erro ao tentar entrar.
+    if (code.length !== ROOM_CODE_LENGTH) {
+      setMode('invalid');
+      return;
+    }
+    if (stateMatches && room.recoveryPhase !== 'exhausted') {
       setMode('room');
       return;
     }
@@ -122,6 +94,7 @@ export default function RoomPage(): ReactNode {
       if (cancelled) return;
       if (result === 'ok') setMode('room');
       else if (result === 'not-found') setMode('not-found');
+      else if (result === 'invalid') setMode('invalid');
       else if (result === 'deadline') setMode('exhausted');
       else if (result === 'offline' || result === 'cancelled' || result === 'refused') setMode('checking');
       else setMode('join');
@@ -150,7 +123,8 @@ export default function RoomPage(): ReactNode {
   useEffect(() => {
     if (previousFocusStage.current === focusStage) return;
     previousFocusStage.current = focusStage;
-    if (focusStage === 'checking' || focusStage === 'recovering' || document.activeElement !== document.body) return;
+    if (focusStage === 'checking' || focusStage === 'recovering') return;
+    if (document.activeElement !== document.body) return;
     globalThis.requestAnimationFrame(() => {
       if (document.activeElement === document.body) {
         document.querySelector<HTMLElement>('[data-focus-target]')?.focus({ preventScroll: true });
@@ -158,7 +132,7 @@ export default function RoomPage(): ReactNode {
     });
   }, [focusStage]);
 
-  async function handleJoin(event: FormEvent): Promise<void> {
+  async function handleJoin(event: FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault();
     const joined = await room.joinRoom(code, nickname.trim(), avatar);
     if (joined) setMode('room');
@@ -166,164 +140,88 @@ export default function RoomPage(): ReactNode {
 
   if (room.removedMessage !== null) {
     return (
-      <main className="screen">
-        <header className="screen-header">
-          <h1 data-focus-target tabIndex={-1}>Sala {code}</h1>
-          <p className="muted" data-testid="removed-message">
-            {room.removedMessage}
-          </p>
-        </header>
-        <Link
-          className="button-link"
-          href="/"
-          data-testid="back-home"
-          onClick={() => {
-            room.clearRemoved();
-          }}
-        >
-          Voltar ao início
-        </Link>
-      </main>
+      <RemovedScreen
+        code={code}
+        message={room.removedMessage}
+        onClear={() => {
+          room.clearRemoved();
+        }}
+      />
     );
   }
 
   if (room.trainingRefused) {
-    return (
-      <main className="screen">
-        <header className="screen-header">
-          <h1 data-focus-target tabIndex={-1}>Mesa de treino individual</h1>
-        </header>
-        <TrainingEntryRefused />
-      </main>
-    );
+    return <TrainingRefusedScreen />;
   }
 
   if (mode === 'checking') {
-    return (
-      <main className="screen">
-        <p className="muted" data-testid="connecting">
-          Conectando…
-        </p>
-      </main>
-    );
+    return <ConnectingScreen connection={room.connection} />;
   }
 
   if (mode === 'recovering') {
-    return (
-      <main className="screen">
-        <p className="muted" role="status" data-testid="recovering">
-          Retomando sua sessão…
-        </p>
-        <p className="muted">
-          Esta pode levar alguns segundos. Se demorar, você poderá tentar de novo sem perder a identidade.
-        </p>
-      </main>
-    );
+    return <RecoveringScreen />;
   }
 
   if (mode === 'exhausted') {
-    return (
-      <main className="screen">
-        <header className="screen-header">
-          <h1 data-focus-target tabIndex={-1}>
-            Sessão não retomada
-          </h1>
-        </header>
-        <RecoveryExhausted code={code} />
-      </main>
-    );
+    return <RecoveryExhaustedScreen code={code} />;
+  }
+
+  if (mode === 'invalid') {
+    return <RoomGoneScreen code={code} tipo="invalida" />;
   }
 
   if (mode === 'not-found') {
-    return (
-      <main className="screen">
-        <header className="screen-header">
-          <h1 data-focus-target tabIndex={-1}>Sala não encontrada</h1>
-          <p className="muted" data-testid="room-not-found">
-            A sala {code} não existe ou já foi encerrada. Confira o link com quem convidou.
-          </p>
-        </header>
-        <Link className="button-link" href="/" data-testid="back-home">
-          Voltar ao início
-        </Link>
-      </main>
-    );
+    return <RoomGoneScreen code={code} tipo="expirada" />;
   }
 
   if (mode === 'join') {
     return (
-      <main className="screen">
-        <header className="screen-header">
-          <h1 data-focus-target tabIndex={-1}>Entrar na sala {code}</h1>
-          <p className="muted">Escolha um apelido e um avatar. Sem cadastro.</p>
-        </header>
-        {room.error !== null ? <ErrorBanner message={room.error} onDismiss={room.clearError} /> : null}
-        <form className="panel" onSubmit={(event) => void handleJoin(event)}>
-          <label>
-            Seu apelido
-            <input
-              value={nickname}
-              onChange={(event) => setNickname(event.target.value)}
-              maxLength={24}
-              placeholder="Ex.: Bia"
-              data-testid="join-name-input"
-            />
-          </label>
-          <AvatarPicker value={avatar} onChange={setAvatar} />
-          <button type="submit" className="primary" disabled={nickname.trim().length === 0 || room.busy} data-testid="join-room-button">
-            Entrar
-          </button>
-        </form>
-      </main>
+      <JoinRoomScreen
+        code={code}
+        nickname={nickname}
+        avatar={avatar}
+        busy={room.busy}
+        error={room.error}
+        onNickname={setNickname}
+        onAvatar={setAvatar}
+        onDismissError={room.clearError}
+        onSubmit={(event) => void handleJoin(event)}
+      />
     );
   }
 
   if (room.state === null || room.state.room.roomCode !== code) {
-    return (
-      <main className="screen">
-        <p className="muted">Conectando…</p>
-      </main>
-    );
+    return <ConnectingScreen connection={room.connection} />;
   }
 
+  const status = room.state.room.status;
+  const waiting = room.state.self.view === null;
+
   return (
-    <main className="screen">
-      {room.connection !== 'live' ? (
-        <p className="connection-banner" role="status" data-testid="connection-lost">
-          Conexão perdida. Tentando reconectar — os envios ficam bloqueados até voltar.
-        </p>
-      ) : null}
-      {room.connection === 'live' && room.recoveryPhase === 'recovering' ? (
-        <p className="connection-banner" role="status" data-testid="recovering-banner">
-          Retomando sua sessão… os envios ficam bloqueados até a confirmação.
-        </p>
-      ) : null}
-      {room.connection === 'live' && room.reconnectedAt !== null ? (
-        <p className="connection-banner recovered" role="status" data-testid="connection-recovered">
-          Conexão recuperada.
-        </p>
-      ) : null}
-      {room.recoveryPhase === 'exhausted' ? <RecoveryExhausted code={code} /> : null}
-      {room.error !== null ? <ErrorBanner message={room.error} onDismiss={room.clearError} /> : null}
-      {room.state.room.status === 'lobby' ? <Lobby state={room.state} /> : null}
-      {room.state.room.status === 'playing' && room.state.self.view === null ? (
-        <WaitingRoom state={room.state} events={room.events} />
-      ) : null}
-      {room.state.room.status === 'paused' && room.state.self.view === null ? (
-        <WaitingRoom state={room.state} events={room.events} />
-      ) : null}
-      {(room.state.room.status === 'playing' || room.state.room.status === 'paused') && room.state.self.view !== null ? (
-        <GameTable state={room.state} events={room.events} />
-      ) : null}
-      {room.state.room.status === 'finished' ? <Results state={room.state} events={room.events} /> : null}
-      <TauntResponseNotice />
-      <TauntPanel />
-      <MoodSettings />
-      <ChatPanel />
-      <TauntOverlay />
-      <MoodFeedback />
-      <MoodAnnouncer />
-      <MoodMenu />
-    </main>
+    <TableDrawerProvider>
+      <main className={styles.appMain}>
+        <RoomNotices
+          connection={room.connection}
+          recoveryPhase={room.recoveryPhase}
+          reconnectedAt={room.reconnectedAt}
+          error={room.error}
+          onDismissError={room.clearError}
+        />
+        {status === 'lobby' ? <Lobby state={room.state} /> : null}
+        {(status === 'playing' || status === 'paused') && waiting ? (
+          <WaitingRoom state={room.state} events={room.events} />
+        ) : null}
+        {(status === 'playing' || status === 'paused') && !waiting ? (
+          <GameTable state={room.state} events={room.events} />
+        ) : null}
+        {status === 'finished' ? <Results state={room.state} events={room.events} /> : null}
+        <MoodFeedback />
+        <MoodAnnouncer />
+      </main>
+      <TableDrawer />
+      <ReactionTray />
+      <ReactionOverlay />
+      <EffectOverlay />
+    </TableDrawerProvider>
   );
 }

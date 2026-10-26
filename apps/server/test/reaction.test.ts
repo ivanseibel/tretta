@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import type { Ack, JoinRoomAck, ReactionSendAck, RetryInfo } from '@tretta/protocol';
-import { REACTION_SENDER_COOLDOWN_MS, TAUNT_SENDER_COOLDOWN_MS } from '@tretta/protocol/shared';
+import { REACTION_SENDER_COOLDOWN_MS, REACTION_TYPES } from '@tretta/protocol/shared';
 import {
   connect,
   createRoom,
@@ -17,7 +17,6 @@ import {
   setReady,
   startRound,
   startTestServer,
-  tauntSend,
   waitFor,
   type TestClient,
   type TestServer,
@@ -79,11 +78,11 @@ describe('reações sem destinatário', () => {
     const guestRec = record(guest);
     const joined = expectOkAck(await joinOrFail(guest, created.roomCode, 'Bia'));
 
-    // Preparação: Ana reage rindo. O envelope tem só dados públicos e o mesmo
+    // Preparação: Ana reage com eita. O envelope tem só dados públicos e o mesmo
     // evento sai uma vez para emissor e demais.
     const t0 = ctx.clock.now();
-    const first = expectOkAck(await reactionSend(host, created.roomCode, 'rindo'));
-    expect(first.reaction.type).toBe('rindo');
+    const first = expectOkAck(await reactionSend(host, created.roomCode, 'eita'));
+    expect(first.reaction.type).toBe('eita');
     expect(first.reaction.sender).toEqual({ playerId: created.playerId, nickname: 'Ana', avatar: 'raposa' });
     expect(first.reaction.id.startsWith('rx_')).toBe(true);
     expect(first.reaction.sentAt).toBe(t0);
@@ -104,25 +103,25 @@ describe('reações sem destinatário', () => {
     expectOkAck(await joinOrFail(watcher, created.roomCode, 'Cai'));
     expect(latestState(watcherRec).self.waiting).toBe(true);
     ctx.clock.advance(REACTION_SENDER_COOLDOWN_MS);
-    expectOkAck(await reactionSend(watcher, created.roomCode, 'bravo'));
+    expectOkAck(await reactionSend(watcher, created.roomCode, 'injustica'));
     await waitFor(() => hostRec.reactions.length === 2 && guestRec.reactions.length === 2 && watcherRec.reactions.length === 1, 'reação de quem aguarda');
     expect(hostRec.reactions[1]?.reaction.sender.nickname).toBe('Cai');
-    expect(hostRec.reactions[1]?.reaction.type).toBe('bravo');
+    expect(hostRec.reactions[1]?.reaction.type).toBe('injustica');
 
     // Pausa: Bia cai; Ana reage mesmo pausada e quem aguarda recebe.
     guest.disconnect();
     await waitFor(() => latestState(hostRec).room.status === 'paused', 'pausa');
     ctx.clock.advance(REACTION_SENDER_COOLDOWN_MS);
-    expectOkAck(await reactionSend(host, created.roomCode, 'chorando'));
+    expectOkAck(await reactionSend(host, created.roomCode, 'carinho'));
     await waitFor(() => watcherRec.reactions.length === 2, 'reação na pausa');
 
     // Resultado: a reação continua disponível e compartilhada.
     expectOkAck(await endRoundWithoutWinner(host));
     await waitFor(() => latestState(hostRec).room.status === 'finished', 'resultado');
     ctx.clock.advance(REACTION_SENDER_COOLDOWN_MS);
-    expectOkAck(await reactionSend(watcher, created.roomCode, 'rindo'));
+    expectOkAck(await reactionSend(watcher, created.roomCode, 'eita'));
     await waitFor(() => hostRec.reactions.length === 4, 'reação no resultado');
-    expect(watcherRec.reactions.map((entry) => entry.reaction.type)).toEqual(['bravo', 'chorando', 'rindo']);
+    expect(watcherRec.reactions.map((entry) => entry.reaction.type)).toEqual(['injustica', 'carinho', 'eita']);
     expect(guestRec.reactions).toHaveLength(2);
 
     // Nova entrada e retorno da mesma identidade não recebem reação antiga.
@@ -149,12 +148,67 @@ describe('reações sem destinatário', () => {
     const otherRec = record(other);
     expectOkAck(await createRoom(other, 'Zara'));
     ctx.clock.advance(REACTION_SENDER_COOLDOWN_MS);
-    expectOkAck(await reactionSend(host, created.roomCode, 'bravo'));
+    expectOkAck(await reactionSend(host, created.roomCode, 'injustica'));
     await waitFor(() => lateRec.reactions.length === 1, 'reação nova');
     await new Promise((resolve) => setTimeout(resolve, 50));
     expect(otherRec.reactions).toHaveLength(0);
     // Quem retornou recebe só o que aconteceu depois do retorno.
     expect(guestBackRec.reactions).toHaveLength(1);
+  });
+
+  it('aceita e transmite os doze ids sem alvo, áudio ou destinatário', async () => {
+    const ctx = await setup();
+    const host = await newClient();
+    const hostRec = record(host);
+    const created = expectOkAck(await createRoom(host, 'Ana'));
+    const guest = await newClient();
+    const guestRec = record(guest);
+    const joined = expectOkAck(await joinOrFail(guest, created.roomCode, 'Bia'));
+
+    // Cada um dos doze ids é aceito e retransmitido com o mesmo evento público.
+    const accepted: ReactionSendAck['reaction'][] = [];
+    for (const [index, type] of REACTION_TYPES.entries()) {
+      if (index > 0) ctx.clock.advance(REACTION_SENDER_COOLDOWN_MS);
+      const ack = expectOkAck(await reactionSend(host, created.roomCode, type));
+      expect(ack.reaction.type).toBe(type);
+      expect(Object.keys(ack.reaction).sort()).toEqual(['id', 'sender', 'sentAt', 'type']);
+      expect(Object.keys(ack.reaction.sender).sort()).toEqual(['avatar', 'nickname', 'playerId']);
+      accepted.push(ack.reaction);
+    }
+    expect(REACTION_TYPES).toHaveLength(12);
+    await waitFor(
+      () => hostRec.reactions.length === REACTION_TYPES.length && guestRec.reactions.length === REACTION_TYPES.length,
+      'doze reações transmitidas',
+    );
+    expect(hostRec.reactions.map((entry) => entry.reaction)).toEqual(accepted);
+    expect(guestRec.reactions.map((entry) => entry.reaction.type)).toEqual([...REACTION_TYPES]);
+    for (const entry of guestRec.reactions) {
+      // Envelope de broadcast sem destinatário, autoria forjada ou áudio.
+      expect(entry.roomCode).toBe(created.roomCode);
+      expect(Object.keys(entry.reaction).sort()).toEqual(['id', 'sender', 'sentAt', 'type']);
+      expect(JSON.stringify(entry)).not.toContain('target');
+      expect(JSON.stringify(entry)).not.toContain('audio');
+    }
+
+    // Ids fora do catálogo atual, inclusive os três antigos, e alvo explícito recusam.
+    for (const type of ['rindo', 'chorando', 'bravo', 'bolo']) {
+      expectError(
+        await request<Ack<ReactionSendAck>>(host, 'client:reactionSend', { intentId: intent(), roomCode: created.roomCode, type }),
+        'INVALID_PAYLOAD',
+      );
+    }
+    expectError(
+      await request<Ack<ReactionSendAck>>(host, 'client:reactionSend', {
+        intentId: intent(),
+        roomCode: created.roomCode,
+        type: 'eita',
+        targetId: joined.playerId,
+      }),
+      'INVALID_PAYLOAD',
+    );
+    const broadcastsBefore = hostRec.reactions.length;
+    await new Promise((resolve) => setTimeout(resolve, 50));
+    expect(hostRec.reactions.length).toBe(broadcastsBefore);
   });
 
   it('contrato estrito: tipo inválido, destinatário, autoria ou horário forjados e falta de vínculo recusam', async () => {
@@ -172,7 +226,7 @@ describe('reações sem destinatário', () => {
       await request<Ack<ReactionSendAck>>(host, 'client:reactionSend', {
         intentId: intent(),
         roomCode: created.roomCode,
-        type: 'rindo',
+        type: 'eita',
         targetId: joined.playerId,
       }),
       'INVALID_PAYLOAD',
@@ -181,7 +235,7 @@ describe('reações sem destinatário', () => {
       await request<Ack<ReactionSendAck>>(host, 'client:reactionSend', {
         intentId: intent(),
         roomCode: created.roomCode,
-        type: 'rindo',
+        type: 'eita',
         author: { playerId: joined.playerId, nickname: 'Bia', avatar: 'lobo' },
         sentAt: 1,
       }),
@@ -190,10 +244,10 @@ describe('reações sem destinatário', () => {
 
     // Conexão sem vínculo e vínculo de outra sala não enviam como outra identidade.
     const idle = await newClient();
-    expectError(await reactionSend(idle, created.roomCode, 'rindo'), 'NOT_IN_ROOM');
+    expectError(await reactionSend(idle, created.roomCode, 'eita'), 'NOT_IN_ROOM');
     const other = await newClient();
     expectOkAck(await createRoom(other, 'Zara'));
-    expectError(await reactionSend(other, created.roomCode, 'rindo'), 'NOT_IN_ROOM');
+    expectError(await reactionSend(other, created.roomCode, 'eita'), 'NOT_IN_ROOM');
 
     // Nenhuma recusa gerou broadcast nem avançou o contador da sala.
     const room = ctx.server.server.rooms.debugRoom(created.roomCode);
@@ -211,11 +265,10 @@ describe('reações sem destinatário', () => {
     const room = ctx.server.server.rooms.debugRoom(created.roomCode);
     if (room === undefined) throw new Error('sala ausente');
 
-    // A pessoa reage e provoca um bot fixo; o assento de bot é elegível.
-    expectOkAck(await reactionSend(host, created.roomCode, 'bravo'));
+    // A pessoa reage; os bots fixos não têm conexão e não reagem sozinhos.
+    expectOkAck(await reactionSend(host, created.roomCode, 'injustica'));
     const bot = latestState(hostRec).room.participants.find((entry) => entry.kind === 'bot');
     if (bot === undefined) throw new Error('bot ausente');
-    expectOkAck(await tauntSend(host, created.roomCode, 'tomate', bot.id));
 
     // Vários turnos correm sozinhos sem nenhuma reação automática dos bots.
     for (let step = 0; step < 6; step += 1) {
@@ -233,62 +286,45 @@ describe('reações sem destinatário', () => {
 
     // Cliente sem vínculo não emite; identidade de bot não entra pelo payload.
     const impostor = await newClient();
-    expectError(await reactionSend(impostor, created.roomCode, 'rindo'), 'NOT_IN_ROOM');
+    expectError(await reactionSend(impostor, created.roomCode, 'eita'), 'NOT_IN_ROOM');
     expectError(
       await request<Ack<ReactionSendAck>>(impostor, 'client:reactionSend', {
         intentId: intent(),
         roomCode: created.roomCode,
-        type: 'rindo',
+        type: 'eita',
         author: { playerId: bot.id },
       }),
       'INVALID_PAYLOAD',
     );
   });
 
-  it('intervalo de 5s exato entre tipos, independente das provocações', async () => {
+  it('intervalo de 5s exato entre tipos, sem consumir a janela em recusas', async () => {
     const ctx = await setup();
     const host = await newClient();
     const created = expectOkAck(await createRoom(host, 'Ana'));
-    const guest = await newClient();
-    const joined = expectOkAck(await joinOrFail(guest, created.roomCode, 'Bia'));
 
     const t0 = ctx.clock.now();
-    const first = expectOkAck(await reactionSend(host, created.roomCode, 'rindo'));
+    const first = expectOkAck(await reactionSend(host, created.roomCode, 'eita'));
     expect(first.limits.nextSendAt).toBe(t0 + REACTION_SENDER_COOLDOWN_MS);
-    // No mesmo instante, a provocação está livre: as duas categorias não se consomem.
-    const together = expectOkAck(await tauntSend(host, created.roomCode, 'tomate', joined.playerId));
-    expect(together.limits).toEqual({ serverTime: t0, nextSendAt: t0 + TAUNT_SENDER_COOLDOWN_MS });
 
     // 4.999 ms depois a troca de tipo ainda recusa, sem consumir o intervalo.
     ctx.clock.advance(REACTION_SENDER_COOLDOWN_MS - 1);
-    const refused = await reactionSend(host, created.roomCode, 'bravo');
+    const refused = await reactionSend(host, created.roomCode, 'injustica');
     const refusedBody = expectError(refused, 'REACTION_SENDER_COOLDOWN');
     expect(refusedBody.retry).toEqual({
       serverTime: t0 + REACTION_SENDER_COOLDOWN_MS - 1,
       retryAt: t0 + REACTION_SENDER_COOLDOWN_MS,
       scope: 'sender',
     });
-    expect(refusedBody.retry?.targetId).toBeUndefined();
+    expect(Object.keys(refusedBody.retry ?? {}).sort()).toEqual(['retryAt', 'scope', 'serverTime']);
     ctx.clock.advance(1);
-    const second = expectOkAck(await reactionSend(host, created.roomCode, 'bravo'));
+    const second = expectOkAck(await reactionSend(host, created.roomCode, 'injustica'));
     expect(second.limits).toEqual({ serverTime: t0 + REACTION_SENDER_COOLDOWN_MS, nextSendAt: t0 + 2 * REACTION_SENDER_COOLDOWN_MS });
 
-    // A provocação segue no próprio recuo, com escopo de emissor e sem alvo na espera.
-    const tauntRefused = await tauntSend(host, created.roomCode, 'torta', joined.playerId);
-    const tauntBody = expectError(tauntRefused, 'TAUNT_SENDER_COOLDOWN');
-    expect(tauntBody.retry).toEqual({
-      serverTime: t0 + REACTION_SENDER_COOLDOWN_MS,
-      retryAt: t0 + TAUNT_SENDER_COOLDOWN_MS,
-      scope: 'sender',
-    });
-
-    // No limite exato do recuo a provocação aceita; a reação seguinte, no próprio
-    // intervalo, continua aceitando: nenhuma das duas bloqueia a outra.
-    ctx.clock.advance(TAUNT_SENDER_COOLDOWN_MS - REACTION_SENDER_COOLDOWN_MS);
-    const tauntOk = expectOkAck(await tauntSend(host, created.roomCode, 'torta', joined.playerId));
-    expect(tauntOk.limits).toEqual({ serverTime: t0 + TAUNT_SENDER_COOLDOWN_MS, nextSendAt: t0 + 2 * TAUNT_SENDER_COOLDOWN_MS });
-    const third = expectOkAck(await reactionSend(host, created.roomCode, 'rindo'));
-    expect(third.limits.nextSendAt).toBe(t0 + TAUNT_SENDER_COOLDOWN_MS + REACTION_SENDER_COOLDOWN_MS);
+    // No limite exato, outro tipo é aceito e a janela seguinte começa ali.
+    ctx.clock.advance(REACTION_SENDER_COOLDOWN_MS);
+    const third = expectOkAck(await reactionSend(host, created.roomCode, 'eita'));
+    expect(third.limits).toEqual({ serverTime: t0 + 2 * REACTION_SENDER_COOLDOWN_MS, nextSendAt: t0 + 3 * REACTION_SENDER_COOLDOWN_MS });
   });
 
   it('replay devolve a mesma reação sem retransmitir nem renovar o prazo; reuso conflitante recusa', async () => {
@@ -298,12 +334,12 @@ describe('reações sem destinatário', () => {
     const created = expectOkAck(await createRoom(host, 'Ana'));
     const guest = await newClient();
     const guestRec = record(guest);
-    const joined = expectOkAck(await joinOrFail(guest, created.roomCode, 'Bia'));
+    expectOkAck(await joinOrFail(guest, created.roomCode, 'Bia'));
 
     const t0 = ctx.clock.now();
     const shared = intent();
-    const first = expectOkAck(await reactionSend(host, created.roomCode, 'rindo', shared));
-    const replay = expectOkAck(await reactionSend(host, created.roomCode, 'rindo', shared));
+    const first = expectOkAck(await reactionSend(host, created.roomCode, 'eita', shared));
+    const replay = expectOkAck(await reactionSend(host, created.roomCode, 'eita', shared));
     expect(replay).toEqual(first);
     await waitFor(() => hostRec.reactions.length === 1 && guestRec.reactions.length === 1, 'broadcast único');
     await new Promise((resolve) => setTimeout(resolve, 50));
@@ -311,23 +347,19 @@ describe('reações sem destinatário', () => {
 
     // Replay no meio da janela devolve o ack original: o prazo não é renovado.
     ctx.clock.advance(REACTION_SENDER_COOLDOWN_MS - 1);
-    const replayLater = expectOkAck(await reactionSend(host, created.roomCode, 'rindo', shared));
+    const replayLater = expectOkAck(await reactionSend(host, created.roomCode, 'eita', shared));
     expect(replayLater.limits).toEqual({ serverTime: t0, nextSendAt: t0 + REACTION_SENDER_COOLDOWN_MS });
-    expectError(await reactionSend(host, created.roomCode, 'bravo'), 'REACTION_SENDER_COOLDOWN');
+    expectError(await reactionSend(host, created.roomCode, 'injustica'), 'REACTION_SENDER_COOLDOWN');
     ctx.clock.advance(1);
-    expectOkAck(await reactionSend(host, created.roomCode, 'bravo'));
+    expectOkAck(await reactionSend(host, created.roomCode, 'injustica'));
 
-    // Mesmo id com outro conteúdo é outra intenção, inclusive entre categorias.
-    expectError(await reactionSend(host, created.roomCode, 'chorando', shared), 'INTENT_REUSED');
-    const tauntIntent = intent();
-    expectOkAck(await tauntSend(host, created.roomCode, 'tomate', joined.playerId, tauntIntent));
-    expectError(await reactionSend(host, created.roomCode, 'rindo', tauntIntent), 'INTENT_REUSED');
-    expectError(await tauntSend(host, created.roomCode, 'tomate', joined.playerId, shared), 'INTENT_REUSED');
+    // Mesmo id com outro conteúdo é outra intenção.
+    expectError(await reactionSend(host, created.roomCode, 'carinho', shared), 'INTENT_REUSED');
 
     // Replay de recusa não reexecuta nem retransmite.
     const refused = intent();
-    expectError(await reactionSend(host, created.roomCode, 'rindo', refused), 'REACTION_SENDER_COOLDOWN');
-    expectError(await reactionSend(host, created.roomCode, 'rindo', refused), 'REACTION_SENDER_COOLDOWN');
+    expectError(await reactionSend(host, created.roomCode, 'eita', refused), 'REACTION_SENDER_COOLDOWN');
+    expectError(await reactionSend(host, created.roomCode, 'eita', refused), 'REACTION_SENDER_COOLDOWN');
     const broadcastBefore = hostRec.reactions.length;
     await new Promise((resolve) => setTimeout(resolve, 50));
     expect(hostRec.reactions.length).toBe(broadcastBefore);
@@ -341,7 +373,7 @@ describe('reações sem destinatário', () => {
     expectOkAck(await joinOrFail(guest, created.roomCode, 'Bia'));
 
     const t0 = ctx.clock.now();
-    expectOkAck(await reactionSend(host, created.roomCode, 'rindo'));
+    expectOkAck(await reactionSend(host, created.roomCode, 'eita'));
 
     // Queda e retorno da mesma identidade no meio da janela: o estado da
     // retomada traz o instante calculável e o replay da retomada é seguro.
@@ -365,11 +397,10 @@ describe('reações sem destinatário', () => {
     const recovered = latestState(backRec);
     expect(recovered.room.serverTime).toBe(t0 + 1000);
     expect(recovered.self.reactionNextSendAt).toBe(t0 + REACTION_SENDER_COOLDOWN_MS);
-    expect(recovered.self.tauntNextSendAt).toBeNull();
     ctx.clock.advance(REACTION_SENDER_COOLDOWN_MS - 1000 - 1);
-    expectError(await reactionSend(back, created.roomCode, 'bravo'), 'REACTION_SENDER_COOLDOWN');
+    expectError(await reactionSend(back, created.roomCode, 'injustica'), 'REACTION_SENDER_COOLDOWN');
     ctx.clock.advance(1);
-    expectOkAck(await reactionSend(back, created.roomCode, 'bravo'));
+    expectOkAck(await reactionSend(back, created.roomCode, 'injustica'));
 
     // Nova rodada não zera a janela vigente (a hostagem passou para Bia na queda).
     await setReady(back, true);
@@ -377,9 +408,9 @@ describe('reações sem destinatário', () => {
     expectOkAck(await startRound(guest));
     await waitFor(() => latestState(backRec).room.status === 'playing', 'rodada');
     ctx.clock.advance(REACTION_SENDER_COOLDOWN_MS - 1);
-    expectError(await reactionSend(back, created.roomCode, 'chorando'), 'REACTION_SENDER_COOLDOWN');
+    expectError(await reactionSend(back, created.roomCode, 'carinho'), 'REACTION_SENDER_COOLDOWN');
     ctx.clock.advance(1);
-    const afterRound = expectOkAck(await reactionSend(back, created.roomCode, 'chorando'));
+    const afterRound = expectOkAck(await reactionSend(back, created.roomCode, 'carinho'));
     expect(afterRound.reaction.sentAt).toBe(t0 + 2 * REACTION_SENDER_COOLDOWN_MS);
   });
 
@@ -407,8 +438,8 @@ describe('reações sem destinatário', () => {
     const handBefore = latestState(hostRec).self.view?.hand.map((card) => card.id) ?? [];
     expect(handBefore.length).toBeGreaterThan(0);
 
-    const accepted = expectOkAck(await reactionSend(host, created.roomCode, 'rindo'));
-    const refused = await reactionSend(host, created.roomCode, 'bravo');
+    const accepted = expectOkAck(await reactionSend(host, created.roomCode, 'eita'));
+    const refused = await reactionSend(host, created.roomCode, 'injustica');
     expectError(refused, 'REACTION_SENDER_COOLDOWN');
 
     // Sucesso e recusa preservam motor, versão, placar e agendamento do bot.

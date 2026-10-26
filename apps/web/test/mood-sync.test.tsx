@@ -2,12 +2,11 @@
  * Fila, efeitos e preferências no provider (T005C):
  * 1. Lote de efeitos entra na fila serial e avança pelo timer.
  * 2. Replay/repetição não reapresenta nem repete som.
- * 3. Efeito e provocação compartilham a fila sem sobreposição.
- * 4. Preferências aplicam data-anim, persistem e valem após remontar.
- * 5. prefers-reduced-motion limita "completa" a "reduced" ao vivo.
- * 6. Ocultar provocações descarta as enfileiradas e preserva efeitos.
- * 7. Troca de rodada cancela; finished da mesma rodada preserva.
- * 8. Silenciar chama o controle de áudio e bloqueia sons seguintes.
+ * 3. Preferências aplicam data-anim, persistem e valem após remontar.
+ * 4. prefers-reduced-motion limita "completa" a "reduced" ao vivo.
+ * 5. Troca de rodada cancela; finished da mesma rodada preserva.
+ * 6. Silenciar chama o controle de áudio e bloqueia sons seguintes.
+ * 7. Ocultar reações remove as apresentações locais.
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
@@ -17,16 +16,15 @@ import type {
   EffectVariant,
   EventsMessage,
   StateMessage,
-  TauntEvent,
 } from '@tretta/protocol';
 import type { RoomSocket, StoredIdentity } from '@/lib/client';
 import { RoomProvider, useRoom, type RoomContextValue } from '@/app/providers';
+import type { ReactionEvent } from '@tretta/protocol';
 import { MoodSettings } from '@/components/MoodSettings';
-import { TauntOverlay } from '@/components/TauntOverlay';
+import { EffectOverlay } from '@/components/reactions/EffectOverlay';
 
 const soundSpy = vi.hoisted(() => ({
   playEffectSound: vi.fn(),
-  playTauntSound: vi.fn(),
   playTurnNotificationSound: vi.fn(),
   prepareSoundPlayback: vi.fn(),
   setSoundMuted: vi.fn(),
@@ -199,26 +197,12 @@ function eventsMessage(
   return { roomCode, roundId, version, events, effects };
 }
 
-function taunt(id: string): TauntEvent {
-  return {
-    id,
-    type: 'tomate',
-    sender: { playerId: 'player_anA', nickname: 'Ana', avatar: 'raposa' },
-    target: { playerId: 'player_biA', nickname: 'Bia', avatar: 'lobo' },
-    sentAt: 1_000_000,
-  };
-}
-
 function deliver(event: string, payload?: unknown): void {
   const handler = harness.state.handlers.get(event);
   if (handler === undefined) throw new Error(`Handler ausente: ${event}`);
   act(() => {
     handler(payload);
   });
-}
-
-function broadcastTaunt(roomCode: string, event: TauntEvent): void {
-  deliver('server:taunt', { roomCode, taunt: event });
 }
 
 function deliverEffects(
@@ -241,14 +225,8 @@ function renderedEffectIds(): string[] {
   );
 }
 
-function renderedTauntIds(): string[] {
-  return Array.from(document.querySelectorAll('[data-testid^="taunt-effect-"]')).map(
-    (node) => node.getAttribute('data-taunt-id') ?? '',
-  );
-}
-
 function overlay(): HTMLElement | null {
-  return document.querySelector('[data-testid="taunt-overlay"]');
+  return document.querySelector('[data-testid="effect-overlay"]');
 }
 
 function overlayAnim(): string | null {
@@ -261,7 +239,7 @@ async function mountRoom(): Promise<void> {
       <RoomProvider>
         <Probe />
         <MoodSettings />
-        <TauntOverlay />
+        <EffectOverlay />
       </RoomProvider>,
     );
   });
@@ -297,7 +275,7 @@ async function setPreference(
     animations: 'full' | 'reduced' | 'off';
     soundMuted: boolean;
     turnNotificationEnabled: boolean;
-    hideTaunts: boolean;
+    hideReactions: boolean;
   }>,
 ): Promise<void> {
   await act(async () => {
@@ -316,7 +294,6 @@ beforeEach(() => {
   latest = null;
   window.localStorage.clear();
   soundSpy.playEffectSound.mockClear();
-  soundSpy.playTauntSound.mockClear();
   soundSpy.playTurnNotificationSound.mockClear();
   soundSpy.prepareSoundPlayback.mockClear();
   soundSpy.setSoundMuted.mockClear();
@@ -370,26 +347,6 @@ describe('fila serial de apresentações', () => {
     deliverEffects('ROOMF2', [penaltyEffect('fx_1')]);
     expect(renderedEffectIds()).toEqual([]);
     expect(soundSpy.playEffectSound).toHaveBeenCalledTimes(1);
-  });
-
-  it('efeito e provocação compartilham a fila sem sobreposição', async () => {
-    vi.useFakeTimers();
-    await mountRoom();
-    await enterRoom('ROOMF3');
-
-    deliverEffects('ROOMF3', [penaltyEffect('fx_1')]);
-    broadcastTaunt('ROOMF3', taunt('t_1'));
-    expect(renderedEffectIds()).toEqual(['fx_1']);
-    expect(renderedTauntIds()).toEqual([]);
-
-    await advance(2601);
-    expect(renderedEffectIds()).toEqual([]);
-    expect(renderedTauntIds()).toEqual(['t_1']);
-    expect(soundSpy.playTauntSound).toHaveBeenCalledTimes(1);
-
-    await advance(3201);
-    expect(renderedTauntIds()).toEqual([]);
-    expect(overlay()).toBeNull();
   });
 
   it('troca de rodada cancela; finished da mesma rodada preserva', async () => {
@@ -509,6 +466,39 @@ describe('fila serial de apresentações', () => {
   });
 });
 
+describe('reações no provider', () => {
+  it('deduplica ack/broadcast, mantém 4 s e limpa ao ocultar', async () => {
+    vi.useFakeTimers();
+    await mountRoom();
+    await enterRoom('ROOMR1');
+
+    const event: ReactionEvent = {
+      id: 'rx_1',
+      type: 'eita',
+      sender: { playerId: 'player_anA', nickname: 'Ana', avatar: 'raposa' },
+      sentAt: Date.now(),
+    };
+    deliver('server:reaction', { roomCode: 'ROOMR1', reaction: event });
+    expect(api().activeReactions.player_anA?.id).toBe('rx_1');
+    deliver('server:reaction', { roomCode: 'ROOMR1', reaction: event });
+    expect(Object.keys(api().activeReactions)).toEqual(['player_anA']);
+
+    await advance(3_999);
+    expect(api().activeReactions.player_anA?.id).toBe('rx_1');
+    await advance(1);
+    expect(api().activeReactions.player_anA).toBeUndefined();
+
+    deliver('server:reaction', {
+      roomCode: 'ROOMR1',
+      reaction: { ...event, id: 'rx_2', type: 'uau' },
+    });
+    expect(api().activeReactions.player_anA?.id).toBe('rx_2');
+    await setPreference({ hideReactions: true });
+    expect(api().activeReactions).toEqual({});
+    expect(soundSpy.playEffectSound).not.toHaveBeenCalled();
+  });
+});
+
 describe('preferências de apresentação', () => {
   it('data-anim reflete a escolha e o valor persiste após remontar', async () => {
     vi.useFakeTimers();
@@ -565,63 +555,6 @@ describe('preferências de apresentação', () => {
     expect(screen.queryByTestId('pref-animations-note')).toBeNull();
   });
 
-  it('ocultar provocações descarta as enfileiradas/ativa e preserva efeitos automáticos', async () => {
-    vi.useFakeTimers();
-    await mountRoom();
-    await enterRoom('ROOMP3');
-
-    broadcastTaunt('ROOMP3', taunt('t_vis'));
-    expect(renderedTauntIds()).toEqual(['t_vis']);
-
-    await setPreference({ hideTaunts: true });
-    expect(renderedTauntIds()).toEqual([]);
-
-    broadcastTaunt('ROOMP3', taunt('t_nova'));
-    expect(renderedTauntIds()).toEqual([]);
-
-    deliverEffects('ROOMP3', [penaltyEffect('fx_1')]);
-    expect(renderedEffectIds()).toEqual(['fx_1']);
-    expect(soundSpy.playTauntSound).toHaveBeenCalledTimes(1);
-    expect(soundSpy.playEffectSound).toHaveBeenCalledTimes(1);
-
-    // Reativar não despeja as suprimidas.
-    await setPreference({ hideTaunts: false });
-    expect(renderedTauntIds()).toEqual([]);
-    expect(renderedEffectIds()).toEqual(['fx_1']);
-  });
-
-  it('corta a provocação ativa antes do automático e preserva automático ativo ao ocultar pendentes', async () => {
-    vi.useFakeTimers();
-    await mountRoom();
-    await enterRoom('ROOMP6');
-
-    broadcastTaunt('ROOMP6', taunt('t_active_audio'));
-    deliverEffects('ROOMP6', [penaltyEffect('fx_after_taunt')]);
-    expect(renderedTauntIds()).toEqual(['t_active_audio']);
-    expect(renderedEffectIds()).toEqual([]);
-
-    soundSpy.stopAllSounds.mockClear();
-    await setPreference({ hideTaunts: true });
-    expect(renderedTauntIds()).toEqual([]);
-    expect(renderedEffectIds()).toEqual(['fx_after_taunt']);
-    expect(soundSpy.stopAllSounds).toHaveBeenCalledTimes(1);
-    expect(soundSpy.stopAllSounds.mock.invocationCallOrder[0]).toBeLessThan(
-      soundSpy.playEffectSound.mock.invocationCallOrder.at(-1) ?? Number.POSITIVE_INFINITY,
-    );
-
-    await setPreference({ hideTaunts: false });
-    broadcastTaunt('ROOMP6', taunt('t_pending_audio'));
-    expect(renderedTauntIds()).toEqual([]);
-    soundSpy.stopAllSounds.mockClear();
-    await setPreference({ hideTaunts: true });
-    expect(renderedEffectIds()).toEqual(['fx_after_taunt']);
-    expect(soundSpy.stopAllSounds).not.toHaveBeenCalled();
-
-    await advance(2601);
-    expect(renderedTauntIds()).toEqual([]);
-    expect(renderedEffectIds()).toEqual([]);
-  });
-
   it('silenciar chama o controle de áudio e bloqueia sons seguintes', async () => {
     vi.useFakeTimers();
     await mountRoom();
@@ -640,21 +573,6 @@ describe('preferências de apresentação', () => {
     expect(soundSpy.playEffectSound).toHaveBeenCalledTimes(1);
   });
 
-  it('desativar o aviso da vez mantém ativos os sons de efeitos e provocações', async () => {
-    vi.useFakeTimers();
-    await mountRoom();
-    await enterRoom('ROOMP6');
-    await setPreference({ turnNotificationEnabled: false });
-
-    deliverEffects('ROOMP6', [penaltyEffect('fx_independent')]);
-    broadcastTaunt('ROOMP6', taunt('taunt_independent'));
-    expect(soundSpy.playEffectSound).toHaveBeenCalledTimes(1);
-    expect(soundSpy.playTauntSound).not.toHaveBeenCalled();
-
-    await advance(2601);
-    expect(soundSpy.playTauntSound).toHaveBeenCalledTimes(1);
-  });
-
   it('controles são acessíveis e refletem o estado no DOM', async () => {
     await mountRoom();
     await enterRoom('ROOMP5');
@@ -664,7 +582,7 @@ describe('preferências de apresentação', () => {
     const off = screen.getByTestId('pref-animations-off');
     const mute = screen.getByTestId('pref-sound-mute');
     const turnNotification = screen.getByTestId('pref-turn-notification');
-    const hide = screen.getByTestId('pref-hide-taunts');
+    const hide = screen.getByTestId('pref-hide-reactions');
     expect(full.closest('fieldset')?.querySelector('legend')?.textContent).toBe('Animações');
     expect((full as HTMLInputElement).checked).toBe(true);
     expect((turnNotification as HTMLInputElement).checked).toBe(true);
@@ -688,6 +606,6 @@ describe('preferências de apresentação', () => {
     expect((hide as HTMLInputElement).checked).toBe(true);
     expect(window.localStorage.getItem('tretta.mood')).toContain('"soundMuted":true');
     expect(window.localStorage.getItem('tretta.mood')).toContain('"turnNotificationEnabled":false');
-    expect(window.localStorage.getItem('tretta.mood')).toContain('"hideTaunts":true');
+    expect(window.localStorage.getItem('tretta.mood')).toContain('"hideReactions":true');
   });
 });

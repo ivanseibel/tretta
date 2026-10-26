@@ -1,0 +1,16 @@
+{
+  "path": "/",
+  "offlineMessage": true,
+  "nickname": "Diagnóstico",
+  "sockets": [
+    {
+      "host": "tretta-server.onrender.com",
+      "state": 3
+    },
+    {
+      "host": "tretta-server.onrender.com",
+      "state": 1
+    }
+  ],
+  "hooksAvailable": false
+}

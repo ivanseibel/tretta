@@ -1,0 +1,2724 @@
+{
+  "schema": "t019f-visual-diff/1",
+  "generatedAt": "2026-10-26T13:39:57.398Z",
+  "runDir": "runs/t019f-core-final3",
+  "outDir": "runs/t019f-core-final3/compare",
+  "baseline": "baseline.json",
+  "baselineCount": 105,
+  "thresholds": {
+    "pixel": 16,
+    "changedPct": 12,
+    "ssim": 0.9
+  },
+  "counts": {
+    "ok": 0,
+    "review": 81,
+    "fail": 0,
+    "no-reference": 27,
+    "error": 0
+  },
+  "total": 108,
+  "note": "status review exige inspeção humana; fail bloqueia a matriz. Ausência de baseline não é regressão visual.",
+  "results": [
+    {
+      "state": "home",
+      "viewport": "412x915",
+      "route": "home",
+      "reference": "docs/work/reports/assets/T018/412x915-home.png",
+      "current": "screenshots/home-412x915.png",
+      "referenceSha256": "9b0033722e95ceec5c1a79ac739121194a733ca25f53ac94c6e681a235cfbb4d",
+      "status": "review",
+      "reason": "diff 57.25% (limite 12%) e SSIM 0.3774 (limite 0.9)",
+      "diff": "diff/home-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 57.25,
+        "meanAbsDiff": 63.27,
+        "p95Diff": 222,
+        "ssim": 0.3774,
+        "currentBlank": false,
+        "currentLumaStdDev": 100.91,
+        "bbox": {
+          "x": 0,
+          "y": 7,
+          "width": 412,
+          "height": 907
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "preparacao",
+      "viewport": "412x915",
+      "route": "preparacao",
+      "reference": "docs/work/reports/assets/T018/412x915-preparacao.png",
+      "current": "screenshots/preparacao-412x915.png",
+      "referenceSha256": "d07dd692008571d6f1ff4c3edc8d5793469ff9755b9da89f13480fee4e279b38",
+      "status": "review",
+      "reason": "diff 64.7% (limite 12%) e SSIM 0.352 (limite 0.9)",
+      "diff": "diff/preparacao-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 64.7,
+        "meanAbsDiff": 76.71,
+        "p95Diff": 227,
+        "ssim": 0.352,
+        "currentBlank": false,
+        "currentLumaStdDev": 88.82,
+        "bbox": {
+          "x": 0,
+          "y": 3,
+          "width": 412,
+          "height": 905
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "preparacao-8",
+      "viewport": "412x915",
+      "route": "preparacao-cheia",
+      "reference": "docs/work/reports/assets/T018/412x915-preparacao-cheia.png",
+      "current": "screenshots/preparacao-8-412x915.png",
+      "referenceSha256": "eb75cc581b20e52da7a3a332fc643a9040473a1c9f003c9f01d01237c661f71d",
+      "status": "review",
+      "reason": "diff 62.81% (limite 12%) e SSIM 0.3313 (limite 0.9)",
+      "diff": "diff/preparacao-8-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 62.81,
+        "meanAbsDiff": 77.94,
+        "p95Diff": 228,
+        "ssim": 0.3313,
+        "currentBlank": false,
+        "currentLumaStdDev": 89.46,
+        "bbox": {
+          "x": 0,
+          "y": 3,
+          "width": 412,
+          "height": 905
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "espera",
+      "viewport": "412x915",
+      "route": "espera",
+      "reference": "docs/work/reports/assets/T018/412x915-espera.png",
+      "current": "screenshots/espera-412x915.png",
+      "referenceSha256": "57ab7fdf4bec431e90b458f0bcdbfc4c892f0505ddb9e7ddae254da4cc087742",
+      "status": "review",
+      "reason": "diff 42.45% (limite 12%) e SSIM 0.5569 (limite 0.9)",
+      "diff": "diff/espera-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 42.45,
+        "meanAbsDiff": 41.12,
+        "p95Diff": 191,
+        "ssim": 0.5569,
+        "currentBlank": false,
+        "currentLumaStdDev": 40.29,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": [
+        {
+          "metric": "seatCount",
+          "reference": 6,
+          "current": 2
+        }
+      ]
+    },
+    {
+      "state": "observador",
+      "viewport": "412x915",
+      "route": "espera",
+      "reference": "docs/work/reports/assets/T018/412x915-espera.png",
+      "current": "screenshots/observador-412x915.png",
+      "referenceSha256": "57ab7fdf4bec431e90b458f0bcdbfc4c892f0505ddb9e7ddae254da4cc087742",
+      "status": "review",
+      "reason": "diff 42.45% (limite 12%) e SSIM 0.5567 (limite 0.9)",
+      "diff": "diff/observador-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 42.45,
+        "meanAbsDiff": 41.13,
+        "p95Diff": 191,
+        "ssim": 0.5567,
+        "currentBlank": false,
+        "currentLumaStdDev": 40.29,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": [
+        {
+          "metric": "seatCount",
+          "reference": 6,
+          "current": 2
+        }
+      ]
+    },
+    {
+      "state": "mesa-2",
+      "viewport": "412x915",
+      "route": "mesa-2",
+      "reference": "docs/work/reports/assets/T018/412x915-mesa-2.png",
+      "current": "screenshots/mesa-2-412x915.png",
+      "referenceSha256": "9242439eb51fd40e7e0e2e8df2a6cc0f22452b9d05bc64bd562d0007dda0b1c4",
+      "status": "review",
+      "reason": "diff 45.91% (limite 12%) e SSIM 0.5215 (limite 0.9)",
+      "diff": "diff/mesa-2-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 45.91,
+        "meanAbsDiff": 51.74,
+        "p95Diff": 193,
+        "ssim": 0.5215,
+        "currentBlank": false,
+        "currentLumaStdDev": 47.61,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-3",
+      "viewport": "412x915",
+      "route": "mesa-3",
+      "reference": "docs/work/reports/assets/T018/412x915-mesa-3.png",
+      "current": "screenshots/mesa-3-412x915.png",
+      "referenceSha256": "52e6cbb82a630b0f09e1576b363da751ad6b028bfc8898353a66495f345d4c0d",
+      "status": "review",
+      "reason": "diff 46.32% (limite 12%) e SSIM 0.5087 (limite 0.9)",
+      "diff": "diff/mesa-3-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 46.32,
+        "meanAbsDiff": 51.79,
+        "p95Diff": 193,
+        "ssim": 0.5087,
+        "currentBlank": false,
+        "currentLumaStdDev": 47.59,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-4",
+      "viewport": "412x915",
+      "route": "mesa",
+      "reference": "docs/work/reports/assets/T018/412x915-mesa.png",
+      "current": "screenshots/mesa-4-412x915.png",
+      "referenceSha256": "c5f17e438047d858818c5712c0acb52f06f26657d66f2e86bf75dec07879deec",
+      "status": "review",
+      "reason": "diff 47.65% (limite 12%) e SSIM 0.4827 (limite 0.9)",
+      "diff": "diff/mesa-4-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 47.65,
+        "meanAbsDiff": 54.49,
+        "p95Diff": 198,
+        "ssim": 0.4827,
+        "currentBlank": false,
+        "currentLumaStdDev": 48.23,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-5",
+      "viewport": "412x915",
+      "route": "mesa-5",
+      "reference": "docs/work/reports/assets/T018/412x915-mesa-5.png",
+      "current": "screenshots/mesa-5-412x915.png",
+      "referenceSha256": "3baeabba2fa7c9572f1d8ffb5aeddfc92979ec13b140b19cb01cd29829c3db9c",
+      "status": "review",
+      "reason": "diff 48.03% (limite 12%) e SSIM 0.4909 (limite 0.9)",
+      "diff": "diff/mesa-5-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 48.03,
+        "meanAbsDiff": 52.71,
+        "p95Diff": 194,
+        "ssim": 0.4909,
+        "currentBlank": false,
+        "currentLumaStdDev": 47.78,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-6",
+      "viewport": "412x915",
+      "route": "mesa-6",
+      "reference": "docs/work/reports/assets/T018/412x915-mesa-6.png",
+      "current": "screenshots/mesa-6-412x915.png",
+      "referenceSha256": "6eb5e221309a9f612f3318cf727b0d5eeeef58330975e1323b532e6263e99cd7",
+      "status": "review",
+      "reason": "diff 48.81% (limite 12%) e SSIM 0.4775 (limite 0.9)",
+      "diff": "diff/mesa-6-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 48.81,
+        "meanAbsDiff": 53.23,
+        "p95Diff": 195,
+        "ssim": 0.4775,
+        "currentBlank": false,
+        "currentLumaStdDev": 48.54,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-7",
+      "viewport": "412x915",
+      "route": "mesa-7",
+      "reference": "docs/work/reports/assets/T018/412x915-mesa-7.png",
+      "current": "screenshots/mesa-7-412x915.png",
+      "referenceSha256": "18200b60528b54a6685bffdbe78254734a22c5c0ba33837c971f82654411a9fc",
+      "status": "review",
+      "reason": "diff 50.59% (limite 12%) e SSIM 0.4589 (limite 0.9)",
+      "diff": "diff/mesa-7-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 50.59,
+        "meanAbsDiff": 54.67,
+        "p95Diff": 198,
+        "ssim": 0.4589,
+        "currentBlank": false,
+        "currentLumaStdDev": 48.55,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-8",
+      "viewport": "412x915",
+      "route": "mesa-8",
+      "reference": "docs/work/reports/assets/T018/412x915-mesa-8.png",
+      "current": "screenshots/mesa-8-412x915.png",
+      "referenceSha256": "1bda9ad45f1c7e2bfa9383fb0058785dad6a3cb6fdf9f21ce9f5317e3aa1a2e3",
+      "status": "review",
+      "reason": "diff 54.07% (limite 12%) e SSIM 0.4309 (limite 0.9)",
+      "diff": "diff/mesa-8-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 54.07,
+        "meanAbsDiff": 58.25,
+        "p95Diff": 198,
+        "ssim": 0.4309,
+        "currentBlank": false,
+        "currentLumaStdDev": 49.85,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-cheia",
+      "viewport": "412x915",
+      "route": "mesa-cheia",
+      "reference": "docs/work/reports/assets/T018/412x915-mesa-cheia.png",
+      "current": "screenshots/mesa-cheia-412x915.png",
+      "referenceSha256": "ba46d8fd2e7985ec9ed3acaceec28b75a247acdb1b32bf9ff4cf2ebac55d7126",
+      "status": "review",
+      "reason": "diff 55.01% (limite 12%) e SSIM 0.4201 (limite 0.9)",
+      "diff": "diff/mesa-cheia-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 55.01,
+        "meanAbsDiff": 63.95,
+        "p95Diff": 203,
+        "ssim": 0.4201,
+        "currentBlank": false,
+        "currentLumaStdDev": 49.85,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "pausa",
+      "viewport": "412x915",
+      "route": "pausada",
+      "reference": "docs/work/reports/assets/T018/412x915-pausada.png",
+      "current": "screenshots/pausa-412x915.png",
+      "referenceSha256": "c8c65e7c75897d8d2aa8daaf062d11e05e5346a9b932ae2fcc99ac7983660c60",
+      "status": "review",
+      "reason": "diff 51.89% (limite 12%) e SSIM 0.4864 (limite 0.9)",
+      "diff": "diff/pausa-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 51.89,
+        "meanAbsDiff": 60.93,
+        "p95Diff": 216,
+        "ssim": 0.4864,
+        "currentBlank": false,
+        "currentLumaStdDev": 87.86,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "ultima",
+      "viewport": "412x915",
+      "route": "ultima",
+      "reference": "docs/work/reports/assets/T018/412x915-ultima.png",
+      "current": "screenshots/ultima-412x915.png",
+      "referenceSha256": "b83b85195d96c1544564bbec72f0d1cd3b64b90e9cdcbe52a138a94752ce10bd",
+      "status": "review",
+      "reason": "diff 36.95% (limite 12%) e SSIM 0.5954 (limite 0.9)",
+      "diff": "diff/ultima-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 36.95,
+        "meanAbsDiff": 42.4,
+        "p95Diff": 207,
+        "ssim": 0.5954,
+        "currentBlank": false,
+        "currentLumaStdDev": 42.09,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 2,
+          "current": 1
+        }
+      ]
+    },
+    {
+      "state": "denuncia",
+      "viewport": "412x915",
+      "route": "denuncia",
+      "reference": "docs/work/reports/assets/T018/412x915-denuncia.png",
+      "current": "screenshots/denuncia-412x915.png",
+      "referenceSha256": "6b3e835f2869bdc4e264f63bac745c45b160f0cf885fa0f27cca74b5a6c2e7c5",
+      "status": "review",
+      "reason": "diff 56.25% (limite 12%) e SSIM 0.4698 (limite 0.9)",
+      "diff": "diff/denuncia-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 56.25,
+        "meanAbsDiff": 64.16,
+        "p95Diff": 207,
+        "ssim": 0.4698,
+        "currentBlank": false,
+        "currentLumaStdDev": 46.5,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 12
+        }
+      ]
+    },
+    {
+      "state": "treino",
+      "viewport": "412x915",
+      "route": "treino",
+      "reference": "docs/work/reports/assets/T018/412x915-treino.png",
+      "current": "screenshots/treino-412x915.png",
+      "referenceSha256": "cab682b41cb2a02400ab1e7227c5e46df2b97e38ca619a2b749ff51b0f877136",
+      "status": "review",
+      "reason": "diff 49.46% (limite 12%) e SSIM 0.4849 (limite 0.9)",
+      "diff": "diff/treino-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 49.46,
+        "meanAbsDiff": 57.51,
+        "p95Diff": 198,
+        "ssim": 0.4849,
+        "currentBlank": false,
+        "currentLumaStdDev": 45.76,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "bots",
+      "viewport": "412x915",
+      "route": "treino",
+      "reference": "docs/work/reports/assets/T018/412x915-treino.png",
+      "current": "screenshots/bots-412x915.png",
+      "referenceSha256": "cab682b41cb2a02400ab1e7227c5e46df2b97e38ca619a2b749ff51b0f877136",
+      "status": "review",
+      "reason": "diff 49.46% (limite 12%) e SSIM 0.4849 (limite 0.9)",
+      "diff": "diff/bots-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 49.46,
+        "meanAbsDiff": 57.51,
+        "p95Diff": 198,
+        "ssim": 0.4849,
+        "currentBlank": false,
+        "currentLumaStdDev": 45.76,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "substituto",
+      "viewport": "412x915",
+      "route": "ausente",
+      "reference": "docs/work/reports/assets/T018/412x915-ausente.png",
+      "current": "screenshots/substituto-412x915.png",
+      "referenceSha256": "0211d05eeef1845e1cdae46048978627a1b0625dee273c52990d57885d7f6ac7",
+      "status": "review",
+      "reason": "diff 54.46% (limite 12%) e SSIM 0.4353 (limite 0.9)",
+      "diff": "diff/substituto-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 54.46,
+        "meanAbsDiff": 63.45,
+        "p95Diff": 213,
+        "ssim": 0.4353,
+        "currentBlank": false,
+        "currentLumaStdDev": 46.41,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "resultado",
+      "viewport": "412x915",
+      "route": "resultado",
+      "reference": "docs/work/reports/assets/T018/412x915-resultado.png",
+      "current": "screenshots/resultado-412x915.png",
+      "referenceSha256": "ca2a61a64987018943f5dabb796381595da1d85800c5bcb45bb92ec36962eb42",
+      "status": "review",
+      "reason": "diff 48.37% (limite 12%) e SSIM 0.4185 (limite 0.9)",
+      "diff": "diff/resultado-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 48.37,
+        "meanAbsDiff": 76.37,
+        "p95Diff": 240,
+        "ssim": 0.4185,
+        "currentBlank": false,
+        "currentLumaStdDev": 103.56,
+        "bbox": {
+          "x": 0,
+          "y": 12,
+          "width": 412,
+          "height": 896
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "resultado-sem-vencedor",
+      "viewport": "412x915",
+      "route": "resultado-sem-vencedor",
+      "reference": "docs/work/reports/assets/T018/412x915-resultado-sem-vencedor.png",
+      "current": "screenshots/resultado-sem-vencedor-412x915.png",
+      "referenceSha256": "4bfa0f4e397b425fb82d95b21154c082b42877d3b6b091bbae872825c3dd0e4a",
+      "status": "review",
+      "reason": "diff 37.67% (limite 12%) e SSIM 0.4271 (limite 0.9)",
+      "diff": "diff/resultado-sem-vencedor-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 37.67,
+        "meanAbsDiff": 62.02,
+        "p95Diff": 240,
+        "ssim": 0.4271,
+        "currentBlank": false,
+        "currentLumaStdDev": 105.14,
+        "bbox": {
+          "x": 0,
+          "y": 12,
+          "width": 412,
+          "height": 896
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "erro-conexao",
+      "viewport": "412x915",
+      "route": "erro-conexao",
+      "reference": "docs/work/reports/assets/T018/412x915-erro-conexao.png",
+      "current": "screenshots/erro-conexao-412x915.png",
+      "referenceSha256": "d6f5ece59955e193f75c3e1681cffc84c3f695a4c073fdf7a77814d7f716b365",
+      "status": "review",
+      "reason": "diff 59.28% (limite 12%) e SSIM 0.3889 (limite 0.9)",
+      "diff": "diff/erro-conexao-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 59.28,
+        "meanAbsDiff": 68.22,
+        "p95Diff": 239,
+        "ssim": 0.3889,
+        "currentBlank": false,
+        "currentLumaStdDev": 92.75,
+        "bbox": {
+          "x": 0,
+          "y": 8,
+          "width": 412,
+          "height": 906
+        }
+      },
+      "structural": [
+        {
+          "metric": "seatCount",
+          "reference": 0,
+          "current": 1
+        }
+      ]
+    },
+    {
+      "state": "erro-sala",
+      "viewport": "412x915",
+      "route": "erro-sala",
+      "reference": "docs/work/reports/assets/T018/412x915-erro-sala.png",
+      "current": "screenshots/erro-sala-412x915.png",
+      "referenceSha256": "c3a8ce8b552a5ecc205f1772f7524a88dbe0b87e6dbf46460a0c0457a237a6a2",
+      "status": "review",
+      "reason": "diff 21.39% (limite 12%) e SSIM 0.6439 (limite 0.9)",
+      "diff": "diff/erro-sala-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 21.39,
+        "meanAbsDiff": 30.87,
+        "p95Diff": 211,
+        "ssim": 0.6439,
+        "currentBlank": false,
+        "currentLumaStdDev": 99.84,
+        "bbox": {
+          "x": 0,
+          "y": 15,
+          "width": 412,
+          "height": 692
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "erro-link",
+      "viewport": "412x915",
+      "route": "erro-link",
+      "reference": "docs/work/reports/assets/T018/412x915-erro-link.png",
+      "current": "screenshots/erro-link-412x915.png",
+      "referenceSha256": "7c8634bb599f783306d700e518348d30483141587442179745007eb8e32e0eb9",
+      "status": "review",
+      "reason": "diff 20.86% (limite 12%) e SSIM 0.6905 (limite 0.9)",
+      "diff": "diff/erro-link-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 20.86,
+        "meanAbsDiff": 28.34,
+        "p95Diff": 136,
+        "ssim": 0.6905,
+        "currentBlank": false,
+        "currentLumaStdDev": 103.33,
+        "bbox": {
+          "x": 0,
+          "y": 15,
+          "width": 412,
+          "height": 696
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "reacoes",
+      "viewport": "412x915",
+      "route": "reacoes",
+      "reference": "docs/work/reports/assets/T018/412x915-reacoes.png",
+      "current": "screenshots/reacoes-412x915.png",
+      "referenceSha256": "e677cd253834718025e8ddc58122b6ea9baac6c2a5b2b26ef3277e64b895f0c7",
+      "status": "review",
+      "reason": "diff 79.75% (limite 12%) e SSIM 0.357 (limite 0.9)",
+      "diff": "diff/reacoes-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 79.75,
+        "meanAbsDiff": 86.79,
+        "p95Diff": 230,
+        "ssim": 0.357,
+        "currentBlank": false,
+        "currentLumaStdDev": 31.95,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 900
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "sala",
+      "viewport": "412x915",
+      "route": "sala",
+      "reference": "docs/work/reports/assets/T018/412x915-sala.png",
+      "current": "screenshots/sala-412x915.png",
+      "referenceSha256": "3424395595ebdf41b77a4e20d7b9b1c87343d8abaf78f67565cfa7ab40aea802",
+      "status": "review",
+      "reason": "diff 18.41% (limite 12%) e SSIM 0.5737 (limite 0.9)",
+      "diff": "diff/sala-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 18.41,
+        "meanAbsDiff": 19.5,
+        "p95Diff": 147,
+        "ssim": 0.5737,
+        "currentBlank": false,
+        "currentLumaStdDev": 36.92,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 914
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "inversao",
+      "viewport": "412x915",
+      "route": "inversao",
+      "reference": "docs/work/reports/assets/T018/412x915-inversao.png",
+      "current": "screenshots/inversao-412x915.png",
+      "referenceSha256": "824364e25d4d638af02f3ab2f4ad63fe051bc05501922ff12396e300b140c9ad",
+      "status": "review",
+      "reason": "diff 52.39% (limite 12%) e SSIM 0.4281 (limite 0.9)",
+      "diff": "diff/inversao-412x915.png",
+      "metrics": {
+        "width": 412,
+        "height": 915,
+        "changedPct": 52.39,
+        "meanAbsDiff": 58.89,
+        "p95Diff": 213,
+        "ssim": 0.4281,
+        "currentBlank": false,
+        "currentLumaStdDev": 46.06,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 412,
+          "height": 908
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 6
+        }
+      ]
+    },
+    {
+      "state": "home",
+      "viewport": "360x640",
+      "route": "home",
+      "reference": "docs/work/reports/assets/T018/360x640-home.png",
+      "current": "screenshots/home-360x640.png",
+      "referenceSha256": "34c5285bc4813686ab250c31ddab63ff2df3b5722fef2c46461164bd67392ea7",
+      "status": "review",
+      "reason": "diff 58.76% (limite 12%) e SSIM 0.3546 (limite 0.9)",
+      "diff": "diff/home-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 58.76,
+        "meanAbsDiff": 79.91,
+        "p95Diff": 232,
+        "ssim": 0.3546,
+        "currentBlank": false,
+        "currentLumaStdDev": 100.42,
+        "bbox": {
+          "x": 0,
+          "y": 7,
+          "width": 360,
+          "height": 633
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "preparacao",
+      "viewport": "360x640",
+      "route": "preparacao",
+      "reference": "docs/work/reports/assets/T018/360x640-preparacao.png",
+      "current": "screenshots/preparacao-360x640.png",
+      "referenceSha256": "93b2aa019b650ee4279dbf307115f546328773536e3c4ef0aea6c52c257d97d3",
+      "status": "review",
+      "reason": "diff 58.93% (limite 12%) e SSIM 0.3718 (limite 0.9)",
+      "diff": "diff/preparacao-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 58.93,
+        "meanAbsDiff": 62.31,
+        "p95Diff": 233,
+        "ssim": 0.3718,
+        "currentBlank": false,
+        "currentLumaStdDev": 61.51,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 633
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "preparacao-8",
+      "viewport": "360x640",
+      "route": "preparacao-cheia",
+      "reference": "docs/work/reports/assets/T018/360x640-preparacao-cheia.png",
+      "current": "screenshots/preparacao-8-360x640.png",
+      "referenceSha256": "cbe40b95aaa2815f9a64e56761f367aefde2f5a0e7beb2acb1f7e3c4c8cebb86",
+      "status": "review",
+      "reason": "diff 58.76% (limite 12%) e SSIM 0.338 (limite 0.9)",
+      "diff": "diff/preparacao-8-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 58.76,
+        "meanAbsDiff": 62.74,
+        "p95Diff": 232,
+        "ssim": 0.338,
+        "currentBlank": false,
+        "currentLumaStdDev": 61.6,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 633
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "espera",
+      "viewport": "360x640",
+      "route": "espera",
+      "reference": "docs/work/reports/assets/T018/360x640-espera.png",
+      "current": "screenshots/espera-360x640.png",
+      "referenceSha256": "9edb20485ddbdbb1c1ed8534613a5252d0d258815a19e8ba59f1c2f3c02cd0fe",
+      "status": "review",
+      "reason": "diff 51.23% (limite 12%) e SSIM 0.4073 (limite 0.9)",
+      "diff": "diff/espera-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 51.23,
+        "meanAbsDiff": 50.35,
+        "p95Diff": 211,
+        "ssim": 0.4073,
+        "currentBlank": false,
+        "currentLumaStdDev": 48.3,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": [
+        {
+          "metric": "seatCount",
+          "reference": 6,
+          "current": 2
+        }
+      ]
+    },
+    {
+      "state": "observador",
+      "viewport": "360x640",
+      "route": "espera",
+      "reference": "docs/work/reports/assets/T018/360x640-espera.png",
+      "current": "screenshots/observador-360x640.png",
+      "referenceSha256": "9edb20485ddbdbb1c1ed8534613a5252d0d258815a19e8ba59f1c2f3c02cd0fe",
+      "status": "review",
+      "reason": "diff 51.22% (limite 12%) e SSIM 0.4076 (limite 0.9)",
+      "diff": "diff/observador-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 51.22,
+        "meanAbsDiff": 50.33,
+        "p95Diff": 211,
+        "ssim": 0.4076,
+        "currentBlank": false,
+        "currentLumaStdDev": 48.29,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": [
+        {
+          "metric": "seatCount",
+          "reference": 6,
+          "current": 2
+        }
+      ]
+    },
+    {
+      "state": "mesa-2",
+      "viewport": "360x640",
+      "route": "mesa-2",
+      "reference": "docs/work/reports/assets/T018/360x640-mesa-2.png",
+      "current": "screenshots/mesa-2-360x640.png",
+      "referenceSha256": "5db8e086be04d239aceef2ba50e5d297c98d28137564782c1c6326c9d934422e",
+      "status": "review",
+      "reason": "diff 50.83% (limite 12%) e SSIM 0.437 (limite 0.9)",
+      "diff": "diff/mesa-2-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 50.83,
+        "meanAbsDiff": 58.34,
+        "p95Diff": 205,
+        "ssim": 0.437,
+        "currentBlank": false,
+        "currentLumaStdDev": 54.45,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-3",
+      "viewport": "360x640",
+      "route": "mesa-3",
+      "reference": "docs/work/reports/assets/T018/360x640-mesa-3.png",
+      "current": "screenshots/mesa-3-360x640.png",
+      "referenceSha256": "ae421172bf2eda15e0392cf0c8604d86b64ceaed1ec335e36d397a7ace63d4c8",
+      "status": "review",
+      "reason": "diff 50.97% (limite 12%) e SSIM 0.4182 (limite 0.9)",
+      "diff": "diff/mesa-3-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 50.97,
+        "meanAbsDiff": 58.56,
+        "p95Diff": 205,
+        "ssim": 0.4182,
+        "currentBlank": false,
+        "currentLumaStdDev": 54.57,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-4",
+      "viewport": "360x640",
+      "route": "mesa",
+      "reference": "docs/work/reports/assets/T018/360x640-mesa.png",
+      "current": "screenshots/mesa-4-360x640.png",
+      "referenceSha256": "7e03931e559573d995803111e443a24ab4ce8e07d455a618c59526d69bbd7db2",
+      "status": "review",
+      "reason": "diff 52.65% (limite 12%) e SSIM 0.3999 (limite 0.9)",
+      "diff": "diff/mesa-4-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 52.65,
+        "meanAbsDiff": 61.66,
+        "p95Diff": 205,
+        "ssim": 0.3999,
+        "currentBlank": false,
+        "currentLumaStdDev": 55.18,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-5",
+      "viewport": "360x640",
+      "route": "mesa-5",
+      "reference": "docs/work/reports/assets/T018/360x640-mesa-5.png",
+      "current": "screenshots/mesa-5-360x640.png",
+      "referenceSha256": "f4b1389e66bbf2a463be2b671479d07c5dee1cc721e83698c2afe9cf77049495",
+      "status": "review",
+      "reason": "diff 53.18% (limite 12%) e SSIM 0.3938 (limite 0.9)",
+      "diff": "diff/mesa-5-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 53.18,
+        "meanAbsDiff": 60.27,
+        "p95Diff": 205,
+        "ssim": 0.3938,
+        "currentBlank": false,
+        "currentLumaStdDev": 54.68,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-6",
+      "viewport": "360x640",
+      "route": "mesa-6",
+      "reference": "docs/work/reports/assets/T018/360x640-mesa-6.png",
+      "current": "screenshots/mesa-6-360x640.png",
+      "referenceSha256": "fe9bb590b543e6547eb97e445713a41a6d3eec275c7080d8e75358c3b5663b04",
+      "status": "review",
+      "reason": "diff 54.66% (limite 12%) e SSIM 0.3672 (limite 0.9)",
+      "diff": "diff/mesa-6-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 54.66,
+        "meanAbsDiff": 61.54,
+        "p95Diff": 205,
+        "ssim": 0.3672,
+        "currentBlank": false,
+        "currentLumaStdDev": 55.75,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-7",
+      "viewport": "360x640",
+      "route": "mesa-7",
+      "reference": "docs/work/reports/assets/T018/360x640-mesa-7.png",
+      "current": "screenshots/mesa-7-360x640.png",
+      "referenceSha256": "363978b30cc03b8dd360ad58c6af1dbf161a9e5d765c3909180ded324e9658b1",
+      "status": "review",
+      "reason": "diff 55.34% (limite 12%) e SSIM 0.3482 (limite 0.9)",
+      "diff": "diff/mesa-7-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 55.34,
+        "meanAbsDiff": 63.44,
+        "p95Diff": 206,
+        "ssim": 0.3482,
+        "currentBlank": false,
+        "currentLumaStdDev": 55.68,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-8",
+      "viewport": "360x640",
+      "route": "mesa-8",
+      "reference": "docs/work/reports/assets/T018/360x640-mesa-8.png",
+      "current": "screenshots/mesa-8-360x640.png",
+      "referenceSha256": "c58164e10684ce58186c7ec6008dcfe8b6979d3f2e865ba40edb8bfdad57de67",
+      "status": "review",
+      "reason": "diff 57.56% (limite 12%) e SSIM 0.3356 (limite 0.9)",
+      "diff": "diff/mesa-8-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 57.56,
+        "meanAbsDiff": 66.99,
+        "p95Diff": 207,
+        "ssim": 0.3356,
+        "currentBlank": false,
+        "currentLumaStdDev": 57.22,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-cheia",
+      "viewport": "360x640",
+      "route": "mesa-cheia",
+      "reference": "docs/work/reports/assets/T018/360x640-mesa-cheia.png",
+      "current": "screenshots/mesa-cheia-360x640.png",
+      "referenceSha256": "8637bc9c1d6eec866d14bf77851739847a9c91c37111fde9bdf49a54c6897287",
+      "status": "review",
+      "reason": "diff 59.49% (limite 12%) e SSIM 0.3262 (limite 0.9)",
+      "diff": "diff/mesa-cheia-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 59.49,
+        "meanAbsDiff": 73.17,
+        "p95Diff": 215,
+        "ssim": 0.3262,
+        "currentBlank": false,
+        "currentLumaStdDev": 57.22,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "pausa",
+      "viewport": "360x640",
+      "route": "pausada",
+      "reference": "docs/work/reports/assets/T018/360x640-pausada.png",
+      "current": "screenshots/pausa-360x640.png",
+      "referenceSha256": "13835fdd03b0aedb4165b2e731b35d982eb6ce823c17ee54ab9d72a868b464f0",
+      "status": "review",
+      "reason": "diff 65.34% (limite 12%) e SSIM 0.4132 (limite 0.9)",
+      "diff": "diff/pausa-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 65.34,
+        "meanAbsDiff": 66.98,
+        "p95Diff": 214,
+        "ssim": 0.4132,
+        "currentBlank": false,
+        "currentLumaStdDev": 93.28,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "ultima",
+      "viewport": "360x640",
+      "route": "ultima",
+      "reference": "docs/work/reports/assets/T018/360x640-ultima.png",
+      "current": "screenshots/ultima-360x640.png",
+      "referenceSha256": "00e64f0d174b8ffd9f8999a20989445276511bd68af14e902c0c7707b15799e6",
+      "status": "review",
+      "reason": "diff 41.02% (limite 12%) e SSIM 0.4998 (limite 0.9)",
+      "diff": "diff/ultima-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 41.02,
+        "meanAbsDiff": 47.9,
+        "p95Diff": 209,
+        "ssim": 0.4998,
+        "currentBlank": false,
+        "currentLumaStdDev": 48.51,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 2,
+          "current": 1
+        }
+      ]
+    },
+    {
+      "state": "denuncia",
+      "viewport": "360x640",
+      "route": "denuncia",
+      "reference": "docs/work/reports/assets/T018/360x640-denuncia.png",
+      "current": "screenshots/denuncia-360x640.png",
+      "referenceSha256": "141b8436cfd3c4e392cc7fcf6806ed86aee4170ce9037d7182e391a929e8a345",
+      "status": "review",
+      "reason": "diff 59.64% (limite 12%) e SSIM 0.3655 (limite 0.9)",
+      "diff": "diff/denuncia-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 59.64,
+        "meanAbsDiff": 72.97,
+        "p95Diff": 215,
+        "ssim": 0.3655,
+        "currentBlank": false,
+        "currentLumaStdDev": 53.08,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 12
+        }
+      ]
+    },
+    {
+      "state": "treino",
+      "viewport": "360x640",
+      "route": "treino",
+      "reference": "docs/work/reports/assets/T018/360x640-treino.png",
+      "current": "screenshots/treino-360x640.png",
+      "referenceSha256": "b6d82b49b1d85b966f2b59890ef5db3a97b67d6ef00b46f51233fb7f79f3c2a3",
+      "status": "review",
+      "reason": "diff 55.47% (limite 12%) e SSIM 0.3897 (limite 0.9)",
+      "diff": "diff/treino-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 55.47,
+        "meanAbsDiff": 65.29,
+        "p95Diff": 207,
+        "ssim": 0.3897,
+        "currentBlank": false,
+        "currentLumaStdDev": 52.69,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "bots",
+      "viewport": "360x640",
+      "route": "treino",
+      "reference": "docs/work/reports/assets/T018/360x640-treino.png",
+      "current": "screenshots/bots-360x640.png",
+      "referenceSha256": "b6d82b49b1d85b966f2b59890ef5db3a97b67d6ef00b46f51233fb7f79f3c2a3",
+      "status": "review",
+      "reason": "diff 55.47% (limite 12%) e SSIM 0.3897 (limite 0.9)",
+      "diff": "diff/bots-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 55.47,
+        "meanAbsDiff": 65.29,
+        "p95Diff": 207,
+        "ssim": 0.3897,
+        "currentBlank": false,
+        "currentLumaStdDev": 52.69,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "substituto",
+      "viewport": "360x640",
+      "route": "ausente",
+      "reference": "docs/work/reports/assets/T018/360x640-ausente.png",
+      "current": "screenshots/substituto-360x640.png",
+      "referenceSha256": "35cb510837d9b5ba0ca376ffbad4f67b729e84c25a9bca06ccfa458e9f44e35d",
+      "status": "review",
+      "reason": "diff 60.19% (limite 12%) e SSIM 0.3255 (limite 0.9)",
+      "diff": "diff/substituto-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 60.19,
+        "meanAbsDiff": 72.68,
+        "p95Diff": 223,
+        "ssim": 0.3255,
+        "currentBlank": false,
+        "currentLumaStdDev": 53.28,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "resultado",
+      "viewport": "360x640",
+      "route": "resultado",
+      "reference": "docs/work/reports/assets/T018/360x640-resultado.png",
+      "current": "screenshots/resultado-360x640.png",
+      "referenceSha256": "f1905a281cc092670bfac37221a553da6282268b2baf016f7a8bd974ac2fffad",
+      "status": "review",
+      "reason": "diff 51.91% (limite 12%) e SSIM 0.3615 (limite 0.9)",
+      "diff": "diff/resultado-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 51.91,
+        "meanAbsDiff": 79.14,
+        "p95Diff": 242,
+        "ssim": 0.3615,
+        "currentBlank": false,
+        "currentLumaStdDev": 99.03,
+        "bbox": {
+          "x": 0,
+          "y": 14,
+          "width": 360,
+          "height": 619
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "resultado-sem-vencedor",
+      "viewport": "360x640",
+      "route": "resultado-sem-vencedor",
+      "reference": "docs/work/reports/assets/T018/360x640-resultado-sem-vencedor.png",
+      "current": "screenshots/resultado-sem-vencedor-360x640.png",
+      "referenceSha256": "aedaf75f868107720f89ab61106cae3548b634e0d7e52ef5fefff309cd1f7ec8",
+      "status": "review",
+      "reason": "diff 48.66% (limite 12%) e SSIM 0.3482 (limite 0.9)",
+      "diff": "diff/resultado-sem-vencedor-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 48.66,
+        "meanAbsDiff": 78.59,
+        "p95Diff": 241,
+        "ssim": 0.3482,
+        "currentBlank": false,
+        "currentLumaStdDev": 98.3,
+        "bbox": {
+          "x": 0,
+          "y": 14,
+          "width": 360,
+          "height": 619
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "erro-conexao",
+      "viewport": "360x640",
+      "route": "erro-conexao",
+      "reference": "docs/work/reports/assets/T018/360x640-erro-conexao.png",
+      "current": "screenshots/erro-conexao-360x640.png",
+      "referenceSha256": "5bbe424f60aa3ab131b6808a820f3ab28b8633ad367620164fade0c0fc081003",
+      "status": "review",
+      "reason": "diff 78.36% (limite 12%) e SSIM 0.2542 (limite 0.9)",
+      "diff": "diff/erro-conexao-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 78.36,
+        "meanAbsDiff": 125.53,
+        "p95Diff": 242,
+        "ssim": 0.2542,
+        "currentBlank": false,
+        "currentLumaStdDev": 78.64,
+        "bbox": {
+          "x": 0,
+          "y": 8,
+          "width": 360,
+          "height": 632
+        }
+      },
+      "structural": [
+        {
+          "metric": "seatCount",
+          "reference": 0,
+          "current": 1
+        }
+      ]
+    },
+    {
+      "state": "erro-sala",
+      "viewport": "360x640",
+      "route": "erro-sala",
+      "reference": "docs/work/reports/assets/T018/360x640-erro-sala.png",
+      "current": "screenshots/erro-sala-360x640.png",
+      "referenceSha256": "aa96a7fe10dfe0a5aec968721069aa1fd1d796fbcd8ed17cfe4e1f90322a3d80",
+      "status": "review",
+      "reason": "diff 33.8% (limite 12%) e SSIM 0.5112 (limite 0.9)",
+      "diff": "diff/erro-sala-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 33.8,
+        "meanAbsDiff": 42.4,
+        "p95Diff": 223,
+        "ssim": 0.5112,
+        "currentBlank": false,
+        "currentLumaStdDev": 105.93,
+        "bbox": {
+          "x": 0,
+          "y": 11,
+          "width": 360,
+          "height": 565
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "erro-link",
+      "viewport": "360x640",
+      "route": "erro-link",
+      "reference": "docs/work/reports/assets/T018/360x640-erro-link.png",
+      "current": "screenshots/erro-link-360x640.png",
+      "referenceSha256": "486d53c193c378bd9529fe63b88b78dd149d58b30728dad10547e2cd780ab1cb",
+      "status": "review",
+      "reason": "diff 33.83% (limite 12%) e SSIM 0.5085 (limite 0.9)",
+      "diff": "diff/erro-link-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 33.83,
+        "meanAbsDiff": 43.72,
+        "p95Diff": 224,
+        "ssim": 0.5085,
+        "currentBlank": false,
+        "currentLumaStdDev": 105.57,
+        "bbox": {
+          "x": 0,
+          "y": 11,
+          "width": 360,
+          "height": 560
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "reacoes",
+      "viewport": "360x640",
+      "route": "reacoes",
+      "reference": "docs/work/reports/assets/T018/360x640-reacoes.png",
+      "current": "screenshots/reacoes-360x640.png",
+      "referenceSha256": "d79ced9993ef764b2e7b56851eb18cef5918d975342c99a498589ca1fa78dd84",
+      "status": "review",
+      "reason": "diff 81.71% (limite 12%) e SSIM 0.2274 (limite 0.9)",
+      "diff": "diff/reacoes-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 81.71,
+        "meanAbsDiff": 111.05,
+        "p95Diff": 235,
+        "ssim": 0.2274,
+        "currentBlank": false,
+        "currentLumaStdDev": 37.64,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 627
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "sala",
+      "viewport": "360x640",
+      "route": "sala",
+      "reference": "docs/work/reports/assets/T018/360x640-sala.png",
+      "current": "screenshots/sala-360x640.png",
+      "referenceSha256": "a0aa3d761be505cae4e897ea0adbab0b1ecc415c8553569f391ff97a60affef1",
+      "status": "review",
+      "reason": "diff 19.57% (limite 12%) e SSIM 0.5384 (limite 0.9)",
+      "diff": "diff/sala-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 19.57,
+        "meanAbsDiff": 22.14,
+        "p95Diff": 167,
+        "ssim": 0.5384,
+        "currentBlank": false,
+        "currentLumaStdDev": 37.8,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 636
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "inversao",
+      "viewport": "360x640",
+      "route": "inversao",
+      "reference": "docs/work/reports/assets/T018/360x640-inversao.png",
+      "current": "screenshots/inversao-360x640.png",
+      "referenceSha256": "9dbe377ca66404464ddb31dd745e944671994e198e6d4a90feedcda4de20108b",
+      "status": "review",
+      "reason": "diff 58.03% (limite 12%) e SSIM 0.3234 (limite 0.9)",
+      "diff": "diff/inversao-360x640.png",
+      "metrics": {
+        "width": 360,
+        "height": 640,
+        "changedPct": 58.03,
+        "meanAbsDiff": 65.19,
+        "p95Diff": 222,
+        "ssim": 0.3234,
+        "currentBlank": false,
+        "currentLumaStdDev": 52.95,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 635
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 6
+        }
+      ]
+    },
+    {
+      "state": "home",
+      "viewport": "1280x800",
+      "route": "home",
+      "reference": "docs/work/reports/assets/T018/1280x800-home.png",
+      "current": "screenshots/home-1280x800.png",
+      "referenceSha256": "fca7090864617579ec4fcf49c3d563a723137fb2e7b554da05c1e026818a59c1",
+      "status": "review",
+      "reason": "diff 43.67% (limite 12%) e SSIM 0.5539 (limite 0.9)",
+      "diff": "diff/home-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 43.67,
+        "meanAbsDiff": 39.48,
+        "p95Diff": 196,
+        "ssim": 0.5539,
+        "currentBlank": false,
+        "currentLumaStdDev": 87.85,
+        "bbox": {
+          "x": 0,
+          "y": 7,
+          "width": 1280,
+          "height": 793
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "preparacao",
+      "viewport": "1280x800",
+      "route": "preparacao",
+      "reference": "docs/work/reports/assets/T018/1280x800-preparacao.png",
+      "current": "screenshots/preparacao-1280x800.png",
+      "referenceSha256": "53d5831376a00e98327433cc72af9089b8a974e10c40827a84b3ef6e092b976f",
+      "status": "review",
+      "reason": "diff 35.8% (limite 12%) e SSIM 0.6632 (limite 0.9)",
+      "diff": "diff/preparacao-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 35.8,
+        "meanAbsDiff": 34.93,
+        "p95Diff": 224,
+        "ssim": 0.6632,
+        "currentBlank": false,
+        "currentLumaStdDev": 62.53,
+        "bbox": {
+          "x": 0,
+          "y": 7,
+          "width": 1280,
+          "height": 783
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "preparacao-8",
+      "viewport": "1280x800",
+      "route": "preparacao-cheia",
+      "reference": "docs/work/reports/assets/T018/1280x800-preparacao-cheia.png",
+      "current": "screenshots/preparacao-8-1280x800.png",
+      "referenceSha256": "5abc4435470bc928eec73bc0ddeda10e65d6d823fcc30b3ac133b74544069615",
+      "status": "review",
+      "reason": "diff 42.49% (limite 12%) e SSIM 0.6162 (limite 0.9)",
+      "diff": "diff/preparacao-8-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 42.49,
+        "meanAbsDiff": 38.59,
+        "p95Diff": 224,
+        "ssim": 0.6162,
+        "currentBlank": false,
+        "currentLumaStdDev": 64.81,
+        "bbox": {
+          "x": 0,
+          "y": 7,
+          "width": 1280,
+          "height": 783
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "espera",
+      "viewport": "1280x800",
+      "route": "espera",
+      "reference": "docs/work/reports/assets/T018/1280x800-espera.png",
+      "current": "screenshots/espera-1280x800.png",
+      "referenceSha256": "48bfc116bb27554edc825a6cfffcbd259b754b2a8653a57c57f240144bca8a06",
+      "status": "review",
+      "reason": "diff 33.19% (limite 12%) e SSIM 0.6963 (limite 0.9)",
+      "diff": "diff/espera-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 33.19,
+        "meanAbsDiff": 25.52,
+        "p95Diff": 158,
+        "ssim": 0.6963,
+        "currentBlank": false,
+        "currentLumaStdDev": 28.64,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": [
+        {
+          "metric": "seatCount",
+          "reference": 6,
+          "current": 2
+        }
+      ]
+    },
+    {
+      "state": "observador",
+      "viewport": "1280x800",
+      "route": "espera",
+      "reference": "docs/work/reports/assets/T018/1280x800-espera.png",
+      "current": "screenshots/observador-1280x800.png",
+      "referenceSha256": "48bfc116bb27554edc825a6cfffcbd259b754b2a8653a57c57f240144bca8a06",
+      "status": "review",
+      "reason": "diff 33.19% (limite 12%) e SSIM 0.6963 (limite 0.9)",
+      "diff": "diff/observador-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 33.19,
+        "meanAbsDiff": 25.52,
+        "p95Diff": 158,
+        "ssim": 0.6963,
+        "currentBlank": false,
+        "currentLumaStdDev": 28.64,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": [
+        {
+          "metric": "seatCount",
+          "reference": 6,
+          "current": 2
+        }
+      ]
+    },
+    {
+      "state": "mesa-2",
+      "viewport": "1280x800",
+      "route": "mesa-2",
+      "reference": "docs/work/reports/assets/T018/1280x800-mesa-2.png",
+      "current": "screenshots/mesa-2-1280x800.png",
+      "referenceSha256": "5322c3511516b449a7cfe6e72d8ec05ba0e42589f52d96b2fbbc8f3516075c6c",
+      "status": "review",
+      "reason": "diff 32.36% (limite 12%) e SSIM 0.7115 (limite 0.9)",
+      "diff": "diff/mesa-2-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 32.36,
+        "meanAbsDiff": 28.22,
+        "p95Diff": 160,
+        "ssim": 0.7115,
+        "currentBlank": false,
+        "currentLumaStdDev": 35.28,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-3",
+      "viewport": "1280x800",
+      "route": "mesa-3",
+      "reference": "docs/work/reports/assets/T018/1280x800-mesa-3.png",
+      "current": "screenshots/mesa-3-1280x800.png",
+      "referenceSha256": "d9c14da6af1b76895183c3ad85d9badda6b72f1c2e27e66e2f02500e00bcedb4",
+      "status": "review",
+      "reason": "diff 33.01% (limite 12%) e SSIM 0.7047 (limite 0.9)",
+      "diff": "diff/mesa-3-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 33.01,
+        "meanAbsDiff": 28.49,
+        "p95Diff": 161,
+        "ssim": 0.7047,
+        "currentBlank": false,
+        "currentLumaStdDev": 35.22,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-4",
+      "viewport": "1280x800",
+      "route": "mesa",
+      "reference": "docs/work/reports/assets/T018/1280x800-mesa.png",
+      "current": "screenshots/mesa-4-1280x800.png",
+      "referenceSha256": "46ab13e0cacf944ce8918ca0fa61e7e21ab7d0325dc46a84a40ce52dade5f7e5",
+      "status": "review",
+      "reason": "diff 34% (limite 12%) e SSIM 0.6964 (limite 0.9)",
+      "diff": "diff/mesa-4-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 34,
+        "meanAbsDiff": 29.81,
+        "p95Diff": 173,
+        "ssim": 0.6964,
+        "currentBlank": false,
+        "currentLumaStdDev": 35.74,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-5",
+      "viewport": "1280x800",
+      "route": "mesa-5",
+      "reference": "docs/work/reports/assets/T018/1280x800-mesa-5.png",
+      "current": "screenshots/mesa-5-1280x800.png",
+      "referenceSha256": "232d4256a1242f96500a309b9478091f2528580f16c339d8b747ac41b3542f60",
+      "status": "review",
+      "reason": "diff 34.59% (limite 12%) e SSIM 0.6927 (limite 0.9)",
+      "diff": "diff/mesa-5-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 34.59,
+        "meanAbsDiff": 29.31,
+        "p95Diff": 163,
+        "ssim": 0.6927,
+        "currentBlank": false,
+        "currentLumaStdDev": 35.47,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-6",
+      "viewport": "1280x800",
+      "route": "mesa-6",
+      "reference": "docs/work/reports/assets/T018/1280x800-mesa-6.png",
+      "current": "screenshots/mesa-6-1280x800.png",
+      "referenceSha256": "a557e6e2b8efdb45a7e290d3fce4a74bb863641019d2c4adbdbb93460e1711c1",
+      "status": "review",
+      "reason": "diff 35.39% (limite 12%) e SSIM 0.6838 (limite 0.9)",
+      "diff": "diff/mesa-6-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 35.39,
+        "meanAbsDiff": 29.82,
+        "p95Diff": 166,
+        "ssim": 0.6838,
+        "currentBlank": false,
+        "currentLumaStdDev": 35.85,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-7",
+      "viewport": "1280x800",
+      "route": "mesa-7",
+      "reference": "docs/work/reports/assets/T018/1280x800-mesa-7.png",
+      "current": "screenshots/mesa-7-1280x800.png",
+      "referenceSha256": "f5f4ce0265d0d2959d21a888d0ad87b53a9e98da92efa48cda94685f6575656b",
+      "status": "review",
+      "reason": "diff 37.59% (limite 12%) e SSIM 0.6693 (limite 0.9)",
+      "diff": "diff/mesa-7-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 37.59,
+        "meanAbsDiff": 32.65,
+        "p95Diff": 182,
+        "ssim": 0.6693,
+        "currentBlank": false,
+        "currentLumaStdDev": 35.9,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-8",
+      "viewport": "1280x800",
+      "route": "mesa-8",
+      "reference": "docs/work/reports/assets/T018/1280x800-mesa-8.png",
+      "current": "screenshots/mesa-8-1280x800.png",
+      "referenceSha256": "fec4bccb4bbd429c2a83aee6a48a9171fb4ba2bb1a39c90e8adc712257ece829",
+      "status": "review",
+      "reason": "diff 39.46% (limite 12%) e SSIM 0.6576 (limite 0.9)",
+      "diff": "diff/mesa-8-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 39.46,
+        "meanAbsDiff": 34.61,
+        "p95Diff": 186,
+        "ssim": 0.6576,
+        "currentBlank": false,
+        "currentLumaStdDev": 36.72,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "mesa-cheia",
+      "viewport": "1280x800",
+      "route": "mesa-cheia",
+      "reference": "docs/work/reports/assets/T018/1280x800-mesa-cheia.png",
+      "current": "screenshots/mesa-cheia-1280x800.png",
+      "referenceSha256": "13a3f6590ad63b20b8eb3e3b056aaf55264bad0ae0ca5b7bb9004050c36bea52",
+      "status": "review",
+      "reason": "diff 38.09% (limite 12%) e SSIM 0.6645 (limite 0.9)",
+      "diff": "diff/mesa-cheia-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 38.09,
+        "meanAbsDiff": 34.4,
+        "p95Diff": 178,
+        "ssim": 0.6645,
+        "currentBlank": false,
+        "currentLumaStdDev": 36.72,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "pausa",
+      "viewport": "1280x800",
+      "route": "pausada",
+      "reference": "docs/work/reports/assets/T018/1280x800-pausada.png",
+      "current": "screenshots/pausa-1280x800.png",
+      "referenceSha256": "7b5d099488b76813dd819fb0aeb792810a60ec78638eb48cd66eb69dc54dd3ab",
+      "status": "review",
+      "reason": "diff 24.7% (limite 12%) e SSIM 0.7326 (limite 0.9)",
+      "diff": "diff/pausa-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 24.7,
+        "meanAbsDiff": 28.55,
+        "p95Diff": 191,
+        "ssim": 0.7326,
+        "currentBlank": false,
+        "currentLumaStdDev": 64.94,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "ultima",
+      "viewport": "1280x800",
+      "route": "ultima",
+      "reference": "docs/work/reports/assets/T018/1280x800-ultima.png",
+      "current": "screenshots/ultima-1280x800.png",
+      "referenceSha256": "5b0e5f373ce98ab7651447a574800ec64ccd4548aae07ef361fd6bfb290521e7",
+      "status": "review",
+      "reason": "diff 29.02% (limite 12%) e SSIM 0.7356 (limite 0.9)",
+      "diff": "diff/ultima-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 29.02,
+        "meanAbsDiff": 26.41,
+        "p95Diff": 187,
+        "ssim": 0.7356,
+        "currentBlank": false,
+        "currentLumaStdDev": 30.66,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 2,
+          "current": 1
+        }
+      ]
+    },
+    {
+      "state": "denuncia",
+      "viewport": "1280x800",
+      "route": "denuncia",
+      "reference": "docs/work/reports/assets/T018/1280x800-denuncia.png",
+      "current": "screenshots/denuncia-1280x800.png",
+      "referenceSha256": "d50868d1b6d26376dd1f5e6129e7488f4fef8ab8306c6fbb90ca7b46ff449e5d",
+      "status": "review",
+      "reason": "diff 38.7% (limite 12%) e SSIM 0.6531 (limite 0.9)",
+      "diff": "diff/denuncia-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 38.7,
+        "meanAbsDiff": 40.58,
+        "p95Diff": 194,
+        "ssim": 0.6531,
+        "currentBlank": false,
+        "currentLumaStdDev": 40.16,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 12
+        }
+      ]
+    },
+    {
+      "state": "treino",
+      "viewport": "1280x800",
+      "route": "treino",
+      "reference": "docs/work/reports/assets/T018/1280x800-treino.png",
+      "current": "screenshots/treino-1280x800.png",
+      "referenceSha256": "ea46a655dfc258ee522bd485b891d6cd39052a66cd69b0e8df6d74f460bfa287",
+      "status": "review",
+      "reason": "diff 34.38% (limite 12%) e SSIM 0.6939 (limite 0.9)",
+      "diff": "diff/treino-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 34.38,
+        "meanAbsDiff": 31.93,
+        "p95Diff": 186,
+        "ssim": 0.6939,
+        "currentBlank": false,
+        "currentLumaStdDev": 34.07,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "bots",
+      "viewport": "1280x800",
+      "route": "treino",
+      "reference": "docs/work/reports/assets/T018/1280x800-treino.png",
+      "current": "screenshots/bots-1280x800.png",
+      "referenceSha256": "ea46a655dfc258ee522bd485b891d6cd39052a66cd69b0e8df6d74f460bfa287",
+      "status": "review",
+      "reason": "diff 34.38% (limite 12%) e SSIM 0.6939 (limite 0.9)",
+      "diff": "diff/bots-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 34.38,
+        "meanAbsDiff": 31.93,
+        "p95Diff": 186,
+        "ssim": 0.6939,
+        "currentBlank": false,
+        "currentLumaStdDev": 34.07,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "substituto",
+      "viewport": "1280x800",
+      "route": "ausente",
+      "reference": "docs/work/reports/assets/T018/1280x800-ausente.png",
+      "current": "screenshots/substituto-1280x800.png",
+      "referenceSha256": "d7a9850b0a43b69c67c76082b351fdc67bd3a75de06fe5cda47d60090644db98",
+      "status": "review",
+      "reason": "diff 36.96% (limite 12%) e SSIM 0.672 (limite 0.9)",
+      "diff": "diff/substituto-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 36.96,
+        "meanAbsDiff": 33.82,
+        "p95Diff": 186,
+        "ssim": 0.672,
+        "currentBlank": false,
+        "currentLumaStdDev": 34.11,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "resultado",
+      "viewport": "1280x800",
+      "route": "resultado",
+      "reference": "docs/work/reports/assets/T018/1280x800-resultado.png",
+      "current": "screenshots/resultado-1280x800.png",
+      "referenceSha256": "64f724c09e0f4eec834e19fb7c84dabb6ba1ea8b5edac8592e6d66ee30a2f13d",
+      "status": "review",
+      "reason": "diff 45.55% (limite 12%) e SSIM 0.6114 (limite 0.9)",
+      "diff": "diff/resultado-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 45.55,
+        "meanAbsDiff": 49.51,
+        "p95Diff": 237,
+        "ssim": 0.6114,
+        "currentBlank": false,
+        "currentLumaStdDev": 99.08,
+        "bbox": {
+          "x": 0,
+          "y": 12,
+          "width": 1280,
+          "height": 778
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "resultado-sem-vencedor",
+      "viewport": "1280x800",
+      "route": "resultado-sem-vencedor",
+      "reference": "docs/work/reports/assets/T018/1280x800-resultado-sem-vencedor.png",
+      "current": "screenshots/resultado-sem-vencedor-1280x800.png",
+      "referenceSha256": "3764e7a398315dc1002c0b119c1d2e6e98837417af4eae68d986aeaefa2b5bf0",
+      "status": "review",
+      "reason": "diff 41.18% (limite 12%) e SSIM 0.6119 (limite 0.9)",
+      "diff": "diff/resultado-sem-vencedor-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 41.18,
+        "meanAbsDiff": 48.71,
+        "p95Diff": 237,
+        "ssim": 0.6119,
+        "currentBlank": false,
+        "currentLumaStdDev": 99.5,
+        "bbox": {
+          "x": 0,
+          "y": 12,
+          "width": 1280,
+          "height": 778
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "erro-conexao",
+      "viewport": "1280x800",
+      "route": "erro-conexao",
+      "reference": "docs/work/reports/assets/T018/1280x800-erro-conexao.png",
+      "current": "screenshots/erro-conexao-1280x800.png",
+      "referenceSha256": "88765a1c15935862a0914fd3350a6be327a151e7174b4c7a14d756172a97c9db",
+      "status": "review",
+      "reason": "diff 51.77% (limite 12%) e SSIM 0.5755 (limite 0.9)",
+      "diff": "diff/erro-conexao-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 51.77,
+        "meanAbsDiff": 58.13,
+        "p95Diff": 237,
+        "ssim": 0.5755,
+        "currentBlank": false,
+        "currentLumaStdDev": 68.66,
+        "bbox": {
+          "x": 0,
+          "y": 8,
+          "width": 1280,
+          "height": 792
+        }
+      },
+      "structural": [
+        {
+          "metric": "seatCount",
+          "reference": 0,
+          "current": 1
+        }
+      ]
+    },
+    {
+      "state": "erro-sala",
+      "viewport": "1280x800",
+      "route": "erro-sala",
+      "reference": "docs/work/reports/assets/T018/1280x800-erro-sala.png",
+      "current": "screenshots/erro-sala-1280x800.png",
+      "referenceSha256": "39d9b01e45839cfbf1c79a9fee426f14626aff32c051476bb41ea6e1a1e0f117",
+      "status": "review",
+      "reason": "diff 43.72% (limite 12%) e SSIM 0.679 (limite 0.9)",
+      "diff": "diff/erro-sala-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 43.72,
+        "meanAbsDiff": 30.52,
+        "p95Diff": 105,
+        "ssim": 0.679,
+        "currentBlank": false,
+        "currentLumaStdDev": 81.47,
+        "bbox": {
+          "x": 0,
+          "y": 15,
+          "width": 1280,
+          "height": 725
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "erro-link",
+      "viewport": "1280x800",
+      "route": "erro-link",
+      "reference": "docs/work/reports/assets/T018/1280x800-erro-link.png",
+      "current": "screenshots/erro-link-1280x800.png",
+      "referenceSha256": "ca232056f8e067e3ba1d3ee6943a856eb20e5c050e4da3cdd6f04b4a6ed81e92",
+      "status": "review",
+      "reason": "diff 42.79% (limite 12%) e SSIM 0.6841 (limite 0.9)",
+      "diff": "diff/erro-link-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 42.79,
+        "meanAbsDiff": 30.72,
+        "p95Diff": 127,
+        "ssim": 0.6841,
+        "currentBlank": false,
+        "currentLumaStdDev": 86.96,
+        "bbox": {
+          "x": 0,
+          "y": 15,
+          "width": 1280,
+          "height": 725
+        }
+      },
+      "structural": []
+    },
+    {
+      "state": "reacoes",
+      "viewport": "1280x800",
+      "route": "reacoes",
+      "reference": "docs/work/reports/assets/T018/1280x800-reacoes.png",
+      "current": "screenshots/reacoes-1280x800.png",
+      "referenceSha256": "95333163abb8f9cbf2c6cfeaff17e538397558ce7fdc9f0f22be32f30c3dddd5",
+      "status": "review",
+      "reason": "diff 63% (limite 12%) e SSIM 0.6002 (limite 0.9)",
+      "diff": "diff/reacoes-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 63,
+        "meanAbsDiff": 53.83,
+        "p95Diff": 228,
+        "ssim": 0.6002,
+        "currentBlank": false,
+        "currentLumaStdDev": 21.45,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 785
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "sala",
+      "viewport": "1280x800",
+      "route": "sala",
+      "reference": "docs/work/reports/assets/T018/1280x800-sala.png",
+      "current": "screenshots/sala-1280x800.png",
+      "referenceSha256": "4d9447e003ba7539b460a5187e48b050b11de60f88c61a5dd0ca27d076041c74",
+      "status": "review",
+      "reason": "diff 11.5% (limite 12%) e SSIM 0.7336 (limite 0.9)",
+      "diff": "diff/sala-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 11.5,
+        "meanAbsDiff": 12.35,
+        "p95Diff": 48,
+        "ssim": 0.7336,
+        "currentBlank": false,
+        "currentLumaStdDev": 24.02,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 800
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 7
+        }
+      ]
+    },
+    {
+      "state": "inversao",
+      "viewport": "1280x800",
+      "route": "inversao",
+      "reference": "docs/work/reports/assets/T018/1280x800-inversao.png",
+      "current": "screenshots/inversao-1280x800.png",
+      "referenceSha256": "880385d6decc80e5819853d20a04c36973d21f816471863f00e57d765de72549",
+      "status": "review",
+      "reason": "diff 36.38% (limite 12%) e SSIM 0.6663 (limite 0.9)",
+      "diff": "diff/inversao-1280x800.png",
+      "metrics": {
+        "width": 1280,
+        "height": 800,
+        "changedPct": 36.38,
+        "meanAbsDiff": 33.46,
+        "p95Diff": 183,
+        "ssim": 0.6663,
+        "currentBlank": false,
+        "currentLumaStdDev": 33.67,
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 790
+        }
+      },
+      "structural": [
+        {
+          "metric": "cards",
+          "reference": 8,
+          "current": 6
+        }
+      ]
+    },
+    {
+      "state": "home",
+      "viewport": "640x800",
+      "route": "home",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "preparacao",
+      "viewport": "640x800",
+      "route": "preparacao",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "preparacao-8",
+      "viewport": "640x800",
+      "route": "preparacao-cheia",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "espera",
+      "viewport": "640x800",
+      "route": "espera",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "observador",
+      "viewport": "640x800",
+      "route": "espera",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "mesa-2",
+      "viewport": "640x800",
+      "route": "mesa-2",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "mesa-3",
+      "viewport": "640x800",
+      "route": "mesa-3",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "mesa-4",
+      "viewport": "640x800",
+      "route": "mesa",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "mesa-5",
+      "viewport": "640x800",
+      "route": "mesa-5",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "mesa-6",
+      "viewport": "640x800",
+      "route": "mesa-6",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "mesa-7",
+      "viewport": "640x800",
+      "route": "mesa-7",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "mesa-8",
+      "viewport": "640x800",
+      "route": "mesa-8",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "mesa-cheia",
+      "viewport": "640x800",
+      "route": "mesa-cheia",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "pausa",
+      "viewport": "640x800",
+      "route": "pausada",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "ultima",
+      "viewport": "640x800",
+      "route": "ultima",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "denuncia",
+      "viewport": "640x800",
+      "route": "denuncia",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "treino",
+      "viewport": "640x800",
+      "route": "treino",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "bots",
+      "viewport": "640x800",
+      "route": "treino",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "substituto",
+      "viewport": "640x800",
+      "route": "ausente",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "resultado",
+      "viewport": "640x800",
+      "route": "resultado",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "resultado-sem-vencedor",
+      "viewport": "640x800",
+      "route": "resultado-sem-vencedor",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "erro-conexao",
+      "viewport": "640x800",
+      "route": "erro-conexao",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "erro-sala",
+      "viewport": "640x800",
+      "route": "erro-sala",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "erro-link",
+      "viewport": "640x800",
+      "route": "erro-link",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "reacoes",
+      "viewport": "640x800",
+      "route": "reacoes",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "sala",
+      "viewport": "640x800",
+      "route": "sala",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    },
+    {
+      "state": "inversao",
+      "viewport": "640x800",
+      "route": "inversao",
+      "status": "no-reference",
+      "reason": "captura T018 ausente para esta rota/viewport",
+      "structural": []
+    }
+  ]
+}

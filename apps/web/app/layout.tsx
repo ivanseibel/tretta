@@ -11,6 +11,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
+      <head>
+        <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossOrigin="" />
+        <link rel="preload" href="/fonts/atkinson.woff2" as="font" type="font/woff2" crossOrigin="" />
+      </head>
       <body>
         <RoomProvider>{children}</RoomProvider>
       </body>

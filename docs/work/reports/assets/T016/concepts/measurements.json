@@ -1,0 +1,3998 @@
+[
+  {
+    "viewport": {
+      "w": 412,
+      "h": 915
+    },
+    "ladder": {
+      "steps": [],
+      "stripRows": 2,
+      "handRows": 2,
+      "lane": false,
+      "avatar": 24
+    },
+    "shell": {
+      "top": 0,
+      "height": 863,
+      "frameTop": 4,
+      "padTop": 8,
+      "padBottom": 8,
+      "gap": 10.75,
+      "declaredGap": 6
+    },
+    "regions": [
+      {
+        "region": "cabecalho",
+        "top": 12,
+        "height": 56,
+        "bottom": 68,
+        "width": 388
+      },
+      {
+        "region": "faixa",
+        "top": 78.8,
+        "height": 248,
+        "bottom": 326.8,
+        "width": 388
+      },
+      {
+        "region": "centro",
+        "top": 337.5,
+        "height": 116,
+        "bottom": 453.5,
+        "width": 388
+      },
+      {
+        "region": "acoes",
+        "top": 464.3,
+        "height": 44,
+        "bottom": 508.3,
+        "width": 388
+      },
+      {
+        "region": "mao",
+        "top": 519,
+        "height": 336,
+        "bottom": 855,
+        "width": 388
+      },
+      {
+        "region": "gaveta",
+        "top": 863,
+        "height": 52,
+        "bottom": 915,
+        "width": 412
+      }
+    ],
+    "contentBottom": 855,
+    "slack": 0,
+    "scroll": {
+      "docH": 915,
+      "docW": 412
+    },
+    "concept": "a",
+    "state": "s2",
+    "details": {
+      "seats": [
+        {
+          "x": 18,
+          "y": 78.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 114.5,
+          "y": 78.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 211,
+          "y": 78.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 307.5,
+          "y": 78.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 307.5,
+          "y": 232.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 211,
+          "y": 232.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 114.5,
+          "y": 232.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 18,
+          "y": 232.75,
+          "w": 86.5,
+          "h": 92
+        }
+      ],
+      "cards": [
+        {
+          "x": 26,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 118.5,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 211,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 303.5,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 26,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 118.5,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 211,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 303.5,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        }
+      ],
+      "targets": [
+        {
+          "x": 352,
+          "y": 16,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "x": 18,
+          "y": 78.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 114.5,
+          "y": 78.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 211,
+          "y": 78.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 307.5,
+          "y": 78.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 307.5,
+          "y": 232.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 211,
+          "y": 232.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 114.5,
+          "y": 232.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 18,
+          "y": 232.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 12,
+          "y": 464.25,
+          "w": 190,
+          "h": 44
+        },
+        {
+          "x": 210,
+          "y": 464.25,
+          "w": 190,
+          "h": 44
+        },
+        {
+          "x": 115.9375,
+          "y": 525,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "x": 0,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 103,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 206,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 309,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        }
+      ],
+      "fonts": [
+        {
+          "type": "turn-text",
+          "font": 20,
+          "text": "Vez de Josefina"
+        },
+        {
+          "type": "dir-text",
+          "font": 18,
+          "text": "Sentido horário"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Nina"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "8"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Maria Aparecida"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "5"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "tag-turn",
+          "font": 14,
+          "text": "vez"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Josefina Albuquerque"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "12"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Bartolomeu"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "7"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Lu"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "4"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Ana Beatriz"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "6"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Zé"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "1"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "carta"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Conceição"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "9"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Monte"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Verde 3"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Descarte"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Cor ativa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho 7"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo Inversão"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Azul 4"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Verde 9"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Coringa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho +2"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo 2"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Azul Bloqueio"
+        }
+      ],
+      "strip": {
+        "x": 12,
+        "y": 78.75,
+        "w": 388,
+        "h": 248
+      },
+      "handScroll": {
+        "client": 376,
+        "scroll": 376
+      }
+    }
+  },
+  {
+    "viewport": {
+      "w": 1280,
+      "h": 800
+    },
+    "ladder": {
+      "steps": [
+        "mao-1-fileira"
+      ],
+      "stripRows": 2,
+      "handRows": 1,
+      "lane": false,
+      "avatar": 24
+    },
+    "shell": {
+      "top": 12,
+      "height": 724,
+      "frameTop": 5,
+      "padTop": 8,
+      "padBottom": 8,
+      "gap": 6.75,
+      "declaredGap": 4
+    },
+    "regions": [
+      {
+        "region": "cabecalho",
+        "top": 25,
+        "height": 60,
+        "bottom": 85,
+        "width": 936
+      },
+      {
+        "region": "faixa",
+        "top": 91.8,
+        "height": 248,
+        "bottom": 339.8,
+        "width": 936
+      },
+      {
+        "region": "centro",
+        "top": 346.5,
+        "height": 110,
+        "bottom": 456.5,
+        "width": 936
+      },
+      {
+        "region": "acoes",
+        "top": 463.3,
+        "height": 44,
+        "bottom": 507.3,
+        "width": 936
+      },
+      {
+        "region": "mao",
+        "top": 514,
+        "height": 214,
+        "bottom": 728,
+        "width": 936
+      },
+      {
+        "region": "gaveta",
+        "top": 736,
+        "height": 52,
+        "bottom": 788,
+        "width": 936
+      }
+    ],
+    "contentBottom": 728,
+    "slack": 0,
+    "scroll": {
+      "docH": 800,
+      "docW": 1280
+    },
+    "concept": "a",
+    "state": "s2",
+    "details": {
+      "seats": [
+        {
+          "x": 178,
+          "y": 91.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 411.5,
+          "y": 91.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 645,
+          "y": 91.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 878.5,
+          "y": 91.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 878.5,
+          "y": 245.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 645,
+          "y": 245.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 411.5,
+          "y": 245.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 178,
+          "y": 245.75,
+          "w": 223.5,
+          "h": 92
+        }
+      ],
+      "cards": [
+        {
+          "x": 207,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 317,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 427,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 537,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 647,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 757,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 867,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 977,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        }
+      ],
+      "targets": [
+        {
+          "x": 1060,
+          "y": 31,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "x": 178,
+          "y": 91.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 411.5,
+          "y": 91.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 645,
+          "y": 91.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 878.5,
+          "y": 91.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 878.5,
+          "y": 245.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 645,
+          "y": 245.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 411.5,
+          "y": 245.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 178,
+          "y": 245.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 172,
+          "y": 463.25,
+          "w": 464,
+          "h": 44
+        },
+        {
+          "x": 644,
+          "y": 463.25,
+          "w": 464,
+          "h": 44
+        },
+        {
+          "x": 279.9375,
+          "y": 520,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "x": 172,
+          "y": 739,
+          "w": 234,
+          "h": 49
+        },
+        {
+          "x": 406,
+          "y": 739,
+          "w": 234,
+          "h": 49
+        },
+        {
+          "x": 640,
+          "y": 739,
+          "w": 234,
+          "h": 49
+        },
+        {
+          "x": 874,
+          "y": 739,
+          "w": 234,
+          "h": 49
+        }
+      ],
+      "fonts": [
+        {
+          "type": "turn-text",
+          "font": 20,
+          "text": "Vez de Josefina"
+        },
+        {
+          "type": "dir-text",
+          "font": 18,
+          "text": "Sentido horário"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Nina"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "8"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Maria Aparecida"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "5"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "tag-turn",
+          "font": 14,
+          "text": "na vez"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Josefina Albuquerque"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "12"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Bartolomeu"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "7"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Lu"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "4"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Ana Beatriz"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "6"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Zé"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "1"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "carta"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Conceição"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "9"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Monte"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Verde 3"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Descarte"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Cor ativa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho 7"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo Inversão"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Azul 4"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Verde 9"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Coringa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho +2"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo 2"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Azul Bloqueio"
+        }
+      ],
+      "strip": {
+        "x": 172,
+        "y": 91.75,
+        "w": 936,
+        "h": 248
+      },
+      "handScroll": {
+        "client": 908,
+        "scroll": 908
+      }
+    }
+  },
+  {
+    "viewport": {
+      "w": 412,
+      "h": 915
+    },
+    "ladder": {
+      "steps": [],
+      "stripRows": 1,
+      "handRows": 2,
+      "lane": true,
+      "avatar": 24
+    },
+    "shell": {
+      "top": 0,
+      "height": 863,
+      "frameTop": 4,
+      "padTop": 8,
+      "padBottom": 8,
+      "gap": 20.25,
+      "declaredGap": 6
+    },
+    "regions": [
+      {
+        "region": "cabecalho",
+        "top": 12,
+        "height": 56,
+        "bottom": 68,
+        "width": 388
+      },
+      {
+        "region": "faixa",
+        "top": 88.3,
+        "height": 150,
+        "bottom": 238.3,
+        "width": 388
+      },
+      {
+        "region": "centro",
+        "top": 258.5,
+        "height": 116,
+        "bottom": 374.5,
+        "width": 388
+      },
+      {
+        "region": "acoes",
+        "top": 394.8,
+        "height": 104,
+        "bottom": 498.8,
+        "width": 388
+      },
+      {
+        "region": "mao",
+        "top": 519,
+        "height": 336,
+        "bottom": 855,
+        "width": 388
+      },
+      {
+        "region": "gaveta",
+        "top": 863,
+        "height": 52,
+        "bottom": 915,
+        "width": 412
+      }
+    ],
+    "contentBottom": 855,
+    "slack": 0,
+    "scroll": {
+      "docH": 915,
+      "docW": 412
+    },
+    "concept": "a",
+    "state": "s1",
+    "details": {
+      "seats": [
+        {
+          "x": 18,
+          "y": 88.25,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 114.5,
+          "y": 88.25,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 211,
+          "y": 88.25,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 307.5,
+          "y": 88.25,
+          "w": 86.5,
+          "h": 92
+        }
+      ],
+      "cards": [
+        {
+          "x": 26,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 118.5,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 211,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 303.5,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 26,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 118.5,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 211,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        }
+      ],
+      "targets": [
+        {
+          "x": 352,
+          "y": 16,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "x": 18,
+          "y": 88.25,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 114.5,
+          "y": 88.25,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 211,
+          "y": 88.25,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 307.5,
+          "y": 88.25,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 12,
+          "y": 394.75,
+          "w": 388,
+          "h": 56
+        },
+        {
+          "x": 12,
+          "y": 454.75,
+          "w": 190,
+          "h": 44
+        },
+        {
+          "x": 210,
+          "y": 454.75,
+          "w": 190,
+          "h": 44
+        },
+        {
+          "x": 115.9375,
+          "y": 525,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "x": 0,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 103,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 206,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 309,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        }
+      ],
+      "fonts": [
+        {
+          "type": "turn-text",
+          "font": 20,
+          "text": "✦ Sua vez"
+        },
+        {
+          "type": "dir-text",
+          "font": 18,
+          "text": "Sentido horário"
+        },
+        {
+          "type": "tag-turn",
+          "font": 14,
+          "text": "vez"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Nina"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "7"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Tico"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "5"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Maria Aparecida"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "3"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Beto"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "9"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Monte"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho 6"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Descarte"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Cor ativa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho 7"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo Inversão"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho Bloqueio"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Verde 6"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Coringa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Azul 1"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo 8"
+        }
+      ],
+      "strip": {
+        "x": 12,
+        "y": 88.25,
+        "w": 388,
+        "h": 150
+      },
+      "handScroll": {
+        "client": 376,
+        "scroll": 376
+      }
+    }
+  },
+  {
+    "viewport": {
+      "w": 412,
+      "h": 915
+    },
+    "ladder": {
+      "steps": [],
+      "stripRows": 2,
+      "handRows": 2,
+      "lane": false,
+      "avatar": 24
+    },
+    "shell": {
+      "top": 0,
+      "height": 863,
+      "frameTop": 4,
+      "padTop": 8,
+      "padBottom": 8,
+      "gap": 8.25,
+      "declaredGap": 6
+    },
+    "regions": [
+      {
+        "region": "cabecalho",
+        "top": 12,
+        "height": 56,
+        "bottom": 68,
+        "width": 388
+      },
+      {
+        "region": "faixa",
+        "top": 76.3,
+        "height": 258,
+        "bottom": 334.3,
+        "width": 388
+      },
+      {
+        "region": "centro",
+        "top": 342.5,
+        "height": 116,
+        "bottom": 458.5,
+        "width": 388
+      },
+      {
+        "region": "acoes",
+        "top": 466.8,
+        "height": 44,
+        "bottom": 510.8,
+        "width": 388
+      },
+      {
+        "region": "mao",
+        "top": 519,
+        "height": 336,
+        "bottom": 855,
+        "width": 388
+      },
+      {
+        "region": "gaveta",
+        "top": 863,
+        "height": 52,
+        "bottom": 915,
+        "width": 412
+      }
+    ],
+    "contentBottom": 855,
+    "slack": 0,
+    "scroll": {
+      "docH": 915,
+      "docW": 412
+    },
+    "concept": "b",
+    "state": "s2",
+    "details": {
+      "seats": [
+        {
+          "x": 15.651819229125977,
+          "y": 83.04951477050781,
+          "w": 91.19636535644531,
+          "h": 96.40097045898438
+        },
+        {
+          "x": 113.70377349853516,
+          "y": 75.50218963623047,
+          "w": 88.09244537353516,
+          "h": 93.49561309814453
+        },
+        {
+          "x": 210.2037811279297,
+          "y": 75.50218963623047,
+          "w": 88.09245300292969,
+          "h": 93.49561309814453
+        },
+        {
+          "x": 305.1518249511719,
+          "y": 83.04951477050781,
+          "w": 91.19635009765625,
+          "h": 96.40097045898438
+        },
+        {
+          "x": 305.1518249511719,
+          "y": 229.0495147705078,
+          "w": 91.19635009765625,
+          "h": 96.40098571777344
+        },
+        {
+          "x": 210.2037811279297,
+          "y": 239.50218200683594,
+          "w": 88.09245300292969,
+          "h": 93.49562072753906
+        },
+        {
+          "x": 113.70377349853516,
+          "y": 239.50218200683594,
+          "w": 88.09244537353516,
+          "h": 93.49562072753906
+        },
+        {
+          "x": 15.651819229125977,
+          "y": 229.0495147705078,
+          "w": 91.19636535644531,
+          "h": 96.40098571777344
+        }
+      ],
+      "cards": [
+        {
+          "x": 26,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 118.5,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 211,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 303.5,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 26,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 118.5,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 211,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 303.5,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        }
+      ],
+      "targets": [
+        {
+          "x": 352,
+          "y": 16,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "x": 15.651819229125977,
+          "y": 83.04951477050781,
+          "w": 91.19636535644531,
+          "h": 96.40097045898438
+        },
+        {
+          "x": 113.70377349853516,
+          "y": 75.50218963623047,
+          "w": 88.09244537353516,
+          "h": 93.49561309814453
+        },
+        {
+          "x": 210.2037811279297,
+          "y": 75.50218963623047,
+          "w": 88.09245300292969,
+          "h": 93.49561309814453
+        },
+        {
+          "x": 305.1518249511719,
+          "y": 83.04951477050781,
+          "w": 91.19635009765625,
+          "h": 96.40097045898438
+        },
+        {
+          "x": 305.1518249511719,
+          "y": 229.0495147705078,
+          "w": 91.19635009765625,
+          "h": 96.40098571777344
+        },
+        {
+          "x": 210.2037811279297,
+          "y": 239.50218200683594,
+          "w": 88.09245300292969,
+          "h": 93.49562072753906
+        },
+        {
+          "x": 113.70377349853516,
+          "y": 239.50218200683594,
+          "w": 88.09244537353516,
+          "h": 93.49562072753906
+        },
+        {
+          "x": 15.651819229125977,
+          "y": 229.0495147705078,
+          "w": 91.19636535644531,
+          "h": 96.40098571777344
+        },
+        {
+          "x": 12,
+          "y": 466.75,
+          "w": 190,
+          "h": 44
+        },
+        {
+          "x": 210,
+          "y": 466.75,
+          "w": 190,
+          "h": 44
+        },
+        {
+          "x": 115.9375,
+          "y": 525,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "x": 0,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 103,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 206,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 309,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        }
+      ],
+      "fonts": [
+        {
+          "type": "turn-text",
+          "font": 20,
+          "text": "Vez de Josefina"
+        },
+        {
+          "type": "dir-text",
+          "font": 18,
+          "text": "Sentido horário"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Nina"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "8"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Maria Aparecida"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "5"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "tag-turn",
+          "font": 14,
+          "text": "vez"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Josefina Albuquerque"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "12"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Bartolomeu"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "7"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Lu"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "4"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Ana Beatriz"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "6"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Zé"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "1"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "carta"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Conceição"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "9"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Monte"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Verde 3"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Descarte"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Cor ativa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho 7"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo Inversão"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Azul 4"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Verde 9"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Coringa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho +2"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo 2"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Azul Bloqueio"
+        }
+      ],
+      "strip": {
+        "x": 12,
+        "y": 76.25,
+        "w": 388,
+        "h": 258
+      },
+      "handScroll": {
+        "client": 376,
+        "scroll": 376
+      }
+    }
+  },
+  {
+    "viewport": {
+      "w": 1280,
+      "h": 800
+    },
+    "ladder": {
+      "steps": [
+        "mao-1-fileira"
+      ],
+      "stripRows": 2,
+      "handRows": 1,
+      "lane": false,
+      "avatar": 24
+    },
+    "shell": {
+      "top": 12,
+      "height": 724,
+      "frameTop": 5,
+      "padTop": 8,
+      "padBottom": 8,
+      "gap": 4.25,
+      "declaredGap": 4
+    },
+    "regions": [
+      {
+        "region": "cabecalho",
+        "top": 25,
+        "height": 60,
+        "bottom": 85,
+        "width": 936
+      },
+      {
+        "region": "faixa",
+        "top": 89.3,
+        "height": 258,
+        "bottom": 347.3,
+        "width": 936
+      },
+      {
+        "region": "centro",
+        "top": 351.5,
+        "height": 110,
+        "bottom": 461.5,
+        "width": 936
+      },
+      {
+        "region": "acoes",
+        "top": 465.8,
+        "height": 44,
+        "bottom": 509.8,
+        "width": 936
+      },
+      {
+        "region": "mao",
+        "top": 514,
+        "height": 214,
+        "bottom": 728,
+        "width": 936
+      },
+      {
+        "region": "gaveta",
+        "top": 736,
+        "height": 52,
+        "bottom": 788,
+        "width": 936
+      }
+    ],
+    "contentBottom": 728,
+    "slack": 0,
+    "scroll": {
+      "docH": 800,
+      "docW": 1280
+    },
+    "concept": "b",
+    "state": "s2",
+    "details": {
+      "seats": [
+        {
+          "x": 175.74569702148438,
+          "y": 92.4645004272461,
+          "w": 228.00860595703125,
+          "h": 103.57099151611328
+        },
+        {
+          "x": 410.7142028808594,
+          "y": 87.30670166015625,
+          "w": 225.07156372070312,
+          "h": 95.8865966796875
+        },
+        {
+          "x": 644.2142333984375,
+          "y": 87.30670166015625,
+          "w": 225.071533203125,
+          "h": 95.8865966796875
+        },
+        {
+          "x": 876.2456665039062,
+          "y": 92.4645004272461,
+          "w": 228.00872802734375,
+          "h": 103.57099151611328
+        },
+        {
+          "x": 876.2456665039062,
+          "y": 238.46449279785156,
+          "w": 228.00872802734375,
+          "h": 103.57102966308594
+        },
+        {
+          "x": 644.2142333984375,
+          "y": 251.30670166015625,
+          "w": 225.071533203125,
+          "h": 95.8865966796875
+        },
+        {
+          "x": 410.7142028808594,
+          "y": 251.30670166015625,
+          "w": 225.07156372070312,
+          "h": 95.8865966796875
+        },
+        {
+          "x": 175.74569702148438,
+          "y": 238.46449279785156,
+          "w": 228.00860595703125,
+          "h": 103.57102966308594
+        }
+      ],
+      "cards": [
+        {
+          "x": 207,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 317,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 427,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 537,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 647,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 757,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 867,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 977,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        }
+      ],
+      "targets": [
+        {
+          "x": 1060,
+          "y": 31,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "x": 175.74569702148438,
+          "y": 92.4645004272461,
+          "w": 228.00860595703125,
+          "h": 103.57099151611328
+        },
+        {
+          "x": 410.7142028808594,
+          "y": 87.30670166015625,
+          "w": 225.07156372070312,
+          "h": 95.8865966796875
+        },
+        {
+          "x": 644.2142333984375,
+          "y": 87.30670166015625,
+          "w": 225.071533203125,
+          "h": 95.8865966796875
+        },
+        {
+          "x": 876.2456665039062,
+          "y": 92.4645004272461,
+          "w": 228.00872802734375,
+          "h": 103.57099151611328
+        },
+        {
+          "x": 876.2456665039062,
+          "y": 238.46449279785156,
+          "w": 228.00872802734375,
+          "h": 103.57102966308594
+        },
+        {
+          "x": 644.2142333984375,
+          "y": 251.30670166015625,
+          "w": 225.071533203125,
+          "h": 95.8865966796875
+        },
+        {
+          "x": 410.7142028808594,
+          "y": 251.30670166015625,
+          "w": 225.07156372070312,
+          "h": 95.8865966796875
+        },
+        {
+          "x": 175.74569702148438,
+          "y": 238.46449279785156,
+          "w": 228.00860595703125,
+          "h": 103.57102966308594
+        },
+        {
+          "x": 172,
+          "y": 465.75,
+          "w": 464,
+          "h": 44
+        },
+        {
+          "x": 644,
+          "y": 465.75,
+          "w": 464,
+          "h": 44
+        },
+        {
+          "x": 279.9375,
+          "y": 520,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "x": 172,
+          "y": 739,
+          "w": 234,
+          "h": 49
+        },
+        {
+          "x": 406,
+          "y": 739,
+          "w": 234,
+          "h": 49
+        },
+        {
+          "x": 640,
+          "y": 739,
+          "w": 234,
+          "h": 49
+        },
+        {
+          "x": 874,
+          "y": 739,
+          "w": 234,
+          "h": 49
+        }
+      ],
+      "fonts": [
+        {
+          "type": "turn-text",
+          "font": 20,
+          "text": "Vez de Josefina"
+        },
+        {
+          "type": "dir-text",
+          "font": 18,
+          "text": "Sentido horário"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Nina"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "8"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Maria Aparecida"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "5"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "tag-turn",
+          "font": 14,
+          "text": "na vez"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Josefina Albuquerque"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "12"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Bartolomeu"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "7"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Lu"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "4"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Ana Beatriz"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "6"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Zé"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "1"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "carta"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Conceição"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "9"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Monte"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Verde 3"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Descarte"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Cor ativa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho 7"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo Inversão"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Azul 4"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Verde 9"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Coringa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho +2"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo 2"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Azul Bloqueio"
+        }
+      ],
+      "strip": {
+        "x": 172,
+        "y": 89.25,
+        "w": 936,
+        "h": 258
+      },
+      "handScroll": {
+        "client": 908,
+        "scroll": 908
+      }
+    }
+  },
+  {
+    "viewport": {
+      "w": 412,
+      "h": 915
+    },
+    "ladder": {
+      "steps": [],
+      "stripRows": 1,
+      "handRows": 2,
+      "lane": true,
+      "avatar": 24
+    },
+    "shell": {
+      "top": 0,
+      "height": 863,
+      "frameTop": 4,
+      "padTop": 8,
+      "padBottom": 8,
+      "gap": 20.25,
+      "declaredGap": 6
+    },
+    "regions": [
+      {
+        "region": "cabecalho",
+        "top": 12,
+        "height": 56,
+        "bottom": 68,
+        "width": 388
+      },
+      {
+        "region": "faixa",
+        "top": 88.3,
+        "height": 150,
+        "bottom": 238.3,
+        "width": 388
+      },
+      {
+        "region": "centro",
+        "top": 258.5,
+        "height": 116,
+        "bottom": 374.5,
+        "width": 388
+      },
+      {
+        "region": "acoes",
+        "top": 394.8,
+        "height": 104,
+        "bottom": 498.8,
+        "width": 388
+      },
+      {
+        "region": "mao",
+        "top": 519,
+        "height": 336,
+        "bottom": 855,
+        "width": 388
+      },
+      {
+        "region": "gaveta",
+        "top": 863,
+        "height": 52,
+        "bottom": 915,
+        "width": 412
+      }
+    ],
+    "contentBottom": 855,
+    "slack": 0,
+    "scroll": {
+      "docH": 915,
+      "docW": 412
+    },
+    "concept": "b",
+    "state": "s1",
+    "details": {
+      "seats": [
+        {
+          "x": 15.651819229125977,
+          "y": 95.04951477050781,
+          "w": 91.19636535644531,
+          "h": 96.40097045898438
+        },
+        {
+          "x": 113.70377349853516,
+          "y": 87.50218963623047,
+          "w": 88.09244537353516,
+          "h": 93.49561309814453
+        },
+        {
+          "x": 210.2037811279297,
+          "y": 87.50218963623047,
+          "w": 88.09245300292969,
+          "h": 93.49561309814453
+        },
+        {
+          "x": 305.1518249511719,
+          "y": 95.04951477050781,
+          "w": 91.19635009765625,
+          "h": 96.40097045898438
+        }
+      ],
+      "cards": [
+        {
+          "x": 26,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 118.5,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 211,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 303.5,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 26,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 118.5,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 211,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        }
+      ],
+      "targets": [
+        {
+          "x": 352,
+          "y": 16,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "x": 15.651819229125977,
+          "y": 95.04951477050781,
+          "w": 91.19636535644531,
+          "h": 96.40097045898438
+        },
+        {
+          "x": 113.70377349853516,
+          "y": 87.50218963623047,
+          "w": 88.09244537353516,
+          "h": 93.49561309814453
+        },
+        {
+          "x": 210.2037811279297,
+          "y": 87.50218963623047,
+          "w": 88.09245300292969,
+          "h": 93.49561309814453
+        },
+        {
+          "x": 305.1518249511719,
+          "y": 95.04951477050781,
+          "w": 91.19635009765625,
+          "h": 96.40097045898438
+        },
+        {
+          "x": 12,
+          "y": 394.75,
+          "w": 388,
+          "h": 56
+        },
+        {
+          "x": 12,
+          "y": 454.75,
+          "w": 190,
+          "h": 44
+        },
+        {
+          "x": 210,
+          "y": 454.75,
+          "w": 190,
+          "h": 44
+        },
+        {
+          "x": 115.9375,
+          "y": 525,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "x": 0,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 103,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 206,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 309,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        }
+      ],
+      "fonts": [
+        {
+          "type": "turn-text",
+          "font": 20,
+          "text": "✦ Sua vez"
+        },
+        {
+          "type": "dir-text",
+          "font": 18,
+          "text": "Sentido horário"
+        },
+        {
+          "type": "tag-turn",
+          "font": 14,
+          "text": "vez"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Nina"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "7"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Tico"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "5"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Maria Aparecida"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "3"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Beto"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "9"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Monte"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho 6"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Descarte"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Cor ativa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho 7"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo Inversão"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho Bloqueio"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Verde 6"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Coringa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Azul 1"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo 8"
+        }
+      ],
+      "strip": {
+        "x": 12,
+        "y": 88.25,
+        "w": 388,
+        "h": 150
+      },
+      "handScroll": {
+        "client": 376,
+        "scroll": 376
+      }
+    }
+  },
+  {
+    "viewport": {
+      "w": 412,
+      "h": 915
+    },
+    "ladder": {
+      "steps": [],
+      "stripRows": 2,
+      "handRows": 2,
+      "lane": false,
+      "avatar": 24
+    },
+    "shell": {
+      "top": 0,
+      "height": 863,
+      "frameTop": 4,
+      "padTop": 8,
+      "padBottom": 8,
+      "gap": 13.75,
+      "declaredGap": 6
+    },
+    "regions": [
+      {
+        "region": "cabecalho",
+        "top": 12,
+        "height": 56,
+        "bottom": 68,
+        "width": 388
+      },
+      {
+        "region": "faixa",
+        "top": 81.8,
+        "height": 236,
+        "bottom": 317.8,
+        "width": 388
+      },
+      {
+        "region": "centro",
+        "top": 331.5,
+        "height": 116,
+        "bottom": 447.5,
+        "width": 388
+      },
+      {
+        "region": "acoes",
+        "top": 461.3,
+        "height": 44,
+        "bottom": 505.3,
+        "width": 388
+      },
+      {
+        "region": "mao",
+        "top": 519,
+        "height": 336,
+        "bottom": 855,
+        "width": 388
+      },
+      {
+        "region": "gaveta",
+        "top": 863,
+        "height": 52,
+        "bottom": 915,
+        "width": 412
+      }
+    ],
+    "contentBottom": 855,
+    "slack": 0,
+    "scroll": {
+      "docH": 915,
+      "docW": 412
+    },
+    "concept": "c",
+    "state": "s2",
+    "details": {
+      "seats": [
+        {
+          "x": 18,
+          "y": 98.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 114.5,
+          "y": 98.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 209.4209747314453,
+          "y": 91.26861572265625,
+          "w": 89.65806579589844,
+          "h": 94.9627685546875
+        },
+        {
+          "x": 307.5,
+          "y": 98.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 307.5,
+          "y": 220.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 211,
+          "y": 220.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 114.5,
+          "y": 220.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 18,
+          "y": 220.75,
+          "w": 86.5,
+          "h": 92
+        }
+      ],
+      "cards": [
+        {
+          "x": 26,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 118.5,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 211,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 303.5,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 26,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 118.5,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 211,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 303.5,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        }
+      ],
+      "targets": [
+        {
+          "x": 352,
+          "y": 16,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "x": 18,
+          "y": 98.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 114.5,
+          "y": 98.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 209.4209747314453,
+          "y": 91.26861572265625,
+          "w": 89.65806579589844,
+          "h": 94.9627685546875
+        },
+        {
+          "x": 307.5,
+          "y": 98.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 307.5,
+          "y": 220.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 211,
+          "y": 220.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 114.5,
+          "y": 220.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 18,
+          "y": 220.75,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 12,
+          "y": 461.25,
+          "w": 190,
+          "h": 44
+        },
+        {
+          "x": 210,
+          "y": 461.25,
+          "w": 190,
+          "h": 44
+        },
+        {
+          "x": 115.9375,
+          "y": 525,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "x": 0,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 103,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 206,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 309,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        }
+      ],
+      "fonts": [
+        {
+          "type": "turn-text",
+          "font": 20,
+          "text": "Vez de Josefina"
+        },
+        {
+          "type": "dir-text",
+          "font": 18,
+          "text": "Sentido horário"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Nina"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "8"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Maria Aparecida"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "5"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "tag-turn",
+          "font": 14,
+          "text": "vez"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Josefina Albuquerque"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "12"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Bartolomeu"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "7"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Lu"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "4"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Ana Beatriz"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "6"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Zé"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "1"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "carta"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Conceição"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "9"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Monte"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Verde 3"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Descarte"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Cor ativa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho 7"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo Inversão"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Azul 4"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Verde 9"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Coringa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho +2"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo 2"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Azul Bloqueio"
+        }
+      ],
+      "strip": {
+        "x": 12,
+        "y": 81.75,
+        "w": 388,
+        "h": 236
+      },
+      "handScroll": {
+        "client": 376,
+        "scroll": 376
+      }
+    }
+  },
+  {
+    "viewport": {
+      "w": 1280,
+      "h": 800
+    },
+    "ladder": {
+      "steps": [
+        "mao-1-fileira"
+      ],
+      "stripRows": 2,
+      "handRows": 1,
+      "lane": false,
+      "avatar": 24
+    },
+    "shell": {
+      "top": 12,
+      "height": 724,
+      "frameTop": 5,
+      "padTop": 8,
+      "padBottom": 8,
+      "gap": 9.75,
+      "declaredGap": 4
+    },
+    "regions": [
+      {
+        "region": "cabecalho",
+        "top": 25,
+        "height": 60,
+        "bottom": 85,
+        "width": 936
+      },
+      {
+        "region": "faixa",
+        "top": 94.8,
+        "height": 236,
+        "bottom": 330.8,
+        "width": 936
+      },
+      {
+        "region": "centro",
+        "top": 340.5,
+        "height": 110,
+        "bottom": 450.5,
+        "width": 936
+      },
+      {
+        "region": "acoes",
+        "top": 460.3,
+        "height": 44,
+        "bottom": 504.3,
+        "width": 936
+      },
+      {
+        "region": "mao",
+        "top": 514,
+        "height": 214,
+        "bottom": 728,
+        "width": 936
+      },
+      {
+        "region": "gaveta",
+        "top": 736,
+        "height": 52,
+        "bottom": 788,
+        "width": 936
+      }
+    ],
+    "contentBottom": 728,
+    "slack": 0,
+    "scroll": {
+      "docH": 800,
+      "docW": 1280
+    },
+    "concept": "c",
+    "state": "s2",
+    "details": {
+      "seats": [
+        {
+          "x": 178,
+          "y": 111.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 411.5,
+          "y": 111.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 643.4627075195312,
+          "y": 101.87800598144531,
+          "w": 226.5745849609375,
+          "h": 99.74398803710938
+        },
+        {
+          "x": 878.5,
+          "y": 111.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 878.5,
+          "y": 233.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 645,
+          "y": 233.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 411.5,
+          "y": 233.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 178,
+          "y": 233.75,
+          "w": 223.5,
+          "h": 92
+        }
+      ],
+      "cards": [
+        {
+          "x": 207,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 317,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 427,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 537,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 647,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 757,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 867,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        },
+        {
+          "x": 977,
+          "y": 574,
+          "w": 96,
+          "h": 136
+        }
+      ],
+      "targets": [
+        {
+          "x": 1060,
+          "y": 31,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "x": 178,
+          "y": 111.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 411.5,
+          "y": 111.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 643.4627075195312,
+          "y": 101.87800598144531,
+          "w": 226.5745849609375,
+          "h": 99.74398803710938
+        },
+        {
+          "x": 878.5,
+          "y": 111.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 878.5,
+          "y": 233.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 645,
+          "y": 233.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 411.5,
+          "y": 233.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 178,
+          "y": 233.75,
+          "w": 223.5,
+          "h": 92
+        },
+        {
+          "x": 172,
+          "y": 460.25,
+          "w": 464,
+          "h": 44
+        },
+        {
+          "x": 644,
+          "y": 460.25,
+          "w": 464,
+          "h": 44
+        },
+        {
+          "x": 279.9375,
+          "y": 520,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "x": 172,
+          "y": 739,
+          "w": 234,
+          "h": 49
+        },
+        {
+          "x": 406,
+          "y": 739,
+          "w": 234,
+          "h": 49
+        },
+        {
+          "x": 640,
+          "y": 739,
+          "w": 234,
+          "h": 49
+        },
+        {
+          "x": 874,
+          "y": 739,
+          "w": 234,
+          "h": 49
+        }
+      ],
+      "fonts": [
+        {
+          "type": "turn-text",
+          "font": 20,
+          "text": "Vez de Josefina"
+        },
+        {
+          "type": "dir-text",
+          "font": 18,
+          "text": "Sentido horário"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Nina"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "8"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Maria Aparecida"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "5"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "tag-turn",
+          "font": 14,
+          "text": "na vez"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Josefina Albuquerque"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "12"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Bartolomeu"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "7"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Lu"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "4"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Ana Beatriz"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "6"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Zé"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "1"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "carta"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Conceição"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "9"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Monte"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Verde 3"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Descarte"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Cor ativa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho 7"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo Inversão"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Azul 4"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Verde 9"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Coringa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho +2"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo 2"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Azul Bloqueio"
+        }
+      ],
+      "strip": {
+        "x": 172,
+        "y": 94.75,
+        "w": 936,
+        "h": 236
+      },
+      "handScroll": {
+        "client": 908,
+        "scroll": 908
+      }
+    }
+  },
+  {
+    "viewport": {
+      "w": 412,
+      "h": 915
+    },
+    "ladder": {
+      "steps": [],
+      "stripRows": 1,
+      "handRows": 2,
+      "lane": true,
+      "avatar": 24
+    },
+    "shell": {
+      "top": 0,
+      "height": 863,
+      "frameTop": 4,
+      "padTop": 8,
+      "padBottom": 8,
+      "gap": 20.25,
+      "declaredGap": 6
+    },
+    "regions": [
+      {
+        "region": "cabecalho",
+        "top": 12,
+        "height": 56,
+        "bottom": 68,
+        "width": 388
+      },
+      {
+        "region": "faixa",
+        "top": 88.3,
+        "height": 150,
+        "bottom": 238.3,
+        "width": 388
+      },
+      {
+        "region": "centro",
+        "top": 258.5,
+        "height": 116,
+        "bottom": 374.5,
+        "width": 388
+      },
+      {
+        "region": "acoes",
+        "top": 394.8,
+        "height": 104,
+        "bottom": 498.8,
+        "width": 388
+      },
+      {
+        "region": "mao",
+        "top": 519,
+        "height": 336,
+        "bottom": 855,
+        "width": 388
+      },
+      {
+        "region": "gaveta",
+        "top": 863,
+        "height": 52,
+        "bottom": 915,
+        "width": 412
+      }
+    ],
+    "contentBottom": 855,
+    "slack": 0,
+    "scroll": {
+      "docH": 915,
+      "docW": 412
+    },
+    "concept": "c",
+    "state": "s1",
+    "details": {
+      "seats": [
+        {
+          "x": 16.420970916748047,
+          "y": 97.76861572265625,
+          "w": 89.65806579589844,
+          "h": 94.9627685546875
+        },
+        {
+          "x": 114.5,
+          "y": 105.25,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 211,
+          "y": 105.25,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 307.5,
+          "y": 105.25,
+          "w": 86.5,
+          "h": 92
+        }
+      ],
+      "cards": [
+        {
+          "x": 26,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 118.5,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 211,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 303.5,
+          "y": 579,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 26,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 118.5,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        },
+        {
+          "x": 211,
+          "y": 713,
+          "w": 82.5,
+          "h": 122
+        }
+      ],
+      "targets": [
+        {
+          "x": 352,
+          "y": 16,
+          "w": 48,
+          "h": 48
+        },
+        {
+          "x": 16.420970916748047,
+          "y": 97.76861572265625,
+          "w": 89.65806579589844,
+          "h": 94.9627685546875
+        },
+        {
+          "x": 114.5,
+          "y": 105.25,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 211,
+          "y": 105.25,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 307.5,
+          "y": 105.25,
+          "w": 86.5,
+          "h": 92
+        },
+        {
+          "x": 12,
+          "y": 394.75,
+          "w": 388,
+          "h": 56
+        },
+        {
+          "x": 12,
+          "y": 454.75,
+          "w": 190,
+          "h": 44
+        },
+        {
+          "x": 210,
+          "y": 454.75,
+          "w": 190,
+          "h": 44
+        },
+        {
+          "x": 115.9375,
+          "y": 525,
+          "w": 44,
+          "h": 44
+        },
+        {
+          "x": 0,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 103,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 206,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        },
+        {
+          "x": 309,
+          "y": 866,
+          "w": 103,
+          "h": 49
+        }
+      ],
+      "fonts": [
+        {
+          "type": "turn-text",
+          "font": 20,
+          "text": "✦ Sua vez"
+        },
+        {
+          "type": "dir-text",
+          "font": 18,
+          "text": "Sentido horário"
+        },
+        {
+          "type": "tag-turn",
+          "font": 14,
+          "text": "vez"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Nina"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "7"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Tico"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "5"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Maria Aparecida"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "3"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "seat-name",
+          "font": 16,
+          "text": "Beto"
+        },
+        {
+          "type": "count-num",
+          "font": 26,
+          "text": "9"
+        },
+        {
+          "type": "count-lbl",
+          "font": 14,
+          "text": "cartas"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Monte"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho 6"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Descarte"
+        },
+        {
+          "type": "pile-lbl",
+          "font": 14,
+          "text": "Cor ativa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho 7"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo Inversão"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Vermelho Bloqueio"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Verde 6"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Coringa"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Azul 1"
+        },
+        {
+          "type": "card-name",
+          "font": 14,
+          "text": "Amarelo 8"
+        }
+      ],
+      "strip": {
+        "x": 12,
+        "y": 88.25,
+        "w": 388,
+        "h": 150
+      },
+      "handScroll": {
+        "client": 376,
+        "scroll": 376
+      }
+    }
+  }
+]

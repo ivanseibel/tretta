@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { devices } from '@playwright/test';
 import { expect, test } from './fixtures';
 import { scenarioDeck } from './deck';
-import { createRoom, joinRoom, readyAll, setNextDeck } from './room';
+import { createRoom, endRoundViaDrawer, joinRoom, openDrawer, readyAll, setNextDeck } from './room';
 
 const shotsDir = fileURLToPath(new URL('../../../docs/work/reports/assets/T004/', import.meta.url));
 mkdirSync(shotsDir, { recursive: true });
@@ -64,9 +64,12 @@ test('anfitrião encerra a rodada sem vencedor e reabre a preparação', async (
   await setNextDeck(pageA, scenarioDeck());
   await readyAll(pageA, pageB);
 
-  // Só o anfitrião tem o controle; Bia não vê o botão.
-  await expect(pageB.getByTestId('end-round-button')).toHaveCount(0);
-  await pageA.getByTestId('end-round-button').first().click();
+  // Só o anfitrião tem o controle na aba Anfitrião; Bia vê apenas a explicação.
+  await openDrawer(pageB, 'sala');
+  await expect(pageB.getByTestId('drawer-end-round')).toHaveCount(0);
+  await expect(pageB.getByText('Só o anfitrião inicia ou encerra a rodada.')).toBeVisible();
+  await pageB.keyboard.press('Escape');
+  await endRoundViaDrawer(pageA);
 
   await expect(pageA.getByTestId('results-winner')).toContainText('sem vencedor');
   await expect(pageB.getByTestId('results-winner')).toContainText('sem vencedor');

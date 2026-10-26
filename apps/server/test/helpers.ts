@@ -18,9 +18,6 @@ import type {
   ServerToClientEvents,
   SimpleAck,
   StateMessage,
-  TauntBroadcast,
-  TauntSendAck,
-  TauntType,
 } from '@tretta/protocol';
 import type { Avatar } from '@tretta/protocol/shared';
 import { createSeededRandom, type RandomSource } from '@tretta/rules';
@@ -108,7 +105,6 @@ export interface TestServerOptions {
   readonly pauseGraceMs?: number;
   readonly retentionMs?: number;
   readonly botDelayMs?: number;
-  readonly tauntCooldownMs?: number;
   readonly reactionCooldownMs?: number;
 }
 
@@ -128,7 +124,6 @@ export async function startTestServer(options: TestServerOptions = {}): Promise<
     ...(options.pauseGraceMs === undefined ? {} : { pauseGraceMs: options.pauseGraceMs }),
     ...(options.retentionMs === undefined ? {} : { retentionMs: options.retentionMs }),
     ...(options.botDelayMs === undefined ? {} : { botDelayMs: options.botDelayMs }),
-    ...(options.tauntCooldownMs === undefined ? {} : { tauntCooldownMs: options.tauntCooldownMs }),
     ...(options.reactionCooldownMs === undefined ? {} : { reactionCooldownMs: options.reactionCooldownMs }),
   });
   const port = await server.listen(0);
@@ -154,13 +149,12 @@ export interface Recorder {
   readonly states: StateMessage[];
   readonly events: EventsMessage[];
   readonly chat: ChatBroadcast[];
-  readonly taunts: TauntBroadcast[];
   readonly reactions: ReactionBroadcast[];
   readonly packets: unknown[];
 }
 
 export function record(socket: TestClient): Recorder {
-  const recorder: Recorder = { states: [], events: [], chat: [], taunts: [], reactions: [], packets: [] };
+  const recorder: Recorder = { states: [], events: [], chat: [], reactions: [], packets: [] };
   socket.onAny((event, ...args) => {
     recorder.packets.push({ event, args });
   });
@@ -172,9 +166,6 @@ export function record(socket: TestClient): Recorder {
   });
   socket.on('server:chat', (message) => {
     recorder.chat.push(message);
-  });
-  socket.on('server:taunt', (message) => {
-    recorder.taunts.push(message);
   });
   socket.on('server:reaction', (message) => {
     recorder.reactions.push(message);
@@ -302,16 +293,6 @@ export async function chatHistory(
     ...(options.before === undefined ? {} : { before: options.before }),
     ...(options.limit === undefined ? {} : { limit: options.limit }),
   });
-}
-
-export async function tauntSend(
-  socket: TestClient,
-  roomCode: string,
-  type: TauntType,
-  targetId: string,
-  intentId = intent(),
-): Promise<Ack<TauntSendAck>> {
-  return request<Ack<TauntSendAck>>(socket, 'client:tauntSend', { intentId, roomCode, type, targetId });
 }
 
 export async function reactionSend(

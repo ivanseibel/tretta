@@ -11,11 +11,11 @@ import {
   endRoundWithoutWinnerPayloadSchema,
   joinRoomPayloadSchema,
   leaveRoomPayloadSchema,
+  REACTION_TYPES,
   reactionSendPayloadSchema,
   removeParticipantPayloadSchema,
   roomCodeSchema,
   substituteAbsentPayloadSchema,
-  tauntSendPayloadSchema,
 } from '../src/index.js';
 
 describe('schemas de entrada', () => {
@@ -131,53 +131,48 @@ describe('schemas de entrada', () => {
     expect(chatHistoryPayloadSchema.safeParse({ roomCode: 'ABCDEF', extra: 1 }).success).toBe(false);
   });
 
-  it('valida payloads de provocação sem autor ou horário e com apenas os quatro tipos aprovados', () => {
-    expect(
-      tauntSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type: 'tomate', targetId: 'p_1' }).success,
-    ).toBe(true);
-    for (const type of ['torta', 'risadas', 'choro']) {
-      expect(tauntSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type, targetId: 'p_1' }).success).toBe(true);
-    }
-    // Servidor escolhe tipo por enum fechado; campos autoritativos e desconhecidos recusam a intenção.
-    expect(tauntSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type: 'bolo', targetId: 'p_1' }).success).toBe(false);
-    expect(
-      tauntSendPayloadSchema.safeParse({
-        intentId: 'intent-12345678',
-        roomCode: 'ABCDEF',
-        type: 'tomate',
-        targetId: 'p_1',
-        author: { playerId: 'p2' },
-      }).success,
-    ).toBe(false);
-    expect(tauntSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type: 'tomate', targetId: 'p_1', sentAt: 1 }).success).toBe(false);
-    expect(tauntSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type: 'tomate', targetId: '' }).success).toBe(false);
-    expect(tauntSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type: 'tomate' }).success).toBe(false);
-    expect(tauntSendPayloadSchema.safeParse({ intentId: 'intent-12345678', type: 'tomate', targetId: 'p_1' }).success).toBe(false);
+  it('expõe exatamente os doze ids de reação aprovados, na ordem do catálogo', () => {
+    expect(REACTION_TYPES).toEqual([
+      'eita',
+      'injustica',
+      'ai-eu-gostei',
+      'nao-acredito',
+      'boa-jogada',
+      'que-comedia',
+      'tedio',
+      'uau',
+      'ja-era',
+      'suspeito',
+      'carinho',
+      'fogo',
+    ]);
   });
 
-  it('valida payloads de reação sem destinatário e com apenas os três tipos aprovados', () => {
-    for (const type of ['rindo', 'chorando', 'bravo']) {
+  it('valida payloads de reação sem destinatário e com apenas os doze tipos aprovados', () => {
+    for (const type of REACTION_TYPES) {
       expect(reactionSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type }).success).toBe(true);
     }
     // Sem destinatário: qualquer campo de alvo, autoria, id, horário ou
-    // desconhecido recusa a intenção inteira; a provocação segue exigindo alvo.
-    expect(reactionSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type: 'bolo' }).success).toBe(false);
+    // desconhecido recusa a intenção inteira.
+    for (const unknown of ['bolo', 'rindo', 'chorando', 'bravo', '']) {
+      expect(reactionSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type: unknown }).success).toBe(false);
+    }
     expect(
-      reactionSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type: 'rindo', targetId: 'p_1' }).success,
+      reactionSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type: 'eita', targetId: 'p_1' }).success,
     ).toBe(false);
     expect(
       reactionSendPayloadSchema.safeParse({
         intentId: 'intent-12345678',
         roomCode: 'ABCDEF',
-        type: 'rindo',
+        type: 'fogo',
         author: { playerId: 'p2' },
       }).success,
     ).toBe(false);
     expect(
-      reactionSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type: 'rindo', sentAt: 1 }).success,
+      reactionSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF', type: 'uau', sentAt: 1 }).success,
     ).toBe(false);
     expect(reactionSendPayloadSchema.safeParse({ intentId: 'intent-12345678', roomCode: 'ABCDEF' }).success).toBe(false);
-    expect(reactionSendPayloadSchema.safeParse({ intentId: 'intent-12345678', type: 'rindo' }).success).toBe(false);
+    expect(reactionSendPayloadSchema.safeParse({ intentId: 'intent-12345678', type: 'eita' }).success).toBe(false);
   });
 
   it('conta caracteres do chat em pontos de código Unicode', () => {

@@ -42,33 +42,34 @@ export const CHAT_HISTORY_PAGE_SIZE = 50;
 export const CHAT_HISTORY_MAX_LIMIT = 100;
 
 /**
- * Provocações manuais. Quatro tipos aprovados, cada um com apresentação
- * distinta no cliente; o servidor só transporta o identificador do tipo.
- */
-export const TAUNT_TYPES = ['tomate', 'torta', 'risadas', 'choro'] as const;
-export type TauntType = (typeof TAUNT_TYPES)[number];
-
-/** 15 segundos entre envios aceitos de um mesmo emissor, qualquer tipo ou alvo. */
-export const TAUNT_SENDER_COOLDOWN_MS = 15_000;
-/** No máximo três provocações aceitas por alvo nesta janela móvel, somando emissores. */
-export const TAUNT_TARGET_WINDOW_MS = 60_000;
-export const TAUNT_TARGET_MAX_PER_WINDOW = 3;
-
-/**
  * Reações sem destinatário: expressam como quem envia se sente, em vez de
- * brincar com alguém. Correspondência exata com os rótulos exibidos no
- * cliente: `rindo` = 😂 Rindo; `chorando` = 😭 Chorando; `bravo` = 😡 Bravo.
- * Tipos próprios, separados das provocações `risadas`/`choro`, que continuam
- * direcionadas a um alvo escolhido.
+ * brincar com alguém. Doze ids estáveis na ordem exibida no cliente, com a
+ * copy aprovada no protótipo: `eita` = 😂 Eita!; `injustica` = 😭 Que
+ * injustiça!; `ai-eu-gostei` = 😈 Aí eu gostei!; `nao-acredito` = 🤬 Não
+ * acredito!; `boa-jogada` = 👏 Boa jogada!; `que-comedia` = 🤡 Que comédia!;
+ * `tedio` = 🥱 Que tédio!; `uau` = 😱 Uau!; `ja-era` = 💀 Já era!;
+ * `suspeito` = 🤔 Suspeito...; `carinho` = 😘 Com carinho!; `fogo` = 🔥 Tá
+ * pegando fogo!.
  */
-export const REACTION_TYPES = ['rindo', 'chorando', 'bravo'] as const;
+export const REACTION_TYPES = [
+  'eita',
+  'injustica',
+  'ai-eu-gostei',
+  'nao-acredito',
+  'boa-jogada',
+  'que-comedia',
+  'tedio',
+  'uau',
+  'ja-era',
+  'suspeito',
+  'carinho',
+  'fogo',
+] as const;
 export type ReactionType = (typeof REACTION_TYPES)[number];
 
 /**
  * Intervalo de 5 segundos entre reações aceitas de um mesmo emissor, vale
- * entre tipos diferentes e em todas as fases da sala. Independente do
- * intervalo e da cota das provocações: reagir não consome provocação e
- * provocar não bloqueia uma reação disponível.
+ * entre tipos diferentes e em todas as fases da sala.
  */
 export const REACTION_SENDER_COOLDOWN_MS = 5_000;
 
@@ -123,7 +124,6 @@ export const CLIENT_EVENTS = {
   removeParticipant: 'client:removeParticipant',
   chatSend: 'client:chatSend',
   chatHistory: 'client:chatHistory',
-  tauntSend: 'client:tauntSend',
   reactionSend: 'client:reactionSend',
   setNextDeck: 'test:setNextDeck',
   setEffectVariant: 'test:setEffectVariant',
@@ -133,7 +133,6 @@ export const SERVER_EVENTS = {
   state: 'server:state',
   events: 'server:events',
   chat: 'server:chat',
-  taunt: 'server:taunt',
   reaction: 'server:reaction',
   removed: 'server:removed',
 } as const;
@@ -165,9 +164,6 @@ export const SERVER_ERROR_CODES = [
   'CHAT_EMPTY',
   'CHAT_TOO_LONG',
   'CHAT_RATE_LIMITED',
-  'TAUNT_SENDER_COOLDOWN',
-  'TAUNT_TARGET_LIMIT',
-  'TAUNT_TARGET_UNAVAILABLE',
   'REACTION_SENDER_COOLDOWN',
   'TEST_HOOKS_DISABLED',
   'INTERNAL',

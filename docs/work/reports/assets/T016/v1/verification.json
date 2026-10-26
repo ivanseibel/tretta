@@ -1,0 +1,7 @@
+{
+  "mockups": 40,
+  "viewports": 4,
+  "statesPerViewport": 10,
+  "checks": "PNG dimensions, regions/scroll, seats visible, hand card >=72, buttons >=44, font floors",
+  "failures": []
+}

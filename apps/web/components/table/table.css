@@ -1,0 +1,1712 @@
+/* Tretta — mesa T019C.
+   A casca, os tokens e os primitivos vêm da base T019B (`table-v2.css` e
+   `components/chrome`). Este arquivo só desenha a mesa real: trilho, assentos,
+   centro, mão, ações e a barra provisória. Nada fora de `.tv2-table-root` ou do
+   trilho público é alterado. */
+
+/* A mesa ocupa a viewport; a página não rola durante a jogada. */
+html:has(.tv2-table-root),
+body:has(.tv2-table-root) {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+main.screen:has(> .tv2-table-root) {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  overflow: hidden;
+}
+
+/* Chat e preferências vivem na gaveta; se algum fluxo antigo os montar na
+   mesa, não podem empurrar a altura da jogada. */
+main.screen:has(> .tv2-table-root) > .chat-panel,
+main.screen:has(> .tv2-table-root) > .mood-settings {
+  display: none;
+}
+
+main.screen:has(> .tv2-table-root) > .connection-banner,
+main.screen:has(> .tv2-table-root) > .error-banner {
+  position: fixed;
+  top: max(8px, var(--tv2-safe-top));
+  left: 50%;
+  z-index: 75;
+  width: min(calc(100vw - 16px), 640px);
+  margin: 0;
+  transform: translateX(-50%);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.42);
+}
+
+.tv2-table-root.screen.table {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: var(--tv2-page);
+  box-shadow: none;
+  gap: 0;
+}
+
+.tv2-table-root .tv2-table-shell {
+  --tv2-shell-height: 100dvh;
+}
+
+.tv2-table-root .tv2-table-mesa {
+  background: var(--tv2-page);
+}
+
+/* ---------- topo ---------- */
+.tv2-table-root .tv2-table-topo {
+  gap: var(--tv2-space-2);
+  padding-inline: var(--tv2-pad);
+}
+
+.tv2-top-vez {
+  display: grid;
+  flex: 1 1 auto;
+  gap: 1px;
+  min-width: 0;
+}
+
+.tv2-top-line {
+  display: flex;
+  align-items: center;
+  gap: var(--tv2-space-2);
+  min-width: 0;
+}
+
+.tv2-table-root .tv2-turn {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--tv2-cream);
+  font-family: var(--tv2-font-display);
+  font-size: var(--tv2-text-vez);
+  font-weight: 600;
+  line-height: 1.05;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tv2-direction {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-rotulo);
+  line-height: 1.05;
+}
+
+.tv2-next {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-rotulo);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tv2-next-name {
+  color: var(--tv2-cream);
+  font-weight: 700;
+}
+
+.tv2-direction strong {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--tv2-cream);
+  font-size: var(--tv2-text-sentido);
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tv2-direction-label {
+  flex: none;
+  color: var(--tv2-muted);
+}
+
+.tv2-direction-arrow {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  color: var(--tv2-brass);
+  transition: transform 0.32s ease-in-out;
+}
+
+.tv2-direction-arrow--reversed {
+  transform: scaleX(-1);
+}
+
+.tv2-top-actions {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 4px;
+}
+
+.tv2-top-actions .tv2-btn,
+.tv2-table-root .leave-button {
+  min-height: var(--tv2-target);
+  padding: 0 10px;
+  border: 1.5px solid var(--tv2-brass-deep);
+  border-radius: var(--tv2-r-btn);
+  background: transparent;
+  color: var(--tv2-cream);
+  font-family: var(--tv2-font-ui);
+  font-size: var(--tv2-fs-14);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tv2-table-root .leave-button {
+  margin-left: 0;
+}
+
+.tv2-top-actions .tv2-btn:focus-visible,
+.tv2-table-root .leave-button:focus-visible {
+  outline: 3px solid var(--tv2-focus);
+  outline-offset: 2px;
+}
+
+/* ---------- palco: madeira, feltro, trilho ---------- */
+.tv2-table-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 236, 200, 0.1), transparent 22%),
+    repeating-linear-gradient(92deg, #4a2e1f 0 7px, #3b2418 7px 15px, #452a1c 15px 22px);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 232, 190, 0.18),
+    inset 0 -4px 10px rgba(0, 0, 0, 0.45);
+}
+
+.tv2-table-stage::before {
+  content: "";
+  position: absolute;
+  inset: var(--tv2-frame-inset, 8px);
+  z-index: 0;
+  border-radius: var(--tv2-r-felt);
+  background: radial-gradient(80% 70% at 50% 34%, var(--tv2-felt-lit) 0%, var(--tv2-felt) 52%, var(--tv2-felt-deep) 100%);
+  box-shadow: inset 0 0 70px rgba(0, 0, 0, 0.4);
+}
+
+.tv2-table-stage::after {
+  content: "";
+  position: absolute;
+  inset: var(--tv2-frame-inset, 8px);
+  z-index: 0;
+  border-radius: var(--tv2-r-felt);
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+
+.tv2-seat-circuit--table {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.tv2-seat-rail {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.tv2-rail-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--tv2-brass-deep);
+  pointer-events: none;
+}
+
+.tv2-rail-shadow {
+  fill: none;
+  stroke: #170d08;
+  stroke-width: 7;
+  opacity: 0.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.tv2-rail-base {
+  fill: none;
+  stroke: var(--tv2-brass-deep);
+  stroke-width: 3;
+  opacity: 0.72;
+  vector-effect: non-scaling-stroke;
+}
+
+.tv2-rail-light {
+  fill: none;
+  stroke: var(--tv2-brass-light);
+  stroke-width: 1;
+  opacity: 0.4;
+  vector-effect: non-scaling-stroke;
+}
+
+/* ---------- assentos ---------- */
+.tv2-seat-list {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tv2-seat-circuit .tv2-seat {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1px;
+  min-height: 62px;
+  padding: 3px 5px;
+  background: linear-gradient(180deg, #332015, var(--tv2-wood-soft));
+  border: 1px solid #b08a54;
+  border-radius: var(--tv2-r-plate);
+  box-shadow: var(--tv2-shadow-plate);
+  color: var(--tv2-cream);
+  font-family: var(--tv2-font-ui);
+  text-align: left;
+  transition: background-color 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+
+.tv2-seat-circuit .tv2-seat--base {
+  left: 50%;
+  top: 99%;
+  width: min(40%, 200px);
+  transform: translate(-50%, -100%);
+}
+
+.tv2-seat-circuit .tv2-seat--top {
+  left: 50%;
+  top: 1%;
+  width: min(40%, 200px);
+  transform: translateX(-50%);
+}
+
+.tv2-seat-circuit .tv2-seat--left {
+  left: 3%;
+  top: var(--seat-y, 50%);
+  width: min(25%, 160px);
+  transform: translateY(-50%);
+}
+
+.tv2-seat-circuit .tv2-seat--right {
+  right: 3%;
+  top: var(--seat-y, 50%);
+  width: min(25%, 160px);
+  transform: translateY(-50%);
+}
+
+.tv2-seat-circuit .tv2-seat--current {
+  background: linear-gradient(180deg, #f0d49b, var(--tv2-brass) 48%, #c59955);
+  border-color: var(--tv2-brass-light);
+  color: var(--tv2-ink);
+  box-shadow:
+    0 0 0 2px rgba(247, 237, 216, 0.92),
+    0 9px 18px rgba(0, 0, 0, 0.42);
+}
+
+.tv2-seat-circuit .tv2-seat--offline {
+  border-color: #d18572;
+  border-style: dashed;
+}
+
+.tv2-seat-circuit .tv2-seat--last {
+  border-color: var(--tv2-yellow);
+}
+
+.tv2-seat-circuit .tv2-seat--last::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border: 2px solid var(--tv2-yellow);
+  border-radius: calc(var(--tv2-r-plate) + 4px);
+  pointer-events: none;
+}
+
+.tv2-seat-now {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 18px;
+  padding: 0 6px;
+  border-radius: 5px;
+  background: var(--tv2-brass);
+  color: var(--tv2-ink);
+  font-size: var(--tv2-text-rotulo);
+  font-weight: 700;
+  line-height: 1;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.tv2-seat--current .tv2-seat-now {
+  background: var(--tv2-cream);
+}
+
+.tv2-seat--base .tv2-seat-now {
+  top: auto;
+  right: 4px;
+  bottom: 4px;
+  left: auto;
+  transform: none;
+}
+
+.tv2-seat--left .tv2-seat-now {
+  right: 4px;
+  left: auto;
+  transform: none;
+}
+
+.tv2-seat--right .tv2-seat-now {
+  right: auto;
+  left: 4px;
+  transform: none;
+}
+
+.tv2-seat-hit {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  color: transparent;
+  cursor: pointer;
+}
+
+.tv2-seat-hit:focus-visible {
+  outline: 3px solid var(--tv2-focus);
+  outline-offset: 2px;
+  border-radius: calc(var(--tv2-r-plate) + 2px);
+}
+
+.tv2-seat--current .tv2-seat-hit:focus-visible {
+  outline-color: var(--tv2-focus-no-claro);
+}
+
+.tv2-seat-line,
+.tv2-seat-count,
+.tv2-seat-tags {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tv2-seat-now {
+  z-index: 3;
+  pointer-events: none;
+}
+
+.tv2-seat-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 3px;
+  min-width: 0;
+}
+
+.tv2-seat-avatar {
+  position: relative;
+  display: flex;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.tv2-seat-avatar .avatar-badge {
+  width: 18px;
+  height: 18px;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font-size: 10px;
+  line-height: 0;
+}
+
+.tv2-seat-avatar .avatar-action {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  line-height: 0;
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+}
+
+.tv2-seat-avatar .avatar-action .avatar-badge {
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+}
+
+.tv2-seat-avatar .avatar-action:focus-visible {
+  outline: 2px solid var(--tv2-focus);
+  outline-offset: 1px;
+}
+
+.tv2-seat-avatar .reaction-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  z-index: 2;
+}
+
+.tv2-seat-circuit .tv2-seat-line .participant-name {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  overflow: visible;
+  color: inherit;
+  font-family: var(--tv2-font-ui);
+  font-size: var(--tv2-text-nome);
+  font-weight: 700;
+  line-height: 1.02;
+  overflow-wrap: break-word;
+  text-overflow: clip;
+  white-space: normal;
+  word-break: normal;
+}
+
+.tv2-seat-circuit .tv2-seat-line .tv2-seat-name--long {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
+.tv2-seat-circuit .tv2-seat-count {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.tv2-seat-circuit .tv2-seat-count .hand-count {
+  color: var(--tv2-cream);
+  font-family: var(--tv2-font-display);
+  font-size: var(--tv2-text-contagem);
+  font-variant-numeric: lining-nums tabular-nums;
+  font-weight: 700;
+  line-height: 0.82;
+}
+
+.tv2-seat-circuit .tv2-seat-count > span {
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-contagem-rotulo);
+  line-height: 1;
+}
+
+.tv2-seat--current .tv2-seat-count .hand-count {
+  color: var(--tv2-ink);
+}
+
+.tv2-seat--current .tv2-seat-count > span {
+  color: #4a3215;
+}
+
+.tv2-seat-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  min-width: 0;
+}
+
+.tv2-seat-tags:empty {
+  display: none;
+}
+
+.tv2-seat-tags .tv2-chip {
+  min-height: 18px;
+  padding: 0 5px;
+  font-size: var(--tv2-text-rotulo);
+}
+
+.tv2-seat--current .tv2-seat-tags .tv2-chip {
+  box-shadow: 0 0 0 1px rgba(27, 20, 16, 0.22);
+}
+
+/* Peão de madeira ao lado de quem joga. */
+.tv2-pawn {
+  position: absolute;
+  z-index: 3;
+  width: 22px;
+  height: 28px;
+  margin: 0;
+  pointer-events: none;
+  transform: translate3d(-50%, -50%, 0);
+  transition: left 0.32s ease-in-out, top 0.32s ease-in-out;
+  will-change: left, top;
+  backface-visibility: hidden;
+}
+
+.tv2-pawn-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  border: 1px solid #6e4a22;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #ffe2a8, var(--tv2-brass) 58%, var(--tv2-brass-deep));
+}
+
+.tv2-pawn-body {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 18px;
+  height: 19px;
+  margin-left: -9px;
+  border: 1px solid #6e4a22;
+  border-radius: 3px 3px 5px 5px;
+  background: linear-gradient(180deg, var(--tv2-brass-light), var(--tv2-brass) 45%, var(--tv2-brass-deep));
+  clip-path: polygon(18% 0, 82% 0, 100% 100%, 0 100%);
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.28);
+}
+
+.tv2-circuit-caption {
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-rotulo);
+}
+
+.tv2-seat-circuit--table .tv2-circuit-caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- centro ---------- */
+.tv2-table-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  max-width: 41%;
+  transform: translate(-50%, -50%);
+}
+
+.tv2-table-piles {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tv2-monte {
+  position: relative;
+  flex: none;
+  width: var(--tv2-monte-w);
+  height: var(--tv2-monte-h);
+}
+
+.tv2-monte-back {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 2px solid #e9d7b5;
+  border-radius: 8px;
+  background: #142f38;
+  box-shadow: 0 3px 0 #120b07, 0 6px 12px rgba(0, 0, 0, 0.32);
+}
+
+.tv2-monte-back::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--tv2-brass-deep);
+  border-radius: 5px;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(215, 171, 99, 0.22) 0 34%, transparent 35%),
+    repeating-linear-gradient(45deg, rgba(215, 171, 99, 0.07) 0 2px, transparent 2px 7px);
+}
+
+.tv2-monte-mark {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--tv2-brass-light);
+  font-family: var(--tv2-font-display);
+  font-size: var(--tv2-fs-24);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tv2-monte-count {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 48px;
+  padding: 2px 6px 3px;
+  border: 1px solid var(--tv2-brass);
+  border-radius: 7px;
+  background: var(--tv2-wood-deep);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+  line-height: 1;
+  transform: translateX(-50%);
+}
+
+.tv2-monte-count strong {
+  color: var(--tv2-cream);
+  font-family: var(--tv2-font-display);
+  font-size: var(--tv2-text-contagem);
+  font-variant-numeric: lining-nums tabular-nums;
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+.tv2-monte-count span {
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-contagem-rotulo);
+  line-height: 1;
+}
+
+.tv2-active-color {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  max-width: 100%;
+  padding: 3px 12px 3px 10px;
+  border: 1px solid #8a6234;
+  border-radius: 8px;
+  background: var(--tv2-wood-deep);
+  box-shadow: inset 0 1px 0 rgba(255, 238, 205, 0.08);
+  white-space: nowrap;
+}
+
+.tv2-active-color-label {
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-rotulo);
+  line-height: 1;
+}
+
+.tv2-active-color .color-symbol {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.tv2-active-color strong {
+  color: var(--tv2-cream);
+  font-family: var(--tv2-font-display);
+  font-size: var(--tv2-text-sentido);
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* ---------- cartas ---------- */
+.tv2-table-root .playing-card.tv2-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: var(--tv2-card-w);
+  height: var(--tv2-card-h);
+  padding: 4px 4px 3px;
+  border: 2px solid #21140d;
+  border-radius: var(--tv2-r-card);
+  background: var(--tv2-red);
+  color: #fff8ea;
+  font-family: var(--tv2-font-ui);
+  text-align: left;
+  box-shadow: var(--tv2-shadow-card);
+  transition: transform 0.16s ease-out, box-shadow 0.16s ease-out;
+}
+
+.tv2-table-root .playing-card.tv2-card::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(255, 248, 234, 0.5);
+  border-radius: calc(var(--tv2-r-card) - 3px);
+  pointer-events: none;
+}
+
+.tv2-table-root .playing-card.tv2-card--discard {
+  width: var(--tv2-discard-w);
+  height: var(--tv2-discard-h);
+  transform: rotate(-2deg);
+  box-shadow: 0 5px 0 #150d09, 0 12px 24px rgba(0, 0, 0, 0.42);
+}
+
+.tv2-card-color {
+  position: relative;
+  z-index: 1;
+  display: block;
+  overflow: hidden;
+  font-size: var(--tv2-text-rotulo);
+  font-weight: 700;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tv2-card-center {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  min-height: 0;
+}
+
+.tv2-card-rank {
+  font-family: var(--tv2-font-display);
+  font-size: clamp(30px, 8.4vw, 46px);
+  font-variant-numeric: lining-nums tabular-nums;
+  font-weight: 700;
+  line-height: 0.85;
+}
+
+.tv2-card-action {
+  font-family: var(--tv2-font-display);
+  font-size: clamp(19px, 5.4vw, 30px);
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+.tv2-card-action-name {
+  max-width: 100%;
+  overflow: hidden;
+  font-size: var(--tv2-text-nome-carta);
+  font-weight: 700;
+  line-height: 1.05;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tv2-card-foot {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-height: 12px;
+}
+
+.tv2-card-foot .color-symbol {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.tv2-card-wild-colors {
+  display: inline-flex;
+  gap: 1px;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.tv2-card-discard-label {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: var(--tv2-felt-deep);
+  color: var(--tv2-cream);
+  font-family: var(--tv2-font-ui);
+  font-size: var(--tv2-text-rotulo);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: none;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* A regra base tem três classes; as cores precisam da mesma especificidade
+   para vencer o fundo vermelho padrão da carta. */
+.tv2-table-root .playing-card.tv2-card.card-red {
+  background: var(--tv2-red);
+  color: #fff8ea;
+}
+
+.tv2-table-root .playing-card.tv2-card.card-yellow {
+  background: var(--tv2-yellow);
+  color: #231a10;
+}
+
+.tv2-table-root .playing-card.tv2-card.card-green {
+  background: var(--tv2-green);
+  color: #fff8ea;
+}
+
+.tv2-table-root .playing-card.tv2-card.card-blue {
+  background: var(--tv2-blue);
+  color: #fff8ea;
+}
+
+.tv2-table-root .playing-card.tv2-card.card-wild {
+  background: var(--tv2-cream);
+  color: var(--tv2-ink);
+}
+
+.tv2-table-root .playing-card.tv2-card.card-yellow::before,
+.tv2-table-root .playing-card.tv2-card.card-wild::before {
+  border-color: rgba(27, 20, 16, 0.34);
+}
+
+.tv2-table-root .playing-card.tv2-card--playable {
+  border-color: #ffe197;
+  box-shadow: inset 0 0 0 2px var(--tv2-brass), inset 0 0 0 4px var(--tv2-felt-deep), var(--tv2-shadow-card);
+  cursor: pointer;
+}
+
+.tv2-table-root .playing-card.tv2-card--playable::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--tv2-brass-light);
+  box-shadow: 0 0 0 1px #21140d;
+}
+
+.tv2-table-root .playing-card.tv2-card--selected {
+  border-color: var(--tv2-brass-light);
+  outline: 2px solid var(--tv2-brass-light);
+  outline-offset: -3px;
+  box-shadow: inset 0 0 0 4px rgba(240, 212, 155, 0.28), 0 5px 0 #150d09, 0 16px 26px rgba(0, 0, 0, 0.46);
+}
+
+.tv2-table-root .playing-card.tv2-card--drawn {
+  outline: 2px dashed var(--tv2-brass-light);
+  outline-offset: -3px;
+}
+
+.tv2-table-root .playing-card.tv2-card:focus-visible,
+.tv2-table-root.table .playing-card.tv2-card:focus {
+  outline: 3px solid var(--tv2-focus);
+  outline-offset: -3px;
+  box-shadow: inset 0 0 0 5px rgba(242, 199, 102, 0.28), var(--tv2-shadow-card);
+  transition: none;
+}
+
+/* O coringa é escuro com aro dourado; o anel claro mantém 3:1 no interior. */
+.tv2-table-root .playing-card.card-wild:focus-visible,
+.tv2-table-root.table .playing-card.card-wild:focus {
+  outline-color: var(--tv2-paper);
+}
+
+@media (hover: hover) {
+
+  .tv2-seat-circuit .tv2-seat:hover {
+    border-color: var(--tv2-brass-light);
+    box-shadow: 0 0 0 2px rgba(215, 171, 99, 0.42), var(--tv2-shadow-plate);
+  }
+}
+
+/* ---------- ações ---------- */
+.tv2-table-root .tv2-table-acoes {
+  padding: 2px var(--tv2-pad);
+}
+
+.tv2-actions-row {
+  display: flex;
+  align-items: center;
+  gap: var(--tv2-gap);
+  width: 100%;
+  min-width: 0;
+}
+
+.tv2-actions-status {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-corpo);
+  line-height: 1.15;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tv2-actions-buttons {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 6px;
+}
+
+.tv2-actions-buttons .tv2-btn {
+  flex: 0 1 220px;
+  min-width: 0;
+}
+
+/* ---------- mão ---------- */
+.tv2-table-root .tv2-table-mao {
+  background: linear-gradient(180deg, #1b120c, #120c08 70%, #0d0906);
+  border-top: 1px solid #3a2a1e;
+}
+
+.tv2-hand-zone {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2px var(--tv2-pad) 8px;
+}
+
+.tv2-hand-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tv2-space-2);
+  min-height: var(--tv2-hand-head);
+  padding: 0 var(--tv2-pad);
+  color: var(--tv2-cream);
+}
+
+.tv2-hand-head h2 {
+  margin: 0;
+  color: var(--tv2-cream);
+  font-family: var(--tv2-font-ui);
+  font-size: var(--tv2-text-nome);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.tv2-hand-count {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-rotulo);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.tv2-hand-count strong {
+  color: var(--tv2-cream);
+  font-family: var(--tv2-font-display);
+  font-size: var(--tv2-fs-20);
+  font-variant-numeric: lining-nums tabular-nums;
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+.tv2-hand-zone--turn .tv2-hand-head h2 {
+  color: var(--tv2-brass-light);
+}
+
+.tv2-table-root .hand.tv2-hand-cards {
+  display: grid;
+  grid-template-columns: repeat(4, var(--tv2-card-w));
+  grid-auto-rows: var(--tv2-card-h);
+  align-content: start;
+  justify-content: center;
+  gap: var(--tv2-gap);
+  width: 100%;
+  min-width: 0;
+  max-height: calc(var(--tv2-card-h) + 46px);
+  padding: 10px 4px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-snap-type: y proximity;
+  scrollbar-color: var(--tv2-brass-deep) #17432f;
+  scrollbar-width: thin;
+}
+
+.tv2-table-root .hand.tv2-hand-cards .tv2-card {
+  scroll-snap-align: start;
+}
+
+.tv2-table-root .hand.tv2-hand-cards:focus-visible {
+  outline: 3px solid var(--tv2-focus);
+  outline-offset: -3px;
+}
+
+.tv2-hand-more-cue {
+  color: var(--tv2-brass);
+  font-size: var(--tv2-fs-16);
+  line-height: 0.8;
+}
+
+.tv2-hand-more-arrow {
+  font-size: var(--tv2-fs-16);
+  line-height: 0.8;
+}
+
+/* A confirmação é sobreposição: não muda a altura da mesa. */
+.tv2-play-strip {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  z-index: 30;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  width: min(calc(100vw - 20px), 520px);
+  min-height: 56px;
+  padding: 6px 8px 6px 10px;
+  border: 2px solid #21140d;
+  border-radius: 12px;
+  background: var(--tv2-paper);
+  color: var(--tv2-ink);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5);
+  transform: translateX(-50%);
+}
+
+.tv2-play-label {
+  display: grid;
+  flex: 1 1 auto;
+  gap: 1px;
+  min-width: 0;
+  font-size: var(--tv2-text-corpo);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.tv2-play-label small {
+  color: var(--tv2-paper-muted);
+  font-size: var(--tv2-text-rotulo);
+  font-weight: 400;
+}
+
+.tv2-play-label strong {
+  overflow: hidden;
+  font-size: var(--tv2-text-corpo);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tv2-play-strip .tv2-btn {
+  flex: none;
+  min-height: var(--tv2-target);
+  padding: 0 12px;
+}
+
+.tv2-table-root .tv2-play-strip .tv2-btn--principal {
+  min-height: var(--tv2-target);
+}
+
+.tv2-play-strip .tv2-btn:focus-visible {
+  outline-color: var(--tv2-focus-no-claro);
+  box-shadow: 0 0 0 3px var(--tv2-paper);
+}
+
+.tv2-announce {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  color: var(--tv2-paper-ink);
+  font-size: var(--tv2-text-rotulo);
+  white-space: nowrap;
+}
+
+.tv2-announce input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.tv2-color-options {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tv2-color-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 44px;
+  min-height: var(--tv2-target);
+  padding: 0 8px;
+  border: 1.5px solid #21140d;
+  border-radius: 8px;
+  color: #fff8ea;
+  font-family: var(--tv2-font-ui);
+  font-size: var(--tv2-text-rotulo);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tv2-table-root .tv2-color-button.chip-red {
+  background: var(--tv2-red);
+  color: #fff8ea;
+}
+
+.tv2-table-root .tv2-color-button.chip-yellow {
+  background: var(--tv2-yellow);
+  color: #231a10;
+}
+
+.tv2-table-root .tv2-color-button.chip-green {
+  background: var(--tv2-green);
+  color: #fff8ea;
+}
+
+.tv2-table-root .tv2-color-button.chip-blue {
+  background: var(--tv2-blue);
+  color: #fff8ea;
+}
+
+.tv2-color-button:focus-visible {
+  outline: 3px solid var(--tv2-focus-no-claro);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--tv2-paper);
+}
+
+/* ---------- barra inferior provisória ---------- */
+.tv2-table-root .tv2-table-barra {
+  padding-inline: max(var(--tv2-pad), calc((100vw - 760px) / 2));
+}
+
+.tv2-barra-item {
+  flex-direction: column;
+  gap: 1px;
+  min-height: var(--tv2-target);
+  border-radius: 8px;
+  color: var(--tv2-cream);
+  font-family: var(--tv2-font-ui);
+  font-size: var(--tv2-text-rotulo);
+  font-weight: 700;
+}
+
+.tv2-barra-item[aria-disabled="true"] {
+  opacity: 0.9;
+  cursor: default;
+}
+
+.tv2-barra-glyph {
+  font-family: var(--tv2-font-emoji);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* ---------- canto: queda e quem aguarda ---------- */
+.tv2-corner-stack {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 23%;
+}
+
+.tv2-corner-banner {
+  margin: 0;
+  padding: 3px 5px;
+  border: 1px solid #e39a8c;
+  border-radius: 8px;
+  background: #6e2a20;
+  color: #ffe9e2;
+  font-size: var(--tv2-text-rotulo);
+  line-height: 1.15;
+}
+
+.tv2-waiting {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.tv2-waiting-item {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  min-width: 0;
+  padding: 2px 4px;
+  border: 1px solid var(--tv2-line-forte);
+  border-radius: 7px;
+  background: rgba(20, 30, 25, 0.92);
+  font-size: var(--tv2-text-rotulo);
+  line-height: 1;
+}
+
+.tv2-waiting-item .avatar-badge,
+.tv2-waiting-item .avatar-action {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  line-height: 0;
+}
+
+.tv2-waiting-item .participant-name {
+  overflow: hidden;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tv2-waiting-label {
+  display: none;
+}
+
+.tv2-waiting-more {
+  color: var(--tv2-muted);
+  font-size: var(--tv2-text-rotulo);
+  font-weight: 700;
+}
+
+/* ---------- pausa existente em sobreposição ---------- */
+.tv2-pause-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+  background: rgba(4, 9, 7, 0.72);
+}
+
+.tv2-pause-overlay .pause-panel {
+  width: min(100%, 430px);
+  max-height: 100%;
+  margin: 0;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.tv2-pause-overlay .pause-panel p {
+  margin: 0;
+  font-size: var(--tv2-text-corpo);
+  line-height: 1.35;
+}
+
+.tv2-pause-overlay .pause-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tv2-pause-overlay .pause-actions .botao,
+.tv2-pause-overlay .pause-actions .primary,
+.tv2-pause-overlay .pause-actions .secondary,
+.tv2-pause-overlay .pause-actions .danger {
+  width: 100%;
+  min-height: var(--tv2-target);
+}
+
+/* ---------- diálogo do assento ---------- */
+.tv2-seat-dialog-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(4, 9, 7, 0.76);
+}
+
+.tv2-seat-dialog {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 420px);
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  padding: 16px;
+  border: 2px solid #21140d;
+  border-radius: 14px;
+  background: var(--tv2-paper);
+  color: var(--tv2-paper-ink);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55);
+  font-family: var(--tv2-font-ui);
+}
+
+.tv2-seat-dialog-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tv2-seat-dialog-top .avatar-badge {
+  flex: none;
+  width: 44px;
+  height: 44px;
+}
+
+.tv2-seat-dialog-title {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+
+.tv2-seat-dialog-eyebrow {
+  color: var(--tv2-paper-muted);
+  font-size: var(--tv2-text-rotulo);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tv2-seat-dialog h2 {
+  margin: 0;
+  color: var(--tv2-paper-ink);
+  font-family: var(--tv2-font-display);
+  font-size: var(--tv2-fs-22);
+  font-weight: 600;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.tv2-seat-dialog-count,
+.tv2-seat-dialog-tags {
+  margin: 0;
+  color: var(--tv2-paper-muted);
+  font-size: var(--tv2-text-corpo);
+  line-height: 1.3;
+}
+
+.tv2-seat-dialog-count strong {
+  color: var(--tv2-paper-ink);
+  font-family: var(--tv2-font-display);
+  font-size: var(--tv2-fs-26);
+  line-height: 1;
+}
+
+.tv2-seat-dialog .tv2-btn:focus-visible {
+  outline-color: var(--tv2-focus-no-claro);
+  box-shadow: 0 0 0 3px var(--tv2-paper);
+}
+
+/* ---------- mesa pública (espera) ---------- */
+.tv2-seat-circuit--public {
+  position: relative;
+  display: block;
+  padding: 8px;
+  border: 1px solid var(--tv2-line-forte);
+  border-radius: 18px;
+  background: radial-gradient(80% 70% at 50% 34%, var(--tv2-felt-lit) 0%, var(--tv2-felt) 52%, var(--tv2-felt-deep) 100%);
+  color: var(--tv2-cream);
+  font-family: var(--tv2-font-ui);
+}
+
+.tv2-seat-circuit--public .tv2-seat-rail {
+  position: relative;
+  height: 24rem;
+}
+
+.tv2-seat-circuit--public .tv2-circuit-caption {
+  margin: 0 0 4px;
+}
+
+/* O feed visual entra na gaveta da T019D; o DOM e os testids continuam aqui. */
+.tv2-event-feed-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.tv2-table-root .tv2-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- telas maiores ---------- */
+@media (min-width: 900px) {
+  .tv2-hand-zone {
+    max-width: 100%;
+  }
+
+  .tv2-seat-circuit .tv2-seat {
+    padding: 5px 7px;
+  }
+
+  .tv2-seat-circuit .tv2-seat-line {
+    gap: 5px;
+  }
+
+  .tv2-seat-avatar,
+  .tv2-seat-avatar .avatar-badge,
+  .tv2-seat-avatar .avatar-action .avatar-badge {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* ---------- compacto 360x640 ---------- */
+@media (max-width: 380px) and (max-height: 700px) {
+  .tv2-table-root {
+    --tv2-top-h: 48px;
+    --tv2-actions-h: 58px;
+    --tv2-barra-h: 46px;
+    --tv2-hand-head: 24px;
+    --tv2-pad: 8px;
+    --tv2-gap: 5px;
+    --tv2-card-w: 74px;
+    --tv2-card-h: 83px;
+    --tv2-discard-w: 72px;
+    --tv2-discard-h: 88px;
+    --tv2-monte-w: 46px;
+    --tv2-monte-h: 60px;
+    --tv2-frame-inset: 6px;
+  }
+
+  .tv2-table-root .tv2-table-stage::before,
+  .tv2-table-root .tv2-table-stage::after {
+    border-radius: 18px;
+  }
+
+  .tv2-table-root .tv2-table-topo {
+    gap: 4px;
+  }
+
+  .tv2-table-root .tv2-top-actions .tv2-btn,
+  .tv2-table-root .leave-button {
+    padding: 0 7px;
+  }
+
+  .tv2-seat-circuit .tv2-seat {
+    min-height: 52px;
+    gap: 0;
+    padding: 2px 4px;
+  }
+
+  .tv2-seat-circuit .tv2-seat--base,
+  .tv2-seat-circuit .tv2-seat--top {
+    width: min(40%, 158px);
+  }
+
+  .tv2-seat-circuit .tv2-seat--left,
+  .tv2-seat-circuit .tv2-seat--right {
+    width: min(25%, 94px);
+  }
+
+  .tv2-seat-circuit .tv2-seat-line .participant-name {
+    line-height: 0.98;
+  }
+
+  .tv2-seat-avatar,
+  .tv2-seat-avatar .avatar-badge,
+  .tv2-seat-avatar .avatar-action .avatar-badge {
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+  }
+
+  .tv2-seat-circuit .tv2-seat-count .hand-count {
+    font-size: var(--tv2-text-contagem);
+  }
+
+  .tv2-seat-tags .tv2-chip {
+    min-height: 16px;
+    padding: 0 4px;
+  }
+
+  .tv2-table-center {
+    gap: 2px;
+  }
+
+  .tv2-table-piles {
+    gap: 3px;
+  }
+
+  .tv2-monte-count {
+    bottom: -10px;
+    min-width: 44px;
+    padding: 2px 4px 3px;
+  }
+
+  .tv2-monte-count strong {
+    font-size: var(--tv2-fs-24);
+  }
+
+  .tv2-active-color {
+    min-height: 26px;
+    gap: 5px;
+    padding: 2px 7px;
+  }
+
+  .tv2-active-color .color-symbol {
+    font-size: 13px;
+  }
+
+  .tv2-card-rank {
+    font-size: 30px;
+  }
+
+  .tv2-table-root .tv2-table-acoes {
+    padding: 1px 6px;
+  }
+
+  .tv2-actions-buttons {
+    gap: 4px;
+  }
+
+  .tv2-actions-buttons .tv2-btn {
+    padding-inline: 9px;
+  }
+
+  .tv2-table-root .hand.tv2-hand-cards {
+    gap: var(--tv2-gap);
+    padding: 8px 4px;
+  }
+
+  .tv2-hand-zone {
+    padding: 1px var(--tv2-pad) 4px;
+  }
+
+  .tv2-corner-stack {
+    top: 4px;
+    left: 4px;
+    max-width: 22%;
+  }
+
+  .tv2-seat-circuit--public .tv2-seat-rail {
+    height: 22rem;
+  }
+}
+
+@media (max-height: 780px) and (min-width: 381px) {
+  .tv2-table-root {
+    --tv2-top-h: 48px;
+    --tv2-actions-h: 58px;
+    --tv2-barra-h: 46px;
+    --tv2-hand-head: 28px;
+  }
+}
+
+@media (max-width: 340px) {
+  .tv2-table-root {
+    --tv2-pad: 6px;
+    --tv2-gap: 4px;
+    --tv2-card-w: 72px;
+    --tv2-card-h: 82px;
+    --tv2-discard-w: 72px;
+    --tv2-discard-h: 88px;
+    --tv2-monte-w: 46px;
+    --tv2-monte-h: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tv2-color-button {
+    min-width: var(--tv2-target);
+    padding: 0 9px;
+  }
+
+  .tv2-play-strip {
+    gap: 4px;
+    padding-inline: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tv2-pawn,
+  .tv2-direction-arrow,
+  .tv2-table-root .playing-card.tv2-card,
+  .tv2-seat-circuit .tv2-seat {
+    transition: none;
+  }
+
+  .tv2-table-root .playing-card.tv2-card--playable,
+  .tv2-table-root .playing-card.tv2-card--playable:hover,
+  .tv2-table-root .playing-card.tv2-card--selected,
+  .tv2-table-root .playing-card.tv2-card--selected:hover {
+    transform: none;
+  }
+}
+
+
+/* O chip de ausência herda o piso de rótulo de 14px; o status legado usava 9,6px. */
+.tv2-table-root .status.disconnected.tv2-chip {
+  min-height: 20px;
+  font-size: var(--tv2-text-rotulo);
+  line-height: 1;
+}

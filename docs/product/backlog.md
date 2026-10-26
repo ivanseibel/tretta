@@ -1,10 +1,18 @@
 # Backlog após o primeiro teste em família
 
-Atualizado em 18/10/2026. Fonte: feedback do usuário após jogar no celular com a irmã, escopo aprovado e ideias adiadas na concepção. Prioridades abaixo são propostas do orquestrador; T008 foi implementada/publicada e a investigação T009 foi solicitada e aceita; T010 foi implementada, publicada e aceita; teste humano da recuperação no celular ainda pendente. Ideias futuras não alteram as regras vigentes do Clássico.
+Atualizado em 25/10/2026. Fonte: feedback do usuário após jogar no celular com a irmã, escopo aprovado e ideias adiadas na concepção. Prioridades abaixo são propostas do orquestrador; T008 foi implementada/publicada e a investigação T009 foi solicitada e aceita; T010 foi implementada, publicada e aceita; T014 é a versão pública atual. Ideias futuras não alteram as regras vigentes do Clássico.
 
-## Prioridade atual — provocações pelo avatar e reações
+## Prioridade atual — mesa de jogo, reações e telas (T018+)
 
-Escolhida pelo usuário em 18/10/2026, acima dos candidatos históricos abaixo. **[Escopo confirmado](provocacoes-e-reacoes.md)** após entrevista `grill-with-docs` Q1–Q19. [T014A](../work/T014A.md) aceita. [T014B](../work/T014B.md) e ajustes executados e [aceitos localmente](../work/reports/T014B.final-validation.md) em 18/10/2026; nenhum ajuste de implementação pendente. Próxima etapa: publicação manual mediante autorização específica; T013 segue publicada. Nenhum executor acionado automaticamente.
+**[Escopo aprovado](mesa-e-reacoes.md) em 25/10/2026** após entrevista `grill-with-docs` em quatro rodadas. Redesign de todas as telas a partir do protótipo do usuário, trilho ([ADR 0002](../adr/0002-trilho-de-mesa-substitui-a-faixa.md)), 12 reações individuais ([ADR 0003](../adr/0003-reacoes-substituem-provocacoes.md)) e remoção das provocações com alvo. [T018 — protótipo estendido](../work/T018.md) com A2 aplicado em 26/10/2026: assentos 1 topo + 1 base + laterais equilibradas e compacto em 360; aguardando aceite visual final. Absorve a gaveta de chat, o resumo de regras na Sala e a leitura ampliada; reações com alvo (torta etc.) ficam como ideia futura.
+
+## Prioridade anterior — port do protótipo da mesa (T017)
+
+Escolhida pelo usuário em 25/10/2026, acima dos candidatos abaixo. **[Escopo aprovado](acessibilidade-visual.md)** após entrevista `grill-with-docs`: leitura ampliada, faixa de assentos no lugar do anel e mesa inteira sem rolagem vertical, calibrada no Moto G9 Plus e testada no iPhone do usuário. [T016 — design](../work/T016.md) com conceitos reprovados; brief greenfield entregue para prototipação externa, sem referência à UI atual. Absorve o candidato “chat acessível durante a jogada” pela gaveta de um toque. Nenhum arquivo de código alterado.
+
+## Prioridade anterior — provocações pelo avatar e reações
+
+Escolhida pelo usuário em 18/10/2026, acima dos candidatos históricos abaixo. **[Escopo confirmado](provocacoes-e-reacoes.md)** após entrevista `grill-with-docs` Q1–Q19. [T014A](../work/T014A.md) aceita. [T014B](../work/T014B.md) e ajustes executados e [aceitos localmente](../work/reports/T014B.final-validation.md) em 18/10/2026; nenhum ajuste de implementação pendente. [Publicação T014 executada e aceita P1–P5](../work/reports/T014-publication.validation.md) em 18/10/2026; T014 é a versão pública atual, sem pendências de implementação/publicação. Próximo passo: uso humano no celular/som e feedback. Nenhum executor acionado automaticamente.
 
 ## Publicada e aceita — ordem das jogadas (T012)
 
@@ -34,8 +42,8 @@ Contrato: [T008](../work/T008.md). [Validação local](../work/reports/T008.vali
 
 | Ordem | Ideia | Valor para a família | Limite / decisão antes de executar |
 | --- | --- | --- | --- |
-| 1 | Ajuda rápida na mesa | Consultar o significado das cartas, última carta e compra/passe sem interromper a partida | Conteúdo derivado das regras atuais; começar por guia curto contextual, sem tutorial obrigatório |
-| 2 | Chat acessível durante a jogada | Ler e responder com um toque, especialmente no celular, sem procurar o painel no fim da página | Validar painel recolhível/aba e indicador de novas mensagens; manter a mão e o descarte utilizáveis |
+| 1 | Ajuda rápida na mesa | Consultar o significado das cartas, última carta e compra/passe sem interromper a partida | Parcialmente absorvido pelo resumo de regras na Sala; guia contextual continua no backlog |
+| 2 | Chat acessível durante a jogada | Ler e responder com um toque, especialmente no celular, sem procurar o painel no fim da página | Absorvido pelo escopo de [mesa e reações](mesa-e-reacoes.md): chat na gaveta de um toque, sem rolar |
 | 3 | Convite pelo compartilhamento nativo | Enviar o link pelo menu do celular, mantendo Copiar link como alternativa | Nenhuma permissão de contatos e nenhum envio automático |
 | 4 | Resumo divertido da rodada | Criar histórias da partida: quem mais comprou, quem distribuiu penalidades, viradas e títulos humorísticos | Usar somente dados públicos; definir métricas e como tratar substitutos, sem revelar mãos |
 | 5 | Pequena noite de partidas | Dar continuidade ao encontro: melhor de três/cinco ou meta de vitórias | Escolher formato e definir encerramento/empate; a regra atual continua sendo rodada independente |
@@ -53,6 +61,7 @@ O feed vazio usa a frase “A rodada ainda não começou” mesmo logo após ini
 | --- | --- |
 | Modo Caos | Cartas especiais, troca de mãos, ataques e defesas ainda são propostas históricas; precisam de regras e balanceamento aprovados antes de entrar no motor |
 | Rivalidades e títulos humorísticos | Previstos para depois no escopo; começar com resumo da sessão antes de histórico permanente |
+| Reações com alvo | Ideia futura de reagir a alguém (torta etc.); exige novo desenho de produto e protocolo, sem restaurar as provocações removidas em 25/10/2026 |
 | Pontuação por cartas e campeonatos | Fora da primeira versão; definir formato antes de implementar |
 | Bots competitivos | Estratégia mais elaborada que o substituto simples atual; não significa inteligência que enxergue mãos adversárias |
 | Retomar a identidade em outro aparelho | Precisa de fluxo seguro de transferência; o link da sala sozinho não pode entregar a mão de alguém |

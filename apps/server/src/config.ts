@@ -1,5 +1,4 @@
 import { DEFAULT_PAUSE_GRACE_MS, DEFAULT_RETENTION_MS } from './rooms.js';
-import { TAUNT_SENDER_COOLDOWN_MS } from '@tretta/protocol/shared';
 
 export interface ServerConfig {
   readonly port: number;
@@ -8,7 +7,6 @@ export interface ServerConfig {
   readonly testHooks: boolean;
   readonly pauseGraceMs: number;
   readonly retentionMs: number;
-  readonly tauntCooldownMs: number;
 }
 
 export function loadConfig(env: NodeJS.ProcessEnv = process.env): ServerConfig {
@@ -23,9 +21,6 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): ServerConfig {
     // Prazos encurtados só existem com ganchos de teste ligados; nunca em execução normal.
     pauseGraceMs: testHooks ? parseDurationMs(env.TRE_TTA_GRACE_MS, 'TRE_TTA_GRACE_MS', DEFAULT_PAUSE_GRACE_MS) : DEFAULT_PAUSE_GRACE_MS,
     retentionMs: testHooks ? parseDurationMs(env.TRE_TTA_RETENTION_MS, 'TRE_TTA_RETENTION_MS', DEFAULT_RETENTION_MS) : DEFAULT_RETENTION_MS,
-    tauntCooldownMs: testHooks
-      ? parseDurationMs(env.TRE_TTA_TAUNT_COOLDOWN_MS, 'TRE_TTA_TAUNT_COOLDOWN_MS', TAUNT_SENDER_COOLDOWN_MS)
-      : TAUNT_SENDER_COOLDOWN_MS,
   };
 }
 

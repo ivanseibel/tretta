@@ -1,17 +1,14 @@
 import type { RetryInfo, SendLimitInfo } from '@tretta/protocol';
 
 /**
- * Rastreia os intervalos de humor sem confiar no relógio do aparelho e sem
- * renovar prazos por replay. Há duas peças separadas:
+ * Rastreia o intervalo de envio das reações sem confiar no relógio do aparelho
+ * e sem renovar prazos por replay. Há duas peças:
  *
  * - **Referência comum** (`clock`): instante do servidor + instante local da
  *   amostra mais nova já vista. Só avança; uma chegada tardia não a retrocede
  *   nem reposiciona o prazo na chegada.
- * - **Conhecimento por escopo** (categoria de emissor ou id de alvo): o dado
- *   mais novo já visto daquele escopo, inclusive um `null` autoritativo que
- *   encerrou a janela (tombstone). Cada informação é comparada apenas com o
- *   próprio escopo, então uma atualização de provocação não invalida reação e
- *   uma recusa de um alvo não invalida a de outro.
+ * - **Conhecimento do escopo** (categoria de emissor): o dado mais novo já
+ *   visto, inclusive um `null` autoritativo que encerrou a janela (tombstone).
  *
  * O restante é `nextSendAt - (clock.serverTime + tempo local decorrido)`, isto
  * é, sempre medido na referência comum. A referência nunca retrocede: uma
@@ -20,22 +17,19 @@ import type { RetryInfo, SendLimitInfo } from '@tretta/protocol';
  * um timestamp realmente adiantado avança a referência.
  *
  * Em timestamps iguais, a origem do fato desempata: estado autoritativo <
- * recusa < aceite < liberação. Assim o estado nulo inicial não bloqueia um
- * aceite no mesmo milissegundo, mas o replay desse estado não apaga o aceite;
- * a liberação de alvo prevalece sobre a recusa superada, mas uma recusa com
- * timestamp maior continua bloqueando. Fatos de mesma prioridade no mesmo
- * instante são idempotentes (não alternam por replay).
+ * recusa < aceite. Assim o estado nulo inicial não bloqueia um aceite no mesmo
+ * milissegundo, mas o replay desse estado não apaga o aceite. Fatos de mesma
+ * prioridade no mesmo instante são idempotentes (não alternam por replay).
  */
-export type MoodCategory = 'taunt' | 'reaction';
+export type MoodCategory = 'reaction';
 
 /** Origem do fato de um escopo; desempata timestamps idênticos. */
-type FactKind = 'state' | 'refusal' | 'accept' | 'release';
+type FactKind = 'state' | 'refusal' | 'accept';
 
 const FACT_PRIORITY: Record<FactKind, number> = {
   state: 0,
   refusal: 1,
   accept: 2,
-  release: 3,
 };
 
 /** Conhecimento de um escopo: `nextSendAt` nulo encerra a janela naquele instante. */
@@ -53,13 +47,11 @@ interface ClockSample {
 export class MoodLimitTracker {
   private clock: ClockSample | null = null;
   private readonly sender = new Map<MoodCategory, ScopeKnowledge>();
-  private readonly targets = new Map<string, ScopeKnowledge>();
 
   /** Reinício de contexto: troca de sala, saída ou remoção. */
   clear(): void {
     this.clock = null;
     this.sender.clear();
-    this.targets.clear();
   }
 
   /** Aceite de envio: `limits` do ack (ou replay idêntico). */
@@ -68,62 +60,22 @@ export class MoodLimitTracker {
     this.noteScope(this.sender, category, limits.serverTime, limits.nextSendAt, localAt, 'accept');
   }
 
-  /** Recusa por limite: escopo do emissor ou cota de um alvo específico. */
+  /** Recusa por limite do próprio emissor. */
   noteRetry(category: MoodCategory, retry: RetryInfo | undefined, localAt = Date.now()): void {
-    if (retry === undefined) return;
-    if (retry.scope === 'sender') {
-      this.noteScope(this.sender, category, retry.serverTime, retry.retryAt, localAt, 'refusal');
-      return;
-    }
-    if (retry.targetId !== undefined) {
-      this.noteScope(this.targets, retry.targetId, retry.serverTime, retry.retryAt, localAt, 'refusal');
-    }
+    if (retry === undefined || retry.scope !== 'sender') return;
+    this.noteScope(this.sender, category, retry.serverTime, retry.retryAt, localAt, 'refusal');
   }
 
   /**
-   * Snapshot autoritativo do próprio (rejoin/reload/estado): avalia as duas
-   * categorias separadamente. `null` encerra a janela daquela categoria quando
-   * o snapshot é mais novo que o conhecimento dela.
+   * Snapshot autoritativo do próprio (rejoin/reload/estado): `null` encerra a
+   * janela quando o snapshot é mais novo que o conhecimento corrente.
    */
-  noteState(
-    serverTime: number,
-    tauntNextSendAt: number | null,
-    reactionNextSendAt: number | null,
-    localAt = Date.now(),
-  ): void {
-    this.noteScope(this.sender, 'taunt', serverTime, tauntNextSendAt, localAt, 'state');
+  noteState(serverTime: number, reactionNextSendAt: number | null, localAt = Date.now()): void {
     this.noteScope(this.sender, 'reaction', serverTime, reactionNextSendAt, localAt, 'state');
-  }
-
-  /**
-   * Envio aceito para o alvo indica que a cota dele voltou a ter espaço. Com
-   * `serverTime`, a liberação vira conhecimento do escopo (impede que uma
-   * recusa anterior a ela ressuscite a espera); sem `serverTime`, apenas
-   * descarta o conhecimento atual.
-   */
-  clearTarget(targetId: string, serverTime?: number): void {
-    const current = this.targets.get(targetId);
-    if (serverTime === undefined) {
-      this.targets.delete(targetId);
-      return;
-    }
-    if (current !== undefined) {
-      // Recusa com timestamp maior continua bloqueando; no mesmo instante, a
-      // liberação prevalece e o replay da recusa superada não ressuscita.
-      if (serverTime < current.serverTime) return;
-      if (serverTime === current.serverTime && FACT_PRIORITY.release <= FACT_PRIORITY[current.kind]) return;
-    }
-    // A liberação não altera a referência comum: o aceite que a originou já
-    // avançou o relógio; aqui só o conhecimento do alvo muda.
-    this.targets.set(targetId, { serverTime, nextSendAt: null, kind: 'release' });
   }
 
   remainingSender(category: MoodCategory, nowLocal = Date.now()): number {
     return this.remaining(this.sender.get(category), nowLocal);
-  }
-
-  remainingTarget(targetId: string, nowLocal = Date.now()): number {
-    return this.remaining(this.targets.get(targetId), nowLocal);
   }
 
   /**

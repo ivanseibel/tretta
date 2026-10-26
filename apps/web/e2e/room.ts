@@ -8,6 +8,7 @@ export async function createRoom(page: Page, nickname: string): Promise<string> 
   await page.getByTestId('create-room-button').click();
   const link = page.getByTestId('invite-link');
   await expect(link).toBeVisible();
+  await expect(link).toHaveText(/\/sala\/[A-Z0-9]{6}/);
   const href = await link.textContent();
   if (href === null) throw new Error('link de convite ausente');
   return href;
@@ -51,13 +52,51 @@ export async function waitMyTurn(page: Page): Promise<void> {
   await expect(page.getByTestId('turn-indicator')).toHaveText('Sua vez');
 }
 
-/** Abre o painel recolhido "Mais opções de provocação" sem alternar duas vezes. */
-export async function openTauntPanel(page: Page): Promise<void> {
-  const panel = page.getByTestId('taunt-panel');
-  const open = await panel.evaluate((node) => (node as HTMLDetailsElement).open);
-  if (open) return;
-  await page.getByTestId('taunt-panel-toggle').click();
-  await expect(panel).toHaveAttribute('open', '');
+export type DrawerTab = 'conversa' | 'historico' | 'sala';
+
+/** Abre a gaveta da sala pela barra ou pelo topo e seleciona a aba pedida. */
+export async function openDrawer(page: Page, tab: DrawerTab = 'sala'): Promise<void> {
+  const layer = page.getByTestId('table-drawer-layer');
+  if (!(await layer.isVisible().catch(() => false))) {
+    const top = page.getByTestId('open-room-drawer');
+    if (await top.isVisible().catch(() => false)) await top.click();
+    else await page.getByTestId('table-bar-conversa').click();
+    await expect(layer).toBeVisible();
+  }
+  const target = page.locator(`#table-drawer-aba-${tab}`);
+  if ((await target.getAttribute('aria-selected')) !== 'true') await target.click();
+  await expect(target).toHaveAttribute('aria-selected', 'true');
+}
+
+export async function closeDrawer(page: Page): Promise<void> {
+  await page.keyboard.press('Escape');
+  await expect(page.getByTestId('table-drawer-layer')).toHaveCount(0);
+}
+
+export async function sendChat(page: Page, text: string, { keepOpen = false } = {}): Promise<void> {
+  await openDrawer(page, 'conversa');
+  await page.getByTestId('chat-input').fill(text);
+  await page.getByTestId('chat-send').click();
+  await expect(page.getByTestId('chat-messages')).toContainText(text);
+  await expect(page.getByTestId('chat-input')).toHaveValue('');
+  if (!keepOpen) await closeDrawer(page);
+}
+
+export async function openReactions(page: Page): Promise<void> {
+  if (await page.getByTestId('table-drawer-layer').isVisible().catch(() => false)) await closeDrawer(page);
+  await page.getByTestId('table-bar-reagir').click();
+  await expect(page.getByTestId('reaction-tray')).toBeVisible();
+}
+
+export async function leaveViaDrawer(page: Page): Promise<void> {
+  await openDrawer(page, 'sala');
+  await page.getByTestId('drawer-leave').click();
+  await page.getByTestId('drawer-confirm-action').click();
+}
+
+export async function endRoundViaDrawer(page: Page): Promise<void> {
+  await openDrawer(page, 'sala');
+  await page.getByTestId('drawer-end-round').click();
 }
 
 export async function playCard(page: Page, cardId: string): Promise<void> {

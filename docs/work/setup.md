@@ -30,3 +30,9 @@ As duas últimas são dependências das entrevistas. As skills globais não faze
 Além das skills da tabela, disponibilize a skill **`agent-notify`** e o utilitário de mesmo nome no PATH do agente. Essa dependência não vem do repositório `mattpocock/skills` citado acima. Transfira a instalação confiável já usada no seu ambiente, preservando arquivos e instruções da skill; configure o destino da notificação localmente, sem versionar credenciais ou configuração privada no Tretta. O clone do projeto sozinho não instala o utilitário nem configura o serviço de entrega.
 
 Confira a descoberta da skill e a disponibilidade do comando antes de iniciar tarefas. Orquestradores e executores manuais seguem a [regra de encerramento](../../.agents/skills/orchestrate-work/SKILL.md#notificação-de-encerramento); somente executores lançados automaticamente como subagentes estão dispensados. Indisponibilidade ou falha de entrega deve ser informada, sem apresentar uma notificação como confirmada.
+
+## Navegador dedicado aos testes
+
+Disponibilize `browser-harness` e Chrome/Chromium com suporte a perfil temporário e endpoint CDP próprio. O modo local padrão do harness conecta ao Chrome já aberto; no Tretta, configure processo/perfil temporário, endpoint explícito (`BU_CDP_URL` ou `BU_CDP_WS`) e `BU_NAME` exclusivo conforme o [protocolo de isolamento](../../.agents/skills/orchestrate-work/SKILL.md#isolamento-do-navegador).
+
+Antes da primeira prova, confirme o vínculo entre a instância criada e o daemon escolhido. Testes não exigem habilitar depuração no navegador pessoal, importar sua sessão ou contratar navegador em nuvem. Se o ambiente não permitir isolamento, registre essa verificação como indisponível e preserve o navegador do usuário.

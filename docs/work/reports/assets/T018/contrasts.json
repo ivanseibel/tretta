@@ -1,0 +1,240 @@
+[
+  {
+    "par": "Creme / feltro",
+    "frente": "#F7EDD8",
+    "fundo": "#123B2D",
+    "contraste": 10.69,
+    "uso": "texto principal na mesa"
+  },
+  {
+    "par": "Tinta / latão",
+    "frente": "#1B1410",
+    "fundo": "#D7AB63",
+    "contraste": 8.57,
+    "uso": "texto em assento ativo e botão principal"
+  },
+  {
+    "par": "Creme / vermelho",
+    "frente": "#F7EDD8",
+    "fundo": "#C4322A",
+    "contraste": 4.71,
+    "uso": "texto em carta vermelha"
+  },
+  {
+    "par": "Creme / verde",
+    "frente": "#F7EDD8",
+    "fundo": "#277147",
+    "contraste": 5.1,
+    "uso": "texto em carta verde"
+  },
+  {
+    "par": "Creme / azul",
+    "frente": "#F7EDD8",
+    "fundo": "#2857B8",
+    "contraste": 5.74,
+    "uso": "texto em carta azul"
+  },
+  {
+    "par": "Tinta / creme",
+    "frente": "#1B1410",
+    "fundo": "#F7EDD8",
+    "contraste": 15.65,
+    "uso": "texto em papel e carta coringa"
+  },
+  {
+    "par": "Tinta / amarelo",
+    "frente": "#231A10",
+    "fundo": "#F0B93A",
+    "contraste": 9.54,
+    "uso": "texto em carta amarela"
+  },
+  {
+    "par": "Creme / vermelho (carta)",
+    "frente": "#FFF8EA",
+    "fundo": "#C4322A",
+    "contraste": 5.18,
+    "uso": "tinta real da carta vermelha"
+  },
+  {
+    "par": "Creme / verde (carta)",
+    "frente": "#FFF8EA",
+    "fundo": "#277147",
+    "contraste": 5.61,
+    "uso": "tinta real da carta verde"
+  },
+  {
+    "par": "Creme / azul (carta)",
+    "frente": "#FFF8EA",
+    "fundo": "#2857B8",
+    "contraste": 6.32,
+    "uso": "tinta real da carta azul"
+  },
+  {
+    "par": "Papel muted / papel",
+    "frente": "#5A4430",
+    "fundo": "#FBF3E2",
+    "contraste": 8.25,
+    "uso": "texto secundário no papel"
+  },
+  {
+    "par": "Papel muted 2 / papel",
+    "frente": "#6B563D",
+    "fundo": "#FBF3E2",
+    "contraste": 6.29,
+    "uso": "rótulo de resultado"
+  },
+  {
+    "par": "Muted / página",
+    "frente": "#CBBEA7",
+    "fundo": "#0A1310",
+    "contraste": 10.29,
+    "uso": "texto secundário no escuro"
+  },
+  {
+    "par": "Muted / feltro",
+    "frente": "#CBBEA7",
+    "fundo": "#123B2D",
+    "contraste": 6.79,
+    "uso": "texto secundário no feltro"
+  },
+  {
+    "par": "Borda #8A6234 / creme",
+    "frente": "#8A6234",
+    "fundo": "#F7EDD8",
+    "contraste": 4.66,
+    "uso": "borda de botão secundário no papel"
+  },
+  {
+    "par": "Borda #8A7660 / gaveta",
+    "frente": "#8A7660",
+    "fundo": "#14100C",
+    "contraste": 4.36,
+    "uso": "borda de controles na gaveta"
+  },
+  {
+    "par": "Borda #8A7660 / interruptor",
+    "frente": "#8A7660",
+    "fundo": "#2A221A",
+    "contraste": 3.61,
+    "uso": "borda do interruptor"
+  },
+  {
+    "par": "Borda #8A7660 / entrada",
+    "frente": "#8A7660",
+    "fundo": "#241B13",
+    "contraste": 3.9,
+    "uso": "borda de campo"
+  },
+  {
+    "par": "Borda do assento / feltro",
+    "frente": "#B08A54",
+    "fundo": "#123B2D",
+    "contraste": 3.91,
+    "uso": "limite do assento"
+  },
+  {
+    "par": "Borda do assento / madeira",
+    "frente": "#B08A54",
+    "fundo": "#3B2418",
+    "contraste": 4.55,
+    "uso": "limite do assento sobre madeira"
+  },
+  {
+    "par": "Borda #21140D / vermelho",
+    "frente": "#21140D",
+    "fundo": "#C4322A",
+    "contraste": 3.28,
+    "uso": "limite de carta vermelha"
+  },
+  {
+    "par": "Foco / feltro",
+    "frente": "#F2C766",
+    "fundo": "#123B2D",
+    "contraste": 7.78,
+    "uso": "anel de foco na mesa"
+  },
+  {
+    "par": "Foco / madeira",
+    "frente": "#F2C766",
+    "fundo": "#3B2418",
+    "contraste": 9.05,
+    "uso": "anel de foco na madeira"
+  },
+  {
+    "par": "Foco / página",
+    "frente": "#F2C766",
+    "fundo": "#0A1310",
+    "contraste": 11.8,
+    "uso": "anel de foco no fundo"
+  },
+  {
+    "par": "Foco escuro / papel",
+    "frente": "#7A3F0E",
+    "fundo": "#FBF3E2",
+    "contraste": 7.47,
+    "uso": "anel de foco no papel"
+  },
+  {
+    "par": "Foco escuro / branco",
+    "frente": "#7A3F0E",
+    "fundo": "#FFFDF7",
+    "contraste": 8.11,
+    "uso": "anel de foco em campo claro"
+  },
+  {
+    "par": "Tag offline",
+    "frente": "#FFE9E2",
+    "fundo": "#6E2A20",
+    "contraste": 8.94,
+    "uso": "etiqueta caiu"
+  },
+  {
+    "par": "Tag bot",
+    "frente": "#EAF6E8",
+    "fundo": "#2C4B3A",
+    "contraste": 8.67,
+    "uso": "etiqueta bot"
+  },
+  {
+    "par": "Tag substituto",
+    "frente": "#F0E9FF",
+    "fundo": "#3D3558",
+    "contraste": 9.63,
+    "uso": "etiqueta substituto"
+  },
+  {
+    "par": "Tag pronto",
+    "frente": "#F0FFF2",
+    "fundo": "#2C5A3B",
+    "contraste": 7.71,
+    "uso": "etiqueta pronto"
+  },
+  {
+    "par": "Tag espera",
+    "frente": "#EADFCB",
+    "fundo": "#3A3025",
+    "contraste": 9.77,
+    "uso": "etiqueta aguardando"
+  },
+  {
+    "par": "Muted / gaveta",
+    "frente": "#CBBEA7",
+    "fundo": "#14100C",
+    "contraste": 10.33,
+    "uso": "prévia do resumo das regras"
+  },
+  {
+    "par": "Latão / gaveta",
+    "frente": "#D7AB63",
+    "fundo": "#14100C",
+    "contraste": 8.92,
+    "uso": "chevron do resumo das regras"
+  },
+  {
+    "par": "Perigo / creme",
+    "frente": "#8C241C",
+    "fundo": "#F7EDD8",
+    "contraste": 7.57,
+    "uso": "texto do botão Sair da sala"
+  }
+]
